@@ -1,0 +1,11 @@
+---
+name: Elbgoods
+role: Lead Backend Developer
+start_at: 2020-01-01
+end_at: 2021-06-31
+website: http://elbgoods.de
+stack: [Laravel]
+icon: fa-briefcase
+logo: images/company/elbgoods.png
+salary: 51000
+---

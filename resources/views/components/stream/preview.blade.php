@@ -1,6 +1,6 @@
 <?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
 <?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var \Spatie\Sheets\Sheet $stream */ ?>
+<?php /** @var App\Stream $stream */ ?>
 @props(['stream'])
 
 <article class="rounded-4 shadow bg-white dark:bg-night-20 overflow-hidden">

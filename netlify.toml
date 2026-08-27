@@ -1,5 +1,5 @@
 [build]
-  publish = "dist"
+  publish = "storage/app/static"
 
 [[headers]]
   for = "/*"

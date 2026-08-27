@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Repositories\ContentRepository;
 use Closure;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Route;
@@ -15,11 +16,11 @@ class RouteServiceProvider extends ServiceProvider
     {
         Route::pattern('year', '[0-9]{4}');
         Route::pattern('page', 'p:([0-9]+)');
-        Route::pattern('post', '[0-9]{4}\/[a-z0-9\-]+');
+        Route::pattern('post', '[0-9]{4}\\/[a-z0-9\\-]+');
 
         Route::macro('sheet', function (string $uri, string $view, string $sheet, Closure $callback) {
             return Route::get($uri, function () use ($view, $sheet, $callback): View {
-                $data = sheets()->get($sheet);
+                $data = app(ContentRepository::class)->find($sheet);
 
                 app()->call($callback, ['data' => $data]);
 
@@ -27,12 +28,9 @@ class RouteServiceProvider extends ServiceProvider
             });
         });
 
-        parent::boot();
-    }
-
-    public function map(): void
-    {
-        Route::middleware('web')
-            ->group(base_path('routes/web.php'));
+        $this->routes(function (): void {
+            Route::middleware('web')
+                ->group(base_path('routes/web.php'));
+        });
     }
 }

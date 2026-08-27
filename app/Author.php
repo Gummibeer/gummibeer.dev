@@ -23,9 +23,6 @@ use Illuminate\Support\Str;
  */
 final class Author extends Model
 {
-    /**
-     * @return Collection|Post[]
-     */
     public function posts(): Collection
     {
         return Post::all()->filter(fn (Post $post): bool => $post->author->nickname === $this->nickname);
@@ -36,17 +33,17 @@ final class Author extends Model
         return Str::slug($this->nickname);
     }
 
-    public function getNameAttribute(): string
+    public function getNameAttribute(mixed $value = null): string
     {
         return $this->firstname.' '.$this->lastname;
     }
 
-    public function getUrlAttribute(): string
+    public function getUrlAttribute(mixed $value = null): string
     {
         return route('blog.author.index', $this);
     }
 
-    public function getAvatarAttribute(): string
+    public function getAvatarAttribute(mixed $value = null): string
     {
         return sprintf(
             'https://secure.gravatar.com/avatar/%s?s=512&r=g&d=mp',
@@ -56,11 +53,11 @@ final class Author extends Model
 
     public function __call($name, $arguments)
     {
-        return call_user_func_array([app(AuthorRepository::class), $name], $arguments);
+        return app(AuthorRepository::class)->{$name}(...$arguments);
     }
 
     public static function __callStatic($name, $arguments)
     {
-        return call_user_func_array([app(AuthorRepository::class), $name], $arguments);
+        return app(AuthorRepository::class)->{$name}(...$arguments);
     }
 }

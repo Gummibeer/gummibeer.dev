@@ -1,0 +1,18 @@
+title: Hacktoberfest
+fields:
+  -
+    handle: name
+    field:
+      type: text
+      display: Name
+      validate: required
+  -
+    handle: description
+    field:
+      type: textarea
+      display: Description
+  -
+    handle: image
+    field:
+      type: text
+      display: Image

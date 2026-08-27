@@ -5,14 +5,11 @@ namespace App;
 use App\Repositories\PostRepository;
 use App\Services\Model;
 use Carbon\Carbon;
-use Illuminate\Filesystem\FilesystemAdapter;
+use Carbon\CarbonInterface;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
-use Illuminate\Support\Facades\Storage;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
-use Spatie\YamlFrontMatter\YamlFrontMatter;
-use Symfony\Component\Yaml\Yaml;
 
 /**
  * @property-read string $title
@@ -42,9 +39,6 @@ use Symfony\Component\Yaml\Yaml;
  */
 final class Post extends Model implements Feedable
 {
-    /**
-     * @return Collection|Category[]
-     */
     public function categories(): Collection
     {
         return collect($this->categories)
@@ -62,7 +56,7 @@ final class Post extends Model implements Feedable
         return Author::find($nickname);
     }
 
-    public function getReadTimeAttribute(): float
+    public function getReadTimeAttribute(mixed $value = null): float
     {
         $wordCount = mb_strlen(strip_tags($this->contents)) / 5;
         $wordsPerMinute = 60 * 3;
@@ -71,19 +65,19 @@ final class Post extends Model implements Feedable
         return max(1, $minutes);
     }
 
-    public function getUrlAttribute(): string
+    public function getUrlAttribute(mixed $value = null): string
     {
         return route('blog.post', $this);
     }
 
     public function getImageAttribute(?string $value): string
     {
-        return $value ?? Arr::first($this->images);
+        return $value ?? Arr::first($this->images ?? []);
     }
 
-    public function getModifiedAtAttribute(): Carbon
+    public function getModifiedAtAttribute(mixed $value = null): Carbon
     {
-        return Carbon::createFromTimestampUTC(filemtime(resource_path('content/posts/'.$this->path)));
+        return Carbon::createFromTimestampUTC(filemtime($this->entry()->path()));
     }
 
     public function getIsDraftAttribute(?bool $value): bool
@@ -96,18 +90,19 @@ final class Post extends Model implements Feedable
         return $value ?? true;
     }
 
-    public function getPromotedAtAttribute(?string $value): ?Carbon
+    public function getPromotedAtAttribute(string|int|CarbonInterface|null $value): ?Carbon
     {
         if ($value === null) {
             return null;
         }
 
-        return Carbon::createFromTimestampUTC($value);
-    }
+        if ($value instanceof CarbonInterface) {
+            return Carbon::instance($value);
+        }
 
-    public function getMarkdownAttribute(): string
-    {
-        return ltrim(YamlFrontMatter::parse($this->storage()->get($this->getPath()))->body());
+        return is_numeric($value)
+            ? Carbon::createFromTimestampUTC((int) $value)
+            : Carbon::parse($value);
     }
 
     public function toFeedItem(): FeedItem
@@ -124,26 +119,15 @@ final class Post extends Model implements Feedable
 
     public function save(): bool
     {
-        $yaml = trim(Yaml::dump(Arr::except($this->attributes, ['contents', 'date', 'slug'])));
+        if ($this->promoted_at !== null) {
+            $this->promoted_at = $this->promoted_at->toIso8601String();
+        }
 
-        $content = <<<YAML
-        ---
-        {$yaml}
-        ---
-        
-        {$this->markdown}
-        YAML;
-
-        return Storage::disk(config('sheets.collections.posts.disk', 'posts'))->put($this->getPath(), $content);
+        return parent::save();
     }
 
     public static function __callStatic($name, $arguments)
     {
-        return call_user_func_array([app(PostRepository::class), $name], $arguments);
-    }
-
-    protected function storage(): FilesystemAdapter
-    {
-        return Storage::disk(config('sheets.collections.posts.disk', 'posts'));
+        return app(PostRepository::class)->{$name}(...$arguments);
     }
 }

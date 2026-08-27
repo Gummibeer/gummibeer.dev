@@ -1,0 +1,11 @@
+---
+name: Frischepost
+role: Software Engineer
+start_at: 2021-07-01
+end_at: 2022-09-30
+website: https://frischepost.de
+stack: [Laravel, Shopware]
+icon: fa-tractor
+logo: images/company/frischepost.png
+salary: 65000
+---

@@ -1,0 +1,2 @@
+title: Pages
+title_format: '{{ slug | title }}'

@@ -1,0 +1,7 @@
+title: Page
+fields:
+  -
+    handle: content
+    field:
+      type: markdown
+      display: Content

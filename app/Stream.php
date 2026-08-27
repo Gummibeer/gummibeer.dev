@@ -9,15 +9,6 @@ use Carbon\CarbonInterval;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
 
-/**
- * @property-read string $title
- * @property-read string $image
- * @property-read Carbon $date
- * @property-read string $youtube_id
- * @property-read CarbonInterval $duration
- * @property-read string $url
- * @property-read Author $author
- */
 final class Stream extends Model implements Feedable
 {
     public function getRouteKey()
@@ -30,17 +21,17 @@ final class Stream extends Model implements Feedable
         return CarbonInterval::fromString($duration);
     }
 
-    public function getUrlAttribute(): string
+    public function getUrlAttribute(mixed $value = null): string
     {
         return "https://youtu.be/{$this->youtube_id}";
     }
 
-    public function getImageAttribute(): string
+    public function getImageAttribute(mixed $value = null): string
     {
         return "https://i.ytimg.com/vi/{$this->youtube_id}/maxresdefault.jpg";
     }
 
-    public function getAuthorAttribute(): Author
+    public function getAuthorAttribute(mixed $value = null): Author
     {
         return Author::find('Gummibeer');
     }
@@ -59,6 +50,6 @@ final class Stream extends Model implements Feedable
 
     public static function __callStatic($name, $arguments)
     {
-        return call_user_func_array([app(StreamRepository::class), $name], $arguments);
+        return app(StreamRepository::class)->{$name}(...$arguments);
     }
 }

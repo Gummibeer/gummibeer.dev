@@ -5,48 +5,73 @@ namespace App\Providers;
 use App\Author;
 use App\Category;
 use App\Post;
+use App\Stream;
+use Illuminate\Support\Collection;
 use Illuminate\Support\ServiceProvider;
-use Spatie\Export\Exporter;
-use Throwable;
+use Statamic\StaticSite\SSG;
 
 class ExportServiceProvider extends ServiceProvider
 {
-    public function register(): void
-    {
-        //
-    }
-
     public function boot(): void
     {
-        if ($this->app->runningInConsole()) {
-            $this->app->booted(function (): void {
-                $exporter = $this->app->make(Exporter::class);
+        SSG::addUrls(fn (): array => $this->urls()->all());
+    }
 
-                $exporter->urls([
-                    route('blog.feed', ['format' => 'rss']),
-                    route('blog.feed', ['format' => 'atom']),
-                ]);
+    private function urls(): Collection
+    {
+        $urls = collect([
+            '/blog/feed.rss',
+            '/blog/feed.atom',
+        ]);
 
-                try {
-                    Category::all()->each(fn (Category $category) => $exporter->urls([
-                        $category->url,
-                        route('blog.category.feed', ['category' => $category, 'format' => 'rss']),
-                        route('blog.category.feed', ['category' => $category, 'format' => 'atom']),
-                    ]));
+        $posts = Post::all();
+        $streams = Stream::all();
+        $blogItems = $posts->merge($streams)->sortByDesc('date')->values();
 
-                    Author::all()->each(fn (Author $author) => $exporter->urls([
-                        $author->url,
-                        route('blog.author.feed', ['author' => $author, 'format' => 'rss']),
-                        route('blog.author.feed', ['author' => $author, 'format' => 'atom']),
-                    ]));
+        $urls->push(...$this->paginationUrls('/blog', $blogItems->count()));
 
-                    Post::all()->each(fn (Post $post) => $exporter->urls(
-                        route('blog.year.index', ['year' => $post->date->year])
-                    ));
-                } catch (Throwable $ex) {
-                    report($ex);
-                }
+        $posts
+            ->groupBy(fn (Post $post): int => $post->date->year)
+            ->each(function (Collection $yearPosts, int $year) use ($urls): void {
+                $urls->push("/blog/{$year}");
+                $urls->push(...$this->paginationUrls("/blog/{$year}", $yearPosts->count()));
             });
+
+        $posts->each(fn (Post $post) => $urls->push('/blog/'.$post->getRouteKey()));
+
+        Category::all()->each(function (Category $category) use ($urls): void {
+            $base = '/blog/'.$category->getRouteKey();
+
+            $urls->push(
+                $base,
+                $base.'/feed.rss',
+                $base.'/feed.atom',
+                ...$this->paginationUrls($base, $category->posts()->count())
+            );
+        });
+
+        Author::all()->each(function (Author $author) use ($urls): void {
+            $base = '/blog/@'.$author->getRouteKey();
+
+            $urls->push(
+                $base,
+                $base.'/feed.rss',
+                $base.'/feed.atom',
+                ...$this->paginationUrls($base, $author->posts()->count())
+            );
+        });
+
+        return $urls->filter()->unique()->values();
+    }
+
+    private function paginationUrls(string $base, int $count, int $perPage = 6): array
+    {
+        if ($count <= $perPage) {
+            return [];
         }
+
+        return collect(range(2, (int) ceil($count / $perPage)))
+            ->map(fn (int $page): string => "{$base}/p:{$page}")
+            ->all();
     }
 }

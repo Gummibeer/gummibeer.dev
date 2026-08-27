@@ -4,13 +4,17 @@ namespace App\Repositories;
 
 use App\Stream;
 use Illuminate\Support\Collection;
+use Statamic\Facades\Entry;
 
 /** @mixin Collection */
 class StreamRepository
 {
     public function all(): Collection
     {
-        return sheets('streams')->all()
+        return Entry::query()
+            ->where('collection', 'streams')
+            ->get()
+            ->map(fn ($entry): Stream => new Stream($entry))
             ->sortByDesc('date')
             ->values();
     }
@@ -22,6 +26,6 @@ class StreamRepository
 
     public function __call(string $method, array $arguments)
     {
-        return $this->all()->$method(...$arguments);
+        return $this->all()->{$method}(...$arguments);
     }
 }

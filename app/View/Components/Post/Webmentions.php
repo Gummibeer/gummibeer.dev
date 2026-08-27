@@ -2,9 +2,9 @@
 
 namespace App\View\Components\Post;
 
-use Astrotomic\Webmentions\Facades\Webmentions as WebmentionsClient;
-use Astrotomic\Webmentions\Models\Entry;
-use Astrotomic\Webmentions\Models\Repost;
+use App\Webmentions\Client;
+use App\Webmentions\Models\Entry;
+use App\Webmentions\Models\Repost;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
@@ -20,16 +20,18 @@ class Webmentions extends Component
     {
         $url ??= request()->url();
 
-        $this->likes = WebmentionsClient::likes($url)
+        $client = app(Client::class);
+
+        $this->likes = $client->likes($url)
             ->sortByDesc('created_at');
 
-        $this->reposts = WebmentionsClient::reposts($url)
-            ->concat(WebmentionsClient::mentions($url))
+        $this->reposts = $client->reposts($url)
+            ->concat($client->mentions($url))
             ->filter(fn (Entry $entry): bool => $entry instanceof Repost || empty($entry->text))
             ->sortByDesc('created_at');
 
-        $this->comments = WebmentionsClient::mentions($url)
-            ->concat(WebmentionsClient::replies($url))
+        $this->comments = $client->mentions($url)
+            ->concat($client->replies($url))
             ->reject(fn (Entry $entry): bool => empty($entry->text))
             ->sortBy('created_at');
     }

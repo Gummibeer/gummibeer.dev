@@ -1,0 +1,11 @@
+---
+name: Hospitable
+role: Software Engineer
+start_at: 2022-10-01
+end_at: null
+website: https://hospitable.com
+stack: [Laravel]
+icon: fa-hotel
+logo: images/company/hospitable.png
+salary: 100600
+---

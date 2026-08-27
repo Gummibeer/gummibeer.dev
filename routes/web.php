@@ -1,14 +1,16 @@
 <?php
 
+use App\Content;
 use App\Http\Controllers\Blog;
 use App\Http\Middleware\Paginated;
 use App\Job;
 use App\Post;
+use App\Repositories\ContentRepository;
 use App\Services\MetaBag;
+use App\Stream;
 use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sheets\Sheet;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
@@ -17,17 +19,17 @@ Route::get('/', function (MetaBag $meta) {
     $meta->image = mix('images/og/static/home.png');
 
     return view('pages.home', [
-        'me' => sheets('static')->get('me'),
-        'streams' => sheets('streams')->all()->sortByDesc('date'),
+        'me' => Content::find('me'),
+        'streams' => Stream::all(),
     ]);
 })->name('home');
 
-Route::sheet('/resume', 'pages.resume', 'resume', function (MetaBag $meta, Sheet $data) {
+Route::sheet('/resume', 'pages.resume', 'resume', function (MetaBag $meta, Content $data) {
     $meta->title = 'Resume';
     $meta->image = mix('images/og/static/me.png');
 
     $data->jobs = Job::all();
-    $data->hacktoberfests = sheets('hacktoberfest')->all()->sortByDesc('slug');
+    $data->hacktoberfests = app(ContentRepository::class)->all('hacktoberfest')->sortByDesc('slug');
 })->name('resume');
 
 Route::sheet('/uses', 'pages.uses', 'uses', function (MetaBag $meta) {

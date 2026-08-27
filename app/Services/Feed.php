@@ -22,7 +22,9 @@ class Feed extends SpatieFeed
             request()->url(),
             'feed::'.$format,
             $description,
-            app()->getLocale()
+            app()->getLocale(),
+            '',
+            $format
         );
     }
 }

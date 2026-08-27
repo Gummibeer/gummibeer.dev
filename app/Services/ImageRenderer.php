@@ -4,38 +4,28 @@ namespace App\Services;
 
 use App\View\Components\Img;
 use InvalidArgumentException;
-use League\CommonMark\Block\Renderer\FencedCodeRenderer as BaseFencedCodeRenderer;
-use League\CommonMark\ElementRendererInterface;
-use League\CommonMark\Inline\Element\AbstractInline;
-use League\CommonMark\Inline\Element\Image;
-use League\CommonMark\Inline\Renderer\InlineRendererInterface;
+use League\CommonMark\Node\Inline\Image;
+use League\CommonMark\Node\Node;
+use League\CommonMark\Renderer\ChildNodeRendererInterface;
+use League\CommonMark\Renderer\NodeRendererInterface;
 
-class ImageRenderer implements InlineRendererInterface
+class ImageRenderer implements NodeRendererInterface
 {
-    protected BaseFencedCodeRenderer $baseRenderer;
-
-    public function render(AbstractInline $inline, ElementRendererInterface $htmlRenderer)
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): \Stringable|string|null
     {
-        if (! ($inline instanceof Image)) {
-            throw new InvalidArgumentException('Incompatible inline type: '.get_class($inline));
+        if (! $node instanceof Image) {
+            throw new InvalidArgumentException('Incompatible node type: '.get_class($node));
         }
 
-        $alt = preg_replace(
-            '/\<[^>]*\>/',
-            '',
-            preg_replace(
-                '/\<[^>]*alt="([^"]*)"[^>]*\>/',
-                '$1',
-                $htmlRenderer->renderInlines($inline->children())
-            )
-        );
+        $alt = strip_tags((string) $childRenderer->renderNodes($node->children()));
 
         $component = app(Img::class, [
-            'src' => $inline->getUrl(),
+            'src' => $node->getUrl(),
             'alt' => $alt,
         ]);
 
         return $component->resolveView()
-            ->with($component->data());
+            ->with($component->data())
+            ->render();
     }
 }

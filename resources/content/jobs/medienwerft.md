@@ -1,0 +1,11 @@
+---
+name: Medienwerft
+role: Trainee Software Developer
+start_at: 2013-08-01
+end_at: 2015-01-01
+website: https://medienwerft.de
+stack: [TYPO3, WordPress]
+icon: fa-graduation-cap
+logo: images/company/medienwerft.png
+salary: 7200
+---

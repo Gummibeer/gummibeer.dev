@@ -3,52 +3,27 @@
 namespace App\Services;
 
 use Illuminate\Support\HtmlString;
-use League\CommonMark\Block\Element\AbstractBlock;
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\Block\Renderer\BlockRendererInterface;
-use League\CommonMark\Block\Renderer\FencedCodeRenderer as BaseFencedCodeRenderer;
-use League\CommonMark\ElementRendererInterface;
+use InvalidArgumentException;
+use League\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Node\Node;
+use League\CommonMark\Renderer\ChildNodeRendererInterface;
+use League\CommonMark\Renderer\NodeRendererInterface;
 use League\CommonMark\Util\Xml;
 
-class FencedCodeRenderer implements BlockRendererInterface
+class FencedCodeRenderer implements NodeRendererInterface
 {
-    protected BaseFencedCodeRenderer $baseRenderer;
-
-    public function __construct()
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): \Stringable|string|null
     {
-        $this->baseRenderer = new BaseFencedCodeRenderer();
-    }
+        if (! $node instanceof FencedCode) {
+            throw new InvalidArgumentException('Incompatible node type: '.get_class($node));
+        }
 
-    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, $inTightList = false)
-    {
-        $element = $this->baseRenderer->render($block, $htmlRenderer, $inTightList);
+        $infoWords = $node->getInfoWords();
 
         return view('components.code', [
-            'name' => $this->getFileName($block),
-            'lang' => $this->getSpecifiedLanguage($block),
-            'slot' => new HtmlString($element->getContents(false)->getContents()),
-        ]);
-    }
-
-    protected function getSpecifiedLanguage(FencedCode $block): ?string
-    {
-        $infoWords = $block->getInfoWords();
-
-        if (empty($infoWords) || empty($infoWords[0])) {
-            return null;
-        }
-
-        return Xml::escape($infoWords[0], true);
-    }
-
-    protected function getFileName(FencedCode $block): ?string
-    {
-        $infoWords = $block->getInfoWords();
-
-        if (empty($infoWords) || empty($infoWords[1])) {
-            return null;
-        }
-
-        return Xml::escape($infoWords[1], true);
+            'name' => isset($infoWords[1]) ? Xml::escape($infoWords[1]) : null,
+            'lang' => isset($infoWords[0]) ? Xml::escape($infoWords[0]) : null,
+            'slot' => new HtmlString(htmlspecialchars($node->getLiteral(), ENT_NOQUOTES | ENT_SUBSTITUTE, 'UTF-8')),
+        ])->render();
     }
 }

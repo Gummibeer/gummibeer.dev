@@ -3,10 +3,11 @@
 namespace App;
 
 use App\Repositories\JobRepository;
+use App\Services\Model;
 use Carbon\Carbon;
+use Carbon\CarbonInterface;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Str;
-use Spatie\Sheets\Sheet;
 
 /**
  * @property-read string $name
@@ -22,23 +23,23 @@ use Spatie\Sheets\Sheet;
  *
  * @method static Collection|Job[] all()
  */
-final class Job extends Sheet
+final class Job extends Model
 {
-    public function getStartAtAttribute(string $value): Carbon
+    public function getStartAtAttribute(string|int|CarbonInterface $value): Carbon
     {
-        return Carbon::createFromTimestampUTC($value)->startOfDay();
+        return $this->date($value)->startOfDay();
     }
 
-    public function getEndAtAttribute(?string $value): ?Carbon
+    public function getEndAtAttribute(string|int|CarbonInterface|null $value): ?Carbon
     {
         if ($value === null) {
             return null;
         }
 
-        return Carbon::createFromTimestampUTC($value)->endOfDay();
+        return $this->date($value)->endOfDay();
     }
 
-    public function getWebsiteHostAttribute(): string
+    public function getWebsiteHostAttribute(mixed $value = null): string
     {
         return parse_url($this->website, PHP_URL_HOST);
     }
@@ -55,6 +56,17 @@ final class Job extends Sheet
 
     public static function __callStatic($name, $arguments)
     {
-        return call_user_func_array([app(JobRepository::class), $name], $arguments);
+        return app(JobRepository::class)->{$name}(...$arguments);
+    }
+
+    private function date(string|int|CarbonInterface $value): Carbon
+    {
+        if ($value instanceof CarbonInterface) {
+            return Carbon::instance($value);
+        }
+
+        return is_numeric($value)
+            ? Carbon::createFromTimestampUTC((int) $value)
+            : Carbon::parse($value);
     }
 }

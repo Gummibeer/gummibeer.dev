@@ -1,0 +1,10 @@
+---
+name: Spatie
+role: Open Source Developer
+start_at: 2016-08-01
+end_at: null
+website: https://spatie.be
+stack: [PHP, Laravel]
+icon: fa-ribbon
+logo: images/company/spatie.png
+---

@@ -1,7 +1,7 @@
 <?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var \Illuminate\Support\Collection|\Astrotomic\Webmentions\Models\Like[] $likes */ ?>
-<?php /** @var \Illuminate\Support\Collection|\Astrotomic\Webmentions\Models\Repost[] $reposts */ ?>
-<?php /** @var \Illuminate\Support\Collection|\Astrotomic\Webmentions\Models\Mention[]|\Astrotomic\Webmentions\Models\Reply[] $comments */ ?>
+<?php /** @var \Illuminate\Support\Collection|App\Webmentions\Models\Like[] $likes */ ?>
+<?php /** @var \Illuminate\Support\Collection|App\Webmentions\Models\Repost[] $reposts */ ?>
+<?php /** @var \Illuminate\Support\Collection|App\Webmentions\Models\Mention[]|App\Webmentions\Models\Reply[] $comments */ ?>
 
 @if($likes->isNotEmpty())
 <footer {{ $attributes->merge(['class' => 'space-y-12']) }}>
