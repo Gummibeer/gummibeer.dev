@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "60748a3b69d4c2b0dffd75d4120fa501",
+    "content-hash": "ea81234be7d5814e7b72118749524610",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -140,6 +140,83 @@
                 }
             ],
             "time": "2026-04-15T10:13:39+00:00"
+        },
+        {
+            "name": "astrotomic/laravel-webmentions",
+            "version": "0.7.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Astrotomic/laravel-webmentions.git",
+                "reference": "2e7198ca6cc101c9909cfbef6d09484f6d72838d"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Astrotomic/laravel-webmentions/zipball/2e7198ca6cc101c9909cfbef6d09484f6d72838d",
+                "reference": "2e7198ca6cc101c9909cfbef6d09484f6d72838d",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "guzzlehttp/guzzle": "^7.0.1",
+                "illuminate/collections": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+                "illuminate/http": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+                "illuminate/support": "^10.0 || ^11.0 || ^12.0 || ^13.0",
+                "php": "^8.1"
+            },
+            "require-dev": {
+                "astrotomic/phpunit-assertions": "^0.14",
+                "gajus/dindent": "^2.0",
+                "orchestra/testbench": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+                "phpunit/phpunit": "^10.0 || ^11.0 || ^12.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Astrotomic\\Webmentions\\WebmentionsServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Astrotomic\\Webmentions\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Tom Witkowski",
+                    "email": "gummibeer@astrotomic.info",
+                    "homepage": "https://gummibeer.dev",
+                    "role": "Developer"
+                }
+            ],
+            "homepage": "https://github.com/astrotomic/laravel-webmentions",
+            "keywords": [
+                "astrotomic",
+                "laravel",
+                "laravel-webmentions",
+                "webmention",
+                "webmentions"
+            ],
+            "support": {
+                "issues": "https://github.com/Astrotomic/laravel-webmentions/issues",
+                "source": "https://github.com/Astrotomic/laravel-webmentions/tree/0.7.0"
+            },
+            "funding": [
+                {
+                    "url": "https://forest.astrotomic.info",
+                    "type": "custom"
+                },
+                {
+                    "url": "https://github.com/Gummibeer",
+                    "type": "github"
+                }
+            ],
+            "time": "2026-08-28T11:45:43+00:00"
         },
         {
             "name": "astrotomic/php-conditional-proxy",
