@@ -3,7 +3,6 @@
     "description": "Website of Gummibeer",
     "license": "MIT",
     "type": "project",
-    "keywords": [],
     "authors": [
         {
             "name": "Tom Witkowski",
@@ -45,13 +44,13 @@
         }
     },
     "config": {
-        "optimize-autoloader": true,
-        "preferred-install": "dist",
-        "sort-packages": true,
         "allow-plugins": {
             "php-http/discovery": true,
             "pixelfear/composer-dist-plugin": true
-        }
+        },
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
     },
     "extra": {
         "laravel": {
