@@ -28,6 +28,16 @@ jobs:
           mkdir -p public
           mv resources/images public/images
 
+          while read -r mode type sha path; do
+            target="public/${path#resources/}"
+            actual="$(git hash-object "$target")"
+
+            if [ "$actual" != "$sha" ]; then
+              echo "Blob mismatch: $path -> $target"
+              exit 1
+            fi
+          done < <(git ls-tree -r origin/master -- resources/images)
+
           git add -A public/images resources/images
 
           if git diff --cached --quiet; then
