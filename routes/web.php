@@ -3,7 +3,6 @@
 use App\Http\Controllers\Blog;
 use App\Http\Middleware\Paginated;
 use App\Services\MetaBag;
-use Illuminate\Contracts\Support\Jsonable;
 use Illuminate\Http\Response;
 use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
@@ -113,28 +112,12 @@ Route::get('/privacy', function (MetaBag $meta) use ($findPage) {
 })->name('privacy');
 
 Route::prefix('blog')->name('blog.')->group(function (): void {
-    Route::get('search.json', function (): Jsonable {
-        return Entry::query()
-            ->where('collection', 'posts')
-            ->whereStatus('published')
-            ->get()
-            ->sortByDesc(fn ($post) => $post->date())
-            ->values()
-            ->map(fn ($post): array => [
-                'url' => route('blog.post', ['year' => $post->date()?->year, 'post' => $post->slug()]),
-                'title' => $post->value('title'),
-                'date' => $post->date()?->format('M jS, Y'),
-                'categories' => $post->value('categories') ?? [],
-                'description' => $post->value('description'),
-                'content' => $post->value('content'),
-            ]);
-    })->name('search');
-
+    Route::get('search', Blog\SearchController::class)->name('search');
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
-    Route::get('{page?}', Blog\IndexController::class)->middleware(Paginated::class)->name('index');
+    Route::get('{page?}', Blog\IndexController::class)->middleware(Paginated::class)->whereNumber('page')->name('index');
 
     Route::get('{year}/{post}', Blog\PostController::class)->name('post');
-    Route::get('{year}/{page?}', Blog\Year\IndexController::class)->middleware(Paginated::class)->name('year.index');
+    Route::get('{year}/{page?}', Blog\Year\IndexController::class)->middleware(Paginated::class)->whereNumber(['year', 'page'])->name('year.index');
 
     Route::prefix('@{author}')->name('author.')->group(function (): void {
         Route::get('{page?}', Blog\Author\IndexController::class)->middleware(Paginated::class)->name('index');
