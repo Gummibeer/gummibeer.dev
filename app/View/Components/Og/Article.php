@@ -3,6 +3,7 @@
 namespace App\View\Components\Og;
 
 use App\Services\MetaBag;
+use App\Services\SiteIdentity;
 use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
 use Carbon\Carbon;
@@ -16,10 +17,13 @@ class Article extends Component
 
     protected EntryContract $post;
 
-    public function __construct(MetaBag $meta, EntryContract $post)
+    protected SiteIdentity $identity;
+
+    public function __construct(MetaBag $meta, EntryContract $post, SiteIdentity $identity)
     {
         $this->meta = $meta;
         $this->post = $post;
+        $this->identity = $identity;
     }
 
     public function render(): string
@@ -42,7 +46,7 @@ class Article extends Component
             Twitter::summaryLargeImage($this->meta->title)
                 ->when($this->meta->description)->description($this->meta->description)
                 ->when($this->meta->image)->image($this->meta->image)
-                ->site(config('app.name'))
+                ->site($this->identity->siteName())
                 ->when($twitter)->creator($twitter),
         ]);
     }
