@@ -1,0 +1,110 @@
+name: cleanup social automation
+
+on:
+  push:
+    branches:
+      - statamic-cms
+    paths:
+      - .github/workflows/cleanup-social-automation.yml
+
+permissions:
+  contents: write
+
+jobs:
+  cleanup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: statamic-cms
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
+          tools: composer:v2
+          coverage: none
+
+      - name: Remove social promotion feature
+        run: |
+          rm -f \
+            .github/workflows/promote.yml \
+            app/Console/Commands/PromotePost.php \
+            app/Console/Commands/TwitterGiveaway.php \
+            app/Providers/TwitterServiceProvider.php \
+            resources/images/giveaway/.gitignore
+
+          python3 <<'PY'
+          from pathlib import Path
+          import re
+
+          app = Path('config/app.php')
+          text = app.read_text()
+          text = text.replace('use App\\Providers\\TwitterServiceProvider;\n', '')
+          text = text.replace('        TwitterServiceProvider::class,\n', '')
+          app.write_text(text)
+
+          services = Path('config/services.php')
+          text = services.read_text()
+          text = re.sub(r"\n    'telegram' => \[.*?\n    \],\n", '\n', text, flags=re.S)
+          text = re.sub(r"\n    'twitter' => \[.*?\n    \],\n", '\n', text, flags=re.S)
+          services.write_text(text)
+
+          gitignore = Path('.gitignore')
+          lines = [line for line in gitignore.read_text().splitlines() if line != '.twitter.json']
+          gitignore.write_text('\n'.join(lines) + '\n')
+
+          blueprint = Path('resources/blueprints/collections/posts/post.yaml')
+          lines = blueprint.read_text().splitlines()
+          result = []
+          i = 0
+          while i < len(lines):
+              if lines[i] == '          -' and i + 1 < len(lines) and lines[i + 1] in {
+                  '            handle: should_promote',
+                  '            handle: promoted_at',
+              }:
+                  i += 2
+                  while i < len(lines) and lines[i] != '          -' and lines[i] != '  sidebar:':
+                      i += 1
+                  continue
+              result.append(lines[i])
+              i += 1
+          blueprint.write_text('\n'.join(result) + '\n')
+
+          for post in Path('content/collections/posts').glob('*.md'):
+              lines = [
+                  line for line in post.read_text().splitlines()
+                  if not line.startswith('promoted_at:') and not line.startswith('should_promote:')
+              ]
+              post.write_text('\n'.join(lines) + '\n')
+
+          baseline = Path('phpstan-baseline.neon')
+          text = baseline.read_text()
+          chunks = text.split('\n\t\t-\n')
+          removed_paths = {
+              'app/Console/Commands/PromotePost.php',
+              'app/Console/Commands/TwitterGiveaway.php',
+              'app/Providers/TwitterServiceProvider.php',
+          }
+          kept = [chunks[0]]
+          kept.extend(
+              chunk for chunk in chunks[1:]
+              if not any(f'path: {path}' in chunk for path in removed_paths)
+          )
+          baseline.write_text('\n\t\t-\n'.join(kept))
+          PY
+
+          composer remove dg/twitter-php --no-interaction --no-scripts --no-progress
+          composer validate --strict
+
+          rm -f .github/workflows/cleanup-social-automation.yml
+
+      - name: Commit cleanup
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add -A
+          git commit -m "Remove Twitter and Telegram promotion automation"
+          git push origin HEAD:statamic-cms
