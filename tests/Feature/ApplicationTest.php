@@ -2,6 +2,10 @@
 
 namespace Tests\Feature;
 
+use App\View\Components\Img;
+use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
+use League\Glide\Manipulators\Size;
+use League\Glide\Server;
 use Statamic\Facades\Entry;
 use Tests\TestCase;
 
@@ -32,5 +36,25 @@ final class ApplicationTest extends TestCase
         $this->getJson('/blog/search.json')
             ->assertOk()
             ->assertJsonCount(18);
+    }
+
+    public function test_statamic_glide_uses_pixpipe_smartcrop(): void
+    {
+        $manipulators = array_map(
+            static fn ($manipulator): string => $manipulator::class,
+            app(Server::class)->getApi()->getManipulators(),
+        );
+
+        $this->assertContains(PixpipeSize::class, $manipulators);
+        $this->assertNotContains(Size::class, $manipulators);
+
+        $image = app()->make(Img::class, [
+            'src' => 'images/example.jpg',
+            'width' => 400,
+            'height' => 250,
+            'crop' => true,
+        ]);
+
+        $this->assertStringContainsString('fit=smartcrop', $image->src());
     }
 }
