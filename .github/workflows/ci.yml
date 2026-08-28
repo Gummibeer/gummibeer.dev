@@ -69,7 +69,7 @@ jobs:
           trap 'kill "$server_pid"' EXIT
 
           for path in / /resume /privacy /blog/search.json /cp/auth/login; do
-            curl --fail --silent --show-error --retry 5 --retry-connrefused "http://127.0.0.1:8000${path}" > /dev/null || {
+            curl --fail --silent --show-error --max-time 20 --retry 5 --retry-connrefused "http://127.0.0.1:8000${path}" > /dev/null || {
               cat /tmp/gummibeer-server.log
               exit 1
             }
