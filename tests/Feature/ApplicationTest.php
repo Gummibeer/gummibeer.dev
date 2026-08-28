@@ -63,8 +63,23 @@ final class ApplicationTest extends TestCase
 
     public function test_public_pages_and_statamic_control_panel_boot(): void
     {
-        foreach (['/', '/resume', '/privacy', '/cp/auth/login'] as $path) {
-            $this->get($path)->assertOk();
+        $pages = [
+            '/' => null,
+            '/resume' => null,
+            '/uses' => null,
+            '/charity' => 'Sea Shepherd',
+            '/portfolio' => 'Moin Hund',
+            '/imprint' => null,
+            '/privacy' => null,
+            '/cp/auth/login' => null,
+        ];
+
+        foreach ($pages as $path => $expectedContent) {
+            $response = $this->get($path)->assertOk();
+
+            if ($expectedContent !== null) {
+                $response->assertSee($expectedContent);
+            }
         }
 
         $this->getJson('/blog/search.json')
