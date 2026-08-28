@@ -31,10 +31,20 @@ return [
             'fields' => ['title'],
         ],
 
-        // 'blog' => [
-        //     'driver' => 'local',
-        //     'searchables' => 'collection:blog',
-        // ],
+        'blog' => [
+            'driver' => 'local',
+            'searchables' => ['collection:posts'],
+            'fields' => ['title', 'description', 'categories', 'content'],
+            'min_characters' => 3,
+            'property_weights' => [
+                'title' => 4,
+                'description' => 2,
+                'categories' => 2,
+                'content' => 1,
+            ],
+            'use_stemming' => true,
+            'use_alternates' => true,
+        ],
 
     ],
 
@@ -43,7 +53,7 @@ return [
     | Driver Defaults
     |--------------------------------------------------------------------------
     |
-    | Here you can specify default configuration to be applied to all indexes
+    | Here you may specify default configuration to be applied to all indexes
     | that use the corresponding driver. For instance, if you have two
     | indexes that use the "local" driver, both of them can have the
     | same base configuration. You may override for each index.
