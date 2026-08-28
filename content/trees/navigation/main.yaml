@@ -1,0 +1,19 @@
+tree:
+  - id: 94c38aa8-294c-493c-bbbb-515e15b17a4a
+    title: Home
+    url: /
+  - id: 17316802-678f-412f-8fa7-4cfb620b9947
+    title: Resume
+    url: /resume
+  - id: 9137c468-866c-43fa-b0e6-265dc97dfdef
+    title: Blog
+    url: /blog
+  - id: 5f2c394d-13b6-4039-922d-cd28883d7bea
+    title: Portfolio
+    url: /portfolio
+  - id: 9ccd1b36-aa53-47f4-adc6-3511cce6acb9
+    title: Charity
+    url: /charity
+  - id: 2ad85083-cd22-4951-be53-14b65c055c07
+    title: Uses
+    url: /uses
