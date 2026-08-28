@@ -6,6 +6,8 @@ use App\Services\MetaBag;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
+use GuzzleHttp\Handler\MockHandler;
+use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
@@ -110,6 +112,18 @@ final class ApplicationTest extends TestCase
             ->assertSee('No posts found');
 
         $this->get('/blog/search.json')->assertNotFound();
+    }
+
+    public function test_sitemap_generation_works_with_spatie_sitemap_v8(): void
+    {
+        config()->set('sitemap.guzzle_options.handler', new MockHandler([
+            new GuzzleResponse(200, ['Content-Type' => 'text/html'], '<html><body>Home</body></html>'),
+        ]));
+
+        $this->get('/sitemap.xml')
+            ->assertOk()
+            ->assertSee('<urlset', false)
+            ->assertSee('<loc>http://localhost</loc>', false);
     }
 
     public function test_migrated_images_are_private_statamic_assets_above_webroot(): void
