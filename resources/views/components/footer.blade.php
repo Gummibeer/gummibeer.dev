@@ -83,13 +83,6 @@
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
-                    href="https://t.me/GummibeerDev"
-                    class="hover:text-brand"
-                    >Newsletter</a
-                >
-            </li>
-            <li>
-                <a
                     href="{{ route('imprint') }}"
                     class="hover:text-brand"
                     >Imprint</a
