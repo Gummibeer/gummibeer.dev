@@ -1,11 +1,9 @@
 name: dependency refresh
 
 on:
-  push:
+  pull_request:
     branches:
-      - statamic-cms
-    paths:
-      - composer.json
+      - master
 
 permissions:
   contents: write
