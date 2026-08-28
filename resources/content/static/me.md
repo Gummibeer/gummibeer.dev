@@ -1,3 +1,7 @@
+---
+title: Tom Herrmann
+---
+
 # Tom Herrmann
 
 **Web <span class="text-brand">Developer</span>, <span class="text-brand">Biker</span> and <span class="text-brand">Gamer</span> living in Hamburg, Germany**
