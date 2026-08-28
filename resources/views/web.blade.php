@@ -21,11 +21,6 @@
             rel="dns-prefetch"
             href="https://cloudflareinsights.com"
         />
-        <link
-            rel="dns-prefetch"
-            href="https://search.gummibeer.dev"
-            id="SEARCH_URL"
-        />
     @endif
 
     <title>{{ $meta->title }}</title>
