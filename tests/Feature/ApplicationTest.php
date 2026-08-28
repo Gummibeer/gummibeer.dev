@@ -5,11 +5,13 @@ namespace Tests\Feature;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
-use Illuminate\Support\Facades\Blade;
+use Illuminate\View\ComponentAttributeBag;
+use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Entry;
+use Statamic\Facades\Markdown;
 use Tests\TestCase;
 
 final class ApplicationTest extends TestCase
@@ -72,9 +74,25 @@ final class ApplicationTest extends TestCase
 
     public function test_figure_captions_use_statamic_markdown(): void
     {
-        $html = Blade::render('<x-figure><x-slot:caption>**Bold caption**</x-slot:caption>Image</x-figure>');
+        $html = view('components.figure', [
+            'attributes' => new ComponentAttributeBag,
+            'slot' => new ComponentSlot('Image'),
+            'caption' => new ComponentSlot('**Bold caption**'),
+        ])->render();
 
         $this->assertStringContainsString('<strong>Bold caption</strong>', $html);
+    }
+
+    public function test_tight_markdown_lists_do_not_wrap_items_in_paragraphs(): void
+    {
+        $html = Markdown::parse(<<<'MD'
+- **[Node](https://wiki.openstreetmap.org/wiki/Node):** a specific point on the earth's surface
+- **[Way](https://wiki.openstreetmap.org/wiki/Way):** a linear feature or boundary or an area
+- **[Relation](https://wiki.openstreetmap.org/wiki/Relation):** a combination of nodes and or ways
+MD);
+
+        $this->assertStringContainsString('<li><strong><a href="https://wiki.openstreetmap.org/wiki/Node">Node</a>:</strong>', $html);
+        $this->assertStringNotContainsString('<li><p>', $html);
     }
 
     public function test_statamic_glide_uses_pixpipe_smartcrop(): void
