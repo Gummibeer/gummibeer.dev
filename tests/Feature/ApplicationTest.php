@@ -72,7 +72,7 @@ final class ApplicationTest extends TestCase
 
     public function test_figure_captions_use_statamic_markdown(): void
     {
-        $html = Blade::render('<x-figure><x-slot name="caption">**Bold caption**</x-slot>Image</x-figure>');
+        $html = Blade::render('<x-figure><x-slot:caption>**Bold caption**</x-slot:caption>Image</x-figure>');
 
         $this->assertStringContainsString('<strong>Bold caption</strong>', $html);
     }
