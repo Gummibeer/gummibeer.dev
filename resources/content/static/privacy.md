@@ -1,3 +1,7 @@
+---
+title: Privacy Policy
+---
+
 # Privacy Policy
 
 **Nothing.** I really collect nothing about you.
