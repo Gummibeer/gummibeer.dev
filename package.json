@@ -8,8 +8,8 @@
     "scripts": {
         "build": "vite build",
         "dev": "vite",
-        "format": "prettier --write 'package.json' 'vite.config.js' 'prettier.config.mjs' 'resources/js/**/*.js' 'resources/css/**/*.css'",
-        "format:check": "prettier --check 'package.json' 'vite.config.js' 'prettier.config.mjs' 'resources/js/**/*.js' 'resources/css/**/*.css'",
+        "format": "prettier --write \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\"",
+        "format:check": "prettier --check \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\"",
         "lint:prose": "alex 'content/collections/**/*.md'",
         "check": "npm run format:check && npm run build"
     },
