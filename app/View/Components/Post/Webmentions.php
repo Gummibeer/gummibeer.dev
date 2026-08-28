@@ -2,9 +2,9 @@
 
 namespace App\View\Components\Post;
 
-use App\Webmentions\Client;
-use App\Webmentions\Models\Entry;
-use App\Webmentions\Models\Repost;
+use Astrotomic\Webmentions\Client;
+use Astrotomic\Webmentions\Models\Entry;
+use Astrotomic\Webmentions\Models\Repost;
 use Illuminate\Support\Collection;
 use Illuminate\View\Component;
 
