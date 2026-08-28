@@ -1,41 +1,45 @@
 <?php /** @var App\Services\Paginator $paginator */ ?>
 
 @if ($paginator->hasPages())
-    <nav role="navigation" aria-label="Pagination Navigation" class="flex justify-between items-center">
+    <nav
+        role="navigation"
+        aria-label="Pagination Navigation"
+        class="flex items-center justify-between"
+    >
         <div>
             @if (!$paginator->onFirstPage())
                 <a
                     href="{{ $paginator->previousPageUrl() }}"
                     rel="prev"
-                    class="inline-block w-10 h-10 leading-10 text-center bg-white rounded-full shadow dark:bg-night-20 hover:bg-brand hover:text-white"
+                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
-                    <x-icon class="fa-solid fa-chevron-left"/>
+                    <x-icon class="fa-solid fa-chevron-left" />
                 </a>
             @else
-                <span class="inline-block w-10 h-10"></span>
+                <span class="inline-block h-10 w-10"></span>
             @endif
         </div>
         <div>
-            <ul class="flex space-x-4 list-none">
-                @if($paginator->currentPage() !== 1)
+            <ul class="flex list-none space-x-4">
+                @if ($paginator->currentPage() !== 1)
                     <li>
                         <a
                             href="{{ $paginator->url(1) }}"
-                            class="inline-block w-10 h-10 leading-10 text-center bg-white rounded-full shadow dark:bg-night-20 hover:bg-brand hover:text-white"
-                        >1</a>
+                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                            >1</a
+                        >
                     </li>
                 @endif
                 <li>
-                    <span class="inline-block w-10 h-10 leading-10 text-center text-white rounded-full shadow bg-brand">
-                        {{ $paginator->currentPage() }}
-                    </span>
+                    <span class="inline-block h-10 w-10 rounded-full bg-brand text-center leading-10 text-white shadow"> {{ $paginator->currentPage() }} </span>
                 </li>
-                @if($paginator->currentPage() !== $paginator->lastPage())
+                @if ($paginator->currentPage() !== $paginator->lastPage())
                     <li>
                         <a
                             href="{{ $paginator->url($paginator->lastPage()) }}"
-                            class="inline-block w-10 h-10 leading-10 text-center bg-white rounded-full shadow dark:bg-night-20 hover:bg-brand hover:text-white"
-                        >{{ $paginator->lastPage() }}</a>
+                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                            >{{ $paginator->lastPage() }}</a
+                        >
                     </li>
                 @endif
             </ul>
@@ -45,12 +49,12 @@
                 <a
                     href="{{ $paginator->nextPageUrl() }}"
                     rel="next"
-                    class="inline-block w-10 h-10 leading-10 text-center bg-white rounded-full shadow dark:bg-night-20 hover:bg-brand hover:text-white"
+                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
-                    <x-icon class="fa-solid fa-chevron-right"/>
+                    <x-icon class="fa-solid fa-chevron-right" />
                 </a>
             @else
-                <span class="inline-block w-10 h-10"></span>
+                <span class="inline-block h-10 w-10"></span>
             @endif
         </div>
     </nav>
