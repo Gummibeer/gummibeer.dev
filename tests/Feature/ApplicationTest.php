@@ -156,6 +156,21 @@ final class ApplicationTest extends TestCase
         $this->assertStringNotContainsString('/images/favicons/', $favicons);
     }
 
+    public function test_remote_images_use_signed_statamic_glide_without_a_public_source_cache(): void
+    {
+        $image = app()->make(Img::class, [
+            'src' => 'https://i.ytimg.com/vi/dQw4w9WgXcQ/maxresdefault.jpg',
+            'width' => 400,
+        ]);
+        $src = html_entity_decode($image->src('webp'));
+
+        $this->assertStringContainsString('/img/http/', $src);
+        $this->assertStringContainsString('fm=webp', $src);
+        $this->assertStringContainsString('s=', $src);
+        $this->assertStringNotContainsString('/vendor/images/', $src);
+        $this->assertDirectoryDoesNotExist(public_path('vendor/images'));
+    }
+
     public function test_figure_captions_use_statamic_markdown(): void
     {
         $html = view('components.figure', [
