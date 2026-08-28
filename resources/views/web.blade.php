@@ -7,9 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="dns-prefetch" href="{{ config('app.asset_url') }}" id="ASSET_URL">
-    @if(config('services.imgix.domain'))
-        <link rel="dns-prefetch" href="https://{{ config('services.imgix.domain') }}">
-    @endif
     @if(app()->environment('prod'))
         <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
         <link rel="dns-prefetch" href="https://cloudflareinsights.com">
