@@ -25,8 +25,11 @@ use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Node\Block\Paragraph;
 use League\CommonMark\Node\Inline\Image;
+use League\Glide\Api\Api;
+use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
+use LogicException;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -85,9 +88,17 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->app->extend(Server::class, function (Server $server): Server {
             $api = $server->getApi();
-            $manipulators = collect($api->getManipulators())
-                ->map(fn ($manipulator) => $manipulator instanceof Size ? new PixpipeSize : $manipulator)
-                ->all();
+
+            if (! $api instanceof Api) {
+                throw new LogicException('Statamic Glide must use the concrete League Glide API.');
+            }
+
+            $manipulators = array_map(
+                fn (ManipulatorInterface $manipulator): ManipulatorInterface => $manipulator instanceof Size
+                    ? new PixpipeSize
+                    : $manipulator,
+                $api->getManipulators(),
+            );
 
             $api->setManipulators($manipulators);
             $server->setApi($api);
