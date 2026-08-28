@@ -6,6 +6,7 @@ use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\MetaBag;
 use App\Services\ParagraphRenderer;
+use App\Services\SiteIdentity;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
 use Illuminate\Foundation\Http\Events\RequestHandled;
@@ -32,12 +33,16 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->registerMeta();
+        $this->app->singleton(SiteIdentity::class);
+
         $this->registerPixpipeGlide();
     }
 
     public function boot(): void
     {
+        $this->registerMeta();
+        View::share('identity', $this->app->make(SiteIdentity::class));
+
         Paginator::useTailwind();
 
         $this->registerComputedContentValues();
