@@ -44,22 +44,16 @@
             x-cloak
             id="menu-list"
         >
-            @foreach ([
-  '/' => 'Home',
-  'resume' => 'Resume',
-  'blog' => 'Blog',
-  'portfolio' => 'Portfolio',
-  'charity' => 'Charity',
-  'uses' => 'Uses',
-        ] as $route => $name)
+            <statamic:nav:main max_depth="1">
                 <li class="flex items-center">
                     <a
-                        href="{{ url($route) }}"
-                        class="@if(request()->is($route.'*')) text-brand @else text-black dark:text-white hover:text-brand @endif block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4"
-                        >{{ $name }}</a
+                        href="{{ $url }}"
+                        class="@if ($is_current || ($url !== '/' && $is_parent)) text-brand @else text-black dark:text-white hover:text-brand @endif block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4"
+                        @if ($is_current) aria-current="page" @endif
+                        >{{ $title }}</a
                     >
                 </li>
-            @endforeach
+            </statamic:nav:main>
         </ul>
     </nav>
 </header>
