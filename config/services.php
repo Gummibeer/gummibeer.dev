@@ -41,6 +41,4 @@ return [
         'token' => env('WEBMENTION_TOKEN'),
     ],
 
-
-
 ];
