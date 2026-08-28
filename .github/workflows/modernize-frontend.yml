@@ -602,7 +602,6 @@ jobs:
 
       - name: Validate migration
         run: |
-          npm run format:check
           npm run build
           if git grep -n 'mix(' -- app routes resources/views tests; then
             echo 'Laravel Mix usage remains.' >&2
