@@ -1,6 +1,7 @@
 ---
 id: 6c04e2f6-87d1-4b3c-b416-bd17caf9c75e
 blueprint: page
+template: pages/portfolio
 projects:
     - name: 'Moin Hund'
       description: 'Local store and online shop for dog food and accessoires.'

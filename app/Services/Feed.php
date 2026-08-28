@@ -7,6 +7,7 @@ use RuntimeException;
 use Spatie\Feed\Feed as SpatieFeed;
 use Spatie\Feed\FeedItem;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Entry;
 
 class Feed extends SpatieFeed
@@ -34,12 +35,13 @@ class Feed extends SpatieFeed
 
     public static function postItem(EntryContract $post): FeedItem
     {
+        if (! $post instanceof StatamicEntry) {
+            throw new RuntimeException('Expected a concrete Statamic post entry.');
+        }
+
         $author = self::author($post);
         $categories = $post->value('categories');
-        $url = route('blog.post', [
-            'year' => $post->date()?->year,
-            'post' => $post->slug(),
-        ]);
+        $url = (string) $post->absoluteUrl();
 
         return FeedItem::create()
             ->id($url)

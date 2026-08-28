@@ -30,7 +30,7 @@ final class ApplicationTest extends TestCase
             'streams' => 13,
             'jobs' => 9,
             'hacktoberfest' => 6,
-            'pages' => 7,
+            'pages' => 8,
             'authors' => 1,
         ];
 
@@ -67,6 +67,29 @@ final class ApplicationTest extends TestCase
         $this->assertInstanceOf(CarbonInterface::class, $job->start_at);
     }
 
+    public function test_public_content_owns_native_statamic_urls(): void
+    {
+        $home = Entry::find('80ca56e0-263a-4baf-9716-07089aebc322');
+        $blog = Entry::find('ff99d13f-f5d7-4dd7-8d71-60aeb0f1bd43');
+        $post = Entry::query()
+            ->where('collection', 'posts')
+            ->where('slug', 'hello-world')
+            ->first();
+        $categorizedPost = Entry::query()
+            ->where('collection', 'posts')
+            ->where('slug', 'human-readable-intervals')
+            ->first();
+
+        $this->assertInstanceOf(EntryContract::class, $home);
+        $this->assertInstanceOf(EntryContract::class, $blog);
+        $this->assertInstanceOf(EntryContract::class, $post);
+        $this->assertInstanceOf(EntryContract::class, $categorizedPost);
+        $this->assertSame('/', $home->url());
+        $this->assertSame('/blog', $blog->url());
+        $this->assertSame('/blog/2020/hello-world', $post->url());
+        $this->assertSame('/blog/categories/laravel', $categorizedPost->categories->firstWhere('slug', 'laravel')?->url());
+    }
+
     public function test_public_pages_and_statamic_control_panel_boot(): void
     {
         $pages = [
@@ -77,6 +100,7 @@ final class ApplicationTest extends TestCase
             '/portfolio' => 'Moin Hund',
             '/imprint' => null,
             '/privacy' => null,
+            '/blog/2020/hello-world' => 'Hello World',
             '/cp/auth/login' => null,
         ];
 

@@ -2,6 +2,7 @@
 id: 80ca56e0-263a-4baf-9716-07089aebc322
 blueprint: page
 title: 'Tom Herrmann'
+template: pages/home
 ---
 
 # Tom Herrmann

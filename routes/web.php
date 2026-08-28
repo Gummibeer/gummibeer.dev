@@ -4,120 +4,16 @@ use App\Http\Controllers\Blog;
 use App\Http\Middleware\Paginated;
 use App\Services\MetaBag;
 use Illuminate\Http\Response;
-use Illuminate\Support\Carbon;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
-use Statamic\Contracts\Entries\Entry as EntryContract;
-use Statamic\Exceptions\NotFoundHttpException;
-use Statamic\Facades\Entry;
-
-$findPage = static function (string $slug): EntryContract {
-    return Entry::query()
-        ->where('collection', 'pages')
-        ->where('slug', $slug)
-        ->firstOr(fn () => throw new NotFoundHttpException);
-};
-
-Route::get('/', function (MetaBag $meta) use ($findPage) {
-    $meta->description = 'I\'m an enthusiastic web developer and free time gamer from Hamburg, Germany.';
-    $meta->image = asset('images/og/static/home.png');
-
-    return view('pages.home', [
-        'me' => $findPage('me'),
-        'posts' => Entry::query()
-            ->where('collection', 'posts')
-            ->whereStatus('published')
-            ->get()
-            ->sortByDesc(fn ($entry) => $entry->date())
-            ->values(),
-        'streams' => Entry::query()
-            ->where('collection', 'streams')
-            ->whereStatus('published')
-            ->get()
-            ->sortByDesc(fn ($entry) => $entry->date())
-            ->values(),
-    ]);
-})->name('home');
-
-Route::get('/resume', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Resume';
-    $meta->image = asset('images/og/static/me.png');
-
-    $page = $findPage('resume');
-    $jobs = Entry::whereCollection('jobs')
-        ->sort(function (EntryContract $a, EntryContract $b): int {
-            $aHasEnd = filled($a->value('end_at'));
-            $bHasEnd = filled($b->value('end_at'));
-
-            if ($aHasEnd === $bHasEnd) {
-                return Carbon::parse($b->value('start_at'))->timestamp <=> Carbon::parse($a->value('start_at'))->timestamp;
-            }
-
-            return $aHasEnd ? 1 : -1;
-        })
-        ->values();
-
-    return view('pages.resume', [
-        'contents' => $page->content,
-        'jobs' => $jobs,
-        'hacktoberfests' => Entry::whereCollection('hacktoberfest')->sortByDesc(fn (EntryContract $entry) => $entry->slug()),
-    ]);
-})->name('resume');
-
-Route::get('/uses', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Uses';
-    $meta->description = 'Software and Tools I use in my daily live for development and some little helpers to improve my experience.';
-    $meta->image = asset('images/og/static/uses.png');
-
-    return view('pages.uses', ['contents' => $findPage('uses')->content]);
-})->name('uses');
-
-Route::get('/charity', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Charity';
-    $meta->description = 'For me it\'s part of my obligation and responsibility to support what I believe is important for me, us and our planet.';
-    $meta->image = asset('images/og/static/charity.png');
-
-    $page = $findPage('charity');
-
-    return view('pages.charity', [
-        'contents' => $page->content,
-        'charities' => $page->value('charities') ?? [],
-    ]);
-})->name('charity');
-
-Route::get('/portfolio', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Portfolio';
-    $meta->description = 'In my free time I support several local business owners with everything I know.';
-    $meta->image = asset('images/og/static/portfolio.png');
-
-    $page = $findPage('portfolio');
-
-    return view('pages.portfolio', [
-        'contents' => $page->content,
-        'projects' => $page->value('projects') ?? [],
-    ]);
-})->name('portfolio');
-
-Route::get('/imprint', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Imprint';
-
-    return view('pages.imprint', ['contents' => $findPage('imprint')->content]);
-})->name('imprint');
-
-Route::get('/privacy', function (MetaBag $meta) use ($findPage) {
-    $meta->title = 'Privacy';
-
-    return view('pages.privacy', ['contents' => $findPage('privacy')->content]);
-})->name('privacy');
 
 Route::prefix('blog')->name('blog.')->group(function (): void {
     Route::get('search', Blog\SearchController::class)->name('search');
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
-    Route::get('{page?}', Blog\IndexController::class)->middleware(Paginated::class)->whereNumber('page')->name('index');
+    Route::get('{page}', Blog\IndexController::class)->middleware(Paginated::class)->name('index');
 
-    Route::get('{year}/{post}', Blog\PostController::class)->name('post');
-    Route::get('{year}/{page?}', Blog\Year\IndexController::class)->middleware(Paginated::class)->whereNumber(['year', 'page'])->name('year.index');
+    Route::get('{year}/{page?}', Blog\Year\IndexController::class)->middleware(Paginated::class)->whereNumber('year')->name('year.index');
 
     Route::prefix('@{author}')->name('author.')->group(function (): void {
         Route::get('{page?}', Blog\Author\IndexController::class)->middleware(Paginated::class)->name('index');

@@ -50,7 +50,6 @@ class GenerateOgImages extends Command
 
         collect([
             'home' => 'Developer / Biker / Gamer',
-            'blog' => 'Blog',
         ])->each(function (string $title, string $slug): void {
             $this->saveImage("images/og/static/{$slug}.png", ['title' => $title]);
         });

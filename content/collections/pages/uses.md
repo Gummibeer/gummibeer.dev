@@ -2,6 +2,7 @@
 id: 80df7d1c-46d4-4abb-9143-129ee9b99c74
 blueprint: page
 title: Uses
+template: pages/uses
 ---
 
 # Uses

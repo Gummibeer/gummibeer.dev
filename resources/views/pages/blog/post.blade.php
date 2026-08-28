@@ -6,7 +6,7 @@
 @push ('head')
     <link
         rel="index"
-        href="{{ route('blog.index') }}"
+        href="{{ $post->collection()->url() }}"
     />
     <x-og.article :post="$post" />
     @if ($post->author?->payment_pointer)

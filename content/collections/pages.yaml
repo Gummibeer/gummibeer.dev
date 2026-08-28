@@ -1,2 +1,7 @@
 title: Pages
 title_format: '{{ slug | title }}'
+route: '{parent_uri}/{slug}'
+structure:
+  root: true
+inject:
+  view_model: App\ViewModels\Page

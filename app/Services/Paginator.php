@@ -7,7 +7,9 @@ use Illuminate\Support\Collection;
 
 class Paginator extends LengthAwarePaginator
 {
-    protected ?array $route;
+    protected ?array $route = null;
+
+    protected ?string $firstPageUrl = null;
 
     public static function make(Collection $items, int $perPage, ?int $page = null, array $options = []): self
     {
@@ -26,12 +28,13 @@ class Paginator extends LengthAwarePaginator
         return $paginator;
     }
 
-    public function withRoute(string $route, array $parameters = []): self
+    public function withRoute(string $route, array $parameters = [], ?string $firstPageUrl = null): self
     {
         $this->route = [
             'name' => $route,
             'parameters' => $parameters,
         ];
+        $this->firstPageUrl = $firstPageUrl;
 
         return $this;
     }
@@ -42,6 +45,10 @@ class Paginator extends LengthAwarePaginator
 
         if ($this->route === null) {
             return parent::url($page);
+        }
+
+        if ($page === 1 && $this->firstPageUrl !== null) {
+            return url($this->firstPageUrl);
         }
 
         if ($page === 1) {

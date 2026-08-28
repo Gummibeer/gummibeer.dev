@@ -25,7 +25,7 @@ class IndexController
             ->sortByDesc(fn ($entry) => $entry->date())
             ->values()
             ->paginate($page)
-            ->withRoute('blog.index');
+            ->withRoute('blog.index', [], '/blog');
 
         return view('pages.blog.index', compact('posts'));
     }

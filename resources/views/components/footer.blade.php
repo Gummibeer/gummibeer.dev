@@ -83,14 +83,14 @@
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
-                    href="{{ route('imprint') }}"
+                    href="{{ url('/imprint') }}"
                     class="hover:text-brand"
                     >Imprint</a
                 >
             </li>
             <li>
                 <a
-                    href="{{ route('privacy') }}"
+                    href="{{ url('/privacy') }}"
                     class="hover:text-brand"
                     >Privacy</a
                 >

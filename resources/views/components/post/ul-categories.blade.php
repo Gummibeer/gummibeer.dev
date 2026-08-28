@@ -7,7 +7,7 @@
         <li>
             <strong>
                 <a
-                    href="{{ route('blog.category.index', ['category' => $category->slug()]) }}"
+                    href="{{ $category->url }}"
                     class="text-brand"
                 >
                     {{ $category->title }}

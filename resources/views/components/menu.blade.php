@@ -7,7 +7,7 @@
         <div class="flex w-full flex-row items-center">
             <div class="flex grow items-center md:flex-auto">
                 <a
-                    href="{{ route('home') }}"
+                    href="{{ url('/') }}"
                     class="inline-block px-0 py-4 font-logo text-2xl leading-none tracking-wider whitespace-nowrap lg:text-3xl"
                 >
                     Tom Herrmann
