@@ -12,7 +12,7 @@
         @font-face {
             font-family: 'OG Inter';
             font-style: normal;
-            font-weight: 100 900;
+            font-weight: 300;
             font-display: block;
             src: url('{{ $interFont }}') format('woff2');
         }
