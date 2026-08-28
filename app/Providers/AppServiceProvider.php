@@ -12,6 +12,7 @@ use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\MetaBag;
 use App\Services\ParagraphRenderer;
+use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Illuminate\Foundation\Http\Events\RequestHandled;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Facades\Event;
@@ -24,6 +25,8 @@ use League\CommonMark\MarkdownConverter;
 use League\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Node\Block\Paragraph;
 use League\CommonMark\Node\Inline\Image;
+use League\Glide\Manipulators\Size;
+use League\Glide\Server;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -32,6 +35,7 @@ class AppServiceProvider extends ServiceProvider
         $this->registerMeta();
         $this->registerRepositories();
         $this->registerCommonmark();
+        $this->registerPixpipeGlide();
     }
 
     public function boot(): void
@@ -75,5 +79,20 @@ class AppServiceProvider extends ServiceProvider
         });
 
         $this->app->alias(ConverterInterface::class, 'markdown');
+    }
+
+    public function registerPixpipeGlide(): void
+    {
+        $this->app->extend(Server::class, function (Server $server): Server {
+            $api = $server->getApi();
+            $manipulators = collect($api->getManipulators())
+                ->map(fn ($manipulator) => $manipulator instanceof Size ? new PixpipeSize : $manipulator)
+                ->all();
+
+            $api->setManipulators($manipulators);
+            $server->setApi($api);
+
+            return $server;
+        });
     }
 }
