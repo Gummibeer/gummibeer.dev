@@ -1,10 +1,14 @@
+<?php /** @var App\Services\SiteIdentity $identity */ ?>
+
 <footer class="w-full bg-white px-4 py-4 text-snow-20 md:px-8 md:py-6 lg:px-10 xl:px-12 dark:bg-night-10 dark:text-snow-10">
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-        <div class="grow py-1 text-sm">&copy; Copyright 2015 - {{ date('Y') }} by Tom Witkowski</div>
+        <div class="grow py-1 text-sm">
+            &copy; Copyright {{ $identity->copyrightSince() }} - {{ date('Y') }} by {{ $identity->copyrightName() }}
+        </div>
         <ul class="list-inline flex flex-row space-x-2">
             <li>
                 <a
-                    href="https://twitter.com/devgummibeer"
+                    href="{{ $identity->twitterUrl() }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -16,7 +20,7 @@
             </li>
             <li>
                 <a
-                    href="https://github.com/Gummibeer"
+                    href="{{ $identity->githubUrl() }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -28,7 +32,7 @@
             </li>
             <li>
                 <a
-                    href="https://strava.com/athletes/22896286"
+                    href="{{ $identity->stravaUrl() }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -40,7 +44,7 @@
             </li>
             <li>
                 <a
-                    href="https://steamcommunity.com/id/gummibeer"
+                    href="{{ $identity->steamUrl() }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -57,42 +61,42 @@
             <li>
                 <x-icon class="fal fa-mobile mr-1" />
                 <a
-                    href="tel:+491621525105"
+                    href="{{ $identity->phoneUrl() }}"
                     class="hover:text-brand"
-                    >+49 162 1525105</a
+                    >{{ $identity->phone() }}</a
                 >
             </li>
             <li>
                 <x-icon class="fal fa-at mr-1" />
                 <a
-                    href="mailto:dev@gummibeer.de"
+                    href="{{ $identity->emailUrl() }}"
                     class="hover:text-brand"
-                    >dev@gummibeer.de</a
+                    >{{ $identity->email() }}</a
                 >
             </li>
             <li>
                 <x-icon class="fab fa-telegram-plane mr-1" />
                 <a
-                    href="https://t.me/gummibeer"
+                    href="{{ $identity->telegramUrl() }}"
                     class="hover:text-brand"
                 >
-                    @gummibeer
+                    {{ $identity->telegramLabel() }}
                 </a>
             </li>
         </ul>
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
-                    href="{{ url('/imprint') }}"
+                    href="{{ $identity->imprintUrl() }}"
                     class="hover:text-brand"
-                    >Imprint</a
+                    >{{ $identity->imprintLabel() }}</a
                 >
             </li>
             <li>
                 <a
-                    href="{{ url('/privacy') }}"
+                    href="{{ $identity->privacyUrl() }}"
                     class="hover:text-brand"
-                    >Privacy</a
+                    >{{ $identity->privacyLabel() }}</a
                 >
             </li>
         </ul>
