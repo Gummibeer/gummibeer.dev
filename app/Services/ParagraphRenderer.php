@@ -4,6 +4,7 @@ namespace App\Services;
 
 use InvalidArgumentException;
 use League\CommonMark\Node\Block\Paragraph;
+use League\CommonMark\Node\Block\TightBlockInterface;
 use League\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
@@ -24,6 +25,29 @@ class ParagraphRenderer implements NodeRendererInterface
             return $childRenderer->renderNodes($node->children());
         }
 
-        return new HtmlElement('p', [], $childRenderer->renderNodes($node->children()));
+        if ($this->inTightList($node)) {
+            return $childRenderer->renderNodes($node->children());
+        }
+
+        return new HtmlElement(
+            'p',
+            $node->data->get('attributes'),
+            $childRenderer->renderNodes($node->children()),
+        );
+    }
+
+    private function inTightList(Paragraph $node): bool
+    {
+        $levels = 2;
+
+        while (($parent = $node->parent()) && $levels--) {
+            if ($parent instanceof TightBlockInterface) {
+                return $parent->isTight();
+            }
+
+            $node = $parent;
+        }
+
+        return false;
     }
 }
