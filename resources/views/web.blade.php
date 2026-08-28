@@ -69,12 +69,12 @@
     />
     @stack ('head')
 </head>
-<body class="line-numbers min-h-screen bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
+<body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
     <x-menu />
 
-    <div class="relative">
+    <main class="relative flex-1">
         @yield ('content')
-    </div>
+    </main>
 
     <x-footer />
 
