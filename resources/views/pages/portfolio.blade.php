@@ -14,7 +14,7 @@
         <x-grid class="xl:grid-cols-4">
             @foreach ($projects as $project)
                 <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
-                    @if ($project->value('image'))
+                    @if ($project->image)
                         <a
                             href="{{ $project->value('url') }}"
                             target="_blank"
@@ -22,7 +22,7 @@
                             class="block pb-1"
                         >
                             <x-img
-                                :src="'images::'.$project->value('image')"
+                                :src="$project->image"
                                 width="768"
                                 ratio="16:9"
                                 :alt="$project->value('title')"

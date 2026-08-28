@@ -8,6 +8,6 @@ website: 'https://hospitable.com'
 stack:
     - Laravel
 icon: fa-hotel
-logo: images/company/hospitable.png
+logo: company/hospitable.png
 salary: 100600
 ---

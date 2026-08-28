@@ -9,6 +9,6 @@ website: 'http://elbgoods.de'
 stack:
     - Laravel
 icon: fa-briefcase
-logo: images/company/elbgoods.png
+logo: company/elbgoods.png
 salary: 51000
 ---

@@ -5,6 +5,7 @@ namespace App\View\Components;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use Statamic\Assets\Asset;
 use Statamic\Contracts\Imaging\UrlBuilder;
 
 class Img extends Component
@@ -24,7 +25,7 @@ class Img extends Component
     private UrlBuilder $urlBuilder;
 
     public function __construct(
-        string $src,
+        string|Asset $src,
         ?int $width = null,
         ?int $height = null,
         ?string $ratio = null,
@@ -36,7 +37,9 @@ class Img extends Component
         $this->setWidth($width);
         $this->setHeight($height);
 
-        if (Str::startsWith($src, ['http://', 'https://'])) {
+        if ($src instanceof Asset) {
+            $this->src = $src->id();
+        } elseif (Str::startsWith($src, ['http://', 'https://'])) {
             $this->src = $src;
         } else {
             $path = trim((string) parse_url($src, PHP_URL_PATH), '/');

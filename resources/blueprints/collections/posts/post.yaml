@@ -28,13 +28,23 @@ tabs:
           -
             handle: image
             field:
-              type: text
+              type: assets
               display: Image
+              container: images
+              folder: posts
+              restrict: true
+              allow_uploads: true
+              max_files: 1
           -
             handle: images
             field:
-              type: list
+              type: assets
               display: Images
+              container: images
+              folder: posts
+              restrict: true
+              allow_uploads: true
+              mode: grid
           -
             handle: image_credits
             field:

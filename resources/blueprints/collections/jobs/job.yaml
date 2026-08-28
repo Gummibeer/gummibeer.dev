@@ -49,8 +49,13 @@ tabs:
           -
             handle: logo
             field:
-              type: text
+              type: assets
               display: Logo
+              container: images
+              folder: company
+              restrict: true
+              allow_uploads: true
+              max_files: 1
           -
             handle: salary
             field:

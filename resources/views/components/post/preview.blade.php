@@ -6,7 +6,7 @@
     @if ($post->image)
         <a href="{{ $post->public_url }}">
             <x-img
-                src="{{ $post->image }}"
+                :src="$post->image"
                 width="768"
                 ratio="21:9"
                 :alt="$post->title"

@@ -22,7 +22,7 @@
                     >
                         <x-figure>
                             <x-img
-                                :src="'images::'.$charity->value('image')"
+                                :src="$charity->image"
                                 width="768"
                                 ratio="16:9"
                                 :alt="$charity->value('title')"

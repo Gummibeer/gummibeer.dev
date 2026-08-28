@@ -7,7 +7,7 @@
         <div class="mb-8 w-full md:mb-0 md:w-1/2 lg:w-1/3">
             <a href="{{ $post->public_url }}">
                 <x-img
-                    src="{{ $post->image }}"
+                    :src="$post->image"
                     width="768"
                     ratio="16:9"
                     :alt="$post->title"

@@ -10,6 +10,6 @@ stack:
     - Symfony
     - Lumen
 icon: fa-briefcase
-logo: images/company/even-on-sunday.png
+logo: company/even-on-sunday.png
 salary: 50400
 ---

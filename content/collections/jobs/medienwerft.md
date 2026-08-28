@@ -10,6 +10,6 @@ stack:
     - TYPO3
     - WordPress
 icon: fa-graduation-cap
-logo: images/company/medienwerft.png
+logo: company/medienwerft.png
 salary: 7200
 ---

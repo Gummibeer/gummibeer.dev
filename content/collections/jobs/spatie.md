@@ -9,5 +9,5 @@ stack:
     - PHP
     - Laravel
 icon: fa-ribbon
-logo: images/company/spatie.png
+logo: company/spatie.png
 ---

@@ -10,6 +10,6 @@ stack:
     - Laravel
     - Shopware
 icon: fa-tractor
-logo: images/company/frischepost.png
+logo: company/frischepost.png
 salary: 65000
 ---

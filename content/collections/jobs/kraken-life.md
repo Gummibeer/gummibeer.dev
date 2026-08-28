@@ -14,5 +14,5 @@ stack:
     - Lua
     - FiveM
 icon: fa-joystick
-logo: images/company/kraken-life.png
+logo: company/kraken-life.png
 ---

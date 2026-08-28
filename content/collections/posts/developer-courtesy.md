@@ -5,7 +5,7 @@ published: false
 title: 'Developer Courtesy'
 categories:
     - open-source
-image: images/posts/2020-01-22.developer-courtesy.jpg
+image: posts/2020-01-22.developer-courtesy.jpg
 image_credits: 'Photo by [Wilhelm Gunkel](https://unsplash.com/@wilhelmgunkel) on [Unsplash](https://unsplash.com/photos/AKQlYooS72w)'
 author: gummibeer
 description: 'Why courtesy is so important for developers and how you can easily improve the community.'
