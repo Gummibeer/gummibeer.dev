@@ -26,6 +26,27 @@ jobs:
 
       - run: php please stache:warm
 
+      - name: Verify migrated collections
+        run: |
+          php <<'PHP'
+          <?php
+
+          require 'vendor/autoload.php';
+
+          $app = require 'bootstrap/app.php';
+          $app->make(Illuminate\Contracts\Console\Kernel::class)->bootstrap();
+
+          foreach (['posts', 'streams', 'jobs', 'hacktoberfest', 'static'] as $collection) {
+              $count = Statamic\Facades\Entry::whereCollection($collection)->count();
+              echo "{$collection}: {$count}\n";
+
+              if ($count === 0) {
+                  fwrite(STDERR, "Collection [{$collection}] is empty.\n");
+                  exit(1);
+              }
+          }
+          PHP
+
       - run: php artisan view:cache
 
       - uses: actions/setup-node@v7
