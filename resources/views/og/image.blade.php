@@ -9,7 +9,6 @@
     <title>Generated Open Graph image</title>
     <style>
         {!! $stylesheet !!}
-
         @font-face {
             font-family: 'OG Inter';
             font-style: normal;
@@ -17,7 +16,6 @@
             font-display: block;
             src: url('{{ $interFont }}') format('woff2');
         }
-
         @font-face {
             font-family: 'OG Permanent Marker';
             font-style: normal;
