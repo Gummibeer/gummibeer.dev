@@ -1,4 +1,5 @@
 <?php /** @var App\Services\MetaBag $meta */ ?>
+<?php /** @var App\Services\SiteIdentity $identity */ ?>
 
 <!DOCTYPE html>
 <html
@@ -46,15 +47,15 @@
 
     <link
         rel="me"
-        href="https://twitter.com/devgummibeer"
+        href="{{ $identity->twitterUrl() }}"
     />
     <link
         rel="me"
-        href="https://github.com/Gummibeer"
+        href="{{ $identity->githubUrl() }}"
     />
     <link
         rel="me"
-        href="https://instagram.com/dev.gummibeer"
+        href="{{ $identity->instagramUrl() }}"
     />
 
     <x-webmention-links />
