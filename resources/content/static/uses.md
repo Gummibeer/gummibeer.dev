@@ -1,7 +1,8 @@
 ---
+id: 80df7d1c-46d4-4abb-9143-129ee9b99c74
+blueprint: page
 title: Uses
 ---
-
 # Uses
 
 Make sure to check out [uses.tech](https://uses.tech) for a list of everyone's `/uses` pages!

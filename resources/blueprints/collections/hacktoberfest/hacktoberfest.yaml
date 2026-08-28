@@ -1,18 +1,39 @@
 title: Hacktoberfest
-fields:
-  -
-    handle: name
-    field:
-      type: text
-      display: Name
-      validate: required
-  -
-    handle: description
-    field:
-      type: textarea
-      display: Description
-  -
-    handle: image
-    field:
-      type: text
-      display: Image
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              validate: required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: image
+            field:
+              type: text
+              display: Image
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'

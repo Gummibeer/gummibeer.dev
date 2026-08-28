@@ -1,18 +1,41 @@
 title: Stream
-fields:
-  -
-    handle: title
-    field:
-      type: text
-      display: Title
-      validate: required
-  -
-    handle: youtube_id
-    field:
-      type: text
-      display: YouTube ID
-  -
-    handle: duration
-    field:
-      type: text
-      display: Duration
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate: required
+          -
+            handle: youtube_id
+            field:
+              type: text
+              display: 'YouTube ID'
+          -
+            handle: duration
+            field:
+              type: text
+              display: Duration
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now

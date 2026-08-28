@@ -1,15 +1,15 @@
 ---
+id: 46cf9967-e716-4fb9-8620-c6d1fa40dbb7
+blueprint: draft
 is_draft: true
-
-title: Developer Courtesy
-categories: [open-source]
+title: 'Developer Courtesy'
+categories:
+  - open-source
 image: images/posts/2020-01-22.developer-courtesy.jpg
-image_credits: Photo by [Wilhelm Gunkel](https://unsplash.com/@wilhelmgunkel) on [Unsplash](https://unsplash.com/photos/AKQlYooS72w)
+image_credits: 'Photo by [Wilhelm Gunkel](https://unsplash.com/@wilhelmgunkel) on [Unsplash](https://unsplash.com/photos/AKQlYooS72w)'
 author: gummibeer
-description: |
-  Why courtesy is so important for developers and how you can easily improve the community.
+description: 'Why courtesy is so important for developers and how you can easily improve the community.'
 ---
-
 This post was one of the first I planned for my blog.
 After I've started with Laravel it didn't took long until I found [spatie](https://spatie.be) and not much longer till my first issues and PRs.
 One of the first things I've noticed was that they thank every contributor - regardless how small the changes.

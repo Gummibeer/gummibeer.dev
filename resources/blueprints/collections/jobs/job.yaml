@@ -1,48 +1,69 @@
 title: Job
-fields:
-  -
-    handle: name
-    field:
-      type: text
-      display: Company
-      validate: required
-  -
-    handle: role
-    field:
-      type: text
-      display: Role
-  -
-    handle: start_at
-    field:
-      type: text
-      display: Start
-  -
-    handle: end_at
-    field:
-      type: text
-      display: End
-  -
-    handle: website
-    field:
-      type: text
-      display: Website
-  -
-    handle: stack
-    field:
-      type: list
-      display: Stack
-  -
-    handle: icon
-    field:
-      type: text
-      display: Icon
-  -
-    handle: logo
-    field:
-      type: text
-      display: Logo
-  -
-    handle: salary
-    field:
-      type: integer
-      display: Salary
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: hidden
+              required: false
+          -
+            handle: name
+            field:
+              type: text
+              display: Company
+              validate: required
+          -
+            handle: role
+            field:
+              type: text
+              display: Role
+          -
+            handle: start_at
+            field:
+              type: text
+              display: Start
+          -
+            handle: end_at
+            field:
+              type: text
+              display: End
+          -
+            handle: website
+            field:
+              type: text
+              display: Website
+          -
+            handle: stack
+            field:
+              type: list
+              display: Stack
+          -
+            handle: icon
+            field:
+              type: text
+              display: Icon
+          -
+            handle: logo
+            field:
+              type: text
+              display: Logo
+          -
+            handle: salary
+            field:
+              type: integer
+              display: Salary
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'

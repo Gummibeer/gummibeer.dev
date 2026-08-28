@@ -1,7 +1,8 @@
 ---
-title: Privacy Policy
+id: 8f57f554-8d03-4cf1-a7b8-ed3e782dc7df
+blueprint: page
+title: 'Privacy Policy'
 ---
-
 # Privacy Policy
 
 **Nothing.** I really collect nothing about you.
