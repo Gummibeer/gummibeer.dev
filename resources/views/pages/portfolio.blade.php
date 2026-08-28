@@ -1,5 +1,5 @@
 <?php /** @var Illuminate\Support\HtmlString $contents */ ?>
-<?php /** @var array[] $projects */ ?>
+<?php /** @var Illuminate\Support\Collection<int, Statamic\Entries\Entry> $projects */ ?>
 
 @extends ('web')
 
@@ -12,33 +12,33 @@
 
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
-            @foreach (collect($projects)->sortBy('name') as $project)
+            @foreach ($projects as $project)
                 <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
-                    @isset ($project['src'])
+                    @if ($project->value('image'))
                         <a
-                            href="{{ $project['href'] }}"
+                            href="{{ $project->value('url') }}"
                             target="_blank"
                             rel="noreferrer noopener"
                             class="block pb-1"
                         >
                             <x-img
-                                :src="$project['src']"
+                                :src="'images::'.$project->value('image')"
                                 width="768"
                                 ratio="16:9"
-                                :alt="$project['name']"
+                                :alt="$project->value('title')"
                             />
                         </a>
-                    @endisset
+                    @endif
                     <div class="px-4 py-2">
                         <a
-                            href="{{ $project['href'] }}"
+                            href="{{ $project->value('url') }}"
                             target="_blank"
                             rel="noreferrer noopener"
                             class="block hover:text-brand"
                         >
-                            <strong>{{ $project['name'] }}</strong>
+                            <strong>{{ $project->value('title') }}</strong>
                         </a>
-                        <p class="text-sm text-snow-20 dark:text-snow-10">{{ $project['description'] }}</p>
+                        <p class="text-sm text-snow-20 dark:text-snow-10">{{ $project->value('description') }}</p>
                     </div>
                 </div>
             @endforeach

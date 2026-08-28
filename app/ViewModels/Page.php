@@ -30,8 +30,8 @@ class Page extends ViewModel
             'blog' => $this->blog(),
             'resume' => $this->resume($entry),
             'uses' => $this->uses($entry),
-            'charity' => $this->charity($entry),
-            'portfolio' => $this->portfolio($entry),
+            'charity' => $this->charity(),
+            'portfolio' => $this->portfolio(),
             'imprint' => $this->simplePage($entry, 'Imprint'),
             'privacy' => $this->simplePage($entry, 'Privacy'),
             default => [],
@@ -121,7 +121,7 @@ class Page extends ViewModel
     /**
      * @return array<string, mixed>
      */
-    private function charity(Entry $page): array
+    private function charity(): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Charity';
@@ -130,14 +130,16 @@ class Page extends ViewModel
 
         return [
             'contents' => $this->cascade->get('content'),
-            'charities' => $page->value('charities') ?? [],
+            'charities' => $this->published('charities')
+                ->sortBy(fn (Entry $entry): string => (string) $entry->value('title'))
+                ->values(),
         ];
     }
 
     /**
      * @return array<string, mixed>
      */
-    private function portfolio(Entry $page): array
+    private function portfolio(): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Portfolio';
@@ -146,7 +148,9 @@ class Page extends ViewModel
 
         return [
             'contents' => $this->cascade->get('content'),
-            'projects' => $page->value('projects') ?? [],
+            'projects' => $this->published('projects')
+                ->sortBy(fn (Entry $entry): string => (string) $entry->value('title'))
+                ->values(),
         ];
     }
 

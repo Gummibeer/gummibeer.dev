@@ -1,5 +1,5 @@
 <?php /** @var Illuminate\Support\HtmlString $contents */ ?>
-<?php /** @var array[] $charities */ ?>
+<?php /** @var Illuminate\Support\Collection<int, Statamic\Entries\Entry> $charities */ ?>
 
 @extends ('web')
 
@@ -12,23 +12,23 @@
 
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
-            @foreach (collect($charities)->sortBy('name') as $charity)
+            @foreach ($charities as $charity)
                 <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
                     <a
-                        href="{{ $charity['href'] }}"
+                        href="{{ $charity->value('url') }}"
                         target="_blank"
                         rel="noreferrer noopener"
                         class="block pb-1"
                     >
                         <x-figure>
                             <x-img
-                                :src="$charity['src']"
+                                :src="'images::'.$charity->value('image')"
                                 width="768"
                                 ratio="16:9"
-                                :alt="$charity['name']"
+                                :alt="$charity->value('title')"
                             />
                             <x-slot name="caption">
-                                {{ $charity['name'] }}
+                                {{ $charity->value('title') }}
                             </x-slot>
                         </x-figure>
                     </a>

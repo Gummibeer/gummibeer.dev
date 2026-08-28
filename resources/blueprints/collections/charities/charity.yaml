@@ -1,0 +1,47 @@
+title: Charity
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Name
+              required: true
+              validate:
+                - required
+          -
+            handle: url
+            field:
+              type: link
+              display: URL
+              required: true
+              validate:
+                - required
+          -
+            handle: image
+            field:
+              type: assets
+              display: Image
+              container: images
+              folder: charity
+              restrict: true
+              allow_uploads: true
+              max_files: 1
+              required: true
+              validate:
+                - required
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \\Statamic\\Rules\\UniqueEntryValue({collection}, {id}, {site})'
