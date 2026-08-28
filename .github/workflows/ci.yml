@@ -52,7 +52,6 @@ jobs:
       - uses: actions/setup-node@v7
         with:
           node-version: 16
-          cache: yarn
 
       - run: |
           npm config set "@fortawesome:registry" https://npm.fontawesome.com/
