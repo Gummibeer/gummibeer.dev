@@ -10,6 +10,7 @@ use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\AssetContainer;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Markdown;
 use Tests\TestCase;
@@ -85,6 +86,29 @@ final class ApplicationTest extends TestCase
         $this->getJson('/blog/search.json')
             ->assertOk()
             ->assertJsonCount(18);
+    }
+
+    public function test_migrated_images_are_statamic_assets_and_remain_on_disk(): void
+    {
+        $container = AssetContainer::findByHandle('images');
+
+        $this->assertNotNull($container);
+        $this->assertSame('images', $container->handle());
+        $this->assertSame(public_path('images'), config('filesystems.disks.images.root'));
+        $this->assertSame('/images', config('filesystems.disks.images.url'));
+
+        foreach ([
+            'charity/seashepherd.png',
+            'company/hospitable.png',
+            'favicons/favicon.ico',
+            'hacktoberfest/2023.png',
+            'og/static/home.png',
+            'portfolio/moinhund.png',
+            'posts/2020-01-01.hello-world.jpg',
+            'posts/2021-01-28.yoda/content-paw-prints.jpg',
+        ] as $image) {
+            $this->assertFileExists(public_path('images/'.$image), $image);
+        }
     }
 
     public function test_figure_captions_use_statamic_markdown(): void
