@@ -4,7 +4,6 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Illuminate\Support\Str;
 use RuntimeException;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Contracts\Entries\Entry as EntryContract;
@@ -60,27 +59,21 @@ class GenerateOgImages extends Command
             return;
         }
 
-        $htmlPath = sys_get_temp_dir().DIRECTORY_SEPARATOR.'gummibeer-og-'.Str::uuid().'.html';
         $html = view('og.image', [
             ...$data,
-            'stylesheet' => $this->stylesheetUrl(),
+            'stylesheet' => $this->stylesheet(),
+            'interFont' => $this->fontDataUrl(base_path('node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2')),
+            'logoFont' => $this->fontDataUrl(base_path('node_modules/@fontsource/permanent-marker/files/permanent-marker-latin-400-normal.woff2')),
         ])->render();
 
-        File::put($htmlPath, $html);
-
-        try {
-            Browsershot::htmlFromFilePath($htmlPath)
-                ->setNodeModulePath(base_path('node_modules'))
-                ->windowSize(2048, 1170)
-                ->waitUntilNetworkIdle()
-                ->waitForFunction('document.fonts.status === "loaded"')
-                ->save($path);
-        } finally {
-            File::delete($htmlPath);
-        }
+        Browsershot::html($html)
+            ->setNodeModulePath(base_path('node_modules'))
+            ->windowSize(2048, 1170)
+            ->waitForFunction('document.fonts.status === "loaded"')
+            ->save($path);
     }
 
-    private function stylesheetUrl(): string
+    private function stylesheet(): string
     {
         $manifestPath = public_path('build/manifest.json');
 
@@ -96,9 +89,22 @@ class GenerateOgImages extends Command
             throw new RuntimeException('The Vite manifest does not contain resources/css/app.css.');
         }
 
-        $path = str_replace(DIRECTORY_SEPARATOR, '/', public_path('build/'.$stylesheet));
+        $stylesheetPath = public_path('build/'.$stylesheet);
 
-        return 'file://'.(str_starts_with($path, '/') ? '' : '/').$path;
+        if (! File::exists($stylesheetPath)) {
+            throw new RuntimeException('The compiled Vite stylesheet is missing. Run `npm run build` before generating OG images.');
+        }
+
+        return File::get($stylesheetPath);
+    }
+
+    private function fontDataUrl(string $path): string
+    {
+        if (! File::exists($path)) {
+            throw new RuntimeException("Font asset is missing at {$path}. Run `npm install` before generating OG images.");
+        }
+
+        return 'data:font/woff2;base64,'.base64_encode(File::get($path));
     }
 
     private function readTime(EntryContract $post): float
