@@ -6,6 +6,7 @@ use Illuminate\Support\Arr;
 
 final class StravaStats
 {
+    /** @var array<string, mixed>|null */
     private ?array $data = null;
 
     public function distance(): float
@@ -23,6 +24,7 @@ final class StravaStats
         return (float) Arr::get($this->data(), 'moving_time', 0);
     }
 
+    /** @return array<string, mixed> */
     private function data(): array
     {
         if ($this->data !== null) {
