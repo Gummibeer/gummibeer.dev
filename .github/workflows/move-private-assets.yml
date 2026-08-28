@@ -26,7 +26,7 @@ jobs:
           git mv public/images resources/images
           printf '*\n!index.php\n!.gitignore\n' > public/.gitignore
 
-          git add -A resources/images public/images public/.gitignore
+          git add -A
 
           git config user.name github-actions[bot]
           git config user.email 41898282+github-actions[bot]@users.noreply.github.com
