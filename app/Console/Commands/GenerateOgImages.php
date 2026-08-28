@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\File;
 use RuntimeException;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Markdown;
 
@@ -14,7 +15,7 @@ class GenerateOgImages extends Command
 {
     protected $signature = 'generate:og:images {--force}';
 
-    protected $description = 'Generate all og:images for posts and static pages.';
+    protected $description = 'Generate all og:images for posts, pages, and standalone routes.';
 
     public function handle(): void
     {
@@ -35,13 +36,21 @@ class GenerateOgImages extends Command
                 );
             });
 
+        Entry::whereCollection('pages')
+            ->each(function (mixed $page): void {
+                if (! $page instanceof StatamicEntry || ! $page->published()) {
+                    return;
+                }
+
+                $this->saveImage(
+                    "images/og/static/{$page->slug()}.png",
+                    ['title' => (string) $page->value('title')],
+                );
+            });
+
         collect([
             'home' => 'Developer / Biker / Gamer',
-            'me' => 'Developer / Biker / Gamer',
             'blog' => 'Blog',
-            'portfolio' => 'Portfolio',
-            'charity' => 'Charity',
-            'uses' => 'Uses',
         ])->each(function (string $title, string $slug): void {
             $this->saveImage("images/og/static/{$slug}.png", ['title' => $title]);
         });
