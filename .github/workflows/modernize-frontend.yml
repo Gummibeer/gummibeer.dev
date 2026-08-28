@@ -42,7 +42,7 @@ jobs:
               shutil.move(str(source_images), str(public_images))
 
           shutil.rmtree(root / 'resources/scss', ignore_errors=True)
-          for legacy in ['webpack.mix.js', 'tailwind.config.js']:
+          for legacy in ['webpack.mix.js', 'tailwind.config.js', 'config/subresource-integrity.php']:
               path = root / legacy
               if path.exists():
                   path.unlink()
@@ -53,7 +53,6 @@ jobs:
           @import "@fontsource-variable/fira-code";
           @import "@fontsource/permanent-marker/400.css";
           @import "@fortawesome/fontawesome-free/css/all.css";
-          @import "mburger-css";
           @import "prism-themes/themes/prism-material-light.css";
           @import "prism-themes/themes/prism-material-dark.css" (prefers-color-scheme: dark);
 
@@ -82,7 +81,7 @@ jobs:
             --radius-2: 0.5rem;
             --radius-3: 0.75rem;
             --radius-4: 1rem;
-            --radius-full: 100%;
+            --radius-full: 9999px;
 
             --container-xs: 20rem;
             --container-md: 24rem;
@@ -237,13 +236,6 @@ jobs:
             text-align: right;
           }
 
-          :root {
-            --mb-button-size: 3rem;
-            --mb-bar-height: 2px;
-            --mb-bar-spacing: 0.5rem;
-            --mb-animate-timeout: 0s;
-          }
-
           img.emoji {
             display: inline-block;
             font-size: 1em;
@@ -323,48 +315,8 @@ jobs:
             }
           }
 
-          [x-cloak]:not([class*="x-cloak"]) {
-            display: none;
-          }
-
-          @media (max-width: 639px) {
-            [x-cloak].x-cloak {
-              display: none;
-            }
-          }
-
-          @media (min-width: 640px) and (max-width: 767px) {
-            [x-cloak].x-cloak:not(.sm\:-x-cloak),
-            [x-cloak].sm\:x-cloak {
-              display: none;
-            }
-          }
-
-          @media (min-width: 768px) and (max-width: 1023px) {
-            [x-cloak].x-cloak:not(.md\:-x-cloak),
-            [x-cloak].sm\:x-cloak:not(.md\:-x-cloak),
-            [x-cloak].md\:x-cloak {
-              display: none;
-            }
-          }
-
-          @media (min-width: 1024px) and (max-width: 1279px) {
-            [x-cloak].x-cloak:not(.lg\:-x-cloak),
-            [x-cloak].sm\:x-cloak:not(.lg\:-x-cloak),
-            [x-cloak].md\:x-cloak:not(.lg\:-x-cloak),
-            [x-cloak].lg\:x-cloak {
-              display: none;
-            }
-          }
-
-          @media (min-width: 1280px) {
-            [x-cloak].x-cloak:not(.xl\:-x-cloak),
-            [x-cloak].sm\:x-cloak:not(.xl\:-x-cloak),
-            [x-cloak].md\:x-cloak:not(.xl\:-x-cloak),
-            [x-cloak].lg\:x-cloak:not(.xl\:-x-cloak),
-            [x-cloak].xl\:x-cloak {
-              display: none;
-            }
+          [x-cloak] {
+            display: none !important;
           }
 
           ::selection {
@@ -390,7 +342,6 @@ jobs:
             init() {
               this.images = Array.from(this.$el.getElementsByTagName("img"));
               this.render();
-
               window.setInterval(() => this.next(), this.delay);
             },
             next() {
@@ -448,6 +399,31 @@ jobs:
           });
           '''.replace('\n          ', '\n').lstrip(), encoding='utf-8')
 
+          (root / 'prettier.config.mjs').write_text(r'''import blade from "prettier-plugin-blade";
+          import tailwindcss from "prettier-plugin-tailwindcss";
+
+          export default {
+            printWidth: 999999,
+            plugins: [blade, tailwindcss],
+            proseWrap: "preserve",
+            tabWidth: 4,
+            singleQuote: true,
+            singleAttributePerLine: true,
+            objectWrap: "preserve",
+            tailwindStylesheet: "./resources/css/app.css",
+            overrides: [
+              {
+                files: ["*.blade.php"],
+                options: { parser: "blade" },
+              },
+              {
+                files: ["*.yml", "*.yaml"],
+                options: { tabWidth: 2 },
+              },
+            ],
+          };
+          '''.replace('\n          ', '\n').lstrip(), encoding='utf-8')
+
           # Laravel's modern Vite integration owns CSS/JS tags. Static images use asset().
           web = root / 'resources/views/web.blade.php'
           text = web.read_text(encoding='utf-8')
@@ -456,32 +432,98 @@ jobs:
           text = text.replace('\n<script defer src="{{ mix(\'js/app.js\') }}" crossorigin="anonymous"></script>', '')
           web.write_text(text, encoding='utf-8')
 
+          replacements = {
+              'flex-no-wrap': 'flex-nowrap',
+              'flex-no-shrink': 'shrink-0',
+              'flex-no-grow': 'grow-0',
+              'flex-shrink': 'shrink',
+              'flex-grow': 'grow',
+              'whitespace-no-wrap': 'whitespace-nowrap',
+              'overflow-ellipsis': 'text-ellipsis',
+          }
+
           for base in [root / 'app', root / 'routes', root / 'resources/views']:
               if not base.exists():
                   continue
-              for path in base.rglob('*'):
-                  if path.is_file() and path.suffix in {'.php'}:
-                      value = path.read_text(encoding='utf-8')
-                      value = value.replace('mix(', 'asset(')
-                      value = value.replace("'fal ", "'fa-solid ")
-                      value = value.replace('"fal ', '"fa-solid ')
-                      path.write_text(value, encoding='utf-8')
+              for path in base.rglob('*.php'):
+                  value = path.read_text(encoding='utf-8')
+                  value = value.replace('mix(', 'asset(')
+                  value = value.replace("'fal ", "'fa-solid ")
+                  value = value.replace('"fal ', '"fa-solid ')
+                  for old, new in replacements.items():
+                      value = value.replace(old, new)
+                  path.write_text(value, encoding='utf-8')
 
-          # The old aspect-ratio plugin is obsolete in Tailwind v4; Alpine v3 uses named data components.
+          # Native aspect-ratio utility and Alpine 3 data component.
           image_view = root / 'resources/views/components/post/image.blade.php'
           value = image_view.read_text(encoding='utf-8')
           value = value.replace('aspect-w-16 aspect-h-9', 'aspect-video')
           value = value.replace('x-data="window.components.slider(3)" x-init="init"', 'x-data="slider(3)"')
           image_view.write_text(value, encoding='utf-8')
 
-          # PHP-rendered Twemoji follows the maintained jdecked Twemoji asset CDN now that Mix no longer copies node_modules.
+          # Dependency-free responsive menu; the old Telegram banner and deprecated mburger package are gone.
+          (root / 'resources/views/components/menu.blade.php').write_text(r'''<header class="sticky top-0 right-0 left-0 z-10 bg-white shadow dark:bg-night-10">
+          <nav
+              class="flex flex-col px-4 md:flex-row md:justify-between md:px-8 lg:px-10 xl:px-12"
+              x-data="{ show: false }"
+              :class="{ 'h-screen': show }"
+          >
+              <div class="flex w-full flex-row items-center">
+                  <div class="flex grow items-center md:flex-auto">
+                      <a href="{{ route('home') }}" class="inline-block px-0 py-4 font-logo text-2xl leading-none tracking-wider whitespace-nowrap lg:text-3xl">
+                          Tom Herrmann
+                      </a>
+                  </div>
+
+                  <button
+                      type="button"
+                      class="relative grid size-12 shrink-0 place-items-center md:hidden"
+                      @click="show = !show"
+                      aria-controls="menu-list"
+                      :aria-expanded="show ? 'true' : 'false'"
+                      aria-label="Toggle main menu"
+                  >
+                      <span class="absolute h-0.5 w-6 bg-current transition-transform duration-200" :class="show ? 'rotate-45' : '-translate-y-2'"></span>
+                      <span class="absolute h-0.5 w-6 bg-current transition-opacity duration-200" :class="show ? 'opacity-0' : 'opacity-100'"></span>
+                      <span class="absolute h-0.5 w-6 bg-current transition-transform duration-200" :class="show ? '-rotate-45' : 'translate-y-2'"></span>
+                      <span class="sr-only">Toggle main menu</span>
+                  </button>
+              </div>
+
+              <ul
+                  class="flex w-full flex-col list-none md:w-auto md:flex-row md:space-x-2 lg:space-x-4"
+                  :class="{ 'hidden md:flex': !show }"
+                  x-cloak
+                  id="menu-list"
+              >
+                  @foreach([
+                      '/' => 'Home',
+                      'resume' => 'Resume',
+                      'blog' => 'Blog',
+                      'portfolio' => 'Portfolio',
+                      'charity' => 'Charity',
+                      'uses' => 'Uses',
+                  ] as $route => $name)
+                  <li class="flex items-center">
+                      <a
+                          href="{{ url($route) }}"
+                          class="@if(request()->is($route.'*')) text-brand @else text-black dark:text-white hover:text-brand @endif block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4"
+                      >{{ $name }}</a>
+                  </li>
+                  @endforeach
+              </ul>
+          </nav>
+          </header>
+          '''.replace('\n          ', '\n').lstrip(), encoding='utf-8')
+
+          # PHP-rendered Twemoji follows the maintained asset CDN now that Mix no longer copies node_modules.
           twemoji_view = root / 'resources/views/components/twemoji.blade.php'
           if twemoji_view.exists():
               value = twemoji_view.read_text(encoding='utf-8')
               value = value.replace("base(asset('vendor/twemoji'))", "base('https://cdn.jsdelivr.net/gh/jdecked/twemoji@latest/assets')")
               twemoji_view.write_text(value, encoding='utf-8')
 
-          # Vite can be disabled natively in tests; no fake Mix manifest is needed.
+          # Laravel supports disabling Vite natively in tests.
           (root / 'tests/TestCase.php').write_text(r'''<?php
 
           namespace Tests;
@@ -512,12 +554,16 @@ jobs:
 
           package = {
               'private': True,
+              'type': 'module',
+              'packageManager': 'npm@11.17.0',
+              'engines': {'node': '>=22'},
               'scripts': {
                   'build': 'vite build',
                   'dev': 'vite',
-                  'format': "prettier --write 'package.json' 'vite.config.js' 'resources/js/**/*.js' 'resources/css/**/*.css'",
-                  'format:check': "prettier --check 'package.json' 'vite.config.js' 'resources/js/**/*.js' 'resources/css/**/*.css'",
+                  'format': "prettier --write 'package.json' 'vite.config.js' 'prettier.config.mjs' 'resources/js/**/*.js' 'resources/css/**/*.css'",
+                  'format:check': "prettier --check 'package.json' 'vite.config.js' 'prettier.config.mjs' 'resources/js/**/*.js' 'resources/css/**/*.css'",
                   'lint:prose': "alex 'content/collections/**/*.md'",
+                  'check': 'npm run format:check && npm run build',
               },
               'devDependencies': {},
           }
@@ -525,65 +571,11 @@ jobs:
 
           gitignore = root / '.gitignore'
           lines = gitignore.read_text(encoding='utf-8').splitlines()
-          lines = [line for line in lines if line not in {'package-lock.json', '/public/hot/'}]
+          lines = [line for line in lines if line not in {'package-lock.json', '/public/hot/', '/public/hot'}]
           for line in ['/public/build/', '/public/hot']:
               if line not in lines:
                   lines.insert(1, line)
           gitignore.write_text('\n'.join(lines) + '\n', encoding='utf-8')
-
-          (root / '.github/workflows/prettier.yml').write_text(r'''name: prettier
-
-          on:
-            push:
-            pull_request:
-
-          permissions:
-            contents: read
-
-          jobs:
-            prettier:
-              runs-on: ubuntu-latest
-              timeout-minutes: 5
-
-              steps:
-                - uses: actions/checkout@v7
-                - uses: actions/setup-node@v7
-                  with:
-                    node-version: 24
-                    cache: npm
-                - run: npm ci
-                - run: npm run format:check
-          '''.replace('\n          ', '\n').lstrip(), encoding='utf-8')
-
-          (root / '.github/workflows/frontend.yml').write_text(r'''name: frontend
-
-          on:
-            push:
-            pull_request:
-
-          permissions:
-            contents: read
-
-          jobs:
-            build:
-              runs-on: ubuntu-latest
-              timeout-minutes: 5
-
-              steps:
-                - uses: actions/checkout@v7
-                - uses: actions/setup-node@v7
-                  with:
-                    node-version: 24
-                    cache: npm
-                - run: npm ci
-                - run: npm run build
-          '''.replace('\n          ', '\n').lstrip(), encoding='utf-8')
-
-          dependabot = root / '.github/dependabot.yml'
-          value = dependabot.read_text(encoding='utf-8')
-          if "package-ecosystem: 'npm'" not in value:
-              value += "\n  - package-ecosystem: 'npm'\n    directory: '/'\n    schedule:\n      interval: 'daily'\n    open-pull-requests-limit: 10\n    reviewers:\n      - 'Gummibeer'\n"
-          dependabot.write_text(value, encoding='utf-8')
           PY
 
       - name: Install current frontend dependencies
@@ -600,8 +592,9 @@ jobs:
           alpinejs@latest
           clipboard@latest
           laravel-vite-plugin@latest
-          mburger-css@latest
           prettier@latest
+          prettier-plugin-blade@latest
+          prettier-plugin-tailwindcss@latest
           prism-themes@latest
           prismjs@latest
           tailwindcss@latest
@@ -618,12 +611,16 @@ jobs:
             echo 'Laravel Mix usage remains.' >&2
             exit 1
           fi
-          if git grep -nE 'laravel-mix|webpack\.mix|tailwind\.config|resources/scss' -- ':!content/**'; then
+          if [ -e webpack.mix.js ] || [ -e tailwind.config.js ] || [ -d resources/scss ] || grep -q 'laravel-mix' package.json; then
             echo 'Legacy frontend tooling remains.' >&2
             exit 1
           fi
-          if git grep -nE 'aspect-w-|aspect-h-|flex-no-wrap|flex-no-shrink|flex-no-grow|whitespace-no-wrap|overflow-ellipsis' -- resources/views; then
+          if git grep -nE 'aspect-w-|aspect-h-|flex-no-wrap|flex-no-shrink|flex-no-grow|flex-shrink|flex-grow|whitespace-no-wrap|overflow-ellipsis|(bg|text|border|placeholder|divide)-opacity-' -- resources/views; then
             echo 'Legacy Tailwind utility names remain.' >&2
+            exit 1
+          fi
+          if git grep -nE 'mburger|GummibeerDev|fa-telegram' -- resources/views package.json resources/css resources/js; then
+            echo 'Removed frontend dependencies or Telegram UI remain.' >&2
             exit 1
           fi
 
@@ -631,7 +628,6 @@ jobs:
         run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          git rm .github/workflows/modernize-frontend.yml
-          git add -A
+          git add -A ':!.github/workflows'
           git commit -m 'Modernize frontend with Vite and Tailwind CSS 4'
           git push origin HEAD:statamic-cms
