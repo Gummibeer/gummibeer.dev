@@ -1,3 +1,7 @@
+---
+title: Imprint
+---
+
 # Imprint
 
 **Information in accordance with section 5 TMG**
