@@ -79,7 +79,12 @@ Route::get('/charity', function (MetaBag $meta) use ($findPage) {
     $meta->description = 'For me it\'s part of my obligation and responsibility to support what I believe is important for me, us and our planet.';
     $meta->image = asset('images/og/static/charity.png');
 
-    return view('pages.charity', ['contents' => $findPage('charity')->content]);
+    $page = $findPage('charity');
+
+    return view('pages.charity', [
+        'contents' => $page->content,
+        'charities' => $page->value('charities') ?? [],
+    ]);
 })->name('charity');
 
 Route::get('/portfolio', function (MetaBag $meta) use ($findPage) {
@@ -87,7 +92,12 @@ Route::get('/portfolio', function (MetaBag $meta) use ($findPage) {
     $meta->description = 'In my free time I support several local business owners with everything I know.';
     $meta->image = asset('images/og/static/portfolio.png');
 
-    return view('pages.portfolio', ['contents' => $findPage('portfolio')->content]);
+    $page = $findPage('portfolio');
+
+    return view('pages.portfolio', [
+        'contents' => $page->content,
+        'projects' => $page->value('projects') ?? [],
+    ]);
 })->name('portfolio');
 
 Route::get('/imprint', function (MetaBag $meta) use ($findPage) {
