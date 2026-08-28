@@ -35,7 +35,7 @@ class MetaBag extends Fluent
         return url(asset($image));
     }
 
-    public function offsetSet($key, $value)
+    public function offsetSet($key, $value): void
     {
         if ($this->hasSetMutator($key)) {
             $this->attributes[$key] = $this->{'set'.Str::studly($key).'Attribute'}($value);
