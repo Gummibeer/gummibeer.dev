@@ -54,7 +54,10 @@ class Img extends Component
 
             $this->src = trim(str_replace(public_path(), '', $filepath), '/');
         } else {
-            $this->src = trim((string) parse_url($src, PHP_URL_PATH), '/');
+            $path = trim((string) parse_url($src, PHP_URL_PATH), '/');
+            $this->src = Str::startsWith($path, 'images/')
+                ? 'images::'.Str::after($path, 'images/')
+                : $path;
         }
 
         $this->setDefaultParams();
