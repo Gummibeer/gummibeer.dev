@@ -13,7 +13,7 @@ use Spatie\Feed\FeedItem;
 
 /**
  * @property-read string $title
- * @property-read string $image
+ * @property-read string|null $image
  * @property-read string[]|null $images
  * @property-read string $image_credits
  * @property-read string[] $categories
@@ -70,7 +70,7 @@ final class Post extends Model implements Feedable
         return route('blog.post', $this);
     }
 
-    public function getImageAttribute(?string $value): string
+    public function getImageAttribute(?string $value): ?string
     {
         return $value ?? Arr::first($this->images ?? []);
     }
