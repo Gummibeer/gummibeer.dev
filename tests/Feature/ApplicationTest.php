@@ -31,6 +31,6 @@ final class ApplicationTest extends TestCase
 
         $this->getJson('/blog/search.json')
             ->assertOk()
-            ->assertJsonCount(19);
+            ->assertJsonCount(18);
     }
 }
