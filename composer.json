@@ -22,7 +22,6 @@
         "astrotomic/php-twemoji": "^0.1.1",
         "astrotomic/php-unavatar": "^0.3.0",
         "astrotomic/pixpipe": "^0.1.0",
-        "dg/twitter-php": "^4.1.2",
         "guzzlehttp/guzzle": "^7.15.5",
         "laravel/framework": "^13.29",
         "league/commonmark": "^2.10",

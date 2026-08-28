@@ -97,30 +97,6 @@ parameters:
 			path: app/Category.php
 
 		-
-			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/PromotePost.php
-
-		-
-			message: '#^Strict comparison using \=\=\= between Carbon\\Carbon and null will always evaluate to false\.$#'
-			identifier: identical.alwaysFalse
-			count: 1
-			path: app/Console/Commands/PromotePost.php
-
-		-
-			message: '#^Unable to resolve the template type TKey in call to function collect$#'
-			identifier: argument.templateType
-			count: 1
-			path: app/Console/Commands/PromotePost.php
-
-		-
-			message: '#^Unable to resolve the template type TValue in call to function collect$#'
-			identifier: argument.templateType
-			count: 1
-			path: app/Console/Commands/PromotePost.php
-
-		-
 			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
 			identifier: property.notFound
 			count: 1
@@ -149,42 +125,6 @@ parameters:
 			identifier: missingType.return
 			count: 1
 			path: app/Console/Commands/StatsStrava.php
-
-		-
-			message: '#^Cannot call method map\(\) on Illuminate\\Support\\Collection\<int, string\>\|string\.$#'
-			identifier: method.nonObject
-			count: 1
-			path: app/Console/Commands/TwitterGiveaway.php
-
-		-
-			message: '#^Method App\\Console\\Commands\\TwitterGiveaway\:\:getUser\(\) return type has no value type specified in iterable type array\.$#'
-			identifier: missingType.iterableValue
-			count: 1
-			path: app/Console/Commands/TwitterGiveaway.php
-
-		-
-			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,string\|null\>\:\:map\(\) expects callable\(string\|null, int\)\: array, Closure\(string\)\: array given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/TwitterGiveaway.php
-
-		-
-			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,string\|null\>\:\:map\(\) expects callable\(string\|null, int\)\: string, Closure\(string\)\: string given\.$#'
-			identifier: argument.type
-			count: 2
-			path: app/Console/Commands/TwitterGiveaway.php
-
-		-
-			message: '#^Parameter \#1 \$limit of method Illuminate\\Support\\Collection\<int,array\>\:\:take\(\) expects int, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/TwitterGiveaway.php
-
-		-
-			message: '#^Parameter \#1 \$number of method Illuminate\\Support\\Collection\<int,string\>\:\:random\(\) expects \(callable\(string\)\: int\)\|int\|null, string\|null given\.$#'
-			identifier: argument.type
-			count: 1
-			path: app/Console/Commands/TwitterGiveaway.php
 
 		-
 			message: '#^Property App\\Console\\Kernel\:\:\$commands type has no value type specified in iterable type array\.$#'

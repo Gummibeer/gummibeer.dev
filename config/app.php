@@ -3,7 +3,6 @@
 use App\Providers\AppServiceProvider;
 use App\Providers\MacroServiceProvider;
 use App\Providers\RouteServiceProvider;
-use App\Providers\TwitterServiceProvider;
 use Illuminate\Auth\AuthServiceProvider;
 use Illuminate\Auth\Passwords\PasswordResetServiceProvider;
 use Illuminate\Broadcasting\BroadcastServiceProvider;
@@ -104,7 +103,6 @@ return [
         AppServiceProvider::class,
         RouteServiceProvider::class,
         MacroServiceProvider::class,
-        TwitterServiceProvider::class,
     ],
 
     'aliases' => [

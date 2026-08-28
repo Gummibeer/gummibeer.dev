@@ -55,17 +55,6 @@ tabs:
             field:
               type: textarea
               display: Description
-          -
-            handle: should_promote
-            field:
-              type: toggle
-              display: Promote
-              default: true
-          -
-            handle: promoted_at
-            field:
-              type: text
-              display: 'Promoted At'
   sidebar:
     sections:
       -
