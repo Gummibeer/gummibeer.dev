@@ -9,6 +9,9 @@ use Statamic\View\ViewModel;
 
 class Category extends ViewModel
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function data(): array
     {
         $category = $this->cascade->get('page');

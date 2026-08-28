@@ -8,6 +8,9 @@ use Statamic\View\ViewModel;
 
 class Post extends ViewModel
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function data(): array
     {
         $post = $this->cascade->get('page');

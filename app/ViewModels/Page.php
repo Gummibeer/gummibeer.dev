@@ -7,31 +7,40 @@ use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Statamic\Entries\Entry;
 use Statamic\Facades\Entry as EntryFacade;
+use Statamic\Structures\Page as StructurePage;
 use Statamic\View\ViewModel;
 
 class Page extends ViewModel
 {
+    /**
+     * @return array<string, mixed>
+     */
     public function data(): array
     {
         $page = $this->cascade->get('page');
 
-        if (! $page instanceof Entry) {
+        if (! $page instanceof StructurePage || ! $page->entry() instanceof Entry) {
             return [];
         }
 
-        return match ($page->slug()) {
-            'me' => $this->home($page),
+        $entry = $page->entry();
+
+        return match ($entry->slug()) {
+            'me' => $this->home($entry),
             'blog' => $this->blog(),
-            'resume' => $this->resume(),
-            'uses' => $this->uses(),
-            'charity' => $this->charity($page),
-            'portfolio' => $this->portfolio($page),
-            'imprint' => $this->simplePage('Imprint'),
-            'privacy' => $this->simplePage('Privacy'),
+            'resume' => $this->resume($entry),
+            'uses' => $this->uses($entry),
+            'charity' => $this->charity($entry),
+            'portfolio' => $this->portfolio($entry),
+            'imprint' => $this->simplePage($entry, 'Imprint'),
+            'privacy' => $this->simplePage($entry, 'Privacy'),
             default => [],
         };
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function home(Entry $page): array
     {
         $meta = app(MetaBag::class);
@@ -45,6 +54,9 @@ class Page extends ViewModel
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function blog(): array
     {
         $meta = app(MetaBag::class);
@@ -61,7 +73,10 @@ class Page extends ViewModel
         return compact('posts');
     }
 
-    private function resume(): array
+    /**
+     * @return array<string, mixed>
+     */
+    private function resume(Entry $page): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Resume';
@@ -82,7 +97,7 @@ class Page extends ViewModel
             ->values();
 
         return [
-            'contents' => $this->cascade->get('content'),
+            'contents' => $page->content,
             'jobs' => $jobs,
             'hacktoberfests' => EntryFacade::whereCollection('hacktoberfest')
                 ->filter(fn (mixed $entry): bool => $entry instanceof Entry)
@@ -90,16 +105,22 @@ class Page extends ViewModel
         ];
     }
 
-    private function uses(): array
+    /**
+     * @return array<string, mixed>
+     */
+    private function uses(Entry $page): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Uses';
         $meta->description = 'Software and Tools I use in my daily live for development and some little helpers to improve my experience.';
         $meta->image = asset('images/og/static/uses.png');
 
-        return ['contents' => $this->cascade->get('content')];
+        return ['contents' => $page->content];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function charity(Entry $page): array
     {
         $meta = app(MetaBag::class);
@@ -108,11 +129,14 @@ class Page extends ViewModel
         $meta->image = asset('images/og/static/charity.png');
 
         return [
-            'contents' => $this->cascade->get('content'),
+            'contents' => $page->content,
             'charities' => $page->value('charities') ?? [],
         ];
     }
 
+    /**
+     * @return array<string, mixed>
+     */
     private function portfolio(Entry $page): array
     {
         $meta = app(MetaBag::class);
@@ -121,16 +145,19 @@ class Page extends ViewModel
         $meta->image = asset('images/og/static/portfolio.png');
 
         return [
-            'contents' => $this->cascade->get('content'),
+            'contents' => $page->content,
             'projects' => $page->value('projects') ?? [],
         ];
     }
 
-    private function simplePage(string $title): array
+    /**
+     * @return array<string, mixed>
+     */
+    private function simplePage(Entry $page, string $title): array
     {
         app(MetaBag::class)->title = $title;
 
-        return ['contents' => $this->cascade->get('content')];
+        return ['contents' => $page->content];
     }
 
     /**
