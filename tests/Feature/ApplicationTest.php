@@ -119,7 +119,7 @@ final class ApplicationTest extends TestCase
         $this->get('/images/posts/2020-01-01.hello-world.jpg')->assertNotFound();
     }
 
-    public function test_private_images_only_emit_signed_statamic_glide_urls(): void
+    public function test_private_images_only_emit_and_serve_signed_statamic_glide_urls(): void
     {
         $image = app()->make(Img::class, [
             'src' => 'images/posts/2020-01-01.hello-world.jpg',
@@ -128,11 +128,19 @@ final class ApplicationTest extends TestCase
             'crop' => true,
         ]);
         $src = html_entity_decode($image->src());
+        $webpSrc = html_entity_decode($image->src('webp'));
 
         $this->assertStringContainsString('/img/asset/', $src);
         $this->assertStringContainsString('fit=smartcrop', $src);
         $this->assertStringContainsString('s=', $src);
         $this->assertStringNotContainsString('/images/posts/', $src);
+
+        $webpPath = (string) parse_url($webpSrc, PHP_URL_PATH);
+        $webpQuery = (string) parse_url($webpSrc, PHP_URL_QUERY);
+
+        $this->get($webpPath.'?'.$webpQuery)
+            ->assertOk()
+            ->assertHeader('content-type', 'image/webp');
 
         $meta = new MetaBag;
         $meta->image = asset('images/og/static/home.png');
