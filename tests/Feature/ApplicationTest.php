@@ -6,6 +6,7 @@ use App\Services\MetaBag;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
+use Illuminate\Support\Facades\Artisan;
 use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
@@ -94,8 +95,7 @@ final class ApplicationTest extends TestCase
             config('statamic.search.indexes.blog.fields')
         );
 
-        $this->artisan('statamic:search:update', ['index' => 'blog'])
-            ->assertSuccessful();
+        $this->assertSame(0, Artisan::call('statamic:search:update', ['index' => 'blog']));
 
         $this->get('/blog')
             ->assertOk()
