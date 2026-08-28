@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\SiteIdentity;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
@@ -48,11 +49,10 @@ class GenerateOgImages extends Command
                 );
             });
 
-        collect([
-            'home' => 'Developer / Biker / Gamer',
-        ])->each(function (string $title, string $slug): void {
-            $this->saveImage("images/og/static/{$slug}.png", ['title' => $title]);
-        });
+        $this->saveImage(
+            'images/og/static/home.png',
+            ['title' => app(SiteIdentity::class)->tagline()],
+        );
     }
 
     /**
