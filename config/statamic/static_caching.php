@@ -1,5 +1,8 @@
 <?php
 
+use Statamic\StaticCaching\Replacers\CsrfTokenReplacer;
+use Statamic\StaticCaching\Replacers\NoCacheReplacer;
+
 return [
 
     /*
@@ -138,8 +141,8 @@ return [
     */
 
     'replacers' => [
-        \Statamic\StaticCaching\Replacers\CsrfTokenReplacer::class,
-        \Statamic\StaticCaching\Replacers\NoCacheReplacer::class,
+        CsrfTokenReplacer::class,
+        NoCacheReplacer::class,
     ],
 
     /*

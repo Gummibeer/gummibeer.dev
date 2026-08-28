@@ -1,5 +1,9 @@
 <?php
 
+use Statamic\Forms\Exporters\CsvExporter;
+use Statamic\Forms\Exporters\JsonExporter;
+use Statamic\Forms\SendEmail;
+
 return [
 
     /*
@@ -33,7 +37,7 @@ return [
     |
     */
 
-    'send_email_job' => \Statamic\Forms\SendEmail::class,
+    'send_email_job' => SendEmail::class,
 
     /*
     |--------------------------------------------------------------------------
@@ -47,10 +51,10 @@ return [
 
     'exporters' => [
         'csv' => [
-            'class' => Statamic\Forms\Exporters\CsvExporter::class,
+            'class' => CsvExporter::class,
         ],
         'json' => [
-            'class' => Statamic\Forms\Exporters\JsonExporter::class,
+            'class' => JsonExporter::class,
         ],
     ],
 

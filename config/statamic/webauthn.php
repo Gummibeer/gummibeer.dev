@@ -1,5 +1,7 @@
 <?php
 
+use Statamic\Auth\Eloquent\WebAuthnModel;
+
 return [
 
     /*
@@ -36,6 +38,6 @@ return [
     |
     */
 
-    'model' => \Statamic\Auth\Eloquent\WebAuthnModel::class,
+    'model' => WebAuthnModel::class,
 
 ];
