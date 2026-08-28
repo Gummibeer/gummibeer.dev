@@ -25,8 +25,7 @@ final class ApplicationTest extends TestCase
     public function test_native_statamic_content_model_is_populated(): void
     {
         $expected = [
-            'posts' => 19,
-            'drafts' => 10,
+            'posts' => 29,
             'streams' => 13,
             'jobs' => 9,
             'hacktoberfest' => 6,
@@ -39,6 +38,7 @@ final class ApplicationTest extends TestCase
         }
 
         $this->assertFileExists(base_path('content/collections/posts/2020-01-01.hello-world.md'));
+        $this->assertDirectoryDoesNotExist(base_path('content/collections/drafts'));
         $this->assertDirectoryDoesNotExist(resource_path('content/posts'));
     }
 
@@ -48,6 +48,28 @@ final class ApplicationTest extends TestCase
             18,
             Entry::query()->where('collection', 'posts')->whereStatus('published')->get()->count()
         );
+
+        foreach ([
+            'alpinejs-responsive-xcloak',
+            'blade-components',
+            'composite-rules',
+            'custom-url-generator',
+            'developer-courtesy',
+            'imgix-cloudflare',
+            'laravel-translate-array',
+            'loading-pivot-data',
+            'phpunit-laravel-mix',
+            'validate-change-password',
+        ] as $slug) {
+            $draft = Entry::query()
+                ->where('collection', 'posts')
+                ->where('slug', $slug)
+                ->first();
+
+            $this->assertInstanceOf(EntryContract::class, $draft, $slug);
+            $this->assertSame('posts', $draft->collection()->handle(), $slug);
+            $this->assertSame('draft', $draft->status(), $slug);
+        }
 
         $post = Entry::query()
             ->where('collection', 'posts')

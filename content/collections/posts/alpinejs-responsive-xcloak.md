@@ -1,7 +1,7 @@
 ---
 id: 2b27f6b3-ed1b-448f-aea5-257dc0901f7e
-blueprint: draft
-is_draft: true
+blueprint: post
+published: false
 ---
 
 ```scss

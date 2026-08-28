@@ -1,7 +1,7 @@
 ---
 id: 46cf9967-e716-4fb9-8620-c6d1fa40dbb7
-blueprint: draft
-is_draft: true
+blueprint: post
+published: false
 title: 'Developer Courtesy'
 categories:
     - open-source
