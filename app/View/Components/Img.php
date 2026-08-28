@@ -2,8 +2,6 @@
 
 namespace App\View\Components;
 
-use Astrotomic\LaravelMime\Facades\MimeTypes;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Illuminate\View\View;
@@ -39,20 +37,7 @@ class Img extends Component
         $this->setHeight($height);
 
         if (Str::startsWith($src, ['http://', 'https://'])) {
-            $filename = hash('md5', $src);
-            $tmppath = public_path('vendor/images/'.$filename);
-            $filepath = Arr::first(glob($tmppath.'.*'));
-
-            if (empty($filepath)) {
-                @mkdir(dirname($tmppath), 0755, true);
-                file_put_contents($tmppath, file_get_contents($src));
-                $mimetype = MimeTypes::guessMimeType($tmppath);
-                $extension = Arr::first(MimeTypes::getExtensions($mimetype));
-                $filepath = $tmppath.'.'.$extension;
-                rename($tmppath, $filepath);
-            }
-
-            $this->src = trim(str_replace(public_path(), '', $filepath), '/');
+            $this->src = $src;
         } else {
             $path = trim((string) parse_url($src, PHP_URL_PATH), '/');
             $this->src = Str::startsWith($path, 'images/')
