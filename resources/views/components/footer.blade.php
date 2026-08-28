@@ -1,6 +1,6 @@
 <footer class="py-4 px-4 w-full bg-white dark:bg-night-10 md:py-6 md:px-8 lg:px-10 xl:px-12 text-snow-20 dark:text-snow-10">
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-        <div class="flex-grow py-1 text-sm">
+        <div class="grow py-1 text-sm">
             &copy; Copyright 2015 - {{ date('Y') }} by Tom Witkowski
         </div>
         <ul class="flex flex-row space-x-2 list-inline">

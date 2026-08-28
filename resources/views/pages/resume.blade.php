@@ -27,7 +27,7 @@
                                 />
                             </div>
                         @endif
-                        <div class="flex-grow">
+                        <div class="grow">
                             <div class="flex flex-col items-center justify-between sm:flex-row">
                                 <div class="flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
                                     <h3 class="text-2xl @if(!$job->has_end) font-medium text-brand @endif">

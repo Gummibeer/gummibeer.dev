@@ -1,5 +1,6 @@
 /node_modules/
-/public/hot/
+/public/hot
+/public/build/
 /public/storage/
 /storage/*.key
 /vendor/
@@ -10,7 +11,6 @@ Homestead.json
 Homestead.yaml
 npm-debug.log
 yarn-error.log
-package-lock.json
 yarn.lock
 .phpstorm.meta.php
 _ide_helper.php

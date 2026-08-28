@@ -6,7 +6,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="dns-prefetch" href="{{ config('app.asset_url') }}" id="ASSET_URL">
     @if(app()->environment('prod'))
         <link rel="dns-prefetch" href="https://static.cloudflareinsights.com">
         <link rel="dns-prefetch" href="https://cloudflareinsights.com">
@@ -23,7 +22,7 @@
 
     <x-favicons/>
 
-    <link href="{{ mix('css/app.css') }}" rel="stylesheet" crossorigin="anonymous">
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 
     <link rel="me" href="https://twitter.com/devgummibeer">
     <link rel="me" href="https://github.com/Gummibeer">
@@ -43,7 +42,6 @@
 
 <x-footer/>
 
-<script defer src="{{ mix('js/app.js') }}" crossorigin="anonymous"></script>
 @if(app()->environment('prod'))
     <script async defer data-website-id="5790432b-8e52-4f5d-b458-937bb1ddedc6" src="https://u.gummibeer.dev/script.js"></script>
 @endif

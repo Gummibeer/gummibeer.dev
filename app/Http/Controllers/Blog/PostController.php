@@ -22,7 +22,7 @@ class PostController
 
         $meta->title = $post->value('title').' | Blog';
         $meta->description = $post->value('description');
-        $meta->image = mix(sprintf('images/og/posts/%s.%s.png', $post->date()->format('Y-m-d'), $post->slug()));
+        $meta->image = asset(sprintf('images/og/posts/%s.%s.png', $post->date()->format('Y-m-d'), $post->slug()));
 
         return view('pages.blog.post', compact('post'));
     }

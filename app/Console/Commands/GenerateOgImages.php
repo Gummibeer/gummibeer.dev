@@ -33,11 +33,11 @@ class GenerateOgImages extends Command
                         <div class="text-snow-20 text-sm" style="font-size:0.5em;">
                             <ul class="flex flex-row list-none" style="justify-content:center;">
                                 <li style="margin-right: 1em;">
-                                    <i class="fal fa-fw fa-calendar" style="margin-right: 0.25em;"></i>
+                                    <i class="fa-solid fa-fw fa-calendar" style="margin-right: 0.25em;"></i>
                                     {$date->format('M jS, Y')}
                                 </li>
                                 <li>
-                                    <i class="fal fa-fw fa-clock" style="margin-right: 0.25em;"></i>
+                                    <i class="fa-solid fa-fw fa-clock" style="margin-right: 0.25em;"></i>
                                     {$readTime} min read
                                 </li>
                             </ul>

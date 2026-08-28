@@ -24,7 +24,7 @@
                 @endforeach
             </ul>
 
-            <p class="block flex-grow text-snow-20 dark:text-snow-10">
+            <p class="block grow text-snow-20 dark:text-snow-10">
                 <x-icon class="mr-1 fal fa-heart"/>
                 {{ $likes->count() }} likes
             </p>
@@ -50,7 +50,7 @@
                 @endforeach
             </ul>
 
-            <p class="block flex-grow text-snow-20 dark:text-snow-10">
+            <p class="block grow text-snow-20 dark:text-snow-10">
                 <x-icon class="mr-1 fal fa-retweet"/>
                 {{ $reposts->count() }} reposts
             </p>

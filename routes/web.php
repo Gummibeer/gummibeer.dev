@@ -22,7 +22,7 @@ $findPage = static function (string $slug): EntryContract {
 
 Route::get('/', function (MetaBag $meta) use ($findPage) {
     $meta->description = 'I\'m an enthusiastic web developer and free time gamer from Hamburg, Germany.';
-    $meta->image = mix('images/og/static/home.png');
+    $meta->image = asset('images/og/static/home.png');
 
     return view('pages.home', [
         'me' => $findPage('me'),
@@ -43,7 +43,7 @@ Route::get('/', function (MetaBag $meta) use ($findPage) {
 
 Route::get('/resume', function (MetaBag $meta) use ($findPage) {
     $meta->title = 'Resume';
-    $meta->image = mix('images/og/static/me.png');
+    $meta->image = asset('images/og/static/me.png');
 
     $page = $findPage('resume');
     $jobs = Entry::whereCollection('jobs')
@@ -69,7 +69,7 @@ Route::get('/resume', function (MetaBag $meta) use ($findPage) {
 Route::get('/uses', function (MetaBag $meta) use ($findPage) {
     $meta->title = 'Uses';
     $meta->description = 'Software and Tools I use in my daily live for development and some little helpers to improve my experience.';
-    $meta->image = mix('images/og/static/uses.png');
+    $meta->image = asset('images/og/static/uses.png');
 
     return view('pages.uses', ['contents' => $findPage('uses')->content]);
 })->name('uses');
@@ -77,7 +77,7 @@ Route::get('/uses', function (MetaBag $meta) use ($findPage) {
 Route::get('/charity', function (MetaBag $meta) use ($findPage) {
     $meta->title = 'Charity';
     $meta->description = 'For me it\'s part of my obligation and responsibility to support what I believe is important for me, us and our planet.';
-    $meta->image = mix('images/og/static/charity.png');
+    $meta->image = asset('images/og/static/charity.png');
 
     return view('pages.charity', ['contents' => $findPage('charity')->content]);
 })->name('charity');
@@ -85,7 +85,7 @@ Route::get('/charity', function (MetaBag $meta) use ($findPage) {
 Route::get('/portfolio', function (MetaBag $meta) use ($findPage) {
     $meta->title = 'Portfolio';
     $meta->description = 'In my free time I support several local business owners with everything I know.';
-    $meta->image = mix('images/og/static/portfolio.png');
+    $meta->image = asset('images/og/static/portfolio.png');
 
     return view('pages.portfolio', ['contents' => $findPage('portfolio')->content]);
 })->name('portfolio');

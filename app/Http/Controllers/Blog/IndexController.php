@@ -10,7 +10,7 @@ class IndexController
     public function __invoke(MetaBag $meta, int $page = 1)
     {
         $meta->title = 'Blog';
-        $meta->image = mix('images/og/static/blog.png');
+        $meta->image = asset('images/og/static/blog.png');
 
         $posts = Entry::query()
             ->where('collection', 'posts')

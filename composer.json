@@ -88,14 +88,14 @@
             "@php artisan package:discover --ansi --no-interaction",
             "@php artisan statamic:install --ansi --no-interaction"
         ],
-        "alex": "alex resources/content/**/*.md",
+        "alex": "npm run lint:prose",
         "fix": "@php vendor/bin/pint",
         "fix-dirty": "@php vendor/bin/pint --dirty",
         "ide-helper": [
             "@php artisan ide-helper:generate --ansi --no-interaction --quiet",
             "@php artisan ide-helper:meta --ansi --no-interaction --quiet"
         ],
-        "og": "@php artisan generate:og:images && yarn dev",
+        "og": "@php artisan generate:og:images && npm run build",
         "phpstan": "@php vendor/bin/phpstan analyse --memory-limit=2G",
         "phpstan-baseline": "@php vendor/bin/phpstan analyse --memory-limit=2G --allow-empty-baseline --generate-baseline",
         "route:list": "@php artisan route:list | grep -Ev 'horizon|nova'",

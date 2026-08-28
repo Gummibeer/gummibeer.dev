@@ -8,11 +8,11 @@
         <div class="py-2 text-xs font-bold leading-none text-right uppercase">
             {{ $lang }}
         </div>
-        <div class="flex-grow py-2 font-mono text-xs leading-none text-center truncate">
+        <div class="grow py-2 font-mono text-xs leading-none text-center truncate">
             {{ $name }}
         </div>
         <button class="py-2 text-xs leading-none" type="button" data-clipboard-text="{{ $slot }}" title="copy code to clipboard">
-            <x-icon class="fal fa-copy"/>
+            <x-icon class="fa-solid fa-copy"/>
             <span class="sr-only">copy code to clipboard</span>
         </button>
     </header>

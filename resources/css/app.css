@@ -1,0 +1,275 @@
+@import "tailwindcss";
+@import "@fontsource-variable/inter";
+@import "@fontsource-variable/fira-code";
+@import "@fontsource/permanent-marker/400.css";
+@import "@fortawesome/fontawesome-free/css/all.css";
+@import "prism-themes/themes/prism-material-light.css";
+@import "prism-themes/themes/prism-material-dark.css" (prefers-color-scheme: dark);
+
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "Fira Code Variable", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-logo: "Permanent Marker", cursive;
+
+  --color-black: #000000;
+  --color-white: #ffffff;
+  --color-brand: #ffb300;
+  --color-snow-20: #88888e;
+  --color-snow-10: #dedddd;
+  --color-snow-0: #fafafa;
+  --color-night-20: #070615;
+  --color-night-10: #12152b;
+  --color-night-0: #161b2a;
+
+  --shadow-light: rgb(184 194 215 / 25%) 0 4px 6px, rgb(184 194 215 / 10%) 0 5px 7px;
+  --shadow-dark: rgb(15 17 21 / 25%) 0 4px 6px, rgb(15 17 21 / 10%) 0 5px 7px;
+
+  --radius-0: 0;
+  --radius-1: 0.25rem;
+  --radius-2: 0.5rem;
+  --radius-3: 0.75rem;
+  --radius-4: 1rem;
+  --radius-full: 9999px;
+
+  --container-xs: 20rem;
+  --container-md: 24rem;
+  --container-lg: 32rem;
+  --container-xl: 36rem;
+  --container-2xl: 42rem;
+}
+
+@custom-variant light (@media (prefers-color-scheme: light));
+@custom-variant print (@media print);
+
+@utility list-square {
+  list-style-type: square;
+}
+
+@utility list-roman {
+  list-style-type: upper-roman;
+}
+
+.prose {
+  color: inherit;
+  --tw-prose-body: currentColor;
+  --tw-prose-headings: currentColor;
+  --tw-prose-lead: currentColor;
+  --tw-prose-links: currentColor;
+  --tw-prose-bold: currentColor;
+  --tw-prose-counters: currentColor;
+  --tw-prose-bullets: currentColor;
+  --tw-prose-hr: currentColor;
+  --tw-prose-quotes: currentColor;
+  --tw-prose-quote-borders: currentColor;
+  --tw-prose-captions: currentColor;
+  --tw-prose-code: currentColor;
+  --tw-prose-pre-code: currentColor;
+
+  & :where(strong):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    font-weight: 700;
+  }
+
+  & :where(a):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+    color: inherit;
+    border-bottom: 2px dashed var(--color-brand);
+    text-decoration: none;
+    font-weight: 500;
+
+    &:hover {
+      color: var(--color-brand);
+      border-bottom-style: solid;
+    }
+  }
+
+  & :where(ul > li)::marker {
+    color: var(--color-night-0);
+  }
+}
+
+.prose-xl :where(ul > li):not(:where([class~="not-prose"], [class~="not-prose"] *)) {
+  margin-block: 0.25em;
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose :where(ul > li)::marker {
+    color: var(--color-snow-0);
+  }
+}
+
+.markdown {
+  & a[href]:not([class]) {
+    @apply border-b-2 border-brand border-dashed;
+
+    &:hover {
+      @apply border-solid;
+    }
+  }
+
+  & h1:not([class]) {
+    @apply mb-8 text-5xl leading-none font-black text-night-0;
+  }
+
+  & h2:not([class]) {
+    @apply mt-8 mb-4 text-4xl leading-none font-bold text-night-0;
+  }
+
+  & p:not([class]),
+  & blockquote:not([class]) {
+    @apply mb-2;
+  }
+
+  & pre:not([class]),
+  & pre[class*="language-"] {
+    @apply m-0;
+  }
+
+  & ul:not([class]) {
+    @apply mb-4 list-inside;
+    list-style-type: square;
+
+    & li:not([class]) {
+      @apply mb-2;
+    }
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .markdown h1:not([class]),
+  .markdown h2:not([class]) {
+    @apply text-white;
+  }
+}
+
+code[class*="language-"],
+pre[class*="language-"] {
+  @apply font-mono text-base leading-loose;
+  background: transparent;
+  tab-size: 4;
+  hyphens: none;
+}
+
+pre[class*="language-"].line-numbers {
+  position: relative;
+  padding-left: 3.8em;
+  counter-reset: linenumber;
+}
+
+pre[class*="language-"].line-numbers > code {
+  position: relative;
+  white-space: inherit;
+}
+
+.line-numbers .line-numbers-rows {
+  position: absolute;
+  pointer-events: none;
+  top: 0;
+  font-size: 100%;
+  left: -3.8em;
+  width: 3em;
+  letter-spacing: -1px;
+  border-right: 1px solid #999;
+  user-select: none;
+}
+
+.line-numbers-rows > span {
+  display: block;
+  counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+  content: counter(linenumber);
+  color: #999;
+  display: block;
+  padding-right: 0.8em;
+  text-align: right;
+}
+
+img.emoji {
+  display: inline-block;
+  font-size: 1em;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  margin: 0 0.1em !important;
+}
+
+.flex-basis-full {
+  flex-basis: 100%;
+}
+
+.shadow {
+  box-shadow: var(--shadow-light);
+}
+
+@media (prefers-color-scheme: dark) {
+  .shadow {
+    box-shadow: var(--shadow-dark);
+  }
+}
+
+.hover\:underlined {
+  background-image: linear-gradient(90deg, rgb(255 179 0 / 75%), rgb(255 179 0 / 75%));
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 100% 10%;
+  transition-property: background-size, background-image;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 750ms;
+    transition-timing-function: linear;
+  }
+
+  &:hover {
+    background-image: linear-gradient(90deg, var(--color-brand), var(--color-brand));
+    background-size: 100% 30%;
+  }
+}
+
+.bg-dotted {
+  background-position: 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  background-image: radial-gradient(rgb(0 0 0 / 25%) 0.5px, transparent 0.5px);
+}
+
+.bg-dotted-lg {
+  background-position: 0;
+  background-size: 10px 10px;
+  background-repeat: repeat;
+  background-image: radial-gradient(rgb(0 0 0 / 25%) 1px, transparent 1px);
+}
+
+@media (prefers-color-scheme: dark) {
+  .bg-dotted {
+    background-image: radial-gradient(rgb(255 255 255 / 25%) 0.5px, transparent 0.5px);
+  }
+
+  .bg-dotted-lg {
+    background-image: radial-gradient(rgb(255 255 255 / 25%) 1px, transparent 1px);
+  }
+}
+
+a[href] {
+  cursor: pointer;
+  transition-property: all;
+  transition-duration: 250ms;
+  transition-timing-function: ease-out;
+
+  @media (prefers-reduced-motion: reduce) {
+    transition-duration: 500ms;
+    transition-timing-function: linear;
+  }
+}
+
+[x-cloak] {
+  display: none !important;
+}
+
+::selection {
+  background: var(--color-brand);
+  color: var(--color-white);
+}
