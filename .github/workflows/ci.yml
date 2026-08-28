@@ -16,7 +16,7 @@ jobs:
           extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
           tools: composer:v2
 
-      - run: composer validate --strict --no-check-lock
+      - run: composer validate --strict
 
       - run: composer install --no-progress --prefer-dist --optimize-autoloader --no-interaction
 
@@ -48,6 +48,32 @@ jobs:
           PHP
 
       - run: php artisan view:cache
+
+      - name: Smoke test HTTP routes
+        run: |
+          cat > public/mix-manifest.json <<'JSON'
+          {
+            "/css/app.css": "/css/app.css",
+            "/js/app.js": "/js/app.js",
+            "/images/og/static/home.png": "/images/og/static/home.png",
+            "/images/og/static/blog.png": "/images/og/static/blog.png",
+            "/images/og/static/me.png": "/images/og/static/me.png",
+            "/images/og/static/uses.png": "/images/og/static/uses.png",
+            "/images/og/static/charity.png": "/images/og/static/charity.png",
+            "/images/og/static/portfolio.png": "/images/og/static/portfolio.png"
+          }
+          JSON
+
+          php artisan serve --host=127.0.0.1 --port=8000 > /tmp/gummibeer-server.log 2>&1 &
+          server_pid=$!
+          trap 'kill "$server_pid"' EXIT
+
+          for path in / /resume /privacy /blog/search.json /cp/auth/login; do
+            curl --fail --silent --show-error --retry 5 --retry-connrefused "http://127.0.0.1:8000${path}" > /dev/null || {
+              cat /tmp/gummibeer-server.log
+              exit 1
+            }
+          done
 
       - uses: actions/upload-artifact@v7
         if: failure()
