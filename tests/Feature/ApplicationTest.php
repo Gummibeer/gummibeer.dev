@@ -2,6 +2,7 @@
 
 namespace Tests\Feature;
 
+use App\Services\MetaBag;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
@@ -10,6 +11,7 @@ use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\Asset;
 use Statamic\Facades\AssetContainer;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Markdown;
@@ -88,14 +90,17 @@ final class ApplicationTest extends TestCase
             ->assertJsonCount(18);
     }
 
-    public function test_migrated_images_are_statamic_assets_and_remain_on_disk(): void
+    public function test_migrated_images_are_private_statamic_assets_above_webroot(): void
     {
         $container = AssetContainer::findByHandle('images');
 
         $this->assertNotNull($container);
         $this->assertSame('images', $container->handle());
-        $this->assertSame(public_path('images'), config('filesystems.disks.images.root'));
-        $this->assertSame('/images', config('filesystems.disks.images.url'));
+        $this->assertTrue($container->private());
+        $this->assertSame(resource_path('images'), config('filesystems.disks.images.root'));
+        $this->assertSame('private', config('filesystems.disks.images.visibility'));
+        $this->assertArrayNotHasKey('url', config('filesystems.disks.images'));
+        $this->assertDirectoryDoesNotExist(public_path('images'));
 
         foreach ([
             'charity/seashepherd.png',
@@ -107,8 +112,40 @@ final class ApplicationTest extends TestCase
             'posts/2020-01-01.hello-world.jpg',
             'posts/2021-01-28.yoda/content-paw-prints.jpg',
         ] as $image) {
-            $this->assertFileExists(public_path('images/'.$image), $image);
+            $this->assertFileExists(resource_path('images/'.$image), $image);
         }
+
+        $this->assertNotNull(Asset::find('images::posts/2020-01-01.hello-world.jpg'));
+        $this->get('/images/posts/2020-01-01.hello-world.jpg')->assertNotFound();
+    }
+
+    public function test_private_images_only_emit_signed_statamic_glide_urls(): void
+    {
+        $image = app()->make(Img::class, [
+            'src' => 'images/posts/2020-01-01.hello-world.jpg',
+            'width' => 400,
+            'height' => 250,
+            'crop' => true,
+        ]);
+        $src = html_entity_decode($image->src());
+
+        $this->assertStringContainsString('/img/asset/', $src);
+        $this->assertStringContainsString('fit=smartcrop', $src);
+        $this->assertStringContainsString('s=', $src);
+        $this->assertStringNotContainsString('/images/posts/', $src);
+
+        $meta = new MetaBag;
+        $meta->image = asset('images/og/static/home.png');
+        $metaImage = html_entity_decode($meta->image);
+
+        $this->assertStringContainsString('/img/asset/', $metaImage);
+        $this->assertStringContainsString('s=', $metaImage);
+        $this->assertStringNotContainsString('/images/og/', $metaImage);
+
+        $favicons = html_entity_decode(view('components.favicons')->render());
+        $this->assertStringContainsString('/img/asset/', $favicons);
+        $this->assertStringContainsString('s=', $favicons);
+        $this->assertStringNotContainsString('/images/favicons/', $favicons);
     }
 
     public function test_figure_captions_use_statamic_markdown(): void
@@ -143,14 +180,5 @@ MD);
 
         $this->assertContains(PixpipeSize::class, $manipulators);
         $this->assertNotContains(Size::class, $manipulators);
-
-        $image = app()->make(Img::class, [
-            'src' => 'images/example.jpg',
-            'width' => 400,
-            'height' => 250,
-            'crop' => true,
-        ]);
-
-        $this->assertStringContainsString('fit=smartcrop', $image->src());
     }
 }
