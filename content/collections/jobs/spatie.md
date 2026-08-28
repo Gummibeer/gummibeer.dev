@@ -6,8 +6,8 @@ role: 'Open Source Developer'
 start_at: 2016-08-01
 website: 'https://spatie.be'
 stack:
-  - PHP
-  - Laravel
+    - PHP
+    - Laravel
 icon: fa-ribbon
 logo: images/company/spatie.png
 ---

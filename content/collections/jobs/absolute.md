@@ -7,9 +7,9 @@ start_at: 2015-08-01
 end_at: 2017-09-30
 website: 'https://absolute.de'
 stack:
-  - Laravel
-  - Lumen
-  - CakePHP
+    - Laravel
+    - Lumen
+    - CakePHP
 icon: fa-briefcase
 logo: images/company/absolute.png
 salary: 30000

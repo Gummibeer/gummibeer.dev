@@ -6,8 +6,8 @@ role: 'Open Source Developer'
 start_at: 2015-11-01
 website: 'https://astrotomic.info'
 stack:
-  - PHP
-  - Laravel
+    - PHP
+    - Laravel
 icon: fa-ribbon
 logo: images/company/astrotomic.png
 ---

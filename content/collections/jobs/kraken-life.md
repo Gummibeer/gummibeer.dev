@@ -7,12 +7,12 @@ start_at: 2021-09-24
 end_at: 2023-12-31
 website: 'https://kraken-life.de/'
 stack:
-  - Laravel
-  - Livewire
-  - AlpineJS
-  - TailwindCSS
-  - Lua
-  - FiveM
+    - Laravel
+    - Livewire
+    - AlpineJS
+    - TailwindCSS
+    - Lua
+    - FiveM
 icon: fa-joystick
 logo: images/company/kraken-life.png
 ---

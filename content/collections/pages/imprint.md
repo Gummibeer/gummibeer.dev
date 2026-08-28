@@ -3,6 +3,7 @@ id: ac97b8bf-a8c8-4bea-9aa5-97ad478f254b
 blueprint: page
 title: Imprint
 ---
+
 # Imprint
 
 **Information in accordance with section 5 TMG**

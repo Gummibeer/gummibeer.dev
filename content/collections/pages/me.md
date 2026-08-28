@@ -3,6 +3,7 @@ id: 80ca56e0-263a-4baf-9716-07089aebc322
 blueprint: page
 title: 'Tom Herrmann'
 ---
+
 # Tom Herrmann
 
 **Web <span class="text-brand">Developer</span>, <span class="text-brand">Biker</span> and <span class="text-brand">Gamer</span> living in Hamburg, Germany**
