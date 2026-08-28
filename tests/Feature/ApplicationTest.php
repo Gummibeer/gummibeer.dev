@@ -5,6 +5,7 @@ namespace Tests\Feature;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
+use Illuminate\Support\Facades\Blade;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use Statamic\Contracts\Entries\Entry as EntryContract;
@@ -67,6 +68,13 @@ final class ApplicationTest extends TestCase
         $this->getJson('/blog/search.json')
             ->assertOk()
             ->assertJsonCount(18);
+    }
+
+    public function test_figure_captions_use_statamic_markdown(): void
+    {
+        $html = Blade::render('<x-figure><x-slot name="caption">**Bold caption**</x-slot>Image</x-figure>');
+
+        $this->assertStringContainsString('<strong>Bold caption</strong>', $html);
     }
 
     public function test_statamic_glide_uses_pixpipe_smartcrop(): void
