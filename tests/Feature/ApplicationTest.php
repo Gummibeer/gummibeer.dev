@@ -117,6 +117,7 @@ final class ApplicationTest extends TestCase
     public function test_sitemap_generation_works_with_spatie_sitemap_v8(): void
     {
         config()->set('sitemap.guzzle_options.handler', new MockHandler([
+            new GuzzleResponse(200, ['Content-Type' => 'text/plain'], ''),
             new GuzzleResponse(200, ['Content-Type' => 'text/html'], '<html><body>Home</body></html>'),
         ]));
 
