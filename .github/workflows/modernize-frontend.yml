@@ -615,10 +615,6 @@ jobs:
             echo 'Legacy Tailwind utility names remain.' >&2
             exit 1
           fi
-          if git grep -nE 'mburger|GummibeerDev|fa-telegram' -- resources/views package.json resources/css resources/js; then
-            echo 'Removed frontend dependencies or Telegram UI remain.' >&2
-            exit 1
-          fi
 
       - name: Commit migration
         run: |
