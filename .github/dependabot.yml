@@ -1,8 +1,15 @@
 version: 2
-
 updates:
-
-  - package-ecosystem: "github-actions"
-    directory: "/"
+  - package-ecosystem: 'composer'
+    directory: '/'
     schedule:
-      interval: "weekly"
+      interval: 'daily'
+    open-pull-requests-limit: 10
+    reviewers:
+      - 'Gummibeer'
+  - package-ecosystem: 'github-actions'
+    directory: '/'
+    schedule:
+      interval: 'daily'
+    reviewers:
+      - 'Gummibeer'

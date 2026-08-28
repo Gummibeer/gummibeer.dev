@@ -1,0 +1,47 @@
+name: CI bootstrap
+
+on:
+  push:
+    branches:
+      - statamic-cms
+
+permissions:
+  contents: write
+
+jobs:
+  bootstrap:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      APP_ENV: testing
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      CACHE_STORE: array
+      SESSION_DRIVER: array
+
+    steps:
+      - uses: actions/checkout@v7
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
+          coverage: none
+      - run: composer global config allow-plugins.ergebnis/composer-normalize true
+      - run: composer global require ergebnis/composer-normalize:^2.52
+      - run: composer normalize
+      - run: composer update --prefer-dist --no-interaction --no-scripts
+      - run: php artisan package:discover --ansi --no-interaction
+      - run: vendor/bin/pint
+      - run: composer phpstan-baseline
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+      - run: npx --yes prettier@3.6.2 --write 'README.md' 'resources/content/**/*.md' 'resources/js/*.js' 'resources/scss/**/*.scss'
+      - name: Commit generated fixes
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add composer.json composer.lock phpstan-baseline.neon app tests README.md resources/content resources/js resources/scss
+          if ! git diff --cached --quiet; then
+            git commit -m "Apply CI toolchain fixes"
+            git push
+          fi

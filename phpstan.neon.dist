@@ -1,0 +1,13 @@
+includes:
+    - phpstan-baseline.neon
+    - vendor/larastan/larastan/extension.neon
+
+parameters:
+    paths:
+        - app
+
+    tmpDir: ./.phpstan
+
+    level: 7
+
+    reportUnmatchedIgnoredErrors: false

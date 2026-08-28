@@ -1,4 +1,5 @@
 {
+    "$schema": "https://getcomposer.org/schema.json",
     "name": "gummibeer/gummibeer.de",
     "description": "Website of Gummibeer",
     "license": "MIT",
@@ -32,15 +33,22 @@
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.7",
+        "larastan/larastan": "^3.10",
         "laravel/pint": "^1.24",
         "nunomaduro/collision": "^8.6",
+        "phpunit/phpunit": "^12.5.12",
         "spatie/laravel-ignition": "^2.9"
     },
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "prefer-stable": true,
     "autoload": {
         "psr-4": {
             "App\\": "app/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Tests\\": "tests/"
         }
     },
     "config": {
@@ -53,6 +61,10 @@
         "sort-packages": true
     },
     "extra": {
+        "composer-normalize": {
+            "indent-size": 4,
+            "indent-style": "space"
+        },
         "laravel": {
             "dont-discover": []
         }
@@ -74,11 +86,19 @@
         ],
         "alex": "alex resources/content/**/*.md",
         "fix": "@php vendor/bin/pint",
+        "fix-dirty": "@php vendor/bin/pint --dirty",
         "ide-helper": [
             "@php artisan ide-helper:generate --ansi --no-interaction --quiet",
             "@php artisan ide-helper:meta --ansi --no-interaction --quiet"
         ],
+        "normalize": "echo 'composer global require ergebnis/composer-normalize'",
         "og": "@php artisan generate:og:images && yarn dev",
-        "route:list": "@php artisan route:list | grep -Ev 'horizon|nova'"
+        "phpstan": "@php vendor/bin/phpstan analyse --memory-limit=2G",
+        "phpstan-baseline": "@php vendor/bin/phpstan analyse --memory-limit=2G --allow-empty-baseline --generate-baseline",
+        "route:list": "@php artisan route:list | grep -Ev 'horizon|nova'",
+        "test": [
+            "@php artisan config:clear --ansi @no_additional_args",
+            "@php artisan test"
+        ]
     }
 }
