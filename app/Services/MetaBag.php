@@ -13,21 +13,27 @@ use Statamic\Contracts\Imaging\UrlBuilder;
  */
 class MetaBag extends Fluent
 {
-    public function __construct()
+    private SiteIdentity $identity;
+
+    public function __construct(?SiteIdentity $identity = null)
     {
         parent::__construct([]);
-        $this->title = config('app.name');
+
+        $this->identity = $identity ?? app(SiteIdentity::class);
+        $this->title = $this->identity->siteName();
     }
 
     public function setTitleAttribute(string $title): string
     {
-        if (Str::endsWith($title, config('app.name'))) {
+        $siteName = $this->identity->siteName();
+
+        if (Str::endsWith($title, $siteName)) {
             return $title;
         }
 
         return implode(' | ', [
             $title,
-            config('app.name'),
+            $siteName,
         ]);
     }
 
