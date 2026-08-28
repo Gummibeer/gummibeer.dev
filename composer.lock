@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ba8b770e851ca9ee224f60741788848b",
+    "content-hash": "aa6462bf1ac69fb1dd91e155f45f1e4e",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -6085,16 +6085,16 @@
         },
         {
             "name": "statamic/cms",
-            "version": "v6.29.0",
+            "version": "v6.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/statamic/cms.git",
-                "reference": "389a364ad6dd440ac086a2a8a01cf6bc729b00f6"
+                "reference": "04b74b3e01ec09db074e3ae296c6f3b74279b075"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/statamic/cms/zipball/389a364ad6dd440ac086a2a8a01cf6bc729b00f6",
-                "reference": "389a364ad6dd440ac086a2a8a01cf6bc729b00f6",
+                "url": "https://api.github.com/repos/statamic/cms/zipball/04b74b3e01ec09db074e3ae296c6f3b74279b075",
+                "reference": "04b74b3e01ec09db074e3ae296c6f3b74279b075",
                 "shasum": ""
             },
             "require": {
@@ -6193,7 +6193,7 @@
             ],
             "support": {
                 "issues": "https://github.com/statamic/cms/issues",
-                "source": "https://github.com/statamic/cms/tree/v6.29.0"
+                "source": "https://github.com/statamic/cms/tree/v6.30.0"
             },
             "funding": [
                 {
@@ -6201,7 +6201,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-08-25T13:33:51+00:00"
+            "time": "2026-08-28T16:34:10+00:00"
         },
         {
             "name": "statamic/stringy",
@@ -12937,5 +12937,5 @@
         "ext-simplexml": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.9.0"
+    "plugin-api-version": "2.6.0"
 }
