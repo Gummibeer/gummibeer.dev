@@ -84,10 +84,32 @@ final class ApplicationTest extends TestCase
                 $response->assertSee($expectedContent);
             }
         }
+    }
 
-        $this->getJson('/blog/search.json')
+    public function test_blog_search_uses_the_native_statamic_index(): void
+    {
+        $this->assertSame(['collection:posts'], config('statamic.search.indexes.blog.searchables'));
+        $this->assertSame(
+            ['title', 'description', 'categories', 'content'],
+            config('statamic.search.indexes.blog.fields')
+        );
+
+        $this->artisan('statamic:search:update', ['index' => 'blog'])
+            ->assertSuccessful();
+
+        $this->get('/blog')
             ->assertOk()
-            ->assertJsonCount(18);
+            ->assertSee('action="'.route('blog.search').'"', false);
+
+        $this->get('/blog/search?q=OpenStreetMap')
+            ->assertOk()
+            ->assertSee('Geography in Laravel: retrieving geographical data');
+
+        $this->get('/blog/search?q=thereisabsolutelynopostmatchingthis')
+            ->assertOk()
+            ->assertSee('No posts found');
+
+        $this->get('/blog/search.json')->assertNotFound();
     }
 
     public function test_migrated_images_are_private_statamic_assets_above_webroot(): void
