@@ -55,6 +55,13 @@ return [
             'visibility' => 'public',
         ],
 
+        'images' => [
+            'driver' => 'local',
+            'root' => public_path('images'),
+            'url' => '/images',
+            'visibility' => 'public',
+        ],
+
         'static' => [
             'driver' => 'local',
             'root' => resource_path('content/static'),
