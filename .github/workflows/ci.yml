@@ -49,17 +49,6 @@ jobs:
 
       - run: php artisan view:cache
 
-      - uses: actions/setup-node@v7
-        with:
-          node-version: 16
-
-      - run: |
-          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
-          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_TOKEN }}
-          yarn install --frozen-lockfile
-
-      - run: yarn production
-
       - uses: actions/upload-artifact@v7
         if: failure()
         with:
