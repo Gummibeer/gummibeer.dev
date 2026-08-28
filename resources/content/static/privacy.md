@@ -27,7 +27,3 @@ You are allowed to ask me anytime what I have saved and know about you and also 
 ## Linking to foreign pages
 
 Primary in the footer section but also some other places I link to other pages. I can not tell you what data they collect and what they do with them - please refer to the privacy statements of the linked page to find these information.
-
-## Imgix
-
-I use Imgix to deliver optimized and prepared images to you. You can check all necessary information at [Imgix Privacy](https://www.imgix.com/privacy).
