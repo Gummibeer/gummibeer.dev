@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
+          tools: composer:v2
+
+      - run: composer validate --strict --no-check-lock
+
+      - run: composer install --no-progress --prefer-dist --optimize-autoloader --no-interaction
+
+      - run: find app routes config -name '*.php' -print0 | xargs -0 -n1 php -l
+
+      - run: php artisan route:list
+
+      - run: php please stache:warm
+
+      - run: php artisan view:cache
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 16
+          cache: yarn
+
+      - run: |
+          npm config set "@fortawesome:registry" https://npm.fontawesome.com/
+          npm config set "//npm.fontawesome.com/:_authToken" ${{ secrets.FONTAWESOME_TOKEN }}
+          yarn install --frozen-lockfile
+
+      - run: yarn production
+
+      - uses: actions/upload-artifact@v7
+        if: failure()
+        with:
+          name: laravel-log
+          path: storage/logs/laravel.log
