@@ -36,7 +36,7 @@
         "larastan/larastan": "^3.10",
         "laravel/pint": "^1.24",
         "nunomaduro/collision": "^8.6",
-        "phpunit/phpunit": "^12.5.12",
+        "phpunit/phpunit": "^11.5",
         "spatie/laravel-ignition": "^2.9"
     },
     "minimum-stability": "stable",
