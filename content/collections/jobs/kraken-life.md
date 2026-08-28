@@ -3,8 +3,8 @@ id: 9aefa5fa-f4e8-4b84-bdca-65137049eb04
 blueprint: job
 name: Kraken-Life
 role: 'Head of Engineering'
-start_at: 1632441600
-end_at: 1703980800
+start_at: 2021-09-24
+end_at: 2023-12-31
 website: 'https://kraken-life.de/'
 stack:
   - Laravel

@@ -1,5 +1,8 @@
 title: Posts
 date: true
+date_behavior:
+  past: public
+  future: private
 sort_dir: desc
 taxonomies:
   - categories

@@ -1,4 +1,6 @@
-<?php /** @var App\Services\MetaBag $meta */ ?>
+<?php /** @var Statamic\Contracts\Entries\Entry $me */ ?>
+<?php /** @var Illuminate\Support\Collection $posts */ ?>
+<?php /** @var Illuminate\Support\Collection $streams */ ?>
 
 @extends('web')
 
@@ -8,20 +10,20 @@
 
 @section('content')
     <x-article class="prose md:prose-lg lg:prose-xl">
-        {{ $me->contents }}
+        {!! $me->content !!}
     </x-article>
 
-    @if(\App\Post::isNotEmpty())
+    @if($posts->isNotEmpty())
     <x-section>
-        <x-post.promo :post="\App\Post::latest()"/>
+        <x-post.promo :post="$posts->first()"/>
     </x-section>
     @endif
 
-    @if(\App\Post::all()->reject(\App\Post::latest())->isNotEmpty())
+    @if($posts->skip(1)->isNotEmpty())
     <x-section class="bg-dotted">
         <h2 class="mb-8 text-4xl font-bold leading-none text-night-0 dark:text-white">Latest Posts</h2>
         <x-grid>
-            @foreach(\App\Post::all()->reject(\App\Post::latest())->take(3) as $post)
+            @foreach($posts->skip(1)->take(3) as $post)
                 <x-post.preview :post="$post" :class="$loop->iteration === 3 ? 'hidden lg:block' : ''"/>
             @endforeach
         </x-grid>

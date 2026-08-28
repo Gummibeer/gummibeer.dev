@@ -1,12 +1,12 @@
 <?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
 <?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var App\Stream $stream */ ?>
+<?php /** @var Statamic\Contracts\Entries\Entry $stream */ ?>
 @props(['stream'])
 
 <article class="rounded-4 shadow bg-white dark:bg-night-20 overflow-hidden">
-    <a href="https://youtu.be/{{ $stream->youtube_id }}">
+    <a href="{{ $stream->external_url }}">
         <x-img
-            src="https://i.ytimg.com/vi/{{ $stream->youtube_id }}/maxresdefault.jpg"
+            :src="$stream->image"
             width="768"
             ratio="16:9"
             :crop="true"
@@ -20,7 +20,7 @@
             </strong>
         </div>
         <h3 class="mb-4 text-2xl font-bold leading-none text-night-0 dark:text-white">
-            <a href="https://youtu.be/{{ $stream->youtube_id }}" class="hover:underlined">
+            <a href="{{ $stream->external_url }}" class="hover:underlined">
                 {{ $stream->title }}
             </a>
         </h3>

@@ -2,8 +2,9 @@
 
 namespace App\Http\Controllers\Blog\Year;
 
-use App\Post;
 use App\Services\MetaBag;
+use Carbon\Carbon;
+use Statamic\Facades\Entry;
 
 class IndexController
 {
@@ -11,8 +12,14 @@ class IndexController
     {
         $meta->title = sprintf('Posts from %d | Blog', $year);
 
-        $posts = Post::all()
-            ->filter(fn (Post $post): bool => $post->date->year == $year)
+        $posts = Entry::query()
+            ->where('collection', 'posts')
+            ->whereStatus('published')
+            ->where('date', '>=', Carbon::create($year)->startOfYear())
+            ->where('date', '<=', Carbon::create($year)->endOfYear())
+            ->get()
+            ->sortByDesc(fn ($entry) => $entry->date())
+            ->values()
             ->paginate($page)
             ->withRoute('blog.year.index', compact('year'));
 

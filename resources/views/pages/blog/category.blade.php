@@ -1,12 +1,12 @@
 <?php /** @var App\Services\Paginator $posts */ ?>
-<?php /** @var App\Category $category */ ?>
+<?php /** @var Statamic\Contracts\Taxonomies\Term $category */ ?>
 
 @extends('web')
 
 @push('head')
     <x-og.website/>
     <x-link-pagination :paginator="$posts"/>
-    <x-link-feed route="blog.category.feed" :parameters="compact('category')"/>
+    <x-link-feed route="blog.category.feed" :parameters="['category' => $category->slug()]"/>
 @endpush
 
 @section('content')

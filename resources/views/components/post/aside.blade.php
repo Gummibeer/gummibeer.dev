@@ -1,6 +1,6 @@
 <?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
 <?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var App\Post $post */ ?>
+<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
 
 <aside {{ $attributes->except('post')->merge(['class' => 'text-snow-20 dark:text-snow-10']) }}>
     <ul class="flex flex-col list-none sm:flex-row sm:space-x-3">
@@ -18,7 +18,7 @@
         </li>
 {{--        <li>--}}
 {{--            <x-icon class="mr-1 fal fa-user"/>--}}
-{{--            <a href="{{ $post->author->url }}" class="hover:text-brand">{{ $post->author->name }}</a>--}}
+{{--            <a href="{{ route('blog.author.index', ['author' => $post->author->slug()]) }}" class="hover:text-brand">{{ $post->author->title }}</a>--}}
 {{--        </li>--}}
     </ul>
 </aside>

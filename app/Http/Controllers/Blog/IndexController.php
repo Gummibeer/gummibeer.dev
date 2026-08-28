@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers\Blog;
 
-use App\Post;
 use App\Services\MetaBag;
-use App\Stream;
+use Statamic\Facades\Entry;
 
 class IndexController
 {
@@ -13,9 +12,18 @@ class IndexController
         $meta->title = 'Blog';
         $meta->image = mix('images/og/static/blog.png');
 
-        $posts = Post::all()
-            ->merge(Stream::all())
-            ->sortByDesc('date')
+        $posts = Entry::query()
+            ->where('collection', 'posts')
+            ->whereStatus('published')
+            ->get()
+            ->merge(
+                Entry::query()
+                    ->where('collection', 'streams')
+                    ->whereStatus('published')
+                    ->get()
+            )
+            ->sortByDesc(fn ($entry) => $entry->date())
+            ->values()
             ->paginate($page)
             ->withRoute('blog.index');
 

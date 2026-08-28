@@ -1,5 +1,5 @@
-<?php /** @var Illuminate\Support\HtmlString $contents */ ?>
-<?php /** @var Illuminate\Support\Collection|App\Job[] $jobs */ ?>
+<?php /** @var Illuminate\Support\HtmlString|string $contents */ ?>
+<?php /** @var Illuminate\Support\Collection $jobs */ ?>
 
 @extends('web')
 
@@ -9,14 +9,14 @@
 
 @section('content')
     <x-article class="prose md:prose-lg lg:prose-xl">
-        {{ $contents }}
+        {!! $contents !!}
     </x-article>
 
     <x-section class="bg-dotted">
         <div class="mx-auto w-full sm:px-4 md:px-0 sm:max-w-screen-sm md:max-w-screen-md">
             <div class="overflow-hidden px-4 bg-white divide-y shadow rounded-4 dark:bg-night-20">
             @foreach($jobs as $job)
-                <div class="py-4 @if($job->hasEnd()) text-snow-20 dark:text-snow-10 @endif">
+                <div class="py-4 @if($job->has_end) text-snow-20 dark:text-snow-10 @endif">
                     <div class="flex flex-row sm:items-center sm:space-x-4">
                         @if($job->logo)
                             <div class="hidden w-24 h-24 sm:block">
@@ -30,8 +30,8 @@
                         <div class="flex-grow">
                             <div class="flex flex-col items-center justify-between sm:flex-row">
                                 <div class="flex flex-col sm:flex-row sm:space-x-4 sm:items-center">
-                                    <h3 class="text-2xl @if(!$job->hasEnd()) font-medium text-brand @endif">
-                                        <x-icon :class="$job->icon"/>
+                                    <h3 class="text-2xl @if(!$job->has_end) font-medium text-brand @endif">
+                                        <x-icon :class="$job->icon_class"/>
                                         {{ $job->name }}
                                     </h3>
                                     <a
@@ -55,8 +55,8 @@
                                     <span class="text-snow-20 dark:text-snow-10">{{ \Illuminate\Support\Str::money($job->salary ?? 0) }}</span>
                                 </aside>
                             </div>
-                            <strong class="block @if(!$job->hasEnd()) font-bold @else text-sm font-normal @endif">{{ $job->role }}</strong>
-                            <ul class="flex list-none space-x-4 @if(!$job->hasEnd()) text-sm @else text-xs @endif mt-1">
+                            <strong class="block @if(!$job->has_end) font-bold @else text-sm font-normal @endif">{{ $job->role }}</strong>
+                            <ul class="flex list-none space-x-4 @if(!$job->has_end) text-sm @else text-xs @endif mt-1">
                                 @foreach($job->stack as $tool)
                                     <li>{{ $tool }}</li>
                                 @endforeach

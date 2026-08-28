@@ -4,14 +4,16 @@ namespace Tests\Feature;
 
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
+use Carbon\CarbonInterface;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
+use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Entry;
 use Tests\TestCase;
 
 final class ApplicationTest extends TestCase
 {
-    public function test_migrated_statamic_collections_are_populated(): void
+    public function test_native_statamic_content_model_is_populated(): void
     {
         $expected = [
             'posts' => 19,
@@ -19,12 +21,41 @@ final class ApplicationTest extends TestCase
             'streams' => 13,
             'jobs' => 9,
             'hacktoberfest' => 6,
-            'static' => 7,
+            'pages' => 7,
+            'authors' => 1,
         ];
 
         foreach ($expected as $collection => $count) {
             $this->assertSame($count, Entry::whereCollection($collection)->count(), $collection);
         }
+
+        $this->assertFileExists(base_path('content/collections/posts/2020-01-01.hello-world.md'));
+        $this->assertDirectoryDoesNotExist(resource_path('content/posts'));
+    }
+
+    public function test_native_status_relationships_and_fieldtypes_are_used(): void
+    {
+        $this->assertSame(
+            18,
+            Entry::query()->where('collection', 'posts')->whereStatus('published')->get()->count()
+        );
+
+        $post = Entry::query()
+            ->where('collection', 'posts')
+            ->where('slug', 'human-readable-intervals')
+            ->first();
+
+        $this->assertInstanceOf(EntryContract::class, $post);
+        $this->assertSame('gummibeer', $post->author->id());
+        $this->assertContains('laravel', $post->categories->map(fn ($term) => $term->slug())->all());
+
+        $job = Entry::query()
+            ->where('collection', 'jobs')
+            ->where('slug', 'hospitable')
+            ->first();
+
+        $this->assertInstanceOf(EntryContract::class, $job);
+        $this->assertInstanceOf(CarbonInterface::class, $job->start_at);
     }
 
     public function test_public_pages_and_statamic_control_panel_boot(): void

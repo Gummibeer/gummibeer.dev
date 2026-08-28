@@ -3,11 +3,6 @@
 return [
     'watcher' => env('STATAMIC_STACHE_WATCHER', 'auto'),
     'cache_store' => null,
-    'stores' => [
-        'entries' => [
-            'directory' => resource_path('content'),
-        ],
-    ],
     'indexes' => [],
     'lock' => [
         'enabled' => true,

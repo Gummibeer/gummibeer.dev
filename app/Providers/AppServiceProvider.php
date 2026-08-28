@@ -2,26 +2,19 @@
 
 namespace App\Providers;
 
-use App\Repositories\AuthorRepository;
-use App\Repositories\CategoryRepository;
-use App\Repositories\ContentRepository;
-use App\Repositories\JobRepository;
-use App\Repositories\PostRepository;
-use App\Repositories\StreamRepository;
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\MetaBag;
 use App\Services\ParagraphRenderer;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
+use Carbon\CarbonInterval;
 use Illuminate\Foundation\Http\Events\RequestHandled;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use League\CommonMark\ConverterInterface;
-use League\CommonMark\Environment\Environment;
-use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
-use League\CommonMark\MarkdownConverter;
+use Illuminate\Support\Str;
 use League\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Node\Block\Paragraph;
 use League\CommonMark\Node\Inline\Image;
@@ -30,20 +23,24 @@ use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use LogicException;
+use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\Collection as StatamicCollection;
+use Statamic\Facades\Markdown;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
         $this->registerMeta();
-        $this->registerRepositories();
-        $this->registerCommonmark();
         $this->registerPixpipeGlide();
     }
 
     public function boot(): void
     {
         Paginator::useTailwind();
+
+        $this->registerComputedContentValues();
+        $this->registerMarkdown();
 
         Event::listen(RequestHandled::class, fn () => $this->registerMeta());
     }
@@ -55,33 +52,48 @@ class AppServiceProvider extends ServiceProvider
         View::share('meta', $this->app->make(MetaBag::class));
     }
 
-    public function registerRepositories(): void
+    public function registerComputedContentValues(): void
     {
-        $this->app->singleton(PostRepository::class);
-        $this->app->singleton(AuthorRepository::class);
-        $this->app->singleton(CategoryRepository::class);
-        $this->app->singleton(JobRepository::class);
-        $this->app->singleton(StreamRepository::class);
-        $this->app->singleton(ContentRepository::class);
+        StatamicCollection::computed('posts', [
+            'image' => static function (EntryContract $entry, mixed $value): ?string {
+                $images = $entry->value('images');
+
+                return $value ?? (is_array($images) ? Arr::first($images) : null);
+            },
+            'public_url' => static fn (EntryContract $entry, mixed $value): string => route('blog.post', [
+                'year' => $entry->date()?->year,
+                'post' => $entry->slug(),
+            ]),
+            'read_time' => static function (EntryContract $entry, mixed $value): float {
+                $html = Markdown::parse((string) $entry->value('content'));
+                $wordCount = mb_strlen(strip_tags($html)) / 5;
+                $wordsPerMinute = 60 * 3;
+                $minutes = ceil(($wordCount / $wordsPerMinute) * 2) / 2;
+
+                return max(1, $minutes);
+            },
+        ]);
+
+        StatamicCollection::computed('streams', [
+            'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => CarbonInterval::fromString((string) $value),
+            'external_url' => static fn (EntryContract $entry, mixed $value): string => 'https://youtu.be/'.$entry->value('youtube_id'),
+            'image' => static fn (EntryContract $entry, mixed $value): string => 'https://i.ytimg.com/vi/'.$entry->value('youtube_id').'/maxresdefault.jpg',
+        ]);
+
+        StatamicCollection::computed('jobs', [
+            'website_host' => static fn (EntryContract $entry, mixed $value): string => (string) parse_url((string) $entry->value('website'), PHP_URL_HOST),
+            'icon_class' => static fn (EntryContract $entry, mixed $value): string => 'fal '.Str::start((string) $entry->value('icon'), 'fa-'),
+            'has_end' => static fn (EntryContract $entry, mixed $value): bool => filled($entry->value('end_at')),
+        ]);
     }
 
-    public function registerCommonmark(): void
+    public function registerMarkdown(): void
     {
-        $this->app->singleton(ConverterInterface::class, function (): ConverterInterface {
-            $environment = new Environment([
-                'html_input' => 'allow',
-                'allow_unsafe_links' => true,
-            ]);
-
-            $environment->addExtension(new CommonMarkCoreExtension);
-            $environment->addRenderer(FencedCode::class, new FencedCodeRenderer, 10);
-            $environment->addRenderer(Paragraph::class, new ParagraphRenderer, 10);
-            $environment->addRenderer(Image::class, new ImageRenderer, 10);
-
-            return new MarkdownConverter($environment);
-        });
-
-        $this->app->alias(ConverterInterface::class, 'markdown');
+        Markdown::addRenderers(fn (): array => [
+            [FencedCode::class, new FencedCodeRenderer, 10],
+            [Paragraph::class, new ParagraphRenderer, 10],
+            [Image::class, new ImageRenderer, 10],
+        ]);
     }
 
     public function registerPixpipeGlide(): void

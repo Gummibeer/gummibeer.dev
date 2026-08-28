@@ -43,10 +43,12 @@ tabs:
           -
             handle: author
             field:
-              type: select
+              type: entries
               display: Author
-              options:
-                gummibeer: Gummibeer
+              collections:
+                - authors
+              max_items: 1
+              mode: select
               default: gummibeer
           -
             handle: description
@@ -75,7 +77,7 @@ tabs:
               localizable: true
               validate:
                 - 'max:200'
-                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+                - 'new \\Statamic\\Rules\\UniqueEntryValue({collection}, {id}, {site})'
           -
             handle: date
             field:

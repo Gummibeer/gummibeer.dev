@@ -2,11 +2,11 @@
 
 namespace App\Console\Commands;
 
-use App\Post;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
-use Illuminate\Support\Str;
 use Spatie\Emoji\Emoji;
+use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\Entry;
 
 class PromotePost extends Command
 {
@@ -16,16 +16,12 @@ class PromotePost extends Command
 
     public function handle(): int
     {
-        $posts = collect(json_decode(json_encode(simplexml_load_string(Http::get(route('sitemap.xml')))), true)['url'])
-            ->pluck('loc')
-            ->map(fn (string $loc): string => str_replace(url('/'), '', $loc))
-            ->map(fn (string $path): string => trim($path, '/'))
-            ->filter(fn (string $path): bool => Str::startsWith($path, 'blog/'))
-            ->map(fn (string $path): string => str_replace('blog/', '', $path))
-            ->filter(fn (string $slug): bool => Str::contains($slug, '/'))
-            ->map(fn (string $slug): Post => Post::find($slug))
-            ->filter(fn (Post $post): bool => $post->should_promote)
-            ->filter(fn (Post $post): bool => $post->promoted_at === null);
+        $posts = Entry::query()
+            ->where('collection', 'posts')
+            ->whereStatus('published')
+            ->get()
+            ->filter(fn (EntryContract $post): bool => (bool) ($post->value('should_promote') ?? true))
+            ->filter(fn (EntryContract $post): bool => blank($post->value('promoted_at')));
 
         if ($posts->isEmpty()) {
             $this->warn('🔎 Nothing to promote');
@@ -33,23 +29,24 @@ class PromotePost extends Command
             return 0;
         }
 
-        /** @var Post $post */
-        $post = $posts->sortBy('date')->first();
+        /** @var EntryContract $post */
+        $post = $posts->sortBy(fn (EntryContract $post) => $post->date())->first();
+        $url = route('blog.post', ['year' => $post->date()?->year, 'post' => $post->slug()]);
 
-        $this->comment('🚀 "'.$post->title.'" '.$post->url);
+        $this->comment('🚀 "'.$post->value('title').'" '.$url);
 
         $response = Http::post(
             sprintf('https://api.telegram.org/bot%s/sendMessage', config('services.telegram.bot_token')),
             [
                 'chat_id' => config('services.telegram.chat_id'),
-                'text' => Emoji::orangeBook().' '.$post->title.PHP_EOL.$post->url,
+                'text' => Emoji::orangeBook().' '.$post->value('title').PHP_EOL.$url,
             ]
         );
 
         if ($response->json()['ok'] ?? false) {
             $this->info('✅ promoted');
 
-            $post->promoted_at = now();
+            $post->set('promoted_at', now()->toIso8601String());
             $post->save();
 
             return 0;
