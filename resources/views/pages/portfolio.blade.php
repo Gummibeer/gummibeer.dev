@@ -8,7 +8,7 @@
 @endpush
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl"> {{ $contents }} </x-article>
+    <x-article class="prose md:prose-lg lg:prose-xl"> {!! $contents !!} </x-article>
 
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
