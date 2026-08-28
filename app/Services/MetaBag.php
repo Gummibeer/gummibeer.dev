@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\Fluent;
 use Illuminate\Support\Str;
+use Statamic\Contracts\Imaging\UrlBuilder;
 
 /**
  * @property string $title
@@ -32,7 +33,16 @@ class MetaBag extends Fluent
 
     public function setImageAttribute(string $image): string
     {
-        return url(asset($image));
+        $path = trim((string) parse_url($image, PHP_URL_PATH), '/');
+
+        if (Str::startsWith($path, 'images/')) {
+            $image = app(UrlBuilder::class)->build(
+                'images::'.Str::after($path, 'images/'),
+                [],
+            );
+        }
+
+        return url($image);
     }
 
     public function offsetSet($key, $value): void
