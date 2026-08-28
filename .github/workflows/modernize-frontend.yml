@@ -600,9 +600,6 @@ jobs:
           tailwindcss@latest
           vite@latest
 
-      - name: Format frontend files
-        run: npm run format
-
       - name: Validate migration
         run: |
           npm run format:check
