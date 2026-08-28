@@ -14,7 +14,8 @@ jobs:
 
       - name: normalize composer.json
         run: |
-          composer global require ergebnis/composer-normalize
+          composer global config allow-plugins.ergebnis/composer-normalize true
+          composer global require ergebnis/composer-normalize:^2.52
           composer normalize
 
       - name: update git
