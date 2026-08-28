@@ -22,7 +22,7 @@ class Feed extends SpatieFeed
         abort_if($items->isEmpty(), 404);
 
         return new static(
-            $title.' | '.config('app.name'),
+            $title.' | '.app(SiteIdentity::class)->siteName(),
             $items,
             request()->url(),
             'feed::'.$format,
