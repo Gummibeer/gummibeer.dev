@@ -10,17 +10,14 @@ use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Exceptions\NotFoundHttpException;
 use Statamic\Facades\Entry;
 
 $findPage = static function (string $slug): EntryContract {
-    $page = Entry::query()
+    return Entry::query()
         ->where('collection', 'pages')
         ->where('slug', $slug)
-        ->first();
-
-    abort_unless($page instanceof EntryContract, 404);
-
-    return $page;
+        ->firstOr(fn () => throw new NotFoundHttpException);
 };
 
 Route::get('/', function (MetaBag $meta) use ($findPage) {
