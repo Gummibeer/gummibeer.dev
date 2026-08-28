@@ -64,16 +64,18 @@
                 <a
                     href="{{ $identity->phoneUrl() }}"
                     class="hover:text-brand"
-                    >{{ $identity->phone() }}</a
                 >
+                    {{ $identity->phone() }}
+                </a>
             </li>
             <li>
                 <x-icon class="fal fa-at mr-1" />
                 <a
                     href="{{ $identity->emailUrl() }}"
                     class="hover:text-brand"
-                    >{{ $identity->email() }}</a
                 >
+                    {{ $identity->email() }}
+                </a>
             </li>
             <li>
                 <x-icon class="fab fa-telegram-plane mr-1" />
@@ -90,15 +92,17 @@
                 <a
                     href="{{ $identity->imprintUrl() }}"
                     class="hover:text-brand"
-                    >{{ $identity->imprintLabel() }}</a
                 >
+                    {{ $identity->imprintLabel() }}
+                </a>
             </li>
             <li>
                 <a
                     href="{{ $identity->privacyUrl() }}"
                     class="hover:text-brand"
-                    >{{ $identity->privacyLabel() }}</a
                 >
+                    {{ $identity->privacyLabel() }}
+                </a>
             </li>
         </ul>
     </div>
