@@ -97,7 +97,7 @@ class Page extends ViewModel
             ->values();
 
         return [
-            'contents' => $page->content,
+            'contents' => $this->cascade->get('content'),
             'jobs' => $jobs,
             'hacktoberfests' => EntryFacade::whereCollection('hacktoberfest')
                 ->filter(fn (mixed $entry): bool => $entry instanceof Entry)
@@ -115,7 +115,7 @@ class Page extends ViewModel
         $meta->description = 'Software and Tools I use in my daily live for development and some little helpers to improve my experience.';
         $meta->image = asset('images/og/static/uses.png');
 
-        return ['contents' => $page->content];
+        return ['contents' => $this->cascade->get('content')];
     }
 
     /**
@@ -129,7 +129,7 @@ class Page extends ViewModel
         $meta->image = asset('images/og/static/charity.png');
 
         return [
-            'contents' => $page->content,
+            'contents' => $this->cascade->get('content'),
             'charities' => $page->value('charities') ?? [],
         ];
     }
@@ -145,7 +145,7 @@ class Page extends ViewModel
         $meta->image = asset('images/og/static/portfolio.png');
 
         return [
-            'contents' => $page->content,
+            'contents' => $this->cascade->get('content'),
             'projects' => $page->value('projects') ?? [],
         ];
     }
@@ -157,7 +157,7 @@ class Page extends ViewModel
     {
         app(MetaBag::class)->title = $title;
 
-        return ['contents' => $page->content];
+        return ['contents' => $this->cascade->get('content')];
     }
 
     /**
