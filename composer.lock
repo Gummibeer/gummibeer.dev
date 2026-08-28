@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "185f96799ac97eb4e3dc9647bb3518e8",
+    "content-hash": "ba8b770e851ca9ee224f60741788848b",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -284,28 +284,26 @@
         },
         {
             "name": "astrotomic/php-open-graph",
-            "version": "0.5.2",
+            "version": "1.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Astrotomic/php-open-graph.git",
-                "reference": "6851eba98380103e6f35c20677af83320c5e0699"
+                "reference": "4603213a45615229033ce431b5bd2b7724bf5de6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Astrotomic/php-open-graph/zipball/6851eba98380103e6f35c20677af83320c5e0699",
-                "reference": "6851eba98380103e6f35c20677af83320c5e0699",
+                "url": "https://api.github.com/repos/Astrotomic/php-open-graph/zipball/4603213a45615229033ce431b5bd2b7724bf5de6",
+                "reference": "4603213a45615229033ce431b5bd2b7724bf5de6",
                 "shasum": ""
             },
             "require": {
                 "astrotomic/php-conditional-proxy": "^0.2.1",
-                "php": "^7.1 || ^8.0"
+                "php": "^8.1"
             },
             "require-dev": {
-                "pestphp/pest": "^0.3.0",
-                "spatie/pest-plugin-snapshots": "^0.3.0"
-            },
-            "suggest": {
-                "php": "^7.4"
+                "laravel/pint": "^1.13",
+                "pestphp/pest": "^2.21",
+                "spatie/pest-plugin-snapshots": "^2.1"
             },
             "type": "library",
             "autoload": {
@@ -332,11 +330,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Astrotomic/php-open-graph/issues",
-                "source": "https://github.com/Astrotomic/php-open-graph/tree/0.5.2"
+                "source": "https://github.com/Astrotomic/php-open-graph/tree/1.0.0"
             },
             "funding": [
                 {
-                    "url": "https://offset.earth/treeware",
+                    "url": "https://forest.astrotomic.info",
                     "type": "custom"
                 },
                 {
@@ -344,24 +342,28 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/SarahSibert",
+                    "type": "github"
+                },
+                {
                     "url": "https://issuehunt.io/r/astrotomic",
                     "type": "issuehunt"
                 }
             ],
-            "time": "2021-01-04T15:30:05+00:00"
+            "time": "2023-10-09T13:37:25+00:00"
         },
         {
             "name": "astrotomic/php-twemoji",
-            "version": "0.1.1",
+            "version": "0.2.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Astrotomic/php-twemoji.git",
-                "reference": "f6cedadaf3bfb2ea2133168cb9eed952623e91ec"
+                "reference": "911698de99507ce685a1a0cf9fb54430a7f7bafb"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Astrotomic/php-twemoji/zipball/f6cedadaf3bfb2ea2133168cb9eed952623e91ec",
-                "reference": "f6cedadaf3bfb2ea2133168cb9eed952623e91ec",
+                "url": "https://api.github.com/repos/Astrotomic/php-twemoji/zipball/911698de99507ce685a1a0cf9fb54430a7f7bafb",
+                "reference": "911698de99507ce685a1a0cf9fb54430a7f7bafb",
                 "shasum": ""
             },
             "require": {
@@ -371,7 +373,9 @@
             },
             "require-dev": {
                 "pestphp/pest": "^0.3.0",
-                "spatie/emoji": "^2.2.0"
+                "s9e/regexp-builder": "^1.4",
+                "spatie/emoji": "^2.3.0",
+                "spatie/pest-plugin-snapshots": "^1.0"
             },
             "suggest": {
                 "spatie/emoji": "*"
@@ -403,11 +407,11 @@
             ],
             "support": {
                 "issues": "https://github.com/Astrotomic/php-twemoji/issues",
-                "source": "https://github.com/Astrotomic/php-twemoji/tree/0.1.1"
+                "source": "https://github.com/Astrotomic/php-twemoji/tree/0.2.4"
             },
             "funding": [
                 {
-                    "url": "https://offset.earth/treeware",
+                    "url": "https://forest.astrotomic.info",
                     "type": "custom"
                 },
                 {
@@ -415,11 +419,15 @@
                     "type": "github"
                 },
                 {
+                    "url": "https://github.com/SarahSibert",
+                    "type": "github"
+                },
+                {
                     "url": "https://issuehunt.io/r/astrotomic",
                     "type": "issuehunt"
                 }
             ],
-            "time": "2021-01-02T17:50:35+00:00"
+            "time": "2023-02-23T11:01:15+00:00"
         },
         {
             "name": "astrotomic/php-unavatar",
@@ -3845,60 +3853,6 @@
             "time": "2026-07-17T23:02:45+00:00"
         },
         {
-            "name": "nicmart/tree",
-            "version": "0.10.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/nicmart/Tree.git",
-                "reference": "2ef11e329d26005ef49dbacd0223bcfd2515b6cc"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/nicmart/Tree/zipball/2ef11e329d26005ef49dbacd0223bcfd2515b6cc",
-                "reference": "2ef11e329d26005ef49dbacd0223bcfd2515b6cc",
-                "shasum": ""
-            },
-            "require": {
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0 || ~8.3.0 || ~8.4.0 || ~8.5.0"
-            },
-            "require-dev": {
-                "ergebnis/composer-normalize": "^2.48.2",
-                "ergebnis/license": "^2.7.0",
-                "ergebnis/php-cs-fixer-config": "^6.28.1",
-                "fakerphp/faker": "^1.24.1",
-                "infection/infection": "~0.26.19",
-                "phpunit/phpunit": "^9.6.19",
-                "psalm/plugin-phpunit": "~0.19.0",
-                "vimeo/psalm": "^5.26.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Tree\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nicolò Martini",
-                    "email": "nicmartnic@gmail.com"
-                },
-                {
-                    "name": "Andreas Möller",
-                    "email": "am@localheinz.com"
-                }
-            ],
-            "description": "A basic but flexible php tree data structure and a fluent tree builder implementation.",
-            "support": {
-                "issues": "https://github.com/nicmart/Tree/issues",
-                "source": "https://github.com/nicmart/Tree/tree/0.10.1"
-            },
-            "time": "2025-11-25T08:51:01+00:00"
-        },
-        {
             "name": "nikic/php-parser",
             "version": "v5.8.0",
             "source": {
@@ -5380,102 +5334,46 @@
             "time": "2023-07-19T18:28:44+00:00"
         },
         {
-            "name": "spatie/browsershot",
-            "version": "5.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/browsershot.git",
-                "reference": "dcf7a65fd1d0fc8fd113739b84982377728d0b2f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/browsershot/zipball/dcf7a65fd1d0fc8fd113739b84982377728d0b2f",
-                "reference": "dcf7a65fd1d0fc8fd113739b84982377728d0b2f",
-                "shasum": ""
-            },
-            "require": {
-                "ext-fileinfo": "*",
-                "ext-json": "*",
-                "php": "^8.2",
-                "spatie/temporary-directory": "^2.0",
-                "symfony/process": "^6.0|^7.0|^8.0"
-            },
-            "require-dev": {
-                "pestphp/pest": "^3.0|^4.0",
-                "spatie/image": "^3.6",
-                "spatie/pdf-to-text": "^1.52",
-                "spatie/phpunit-snapshot-assertions": "^5.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\Browsershot\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Freek Van der Herten",
-                    "email": "freek@spatie.be",
-                    "homepage": "https://github.com/freekmurze",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Convert a webpage to an image or pdf using headless Chrome",
-            "homepage": "https://github.com/spatie/browsershot",
-            "keywords": [
-                "chrome",
-                "convert",
-                "headless",
-                "image",
-                "pdf",
-                "puppeteer",
-                "screenshot",
-                "webpage"
-            ],
-            "support": {
-                "source": "https://github.com/spatie/browsershot/tree/5.4.0"
-            },
-            "funding": [
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-05-26T13:13:33+00:00"
-        },
-        {
             "name": "spatie/crawler",
-            "version": "8.5.0",
+            "version": "9.4.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/crawler.git",
-                "reference": "18198a2198adff1637c0028cb60d2c9559721556"
+                "reference": "937bcf5786e66bca20da50db004f6d1443e81418"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/crawler/zipball/18198a2198adff1637c0028cb60d2c9559721556",
-                "reference": "18198a2198adff1637c0028cb60d2c9559721556",
+                "url": "https://api.github.com/repos/spatie/crawler/zipball/937bcf5786e66bca20da50db004f6d1443e81418",
+                "reference": "937bcf5786e66bca20da50db004f6d1443e81418",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.3",
-                "guzzlehttp/psr7": "^2.0",
-                "illuminate/collections": "^10.0|^11.0|^12.0|^13.0",
-                "nicmart/tree": "^0.10",
-                "php": "^8.2",
-                "spatie/browsershot": "^5.0.5",
+                "guzzlehttp/guzzle": "^7.8.2 || ^8.0",
+                "guzzlehttp/psr7": "^2.6.3 || ^3.0",
+                "php": "^8.4",
+                "psr/http-client": "^1.0",
                 "spatie/robots-txt": "^2.0",
-                "symfony/dom-crawler": "^6.0|^7.0|^8.0"
+                "symfony/css-selector": "^7.0|^8.0",
+                "symfony/dom-crawler": "^7.0|^8.0"
             },
             "require-dev": {
-                "pestphp/pest": "^2.0|^3.0|^4.0",
+                "pestphp/pest": "^4.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan": "^2.0",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "spatie/invade": "^2.1",
                 "spatie/ray": "^1.37"
             },
+            "suggest": {
+                "spatie/browsershot": "Required for JavaScript rendering with BrowsershotRenderer (^5.0.5)"
+            },
             "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-v9": "9.x-dev"
+                }
+            },
             "autoload": {
                 "psr-4": {
                     "Spatie\\Crawler\\": "src"
@@ -5501,7 +5399,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/crawler/issues",
-                "source": "https://github.com/spatie/crawler/tree/8.5.0"
+                "source": "https://github.com/spatie/crawler/tree/9.4.2"
             },
             "funding": [
                 {
@@ -5513,33 +5411,33 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-02-21T22:52:37+00:00"
+            "time": "2026-08-07T07:19:51+00:00"
         },
         {
             "name": "spatie/emoji",
-            "version": "2.3.1",
+            "version": "4.1.3",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/emoji.git",
-                "reference": "f5423bc7764fdd992bb955b6fac5d6675b8969cc"
+                "reference": "8ca52f0ada5264d8ce6c79b4bd41b51360c0602e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/emoji/zipball/f5423bc7764fdd992bb955b6fac5d6675b8969cc",
-                "reference": "f5423bc7764fdd992bb955b6fac5d6675b8969cc",
+                "url": "https://api.github.com/repos/spatie/emoji/zipball/8ca52f0ada5264d8ce6c79b4bd41b51360c0602e",
+                "reference": "8ca52f0ada5264d8ce6c79b4bd41b51360c0602e",
                 "shasum": ""
             },
             "require": {
                 "ext-mbstring": "*",
-                "php": "^7.2|^8.0"
+                "php": "^8.3"
             },
             "require-dev": {
                 "ext-iconv": "*",
                 "ext-json": "*",
                 "guzzlehttp/guzzle": "^7.0",
-                "phpunit/phpunit": "^9.4",
-                "symfony/console": "^4.2",
-                "twig/twig": "^2.7"
+                "pestphp/pest": "^4.0",
+                "symfony/console": "^7.0|^8.0",
+                "twig/twig": "^3.0"
             },
             "type": "library",
             "autoload": {
@@ -5567,7 +5465,7 @@
             ],
             "support": {
                 "issues": "https://github.com/spatie/emoji/issues",
-                "source": "https://github.com/spatie/emoji/tree/2.3.1"
+                "source": "https://github.com/spatie/emoji/tree/4.1.3"
             },
             "funding": [
                 {
@@ -5579,7 +5477,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2021-07-04T14:58:47+00:00"
+            "time": "2026-05-29T21:05:53+00:00"
         },
         {
             "name": "spatie/error-solutions",
@@ -5808,33 +5706,34 @@
         },
         {
             "name": "spatie/laravel-sitemap",
-            "version": "7.4.0",
+            "version": "8.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/spatie/laravel-sitemap.git",
-                "reference": "52397c6f4219a8a0a163ddb8a8d5bc5f9bba0df4"
+                "reference": "51f52030ab22abf5e95ed037fea5f8073114e784"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/52397c6f4219a8a0a163ddb8a8d5bc5f9bba0df4",
-                "reference": "52397c6f4219a8a0a163ddb8a8d5bc5f9bba0df4",
+                "url": "https://api.github.com/repos/spatie/laravel-sitemap/zipball/51f52030ab22abf5e95ed037fea5f8073114e784",
+                "reference": "51f52030ab22abf5e95ed037fea5f8073114e784",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^7.8",
-                "illuminate/support": "^11.0|^12.0||^13.0",
+                "illuminate/support": "^12.0|^13.0",
                 "nesbot/carbon": "^2.71|^3.0",
-                "php": "^8.2||^8.3||^8.4||^8.5",
-                "spatie/crawler": "^8.0.1",
-                "spatie/laravel-package-tools": "^1.16.1",
-                "symfony/dom-crawler": "^6.3.4|^7.0|^8.0"
+                "php": "^8.4",
+                "spatie/crawler": "^9.0",
+                "spatie/laravel-package-tools": "^1.16.1"
             },
             "require-dev": {
-                "mockery/mockery": "^1.6.6",
-                "orchestra/testbench": "^9.0|^10.0||^11.0",
-                "pestphp/pest": "^3.7.4|^4.0",
+                "larastan/larastan": "^3.0",
+                "laravel/pint": "^1.13",
+                "orchestra/testbench": "^10.0|^11.0",
+                "pestphp/pest": "^4.0",
+                "phpstan/extension-installer": "^1.3",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
                 "spatie/pest-plugin-snapshots": "^2.1",
-                "spatie/phpunit-snapshot-assertions": "^5.1.2",
                 "spatie/temporary-directory": "^2.2"
             },
             "type": "library",
@@ -5869,7 +5768,7 @@
                 "spatie"
             ],
             "support": {
-                "source": "https://github.com/spatie/laravel-sitemap/tree/7.4.0"
+                "source": "https://github.com/spatie/laravel-sitemap/tree/8.2.0"
             },
             "funding": [
                 {
@@ -5877,7 +5776,7 @@
                     "type": "custom"
                 }
             ],
-            "time": "2026-02-21T23:00:46+00:00"
+            "time": "2026-06-24T07:59:14+00:00"
         },
         {
             "name": "spatie/robots-txt",
@@ -6003,67 +5902,6 @@
                 }
             ],
             "time": "2026-04-27T14:27:52+00:00"
-        },
-        {
-            "name": "spatie/temporary-directory",
-            "version": "2.4.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/spatie/temporary-directory.git",
-                "reference": "32cbb9645b28839cf4f476708e99a2c70e6802c9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/spatie/temporary-directory/zipball/32cbb9645b28839cf4f476708e99a2c70e6802c9",
-                "reference": "32cbb9645b28839cf4f476708e99a2c70e6802c9",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^8.0"
-            },
-            "require-dev": {
-                "phpunit/phpunit": "^9.5"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Spatie\\TemporaryDirectory\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Alex Vanderbist",
-                    "email": "alex@spatie.be",
-                    "homepage": "https://spatie.be",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easily create, use and destroy temporary directories",
-            "homepage": "https://github.com/spatie/temporary-directory",
-            "keywords": [
-                "php",
-                "spatie",
-                "temporary-directory"
-            ],
-            "support": {
-                "issues": "https://github.com/spatie/temporary-directory/issues",
-                "source": "https://github.com/spatie/temporary-directory/tree/2.4.0"
-            },
-            "funding": [
-                {
-                    "url": "https://spatie.be/open-source/support-us",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/spatie",
-                    "type": "github"
-                }
-            ],
-            "time": "2026-06-22T07:55:44+00:00"
         },
         {
             "name": "spomky-labs/cbor-php",
@@ -13099,5 +12937,5 @@
         "ext-simplexml": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
