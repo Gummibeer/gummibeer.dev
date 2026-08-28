@@ -48,7 +48,7 @@ class GenerateOgImages extends Command
     }
 
     /**
-     * @param array{title: string, date?: mixed, readTime?: float} $data
+     * @param  array{title: string, date?: mixed, readTime?: float}  $data
      */
     protected function saveImage(string $path, array $data): void
     {
