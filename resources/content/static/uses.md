@@ -1,3 +1,7 @@
+---
+title: Uses
+---
+
 # Uses
 
 Make sure to check out [uses.tech](https://uses.tech) for a list of everyone's `/uses` pages!
