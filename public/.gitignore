@@ -1,3 +1,5 @@
 *
 !index.php
 !.gitignore
+!images/
+!images/**
