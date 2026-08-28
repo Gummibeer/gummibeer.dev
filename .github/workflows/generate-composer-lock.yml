@@ -1,0 +1,31 @@
+name: generate composer lock
+
+on:
+  push:
+    branches:
+      - statamic-cms
+
+permissions:
+  contents: write
+
+jobs:
+  lock:
+    if: ${{ hashFiles('composer.lock') == '' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.3
+          extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
+          tools: composer:v2
+
+      - run: composer update --no-progress --prefer-dist --no-interaction --no-scripts
+
+      - run: |
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add composer.lock
+          git commit -m "Lock Composer dependencies"
+          git push
