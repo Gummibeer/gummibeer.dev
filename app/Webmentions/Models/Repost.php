@@ -2,6 +2,4 @@
 
 namespace App\Webmentions\Models;
 
-class Repost extends Entry
-{
-}
+class Repost extends Entry {}

@@ -1,5 +1,4 @@
 {
-    "$schema": "https://getcomposer.org/schema.json",
     "name": "gummibeer/gummibeer.de",
     "description": "Website of Gummibeer",
     "license": "MIT",
@@ -99,5 +98,6 @@
             "@php artisan config:clear --ansi @no_additional_args",
             "@php artisan test"
         ]
-    }
+    },
+    "$schema": "https://getcomposer.org/schema.json"
 }

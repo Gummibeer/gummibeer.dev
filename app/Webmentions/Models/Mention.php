@@ -2,6 +2,4 @@
 
 namespace App\Webmentions\Models;
 
-class Mention extends Entry
-{
-}
+class Mention extends Entry {}

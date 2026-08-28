@@ -1,2 +1,979 @@
 parameters:
-    ignoreErrors: []
+	ignoreErrors:
+		-
+			message: '#^Method App\\Author\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:__call\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:__call\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Method App\\Author\:\:posts\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Author\:\:all\(\) return type contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Author.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__call\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__call\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Method App\\Category\:\:posts\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Category.php
+
+		-
+			message: '#^Parameter \#1 \$json of function json_decode expects string, string\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/PromotePost.php
+
+		-
+			message: '#^Strict comparison using \=\=\= between Carbon\\Carbon and null will always evaluate to false\.$#'
+			identifier: identical.alwaysFalse
+			count: 1
+			path: app/Console/Commands/PromotePost.php
+
+		-
+			message: '#^Unable to resolve the template type TKey in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Console/Commands/PromotePost.php
+
+		-
+			message: '#^Unable to resolve the template type TValue in call to function collect$#'
+			identifier: argument.templateType
+			count: 1
+			path: app/Console/Commands/PromotePost.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/StatsCategory.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Console/Commands/StatsCategory.php
+
+		-
+			message: '#^Call to an undefined static method App\\Category\:\:all\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Console/Commands/StatsCategory.php
+
+		-
+			message: '#^Method App\\Console\\Commands\\StatsCategory\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Console/Commands/StatsCategory.php
+
+		-
+			message: '#^Method App\\Console\\Commands\\StatsStrava\:\:handle\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Console/Commands/StatsStrava.php
+
+		-
+			message: '#^Cannot call method map\(\) on Illuminate\\Support\\Collection\<int, string\>\|string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Method App\\Console\\Commands\\TwitterGiveaway\:\:getUser\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,string\|null\>\:\:map\(\) expects callable\(string\|null, int\)\: array, Closure\(string\)\: array given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<int,string\|null\>\:\:map\(\) expects callable\(string\|null, int\)\: string, Closure\(string\)\: string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Parameter \#1 \$limit of method Illuminate\\Support\\Collection\<int,array\>\:\:take\(\) expects int, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Parameter \#1 \$number of method Illuminate\\Support\\Collection\<int,string\>\:\:random\(\) expects \(callable\(string\)\: int\)\|int\|null, string\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Console/Commands/TwitterGiveaway.php
+
+		-
+			message: '#^Property App\\Console\\Kernel\:\:\$commands type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Console/Kernel.php
+
+		-
+			message: '#^Method App\\Content\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Content.php
+
+		-
+			message: '#^Method App\\Content\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Content.php
+
+		-
+			message: '#^Method App\\Content\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Content.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Content\:\:all\(\) return type contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Content.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\Author\\FeedController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/Author/FeedController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\Author\\IndexController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/Author/IndexController.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Http/Controllers/Blog/Category/FeedController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\Category\\FeedController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/Category/FeedController.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Http/Controllers/Blog/Category/IndexController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\Category\\IndexController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/Category/IndexController.php
+
+		-
+			message: '#^Call to an undefined static method App\\Stream\:\:all\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Http/Controllers/Blog/FeedController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\FeedController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/FeedController.php
+
+		-
+			message: '#^Call to an undefined static method App\\Stream\:\:all\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Http/Controllers/Blog/IndexController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\IndexController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/IndexController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\PostController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/PostController.php
+
+		-
+			message: '#^Method App\\Http\\Controllers\\Blog\\Year\\IndexController\:\:__invoke\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Http/Controllers/Blog/Year/IndexController.php
+
+		-
+			message: '#^Parameter \#2 \$value of method Illuminate\\Routing\\Route\:\:setParameter\(\) expects object\|string\|null, int given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Http/Middleware/Paginated.php
+
+		-
+			message: '#^Method App\\Job\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Job.php
+
+		-
+			message: '#^Method App\\Job\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Job.php
+
+		-
+			message: '#^Method App\\Job\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Job.php
+
+		-
+			message: '#^Method App\\Job\:\:getWebsiteHostAttribute\(\) should return string but returns string\|false\|null\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Job.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Job\:\:all\(\) return type contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Job.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Macros/CollectionMixin.php
+
+		-
+			message: '#^Parameter \#1 \$items of static method App\\Services\\Paginator\:\:make\(\) expects Illuminate\\Support\\Collection, \$this\(App\\Macros\\CollectionMixin\) given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Macros/CollectionMixin.php
+
+		-
+			message: '#^Anonymous function should return string but returns string\|false\.$#'
+			identifier: return.type
+			count: 1
+			path: app/Macros/StrMixin.php
+
+		-
+			message: '#^Call to an undefined method Spatie\\Feed\\FeedItem\:\:author\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:path\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Method App\\Post\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Method App\\Post\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Method App\\Post\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Method App\\Post\:\:categories\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^PHPDoc tag @method for method App\\Post\:\:all\(\) return type contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Parameter \#1 \$timestamp of static method Carbon\\Carbon\:\:createFromTimestampUTC\(\) expects float\|int\|string, int\<0, max\>\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Property App\\Post\:\:\$promoted_at \(Carbon\\Carbon\) does not accept string\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Strict comparison using \!\=\= between Carbon\\Carbon and null will always evaluate to true\.$#'
+			identifier: notIdentical.alwaysTrue
+			count: 1
+			path: app/Post.php
+
+		-
+			message: '#^Class League\\CommonMark\\Node\\Block\\FencedCode not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^Class League\\CommonMark\\Node\\Inline\\Image not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$nodeClass of method League\\CommonMark\\Environment\\Environment\:\:addRenderer\(\) expects class\-string\<League\\CommonMark\\Node\\Node\>, string given\.$#'
+			identifier: argument.type
+			count: 2
+			path: app/Providers/AppServiceProvider.php
+
+		-
+			message: '#^PHPDoc tag @var for variable \$class has invalid type Illuminate\\Support\\Traits\\Macroable\.$#'
+			identifier: varTag.trait
+			count: 1
+			path: app/Providers/MacroServiceProvider.php
+
+		-
+			message: '#^PHPDoc tag @var with type Illuminate\\Support\\Traits\\Macroable is not subtype of native type ''Illuminate\\\\Support\\\\Collection''\|''Illuminate\\\\Support\\\\Str''\.$#'
+			identifier: varTag.nativeType
+			count: 1
+			path: app/Providers/MacroServiceProvider.php
+
+		-
+			message: '#^Parameter \#1 \$view of function view expects view\-string\|null, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Providers/RouteServiceProvider.php
+
+		-
+			message: '#^Method App\\Repositories\\AuthorRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/AuthorRepository.php
+
+		-
+			message: '#^Access to an undefined property App\\Category\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Repositories/CategoryRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\CategoryRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/CategoryRepository.php
+
+		-
+			message: '#^Access to an undefined property App\\Content\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Repositories/ContentRepository.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\QueryBuilder\:\:where\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Repositories/ContentRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\ContentRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/ContentRepository.php
+
+		-
+			message: '#^Parameter \#1 \$model of method Illuminate\\Database\\Eloquent\\ModelNotFoundException\<Illuminate\\Database\\Eloquent\\Model\>\:\:setModel\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Repositories/ContentRepository.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\QueryBuilder\:\:where\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Repositories/JobRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\JobRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/JobRepository.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/JobRepository.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\QueryBuilder\:\:where\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\PostRepository\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\PostRepository\:\:__call\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\PostRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^Parameter \#1 \$model of method Illuminate\\Database\\Eloquent\\ModelNotFoundException\<Illuminate\\Database\\Eloquent\\Model\>\:\:setModel\(\) expects class\-string\<Illuminate\\Database\\Eloquent\\Model\>, string given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Repositories/PostRepository.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\QueryBuilder\:\:where\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Repositories/StreamRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\StreamRepository\:\:__call\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Repositories/StreamRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\StreamRepository\:\:__call\(\) has parameter \$arguments with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Repositories/StreamRepository.php
+
+		-
+			message: '#^Method App\\Repositories\\StreamRepository\:\:all\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/StreamRepository.php
+
+		-
+			message: '#^PHPDoc tag @mixin contains generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Repositories/StreamRepository.php
+
+		-
+			message: '#^Method App\\Services\\Feed\:\:make\(\) has parameter \$items with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Feed.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: app/Services/Feed.php
+
+		-
+			message: '#^Call to method getInfoWords\(\) on an unknown class League\\CommonMark\\Node\\Block\\FencedCode\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/FencedCodeRenderer.php
+
+		-
+			message: '#^Call to method getLiteral\(\) on an unknown class League\\CommonMark\\Node\\Block\\FencedCode\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/FencedCodeRenderer.php
+
+		-
+			message: '#^Class League\\CommonMark\\Node\\Block\\FencedCode not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/FencedCodeRenderer.php
+
+		-
+			message: '#^Call to method children\(\) on an unknown class League\\CommonMark\\Node\\Inline\\Image\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/ImageRenderer.php
+
+		-
+			message: '#^Call to method getUrl\(\) on an unknown class League\\CommonMark\\Node\\Inline\\Image\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/ImageRenderer.php
+
+		-
+			message: '#^Cannot call method with\(\) on Closure\|Illuminate\\Contracts\\Support\\Htmlable\|Illuminate\\Contracts\\View\\View\|string\.$#'
+			identifier: method.nonObject
+			count: 1
+			path: app/Services/ImageRenderer.php
+
+		-
+			message: '#^Class League\\CommonMark\\Node\\Inline\\Image not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/ImageRenderer.php
+
+		-
+			message: '#^Class App\\Services\\MetaBag extends generic class Illuminate\\Support\\Fluent but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/MetaBag.php
+
+		-
+			message: '#^Access to an undefined property App\\Services\\Model\:\:\$slug\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:data\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:date\(\)\.$#'
+			identifier: method.notFound
+			count: 2
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:path\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:save\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:slug\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined method Statamic\\Contracts\\Entries\\Entry\:\:value\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined static method App\\Services\\Model\:\:all\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Call to an undefined static method App\\Services\\Model\:\:find\(\)\.$#'
+			identifier: staticMethod.notFound
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Class App\\Services\\Model implements generic interface Illuminate\\Contracts\\Support\\Arrayable but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Method App\\Services\\Model\:\:__construct\(\) has parameter \$attributes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Property App\\Services\\Model\:\:\$attributes type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Model.php
+
+		-
+			message: '#^Class App\\Services\\Paginator extends generic class Illuminate\\Pagination\\LengthAwarePaginator but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Method App\\Services\\Paginator\:\:make\(\) has parameter \$items with generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Method App\\Services\\Paginator\:\:make\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Method App\\Services\\Paginator\:\:withRoute\(\) has parameter \$parameters with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Property App\\Services\\Paginator\:\:\$route type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: app/Services/Paginator.php
+
+		-
+			message: '#^Call to method next\(\) on an unknown class League\\CommonMark\\Node\\Inline\\Image\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/ParagraphRenderer.php
+
+		-
+			message: '#^Class League\\CommonMark\\Node\\Inline\\Image not found\.$#'
+			identifier: class.notFound
+			count: 1
+			path: app/Services/ParagraphRenderer.php
+
+		-
+			message: '#^Access to an undefined property App\\Stream\:\:\$author\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Stream.php
+
+		-
+			message: '#^Access to an undefined property App\\Stream\:\:\$date\.$#'
+			identifier: property.notFound
+			count: 1
+			path: app/Stream.php
+
+		-
+			message: '#^Access to an undefined property App\\Stream\:\:\$title\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Stream.php
+
+		-
+			message: '#^Access to an undefined property App\\Stream\:\:\$url\.$#'
+			identifier: property.notFound
+			count: 2
+			path: app/Stream.php
+
+		-
+			message: '#^Access to an undefined property App\\Stream\:\:\$youtube_id\.$#'
+			identifier: property.notFound
+			count: 3
+			path: app/Stream.php
+
+		-
+			message: '#^Call to an undefined method Spatie\\Feed\\FeedItem\:\:author\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/Stream.php
+
+		-
+			message: '#^Method App\\Stream\:\:__callStatic\(\) has no return type specified\.$#'
+			identifier: missingType.return
+			count: 1
+			path: app/Stream.php
+
+		-
+			message: '#^Method App\\Stream\:\:__callStatic\(\) has parameter \$arguments with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Stream.php
+
+		-
+			message: '#^Method App\\Stream\:\:__callStatic\(\) has parameter \$name with no type specified\.$#'
+			identifier: missingType.parameter
+			count: 1
+			path: app/Stream.php
+
+		-
+			message: '#^Binary operation "/" between int and string results in an error\.$#'
+			identifier: binaryOp.invalid
+			count: 2
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Method App\\View\\Components\\Img\:\:getParams\(\) return type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Method App\\View\\Components\\Img\:\:srcSet\(\) has parameter \$options with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Parameter \#1 \$array of static method Illuminate\\Support\\Arr\:\:first\(\) expects iterable\<int\<0, max\>, string\>, list\<string\>\|false given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Property App\\View\\Components\\Img\:\:\$params type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Property App\\View\\Components\\Img\:\:\$src \(string\) does not accept string\|false\|null\.$#'
+			identifier: assign.propertyType
+			count: 1
+			path: app/View/Components/Img.php
+
+		-
+			message: '#^Call to an undefined method Astrotomic\\ConditionalProxy\\ConditionalProxy\|Astrotomic\\OpenGraph\\Types\\Twitter\\SummaryLargeImage\:\:description\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/View/Components/Og/Article.php
+
+		-
+			message: '#^Call to an undefined method Astrotomic\\ConditionalProxy\\ConditionalProxy\|Astrotomic\\OpenGraph\\Types\\Twitter\\SummaryLargeImage\:\:description\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/View/Components/Og/Profile.php
+
+		-
+			message: '#^Call to an undefined method Astrotomic\\ConditionalProxy\\ConditionalProxy\|Astrotomic\\OpenGraph\\Types\\Twitter\\SummaryLargeImage\:\:description\(\)\.$#'
+			identifier: method.notFound
+			count: 1
+			path: app/View/Components/Og/Website.php
+
+		-
+			message: '#^Property App\\View\\Components\\Post\\Webmentions\:\:\$comments with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/View/Components/Post/Webmentions.php
+
+		-
+			message: '#^Property App\\View\\Components\\Post\\Webmentions\:\:\$likes with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/View/Components/Post/Webmentions.php
+
+		-
+			message: '#^Property App\\View\\Components\\Post\\Webmentions\:\:\$reposts with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/View/Components/Post/Webmentions.php
+
+		-
+			message: '#^Method App\\Webmentions\\Client\:\:likes\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Method App\\Webmentions\\Client\:\:mentions\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Method App\\Webmentions\\Client\:\:replies\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Method App\\Webmentions\\Client\:\:reposts\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Parameter \#1 \$domain of method App\\Webmentions\\Client\:\:byDomain\(\) expects string, string\|false\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Parameter \#1 \$string of function trim expects string, string\|false\|null given\.$#'
+			identifier: argument.type
+			count: 1
+			path: app/Webmentions/Client.php
+
+		-
+			message: '#^Class App\\Webmentions\\Collections\\WebmentionsCollection extends generic class Illuminate\\Support\\Collection but does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Collections/WebmentionsCollection.php
+
+		-
+			message: '#^Method App\\Webmentions\\Collections\\WebmentionsCollection\:\:likes\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Collections/WebmentionsCollection.php
+
+		-
+			message: '#^Method App\\Webmentions\\Collections\\WebmentionsCollection\:\:mentions\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Collections/WebmentionsCollection.php
+
+		-
+			message: '#^Method App\\Webmentions\\Collections\\WebmentionsCollection\:\:replies\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Collections/WebmentionsCollection.php
+
+		-
+			message: '#^Method App\\Webmentions\\Collections\\WebmentionsCollection\:\:reposts\(\) return type with generic class Illuminate\\Support\\Collection does not specify its types\: TKey, TValue$#'
+			identifier: missingType.generics
+			count: 1
+			path: app/Webmentions/Collections/WebmentionsCollection.php
+
+		-
+			message: '#^Method App\\Webmentions\\Models\\Author\:\:fromWebmention\(\) has parameter \$author with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Webmentions/Models/Author.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: app/Webmentions/Models/Author.php
+
+		-
+			message: '#^Method App\\Webmentions\\Models\\Entry\:\:fromWebmention\(\) has parameter \$entry with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Webmentions/Models/Entry.php
+
+		-
+			message: '#^Method App\\Webmentions\\Models\\Entry\:\:make\(\) has parameter \$entry with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Webmentions/Models/Entry.php
+
+		-
+			message: '#^Property App\\Webmentions\\Models\\Entry\:\:\$raw type has no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Webmentions/Models/Entry.php
+
+		-
+			message: '#^Unsafe usage of new static\(\)\.$#'
+			identifier: new.static
+			count: 1
+			path: app/Webmentions/Models/Entry.php
+
+		-
+			message: '#^Method App\\Webmentions\\Models\\Model\:\:__construct\(\) has parameter \$attributes with no value type specified in iterable type array\.$#'
+			identifier: missingType.iterableValue
+			count: 1
+			path: app/Webmentions/Models/Model.php

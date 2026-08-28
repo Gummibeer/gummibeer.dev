@@ -63,11 +63,11 @@ class GenerateOgImages extends Command
         $path = resource_path($path);
         File::ensureDirectoryExists(dirname($path));
 
-        if(!File::exists($path) || $this->option('force')) {
+        if (! File::exists($path) || $this->option('force')) {
             $process = new Process([
                 (new ExecutableFinder)->find('node'),
                 base_path('.og/index.js'),
-                '--path=' . $path,
+                '--path='.$path,
                 trim($html),
             ]);
             $process->mustRun();

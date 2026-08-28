@@ -50,7 +50,7 @@ class Client
     protected function byDomain(string $domain): WebmentionsCollection
     {
         if (! isset(static::$webmentions[$domain])) {
-            $webmentions = new WebmentionsCollection();
+            $webmentions = new WebmentionsCollection;
             $page = 0;
 
             do {

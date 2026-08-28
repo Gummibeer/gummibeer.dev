@@ -66,10 +66,10 @@ class AppServiceProvider extends ServiceProvider
                 'allow_unsafe_links' => true,
             ]);
 
-            $environment->addExtension(new CommonMarkCoreExtension());
-            $environment->addRenderer(FencedCode::class, new FencedCodeRenderer(), 10);
-            $environment->addRenderer(Paragraph::class, new ParagraphRenderer(), 10);
-            $environment->addRenderer(Image::class, new ImageRenderer(), 10);
+            $environment->addExtension(new CommonMarkCoreExtension);
+            $environment->addRenderer(FencedCode::class, new FencedCodeRenderer, 10);
+            $environment->addRenderer(Paragraph::class, new ParagraphRenderer, 10);
+            $environment->addRenderer(Image::class, new ImageRenderer, 10);
 
             return new MarkdownConverter($environment);
         });

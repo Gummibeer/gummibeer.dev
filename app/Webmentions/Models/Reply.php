@@ -2,6 +2,4 @@
 
 namespace App\Webmentions\Models;
 
-class Reply extends Entry
-{
-}
+class Reply extends Entry {}

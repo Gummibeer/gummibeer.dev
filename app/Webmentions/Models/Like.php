@@ -2,6 +2,4 @@
 
 namespace App\Webmentions\Models;
 
-class Like extends Entry
-{
-}
+class Like extends Entry {}

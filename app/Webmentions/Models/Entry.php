@@ -8,14 +8,23 @@ use Illuminate\Support\HtmlString;
 abstract class Entry extends Model
 {
     public int $id;
+
     public string $url;
+
     public string $source;
+
     public string $target;
+
     public ?Carbon $published_at;
+
     public Carbon $created_at;
+
     public Author $author;
+
     public array $raw;
+
     public ?string $text = null;
+
     public ?HtmlString $html = null;
 
     public static function make(array $entry): ?self

@@ -4,7 +4,6 @@ namespace App;
 
 use App\Repositories\StreamRepository;
 use App\Services\Model;
-use Carbon\Carbon;
 use Carbon\CarbonInterval;
 use Spatie\Feed\Feedable;
 use Spatie\Feed\FeedItem;
