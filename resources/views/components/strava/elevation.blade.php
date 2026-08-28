@@ -1,6 +1,6 @@
 <x-strava.card
     icon="fa-mountains"
     label="Elevation"
-    :value="sheets('strava')->get(config('services.strava.athlete_id'))->elevation_gain"
+    :value="app(App\Services\StravaStats::class)->elevationGain()"
     unit="m"
 />
