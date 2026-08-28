@@ -1,5 +1,5 @@
 title: Posts
-dated: true
+date: true
 sort_dir: desc
 taxonomies:
   - categories
