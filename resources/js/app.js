@@ -34,24 +34,5 @@ Alpine.start();
 Prism.highlightAll();
 new ClipboardJS('button[data-clipboard-text]');
 
-window.search = {
-    query: '',
-    results: [],
-    search() {
-        const url = new URL('https://search.gummibeer.dev');
-        url.searchParams.set('q', this.query);
-        url.searchParams.set('t', Date.now());
-
-        fetch(url)
-            .then((response) => response.json())
-            .then((results) => {
-                this.results = results
-                    .toSorted((a, b) => a.score - b.score)
-                    .slice(0, 3)
-                    .map(({ item }) => item);
-            });
-    },
-};
-
 window.twemoji = (content) => twemoji.parse(content, { folder: 'svg', ext: '.svg' });
 window.twemoji(document.body);
