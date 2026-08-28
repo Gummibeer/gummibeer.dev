@@ -1,29 +1,38 @@
+name: promote
+
 on:
   schedule:
-    - cron: "0 12 * * *"
+    - cron: '0 12 * * *'
+
+permissions:
+  contents: write
 
 jobs:
   promote:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
+
     steps:
       - uses: actions/checkout@v7
 
       - uses: shivammathur/setup-php@v2
         with:
-          php-version: 8.0
-          extensions: dom, curl, libxml, mbstring, zip, imagick
+          php-version: 8.3
+          extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
           tools: composer:v2
+          coverage: none
 
-      - name: Get composer cache directory
+      - name: Get Composer cache directory
         id: composer-cache
-        run: echo "::set-output name=dir::$(composer config cache-dir)"
+        run: echo "dir=$(composer config cache-dir)" >> "$GITHUB_OUTPUT"
+
       - uses: actions/cache@v6
         with:
           path: ${{ steps.composer-cache.outputs.dir }}
-          key: composer-${{ hashFiles('composer.json') }}
+          key: composer-${{ hashFiles('composer.lock') }}
           restore-keys: composer-
 
-      - run: composer install --no-progress --no-suggest --prefer-dist --optimize-autoloader --no-interaction
+      - run: composer install --no-progress --prefer-dist --optimize-autoloader --no-interaction
 
       - run: php artisan post:promote --env=prod
         env:

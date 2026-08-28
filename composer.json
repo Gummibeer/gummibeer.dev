@@ -91,7 +91,6 @@
             "@php artisan ide-helper:generate --ansi --no-interaction --quiet",
             "@php artisan ide-helper:meta --ansi --no-interaction --quiet"
         ],
-        "normalize": "echo 'composer global require ergebnis/composer-normalize'",
         "og": "@php artisan generate:og:images && yarn dev",
         "phpstan": "@php vendor/bin/phpstan analyse --memory-limit=2G",
         "phpstan-baseline": "@php vendor/bin/phpstan analyse --memory-limit=2G --allow-empty-baseline --generate-baseline",

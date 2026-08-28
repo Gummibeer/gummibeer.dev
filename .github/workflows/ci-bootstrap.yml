@@ -25,10 +25,11 @@ jobs:
           php-version: 8.3
           extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
           coverage: none
+      - run: composer update --prefer-dist --no-interaction --no-scripts
       - run: composer global config allow-plugins.ergebnis/composer-normalize true
       - run: composer global require ergebnis/composer-normalize:^2.52
       - run: composer normalize
-      - run: composer update --prefer-dist --no-interaction --no-scripts
+      - run: composer update --lock --prefer-dist --no-interaction --no-scripts
       - run: php artisan package:discover --ansi --no-interaction
       - run: vendor/bin/pint
       - run: composer phpstan-baseline
