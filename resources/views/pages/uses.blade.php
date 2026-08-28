@@ -7,5 +7,5 @@
 @endpush
 
 @section ('content')
-    <x-article class="markdown prose md:prose-lg lg:prose-xl"> {{ $contents }} </x-article>
+    <x-article class="markdown prose md:prose-lg lg:prose-xl"> {!! $contents !!} </x-article>
 @endsection
