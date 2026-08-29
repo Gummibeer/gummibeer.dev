@@ -6,9 +6,10 @@ use Illuminate\Support\Collection;
 use RuntimeException;
 use Spatie\Feed\Feed as SpatieFeed;
 use Spatie\Feed\FeedItem;
+use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
-use Statamic\Facades\Entry;
+use Statamic\Facades\User;
 
 class Feed extends SpatieFeed
 {
@@ -46,7 +47,7 @@ class Feed extends SpatieFeed
         return FeedItem::create()
             ->id($url)
             ->title((string) $post->value('title'))
-            ->author(sprintf('%s, %s', $author->value('title'), $author->value('email')))
+            ->author(sprintf('%s, %s', $author->get('name'), $author->email()))
             ->summary((string) $post->value('description'))
             ->updated($post->date())
             ->link($url)
@@ -61,21 +62,21 @@ class Feed extends SpatieFeed
         return FeedItem::create()
             ->id($url)
             ->title((string) $stream->value('title'))
-            ->author(sprintf('%s, %s', $author->value('title'), $author->value('email')))
+            ->author(sprintf('%s, %s', $author->get('name'), $author->email()))
             ->summary((string) $stream->value('title'))
             ->updated($stream->date())
             ->link($url)
             ->category('stream');
     }
 
-    private static function author(EntryContract $entry): EntryContract
+    private static function author(EntryContract $entry): UserContract
     {
         $authorId = $entry->value('author');
-        $author = is_string($authorId) ? Entry::find($authorId) : null;
-        $author ??= Entry::find('gummibeer');
+        $author = is_string($authorId) ? User::find($authorId) : null;
+        $author ??= User::find('gummibeer');
 
-        if (! $author instanceof EntryContract) {
-            throw new RuntimeException('The default Statamic author entry is missing.');
+        if (! $author instanceof UserContract) {
+            throw new RuntimeException('The default Statamic author user is missing.');
         }
 
         return $author;
