@@ -57,7 +57,7 @@ class GenerateOgImages extends Command
 
         $this->saveImage(
             'images/og/static/home.png',
-            ['title' => (string) $identity->inCurrentSite()->get('tagline')],
+            ['title' => (string) $identity->inDefaultSite()->get('tagline')],
         );
     }
 
