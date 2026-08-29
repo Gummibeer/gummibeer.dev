@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'enabled' => env('CP_ENABLED', true),
+    'enabled' => app()->environment(['local', 'testing']),
 
     'route' => env('CP_ROUTE', 'cp'),
 
