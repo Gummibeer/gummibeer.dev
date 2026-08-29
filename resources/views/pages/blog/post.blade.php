@@ -1,5 +1,4 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $page */ ?>
-<?php /** @var App\Services\MetaBag $meta */ ?>
 
 @extends ('web')
 
