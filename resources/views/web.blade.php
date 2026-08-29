@@ -74,13 +74,13 @@
     @stack ('head')
 </head>
 <body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
-    <x-menu />
+    <x-menu :identity="$identity" />
 
     <main class="relative flex-1">
         @yield ('content')
     </main>
 
-    <x-footer />
+    <x-footer :identity="$identity" />
 
     @if (app()->environment('production'))
         <script
