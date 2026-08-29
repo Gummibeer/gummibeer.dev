@@ -1,5 +1,3 @@
-<?php /** @var App\Services\SiteIdentity $identity */ ?>
-
 <header class="sticky top-0 right-0 left-0 z-10 bg-white shadow dark:bg-night-10">
     <nav
         class="flex flex-col px-4 md:flex-row md:justify-between md:px-8 lg:px-10 xl:px-12"
@@ -12,7 +10,7 @@
                     href="{{ url('/') }}"
                     class="inline-block px-0 py-4 font-logo text-2xl leading-none tracking-wider whitespace-nowrap lg:text-3xl"
                 >
-                    {{ $identity->brandName() }}
+                    {{ $identity?->brand_name }}
                 </a>
             </div>
 
