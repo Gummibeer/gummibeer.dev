@@ -1,2 +1,4 @@
 title: Hacktoberfest
 title_format: '{{ name }}'
+inject:
+  seo: false
