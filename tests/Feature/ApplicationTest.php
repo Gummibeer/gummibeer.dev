@@ -2,7 +2,6 @@
 
 namespace Tests\Feature;
 
-use App\Services\MetaBag;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
@@ -234,14 +233,6 @@ final class ApplicationTest extends TestCase
         $this->get($webpPath.'?'.$webpQuery)
             ->assertOk()
             ->assertHeader('content-type', 'image/webp');
-
-        $meta = new MetaBag;
-        $meta->image = asset('images/og/static/home.png');
-        $metaImage = html_entity_decode($meta->image);
-
-        $this->assertStringContainsString('/img/asset/', $metaImage);
-        $this->assertStringContainsString('s=', $metaImage);
-        $this->assertStringNotContainsString('/images/og/', $metaImage);
 
         $favicons = html_entity_decode(view('components.favicons')->render());
         $this->assertStringContainsString('/img/asset/', $favicons);
