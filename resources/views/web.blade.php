@@ -1,5 +1,4 @@
 @cascade([
-    'site' => null,
     'page' => null,
 ])
 
@@ -26,7 +25,7 @@
         />
     @endif
 
-    <title>{{ $page?->title ? $page->title.' | '.($site?->site_name ?? config('app.name')) : ($site?->site_name ?? config('app.name')) }}</title>
+    <title>{{ $page?->title ? $page->title.' | '.($identity?->site_name ?? config('app.name')) : ($identity?->site_name ?? config('app.name')) }}</title>
     @if ($page?->description)
         <meta
             name="description"
@@ -47,18 +46,18 @@
 
     @vite (['resources/css/app.css', 'resources/js/app.js'])
 
-    @if ($site)
+    @if ($identity)
         <link
             rel="me"
-            href="{{ $site->twitter_url }}"
+            href="{{ $identity->twitter_url }}"
         />
         <link
             rel="me"
-            href="{{ $site->github_url }}"
+            href="{{ $identity->github_url }}"
         />
         <link
             rel="me"
-            href="{{ $site->instagram_url }}"
+            href="{{ $identity->instagram_url }}"
         />
     @endif
 
