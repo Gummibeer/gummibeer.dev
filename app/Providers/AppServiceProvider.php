@@ -5,12 +5,10 @@ namespace App\Providers;
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\ParagraphRenderer;
-use App\Services\SiteIdentity;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use League\CommonMark\Node\Block\FencedCode;
@@ -29,15 +27,11 @@ class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->app->singleton(SiteIdentity::class);
-
         $this->registerPixpipeGlide();
     }
 
     public function boot(): void
     {
-        View::share('identity', $this->app->make(SiteIdentity::class));
-
         Paginator::useTailwind();
 
         $this->registerComputedContentValues();
