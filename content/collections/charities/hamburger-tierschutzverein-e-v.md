@@ -2,6 +2,6 @@
 id: 45a48b8d-ffbe-597f-bc0c-cc04cf897917
 blueprint: charity
 title: Hamburger Tierschutzverein e.V.
-url: http://hamburger-tierschutzverein.de
+website: http://hamburger-tierschutzverein.de
 image: charity/hamburgertierschutzverein.png
 ---

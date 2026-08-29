@@ -13,10 +13,10 @@ tabs:
               validate:
                 - required
           -
-            handle: url
+            handle: website
             field:
               type: link
-              display: URL
+              display: Website
               required: true
               validate:
                 - required
