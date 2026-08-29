@@ -15,6 +15,7 @@ class SearchController
         return view('pages.blog.search', [
             'title' => $query === '' ? 'Search' : "Search: {$query}",
             'image' => $ogImage->forCollectionMount('posts'),
+            'robots_indexing' => 'noindex',
         ]);
     }
 }

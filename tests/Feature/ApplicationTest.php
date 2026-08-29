@@ -2,17 +2,16 @@
 
 namespace Tests\Feature;
 
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use App\View\Components\Img;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterface;
-use GuzzleHttp\Handler\MockHandler;
-use GuzzleHttp\Psr7\Response as GuzzleResponse;
 use Illuminate\Support\Facades\Artisan;
 use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
+use Statamic\Contracts\Assets\Asset as AssetContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Asset;
 use Statamic\Facades\AssetContainer;
@@ -160,17 +159,46 @@ final class ApplicationTest extends TestCase
         $this->get('/blog/search.json')->assertNotFound();
     }
 
-    public function test_sitemap_generation_works_with_spatie_sitemap_v8(): void
+    public function test_seo_pro_derives_metadata_from_statamic_content(): void
     {
-        config()->set('sitemap.guzzle_options.handler', new MockHandler([
-            new GuzzleResponse(200, ['Content-Type' => 'text/plain'], ''),
-            new GuzzleResponse(200, ['Content-Type' => 'text/html'], '<html><body>Home</body></html>'),
-        ]));
+        $home = $this->get('/')->assertOk();
+        $home
+            ->assertSee('<title>Tom Herrmann | Gummibeer</title>', false)
+            ->assertSee('<meta property="og:type" content="website" />', false)
+            ->assertSee('<link href="http://localhost" rel="canonical" />', false)
+            ->assertSee('<meta property="og:image"', false);
 
+        $post = $this->get('/blog/2020/hello-world')->assertOk();
+        $post
+            ->assertSee('<title>Hello World | Blog | Gummibeer</title>', false)
+            ->assertSee('<meta property="og:type" content="article" />', false)
+            ->assertSee('http://localhost/blog/2020/hello-world', false)
+            ->assertSee('<meta property="og:image"', false);
+    }
+
+    public function test_custom_blog_routes_feed_derived_context_into_seo_pro(): void
+    {
+        $this->get('/blog')
+            ->assertOk()
+            ->assertSee('<title>Blog | Gummibeer</title>', false)
+            ->assertSee('<meta property="og:image"', false);
+
+        $this->get('/blog/2020')
+            ->assertOk()
+            ->assertSee('<title>Posts from 2020 | Blog | Gummibeer</title>', false);
+
+        $this->get('/blog/search?q=OpenStreetMap')
+            ->assertOk()
+            ->assertSee('<title>Search: OpenStreetMap | Gummibeer</title>', false)
+            ->assertSee('content="noindex"', false);
+    }
+
+    public function test_sitemap_generation_is_owned_by_seo_pro(): void
+    {
         $this->get('/sitemap.xml')
             ->assertOk()
             ->assertSee('<urlset', false)
-            ->assertSee('<loc>http://localhost</loc>', false);
+            ->assertSee('http://localhost/blog/2020/hello-world', false);
     }
 
     public function test_migrated_images_are_private_statamic_assets_above_webroot(): void
@@ -225,13 +253,13 @@ final class ApplicationTest extends TestCase
             ->assertOk()
             ->assertHeader('content-type', 'image/webp');
 
-        $meta = new MetaBag;
-        $meta->image = asset('images/og/static/home.png');
-        $metaImage = html_entity_decode($meta->image);
+        $home = Entry::find('80ca56e0-263a-4baf-9716-07089aebc322');
+        $this->assertInstanceOf(EntryContract::class, $home);
+        $this->assertInstanceOf(AssetContract::class, app(OgImage::class)->forPage($home));
 
-        $this->assertStringContainsString('/img/asset/', $metaImage);
-        $this->assertStringContainsString('s=', $metaImage);
-        $this->assertStringNotContainsString('/images/og/', $metaImage);
+        $metadata = html_entity_decode($this->get('/')->assertOk()->getContent());
+        $this->assertStringContainsString('<meta property="og:image"', $metadata);
+        $this->assertStringNotContainsString('/images/og/', $metadata);
 
         $favicons = html_entity_decode(view('components.favicons')->render());
         $this->assertStringContainsString('/img/asset/', $favicons);

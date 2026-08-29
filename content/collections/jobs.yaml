@@ -1,4 +1,4 @@
 title: Jobs
 title_format: '{{ name }}'
-inject:
+cascade:
   seo: false

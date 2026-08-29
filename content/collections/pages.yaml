@@ -5,6 +5,7 @@ structure:
   root: true
 inject:
   view_model: App\ViewModels\Page
+cascade:
   seo:
     description: '@seo:content'
     image: '@seo:seo_image'

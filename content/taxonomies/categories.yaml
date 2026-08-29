@@ -1,5 +1,6 @@
 title: Categories
 inject:
   view_model: App\ViewModels\Category
+cascade:
   seo:
-    title: 'Posts about "{{ title }}"'
+    title: 'Posts about "{{ title }}" | Blog'

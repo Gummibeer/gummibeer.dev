@@ -50,7 +50,11 @@ class AppServiceProvider extends ServiceProvider
 
     public function registerComputedContentValues(): void
     {
-        StatamicCollection::computed('pages', 'seo_image', static fn (EntryContract $entry, mixed $value): ?AssetContract => app(OgImage::class)->forPage($entry));
+        $ogImage = $this->app->make(OgImage::class);
+
+        StatamicCollection::computed('pages', [
+            'seo_image' => static fn (EntryContract $entry, mixed $value): ?AssetContract => $ogImage->forPage($entry),
+        ]);
 
         StatamicCollection::computed('posts', [
             'image' => static function (EntryContract $entry, mixed $value): ?string {
@@ -58,7 +62,7 @@ class AppServiceProvider extends ServiceProvider
 
                 return $value ?? (is_array($images) ? Arr::first($images) : null);
             },
-            'seo_image' => static fn (EntryContract $entry, mixed $value): ?AssetContract => app(OgImage::class)->forPost($entry),
+            'seo_image' => static fn (EntryContract $entry, mixed $value): ?AssetContract => $ogImage->forPost($entry),
             'public_url' => static function (EntryContract $entry, mixed $value): string {
                 if (! $entry instanceof StatamicEntry) {
                     throw new LogicException('Expected a concrete Statamic post entry.');

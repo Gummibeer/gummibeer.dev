@@ -33,7 +33,7 @@ Route::get('robots.txt', static function (): Response {
         'User-agent' => '*',
         'Allow' => '/',
         null,
-        'Sitemap' => url('/sitemap.xml'),
+        'Sitemap' => url((string) config('statamic.seo-pro.sitemap.url', 'sitemap.xml')),
     ])
         ->map(fn (?string $value, string $key): string => $value ? "{$key}: {$value}" : '')
         ->implode(PHP_EOL);

@@ -11,7 +11,9 @@ route: '/{mount}/{year}/{slug}'
 template: pages/blog/post
 inject:
   view_model: App\ViewModels\Post
+cascade:
   seo:
+    title: '{{ title }} | Blog'
     description: '@seo:description'
     image: '@seo:seo_image'
     og_type: article

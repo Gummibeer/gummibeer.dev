@@ -4,5 +4,5 @@ date_behavior:
   past: public
   future: private
 sort_dir: desc
-inject:
+cascade:
   seo: false
