@@ -20,10 +20,7 @@ Route::prefix('blog')->name('blog.')->group(function (): void {
         Route::get('feed.{format}', Blog\Author\FeedController::class)->name('feed');
     });
 
-    Route::prefix('{category}')->name('category.')->group(function (): void {
-        Route::get('{page?}', Blog\Category\IndexController::class)->middleware(Paginated::class)->name('index');
-        Route::get('feed.{format}', Blog\Category\FeedController::class)->name('feed');
-    });
+    Route::get('categories/{category}/feed.{format}', Blog\Category\FeedController::class)->name('category.feed');
 });
 
 Route::get(
