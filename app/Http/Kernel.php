@@ -2,6 +2,7 @@
 
 namespace App\Http;
 
+use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Kernel as HttpKernel;
@@ -19,6 +20,7 @@ class Kernel extends HttpKernel
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
+            AutoLoginStatamicControlPanel::class,
             ShareErrorsFromSession::class,
             PreventRequestForgery::class,
             SubstituteBindings::class,
