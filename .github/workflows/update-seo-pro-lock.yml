@@ -1,0 +1,30 @@
+name: Update SEO Pro lock
+
+on:
+  push:
+    branches:
+      - work/seo-pro
+    paths:
+      - .github/workflows/update-seo-pro-lock.yml
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v6
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: '8.5'
+          coverage: none
+      - run: composer global require ergebnis/composer-normalize --no-interaction --no-progress
+      - run: composer normalize
+      - run: composer update statamic/seo-pro --with-all-dependencies --no-interaction --no-progress
+      - run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add composer.json composer.lock
+          git commit -m 'Update Composer lock for SEO Pro'
+          git push
