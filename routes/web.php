@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Blog;
-use App\Http\Middleware\Paginated;
 use App\Services\MetaBag;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
@@ -11,12 +10,11 @@ use Spatie\Sitemap\Tags\Url;
 Route::prefix('blog')->name('blog.')->group(function (): void {
     Route::get('search', Blog\SearchController::class)->name('search');
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
-    Route::get('{page}', Blog\IndexController::class)->middleware(Paginated::class)->name('index');
 
-    Route::get('{year}/{page?}', Blog\Year\IndexController::class)->middleware(Paginated::class)->whereNumber('year')->name('year.index');
+    Route::get('{year}', Blog\Year\IndexController::class)->whereNumber('year')->name('year.index');
 
     Route::prefix('@{author}')->name('author.')->group(function (): void {
-        Route::get('{page?}', Blog\Author\IndexController::class)->middleware(Paginated::class)->name('index');
+        Route::get('', Blog\Author\IndexController::class)->name('index');
         Route::get('feed.{format}', Blog\Author\FeedController::class)->name('feed');
     });
 
