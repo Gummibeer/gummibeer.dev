@@ -1,5 +1,4 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
-<?php /** @var App\Services\MetaBag $meta */ ?>
 
 @extends ('web')
 
@@ -8,7 +7,6 @@
         rel="index"
         href="{{ $post->collection()->url() }}"
     />
-    <x-og.article :post="$post" />
     @if ($post->author?->payment_pointer)
         <meta
             name="monetization"
