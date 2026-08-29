@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers\Blog\Author;
 
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use Statamic\Facades\Entry;
 
 class IndexController
 {
-    public function __invoke(MetaBag $meta, string $author, int $page = 1)
+    public function __invoke(OgImage $ogImage, string $author, int $page = 1)
     {
         $author = Entry::query()
             ->where('collection', 'authors')
@@ -15,8 +15,6 @@ class IndexController
             ->first();
 
         abort_unless($author, 404);
-
-        $meta->title = sprintf('Posts by %s | Blog', $author->value('title'));
 
         $posts = Entry::query()
             ->where('collection', 'posts')
@@ -28,6 +26,11 @@ class IndexController
             ->paginate($page)
             ->withRoute('blog.author.index', ['author' => $author->slug()]);
 
-        return view('pages.blog.author', compact('author', 'posts'));
+        return view('pages.blog.author', [
+            'author' => $author,
+            'posts' => $posts,
+            'title' => sprintf('Posts by %s | Blog', $author->value('title')),
+            'image' => $ogImage->forCollectionMount('posts'),
+        ]);
     }
 }
