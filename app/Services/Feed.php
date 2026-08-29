@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 use RuntimeException;
 use Spatie\Feed\Feed as SpatieFeed;
 use Spatie\Feed\FeedItem;
-use Statamic\Auth\File\User as FileUser;
+use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\GlobalSet;
@@ -47,8 +47,15 @@ class Feed extends SpatieFeed
             throw new RuntimeException('Expected a concrete Statamic post entry.');
         }
 
-        $author = self::author($post);
-        $categories = $post->value('categories');
+        $author = $post->author;
+
+        if (! $author instanceof UserContract) {
+            throw new RuntimeException('The Statamic post author is missing.');
+        }
+
+        $categories = $post->categories
+            ->map(static fn ($term): string => (string) $term->slug())
+            ->all();
         $url = (string) $post->absoluteUrl();
 
         return FeedItem::create()
@@ -58,12 +65,12 @@ class Feed extends SpatieFeed
             ->summary((string) $post->value('description'))
             ->updated($post->date())
             ->link($url)
-            ->category(...(is_array($categories) ? $categories : []));
+            ->category(...$categories);
     }
 
     public static function streamItem(EntryContract $stream): FeedItem
     {
-        $author = self::author($stream);
+        $author = self::defaultAuthor();
         $url = 'https://youtu.be/'.$stream->value('youtube_id');
 
         return FeedItem::create()
@@ -76,13 +83,11 @@ class Feed extends SpatieFeed
             ->category('stream');
     }
 
-    private static function author(EntryContract $entry): FileUser
+    private static function defaultAuthor(): UserContract
     {
-        $authorId = $entry->value('author');
-        $author = is_string($authorId) ? User::find($authorId) : null;
-        $author ??= User::find('gummibeer');
+        $author = User::find('gummibeer');
 
-        if (! $author instanceof FileUser) {
+        if (! $author instanceof UserContract) {
             throw new RuntimeException('The default Statamic author user is missing.');
         }
 
