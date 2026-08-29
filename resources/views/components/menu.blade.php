@@ -1,3 +1,5 @@
+@props(['identity'])
+
 <header class="sticky top-0 right-0 left-0 z-10 bg-white shadow dark:bg-night-10">
     <nav
         class="flex flex-col px-4 md:flex-row md:justify-between md:px-8 lg:px-10 xl:px-12"
