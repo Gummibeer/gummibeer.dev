@@ -6,8 +6,9 @@ use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
 use Carbon\Carbon;
 use Illuminate\View\Component;
+use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
-use Statamic\Facades\Entry;
+use Statamic\Facades\User;
 
 class Article extends Component
 {
@@ -28,8 +29,8 @@ class Article extends Component
     {
         $title = $this->post->value('title').' | '.$this->siteName;
         $description = (string) $this->post->value('description');
-        $author = Entry::find((string) $this->post->value('author'));
-        $twitter = $author instanceof EntryContract ? (string) $author->value('twitter') : '';
+        $author = User::find((string) $this->post->value('author'));
+        $twitter = $author instanceof UserContract ? (string) $author->get('twitter') : '';
 
         return implode(PHP_EOL, [
             OpenGraph::article($title)
