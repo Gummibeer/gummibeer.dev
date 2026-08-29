@@ -6,7 +6,7 @@ use Illuminate\Support\Collection;
 use RuntimeException;
 use Spatie\Feed\Feed as SpatieFeed;
 use Spatie\Feed\FeedItem;
-use Statamic\Contracts\Auth\User as UserContract;
+use Statamic\Auth\File\User as FileUser;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\GlobalSet;
@@ -76,13 +76,13 @@ class Feed extends SpatieFeed
             ->category('stream');
     }
 
-    private static function author(EntryContract $entry): UserContract
+    private static function author(EntryContract $entry): FileUser
     {
         $authorId = $entry->value('author');
         $author = is_string($authorId) ? User::find($authorId) : null;
         $author ??= User::find('gummibeer');
 
-        if (! $author instanceof UserContract) {
+        if (! $author instanceof FileUser) {
             throw new RuntimeException('The default Statamic author user is missing.');
         }
 
