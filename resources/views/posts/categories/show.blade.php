@@ -11,7 +11,7 @@
 @endpush
 
 @section ('content')
-    @php($posts = $entries->get())
+    @php ($posts = $entries->get())
 
     <x-section>
         <h1 class="mb-8 text-6xl leading-none font-black text-night-0 dark:text-white">Posts about {{ $page->title }}</h1>
