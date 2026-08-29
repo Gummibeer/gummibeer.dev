@@ -2,19 +2,17 @@
 
 namespace App\Http\Controllers\Blog\Category;
 
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Term;
 
 class IndexController
 {
-    public function __invoke(MetaBag $meta, string $category, int $page = 1)
+    public function __invoke(OgImage $ogImage, string $category, int $page = 1)
     {
         $category = Term::find('categories::'.$category);
 
         abort_unless($category, 404);
-
-        $meta->title = sprintf('Posts about "%s" | Blog', $category->title());
 
         $posts = Entry::query()
             ->where('collection', 'posts')
@@ -26,6 +24,11 @@ class IndexController
             ->paginate($page)
             ->withRoute('blog.category.index', ['category' => $category->slug()]);
 
-        return view('pages.blog.category', compact('category', 'posts'));
+        return view('pages.blog.category', [
+            'category' => $category,
+            'posts' => $posts,
+            'title' => sprintf('Posts about "%s" | Blog', $category->title()),
+            'image' => $ogImage->forCollectionMount('posts'),
+        ]);
     }
 }
