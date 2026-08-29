@@ -3,8 +3,6 @@
 @extends ('web')
 
 @push ('head')
-    <x-og.website />
-    <x-link-pagination :paginator="$posts" />
     <x-link-feed route="blog.feed" />
 @endpush
 
