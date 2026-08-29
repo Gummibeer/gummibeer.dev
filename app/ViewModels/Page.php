@@ -3,7 +3,6 @@
 namespace App\ViewModels;
 
 use App\Services\MetaBag;
-use Carbon\Carbon;
 use Illuminate\Support\Collection;
 use Statamic\Entries\Entry;
 use Statamic\Facades\Entry as EntryFacade;
@@ -28,12 +27,12 @@ class Page extends ViewModel
         return match ($entry->slug()) {
             'me' => $this->home($entry),
             'blog' => $this->blog(),
-            'resume' => $this->resume($entry),
-            'uses' => $this->uses($entry),
+            'resume' => $this->resume(),
+            'uses' => $this->uses(),
             'charity' => $this->charity(),
             'portfolio' => $this->portfolio(),
-            'imprint' => $this->simplePage($entry, 'Imprint'),
-            'privacy' => $this->simplePage($entry, 'Privacy'),
+            'imprint' => $this->simplePage('Imprint'),
+            'privacy' => $this->simplePage('Privacy'),
             default => [],
         };
     }
@@ -47,11 +46,7 @@ class Page extends ViewModel
         $meta->description = 'I\'m an enthusiastic web developer and free time gamer from Hamburg, Germany.';
         $meta->image = asset('images/og/static/home.png');
 
-        return [
-            'me' => $page,
-            'posts' => $this->published('posts')->sortByDesc(fn (Entry $entry) => $entry->date())->values(),
-            'streams' => $this->published('streams')->sortByDesc(fn (Entry $entry) => $entry->date())->values(),
-        ];
+        return ['me' => $page];
     }
 
     /**
@@ -76,37 +71,19 @@ class Page extends ViewModel
     /**
      * @return array<string, mixed>
      */
-    private function resume(Entry $page): array
+    private function resume(): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Resume';
         $meta->image = asset('images/og/static/me.png');
 
-        $jobs = $this->published('jobs')
-            ->sort(function (Entry $a, Entry $b): int {
-                $aHasEnd = filled($a->value('end_at'));
-                $bHasEnd = filled($b->value('end_at'));
-
-                if ($aHasEnd === $bHasEnd) {
-                    return Carbon::parse($b->value('start_at'))->timestamp <=> Carbon::parse($a->value('start_at'))->timestamp;
-                }
-
-                return $aHasEnd ? 1 : -1;
-            })
-            ->values();
-
-        return [
-            'contents' => $this->cascade->get('content'),
-            'jobs' => $jobs,
-            'hacktoberfests' => $this->published('hacktoberfest')
-                ->sortByDesc(fn (Entry $entry) => $entry->slug()),
-        ];
+        return ['contents' => $this->cascade->get('content')];
     }
 
     /**
      * @return array<string, mixed>
      */
-    private function uses(Entry $page): array
+    private function uses(): array
     {
         $meta = app(MetaBag::class);
         $meta->title = 'Uses';
@@ -126,12 +103,7 @@ class Page extends ViewModel
         $meta->description = 'For me it\'s part of my obligation and responsibility to support what I believe is important for me, us and our planet.';
         $meta->image = asset('images/og/static/charity.png');
 
-        return [
-            'contents' => $this->cascade->get('content'),
-            'charities' => $this->published('charities')
-                ->sortBy(fn (Entry $entry): string => (string) $entry->value('title'))
-                ->values(),
-        ];
+        return ['contents' => $this->cascade->get('content')];
     }
 
     /**
@@ -144,18 +116,13 @@ class Page extends ViewModel
         $meta->description = 'In my free time I support several local business owners with everything I know.';
         $meta->image = asset('images/og/static/portfolio.png');
 
-        return [
-            'contents' => $this->cascade->get('content'),
-            'projects' => $this->published('projects')
-                ->sortBy(fn (Entry $entry): string => (string) $entry->value('title'))
-                ->values(),
-        ];
+        return ['contents' => $this->cascade->get('content')];
     }
 
     /**
      * @return array<string, mixed>
      */
-    private function simplePage(Entry $page, string $title): array
+    private function simplePage(string $title): array
     {
         app(MetaBag::class)->title = $title;
 
