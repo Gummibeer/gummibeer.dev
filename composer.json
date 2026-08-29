@@ -18,7 +18,6 @@
         "ext-simplexml": "*",
         "astrotomic/laravel-mime": "^0.4.1",
         "astrotomic/laravel-webmentions": "^0.7.0",
-        "astrotomic/php-open-graph": "^1.0",
         "astrotomic/php-twemoji": "^0.2.4",
         "astrotomic/php-unavatar": "^0.3.0",
         "astrotomic/pixpipe": "^0.1.0",
@@ -27,8 +26,8 @@
         "spatie/browsershot": "^5.4",
         "spatie/emoji": "^4.1.3",
         "spatie/laravel-feed": "^4.5",
-        "spatie/laravel-sitemap": "^8.2",
-        "statamic/cms": "^6.30"
+        "statamic/cms": "^6.30",
+        "statamic/seo-pro": "^7.13"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.7",
