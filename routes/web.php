@@ -10,14 +10,6 @@ use Spatie\Sitemap\Tags\Url;
 Route::prefix('blog')->name('blog.')->group(function (): void {
     Route::get('search', Blog\SearchController::class)->name('search');
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
-
-    Route::get('{year}', Blog\Year\IndexController::class)->whereNumber('year')->name('year.index');
-
-    Route::prefix('@{author}')->name('author.')->group(function (): void {
-        Route::get('', Blog\Author\IndexController::class)->name('index');
-        Route::get('feed.{format}', Blog\Author\FeedController::class)->name('feed');
-    });
-
     Route::get('categories/{category}/feed.{format}', Blog\Category\FeedController::class)->name('category.feed');
 });
 
