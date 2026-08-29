@@ -20,10 +20,11 @@ jobs:
           php-version: '8.5'
           extensions: intl, simplexml
           coverage: none
+      - run: composer update statamic/seo-pro --with-all-dependencies --no-interaction --no-progress
       - run: composer global config allow-plugins.ergebnis/composer-normalize true
       - run: composer global require ergebnis/composer-normalize:^2.52 --no-interaction --no-progress
       - run: composer normalize
-      - run: composer update statamic/seo-pro --with-all-dependencies --no-interaction --no-progress
+      - run: composer update --lock --no-interaction --no-progress
       - run: |
           git config user.name 'github-actions[bot]'
           git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
