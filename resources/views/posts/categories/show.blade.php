@@ -1,11 +1,10 @@
-<?php /** @var App\Services\Paginator $posts */ ?>
+<?php /** @var Illuminate\Support\Collection<int, Statamic\Entries\Entry> $posts */ ?>
 <?php /** @var Statamic\Taxonomies\LocalizedTerm $category */ ?>
 
 @extends ('web')
 
 @push ('head')
     <x-og.website />
-    <x-link-pagination :paginator="$posts" />
     <x-link-feed
         route="blog.category.feed"
         :parameters="['category' => $category->slug()]"
@@ -20,6 +19,5 @@
                 <x-post.preview :post="$post"></x-post.preview>
             @endforeach
         </div>
-        <x-pagination :paginator="$posts"></x-pagination>
     </x-section>
 @endsection
