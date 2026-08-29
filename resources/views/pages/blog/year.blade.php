@@ -3,11 +3,6 @@
 
 @extends ('web')
 
-@push ('head')
-    <x-og.website />
-    <x-link-pagination :paginator="$posts" />
-@endpush
-
 @section ('content')
     <x-section>
         <h1 class="mb-8 text-6xl leading-none font-black text-night-0 dark:text-white">Posts from {{ $year }}</h1>
