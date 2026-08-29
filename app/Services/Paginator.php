@@ -4,6 +4,7 @@ namespace App\Services;
 
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Support\Collection;
+use Statamic\Facades\Blink;
 
 class Paginator extends LengthAwarePaginator
 {
@@ -24,6 +25,7 @@ class Paginator extends LengthAwarePaginator
         );
 
         $paginator->withPath(url()->current());
+        Blink::put('tag-paginator', $paginator);
 
         return $paginator;
     }
