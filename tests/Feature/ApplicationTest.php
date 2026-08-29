@@ -13,7 +13,7 @@ use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
-use Statamic\Contracts\Auth\User as UserContract;
+use Statamic\Auth\File\User as FileUser;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Asset;
 use Statamic\Facades\AssetContainer;
@@ -44,7 +44,7 @@ final class ApplicationTest extends TestCase
         $this->assertDirectoryDoesNotExist(resource_path('content/posts'));
 
         $author = User::find('gummibeer');
-        $this->assertInstanceOf(UserContract::class, $author);
+        $this->assertInstanceOf(FileUser::class, $author);
         $this->assertSame('dev@gummibeer.de', $author->email());
         $this->assertSame('gummibeer', $author->get('slug'));
         $this->assertSame('Gummibeer', $author->get('nickname'));
@@ -85,7 +85,7 @@ final class ApplicationTest extends TestCase
             ->first();
 
         $this->assertInstanceOf(EntryContract::class, $post);
-        $this->assertInstanceOf(UserContract::class, $post->author);
+        $this->assertInstanceOf(FileUser::class, $post->author);
         $this->assertSame('gummibeer', $post->author->id());
         $this->assertSame('dev@gummibeer.de', $post->author->email());
         $this->assertContains('laravel', $post->categories->map(fn ($term) => $term->slug())->all());
@@ -201,7 +201,7 @@ final class ApplicationTest extends TestCase
             'favicons/favicon.ico',
             'hacktoberfest/2023.png',
             'og/static/home.png',
-            'portfolio/moin-hund.png',
+            'portfolio/moinhund.png',
             'posts/2020-01-01.hello-world.jpg',
             'posts/2021-01-28.yoda/content-paw-prints.jpg',
         ] as $image) {
