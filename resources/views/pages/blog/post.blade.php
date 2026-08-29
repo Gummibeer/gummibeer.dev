@@ -1,4 +1,4 @@
-<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
+<?php /** @var Statamic\Contracts\Entries\Entry $page */ ?>
 <?php /** @var App\Services\MetaBag $meta */ ?>
 
 @extends ('web')
@@ -6,13 +6,13 @@
 @push ('head')
     <link
         rel="index"
-        href="{{ $post->collection()->url() }}"
+        href="{{ $page->collection()->url() }}"
     />
-    <x-og.article :post="$post" />
-    @if ($post->author?->payment_pointer)
+    <x-og.article :post="$page" />
+    @if ($page->author?->payment_pointer)
         <meta
             name="monetization"
-            content='{{ $post->author->payment_pointer }}'
+            content='{{ $page->author->payment_pointer }}'
         />
     @endif
 @endpush
@@ -20,18 +20,18 @@
 @section ('content')
     <x-article class="markdown">
         <header class="mb-8">
-            <x-post.image :post="$post" />
-            @if ($post->categories->isNotEmpty())
+            <x-post.image :post="$page" />
+            @if ($page->categories->isNotEmpty())
                 <x-post.ul-categories
-                    :post="$post"
+                    :post="$page"
                     class="mb-4"
                 />
             @endif
-            <x-post.aside :post="$post" />
+            <x-post.aside :post="$page" />
         </header>
         <main class="prose md:prose-lg lg:prose-xl">
-            <h1>{{ $post->title }}</h1>
-            {!! $post->content !!}
+            <h1>{{ $page->title }}</h1>
+            {!! $page->content !!}
         </main>
         <script
             src="https://utteranc.es/client.js"
@@ -43,7 +43,7 @@
             async
         ></script>
         <x-post.webmentions
-            :url="$post->public_url"
+            :url="$page->public_url"
             class="mt-12 border-t-2 border-snow-10 pt-12"
         />
     </x-article>
