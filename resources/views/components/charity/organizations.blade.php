@@ -1,12 +1,3 @@
-@php
-    $charities = Statamic\Facades\Entry::query()
-        ->where('collection', 'charities')
-        ->whereStatus('published')
-        ->get()
-        ->sortBy(fn ($entry) => (string) $entry->value('title'))
-        ->values();
-@endphp
-
 <x-section class="bg-dotted">
     <x-grid class="xl:grid-cols-4">
         @foreach ($charities as $charity)
