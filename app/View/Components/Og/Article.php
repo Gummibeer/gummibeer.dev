@@ -2,7 +2,6 @@
 
 namespace App\View\Components\Og;
 
-use App\Services\SiteIdentity;
 use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
 use Carbon\Carbon;
@@ -14,17 +13,20 @@ class Article extends Component
 {
     protected EntryContract $post;
 
-    protected SiteIdentity $identity;
+    protected string $siteName;
 
-    public function __construct(EntryContract $post, SiteIdentity $identity)
+    protected string $twitterHandle;
+
+    public function __construct(EntryContract $post, string $siteName, string $twitterHandle)
     {
         $this->post = $post;
-        $this->identity = $identity;
+        $this->siteName = $siteName;
+        $this->twitterHandle = $twitterHandle;
     }
 
     public function render(): string
     {
-        $title = $this->post->value('title').' | '.$this->identity->siteName();
+        $title = $this->post->value('title').' | '.$this->siteName;
         $description = (string) $this->post->value('description');
         $author = Entry::find((string) $this->post->value('author'));
         $twitter = $author instanceof EntryContract ? (string) $author->value('twitter') : '';
@@ -38,7 +40,7 @@ class Article extends Component
                 ->locale(str_replace('-', '_', app()->getLocale())),
             Twitter::summaryLargeImage($title)
                 ->when($description)->description($description)
-                ->site($this->identity->twitterHandle())
+                ->site($this->twitterHandle)
                 ->when($twitter)->creator($twitter),
         ]);
     }
