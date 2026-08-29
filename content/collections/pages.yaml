@@ -5,3 +5,6 @@ structure:
   root: true
 inject:
   view_model: App\ViewModels\Page
+  seo:
+    description: '@seo:content'
+    image: '@seo:seo_image'
