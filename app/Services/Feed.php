@@ -9,6 +9,7 @@ use Spatie\Feed\FeedItem;
 use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
+use Statamic\Facades\GlobalSet;
 use Statamic\Facades\User;
 
 class Feed extends SpatieFeed
@@ -22,8 +23,14 @@ class Feed extends SpatieFeed
         abort_unless(in_array($format, ['rss', 'atom']), 404);
         abort_if($items->isEmpty(), 404);
 
+        $identity = GlobalSet::findByHandle('identity');
+
+        if (! $identity) {
+            throw new RuntimeException('The Statamic identity global is missing.');
+        }
+
         return new static(
-            $title.' | '.app(SiteIdentity::class)->siteName(),
+            $title.' | '.$identity->inCurrentSite()->get('site_name'),
             $items,
             request()->url(),
             'feed::'.$format,
