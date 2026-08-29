@@ -71,15 +71,13 @@
     },
     "scripts": {
         "post-install-cmd": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate --ansi --no-interaction --quiet"
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
         ],
         "pre-update-cmd": [
             "Statamic\\Console\\Composer\\Scripts::preUpdateCmd"
         ],
         "post-update-cmd": [
             "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
-            "@php artisan key:generate --ansi --no-interaction --quiet",
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
         ],
         "post-autoload-dump": [
