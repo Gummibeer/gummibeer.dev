@@ -1,0 +1,10 @@
+site_defaults:
+  site_name: '{{ site:site_name }}'
+  site_name_position: after
+  site_name_separator: '|'
+  title: '@seo:title'
+  canonical_url: '@seo:permalink'
+  og_type: website
+  twitter_handle: '{{ site:twitter_handle }}'
+  priority: 0.5
+  change_frequency: monthly
