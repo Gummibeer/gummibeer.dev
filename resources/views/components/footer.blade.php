@@ -1,12 +1,12 @@
-<?php /** @var App\Services\SiteIdentity $identity */ ?>
+@cascade(['site' => null])
 
 <footer class="w-full bg-white px-4 py-4 text-snow-20 md:px-8 md:py-6 lg:px-10 xl:px-12 dark:bg-night-10 dark:text-snow-10">
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
-        <div class="grow py-1 text-sm">&copy; Copyright {{ $identity->copyrightSince() }} - {{ date('Y') }} by {{ $identity->copyrightName() }}</div>
+        <div class="grow py-1 text-sm">&copy; Copyright {{ $site?->copyright_since }} - {{ date('Y') }} by {{ $site?->copyright_name }}</div>
         <ul class="list-inline flex flex-row space-x-2">
             <li>
                 <a
-                    href="{{ $identity->twitterUrl() }}"
+                    href="{{ $site?->twitter_url }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -18,7 +18,7 @@
             </li>
             <li>
                 <a
-                    href="{{ $identity->githubUrl() }}"
+                    href="{{ $site?->github_url }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -30,7 +30,7 @@
             </li>
             <li>
                 <a
-                    href="{{ $identity->stravaUrl() }}"
+                    href="{{ $site?->strava_url }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -42,7 +42,7 @@
             </li>
             <li>
                 <a
-                    href="{{ $identity->steamUrl() }}"
+                    href="{{ $site?->steam_url }}"
                     target="_blank"
                     rel="noreferrer noopener"
                     class="block p-1 hover:text-brand"
@@ -59,46 +59,46 @@
             <li>
                 <x-icon class="fal fa-mobile mr-1" />
                 <a
-                    href="{{ $identity->phoneUrl() }}"
+                    href="tel:{{ str_replace([' ', '-', '(', ')'], '', $site?->phone ?? '') }}"
                     class="hover:text-brand"
                 >
-                    {{ $identity->phone() }}
+                    {{ $site?->phone }}
                 </a>
             </li>
             <li>
                 <x-icon class="fal fa-at mr-1" />
                 <a
-                    href="{{ $identity->emailUrl() }}"
+                    href="mailto:{{ $site?->email }}"
                     class="hover:text-brand"
                 >
-                    {{ $identity->email() }}
+                    {{ $site?->email }}
                 </a>
             </li>
             <li>
                 <x-icon class="fab fa-telegram-plane mr-1" />
                 <a
-                    href="{{ $identity->telegramUrl() }}"
+                    href="https://t.me/{{ ltrim($site?->telegram_username ?? '', '@') }}"
                     class="hover:text-brand"
                 >
-                    {{ $identity->telegramLabel() }}
+                    @{{ ltrim($site?->telegram_username ?? '', '@') }}
                 </a>
             </li>
         </ul>
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
-                    href="{{ $identity->imprintUrl() }}"
+                    href="{{ $site?->imprint_page?->permalink }}"
                     class="hover:text-brand"
                 >
-                    {{ $identity->imprintLabel() }}
+                    {{ $site?->imprint_label }}
                 </a>
             </li>
             <li>
                 <a
-                    href="{{ $identity->privacyUrl() }}"
+                    href="{{ $site?->privacy_page?->permalink }}"
                     class="hover:text-brand"
                 >
-                    {{ $identity->privacyLabel() }}
+                    {{ $site?->privacy_label }}
                 </a>
             </li>
         </ul>
