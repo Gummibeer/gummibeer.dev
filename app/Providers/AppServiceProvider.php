@@ -4,15 +4,13 @@ namespace App\Providers;
 
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use App\Services\ParagraphRenderer;
 use App\Services\SiteIdentity;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
-use Illuminate\Foundation\Http\Events\RequestHandled;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -24,6 +22,7 @@ use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use LogicException;
+use Statamic\Contracts\Assets\Asset as AssetContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Collection as StatamicCollection;
@@ -34,38 +33,32 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(SiteIdentity::class);
+        $this->app->singleton(OgImage::class);
 
         $this->registerPixpipeGlide();
     }
 
     public function boot(): void
     {
-        $this->registerMeta();
         View::share('identity', $this->app->make(SiteIdentity::class));
 
         Paginator::useTailwind();
 
         $this->registerComputedContentValues();
         $this->registerMarkdown();
-
-        Event::listen(RequestHandled::class, fn () => $this->registerMeta());
-    }
-
-    public function registerMeta(): void
-    {
-        $this->app->singleton(MetaBag::class);
-
-        View::share('meta', $this->app->make(MetaBag::class));
     }
 
     public function registerComputedContentValues(): void
     {
+        StatamicCollection::computed('pages', 'seo_image', static fn (EntryContract $entry, mixed $value): ?AssetContract => app(OgImage::class)->forPage($entry));
+
         StatamicCollection::computed('posts', [
             'image' => static function (EntryContract $entry, mixed $value): ?string {
                 $images = $entry->value('images');
 
                 return $value ?? (is_array($images) ? Arr::first($images) : null);
             },
+            'seo_image' => static fn (EntryContract $entry, mixed $value): ?AssetContract => app(OgImage::class)->forPost($entry),
             'public_url' => static function (EntryContract $entry, mixed $value): string {
                 if (! $entry instanceof StatamicEntry) {
                     throw new LogicException('Expected a concrete Statamic post entry.');
