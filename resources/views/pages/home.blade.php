@@ -1,6 +1,4 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $me */ ?>
-<?php /** @var Illuminate\Support\Collection $posts */ ?>
-<?php /** @var Illuminate\Support\Collection $streams */ ?>
 
 @extends ('web')
 
@@ -11,34 +9,8 @@
 @section ('content')
     <x-article class="prose md:prose-lg lg:prose-xl"> {!! $me->content !!} </x-article>
 
-    @if ($posts->isNotEmpty())
-        <x-section>
-            <x-post.promo :post="$posts->first()" />
-        </x-section>
-    @endif
-
-    @if ($posts->skip(1)->isNotEmpty())
-        <x-section class="bg-dotted">
-            <h2 class="mb-8 text-4xl leading-none font-bold text-night-0 dark:text-white">Latest Posts</h2>
-            <x-grid>
-                @foreach ($posts->skip(1)->take(3) as $post)
-                    <x-post.preview
-                        :post="$post"
-                        :class="$loop->iteration === 3 ? 'hidden lg:block' : ''"
-                    />
-                @endforeach
-            </x-grid>
-        </x-section>
-    @endif
-
-    <x-section>
-        <h2 class="mb-8 text-4xl leading-none font-bold text-night-0 dark:text-white">Latest Streams</h2>
-        <x-grid>
-            @foreach ($streams->take(3) as $stream)
-                <x-stream.preview :stream="$stream" />
-            @endforeach
-        </x-grid>
-    </x-section>
+    <x-home.posts />
+    <x-home.streams />
 
     <x-section class="relative overflow-hidden">
         <x-svg.tire class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block" />
