@@ -43,7 +43,7 @@
             async
         ></script>
         <x-post.webmentions
-            :url="$page->public_url"
+            :url="$page->permalink"
             class="mt-12 border-t-2 border-snow-10 pt-12"
         />
     </x-article>
