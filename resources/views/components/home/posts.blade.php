@@ -1,12 +1,3 @@
-@php
-    $posts = Statamic\Facades\Entry::query()
-        ->where('collection', 'posts')
-        ->whereStatus('published')
-        ->get()
-        ->sortByDesc(fn (Statamic\Entries\Entry $entry) => $entry->date())
-        ->values();
-@endphp
-
 @if ($posts->isNotEmpty())
     <x-section>
         <x-post.promo :post="$posts->first()" />
