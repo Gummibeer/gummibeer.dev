@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers\Blog\Year;
 
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use Carbon\Carbon;
 use Statamic\Facades\Entry;
 
 class IndexController
 {
-    public function __invoke(MetaBag $meta, int $year, int $page = 1)
+    public function __invoke(OgImage $ogImage, int $year, int $page = 1)
     {
-        $meta->title = sprintf('Posts from %d | Blog', $year);
-
         $posts = Entry::query()
             ->where('collection', 'posts')
             ->whereStatus('published')
@@ -23,6 +21,11 @@ class IndexController
             ->paginate($page)
             ->withRoute('blog.year.index', compact('year'));
 
-        return view('pages.blog.year', compact('year', 'posts'));
+        return view('pages.blog.year', [
+            'year' => $year,
+            'posts' => $posts,
+            'title' => sprintf('Posts from %d | Blog', $year),
+            'image' => $ogImage->forCollectionMount('posts'),
+        ]);
     }
 }
