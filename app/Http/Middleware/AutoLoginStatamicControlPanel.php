@@ -5,12 +5,13 @@ namespace App\Http\Middleware;
 use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use RuntimeException;
 use Statamic\Facades\User;
 use Symfony\Component\HttpFoundation\Response;
 
 class AutoLoginStatamicControlPanel
 {
-    private const EMAIL = 'local@gummibeer.dev';
+    private const EMAIL = 'dev@gummibeer.de';
 
     public function handle(Request $request, Closure $next): Response
     {
@@ -21,11 +22,7 @@ class AutoLoginStatamicControlPanel
         $user = User::findByEmail(self::EMAIL);
 
         if (! $user) {
-            $user = User::make()
-                ->email(self::EMAIL)
-                ->makeSuper();
-
-            $user->save();
+            throw new RuntimeException('The local Statamic user is missing.');
         }
 
         Auth::login($user);
