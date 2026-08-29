@@ -21,7 +21,7 @@ jobs:
           extensions: intl, simplexml
           coverage: none
       - run: composer global require ergebnis/composer-normalize --no-interaction --no-progress
-      - run: composer normalize
+      - run: ~/.composer/vendor/bin/composer-normalize
       - run: composer update statamic/seo-pro --with-all-dependencies --no-interaction --no-progress
       - run: |
           git config user.name 'github-actions[bot]'
