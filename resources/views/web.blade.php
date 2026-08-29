@@ -1,4 +1,3 @@
-<?php /** @var App\Services\MetaBag $meta */ ?>
 <?php /** @var App\Services\SiteIdentity $identity */ ?>
 
 <!DOCTYPE html>
@@ -24,13 +23,7 @@
         />
     @endif
 
-    <title>{{ $meta->title }}</title>
-    @if ($meta->description)
-        <meta
-            name="description"
-            content="{{ $meta->description }}"
-        />
-    @endif
+    @seo_pro ('meta')
 
     <meta
         name="theme-color"
@@ -62,11 +55,7 @@
     <link
         rel="sitemap"
         type="application/xml"
-        href="{{ route('sitemap.xml') }}"
-    />
-    <link
-        rel="canonical"
-        href="{{ request()->url() }}"
+        href="{{ url('/sitemap.xml') }}"
     />
     @stack ('head')
 </head>
