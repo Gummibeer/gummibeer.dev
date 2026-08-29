@@ -13,11 +13,13 @@ use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
+use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Asset;
 use Statamic\Facades\AssetContainer;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Markdown;
+use Statamic\Facades\User;
 use Tests\TestCase;
 
 final class ApplicationTest extends TestCase
@@ -30,7 +32,6 @@ final class ApplicationTest extends TestCase
             'jobs' => 9,
             'hacktoberfest' => 6,
             'pages' => 8,
-            'authors' => 1,
         ];
 
         foreach ($expected as $collection => $count) {
@@ -38,8 +39,15 @@ final class ApplicationTest extends TestCase
         }
 
         $this->assertFileExists(base_path('content/collections/posts/2020-01-01.hello-world.md'));
+        $this->assertFileDoesNotExist(base_path('content/collections/authors.yaml'));
         $this->assertDirectoryDoesNotExist(base_path('content/collections/drafts'));
         $this->assertDirectoryDoesNotExist(resource_path('content/posts'));
+
+        $author = User::find('gummibeer');
+        $this->assertInstanceOf(UserContract::class, $author);
+        $this->assertSame('dev@gummibeer.de', $author->email());
+        $this->assertSame('gummibeer', $author->get('slug'));
+        $this->assertSame('Gummibeer', $author->get('nickname'));
     }
 
     public function test_native_status_relationships_and_fieldtypes_are_used(): void
@@ -77,7 +85,9 @@ final class ApplicationTest extends TestCase
             ->first();
 
         $this->assertInstanceOf(EntryContract::class, $post);
+        $this->assertInstanceOf(UserContract::class, $post->author);
         $this->assertSame('gummibeer', $post->author->id());
+        $this->assertSame('dev@gummibeer.de', $post->author->email());
         $this->assertContains('laravel', $post->categories->map(fn ($term) => $term->slug())->all());
 
         $job = Entry::query()
@@ -191,7 +201,7 @@ final class ApplicationTest extends TestCase
             'favicons/favicon.ico',
             'hacktoberfest/2023.png',
             'og/static/home.png',
-            'portfolio/moinhund.png',
+            'portfolio/moin-hund.png',
             'posts/2020-01-01.hello-world.jpg',
             'posts/2021-01-28.yoda/content-paw-prints.jpg',
         ] as $image) {
