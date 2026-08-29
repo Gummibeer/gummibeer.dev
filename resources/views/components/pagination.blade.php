@@ -1,15 +1,13 @@
-<?php /** @var App\Services\Paginator $paginator */ ?>
-
-@if ($paginator->hasPages())
+@if ($paginate['total_pages'] > 1)
     <nav
         role="navigation"
         aria-label="Pagination Navigation"
         class="flex items-center justify-between"
     >
         <div>
-            @if (!$paginator->onFirstPage())
+            @if ($paginate['prev_page'])
                 <a
-                    href="{{ $paginator->previousPageUrl() }}"
+                    href="{{ $paginate['prev_page'] }}"
                     rel="prev"
                     class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
@@ -21,33 +19,31 @@
         </div>
         <div>
             <ul class="flex list-none space-x-4">
-                @if ($paginator->currentPage() !== 1)
+                @if ($paginate['current_page'] !== 1)
                     <li>
                         <a
-                            href="{{ $paginator->url(1) }}"
+                            href="{{ $paginate['links']['all'][0]['url'] }}"
                             class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
-                            >1</a
-                        >
+                        >1</a>
                     </li>
                 @endif
                 <li>
-                    <span class="inline-block h-10 w-10 rounded-full bg-brand text-center leading-10 text-white shadow"> {{ $paginator->currentPage() }} </span>
+                    <span class="inline-block h-10 w-10 rounded-full bg-brand text-center leading-10 text-white shadow">{{ $paginate['current_page'] }}</span>
                 </li>
-                @if ($paginator->currentPage() !== $paginator->lastPage())
+                @if ($paginate['current_page'] !== $paginate['total_pages'])
                     <li>
                         <a
-                            href="{{ $paginator->url($paginator->lastPage()) }}"
+                            href="{{ $paginate['links']['all'][$paginate['total_pages'] - 1]['url'] }}"
                             class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
-                            >{{ $paginator->lastPage() }}</a
-                        >
+                        >{{ $paginate['total_pages'] }}</a>
                     </li>
                 @endif
             </ul>
         </div>
         <div>
-            @if ($paginator->hasMorePages())
+            @if ($paginate['next_page'])
                 <a
-                    href="{{ $paginator->nextPageUrl() }}"
+                    href="{{ $paginate['next_page'] }}"
                     rel="next"
                     class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
