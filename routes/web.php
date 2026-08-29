@@ -7,7 +7,7 @@ use Spatie\Sitemap\SitemapGenerator;
 use Spatie\Sitemap\Tags\Url;
 
 Route::prefix('blog')->name('blog.')->group(function (): void {
-    Route::get('search', Blog\SearchController::class)->name('search');
+    Route::statamic('search', 'pages.blog.search')->name('search');
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
     Route::get('categories/{category}/feed.{format}', Blog\Category\FeedController::class)->name('category.feed');
 });
