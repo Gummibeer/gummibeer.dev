@@ -1,6 +1,7 @@
 ---
 id: 6c04e2f6-87d1-4b3c-b416-bd17caf9c75e
 blueprint: page
+title: Portfolio
 template: pages/portfolio
 ---
 

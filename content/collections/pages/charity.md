@@ -1,6 +1,7 @@
 ---
 id: 6daacc9b-b6c4-48ed-94c9-e43b3db1334f
 blueprint: page
+title: Charity
 template: pages/charity
 ---
 
