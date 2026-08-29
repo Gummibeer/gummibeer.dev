@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'enabled' => app()->environment(['local', 'testing']),
+    'enabled' => false,
 
     'route' => env('CP_ROUTE', 'cp'),
 
@@ -26,7 +26,7 @@ return [
     */
 
     'auth' => [
-        'enabled' => ! app()->isLocal(),
+        'enabled' => false,
         'redirect_to' => null,
     ],
 

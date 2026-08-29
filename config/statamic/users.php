@@ -48,10 +48,10 @@ return [
         'redirect' => env('STATAMIC_IMPERSONATE_REDIRECT'),
     ],
 
-    'elevated_sessions_enabled' => env('STATAMIC_ELEVATED_SESSIONS_ENABLED', ! app()->isLocal()),
+    'elevated_sessions_enabled' => env('STATAMIC_ELEVATED_SESSIONS_ENABLED', false),
     'elevated_session_duration' => 15,
     'elevated_sessions_url' => null,
-    'two_factor_enabled' => env('STATAMIC_TWO_FACTOR_ENABLED', ! app()->isLocal()),
+    'two_factor_enabled' => env('STATAMIC_TWO_FACTOR_ENABLED', false),
     'two_factor_enforced_roles' => [],
     'two_factor_challenge_url' => null,
     'two_factor_setup_url' => null,
