@@ -26,7 +26,7 @@ return [
     */
 
     'auth' => [
-        'enabled' => true,
+        'enabled' => ! app()->isLocal(),
         'redirect_to' => null,
     ],
 
@@ -47,7 +47,7 @@ return [
     | Dashboard Widgets
     |--------------------------------------------------------------------------
     |
-    | Here you may define any number of dashboard widgets. You're free to
+    | Here you may define any dashboard widgets. You're free to
     | use the same widget multiple times in different configurations.
     |
     */
