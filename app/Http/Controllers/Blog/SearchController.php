@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers\Blog;
 
-use App\Services\MetaBag;
+use App\Services\OgImage;
 use Illuminate\Contracts\View\View;
 use Illuminate\Http\Request;
 
 class SearchController
 {
-    public function __invoke(Request $request, MetaBag $meta): View
+    public function __invoke(Request $request, OgImage $ogImage): View
     {
         $query = trim((string) $request->query('q'));
 
-        $meta->title = $query === '' ? 'Search' : "Search: {$query}";
-        $meta->image = asset('images/og/static/blog.png');
-
-        return view('pages.blog.search');
+        return view('pages.blog.search', [
+            'title' => $query === '' ? 'Search' : "Search: {$query}",
+            'image' => $ogImage->forCollectionMount('posts'),
+        ]);
     }
 }
