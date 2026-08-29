@@ -1,5 +1,3 @@
-<?php /** @var Statamic\Contracts\Entries\Entry $me */ ?>
-
 @extends ('web')
 
 @push ('head')
@@ -7,7 +5,7 @@
 @endpush
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl"> {!! $me->content !!} </x-article>
+    <x-article class="prose md:prose-lg lg:prose-xl"> {!! $content !!} </x-article>
 
     <x-home.posts />
     <x-home.streams />
