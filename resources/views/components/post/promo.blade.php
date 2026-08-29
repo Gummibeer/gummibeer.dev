@@ -5,7 +5,7 @@
 <article {{ $attributes->except('post')->merge(['class' => 'md:flex md:space-x-8 lg:space-x-10 xl:space-x-12 md:items-center']) }}>
     @if ($post->image)
         <div class="mb-8 w-full md:mb-0 md:w-1/2 lg:w-1/3">
-            <a href="{{ $post->public_url }}">
+            <a href="{{ $post->permalink }}">
                 <x-img
                     :src="$post->image"
                     width="768"
@@ -26,7 +26,7 @@
         @endif
         <h3 class="mb-8 text-3xl leading-none font-bold text-night-0 dark:text-white">
             <a
-                href="{{ $post->public_url }}"
+                href="{{ $post->permalink }}"
                 class="hover:underlined"
             >
                 {{ $post->title }}
