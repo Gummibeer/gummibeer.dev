@@ -1,3 +1,5 @@
+@props(['identity'])
+
 <footer class="w-full bg-white px-4 py-4 text-snow-20 md:px-8 md:py-6 lg:px-10 xl:px-12 dark:bg-night-10 dark:text-snow-10">
     <div class="flex flex-col space-y-4 sm:flex-row sm:space-y-0 sm:space-x-4">
         <div class="grow py-1 text-sm">&copy; Copyright {{ $identity?->copyright_since }} - {{ date('Y') }} by {{ $identity?->copyright_name }}</div>
