@@ -14,14 +14,15 @@ jobs:
   update:
     runs-on: ubuntu-24.04
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: shivammathur/setup-php@v2
         with:
           php-version: '8.5'
           extensions: intl, simplexml
           coverage: none
-      - run: composer global require ergebnis/composer-normalize --no-interaction --no-progress
-      - run: "$(composer global config home --absolute)/vendor/bin/composer-normalize"
+      - run: composer global config allow-plugins.ergebnis/composer-normalize true
+      - run: composer global require ergebnis/composer-normalize:^2.52 --no-interaction --no-progress
+      - run: composer normalize
       - run: composer update statamic/seo-pro --with-all-dependencies --no-interaction --no-progress
       - run: |
           git config user.name 'github-actions[bot]'
