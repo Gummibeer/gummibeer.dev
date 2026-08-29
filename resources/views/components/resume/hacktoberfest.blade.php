@@ -1,11 +1,3 @@
-@php
-    $hacktoberfests = Statamic\Facades\Entry::query()
-        ->where('collection', 'hacktoberfest')
-        ->whereStatus('published')
-        ->get()
-        ->sortByDesc(fn ($entry) => $entry->slug());
-@endphp
-
 <x-section>
     <div class="mx-auto prose mb-8 w-full sm:max-w-screen-sm sm:px-4 md:prose-lg md:max-w-screen-md md:px-0 lg:prose-xl">
         <h2>Hacktoberfest</h2>
