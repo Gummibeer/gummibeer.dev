@@ -4,15 +4,12 @@ namespace App\Providers;
 
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
-use App\Services\MetaBag;
 use App\Services\ParagraphRenderer;
 use App\Services\SiteIdentity;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
-use Illuminate\Foundation\Http\Events\RequestHandled;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Arr;
-use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -39,22 +36,12 @@ class AppServiceProvider extends ServiceProvider
 
     public function boot(): void
     {
-        $this->registerMeta();
         View::share('identity', $this->app->make(SiteIdentity::class));
 
         Paginator::useTailwind();
 
         $this->registerComputedContentValues();
         $this->registerMarkdown();
-
-        Event::listen(RequestHandled::class, fn () => $this->registerMeta());
-    }
-
-    public function registerMeta(): void
-    {
-        $this->app->singleton(MetaBag::class);
-
-        View::share('meta', $this->app->make(MetaBag::class));
     }
 
     public function registerComputedContentValues(): void
