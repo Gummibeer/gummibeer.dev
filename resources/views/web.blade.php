@@ -1,4 +1,8 @@
-<?php /** @var App\Services\MetaBag $meta */ ?>
+@cascade([
+    'site',
+    'page' => null,
+])
+
 <?php /** @var App\Services\SiteIdentity $identity */ ?>
 
 <!DOCTYPE html>
@@ -13,7 +17,7 @@
         content="width=device-width, initial-scale=1"
     />
 
-    @if (app()->environment('prod'))
+    @if (app()->environment('production'))
         <link
             rel="dns-prefetch"
             href="https://static.cloudflareinsights.com"
@@ -24,11 +28,11 @@
         />
     @endif
 
-    <title>{{ $meta->title }}</title>
-    @if ($meta->description)
+    <title>{{ $page?->title ? $page->title.' | '.$site->site_name : $site->site_name }}</title>
+    @if ($page?->description)
         <meta
             name="description"
-            content="{{ $meta->description }}"
+            content="{{ $page->description }}"
         />
     @endif
 
@@ -66,7 +70,7 @@
     />
     <link
         rel="canonical"
-        href="{{ request()->url() }}"
+        href="{{ $page?->permalink ?? request()->url() }}"
     />
     @stack ('head')
 </head>
@@ -79,7 +83,7 @@
 
     <x-footer />
 
-    @if (app()->environment('prod'))
+    @if (app()->environment('production'))
         <script
             async
             defer
