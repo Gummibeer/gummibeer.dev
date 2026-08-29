@@ -4,7 +4,6 @@
 /public/storage/
 /storage/*.key
 /vendor/
-/users/local@gummibeer.dev.yaml
 .env
 .env.backup
 .phpunit.result.cache
