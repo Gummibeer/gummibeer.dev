@@ -1,4 +1,4 @@
-@props(['identity'])
+@props (['identity'])
 
 <header class="sticky top-0 right-0 left-0 z-10 bg-white shadow dark:bg-night-10">
     <nav
