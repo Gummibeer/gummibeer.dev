@@ -1,12 +1,27 @@
-<statamic:collection:charities sort="title:asc" as="charities">
+<statamic:collection:charities
+    sort="title:asc"
+    as="charities"
+>
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
             @foreach ($charities as $charity)
                 <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
-                    <a href="{{ $charity->website }}" target="_blank" rel="noreferrer noopener" class="block pb-1">
+                    <a
+                        href="{{ $charity->website }}"
+                        target="_blank"
+                        rel="noreferrer noopener"
+                        class="block pb-1"
+                    >
                         <x-figure>
-                            <x-img :src="$charity->image" width="768" ratio="16:9" :alt="$charity->value('title')" />
-                            <x-slot name="caption">{{ $charity->value('title') }}</x-slot>
+                            <x-img
+                                :src="$charity->image"
+                                width="768"
+                                ratio="16:9"
+                                :alt="$charity->value('title')"
+                            />
+                            <x-slot name="caption">
+                                {{ $charity->value('title') }}
+                            </x-slot>
                         </x-figure>
                     </a>
                 </div>

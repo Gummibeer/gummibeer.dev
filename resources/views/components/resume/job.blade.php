@@ -2,7 +2,11 @@
     <div class="flex flex-row sm:items-center sm:space-x-4">
         @if ($job->logo)
             <div class="hidden h-24 w-24 sm:block">
-                <x-img :src="$job->logo" :alt="$job->name" class="h-full w-full object-contain" />
+                <x-img
+                    :src="$job->logo"
+                    :alt="$job->name"
+                    class="h-full w-full object-contain"
+                />
             </div>
         @endif
         <div class="grow">
@@ -12,7 +16,11 @@
                         <x-icon :class="$job->icon_class" />
                         {{ $job->name }}
                     </h3>
-                    <a href="{{ $job->website }}" target="_blank" class="inline-block p-1 text-xs text-snow-20 hover:text-brand dark:text-snow-10">
+                    <a
+                        href="{{ $job->website }}"
+                        target="_blank"
+                        class="inline-block p-1 text-xs text-snow-20 hover:text-brand dark:text-snow-10"
+                    >
                         {{ $job->website_host }}
                     </a>
                 </div>

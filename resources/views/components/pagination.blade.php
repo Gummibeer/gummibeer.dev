@@ -24,7 +24,8 @@
                         <a
                             href="{{ $paginate['links']['all'][0]['url'] }}"
                             class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
-                        >1</a>
+                            >1</a
+                        >
                     </li>
                 @endif
                 <li>
@@ -35,7 +36,8 @@
                         <a
                             href="{{ $paginate['links']['all'][$paginate['total_pages'] - 1]['url'] }}"
                             class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
-                        >{{ $paginate['total_pages'] }}</a>
+                            >{{ $paginate['total_pages'] }}</a
+                        >
                     </li>
                 @endif
             </ul>

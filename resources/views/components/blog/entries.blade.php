@@ -1,4 +1,9 @@
-<statamic:collection from="posts|streams" sort="date:desc" paginate="6" as="entries">
+<statamic:collection
+    from="posts|streams"
+    sort="date:desc"
+    paginate="6"
+    as="entries"
+>
     @push ('head')
         <x-link-pagination :paginate="$paginate" />
         <x-link-feed route="blog.feed" />

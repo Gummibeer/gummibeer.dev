@@ -1,4 +1,8 @@
-<statamic:collection:posts sort="date:desc" limit="4" as="posts">
+<statamic:collection:posts
+    sort="date:desc"
+    limit="4"
+    as="posts"
+>
     @if ($posts->isNotEmpty())
         <x-section>
             <x-post.promo :post="$posts->first()" />
