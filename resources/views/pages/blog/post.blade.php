@@ -9,8 +9,8 @@
     />
     <x-og.article
         :post="$page"
-        :site-name="$site->site_name"
-        :twitter-handle="$site->twitter_handle"
+        :site-name="$identity->site_name"
+        :twitter-handle="$identity->twitter_handle"
     />
     @if ($page->author?->payment_pointer)
         <meta
