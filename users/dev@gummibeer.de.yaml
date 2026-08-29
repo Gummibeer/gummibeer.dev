@@ -1,0 +1,9 @@
+id: gummibeer
+name: 'Tom Witkowski'
+slug: gummibeer
+nickname: Gummibeer
+firstname: Tom
+lastname: Witkowski
+payment_pointer: '$ilp.uphold.com/EagWEdJU64mN'
+twitter: '@devgummibeer'
+super: true
