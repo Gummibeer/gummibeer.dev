@@ -2,13 +2,13 @@
 
 namespace App\Console\Commands;
 
+use App\Services\OgImage;
 use App\Services\SiteIdentity;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
 use Spatie\Browsershot\Browsershot;
 use Statamic\Contracts\Entries\Entry as EntryContract;
-use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Markdown;
 
@@ -16,19 +16,19 @@ class GenerateOgImages extends Command
 {
     protected $signature = 'generate:og:images {--force}';
 
-    protected $description = 'Generate all og:images for posts, pages, and standalone routes.';
+    protected $description = 'Generate Open Graph images for published Statamic pages and posts.';
 
-    public function handle(): void
+    public function handle(OgImage $ogImage, SiteIdentity $identity): void
     {
         Entry::query()
             ->where('collection', 'posts')
             ->whereStatus('published')
             ->get()
-            ->each(function (EntryContract $post): void {
+            ->each(function (EntryContract $post) use ($ogImage): void {
                 $date = $post->date();
 
                 $this->saveImage(
-                    "images/og/posts/{$date->format('Y-m-d')}.{$post->slug()}.png",
+                    $ogImage->postPath($post),
                     [
                         'title' => (string) $post->value('title'),
                         'date' => $date,
@@ -37,22 +37,20 @@ class GenerateOgImages extends Command
                 );
             });
 
-        Entry::whereCollection('pages')
-            ->each(function (mixed $page): void {
-                if (! $page instanceof StatamicEntry || ! $page->published()) {
-                    return;
-                }
-
+        Entry::query()
+            ->where('collection', 'pages')
+            ->whereStatus('published')
+            ->get()
+            ->each(function (EntryContract $page) use ($identity, $ogImage): void {
                 $this->saveImage(
-                    "images/og/static/{$page->slug()}.png",
-                    ['title' => (string) $page->value('title')],
+                    $ogImage->pagePath($page),
+                    [
+                        'title' => $page->url() === '/'
+                            ? $identity->tagline()
+                            : (string) $page->value('title'),
+                    ],
                 );
             });
-
-        $this->saveImage(
-            'images/og/static/home.png',
-            ['title' => app(SiteIdentity::class)->tagline()],
-        );
     }
 
     /**
