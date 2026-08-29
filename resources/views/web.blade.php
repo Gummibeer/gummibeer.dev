@@ -3,8 +3,6 @@
     'page' => null,
 ])
 
-<?php /** @var App\Services\SiteIdentity $identity */ ?>
-
 <!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
@@ -49,18 +47,20 @@
 
     @vite (['resources/css/app.css', 'resources/js/app.js'])
 
-    <link
-        rel="me"
-        href="{{ $identity->twitterUrl() }}"
-    />
-    <link
-        rel="me"
-        href="{{ $identity->githubUrl() }}"
-    />
-    <link
-        rel="me"
-        href="{{ $identity->instagramUrl() }}"
-    />
+    @if ($site)
+        <link
+            rel="me"
+            href="{{ $site->twitter_url }}"
+        />
+        <link
+            rel="me"
+            href="{{ $site->github_url }}"
+        />
+        <link
+            rel="me"
+            href="{{ $site->instagram_url }}"
+        />
+    @endif
 
     <x-webmention-links />
     <link
