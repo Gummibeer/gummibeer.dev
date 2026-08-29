@@ -1,5 +1,5 @@
 @cascade([
-    'site',
+    'site' => null,
     'page' => null,
 ])
 
@@ -28,7 +28,7 @@
         />
     @endif
 
-    <title>{{ $page?->title ? $page->title.' | '.$site->site_name : $site->site_name }}</title>
+    <title>{{ $page?->title ? $page->title.' | '.($site?->site_name ?? config('app.name')) : ($site?->site_name ?? config('app.name')) }}</title>
     @if ($page?->description)
         <meta
             name="description"
