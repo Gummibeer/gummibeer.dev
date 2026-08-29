@@ -2,7 +2,6 @@
 
 namespace App\Console\Commands;
 
-use App\Services\SiteIdentity;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
@@ -10,6 +9,7 @@ use Spatie\Browsershot\Browsershot;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Entry;
+use Statamic\Facades\GlobalSet;
 use Statamic\Facades\Markdown;
 
 class GenerateOgImages extends Command
@@ -49,9 +49,15 @@ class GenerateOgImages extends Command
                 );
             });
 
+        $identity = GlobalSet::findByHandle('identity');
+
+        if (! $identity) {
+            throw new RuntimeException('The Statamic identity global is missing.');
+        }
+
         $this->saveImage(
             'images/og/static/home.png',
-            ['title' => app(SiteIdentity::class)->tagline()],
+            ['title' => (string) $identity->inCurrentSite()->get('tagline')],
         );
     }
 
