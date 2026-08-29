@@ -82,8 +82,7 @@ class Page extends ViewModel
         $meta->title = 'Resume';
         $meta->image = asset('images/og/static/me.png');
 
-        $jobs = EntryFacade::whereCollection('jobs')
-            ->filter(fn (mixed $entry): bool => $entry instanceof Entry)
+        $jobs = $this->published('jobs')
             ->sort(function (Entry $a, Entry $b): int {
                 $aHasEnd = filled($a->value('end_at'));
                 $bHasEnd = filled($b->value('end_at'));
@@ -99,8 +98,7 @@ class Page extends ViewModel
         return [
             'contents' => $this->cascade->get('content'),
             'jobs' => $jobs,
-            'hacktoberfests' => EntryFacade::whereCollection('hacktoberfest')
-                ->filter(fn (mixed $entry): bool => $entry instanceof Entry)
+            'hacktoberfests' => $this->published('hacktoberfest')
                 ->sortByDesc(fn (Entry $entry) => $entry->slug()),
         ];
     }
@@ -169,8 +167,11 @@ class Page extends ViewModel
      */
     private function published(string $collection): Collection
     {
-        return EntryFacade::whereCollection($collection)
-            ->filter(fn (mixed $entry): bool => $entry instanceof Entry && $entry->status() === 'published')
+        return EntryFacade::query()
+            ->where('collection', $collection)
+            ->whereStatus('published')
+            ->get()
+            ->filter(fn (mixed $entry): bool => $entry instanceof Entry)
             ->values();
     }
 }
