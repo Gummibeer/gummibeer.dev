@@ -25,9 +25,7 @@ class Category extends ViewModel
         $posts = $category->entries()
             ->filter(fn (mixed $entry): bool => $entry instanceof Entry && $entry->status() === 'published')
             ->sortByDesc(fn (Entry $entry) => $entry->date())
-            ->values()
-            ->paginate()
-            ->withRoute('blog.category.index', ['category' => $category->slug()], $category->url());
+            ->values();
 
         return compact('category', 'posts');
     }
