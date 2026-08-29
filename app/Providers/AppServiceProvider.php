@@ -25,7 +25,6 @@ use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use LogicException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
-use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Collection as StatamicCollection;
 use Statamic\Facades\Markdown;
 
@@ -65,13 +64,6 @@ class AppServiceProvider extends ServiceProvider
                 $images = $entry->value('images');
 
                 return $value ?? (is_array($images) ? Arr::first($images) : null);
-            },
-            'public_url' => static function (EntryContract $entry, mixed $value): string {
-                if (! $entry instanceof StatamicEntry) {
-                    throw new LogicException('Expected a concrete Statamic post entry.');
-                }
-
-                return (string) $entry->absoluteUrl();
             },
             'read_time' => static function (EntryContract $entry, mixed $value): float {
                 $html = Markdown::parse((string) $entry->value('content'));
