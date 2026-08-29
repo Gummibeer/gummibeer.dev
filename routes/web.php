@@ -1,7 +1,6 @@
 <?php
 
 use App\Http\Controllers\Blog;
-use App\Services\MetaBag;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 use Spatie\Sitemap\SitemapGenerator;
@@ -12,15 +11,6 @@ Route::prefix('blog')->name('blog.')->group(function (): void {
     Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
     Route::get('categories/{category}/feed.{format}', Blog\Category\FeedController::class)->name('category.feed');
 });
-
-Route::get(
-    '404.html',
-    function (MetaBag $meta) {
-        $meta->title = 'Not Found';
-
-        return view('pages.404');
-    }
-)->name('404');
 
 Route::get(
     'sitemap.xml',
