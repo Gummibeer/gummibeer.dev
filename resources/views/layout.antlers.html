@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}" data-theme="light">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffd21a">
+        <title>{{ if seo_title }}{{ seo_title | sanitize }}{{ else }}{{ title | sanitize }} — {{ settings:brand_name }}{{ /if }}</title>
+        <meta name="description" content="{{ meta_description ?? settings:default_meta_description | sanitize }}">
+        <link rel="canonical" href="{{ permalink }}">
+        {{ open_graph
+            :site_name="settings:brand_name"
+            :default_description="settings:default_meta_description"
+            :default_image="settings:default_og_image"
+            :locale="settings:open_graph_locale"
+            :twitter_handle="settings:twitter_handle"
+            :author_url="settings:author_profile_url"
+        }}
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&family=Roboto+Condensed:wght@700;800&display=swap" rel="stylesheet">
+        <script>try{document.documentElement.dataset.theme=localStorage.getItem('gummibeer-theme')||'light'}catch(e){}</script>
+        {{ vite src="resources/js/site.js|resources/css/site.css" }}
+    </head>
+    <body>
+        <a class="skip-link" href="#main-content">Skip to content</a>
+        {{ partial:site/header }}
+        {{ template_content }}
+    </body>
+</html>

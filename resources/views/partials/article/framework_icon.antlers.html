@@ -1,0 +1,9 @@
+{{ if icon == 'idea' }}
+    <svg viewBox="0 0 80 80" aria-hidden="true"><circle cx="40" cy="35" r="18" fill="#ffd21a" stroke="currentColor" stroke-width="2"/><path d="M31 57h18M34 65h12M40 5v8M14 18l7 7M66 18l-7 7M9 40h10M61 40h10" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+{{ elseif icon == 'build' }}
+    <svg viewBox="0 0 80 80" aria-hidden="true"><path d="m15 55 18-18-8-8 11-11 11 11-8 8 7 7 11-11 11 11-11 11-8-8-18 18Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="m20 62 9-9 8 8-9 9Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg>
+{{ elseif icon == 'ship' }}
+    <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M13 25 40 14l27 12-27 12-27-13v29l27 13 27-13V26M40 14v24" fill="none" stroke="currentColor" stroke-width="2"/><path d="m47 37-9 12h7l-4 13 13-17h-8l5-8Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg>
+{{ else }}
+    <svg viewBox="0 0 80 80" aria-hidden="true"><path d="M40 67V41M40 48c-13 0-24-8-24-20 15-3 25 3 24 20Zm0-4c0-13 9-23 24-21 1 13-10 22-24 21Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg>
+{{ /if }}

@@ -1,0 +1,101 @@
+title: 'Site settings'
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Identity
+        fields:
+          -
+            handle: brand_name
+            field:
+              type: text
+              display: 'Brand name'
+              validate: required
+          -
+            handle: default_meta_description
+            field:
+              type: textarea
+              display: 'Default meta description'
+          -
+            handle: default_og_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Default share image'
+              instructions: 'Used when a page or article does not have its own Open Graph image.'
+          -
+            handle: open_graph_locale
+            field:
+              type: text
+              display: 'Open Graph locale'
+              instructions: 'Language and territory in Open Graph format, for example en_US.'
+          -
+            handle: twitter_handle
+            field:
+              type: text
+              display: 'Twitter handle'
+              instructions: 'Used for Twitter Card attribution, with or without the @.'
+          -
+            handle: author_profile_url
+            field:
+              type: link
+              display: 'Author profile URL'
+              instructions: 'Used as the Open Graph author link on articles.'
+          -
+            handle: code_url
+            field:
+              type: link
+              display: 'Code button link'
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: Email
+          -
+            handle: social_links
+            field:
+              type: grid
+              display: 'Social links'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                    validate: required
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: Link
+                    validate: required
+                -
+                  handle: icon
+                  field:
+                    type: select
+                    display: Icon
+                    options:
+                      github: GitHub
+                      twitter: Twitter
+                      email: Email
+      -
+        display: Footer
+        fields:
+          -
+            handle: footer_note
+            field:
+              type: textarea
+              display: 'Sticky note'
+          -
+            handle: footer_tagline
+            field:
+              type: textarea
+              display: Tagline
+          -
+            handle: footer_build_text
+            field:
+              type: text
+              display: 'Build credit'

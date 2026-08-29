@@ -1,0 +1,28 @@
+brand_name: gummibeer.dev
+default_meta_description: 'Building, shipping, learning and sharing notes on web development, side projects and systems.'
+default_og_image: redesign/bike-hero.jpg
+open_graph_locale: en_US
+twitter_handle: '@Gummibeer'
+author_profile_url: 'https://github.com/Gummibeer'
+code_url: 'https://github.com/Gummibeer'
+email: dev@gummibeer.dev
+social_links:
+  -
+    label: GitHub
+    url: 'https://github.com/Gummibeer'
+    icon: github
+  -
+    label: Twitter
+    url: 'https://twitter.com/Gummibeer'
+    icon: twitter
+  -
+    label: Email
+    url: 'mailto:dev@gummibeer.dev'
+    icon: email
+footer_note: |-
+  Thanks for
+  stopping by!
+footer_tagline: |-
+  Building, learning, and sharing
+  one step at a time.
+footer_build_text: 'Built with Statamic and ☕'

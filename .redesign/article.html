@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffd21a" />
+  <title>The power of shipping something small — gummibeer.dev</title>
+  <meta name="description" content="Blog post layout concept for gummibeer.dev." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Permanent+Marker&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="gummibeer.dev home"><span class="brand-dot"></span><span>gummibeer.dev</span></a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a href="index.html">Home</a><a class="active" href="article.html">Blog</a><a href="index.html#projects">Projects</a><a href="index.html#about">About</a><a href="index.html#impact">Impact</a>
+      <button class="icon-button theme-toggle" type="button" aria-label="Toggle theme"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg></button>
+      <a class="code-button" href="index.html#projects">&lt;/&gt;</a>
+    </nav>
+  </header>
+
+  <main class="article-shell wrap">
+    <aside class="article-rail">
+      <div class="sticky-note rail-note scribble"><span class="tape small-tape"></span>Building in public.<br>One project<br>at a time.<span>☺</span></div>
+      <nav class="panel toc" aria-label="On this page"><h2>ON THIS PAGE</h2><ol><li><a href="#why">Why side projects?</a></li><li><a href="#framework">My simple framework</a></li><li><a href="#folder">The folder structure</a></li><li><a href="#focused">Stay focused</a></li><li class="active"><a href="#ship">Ship something small</a></li><li><a href="#keep">Keep it going</a></li><li><a href="#working">What I’m working on</a></li></ol></nav>
+      <section class="panel rail-card"><h2>SHARE THIS POST</h2><div class="share-row"><a href="#" aria-label="Twitter">♥</a><a href="#" aria-label="Mastodon">◉</a><a href="#" aria-label="LinkedIn">in</a><button class="copy-link" type="button" aria-label="Copy article URL">↗</button></div></section>
+      <section class="panel rail-card"><h2>LIKE WHAT I DO?</h2><p>This site runs on green energy and supports reforestation.</p><a class="text-link" href="index.html#impact">Read more about<br>my impact <span>→</span></a><span class="leaf-doodle">♧</span></section>
+      <section class="panel latest-mini"><h2>LATEST POSTS</h2><a href="article.html"><img src="assets/article-structure.png" alt=""><span>How I structure<br>side projects<small>May 18, 2024</small></span></a><a href="article.html"><img src="assets/article-ship.png" alt=""><span>The power of<br>shipping small<small>May 11, 2024</small></span></a><a href="article.html"><img src="assets/article-terminal.png" alt=""><span>Turning ideas into<br>consistent progress<small>May 4, 2024</small></span></a><a class="text-link" href="article.html">→ View all articles</a></section>
+    </aside>
+
+    <article class="article-content">
+      <a href="index.html" class="back-link">←&nbsp;&nbsp;Back to blog</a>
+      <header class="post-header">
+        <div class="post-tags">PROCESS, SIDE PROJECTS</div>
+        <div class="post-title-grid">
+          <div>
+            <h1>The power of shipping<br>something <span class="underline-scribble">small</span></h1>
+            <p class="post-deck">Why small projects are underrated and how they<br>compound over time.</p>
+            <div class="author-line"><img src="assets/avatar.png" alt="Tom" /><div><strong>Tom (gummibeer)</strong><span>May 11, 2024&nbsp;&nbsp;•&nbsp;&nbsp;4 min read</span></div></div>
+          </div>
+          <svg class="box-doodle" viewBox="0 0 220 180" aria-label="Shipping box doodle"><path d="M44 56 112 28l65 31-67 28-66-31Zm0 0v69l66 30V87m67-28v67l-67 29m1-126v58" fill="none" stroke="currentColor" stroke-width="3"/><path d="m128 84-19 26h15l-8 28 27-35h-16l9-19Z" fill="#ffd21a" stroke="currentColor" stroke-width="3"/><path d="M38 27 27 11M11 47 0 44M194 36l16-12M207 71h18" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+        </div>
+      </header>
+
+      <div class="prose">
+        <p>We all want to build that one big thing.<br>The product. The platform. The game changer.<br>But most of the time, that big thing stays an idea.</p>
+        <blockquote>You don’t rise to the level of your goals.<br>You fall to the level of your systems.<cite>— James Clear</cite></blockquote>
+        <p><mark>Shipping small</mark> is how we build those systems.</p>
+
+        <section id="why"><h2>1. Why side projects?</h2><p>Side projects are my playground. No deadlines, no meetings, no expectations.<br>Just curiosity and code.</p><p>They help me to:</p><ul><li>Learn by doing</li><li>Experiment with new ideas</li><li>Solve problems I actually care about</li><li>Build in public and connect with people</li></ul><p class="scribble prose-note">↘ And yeah, shipping feels <u>awesome.</u></p></section>
+
+        <section id="framework"><h2>2. My simple framework</h2><p>I keep it stupid simple:</p><div class="framework-grid"><article><svg viewBox="0 0 80 80"><circle cx="40" cy="35" r="18" fill="#ffd21a" stroke="currentColor" stroke-width="2"/><path d="M31 57h18M34 65h12M40 5v8M14 18l7 7M66 18l-7 7M9 40h10M61 40h10" fill="none" stroke="currentColor" stroke-width="2"/></svg><h3>1. Idea</h3><p>A small problem<br>that annoys me.</p></article><article><svg viewBox="0 0 80 80"><path d="m15 55 18-18-8-8 11-11 11 11-8 8 7 7 11-11 11 11-11 11-8-8-18 18Z" fill="none" stroke="currentColor" stroke-width="3"/><path d="m20 62 9-9 8 8-9 9Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg><h3>2. Build</h3><p>Timebox it.<br>Keep the scope tiny.</p></article><article><svg viewBox="0 0 80 80"><path d="M13 25 40 14l27 12-27 12-27-13v29l27 13 27-13V26M40 14v24" fill="none" stroke="currentColor" stroke-width="2"/><path d="m47 37-9 12h7l-4 13 13-17h-8l5-8Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg><h3>3. Ship</h3><p>Get it out there.<br>Perfect is the enemy.</p></article><article><svg viewBox="0 0 80 80"><path d="M40 67V41M40 48c-13 0-24-8-24-20 15-3 25 3 24 20Zm0-4c0-13 9-23 24-21 1 13-10 22-24 21Z" fill="#ffd21a" stroke="currentColor" stroke-width="2"/></svg><h3>4. Repeat</h3><p>Learn, improve,<br>and build again.</p></article></div><div class="callout"><span>☆</span><p>This framework has helped me ship 20+ projects over the last few years.<br>Most are tiny. Some are useful. All of them taught me something.</p></div></section>
+
+        <section id="folder"><h2>3. The folder structure</h2><p>I use the same starter for almost everything:</p><div class="code-window"><div class="window-bar"><i></i><i></i><i></i></div><pre><code>$ mkdir idea
+$ cd idea
+$ composer create-project laravel/laravel .
+$ git init
+$ git add . && git commit -m "ship something small"
+
+# then build the smallest useful version
+</code></pre></div></section>
+        <section id="focused"><h2>4. Stay focused</h2><p>Every project gets one job. If a feature does not make that job clearer, faster, or more useful, it can wait.</p></section>
+        <section id="ship"><h2>5. Ship something small</h2><p>The useful feedback starts after somebody else can touch the thing. A tiny release today beats a perfect launch that never happens.</p></section>
+        <section id="keep"><h2>6. Keep it going</h2><p>Small releases compound. Each one teaches a little more about code, users, scope and what is actually worth building next.</p></section>
+        <section id="working"><h2>7. What I’m working on</h2><p>Usually too many things. The rule is simply to keep at least one of them small enough to ship.</p></section>
+      </div>
+    </article>
+  </main>
+</body>
+</html>

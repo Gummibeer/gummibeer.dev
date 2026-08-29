@@ -1,0 +1,7 @@
+title: Articles
+route: '/blog/{slug}'
+layout: layout
+template: article
+date: true
+sort_dir: desc
+revisions: false

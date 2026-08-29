@@ -1,0 +1,18 @@
+<header class="site-header wrap">
+    <a class="brand" href="/" aria-label="{{ settings:brand_name }} home">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>{{ settings:brand_name }}</span>
+    </a>
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="main-nav">Menu</button>
+
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+        {{ nav:main }}
+            <a href="{{ url }}">{{ title }}</a>
+        {{ /nav:main }}
+        <button class="icon-button theme-toggle" type="button" aria-label="Toggle color theme">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+        </button>
+        <a class="code-button" href="{{ settings:code_url }}" aria-label="View code" rel="me">&lt;/&gt;</a>
+    </nav>
+</header>

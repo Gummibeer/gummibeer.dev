@@ -1,0 +1,142 @@
+<main id="main-content">
+    <section class="hero wrap">
+        <div class="hero-copy">
+            <p class="scribble intro-note">{{ hero_eyebrow | nl2br | twemoji }}<span class="doodle-arrow" aria-hidden="true">↘</span></p>
+            <h1 class="display-stack">
+                {{ hero_lines }}
+                    {{ if highlight }}<span>{{ text }}</span>{{ else }}{{ text }}<br>{{ /if }}
+                {{ /hero_lines }}
+            </h1>
+            <p class="hero-deck">{{ hero_deck | nl2br | twemoji }}</p>
+
+            <div class="hero-actions">
+                {{ hero_actions }}
+                    <a class="button {{ style }}" href="{{ url }}">{{ label }} <span aria-hidden="true">→</span></a>
+                {{ /hero_actions }}
+            </div>
+
+            <div class="built-with" aria-label="Technologies used to build this site">
+                <span>Built with:</span>
+                {{ technologies }}
+                    <span class="tech-mark" title="{{ label }}">
+                        {{ font_awesome version="7.2.0" :set="set" :style="style" :icon="icon" }}
+                    </span>
+                {{ /technologies }}
+            </div>
+        </div>
+
+        <div class="hero-visual" aria-label="Bicycle at sunset">
+            <div class="tape tape-top" aria-hidden="true"></div>
+            <figure class="photo-frame">
+                <img src="{{ hero_image:url }}" alt="{{ hero_image:alt ?? 'Touring bicycle beside a lake at sunset' }}">
+            </figure>
+            <div class="scribble time-note">{{ hero_image_note | nl2br }}<span class="curved-arrow" aria-hidden="true">↙</span></div>
+            <div class="dot-grid" aria-hidden="true"></div>
+            <svg class="tree-doodle" viewBox="0 0 100 140" aria-hidden="true"><path d="M50 4 31 37h12L23 71h16L15 109h29v26h12v-26h29L61 71h16L57 37h12Z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+            <svg class="route-doodle" viewBox="0 0 180 120" aria-hidden="true"><path d="M8 12c49 22 124 21 152 55 21 26-19 44-61 34-28-7-38-1-54 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 6"/></svg>
+            <div class="sticky-note hero-note scribble">{{ hero_sticky_note | nl2br | twemoji }}<span>♡</span></div>
+        </div>
+    </section>
+
+    <section class="content-grid wrap">
+        <section class="panel articles-panel" aria-labelledby="latest-heading">
+            <div class="section-label"><h2 id="latest-heading">{{ articles_heading }}</h2><span aria-hidden="true">→</span></div>
+            {{ featured_articles }}
+                <article class="post-row">
+                    <img src="{{ card_image:url }}" alt="{{ card_image:alt ?? title }}">
+                    <div>
+                        <h3><a href="{{ url }}">{{ title }}</a></h3>
+                        <p class="meta"><time datetime="{{ date format='Y-m-d' }}">{{ date format="F j, Y" }}</time>&nbsp;&nbsp;•&nbsp;&nbsp;{{ read_time }} min read</p>
+                        <p>{{ deck | twemoji }}</p>
+                    </div>
+                    <a class="row-arrow" href="{{ url }}" aria-label="Read {{ title }}">→</a>
+                </article>
+            {{ /featured_articles }}
+            <a class="text-link" href="{{ articles_link }}">{{ articles_link_label }} <span>→</span></a>
+        </section>
+
+        <aside class="sidebar-stack">
+            <section class="panel compact-card" id="about">
+                <div class="section-label"><h2>{{ about_heading }}</h2><span class="round-icon" aria-hidden="true">♙</span></div>
+                <p>{{ about_copy | twemoji }}</p>
+                <a class="text-link" href="{{ about_link }}">{{ about_link_label }} <span>→</span></a>
+            </section>
+
+            <section class="panel compact-card currently-card">
+                <div class="section-label"><h2>{{ currently_heading }}</h2><span class="round-icon" aria-hidden="true">⌁</span></div>
+                <ul class="currently-list">
+                    {{ currently_items }}
+                        <li>
+                            <span aria-hidden="true">{{ icon }}</span>
+                            <span>{{ text | twemoji }}</span>
+                        </li>
+                    {{ /currently_items }}
+                </ul>
+                <p class="scribble currently-note">{{ currently_note | twemoji }}</p>
+            </section>
+        </aside>
+    </section>
+
+    <section class="impact-grid wrap" id="impact">
+        <article class="impact-intro panel">
+            <h2>{{ impact_heading_line_one }}<br><mark>{{ impact_heading_highlight }}</mark> {{ impact_heading_line_two }}</h2>
+            <span class="heart-doodle" aria-hidden="true">♡</span>
+            <p>{{ impact_copy | twemoji }}</p>
+            <a class="button secondary small" href="{{ impact_link }}">{{ impact_link_label }} <span>→</span></a>
+        </article>
+
+        {{ impact_cards }}
+            {{ if type == 'photo_metric' }}
+                <article class="impact-card panel">
+                    <div class="card-kicker">{{ kicker }} <span{{ if kicker | contains:'ECOSIA' }} class="green"{{ /if }}>{{ icon }}</span></div>
+                    <strong class="metric">{{ metric }}</strong>
+                    <p>{{ copy | nl2br | twemoji }}</p>
+                    <p>{{ closing | nl2br | twemoji }}</p>
+                    <img src="{{ image:url }}" alt="{{ image:alt ?? kicker }}">
+                </article>
+            {{ elseif type == 'tree' }}
+                <article class="impact-card tree-card panel">
+                    <div class="card-kicker">{{ kicker }} <span class="green" aria-hidden="true">♧</span></div>
+                    {{ ecologi:impact :username="ecologi_username" :fallback_trees="ecologi_fallback_trees" :fallback_carbon_offset="ecologi_fallback_carbon_offset" }}
+                        <strong class="metric">{{ trees_formatted }}</strong>
+                        <p>{{ copy | nl2br | twemoji }}</p>
+                        <p>{{ closing | nl2br | twemoji }}</p>
+                        <a class="text-link" href="{{ link }}">{{ link_label }} <span>→</span></a>
+                    {{ /ecologi:impact }}
+                    <svg class="tree-stamp" viewBox="0 0 120 120" aria-hidden="true">
+                        <path class="tree-stamp-ring" d="M60 5C89 3 113 27 115 57c2 31-22 56-53 58-31 2-56-21-57-52C3 32 28 7 60 5Z"/>
+                        <path class="tree-stamp-ring tree-stamp-ring-inner" d="M59 11c26-1 48 20 50 47 1 27-20 49-47 51-27 1-49-20-50-47-1-27 20-49 47-51Z"/>
+                        <text class="tree-stamp-text" x="60" y="25" text-anchor="middle">ONE VISIT</text>
+                        <text class="tree-stamp-text" x="60" y="103" text-anchor="middle">ONE TREE</text>
+                        <path class="tree-stamp-spark" d="m20 56 5 1-4 3 1 5-4-3-4 3 1-5-4-3 5-1 2-5 2 5Zm83 2 3 1-2 2 1 4-3-2-3 2 1-4-3-2 3-1 2-4 1 4Z"/>
+                        <path class="tree-stamp-tree" d="M60 31 49 47h7L45 63h9L43 80h13v11m8 0V80h13L66 63h9L64 47h7L60 31Z"/>
+                        <path class="tree-stamp-ground" d="M43 92c9-2 24-2 34 0"/>
+                    </svg>
+                </article>
+            {{ elseif type == 'sponsors' }}
+                <article class="impact-card sponsors-card panel">
+                    <div class="card-kicker">{{ kicker }} <span class="green" aria-hidden="true">♥</span></div>
+                    {{ github_sponsors :login="github_login" :fallback_count="github_fallback_count" :fallback_sponsors="github_fallback_sponsors" }}
+                        <strong class="metric">{{ count_formatted }}</strong>
+                        <p>{{ copy | nl2br | twemoji }}</p>
+                        {{ if sponsors }}
+                            <ul class="sponsor-list" aria-label="GitHub sponsors">
+                                {{ sponsors }}
+                                    <li>
+                                        <a href="{{ url }}" title="{{ name }}">
+                                            <img src="{{ avatar_url }}" alt="{{ name }}" loading="lazy">
+                                        </a>
+                                    </li>
+                                {{ /sponsors }}
+                            </ul>
+                        {{ /if }}
+                        <p>{{ closing | nl2br | twemoji }}</p>
+                        {{ if link }}<a class="text-link" href="{{ link }}">{{ link_label }} <span>→</span></a>{{ /if }}
+                    {{ /github_sponsors }}
+                </article>
+            {{ /if }}
+        {{ /impact_cards }}
+    </section>
+
+    {{ partial:site/footer }}
+</main>

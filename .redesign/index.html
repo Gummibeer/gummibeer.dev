@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#ffd21a" />
+  <title>gummibeer.dev — building, shipping, learning, sharing</title>
+  <meta name="description" content="A playful personal developer homepage concept for gummibeer.dev." />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Caveat:wght@500;600;700&family=Permanent+Marker&family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header class="site-header wrap">
+    <a class="brand" href="index.html" aria-label="gummibeer.dev home">
+      <span class="brand-dot" aria-hidden="true"></span><span>gummibeer.dev</span>
+    </a>
+    <button class="menu-toggle" aria-expanded="false" aria-controls="main-nav">Menu</button>
+    <nav class="main-nav" id="main-nav" aria-label="Main navigation">
+      <a class="active" href="index.html">Home</a>
+      <a href="article.html">Blog</a>
+      <a href="#projects">Projects</a>
+      <a href="#about">About</a>
+      <a href="#impact">Impact</a>
+      <button class="icon-button theme-toggle" type="button" aria-label="Toggle theme">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.42 1.42M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.42-1.42M17.66 6.34l1.41-1.41"/></svg>
+      </button>
+      <a class="code-button" href="#projects" aria-label="View projects">&lt;/&gt;</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero wrap">
+      <div class="hero-copy">
+        <p class="scribble intro-note">I build stuff on the internet<br>and write about it.<span class="doodle-arrow">↘</span></p>
+        <h1 class="display-stack">BUILDING.<br>SHIPPING.<br>LEARNING.<br><span>SHARING.</span></h1>
+        <p class="hero-deck">Notes on web development, side projects,<br>systems, and the occasional ramble.</p>
+        <div class="hero-actions">
+          <a class="button primary" href="article.html">READ THE BLOG <span>→</span></a>
+          <a class="button secondary" href="#projects">VIEW PROJECTS <span>→</span></a>
+        </div>
+        <div class="built-with" aria-label="Technologies">
+          <span>Built with:</span>
+          <strong>PHP</strong><span class="tech-mark">◫</span><span class="tech-mark">◉</span><span class="tech-mark">◇</span><span class="tech-mark">⬡</span><span class="tech-mark">N</span><span class="tech-mark">JS</span><span class="tech-mark">≈</span>
+        </div>
+      </div>
+
+      <div class="hero-visual" aria-label="Bicycle at sunset">
+        <div class="tape tape-top"></div>
+        <figure class="photo-frame">
+          <img src="assets/bike-hero.jpg" alt="Touring bicycle beside a lake at sunset" />
+        </figure>
+        <div class="scribble time-note">my thinking<br>time machine.<span class="curved-arrow">↙</span></div>
+        <div class="dot-grid" aria-hidden="true"></div>
+        <svg class="tree-doodle" viewBox="0 0 100 140" aria-hidden="true"><path d="M50 4 31 37h12L23 71h16L15 109h29v26h12v-26h29L61 71h16L57 37h12Z" fill="none" stroke="currentColor" stroke-width="3"/></svg>
+        <svg class="route-doodle" viewBox="0 0 180 120" aria-hidden="true"><path d="M8 12c49 22 124 21 152 55 21 26-19 44-61 34-28-7-38-1-54 13" fill="none" stroke="currentColor" stroke-width="1.6" stroke-dasharray="3 6"/></svg>
+        <div class="sticky-note hero-note scribble">Good rides.<br>Clear mind.<br>Better code.<br>Stronger planet.<span>♡</span></div>
+      </div>
+    </section>
+
+    <section class="content-grid wrap">
+      <section class="panel articles-panel" aria-labelledby="latest-heading">
+        <div class="section-label"><h2 id="latest-heading">LATEST ARTICLES</h2><span>→</span></div>
+        <article class="post-row">
+          <img src="assets/article-structure.png" alt="Hand-drawn project structure diagram" />
+          <div><h3><a href="article.html">How I structure side projects</a></h3><p class="meta">May 18, 2024&nbsp;&nbsp;•&nbsp;&nbsp;6 min read</p><p>A look at my approach to keeping side projects simple, focused, and (somewhat) finishable.</p></div>
+          <a class="row-arrow" href="article.html" aria-label="Read article">→</a>
+        </article>
+        <article class="post-row">
+          <img src="assets/article-ship.png" alt="Ship something small graphic" />
+          <div><h3><a href="article.html">The power of shipping<br>something small</a></h3><p class="meta">May 11, 2024&nbsp;&nbsp;•&nbsp;&nbsp;4 min read</p><p>Why small projects are underrated and how they compound over time.</p></div>
+          <a class="row-arrow" href="article.html" aria-label="Read article">→</a>
+        </article>
+        <article class="post-row">
+          <img src="assets/article-terminal.png" alt="Terminal showing ideas, build, ship, repeat" />
+          <div><h3><a href="article.html">Turning ideas into<br>consistent progress</a></h3><p class="meta">May 4, 2024&nbsp;&nbsp;•&nbsp;&nbsp;5 min read</p><p>Systems, habits, and mindset shifts that help me actually build consistently.</p></div>
+          <a class="row-arrow" href="article.html" aria-label="Read article">→</a>
+        </article>
+        <a class="text-link" href="article.html">VIEW ALL ARTICLES <span>→</span></a>
+      </section>
+
+      <aside class="sidebar-stack">
+        <section class="panel compact-card" id="about">
+          <div class="section-label"><h2>ABOUT ME</h2><span class="round-icon">♙</span></div>
+          <p>I’m a developer who loves building things for the web. This blog is where I share what I’m learning while building in public. No fluff, just real lessons.</p>
+          <a class="text-link" href="#">More about me <span>→</span></a>
+        </section>
+        <section class="panel compact-card currently-card">
+          <div class="section-label"><h2>CURRENTLY</h2><span class="round-icon">⌁</span></div>
+          <ul class="currently-list">
+            <li><span>☑</span><span>Building a new side project</span><span class="progress"><i></i></span><small>68%</small></li>
+            <li><span>▣</span><span>Reading: The Creative Act</span></li>
+            <li><span>♫</span><span>Listening: Nujabes</span></li>
+            <li><span>&lt;/&gt;</span><span>Learning: Better animation</span></li>
+          </ul>
+          <p class="scribble currently-note">Always improving. Always shipping.</p>
+        </section>
+      </aside>
+    </section>
+
+    <section class="impact-grid wrap" id="impact">
+      <article class="impact-intro panel">
+        <h2>CODE IS COOL.<br><mark>IMPACT</mark> IS COOLER.</h2>
+        <span class="heart-doodle">♡</span>
+        <p>A part of what I do (and what this site runs on) goes back to people and the planet.</p>
+        <a class="button secondary small" href="#">MORE ABOUT MY IMPACT <span>→</span></a>
+      </article>
+      <article class="impact-card panel">
+        <div class="card-kicker">CHARITY <span>♡</span></div>
+        <strong class="metric">€1,745</strong>
+        <p>Donated to amazing organizations.</p>
+        <p>Thanks for being part of this.</p>
+        <img src="assets/charity-photo.jpg" alt="People smiling together" />
+      </article>
+      <article class="impact-card panel">
+        <div class="card-kicker">ECOSIA SEARCH <span class="green">♥</span></div>
+        <strong class="metric">12,842</strong>
+        <p>Searches on Ecosia<br>fund reforestation.</p>
+        <p>You search.<br>Trees grow. <span class="green">✚</span></p>
+        <img src="assets/forest-photo.jpg" alt="Forest landscape" />
+      </article>
+      <article class="impact-card tree-card panel">
+        <div class="card-kicker">THIS SITE PLANTS TREES <span class="green">♧</span></div>
+        <p>Hosted on green via EcoMatcher.</p>
+        <p>Every visit helps<br>restore forests.</p>
+        <a class="text-link" href="#">How it works <span>→</span></a>
+        <div class="tree-stamp">ONE VISIT<br><b>♧</b><br>ONE TREE</div>
+      </article>
+    </section>
+
+    <footer class="footer wrap" id="projects">
+      <div class="footer-note sticky-note scribble">Thanks for<br>stopping by!<span>♡</span></div>
+      <div class="footer-brand"><a class="brand" href="index.html"><span class="brand-dot"></span><span>gummibeer.dev</span></a><p>Building, learning, and sharing<br>one step at a time.</p><div class="socials"><a href="#" aria-label="GitHub">●</a><a href="#" aria-label="X">♥</a><a href="mailto:dev@gummibeer.dev" aria-label="Email">✉</a></div></div>
+      <div class="footer-links"><strong>LINKS</strong><a href="article.html">Blog</a><a href="#projects">Projects</a><a href="#about">About</a><a href="#impact">Impact</a></div>
+      <div class="footer-links"><strong>CONNECT</strong><a href="#">◉ GitHub</a><a href="#">♥ Twitter</a><a href="mailto:dev@gummibeer.dev">✉ Email</a></div>
+      <svg class="mountain-doodle" viewBox="0 0 320 150" aria-label="Mountains and bicycle illustration"><path d="M5 120 62 47l23 35 34-65 45 70 28-32 38 54M0 123h320" fill="none" stroke="currentColor" stroke-width="2"/><path d="M20 120v-29m0 0-9 16m9-16 9 16M48 120V93m0 0-8 13m8-13 8 13M230 117c0-13 10-23 23-23s23 10 23 23M246 117l14-25 17 25m-31 0 31 0m-31 0-16-11m47 11 20-12" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="230" cy="118" r="19" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="296" cy="118" r="19" fill="none" stroke="currentColor" stroke-width="2"/></svg>
+    </footer>
+    <div class="footer-bottom wrap"><span>© 2026 gummibeer.dev</span><span>Built with HTML, CSS and ☕</span></div>
+  </main>
+</body>
+</html>

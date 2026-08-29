@@ -1,0 +1,287 @@
+title: Article
+tabs:
+  main:
+    display: Article
+    sections:
+      -
+        display: Header
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Title
+              validate: required
+          -
+            handle: title_before_highlight
+            field:
+              type: textarea
+              display: 'Title before highlighted word'
+              instructions: 'Use this to control the title line break in the hero.'
+          -
+            handle: title_highlight
+            field:
+              type: text
+              display: 'Highlighted title word'
+          -
+            handle: deck
+            field:
+              type: textarea
+              display: Summary
+              validate: required
+          -
+            handle: categories
+            field:
+              type: list
+              display: Categories
+          -
+            handle: read_time
+            field:
+              type: integer
+              display: 'Reading time (minutes)'
+              validate: 'required|integer|min:1'
+          -
+            handle: author_name
+            field:
+              type: text
+              display: Author
+          -
+            handle: author_avatar_provider
+            field:
+              type: select
+              display: 'Avatar provider'
+              instructions: 'The service used by Unavatar to find the author image.'
+              options:
+                gravatar: Gravatar
+                github: GitHub
+                instagram: Instagram
+                twitter: Twitter
+                facebook: Facebook
+                telegram: Telegram
+                youtube: YouTube
+              default: gravatar
+              validate: required
+          -
+            handle: author_avatar_identifier
+            field:
+              type: text
+              display: 'Avatar identifier'
+              instructions: 'For example, an email hash for Gravatar or username for GitHub. The template applies the circular crop and ring.'
+              validate: required
+          -
+            handle: card_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Card image'
+              validate: required
+          -
+            handle: hero_illustration
+            field:
+              type: select
+              display: 'Hero illustration'
+              options:
+                box: 'Shipping box'
+                none: None
+              default: box
+      -
+        display: 'Article building blocks'
+        fields:
+          -
+            handle: article_blocks
+            field:
+              type: replicator
+              display: Content
+              collapse: accordion
+              sets:
+                writing:
+                  display: Writing
+                  sets:
+                    copy:
+                      display: Copy
+                      fields:
+                        -
+                          handle: content
+                          field:
+                            type: markdown
+                            display: Copy
+                    quote:
+                      display: Quote
+                      fields:
+                        -
+                          handle: quote
+                          field:
+                            type: textarea
+                            display: Quote
+                            validate: required
+                        -
+                          handle: attribution
+                          field:
+                            type: text
+                            display: Attribution
+                    highlight:
+                      display: 'Highlighted sentence'
+                      fields:
+                        -
+                          handle: before
+                          field:
+                            type: text
+                            display: Before
+                        -
+                          handle: highlight
+                          field:
+                            type: text
+                            display: Highlight
+                        -
+                          handle: after
+                          field:
+                            type: text
+                            display: After
+                    section:
+                      display: 'Numbered section'
+                      fields:
+                        -
+                          handle: number
+                          field:
+                            type: integer
+                            display: Number
+                            validate: required
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+                            validate: required
+                        -
+                          handle: anchor
+                          field:
+                            type: slug
+                            display: Anchor
+                            from: heading
+                            validate: required
+                        -
+                          handle: body
+                          field:
+                            type: markdown
+                            display: Body
+                        -
+                          handle: note
+                          field:
+                            type: text
+                            display: 'Handwritten note'
+                    framework:
+                      display: Framework
+                      fields:
+                        -
+                          handle: number
+                          field:
+                            type: integer
+                            display: Number
+                            validate: required
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+                            validate: required
+                        -
+                          handle: anchor
+                          field:
+                            type: slug
+                            display: Anchor
+                            from: heading
+                            validate: required
+                        -
+                          handle: intro
+                          field:
+                            type: text
+                            display: Introduction
+                        -
+                          handle: cards
+                          field:
+                            type: grid
+                            display: Steps
+                            max_rows: 4
+                            fields:
+                              -
+                                handle: icon
+                                field:
+                                  type: select
+                                  display: Icon
+                                  options:
+                                    idea: Idea
+                                    build: Build
+                                    ship: Ship
+                                    repeat: Repeat
+                              -
+                                handle: title
+                                field:
+                                  type: text
+                                  display: Title
+                              -
+                                handle: copy
+                                field:
+                                  type: textarea
+                                  display: Copy
+                        -
+                          handle: callout
+                          field:
+                            type: textarea
+                            display: Callout
+                    code:
+                      display: 'Code window'
+                      fields:
+                        -
+                          handle: number
+                          field:
+                            type: integer
+                            display: Number
+                            validate: required
+                        -
+                          handle: heading
+                          field:
+                            type: text
+                            display: Heading
+                            validate: required
+                        -
+                          handle: anchor
+                          field:
+                            type: slug
+                            display: Anchor
+                            from: heading
+                            validate: required
+                        -
+                          handle: intro
+                          field:
+                            type: text
+                            display: Introduction
+                        -
+                          handle: code
+                          field:
+                            type: textarea
+                            display: Code
+                            validate: required
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo_title
+            field:
+              type: text
+              display: 'Page title'
+          -
+            handle: meta_description
+            field:
+              type: textarea
+              display: 'Meta description'
+          -
+            handle: open_graph_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Share image'
+              instructions: 'Optional. Falls back to the card image, then the global share image.'

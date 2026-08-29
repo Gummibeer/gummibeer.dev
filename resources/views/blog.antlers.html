@@ -1,0 +1,25 @@
+<main id="main-content" class="blog-shell wrap">
+    <header class="blog-header">
+        <p class="post-tags">{{ eyebrow }}</p>
+        <h1>{{ heading }}</h1>
+        <p>{{ intro | twemoji }}</p>
+    </header>
+
+    <section class="blog-grid" aria-label="Articles">
+        {{ collection:articles sort="date:desc" }}
+            <article class="panel blog-card">
+                <a class="blog-card-image" href="{{ url }}">
+                    <img src="{{ card_image:url }}" alt="{{ card_image:alt ?? title }}">
+                </a>
+                <div class="blog-card-copy">
+                    <p class="meta"><time datetime="{{ date format='Y-m-d' }}">{{ date format="F j, Y" }}</time> • {{ read_time }} min read</p>
+                    <h2><a href="{{ url }}">{{ title | twemoji }}</a></h2>
+                    <p>{{ deck | twemoji }}</p>
+                    <a class="text-link" href="{{ url }}">READ ARTICLE <span>→</span></a>
+                </div>
+            </article>
+        {{ /collection:articles }}
+    </section>
+</main>
+
+{{ partial:site/footer }}

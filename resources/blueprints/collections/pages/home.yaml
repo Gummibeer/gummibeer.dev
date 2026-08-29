@@ -1,0 +1,418 @@
+title: Home
+tabs:
+  main:
+    display: Home
+    sections:
+      -
+        display: Hero
+        fields:
+          -
+            handle: hero_eyebrow
+            field:
+              type: textarea
+              display: 'Handwritten introduction'
+              validate: required
+          -
+            handle: hero_lines
+            field:
+              type: grid
+              display: 'Headline lines'
+              min_rows: 1
+              fields:
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                    validate: required
+                -
+                  handle: highlight
+                  field:
+                    type: toggle
+                    display: 'Yellow handwritten style'
+          -
+            handle: hero_deck
+            field:
+              type: textarea
+              display: Introduction
+          -
+            handle: hero_actions
+            field:
+              type: grid
+              display: Buttons
+              max_rows: 2
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: url
+                  field:
+                    type: link
+                    display: Link
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    options:
+                      primary: Primary
+                      secondary: Secondary
+                    default: secondary
+          -
+            handle: technologies
+            field:
+              type: grid
+              display: 'Built with'
+              fields:
+                -
+                  handle: label
+                  field:
+                    type: text
+                    display: Label
+                -
+                  handle: set
+                  field:
+                    type: select
+                    display: Set
+                    default: brands
+                    options:
+                      brands: Brands
+                      classic: Classic
+                      duotone: Duotone
+                      sharp: Sharp
+                      sharp-duotone: 'Sharp Duotone'
+                -
+                  handle: style
+                  field:
+                    type: select
+                    display: Style
+                    default: brands
+                    options:
+                      brands: Brands
+                      solid: Solid
+                      regular: Regular
+                      light: Light
+                      thin: Thin
+                -
+                  handle: icon
+                  field:
+                    type: text
+                    display: Icon
+          -
+            handle: hero_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: Photo
+              validate: required
+          -
+            handle: hero_image_note
+            field:
+              type: textarea
+              display: 'Photo annotation'
+          -
+            handle: hero_sticky_note
+            field:
+              type: textarea
+              display: 'Sticky note'
+      -
+        display: Articles
+        fields:
+          -
+            handle: articles_heading
+            field:
+              type: text
+              display: Heading
+          -
+            handle: featured_articles
+            field:
+              type: entries
+              collections:
+                - articles
+              max_items: 3
+              display: 'Featured articles'
+          -
+            handle: articles_link_label
+            field:
+              type: text
+              display: 'All articles label'
+          -
+            handle: articles_link
+            field:
+              type: link
+              display: 'All articles link'
+      -
+        display: Sidebar
+        fields:
+          -
+            handle: about_heading
+            field:
+              type: text
+              display: 'About heading'
+          -
+            handle: about_copy
+            field:
+              type: textarea
+              display: 'About copy'
+          -
+            handle: about_link_label
+            field:
+              type: text
+              display: 'About link label'
+          -
+            handle: about_link
+            field:
+              type: link
+              display: 'About link'
+          -
+            handle: currently_heading
+            field:
+              type: text
+              display: 'Currently heading'
+          -
+            handle: currently_items
+            field:
+              type: grid
+              display: 'Currently items'
+              fields:
+                -
+                  handle: icon
+                  field:
+                    type: text
+                    display: Icon
+                -
+                  handle: text
+                  field:
+                    type: text
+                    display: Text
+                    validate: required
+          -
+            handle: currently_note
+            field:
+              type: text
+              display: 'Handwritten note'
+      -
+        display: Impact
+        fields:
+          -
+            handle: impact_heading_line_one
+            field:
+              type: text
+              display: 'Heading line one'
+          -
+            handle: impact_heading_highlight
+            field:
+              type: text
+              display: 'Highlighted word'
+          -
+            handle: impact_heading_line_two
+            field:
+              type: text
+              display: 'Heading line two'
+          -
+            handle: impact_copy
+            field:
+              type: textarea
+              display: Copy
+          -
+            handle: impact_link_label
+            field:
+              type: text
+              display: 'Button label'
+          -
+            handle: impact_link
+            field:
+              type: link
+              display: 'Button link'
+          -
+            handle: impact_cards
+            field:
+              type: replicator
+              display: 'Impact cards'
+              sets:
+                impact:
+                  display: Impact
+                  sets:
+                    photo_metric:
+                      display: 'Photo metric'
+                      fields:
+                        -
+                          handle: kicker
+                          field:
+                            type: text
+                            display: Kicker
+                        -
+                          handle: icon
+                          field:
+                            type: text
+                            display: Icon
+                        -
+                          handle: metric
+                          field:
+                            type: text
+                            display: Metric
+                        -
+                          handle: copy
+                          field:
+                            type: textarea
+                            display: Copy
+                        -
+                          handle: closing
+                          field:
+                            type: textarea
+                            display: Closing
+                        -
+                          handle: image
+                          field:
+                            type: assets
+                            container: assets
+                            max_files: 1
+                            display: Photo
+                    tree:
+                      display: 'Tree card'
+                      fields:
+                        -
+                          handle: kicker
+                          field:
+                            type: text
+                            display: Kicker
+                        -
+                          handle: ecologi_username
+                          field:
+                            type: text
+                            display: 'Ecologi username'
+                            instructions: 'Public Ecologi profile used to fetch the live impact totals.'
+                            validate: required
+                        -
+                          handle: ecologi_fallback_trees
+                          field:
+                            type: integer
+                            display: 'Fallback tree count'
+                            instructions: 'Shown if Ecologi is temporarily unavailable during a page build.'
+                            validate: 'required|integer|min:0'
+                        -
+                          handle: ecologi_fallback_carbon_offset
+                          field:
+                            type: text
+                            input_type: number
+                            display: 'Fallback carbon offset'
+                            instructions: 'Tonnes of CO₂e, retained for other impact displays.'
+                            default: 0
+                        -
+                          handle: copy
+                          field:
+                            type: textarea
+                            display: Copy
+                        -
+                          handle: closing
+                          field:
+                            type: textarea
+                            display: Closing
+                        -
+                          handle: link_label
+                          field:
+                            type: text
+                            display: 'Link label'
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+                    sponsors:
+                      display: 'GitHub Sponsors card'
+                      fields:
+                        -
+                          handle: kicker
+                          field:
+                            type: text
+                            display: Kicker
+                        -
+                          handle: github_login
+                          field:
+                            type: text
+                            display: 'GitHub login'
+                            instructions: 'User or organization whose sponsors should be shown.'
+                            validate: required
+                        -
+                          handle: github_fallback_count
+                          field:
+                            type: integer
+                            display: 'Fallback sponsor count'
+                            instructions: 'Shown when the GitHub API is unavailable during a page build.'
+                            validate: 'required|integer|min:0'
+                        -
+                          handle: github_fallback_sponsors
+                          field:
+                            type: grid
+                            display: 'Fallback sponsors'
+                            instructions: 'Optional profiles to show when live sponsor data is unavailable.'
+                            fields:
+                              -
+                                handle: login
+                                field:
+                                  type: text
+                                  display: Login
+                                  validate: required
+                              -
+                                handle: name
+                                field:
+                                  type: text
+                                  display: Name
+                              -
+                                handle: avatar_url
+                                field:
+                                  type: text
+                                  input_type: url
+                                  display: 'Avatar URL'
+                              -
+                                handle: url
+                                field:
+                                  type: link
+                                  display: 'Profile URL'
+                        -
+                          handle: copy
+                          field:
+                            type: textarea
+                            display: Copy
+                        -
+                          handle: closing
+                          field:
+                            type: textarea
+                            display: Closing
+                        -
+                          handle: link_label
+                          field:
+                            type: text
+                            display: 'Link label'
+                        -
+                          handle: link
+                          field:
+                            type: link
+                            display: Link
+  seo:
+    display: SEO
+    sections:
+      -
+        fields:
+          -
+            handle: seo_title
+            field:
+              type: text
+              display: 'Page title'
+          -
+            handle: meta_description
+            field:
+              type: textarea
+              display: 'Meta description'
+          -
+            handle: open_graph_image
+            field:
+              type: assets
+              container: assets
+              max_files: 1
+              display: 'Share image'
+              instructions: 'Optional. Falls back to the hero image, then the global share image.'

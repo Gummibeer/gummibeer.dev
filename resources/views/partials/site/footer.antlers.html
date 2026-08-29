@@ -1,0 +1,39 @@
+<footer class="footer wrap" id="projects">
+    <div class="footer-note sticky-note scribble">{{ settings:footer_note | nl2br | twemoji }}<span>♡</span></div>
+
+    <div class="footer-brand">
+        <a class="brand" href="/"><span class="brand-dot"></span><span>{{ settings:brand_name }}</span></a>
+        <p>{{ settings:footer_tagline | nl2br | twemoji }}</p>
+        <div class="socials">
+            {{ settings:social_links }}
+                <a href="{{ url }}" aria-label="{{ label }}"{{ if icon != 'email' }} rel="me"{{ /if }}>
+                    {{ if icon == 'github' }}●{{ elseif icon == 'twitter' }}♥{{ else }}✉{{ /if }}
+                </a>
+            {{ /settings:social_links }}
+        </div>
+    </div>
+
+    <div class="footer-links">
+        <strong>LINKS</strong>
+        {{ nav:main }}<a href="{{ url }}">{{ title }}</a>{{ /nav:main }}
+    </div>
+
+    <div class="footer-links">
+        <strong>CONNECT</strong>
+        {{ settings:social_links }}
+            <a href="{{ url }}">{{ if icon == 'github' }}●{{ elseif icon == 'twitter' }}♥{{ else }}✉{{ /if }} {{ label }}</a>
+        {{ /settings:social_links }}
+    </div>
+
+    <svg class="mountain-doodle" viewBox="0 0 320 150" aria-label="Mountains and bicycle illustration">
+        <path d="M5 120 62 47l23 35 34-65 45 70 28-32 38 54M0 123h320" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M20 120v-29m0 0-9 16m9-16 9 16M48 120V93m0 0-8 13m8-13 8 13M230 117c0-13 10-23 23-23s23 10 23 23M246 117l14-25 17 25m-31 0h31m-31 0-16-11m47 11 20-12" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="230" cy="118" r="19" fill="none" stroke="currentColor" stroke-width="2"/>
+        <circle cx="296" cy="118" r="19" fill="none" stroke="currentColor" stroke-width="2"/>
+    </svg>
+</footer>
+
+<div class="footer-bottom wrap">
+    <span>© {{ now format="Y" }} {{ settings:brand_name }}</span>
+    <span>{{ settings:footer_build_text | twemoji }}</span>
+</div>

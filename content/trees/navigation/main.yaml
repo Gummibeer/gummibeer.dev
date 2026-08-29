@@ -1,0 +1,16 @@
+tree:
+  -
+    title: Home
+    url: /
+  -
+    title: Blog
+    url: /blog
+  -
+    title: Projects
+    url: '/#projects'
+  -
+    title: About
+    url: '/#about'
+  -
+    title: Impact
+    url: '/#impact'
