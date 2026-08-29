@@ -7,7 +7,11 @@
         rel="index"
         href="{{ $page->collection()->url() }}"
     />
-    <x-og.article :post="$page" />
+    <x-og.article
+        :post="$page"
+        :site-name="$site->site_name"
+        :twitter-handle="$site->twitter_handle"
+    />
     @if ($page->author?->payment_pointer)
         <meta
             name="monetization"
