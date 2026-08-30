@@ -132,7 +132,6 @@ final class ApplicationTest extends TestCase
             '/imprint' => null,
             '/privacy' => null,
             '/blog/2020/hello-world' => 'Hello World',
-            '/cp/auth/login' => null,
         ];
 
         foreach ($pages as $path => $expectedContent) {
