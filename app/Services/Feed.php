@@ -12,7 +12,7 @@ use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\GlobalSet;
 use Statamic\Facades\User;
 
-class Feed extends SpatieFeed
+final class Feed extends SpatieFeed
 {
     public static function make(
         string $title,
@@ -29,7 +29,7 @@ class Feed extends SpatieFeed
             throw new RuntimeException('The Statamic identity global is missing.');
         }
 
-        return new static(
+        return new self(
             $title.' | '.$identity->inCurrentSite()->get('site_name'),
             $items,
             request()->url(),

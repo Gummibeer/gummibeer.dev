@@ -4,7 +4,7 @@ namespace App\Services;
 
 use Illuminate\Support\HtmlString;
 use InvalidArgumentException;
-use League\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;

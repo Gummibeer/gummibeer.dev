@@ -3,9 +3,9 @@
 namespace App\Services;
 
 use InvalidArgumentException;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Block\Paragraph;
 use League\CommonMark\Node\Block\TightBlockInterface;
-use League\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;

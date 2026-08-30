@@ -4,7 +4,7 @@ namespace App\Services;
 
 use App\View\Components\Img;
 use InvalidArgumentException;
-use League\CommonMark\Node\Inline\Image;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Node;
 use League\CommonMark\Renderer\ChildNodeRendererInterface;
 use League\CommonMark\Renderer\NodeRendererInterface;

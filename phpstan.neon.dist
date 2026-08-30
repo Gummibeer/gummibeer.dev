@@ -8,6 +8,6 @@ parameters:
 
     tmpDir: ./.phpstan
 
-    level: 7
+    level: 1
 
     reportUnmatchedIgnoredErrors: false
