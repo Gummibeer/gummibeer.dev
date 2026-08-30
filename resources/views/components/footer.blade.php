@@ -67,10 +67,10 @@
             <li>
                 <x-icon class="fab fa-telegram-plane mr-1" />
                 <a
-                    href="https://t.me/{{ ltrim($identity?->telegram_username ?? '', '@') }}"
+                    href="https://t.me/{{ str($identity?->telegram_username)->ltrim('@') }}"
                     class="hover:text-brand"
                 >
-                    @{{ ltrim($identity?->telegram_username ?? '', '@') }}</a
+                    {{ str($identity?->telegram_username)->start('@') }}</a
                 >
             </li>
         </ul>
