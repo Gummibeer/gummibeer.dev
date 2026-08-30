@@ -31,11 +31,12 @@
         "statamic/cms": "^6.30"
     },
     "require-dev": {
-        "barryvdh/laravel-ide-helper": "^3.7",
         "larastan/larastan": "^3.10",
         "laravel/pint": "^1.30.5",
         "nunomaduro/collision": "^8.9.5",
-        "phpunit/phpunit": "^13.3.2"
+        "phpstan/extension-installer": "^1.4.3",
+        "phpunit/phpunit": "^13.3.2",
+        "spaze/phpstan-disallowed-calls": "^4.14.0"
     },
     "minimum-stability": "stable",
     "prefer-stable": true,
@@ -52,6 +53,7 @@
     "config": {
         "allow-plugins": {
             "php-http/discovery": true,
+            "phpstan/extension-installer": true,
             "pixelfear/composer-dist-plugin": true
         },
         "optimize-autoloader": true,
@@ -88,10 +90,6 @@
         "alex": "npm run lint:prose",
         "fix": "@php vendor/bin/pint",
         "fix-dirty": "@php vendor/bin/pint --dirty",
-        "ide-helper": [
-            "@php artisan ide-helper:generate --ansi --no-interaction --quiet",
-            "@php artisan ide-helper:meta --ansi --no-interaction --quiet"
-        ],
         "og": "npm run build && @php artisan generate:og:images",
         "phpstan": "@php vendor/bin/phpstan analyse --memory-limit=2G",
         "phpstan-baseline": "@php vendor/bin/phpstan analyse --memory-limit=2G --allow-empty-baseline --generate-baseline",

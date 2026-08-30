@@ -1,6 +1,12 @@
 includes:
     - phpstan-baseline.neon
-    - vendor/larastan/larastan/extension.neon
+
+    # Is loaded automatically when using phpstan/extension-installer
+    # - vendor/larastan/larastan/extension.neon
+
+    - vendor/spaze/phpstan-disallowed-calls/disallowed-dangerous-calls.neon
+    - vendor/spaze/phpstan-disallowed-calls/disallowed-execution-calls.neon
+    - vendor/spaze/phpstan-disallowed-calls/disallowed-loose-calls.neon
 
 parameters:
     paths:
@@ -10,4 +16,4 @@ parameters:
 
     level: 1
 
-    reportUnmatchedIgnoredErrors: false
+    reportUnmatchedIgnoredErrors: true
