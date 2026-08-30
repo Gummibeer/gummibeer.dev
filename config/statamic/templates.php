@@ -12,7 +12,7 @@ return [
     | Acceptable values are 'blade' and 'antlers'
     */
 
-    'language' => 'antlers',
+    'language' => 'blade',
 
     /*
     |--------------------------------------------------------------------------
