@@ -34,7 +34,7 @@ tabs:
           -
             handle: website
             field:
-              type: text
+              type: link
               display: Website
           -
             handle: stack

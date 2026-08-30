@@ -71,7 +71,7 @@ final class Feed extends SpatieFeed
     public static function streamItem(EntryContract $stream): FeedItem
     {
         $author = self::defaultAuthor();
-        $url = 'https://youtu.be/'.$stream->value('youtube_id');
+        $url = (string) $stream->value('video');
 
         return FeedItem::create()
             ->id($url)

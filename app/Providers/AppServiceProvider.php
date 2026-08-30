@@ -58,8 +58,11 @@ class AppServiceProvider extends ServiceProvider
 
         StatamicCollection::computed('streams', [
             'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => CarbonInterval::fromString((string) $value),
-            'external_url' => static fn (EntryContract $entry, mixed $value): string => 'https://youtu.be/'.$entry->value('youtube_id'),
-            'image' => static fn (EntryContract $entry, mixed $value): string => 'https://i.ytimg.com/vi/'.$entry->value('youtube_id').'/maxresdefault.jpg',
+            'image' => static function (EntryContract $entry, mixed $value): string {
+                $videoId = basename((string) parse_url((string) $entry->value('video'), PHP_URL_PATH));
+
+                return 'https://i.ytimg.com/vi/'.$videoId.'/maxresdefault.jpg';
+            },
         ]);
 
         StatamicCollection::computed('jobs', [

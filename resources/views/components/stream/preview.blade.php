@@ -4,7 +4,7 @@
 @props (['stream'])
 
 <article class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
-    <a href="{{ $stream->external_url }}">
+    <a href="{{ $stream->video }}">
         <x-img
             :src="$stream->image"
             width="768"
@@ -19,7 +19,7 @@
         </div>
         <h3 class="mb-4 text-2xl leading-none font-bold text-night-0 dark:text-white">
             <a
-                href="{{ $stream->external_url }}"
+                href="{{ $stream->video }}"
                 class="hover:underlined"
             >
                 {{ $stream->title }}
