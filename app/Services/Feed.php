@@ -20,7 +20,7 @@ final class Feed extends SpatieFeed
         Collection $items,
         string $format
     ): self {
-        abort_unless(in_array($format, ['rss', 'atom']), 404);
+        abort_unless(in_array($format, ['rss', 'atom'], true), 404);
         abort_if($items->isEmpty(), 404);
 
         $identity = GlobalSet::findByHandle('identity');
