@@ -1,5 +1,3 @@
-<?php /** @var App\Services\SiteIdentity $identity */ ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
