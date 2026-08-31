@@ -2,6 +2,9 @@ name: pint
 
 on:
   push:
+    branches:
+      - master
+      - main
   pull_request:
 
 permissions:
@@ -9,7 +12,6 @@ permissions:
 
 jobs:
   pint:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
