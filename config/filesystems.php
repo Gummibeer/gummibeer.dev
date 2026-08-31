@@ -22,7 +22,7 @@ return [
     |
     | Many applications store files both locally and in the cloud. For this
     | reason, you may specify a default "cloud" driver here. This driver
-    | will be bound as the Cloud disk implementation in the container.
+    | will be bound as the default cloud disk implementation in the container.
     |
     */
 
@@ -84,11 +84,6 @@ return [
         'hacktoberfest' => [
             'driver' => 'local',
             'root' => resource_path('content/hacktoberfest'),
-        ],
-
-        'strava' => [
-            'driver' => 'local',
-            'root' => resource_path('content/strava'),
         ],
 
     ],
