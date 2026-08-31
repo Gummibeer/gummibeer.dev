@@ -27,3 +27,33 @@ Route::get('robots.txt', static function (): Response {
     return response($content)
         ->header('Content-Type', 'text/plain; charset=UTF-8');
 })->name('robots.txt');
+
+Route::redirect('blog/search.json', '/blog/search', 301);
+Route::redirect('blog/feed.atom', '/blog.atom', 301);
+Route::redirect('blog/feed.rss', '/blog.rss', 301);
+Route::redirect('blog/p:2', '/blog?page=2', 301);
+Route::redirect('blog/{year}', '/blog', 301)->where('year', '[0-9]{4}');
+Route::redirect('blog/@gummibeer/feed.atom', '/blog.atom', 301);
+Route::redirect('blog/@gummibeer/feed.rss', '/blog.rss', 301);
+Route::redirect('blog/@gummibeer/p:2', '/blog?page=2', 301);
+Route::redirect('blog/@gummibeer', '/blog', 301);
+
+$legacyBlogCategories = [
+    'alpinejs',
+    'blade',
+    'cli',
+    'css',
+    'geography',
+    'js',
+    'laravel',
+    'open-source',
+    'personal',
+    'php',
+    'postgresql',
+    'recap',
+    'tips+tricks',
+];
+
+Route::redirect('blog/{category}/feed.atom', '/blog/categories/{category}.atom', 301)->whereIn('category', $legacyBlogCategories);
+Route::redirect('blog/{category}/feed.rss', '/blog/categories/{category}.rss', 301)->whereIn('category', $legacyBlogCategories);
+Route::redirect('blog/{category}', '/blog/categories/{category}', 301)->whereIn('category', $legacyBlogCategories);
