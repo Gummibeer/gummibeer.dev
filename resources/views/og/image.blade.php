@@ -35,7 +35,7 @@
     style="background-image: radial-gradient(circle at 25px 25px, lightgray 2%, transparent 0%), radial-gradient(circle at 75px 75px, lightgray 2%, transparent 0%); background-size: 100px 100px"
 >
     <main class="mx-auto w-full max-w-[1800px] px-24">
-        <div class="mb-[7.5rem] font-logo text-[10rem] leading-none text-brand">{{ $identity->brandName() }}</div>
+        <div class="mb-[7.5rem] font-logo text-[10rem] leading-none text-brand">{{ $identity->get('brand_name') }}</div>
 
         <h1 class="m-0 text-[8rem] leading-[1.05] font-black text-black">{{ $title }}</h1>
 

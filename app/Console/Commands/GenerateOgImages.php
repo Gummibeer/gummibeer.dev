@@ -10,7 +10,6 @@ use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\Entry;
 use Statamic\Facades\GlobalSet;
-use Statamic\Facades\Markdown;
 
 class GenerateOgImages extends Command
 {
@@ -32,7 +31,7 @@ class GenerateOgImages extends Command
                     [
                         'title' => (string) $post->value('title'),
                         'date' => $date,
-                        'readTime' => $this->readTime($post),
+                        'readTime' => $post->read_time,
                     ],
                 );
             });
@@ -75,6 +74,7 @@ class GenerateOgImages extends Command
 
         $html = view('og.image', [
             ...$data,
+            'identity' => GlobalSet::findByHandle('identity')->inDefaultSite(),
             'stylesheet' => $this->stylesheet(),
             'interFont' => $this->fontDataUrl(base_path('node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2')),
             'logoFont' => $this->fontDataUrl(base_path('node_modules/@fontsource/permanent-marker/files/permanent-marker-latin-400-normal.woff2')),
@@ -119,15 +119,5 @@ class GenerateOgImages extends Command
         }
 
         return 'data:font/woff2;base64,'.base64_encode(File::get($path));
-    }
-
-    private function readTime(EntryContract $post): float
-    {
-        $html = Markdown::parse((string) $post->value('content'));
-        $wordCount = mb_strlen(strip_tags($html)) / 5;
-        $wordsPerMinute = 60 * 3;
-        $minutes = ceil(($wordCount / $wordsPerMinute) * 2) / 2;
-
-        return max(1, $minutes);
     }
 }
