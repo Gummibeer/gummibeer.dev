@@ -33,8 +33,10 @@
     "require-dev": {
         "larastan/larastan": "^3.10",
         "laravel/pint": "^1.30.5",
+        "mockery/mockery": "^1.6.15",
         "nunomaduro/collision": "^8.9.5",
         "phpstan/extension-installer": "^1.4.3",
+        "phpstan/phpstan-mockery": "^2.0",
         "phpunit/phpunit": "^13.3.2",
         "spaze/phpstan-disallowed-calls": "^4.14.0"
     },
