@@ -39,20 +39,26 @@ final class GlobalStravaTest extends TestCase
             ]),
         ]);
 
-        $variables = GlobalSet::findByHandle('strava')->inDefaultSite();
-
         try {
             $this->artisan('stats:strava')->assertSuccessful();
 
+            $strava = GlobalSet::findByHandle('strava');
+            $this->assertNotNull($strava);
+
+            $variables = $strava->inDefaultSite();
             $this->assertSame(123457, $variables->get('distance'));
             $this->assertSame(890, $variables->get('elevation_gain'));
             $this->assertSame(7200, $variables->get('moving_time'));
         } finally {
-            $variables->data([
-                'distance' => 0,
-                'elevation_gain' => 0,
-                'moving_time' => 0,
-            ])->save();
+            $strava = GlobalSet::findByHandle('strava');
+
+            if ($strava) {
+                $strava->inDefaultSite()->data([
+                    'distance' => 0,
+                    'elevation_gain' => 0,
+                    'moving_time' => 0,
+                ])->save();
+            }
         }
     }
 }
