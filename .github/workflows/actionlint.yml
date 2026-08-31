@@ -2,6 +2,9 @@ name: actionlint
 
 on:
   push:
+    branches:
+      - master
+      - main
     paths:
       - '.github/workflows/**'
   pull_request:
@@ -13,7 +16,6 @@ permissions:
 
 jobs:
   actionlint:
-    if: github.event_name != 'pull_request' || github.event.pull_request.head.repo.full_name != github.repository
     runs-on: ubuntu-latest
     timeout-minutes: 5
 
