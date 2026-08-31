@@ -3,6 +3,7 @@
 namespace Tests\Feature;
 
 use Illuminate\Support\Facades\File;
+use PHPUnit\Framework\Assert;
 use Statamic\Facades\GlobalSet;
 use Tests\TestCase;
 
@@ -12,21 +13,21 @@ final class GlobalIdentityTest extends TestCase
     {
         $identity = GlobalSet::findByHandle('identity');
 
-        $this->assertNotNull($identity);
-        $this->assertFileExists(base_path('content/globals/identity.yaml'));
-        $this->assertFileExists(base_path('content/globals/default/identity.yaml'));
-        $this->assertFileExists(resource_path('blueprints/globals/identity.yaml'));
-        $this->assertFileDoesNotExist(base_path('content/globals/site.yaml'));
-        $this->assertFileDoesNotExist(base_path('content/globals/default/site.yaml'));
-        $this->assertFileDoesNotExist(resource_path('blueprints/globals/site.yaml'));
+        Assert::assertNotNull($identity);
+        Assert::assertFileExists(base_path('content/globals/identity.yaml'));
+        Assert::assertFileExists(base_path('content/globals/default/identity.yaml'));
+        Assert::assertFileExists(resource_path('blueprints/globals/identity.yaml'));
+        Assert::assertFileDoesNotExist(base_path('content/globals/site.yaml'));
+        Assert::assertFileDoesNotExist(base_path('content/globals/default/site.yaml'));
+        Assert::assertFileDoesNotExist(resource_path('blueprints/globals/site.yaml'));
 
         $variables = $identity->inDefaultSite();
 
-        $this->assertSame('Gummibeer', $variables->get('site_name'));
-        $this->assertSame('Tom Herrmann', $variables->get('brand_name'));
-        $this->assertSame('Developer / Biker / Gamer', $variables->get('tagline'));
-        $this->assertSame('Tom Witkowski', $variables->get('copyright_name'));
-        $this->assertSame(2015, $variables->get('copyright_since'));
+        Assert::assertSame('Gummibeer', $variables->get('site_name'));
+        Assert::assertSame('Tom Herrmann', $variables->get('brand_name'));
+        Assert::assertSame('Developer / Biker / Gamer', $variables->get('tagline'));
+        Assert::assertSame('Tom Witkowski', $variables->get('copyright_name'));
+        Assert::assertSame(2015, $variables->get('copyright_since'));
     }
 
     public function test_site_wide_identity_is_rendered_from_the_global(): void
@@ -61,7 +62,7 @@ final class GlobalIdentityTest extends TestCase
                 $contents = $file->getContents();
 
                 foreach ($forbidden as $name) {
-                    $this->assertStringNotContainsString($name, $contents, $file->getRelativePathname());
+                    Assert::assertStringNotContainsString($name, $contents, $file->getRelativePathname());
                 }
             }
         }

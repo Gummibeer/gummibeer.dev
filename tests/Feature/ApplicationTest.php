@@ -12,6 +12,7 @@ use Illuminate\View\ComponentAttributeBag;
 use Illuminate\View\ComponentSlot;
 use League\Glide\Manipulators\Size;
 use League\Glide\Server;
+use PHPUnit\Framework\Assert;
 use Statamic\Auth\File\User as FileUser;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Asset;
@@ -34,24 +35,24 @@ final class ApplicationTest extends TestCase
         ];
 
         foreach ($expected as $collection => $count) {
-            $this->assertSame($count, Entry::whereCollection($collection)->count(), $collection);
+            Assert::assertSame($count, Entry::whereCollection($collection)->count(), $collection);
         }
 
-        $this->assertFileExists(base_path('content/collections/posts/2020-01-01.hello-world.md'));
-        $this->assertFileDoesNotExist(base_path('content/collections/authors.yaml'));
-        $this->assertDirectoryDoesNotExist(base_path('content/collections/drafts'));
-        $this->assertDirectoryDoesNotExist(resource_path('content/posts'));
+        Assert::assertFileExists(base_path('content/collections/posts/2020-01-01.hello-world.md'));
+        Assert::assertFileDoesNotExist(base_path('content/collections/authors.yaml'));
+        Assert::assertDirectoryDoesNotExist(base_path('content/collections/drafts'));
+        Assert::assertDirectoryDoesNotExist(resource_path('content/posts'));
 
         $author = User::find('gummibeer');
-        $this->assertInstanceOf(FileUser::class, $author);
-        $this->assertSame('dev@gummibeer.de', $author->email());
-        $this->assertSame('gummibeer', $author->get('slug'));
-        $this->assertSame('Gummibeer', $author->get('nickname'));
+        Assert::assertInstanceOf(FileUser::class, $author);
+        Assert::assertSame('dev@gummibeer.de', $author->email());
+        Assert::assertSame('gummibeer', $author->get('slug'));
+        Assert::assertSame('Gummibeer', $author->get('nickname'));
     }
 
     public function test_native_status_relationships_and_fieldtypes_are_used(): void
     {
-        $this->assertSame(
+        Assert::assertSame(
             18,
             Entry::query()->where('collection', 'posts')->whereStatus('published')->get()->count()
         );
@@ -73,9 +74,9 @@ final class ApplicationTest extends TestCase
                 ->where('slug', $slug)
                 ->first();
 
-            $this->assertInstanceOf(EntryContract::class, $draft, $slug);
-            $this->assertSame('posts', $draft->collection()->handle(), $slug);
-            $this->assertSame('draft', $draft->status(), $slug);
+            Assert::assertInstanceOf(EntryContract::class, $draft, $slug);
+            Assert::assertSame('posts', $draft->collection()->handle(), $slug);
+            Assert::assertSame('draft', $draft->status(), $slug);
         }
 
         $post = Entry::query()
@@ -83,19 +84,19 @@ final class ApplicationTest extends TestCase
             ->where('slug', 'human-readable-intervals')
             ->first();
 
-        $this->assertInstanceOf(EntryContract::class, $post);
-        $this->assertInstanceOf(FileUser::class, $post->author);
-        $this->assertSame('gummibeer', $post->author->id());
-        $this->assertSame('dev@gummibeer.de', $post->author->email());
-        $this->assertContains('laravel', $post->categories->map(fn ($term) => $term->slug())->all());
+        Assert::assertInstanceOf(EntryContract::class, $post);
+        Assert::assertInstanceOf(FileUser::class, $post->author);
+        Assert::assertSame('gummibeer', $post->author->id());
+        Assert::assertSame('dev@gummibeer.de', $post->author->email());
+        Assert::assertContains('laravel', $post->categories->map(fn ($term) => $term->slug())->all());
 
         $job = Entry::query()
             ->where('collection', 'jobs')
             ->where('slug', 'hospitable')
             ->first();
 
-        $this->assertInstanceOf(EntryContract::class, $job);
-        $this->assertInstanceOf(CarbonInterface::class, $job->start_at);
+        Assert::assertInstanceOf(EntryContract::class, $job);
+        Assert::assertInstanceOf(CarbonInterface::class, $job->start_at);
     }
 
     public function test_public_content_owns_native_statamic_urls(): void
@@ -111,14 +112,14 @@ final class ApplicationTest extends TestCase
             ->where('slug', 'human-readable-intervals')
             ->first();
 
-        $this->assertInstanceOf(EntryContract::class, $home);
-        $this->assertInstanceOf(EntryContract::class, $blog);
-        $this->assertInstanceOf(EntryContract::class, $post);
-        $this->assertInstanceOf(EntryContract::class, $categorizedPost);
-        $this->assertSame('/', $home->url());
-        $this->assertSame('/blog', $blog->url());
-        $this->assertSame('/blog/2020/hello-world', $post->url());
-        $this->assertSame('/blog/categories/laravel', $categorizedPost->categories->firstWhere('slug', 'laravel')?->url());
+        Assert::assertInstanceOf(EntryContract::class, $home);
+        Assert::assertInstanceOf(EntryContract::class, $blog);
+        Assert::assertInstanceOf(EntryContract::class, $post);
+        Assert::assertInstanceOf(EntryContract::class, $categorizedPost);
+        Assert::assertSame('/', $home->url());
+        Assert::assertSame('/blog', $blog->url());
+        Assert::assertSame('/blog/2020/hello-world', $post->url());
+        Assert::assertSame('/blog/categories/laravel', $categorizedPost->categories->firstWhere('slug', 'laravel')?->url());
     }
 
     public function test_public_pages_and_statamic_control_panel_boot(): void
@@ -145,13 +146,13 @@ final class ApplicationTest extends TestCase
 
     public function test_blog_search_uses_the_native_statamic_index(): void
     {
-        $this->assertSame(['collection:posts'], config('statamic.search.indexes.blog.searchables'));
-        $this->assertSame(
+        Assert::assertSame(['collection:posts'], config('statamic.search.indexes.blog.searchables'));
+        Assert::assertSame(
             ['title', 'description', 'categories', 'content'],
             config('statamic.search.indexes.blog.fields')
         );
 
-        $this->assertSame(0, Artisan::call('statamic:search:update', ['index' => 'blog']));
+        Assert::assertSame(0, Artisan::call('statamic:search:update', ['index' => 'blog']));
 
         $this->get('/blog')
             ->assertOk()
@@ -185,13 +186,13 @@ final class ApplicationTest extends TestCase
     {
         $container = AssetContainer::findByHandle('images');
 
-        $this->assertNotNull($container);
-        $this->assertSame('images', $container->handle());
-        $this->assertTrue($container->private());
-        $this->assertSame(resource_path('images'), config('filesystems.disks.images.root'));
-        $this->assertSame('private', config('filesystems.disks.images.visibility'));
-        $this->assertArrayNotHasKey('url', config('filesystems.disks.images'));
-        $this->assertDirectoryDoesNotExist(public_path('images'));
+        Assert::assertNotNull($container);
+        Assert::assertSame('images', $container->handle());
+        Assert::assertTrue($container->private());
+        Assert::assertSame(resource_path('images'), config('filesystems.disks.images.root'));
+        Assert::assertSame('private', config('filesystems.disks.images.visibility'));
+        Assert::assertArrayNotHasKey('url', config('filesystems.disks.images'));
+        Assert::assertDirectoryDoesNotExist(public_path('images'));
 
         foreach ([
             'charity/seashepherd.png',
@@ -203,10 +204,10 @@ final class ApplicationTest extends TestCase
             'posts/2020-01-01.hello-world.jpg',
             'posts/2021-01-28.yoda/content-paw-prints.jpg',
         ] as $image) {
-            $this->assertFileExists(resource_path('images/'.$image), $image);
+            Assert::assertFileExists(resource_path('images/'.$image), $image);
         }
 
-        $this->assertNotNull(Asset::find('images::posts/2020-01-01.hello-world.jpg'));
+        Assert::assertNotNull(Asset::find('images::posts/2020-01-01.hello-world.jpg'));
         $this->get('/images/posts/2020-01-01.hello-world.jpg')->assertNotFound();
     }
 
@@ -221,10 +222,10 @@ final class ApplicationTest extends TestCase
         $src = html_entity_decode($image->src());
         $webpSrc = html_entity_decode($image->src('webp'));
 
-        $this->assertStringContainsString('/img/asset/', $src);
-        $this->assertStringContainsString('fit=smartcrop', $src);
-        $this->assertStringContainsString('s=', $src);
-        $this->assertStringNotContainsString('/images/posts/', $src);
+        Assert::assertStringContainsString('/img/asset/', $src);
+        Assert::assertStringContainsString('fit=smartcrop', $src);
+        Assert::assertStringContainsString('s=', $src);
+        Assert::assertStringNotContainsString('/images/posts/', $src);
 
         $webpPath = (string) parse_url($webpSrc, PHP_URL_PATH);
         $webpQuery = (string) parse_url($webpSrc, PHP_URL_QUERY);
@@ -234,9 +235,9 @@ final class ApplicationTest extends TestCase
             ->assertHeader('content-type', 'image/webp');
 
         $favicons = html_entity_decode(view('components.favicons')->render());
-        $this->assertStringContainsString('/img/asset/', $favicons);
-        $this->assertStringContainsString('s=', $favicons);
-        $this->assertStringNotContainsString('/images/favicons/', $favicons);
+        Assert::assertStringContainsString('/img/asset/', $favicons);
+        Assert::assertStringContainsString('s=', $favicons);
+        Assert::assertStringNotContainsString('/images/favicons/', $favicons);
     }
 
     public function test_remote_images_use_signed_statamic_glide_without_a_public_source_cache(): void
@@ -247,11 +248,11 @@ final class ApplicationTest extends TestCase
         ]);
         $src = html_entity_decode($image->src('webp'));
 
-        $this->assertStringContainsString('/img/http/', $src);
-        $this->assertStringContainsString('fm=webp', $src);
-        $this->assertStringContainsString('s=', $src);
-        $this->assertStringNotContainsString('/vendor/images/', $src);
-        $this->assertDirectoryDoesNotExist(public_path('vendor/images'));
+        Assert::assertStringContainsString('/img/http/', $src);
+        Assert::assertStringContainsString('fm=webp', $src);
+        Assert::assertStringContainsString('s=', $src);
+        Assert::assertStringNotContainsString('/vendor/images/', $src);
+        Assert::assertDirectoryDoesNotExist(public_path('vendor/images'));
     }
 
     public function test_figure_captions_use_statamic_markdown(): void
@@ -262,7 +263,7 @@ final class ApplicationTest extends TestCase
             'caption' => new ComponentSlot('**Bold caption**'),
         ])->render();
 
-        $this->assertStringContainsString('<strong>Bold caption</strong>', $html);
+        Assert::assertStringContainsString('<strong>Bold caption</strong>', $html);
     }
 
     public function test_tight_markdown_lists_do_not_wrap_items_in_paragraphs(): void
@@ -273,8 +274,8 @@ final class ApplicationTest extends TestCase
 - **[Relation](https://wiki.openstreetmap.org/wiki/Relation):** a combination of nodes and or ways
 MD);
 
-        $this->assertStringContainsString('<li><strong><a href="https://wiki.openstreetmap.org/wiki/Node">Node</a>:</strong>', $html);
-        $this->assertStringNotContainsString('<li><p>', $html);
+        Assert::assertStringContainsString('<li><strong><a href="https://wiki.openstreetmap.org/wiki/Node">Node</a>:</strong>', $html);
+        Assert::assertStringNotContainsString('<li><p>', $html);
     }
 
     public function test_statamic_glide_uses_pixpipe_smartcrop(): void
@@ -284,7 +285,7 @@ MD);
             app(Server::class)->getApi()->getManipulators(),
         );
 
-        $this->assertContains(PixpipeSize::class, $manipulators);
-        $this->assertNotContains(Size::class, $manipulators);
+        Assert::assertContains(PixpipeSize::class, $manipulators);
+        Assert::assertNotContains(Size::class, $manipulators);
     }
 }
