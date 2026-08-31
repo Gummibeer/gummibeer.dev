@@ -22,9 +22,24 @@
             </div>
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10 xl:gap-12">
-                <x-strava.distance />
-                <x-strava.elevation />
-                <x-strava.time />
+                <x-strava.card
+                    icon="fa-route"
+                    label="Distance"
+                    :value="$strava->distance / 1000"
+                    unit="km"
+                />
+                <x-strava.card
+                    icon="fa-mountains"
+                    label="Elevation"
+                    :value="$strava->elevation_gain"
+                    unit="m"
+                />
+                <x-strava.card
+                    icon="fa-stopwatch"
+                    label="Time"
+                    :value="$strava->moving_time / 60 / 60"
+                    unit="h"
+                />
             </div>
 
             <ul class="grid list-none grid-cols-4 gap-4 text-center text-4xl sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12">
