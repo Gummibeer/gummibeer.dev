@@ -7,6 +7,12 @@ tabs:
         display: Totals
         fields:
           -
+            handle: count
+            field:
+              type: integer
+              display: Anzahl
+              min: 0
+          -
             handle: distance
             field:
               type: integer
