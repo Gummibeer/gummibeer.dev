@@ -10,7 +10,7 @@ tabs:
             handle: count
             field:
               type: integer
-              display: Anzahl
+              display: Count
               min: 0
           -
             handle: distance
