@@ -4,6 +4,8 @@ namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Http;
+use RuntimeException;
+use Statamic\Facades\GlobalSet;
 
 class StatsStrava extends Command
 {
@@ -24,7 +26,7 @@ class StatsStrava extends Command
 
         $url = sprintf('https://www.strava.com/api/v3/athletes/%s/stats', config('services.strava.athlete_id'));
 
-        $data = Http::withHeaders(['Authorization' => 'Bearer '.$token])->get($url)->json()['all_ride_totals'];
+        $data = Http::withHeaders(['Authorization' => 'Bearer '.$token)->get($url)->json()['all_ride_totals'];
 
         $this->line(sprintf(
             '[<info>%s</info>] count: <comment>%d</comment> | distance: <comment>%d</comment>km | elevation: <comment>%d</comment>m | time: <comment>%d</comment>h',
@@ -35,6 +37,18 @@ class StatsStrava extends Command
             $data['moving_time'] / 60 / 60
         ));
 
-        file_put_contents(resource_path(sprintf('content/strava/%s.json', config('services.strava.athlete_id'))), json_encode($data));
+        $strava = GlobalSet::findByHandle('strava');
+
+        if (! $strava) {
+            throw new RuntimeException('The Statamic Strava global is missing.');
+        }
+
+        $strava->inDefaultSite()
+            ->data([
+                'distance' => (int) round($data['distance']),
+                'elevation_gain' => (int) round($data['elevation_gain']),
+                'moving_time' => (int) round($data['moving_time']),
+            ])
+            ->save();
     }
 }
