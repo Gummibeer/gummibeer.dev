@@ -1,7 +1,7 @@
 <statamic:collection
     from="posts|streams"
     sort="date:desc"
-    paginate="6"
+    paginate="12"
     as="entries"
 >
     @push ('head')
