@@ -1,45 +1,18 @@
 <?php
 
-use App\Http\Controllers\Blog;
+use App\Http\Controllers\Blog\Category\FeedController as CategoryFeedController;
+use App\Http\Controllers\Blog\FeedController as BlogFeedController;
+use App\Http\Controllers\GetSitemapController;
 use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
-use Spatie\Sitemap\SitemapGenerator;
-use Spatie\Sitemap\Tags\Url;
 
-Route::prefix('blog')->name('blog.')->group(function (): void {
-    Route::statamic('search', 'pages.blog.search')->name('search');
-    Route::get('feed.{format}', Blog\FeedController::class)->name('feed');
-    Route::get('categories/{category}/feed.{format}', Blog\Category\FeedController::class)->name('category.feed');
+Route::name('blog.')->group(function (): void {
+    Route::statamic('blog/search', 'pages.blog.search')->name('search');
+    Route::get('blog.{format}', BlogFeedController::class)->whereIn('format', ['atom', 'rss'])->name('feed');
+    Route::get('blog/categories/{category}.{format}', CategoryFeedController::class)->whereIn('format', ['atom', 'rss'])->name('category.feed');
 });
 
-Route::get(
-    'sitemap.xml',
-    fn () => SitemapGenerator::create(url('/'))
-        ->hasCrawled(function (Url $url): Url {
-            $url->setUrl(rtrim($url->url, '/'));
-
-            if (in_array($url->segment(1), ['resume', 'portfolio', 'charity', 'uses'])) {
-                $url
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_WEEKLY)
-                    ->setPriority(0.5);
-            }
-
-            if (in_array($url->segment(1), ['imprint', 'privacy'])) {
-                $url
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_MONTHLY)
-                    ->setPriority(0.1);
-            }
-
-            if ($url->segment(1) === 'blog') {
-                $url
-                    ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
-                    ->setPriority(1);
-            }
-
-            return $url;
-        })
-        ->getSitemap()
-)->name('sitemap.xml');
+Route::get('sitemap.xml', GetSitemapController::class)->name('sitemap.xml');
 
 Route::get('robots.txt', static function (): Response {
     $content = collect([
