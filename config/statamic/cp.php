@@ -11,7 +11,7 @@ return [
     |
     */
 
-    'enabled' => false,
+    'enabled' => env('CP_ENABLED', false),
 
     'route' => env('CP_ROUTE', 'cp'),
 
@@ -26,7 +26,7 @@ return [
     */
 
     'auth' => [
-        'enabled' => false,
+        'enabled' => true,
         'redirect_to' => null,
     ],
 
@@ -47,7 +47,7 @@ return [
     | Dashboard Widgets
     |--------------------------------------------------------------------------
     |
-    | Here you may define any dashboard widgets. You're free to
+    | Here you may define any number of dashboard widgets. You're free to
     | use the same widget multiple times in different configurations.
     |
     */

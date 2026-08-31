@@ -53,7 +53,7 @@ return [
     | Driver Defaults
     |--------------------------------------------------------------------------
     |
-    | Here you may specify default configuration to be applied to all indexes
+    | Here you can specify default configuration to be applied to all indexes
     | that use the corresponding driver. For instance, if you have two
     | indexes that use the "local" driver, both of them can have the
     | same base configuration. You may override for each index.
