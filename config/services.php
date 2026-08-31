@@ -30,13 +30,6 @@ return [
         'region' => env('AWS_DEFAULT_REGION', 'us-east-1'),
     ],
 
-    'strava' => [
-        'athlete_id' => env('STRAVA_ID', '22896286'),
-        'refresh_token' => env('STRAVA_REFRESH_TOKEN'),
-        'client_id' => env('STRAVA_CLIENT_ID'),
-        'client_secret' => env('STRAVA_CLIENT_SECRET'),
-    ],
-
     'webmention' => [
         'token' => env('WEBMENTION_TOKEN'),
     ],
