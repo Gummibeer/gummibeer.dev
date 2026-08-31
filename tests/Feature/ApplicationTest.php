@@ -166,7 +166,9 @@ final class ApplicationTest extends TestCase
             ->assertOk()
             ->assertSee('No posts found');
 
-        $this->get('/blog/search.json')->assertNotFound();
+        $this->get('/blog/search.json')
+            ->assertStatus(301)
+            ->assertRedirect('/blog/search');
     }
 
     public function test_sitemap_generation_works_with_spatie_sitemap_v8(): void
