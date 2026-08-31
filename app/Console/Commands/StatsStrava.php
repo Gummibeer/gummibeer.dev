@@ -26,7 +26,7 @@ class StatsStrava extends Command
 
         $url = sprintf('https://www.strava.com/api/v3/athletes/%s/stats', config('services.strava.athlete_id'));
 
-        $data = Http::withHeaders(['Authorization' => 'Bearer '.$token)->get($url)->json()['all_ride_totals'];
+        $data = Http::withHeaders(['Authorization' => 'Bearer '.$token])->get($url)->json()['all_ride_totals'];
 
         $this->line(sprintf(
             '[<info>%s</info>] count: <comment>%d</comment> | distance: <comment>%d</comment>km | elevation: <comment>%d</comment>m | time: <comment>%d</comment>h',
