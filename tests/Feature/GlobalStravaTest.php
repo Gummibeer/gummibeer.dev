@@ -20,8 +20,9 @@ final class GlobalStravaTest extends TestCase
 
         $variables = $strava->inDefaultSite();
 
-        Assert::assertSame(0, $variables->get('distance'));
-        Assert::assertSame(0, $variables->get('elevation_gain'));
-        Assert::assertSame(0, $variables->get('moving_time'));
+        Assert::assertGreaterThanOrEqual(736, $variables->get('count'));
+        Assert::assertGreaterThanOrEqual(7758100, $variables->get('distance'));
+        Assert::assertGreaterThanOrEqual(36227, $variables->get('elevation_gain'));
+        Assert::assertGreaterThanOrEqual(1387860, $variables->get('moving_time'));
     }
 }
