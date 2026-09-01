@@ -27,8 +27,9 @@ jobs:
           php-version: 8.5
           extensions: dom, curl, intl, libxml, mbstring, simplexml, zip, imagick
           coverage: none
-      - run: composer install --prefer-dist --no-interaction
+      - run: composer install --prefer-dist --no-interaction --no-scripts
       - run: npm ci
+      - run: php artisan package:discover --ansi --no-interaction
       - run: php please stache:warm
       - run: php artisan route:list
       - run: php artisan view:cache
