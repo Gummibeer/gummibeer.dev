@@ -6,7 +6,6 @@ use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
 use Carbon\Carbon;
 use Illuminate\View\Component;
-use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 
 class Article extends Component

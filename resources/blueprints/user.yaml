@@ -34,11 +34,6 @@ fields:
       type: text
       display: 'Last name'
   -
-    handle: payment_pointer
-    field:
-      type: text
-      display: 'Payment Pointer'
-  -
     handle: roles
     field:
       type: user_roles

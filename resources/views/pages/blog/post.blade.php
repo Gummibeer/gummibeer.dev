@@ -11,12 +11,6 @@
         :post="$page"
         :site-name="$identity->site_name"
     />
-    @if ($page->author?->payment_pointer)
-        <meta
-            name="monetization"
-            content='{{ $page->author->payment_pointer }}'
-        />
-    @endif
 @endpush
 
 @section ('content')
