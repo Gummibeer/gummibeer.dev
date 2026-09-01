@@ -23,23 +23,20 @@
         "astrotomic/php-twemoji": "^0.2.4",
         "astrotomic/php-unavatar": "^0.3.0",
         "astrotomic/pixpipe": "^0.1.0",
-        "blade-ui-kit/blade-icons": "^1.10",
-        "laravel/framework": "^13.30",
+        "blade-ui-kit/blade-icons": "^1.10.1",
+        "laravel/framework": "^13.30.1",
         "league/commonmark": "^2.10",
         "spatie/browsershot": "^5.4",
         "spatie/emoji": "^4.1.3",
         "spatie/laravel-feed": "^4.5",
         "spatie/laravel-sitemap": "^8.2",
-        "statamic/cms": "^6.30"
+        "statamic/cms": "^6.31"
     },
     "require-dev": {
         "larastan/larastan": "^3.10",
         "laravel/pint": "^1.30.5",
-        "mockery/mockery": "^1.6.15",
         "nunomaduro/collision": "^8.9.5",
         "phpstan/extension-installer": "^1.4.3",
-        "phpstan/phpstan-mockery": "^2.0",
-        "phpunit/phpunit": "^13.3.2",
         "spaze/phpstan-disallowed-calls": "^4.14.0"
     },
     "minimum-stability": "stable",
