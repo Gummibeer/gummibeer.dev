@@ -9,7 +9,7 @@ website: 'https://frischepost.de'
 stack:
     - Laravel
     - Shopware
-icon: fa-tractor
+icon: ski-tractor
 logo: company/frischepost.png
 salary: 65000
 ---

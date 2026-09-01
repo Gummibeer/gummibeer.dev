@@ -8,6 +8,6 @@ website: 'https://spatie.be'
 stack:
     - PHP
     - Laravel
-icon: fa-ribbon
+icon: ski-ribbon
 logo: company/spatie.png
 ---

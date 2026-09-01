@@ -9,7 +9,7 @@ website: 'https://even-on-sunday.com'
 stack:
     - Symfony
     - Lumen
-icon: fa-briefcase
+icon: ski-briefcase
 logo: company/even-on-sunday.png
 salary: 50400
 ---

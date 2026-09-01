@@ -11,7 +11,7 @@
                     rel="prev"
                     class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
-                    <x-icon class="fa-solid fa-chevron-left" />
+                    <x-icon name="ski-chevron-left" />
                 </a>
             @else
                 <span class="inline-block h-10 w-10"></span>
@@ -49,7 +49,7 @@
                     rel="next"
                     class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
                 >
-                    <x-icon class="fa-solid fa-chevron-right" />
+                    <x-icon name="ski-chevron-right" />
                 </a>
             @else
                 <span class="inline-block h-10 w-10"></span>

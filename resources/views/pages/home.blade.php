@@ -23,19 +23,19 @@
 
             <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-8 lg:gap-10 xl:gap-12">
                 <x-strava.card
-                    icon="fa-route"
+                    icon="ski-clock"
                     label="Distance"
                     :value="$strava->distance / 1000"
                     unit="km"
                 />
                 <x-strava.card
-                    icon="fa-mountains"
+                    icon="ski-mountain"
                     label="Elevation"
                     :value="$strava->elevation_gain"
                     unit="m"
                 />
                 <x-strava.card
-                    icon="fa-stopwatch"
+                    icon="ski-timer"
                     label="Time"
                     :value="$strava->moving_time / 60 / 60"
                     unit="h"

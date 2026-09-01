@@ -25,6 +25,7 @@
         "@fontsource-variable/inter": "^5.3.0",
         "@fontsource/permanent-marker": "^5.3.0",
         "@fortawesome/fontawesome-free": "^7.3.1",
+        "@sketchyicons/static": "^0.5.0",
         "@tailwindcss/typography": "^0.5.20",
         "@twemoji/api": "^17.0.3",
         "alpinejs": "^3.16.3",

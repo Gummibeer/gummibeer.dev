@@ -8,6 +8,6 @@ website: 'https://astrotomic.info'
 stack:
     - PHP
     - Laravel
-icon: fa-ribbon
+icon: ski-ribbon
 logo: company/astrotomic.png
 ---

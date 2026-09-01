@@ -7,7 +7,7 @@ start_at: 2022-10-01
 website: 'https://hospitable.com'
 stack:
     - Laravel
-icon: fa-hotel
+icon: ski-hotel
 logo: company/hospitable.png
 salary: 100600
 ---

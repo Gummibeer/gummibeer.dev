@@ -14,7 +14,10 @@
     </a>
     <div class="p-4">
         <div class="mb-4 text-brand">
-            <x-icon class="fab fa-youtube mr-1" />
+            <x-icon
+                name="fab-youtube"
+                class="mr-1"
+            />
             <strong class="uppercase"> stream </strong>
         </div>
         <h3 class="mb-4 text-2xl leading-none font-bold text-night-0 dark:text-white">

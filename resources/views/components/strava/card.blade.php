@@ -1,5 +1,8 @@
 <div class="flex flex-row items-center space-x-4 overflow-hidden rounded-4 bg-white p-4 shadow dark:bg-night-20">
-    <x-icon :class="'fa-solid fa-3x text-snow-20 dark:text-snow-10 '.$icon" />
+    <x-icon
+        :name="$icon"
+        class="text-5xl text-snow-20 dark:text-snow-10"
+    />
     <div class="grow">
         <span class="block text-xl">{{ $label }}</span>
         <div>

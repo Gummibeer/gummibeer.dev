@@ -13,7 +13,7 @@
             <div class="flex flex-col items-center justify-between sm:flex-row">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
                     <h3 class="text-2xl @if(!$job->has_end) font-medium text-brand @endif">
-                        <x-icon :class="$job->icon_class" />
+                        <x-icon :name="$job->icon_class" />
                         {{ $job->name }}
                     </h3>
                     <a

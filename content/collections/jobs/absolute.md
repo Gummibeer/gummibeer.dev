@@ -10,7 +10,7 @@ stack:
     - Laravel
     - Lumen
     - CakePHP
-icon: fa-briefcase
+icon: ski-briefcase
 logo: company/absolute.png
 salary: 30000
 ---

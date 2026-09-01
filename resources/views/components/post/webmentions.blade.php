@@ -25,7 +25,10 @@
                     </ul>
 
                     <p class="block grow text-snow-20 dark:text-snow-10">
-                        <x-icon class="fal fa-heart mr-1" />
+                        <x-icon
+                            name="ski-heart"
+                            class="mr-1"
+                        />
                         {{ $likes->count() }} likes
                     </p>
                 </div>
@@ -55,7 +58,10 @@
                     </ul>
 
                     <p class="block grow text-snow-20 dark:text-snow-10">
-                        <x-icon class="fal fa-retweet mr-1" />
+                        <x-icon
+                            name="ski-repeat"
+                            class="mr-1"
+                        />
                         {{ $reposts->count() }} reposts
                     </p>
                 </div>

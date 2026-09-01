@@ -8,7 +8,7 @@ end_at: 2021-07-01
 website: 'http://elbgoods.de'
 stack:
     - Laravel
-icon: fa-briefcase
+icon: ski-briefcase
 logo: company/elbgoods.png
 salary: 51000
 ---

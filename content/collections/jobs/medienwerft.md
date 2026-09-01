@@ -9,7 +9,7 @@ website: 'https://medienwerft.de'
 stack:
     - TYPO3
     - WordPress
-icon: fa-graduation-cap
+icon: ski-graduation-cap
 logo: company/medienwerft.png
 salary: 7200
 ---

@@ -2,7 +2,6 @@
 @import '@fontsource-variable/inter';
 @import '@fontsource-variable/fira-code';
 @import '@fontsource/permanent-marker/400.css';
-@import '@fortawesome/fontawesome-free/css/all.css';
 @import 'prism-themes/themes/prism-material-light.css';
 @import 'prism-themes/themes/prism-material-dark.css' (prefers-color-scheme: dark);
 

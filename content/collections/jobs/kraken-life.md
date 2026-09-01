@@ -13,6 +13,6 @@ stack:
     - TailwindCSS
     - Lua
     - FiveM
-icon: fa-joystick
+icon: ski-joystick
 logo: company/kraken-life.png
 ---

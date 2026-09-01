@@ -67,7 +67,7 @@ class AppServiceProvider extends ServiceProvider
 
         StatamicCollection::computed('jobs', [
             'website_host' => static fn (EntryContract $entry, mixed $value): string => (string) parse_url((string) $entry->value('website'), PHP_URL_HOST),
-            'icon_class' => static fn (EntryContract $entry, mixed $value): string => 'fa-solid '.Str::start((string) $entry->value('icon'), 'fa-'),
+            'icon_class' => static fn (EntryContract $entry, mixed $value): string => Str::start((string) $entry->value('icon'), 'ski-'),
             'has_end' => static fn (EntryContract $entry, mixed $value): bool => filled($entry->value('end_at')),
         ]);
     }

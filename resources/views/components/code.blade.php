@@ -13,7 +13,7 @@
             data-clipboard-text="{{ $slot }}"
             title="copy code to clipboard"
         >
-            <x-icon class="fa-solid fa-copy" />
+            <x-icon name="ski-copy" />
             <span class="sr-only">copy code to clipboard</span>
         </button>
     </header>
