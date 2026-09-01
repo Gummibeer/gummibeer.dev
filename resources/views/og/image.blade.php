@@ -42,35 +42,11 @@
         @if (isset($date, $readTime))
             <ul class="mt-[4rem] flex list-none justify-center gap-[4rem] p-0 text-[4rem] leading-none text-snow-20">
                 <li class="flex items-center gap-4">
-                    <svg
-                        class="size-[4rem] shrink-0"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <path d="M6.75 3v2.25M17.25 3v2.25M3.75 8.25h16.5" />
-                        <path d="M5.25 4.5h13.5a1.5 1.5 0 0 1 1.5 1.5v13.5a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V6a1.5 1.5 0 0 1 1.5-1.5Z" />
-                    </svg>
+                    <x-icon name="ski-calendar" class="size-[4rem]"/>
                     <span>{{ $date->format('M jS, Y') }}</span>
                 </li>
                 <li class="flex items-center gap-4">
-                    <svg
-                        class="size-[4rem] shrink-0"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        stroke-width="1.5"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        aria-hidden="true"
-                    >
-                        <circle cx="12" cy="12" r="9.25" />
-                        <path d="M12 6.75V12l3.5 2" />
-                    </svg>
+                    <x-icon name="ski-clock" class="size-[4rem]"/>
                     <span>{{ $readTime }} min read</span>
                 </li>
             </ul>

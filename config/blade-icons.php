@@ -24,7 +24,7 @@ return [
         'fontawesome' => [
             'path' => 'node_modules/@fortawesome/fontawesome-free/svgs-full/brands',
             'prefix' => 'fab',
-            'class' => 'inline-block size-[1.25em]',
+            'class' => 'inline-block size-[1.25em] shrink-0',
         ],
 
         // 'default' => [
