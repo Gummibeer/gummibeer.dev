@@ -23,7 +23,7 @@
         "astrotomic/php-twemoji": "^0.2.4",
         "astrotomic/php-unavatar": "^0.3.0",
         "astrotomic/pixpipe": "^0.1.0",
-        "laravel/framework": "^13.29",
+        "laravel/framework": "^13.30",
         "league/commonmark": "^2.10",
         "spatie/browsershot": "^5.4",
         "spatie/emoji": "^4.1.3",

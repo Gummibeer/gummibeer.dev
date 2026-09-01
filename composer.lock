@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "7229f67bc069a963a8322efaca96f54b",
+    "content-hash": "49d859ad11e36b508136d0aecdbba100",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -2293,16 +2293,16 @@
         },
         {
             "name": "laravel/framework",
-            "version": "v13.29.0",
+            "version": "v13.30.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/framework.git",
-                "reference": "6e2c363716964d8238cee7097b258119a984f0cf"
+                "reference": "9c008e7c9a64a8ea6d6e4f1683bd569acc10bf9e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/framework/zipball/6e2c363716964d8238cee7097b258119a984f0cf",
-                "reference": "6e2c363716964d8238cee7097b258119a984f0cf",
+                "url": "https://api.github.com/repos/laravel/framework/zipball/9c008e7c9a64a8ea6d6e4f1683bd569acc10bf9e",
+                "reference": "9c008e7c9a64a8ea6d6e4f1683bd569acc10bf9e",
                 "shasum": ""
             },
             "require": {
@@ -2516,7 +2516,7 @@
                 "issues": "https://github.com/laravel/framework/issues",
                 "source": "https://github.com/laravel/framework"
             },
-            "time": "2026-08-25T20:57:16+00:00"
+            "time": "2026-09-01T13:19:00+00:00"
         },
         {
             "name": "laravel/prompts",
@@ -13076,5 +13076,5 @@
         "ext-simplexml": "*"
     },
     "platform-dev": {},
-    "plugin-api-version": "2.6.0"
+    "plugin-api-version": "2.9.0"
 }
