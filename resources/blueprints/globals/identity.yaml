@@ -70,54 +70,14 @@ tabs:
               validate:
                 - required
                 - email
-          -
-            handle: telegram_username
-            field:
-              type: text
-              display: 'Telegram Username'
-              required: true
-              validate:
-                - required
       -
         display: Social
         fields:
-          -
-            handle: twitter_url
-            field:
-              type: link
-              display: Twitter
-              required: true
-              validate:
-                - required
-          -
-            handle: twitter_handle
-            field:
-              type: text
-              display: 'Twitter Handle'
-              required: true
-              validate:
-                - required
           -
             handle: github_url
             field:
               type: link
               display: GitHub
-              required: true
-              validate:
-                - required
-          -
-            handle: instagram_url
-            field:
-              type: link
-              display: Instagram
-              required: true
-              validate:
-                - required
-          -
-            handle: strava_url
-            field:
-              type: link
-              display: Strava
               required: true
               validate:
                 - required

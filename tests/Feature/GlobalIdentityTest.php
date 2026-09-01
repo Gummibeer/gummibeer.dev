@@ -36,12 +36,10 @@ final class GlobalIdentityTest extends TestCase
             ->assertOk()
             ->assertSee('Tom Herrmann')
             ->assertSee('Tom Witkowski')
-            ->assertSee('https://twitter.com/devgummibeer')
             ->assertSee('https://github.com/Gummibeer')
             ->assertSee('https://instagram.com/dev.gummibeer')
             ->assertSee('tel:+491621525105')
             ->assertSee('mailto:dev@gummibeer.de')
-            ->assertSee('https://t.me/gummibeer')
             ->assertSee('http://localhost/imprint')
             ->assertSee('http://localhost/privacy');
     }

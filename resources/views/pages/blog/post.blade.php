@@ -10,7 +10,6 @@
     <x-og.article
         :post="$page"
         :site-name="$identity->site_name"
-        :twitter-handle="$identity->twitter_handle"
     />
     @if ($page->author?->payment_pointer)
         <meta

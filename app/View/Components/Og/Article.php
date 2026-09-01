@@ -15,21 +15,16 @@ class Article extends Component
 
     protected string $siteName;
 
-    protected string $twitterHandle;
-
-    public function __construct(EntryContract $post, string $siteName, string $twitterHandle)
+    public function __construct(EntryContract $post, string $siteName)
     {
         $this->post = $post;
         $this->siteName = $siteName;
-        $this->twitterHandle = $twitterHandle;
     }
 
     public function render(): string
     {
         $title = $this->post->value('title').' | '.$this->siteName;
         $description = (string) $this->post->value('description');
-        $author = $this->post->augmentedValue('author')->value();
-        $twitter = $author instanceof UserContract ? (string) $author->get('twitter') : '';
 
         return implode(PHP_EOL, [
             OpenGraph::article($title)
@@ -39,9 +34,7 @@ class Article extends Component
                 ->modifiedAt(Carbon::createFromTimestampUTC(filemtime($this->post->path())))
                 ->locale(str_replace('-', '_', app()->getLocale())),
             Twitter::summaryLargeImage($title)
-                ->when($description)->description($description)
-                ->site($this->twitterHandle)
-                ->when($twitter)->creator($twitter),
+                ->when($description)->description($description),
         ]);
     }
 }

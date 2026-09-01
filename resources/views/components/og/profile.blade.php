@@ -33,14 +33,6 @@
     name="twitter:title"
     content="{{ $page?->title ? $page->title.' | '.$site->site_name : $site->site_name }}"
 />
-<meta
-    name="twitter:site"
-    content="{{ $site->twitter_handle }}"
-/>
-<meta
-    name="twitter:creator"
-    content="{{ $site->twitter_handle }}"
-/>
 @if ($page?->description)
     <meta
         name="twitter:description"

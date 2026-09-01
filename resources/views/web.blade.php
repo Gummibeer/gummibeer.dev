@@ -49,15 +49,7 @@
     @if ($identity)
         <link
             rel="me"
-            href="{{ $identity->twitter_url }}"
-        />
-        <link
-            rel="me"
             href="{{ $identity->github_url }}"
-        />
-        <link
-            rel="me"
-            href="{{ $identity->instagram_url }}"
         />
     @endif
 

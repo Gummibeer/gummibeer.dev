@@ -39,11 +39,6 @@ fields:
       type: text
       display: 'Payment Pointer'
   -
-    handle: twitter
-    field:
-      type: text
-      display: Twitter
-  -
     handle: roles
     field:
       type: user_roles

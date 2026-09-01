@@ -13,7 +13,7 @@
             x-cloak
         ><code x-text="window.location"></code></pre>
 
-        <p>If you think that the page should exist don't hesitate to <a href="https://twitter.com/devgummibeer">contact me</a>.</p>
+        <p>If you think that the page should exist don't hesitate to contact me.</p>
 
         <a href="{{ url('/') }}">back to home page</a>
     </x-article>

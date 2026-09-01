@@ -1,9 +1,8 @@
 id: gummibeer
-name: 'Tom Witkowski'
+name: 'Tom Herrmann'
 slug: gummibeer
 nickname: Gummibeer
 firstname: Tom
-lastname: Witkowski
+lastname: Herrmann
 payment_pointer: '$ilp.uphold.com/EagWEdJU64mN'
-twitter: '@devgummibeer'
 super: true
