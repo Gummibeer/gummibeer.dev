@@ -7,14 +7,11 @@ tabs:
           -
             handle: title
             field:
-              type: hidden
-              required: false
-          -
-            handle: name
-            field:
               type: text
               display: Name
-              validate: required
+              required: true
+              validate:
+                - required
           -
             handle: description
             field:
