@@ -57,15 +57,6 @@ log 'Refreshing the Statamic Stache from deployed content'
 php artisan statamic:stache:clear --no-interaction
 php artisan statamic:stache:warm --no-interaction
 
-log 'Regenerating all Open Graph images'
-php artisan generate:og:images --force --no-interaction
-
-# OG images live inside the Statamic asset container, so rebuild the Stache once
-# more after generating them to ensure the new asset files are indexed.
-log 'Refreshing the Statamic Stache after OG generation'
-php artisan statamic:stache:clear --no-interaction
-php artisan statamic:stache:warm --no-interaction
-
 log 'Clearing the Statamic Glide image cache'
 php artisan statamic:glide:clear --no-interaction
 

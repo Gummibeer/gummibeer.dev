@@ -7,10 +7,14 @@
     },
     "scripts": {
         "build": "vite build",
+        "chrome:install": "puppeteer browsers install chrome",
         "dev": "vite",
         "format": "prettier --write \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\" \"content/**/*.{md,yml,yaml}\"",
         "format:check": "prettier --check \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\" \"content/**/*.{md,yml,yaml}\"",
         "check": "npm run format:check && npm run build"
+    },
+    "allowScripts": {
+        "puppeteer": false
     },
     "devDependencies": {
         "@tailwindcss/vite": "^4.3.3",

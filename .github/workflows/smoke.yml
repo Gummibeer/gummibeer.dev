@@ -1,0 +1,73 @@
+name: smoke
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      APP_ENV: production
+      APP_DEBUG: false
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      APP_URL: http://localhost
+      CP_ENABLED: false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          extensions: gd, intl
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - name: Prepare environment
+        run: cp .env.example .env
+
+      - name: Install production PHP dependencies
+        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+
+      - name: Install Node dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Boot application
+        run: php artisan about --only=environment
+
+      - name: Load application routes
+        run: php artisan route:list --except-vendor
+
+      - name: Clear Laravel caches
+        run: php artisan optimize:clear --no-interaction
+
+      - name: Warm Statamic Stache
+        run: |
+          php artisan statamic:stache:clear --no-interaction
+          php artisan statamic:stache:warm --no-interaction
+
+      - name: Build Statamic search indexes
+        run: php artisan statamic:search:update --all --no-interaction
+
+      - name: Cache configuration
+        run: php artisan config:cache --no-interaction
+
+      - name: Cache routes
+        run: php artisan route:cache --no-interaction
+
+      - name: Cache views
+        run: php artisan view:cache --no-interaction
+
+      - name: Build Vite assets
+        run: npm run build
