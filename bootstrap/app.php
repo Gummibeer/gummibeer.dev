@@ -16,7 +16,7 @@ return Application::configure(basePath: dirname(__DIR__))
         health: '/up',
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        $middleware->web(remove: [
+        $middleware->removeFromGroup('web', [
             EncryptCookies::class,
             AddQueuedCookiesToResponse::class,
             StartSession::class,
