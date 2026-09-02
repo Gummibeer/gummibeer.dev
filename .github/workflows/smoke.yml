@@ -34,43 +34,18 @@ jobs:
           node-version: 24
           cache: npm
 
-      - name: Prepare environment
-        run: cp .env.example .env
-
-      - name: Install production PHP dependencies
-        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader --no-scripts
-
-      - name: Install Node dependencies
-        run: npm ci --no-audit --no-fund
-
-      - name: Discover packages
-        run: php artisan package:discover --ansi --no-interaction
-
-      - name: Boot application
-        run: php artisan about --only=environment
-
-      - name: Load application routes
-        run: php artisan route:list --except-vendor
-
-      - name: Clear Laravel caches
-        run: php artisan optimize:clear --no-interaction
-
-      - name: Warm Statamic Stache
-        run: |
-          php artisan statamic:stache:clear --no-interaction
-          php artisan statamic:stache:warm --no-interaction
-
-      - name: Build Statamic search indexes
-        run: php artisan statamic:search:update --all --no-interaction
-
-      - name: Cache configuration
-        run: php artisan config:cache --no-interaction
-
-      - name: Cache routes
-        run: php artisan route:cache --no-interaction
-
-      - name: Cache views
-        run: php artisan view:cache --no-interaction
-
-      - name: Build Vite assets
-        run: npm run build
+      - run: cp .env.example .env
+      - run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader --no-scripts
+      - run: npm ci --no-audit --no-fund
+      - run: php artisan package:discover --ansi --no-interaction
+      - run: php artisan about --only=environment
+      - run: php artisan route:list --except-vendor
+      - run: php artisan optimize:clear --no-interaction
+      - run: php artisan statamic:stache:clear --no-interaction
+      - run: php artisan statamic:stache:warm --no-interaction
+      - run: php artisan statamic:search:update --all --no-interaction
+      - run: php artisan config:cache --no-interaction
+      - run: php artisan route:cache --no-interaction
+      - run: php artisan view:cache --no-interaction
+      - run: php artisan icons:cache --no-interaction
+      - run: npm run build
