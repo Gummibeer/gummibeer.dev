@@ -1,0 +1,68 @@
+name: purge webmentions
+
+on:
+  push:
+    branches:
+      - statamic-cms
+
+permissions:
+  contents: write
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: statamic-cms
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+
+      - name: Remove package
+        run: composer remove astrotomic/laravel-webmentions --no-interaction --no-scripts --minimal-changes
+
+      - name: Remove integration
+        run: |
+          python <<'PY'
+          from pathlib import Path
+
+          replacements = {
+              '.env.example': [
+                  ('\nWEBMENTION_TOKEN=\n', '\n'),
+              ],
+              'config/services.php': [
+                  ("\n    'webmention' => [\n        'token' => env('WEBMENTION_TOKEN'),\n    ],\n", ''),
+              ],
+              'resources/views/web.blade.php': [
+                  ('\n    <x-webmention-links />\n', '\n'),
+              ],
+              'resources/views/pages/blog/post.blade.php': [
+                  ('\n        <x-post.webmentions\n            :url="$page->permalink"\n            class="mt-12 border-t-2 border-snow-10 pt-12"\n        />\n', '\n'),
+              ],
+          }
+
+          for filename, edits in replacements.items():
+              path = Path(filename)
+              content = path.read_text()
+              for old, new in edits:
+                  if old not in content:
+                      raise SystemExit(f'Expected Webmentions integration not found in {filename}')
+                  content = content.replace(old, new, 1)
+              path.write_text(content)
+          PY
+
+          rm app/View/Components/Post/Webmentions.php
+          rm resources/views/components/post/webmentions.blade.php
+          rm .github/workflows/purge-webmentions.yml
+
+      - name: Commit purge
+        run: |
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -A
+          git commit -m 'purge webmentions'
+          git push origin HEAD:statamic-cms
