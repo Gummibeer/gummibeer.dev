@@ -42,11 +42,17 @@
         @if (isset($date, $readTime))
             <ul class="mt-[4rem] flex list-none justify-center gap-[4rem] p-0 text-[4rem] leading-none text-snow-20">
                 <li class="flex items-center gap-4">
-                    <x-icon name="ski-calendar" class="size-[4rem]"/>
+                    <x-icon
+                        name="ski-calendar"
+                        class="size-[4rem]"
+                    />
                     <span>{{ $date->format('M jS, Y') }}</span>
                 </li>
                 <li class="flex items-center gap-4">
-                    <x-icon name="ski-clock" class="size-[4rem]"/>
+                    <x-icon
+                        name="ski-clock"
+                        class="size-[4rem]"
+                    />
                     <span>{{ $readTime }} min read</span>
                 </li>
             </ul>
