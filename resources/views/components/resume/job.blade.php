@@ -4,7 +4,7 @@
             <div class="hidden h-24 w-24 sm:block">
                 <x-img
                     :src="$job->logo"
-                    :alt="$job->name"
+                    :alt="$job->title"
                     class="h-full w-full object-contain"
                 />
             </div>
@@ -14,7 +14,7 @@
                 <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
                     <h3 class="text-2xl @if(!$job->has_end) font-medium text-brand @endif">
                         <x-icon :name="$job->icon_class" />
-                        {{ $job->name }}
+                        {{ $job->title }}
                     </h3>
                     <a
                         href="{{ $job->website }}"
