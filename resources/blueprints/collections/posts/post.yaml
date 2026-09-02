@@ -55,9 +55,11 @@ tabs:
             field:
               type: users
               display: Author
+              required: true
               max_items: 1
               mode: select
               default: current
+              validate: required
           -
             handle: description
             field:
