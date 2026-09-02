@@ -16,6 +16,9 @@ tabs:
             field:
               type: markdown
               display: Content
+              container: images
+              folder: posts
+              restrict: true
           -
             handle: categories
             field:
