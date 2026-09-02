@@ -38,10 +38,13 @@ jobs:
         run: cp .env.example .env
 
       - name: Install production PHP dependencies
-        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader
+        run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader --no-scripts
 
       - name: Install Node dependencies
         run: npm ci --no-audit --no-fund
+
+      - name: Discover packages
+        run: php artisan package:discover --ansi --no-interaction
 
       - name: Boot application
         run: php artisan about --only=environment
