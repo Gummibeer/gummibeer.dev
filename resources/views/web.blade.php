@@ -53,7 +53,6 @@
         />
     @endif
 
-    <x-webmention-links />
     <link
         rel="sitemap"
         type="application/xml"

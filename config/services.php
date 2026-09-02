@@ -35,8 +35,4 @@ return [
         ],
     ],
 
-    'webmention' => [
-        'token' => env('WEBMENTION_TOKEN'),
-    ],
-
 ];

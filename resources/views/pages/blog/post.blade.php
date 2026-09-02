@@ -38,9 +38,5 @@
             crossorigin="anonymous"
             async
         ></script>
-        <x-post.webmentions
-            :url="$page->permalink"
-            class="mt-12 border-t-2 border-snow-10 pt-12"
-        />
     </x-article>
 @endsection

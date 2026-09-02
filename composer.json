@@ -18,7 +18,6 @@
         "ext-json": "*",
         "ext-simplexml": "*",
         "astrotomic/laravel-mime": "^0.4.1",
-        "astrotomic/laravel-webmentions": "^0.7.0",
         "astrotomic/php-open-graph": "^1.0",
         "astrotomic/php-twemoji": "^0.2.4",
         "astrotomic/php-unavatar": "^0.3.0",
