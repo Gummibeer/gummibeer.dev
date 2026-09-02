@@ -21,10 +21,10 @@
                         :src="$hacktoberfest->image"
                         width="1024"
                         height="512"
-                        :alt="$hacktoberfest->name"
+                        :alt="$hacktoberfest->title"
                     />
                     <div class="px-4 py-2">
-                        <strong class="block">{{ $hacktoberfest->name }}</strong>
+                        <strong class="block">{{ $hacktoberfest->title }}</strong>
                         <p class="text-sm text-snow-20 dark:text-snow-10">{{ $hacktoberfest->description }}</p>
                     </div>
                 </div>
