@@ -46,11 +46,6 @@
             "App\\": "app/"
         }
     },
-    "autoload-dev": {
-        "psr-4": {
-            "Tests\\": "tests/"
-        }
-    },
     "config": {
         "allow-plugins": {
             "php-http/discovery": true,
@@ -94,11 +89,7 @@
         "og": "npm run build && @php artisan generate:og:images",
         "phpstan": "@php vendor/bin/phpstan analyse --memory-limit=2G",
         "phpstan-baseline": "@php vendor/bin/phpstan analyse --memory-limit=2G --allow-empty-baseline --generate-baseline",
-        "route:list": "@php artisan route:list | grep -Ev 'horizon|nova'",
-        "test": [
-            "@php artisan config:clear --ansi @no_additional_args",
-            "@php artisan test"
-        ]
+        "route:list": "@php artisan route:list | grep -Ev 'horizon|nova'"
     },
     "$schema": "https://getcomposer.org/schema.json"
 }
