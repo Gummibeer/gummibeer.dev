@@ -2,12 +2,14 @@
 
 namespace App\Providers;
 
+use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\ParagraphRenderer;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
+use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
@@ -30,8 +32,12 @@ class AppServiceProvider extends ServiceProvider
         $this->registerPixpipeGlide();
     }
 
-    public function boot(): void
+    public function boot(Router $router): void
     {
+        $this->app->booted(
+            fn () => $router->pushMiddlewareToGroup('statamic.cp', AutoLoginStatamicControlPanel::class),
+        );
+
         Paginator::useTailwind();
 
         $this->registerComputedContentValues();
