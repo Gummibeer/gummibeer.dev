@@ -1,20 +1,14 @@
 tree:
-  -
-    id: aefd2175-638b-4ccb-a70c-4f70848401b2
+  - id: aefd2175-638b-4ccb-a70c-4f70848401b2
     entry: 80ca56e0-263a-4baf-9716-07089aebc322
     title: Home
-  -
-    id: 06cd5dbb-8299-439f-8c08-26bdf2c2eda9
+  - id: 06cd5dbb-8299-439f-8c08-26bdf2c2eda9
     entry: 11b0fc67-6c5b-49e3-a6dc-ff25a2f9b51c
-  -
-    id: 3d5f605a-3d20-4ab4-8e18-aa1247f9bcd8
+  - id: 3d5f605a-3d20-4ab4-8e18-aa1247f9bcd8
     entry: ff99d13f-f5d7-4dd7-8d71-60aeb0f1bd43
-  -
-    id: 84fc56c6-d6ca-4c09-9889-6ab3b617fcf8
+  - id: 84fc56c6-d6ca-4c09-9889-6ab3b617fcf8
     entry: 6c04e2f6-87d1-4b3c-b416-bd17caf9c75e
-  -
-    id: 8421110d-9d79-497c-9370-97d281962440
+  - id: 8421110d-9d79-497c-9370-97d281962440
     entry: 6daacc9b-b6c4-48ed-94c9-e43b3db1334f
-  -
-    id: c7dbc509-932f-4977-8fed-becd0e3958b0
+  - id: c7dbc509-932f-4977-8fed-becd0e3958b0
     entry: 80df7d1c-46d4-4abb-9143-129ee9b99c74
