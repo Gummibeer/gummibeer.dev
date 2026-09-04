@@ -32,7 +32,7 @@ window.Alpine = Alpine;
 Alpine.start();
 
 Prism.highlightAll();
-new ClipboardJS('button[data-clipboard-text]');
+new ClipboardJS('button[data-clipboard-text], button[data-clipboard-target]');
 
 window.twemoji = (content) => twemoji.parse(content, { folder: 'svg', ext: '.svg' });
 window.twemoji(document.body);
