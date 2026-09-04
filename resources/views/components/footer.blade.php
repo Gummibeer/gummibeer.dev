@@ -54,6 +54,13 @@
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
+                    href="{{ $identity?->contact_page?->permalink }}"
+                    class="hover:text-brand"
+                    >{{ $identity?->contact_label }}</a
+                >
+            </li>
+            <li>
+                <a
                     href="{{ $identity?->imprint_page?->permalink }}"
                     class="hover:text-brand"
                     >{{ $identity?->imprint_label }}</a

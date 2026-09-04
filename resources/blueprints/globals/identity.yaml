@@ -93,6 +93,26 @@ tabs:
         display: Legal
         fields:
           -
+            handle: contact_label
+            field:
+              type: text
+              display: 'Contact Label'
+              required: true
+              validate:
+                - required
+          -
+            handle: contact_page
+            field:
+              type: entries
+              display: 'Contact Page'
+              collections:
+                - pages
+              max_items: 1
+              mode: select
+              required: true
+              validate:
+                - required
+          -
             handle: imprint_label
             field:
               type: text
