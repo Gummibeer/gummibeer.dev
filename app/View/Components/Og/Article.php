@@ -24,13 +24,16 @@ class Article extends Component
     {
         $title = $this->post->value('title').' | '.$this->siteName;
         $description = (string) $this->post->value('description');
+        $modifiedAt = $this->post->value('updated_at')
+            ?? $this->post->date()?->getTimestamp()
+            ?? filemtime($this->post->path());
 
         return implode(PHP_EOL, [
             OpenGraph::article($title)
                 ->url((string) $this->post->absoluteUrl())
                 ->when($description)->description($description)
                 ->publishedAt($this->post->date())
-                ->modifiedAt(Carbon::createFromTimestampUTC(filemtime($this->post->path())))
+                ->modifiedAt(Carbon::createFromTimestampUTC($modifiedAt))
                 ->locale(str_replace('-', '_', app()->getLocale())),
             Twitter::summaryLargeImage($title)
                 ->when($description)->description($description),
