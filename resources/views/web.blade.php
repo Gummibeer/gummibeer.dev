@@ -62,6 +62,14 @@
         rel="canonical"
         href="{{ $page?->permalink ?? request()->url() }}"
     />
+    @if ($page?->permalink)
+        <link
+            rel="alternate"
+            type="text/markdown"
+            href="{{ request()->path() === '/' ? url('/index.md') : url('/'.request()->path().'.md') }}"
+            title="Markdown"
+        />
+    @endif
     @stack ('head')
 </head>
 <body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
