@@ -54,9 +54,9 @@
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
-                    href="/contact"
+                    href="{{ $identity?->contact_page?->permalink }}"
                     class="hover:text-brand"
-                    >Contact</a
+                    >{{ $identity?->contact_label }}</a
                 >
             </li>
             <li>
