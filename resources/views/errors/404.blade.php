@@ -13,12 +13,8 @@
             x-cloak
         ><code x-text="window.location"></code></pre>
 
-        <p>If the URL is correct, these should get you back on track:</p>
+        <p>If you think that the page should exist don't hesitate to contact me.</p>
 
-        <ul>
-            <li><a href="{{ url('/') }}">home page</a></li>
-            <li><a href="{{ route('sitemap.xml') }}">sitemap</a></li>
-            <li><a href="{{ url('/llms.txt') }}">llms.txt</a></li>
-        </ul>
+        <a href="{{ url('/') }}">back to home page</a>
     </x-article>
 @endsection
