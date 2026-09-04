@@ -5,9 +5,7 @@
 
 <div class="not-prose relative my-6 overflow-hidden rounded-2 border-2 border-snow-10 bg-white dark:border-night-20 dark:bg-night-10">
     <details>
-        <summary class="cursor-pointer bg-snow-10 px-4 py-3 pr-24 font-bold dark:bg-night-20">
-            {{ $title }}
-        </summary>
+        <summary class="cursor-pointer bg-snow-10 px-4 py-3 pr-24 font-bold dark:bg-night-20">{{ $title }}</summary>
         <pre
             id="{{ $id }}"
             class="m-0 overflow-x-auto p-4 font-mono text-sm leading-snug break-words whitespace-pre-wrap text-inherit"
