@@ -11,7 +11,13 @@
     <x-home.streams />
 
     <x-section class="relative overflow-hidden">
-        <x-svg.tire class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block" />
+        <img
+            src="{{ route('assets.tire') }}"
+            alt=""
+            aria-hidden="true"
+            loading="lazy"
+            class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block dark:invert"
+        />
 
         <div class="mx-auto w-full space-y-8 sm:max-w-screen-sm sm:px-4 md:max-w-screen-md md:px-0">
             <div class="prose md:prose-lg lg:prose-xl">
