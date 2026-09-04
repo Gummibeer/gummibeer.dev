@@ -16,7 +16,7 @@
             alt=""
             aria-hidden="true"
             loading="lazy"
-            class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block dark:invert"
+            class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block"
         />
 
         <div class="mx-auto w-full space-y-8 sm:max-w-screen-sm sm:px-4 md:max-w-screen-md md:px-0">
