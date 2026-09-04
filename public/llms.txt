@@ -1,0 +1,63 @@
+# gummibeer.dev
+
+> Personal website of Tom Herrmann (Gummibeer), a software engineer from Hamburg, Germany, with developer articles, projects, recorded streams, and personal content.
+
+gummibeer.dev is a public personal website and developer blog.
+The primary technical topics are PHP, Laravel, PostgreSQL, geography/GIS, open source, and web development.
+Content also covers personal projects, work, biking, gaming, charity, and other things Tom writes about or builds.
+Blog posts are the canonical long-form articles and include publication dates, categories, code examples, and source links where relevant.
+Recorded streams are older long-form development sessions.
+The portfolio lists websites and projects Tom has worked on.
+
+Common agent use cases:
+- Find and cite Tom's technical articles and implementation notes.
+- Summarize a post while preserving the original context and opinions.
+- Locate posts about Laravel, PHP, PostgreSQL, geography, open source, and related development topics.
+- Find Tom's public projects, profile information, resume, tools, and setup.
+- Use the site search, sitemap, or feeds to discover published content instead of guessing URLs.
+- Propose corrections or content changes through the public GitHub repository.
+
+Access and integration:
+- Public website content does not require authentication.
+- There is no public REST API for gummibeer.dev.
+- There is no public GraphQL API for gummibeer.dev.
+- There is currently no MCP server or dedicated agent-action API.
+- Use the public HTML pages, search, RSS/Atom feeds, and sitemap for discovery.
+- There are no payment or checkout flows on this site.
+
+## Primary content
+
+- [Home](https://gummibeer.dev/): Personal profile, latest posts and streams, biking, and site overview.
+- [Blog](https://gummibeer.dev/blog): Published developer and personal articles.
+- [Portfolio](https://gummibeer.dev/portfolio): Websites and projects Tom has worked on.
+
+## Search
+
+- [Blog search](https://gummibeer.dev/blog/search): Public search for published blog content. No authentication is required.
+
+For bulk discovery, prefer the sitemap or feeds over repeated searches.
+
+## Feeds and discovery
+
+- [Sitemap](https://gummibeer.dev/sitemap.xml): Canonical crawlable URL inventory.
+- [Blog RSS](https://gummibeer.dev/blog.rss): RSS feed for published blog posts.
+- [Blog Atom](https://gummibeer.dev/blog.atom): Atom feed for published blog posts.
+- [Robots](https://gummibeer.dev/robots.txt): Crawler policy and sitemap location.
+
+## Changing content
+
+gummibeer.dev is Git-backed. Do not attempt to modify the deployed website directly.
+
+- [Source repository](https://github.com/Gummibeer/gummibeer.dev): Canonical source for the website and its content.
+- For content corrections, additions, or code changes, create a branch and submit a pull request against `master`.
+- Blog posts live in `content/collections/posts/`.
+- Pages live in `content/collections/pages/`.
+- Keep changes focused and preserve the existing Markdown, front matter, and content structure.
+
+## Optional
+
+- [Uses](https://gummibeer.dev/uses): Hardware, software, and tools Tom uses.
+- [Resume](https://gummibeer.dev/resume): Public resume.
+- [Charity](https://gummibeer.dev/charity): Charity-related information and activity.
+- [X](https://x.com/devgummibeer): Tom's public X profile.
+- [Instagram](https://instagram.com/dev.gummibeer): Tom's public Instagram profile.
