@@ -3,9 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Middleware\AutoLoginStatamicControlPanel;
-use App\Services\FencedCodeRenderer;
-use App\Services\ImageRenderer;
-use App\Services\ParagraphRenderer;
+use App\Markdown\MarkdownExtension;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
@@ -13,9 +11,6 @@ use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
-use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
-use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
-use League\CommonMark\Node\Block\Paragraph;
 use League\Glide\Api\Api;
 use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
@@ -80,11 +75,7 @@ class AppServiceProvider extends ServiceProvider
 
     public function registerMarkdown(): void
     {
-        Markdown::addRenderers(fn (): array => [
-            [FencedCode::class, new FencedCodeRenderer, 10],
-            [Paragraph::class, new ParagraphRenderer, 10],
-            [Image::class, new ImageRenderer, 10],
-        ]);
+        Markdown::addExtension(fn (): MarkdownExtension => new MarkdownExtension);
     }
 
     public function registerPixpipeGlide(): void
