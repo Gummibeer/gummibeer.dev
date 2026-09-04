@@ -2,6 +2,8 @@
     'page' => null,
 ])
 
+@inject ('schemaOrg', 'App\Services\SchemaOrg')
+
 <!DOCTYPE html>
 <html
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
@@ -47,10 +49,12 @@
     @vite (['resources/css/app.css', 'resources/js/app.js'])
 
     @if ($identity)
-        <link
-            rel="me"
-            href="{{ $identity->github_url }}"
-        />
+        @foreach ([$identity->github_url, $identity->x_url, $identity->instagram_url, $identity->steam_url] as $profileUrl)
+            <link
+                rel="me"
+                href="{{ $profileUrl }}"
+            />
+        @endforeach
     @endif
 
     <link
@@ -62,6 +66,8 @@
         rel="canonical"
         href="{{ $page?->permalink ?? request()->url() }}"
     />
+    {!! $schemaOrg->person()->toScript() !!}
+    {!! $schemaOrg->webSite()->toScript() !!}
     @stack ('head')
 </head>
 <body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
