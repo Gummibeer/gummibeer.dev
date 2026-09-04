@@ -4,6 +4,7 @@ use App\Http\Controllers\Blog\Category\FeedController as CategoryFeedController;
 use App\Http\Controllers\Blog\FeedController as BlogFeedController;
 use App\Http\Controllers\GetMarkdownController;
 use App\Http\Controllers\GetSitemapController;
+use Illuminate\Support\Facades\Blade;
 use Illuminate\Support\Facades\Route;
 
 Route::name('blog.')->group(function (): void {
@@ -11,6 +12,12 @@ Route::name('blog.')->group(function (): void {
     Route::get('blog.{format}', BlogFeedController::class)->whereIn('format', ['atom', 'rss'])->name('feed');
     Route::get('blog/categories/{category}.{format}', CategoryFeedController::class)->whereIn('format', ['atom', 'rss'])->name('category.feed');
 });
+
+Route::get('assets/tire.svg', static fn () => response(
+    Blade::render('<x-svg.tire />'),
+    200,
+    ['Content-Type' => 'image/svg+xml'],
+))->name('assets.tire');
 
 Route::get('{uri}.md', GetMarkdownController::class)
     ->where('uri', '.*')
