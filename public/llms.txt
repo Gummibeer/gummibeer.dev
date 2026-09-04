@@ -7,7 +7,7 @@ The primary technical topics are PHP, Laravel, PostgreSQL, geography/GIS, open s
 Content also covers personal projects, work, biking, gaming, charity, and other things Tom writes about or builds.
 Blog posts are the canonical long-form articles and include publication dates, categories, code examples, and source links where relevant.
 Recorded streams are older long-form development sessions.
-The portfolio lists projects and open-source work.
+The portfolio lists websites and projects Tom has worked on.
 
 Common agent use cases:
 - Find and cite Tom's technical articles and implementation notes.
@@ -26,11 +26,10 @@ Access and integration:
 
 ## Primary content
 
-- [Home](https://gummibeer.dev/): Overview, latest posts and streams, biking, and personal introduction.
+- [Home](https://gummibeer.dev/): Personal profile, latest posts and streams, biking, and site overview.
 - [Blog](https://gummibeer.dev/blog): Published developer and personal articles.
 - [Blog search](https://gummibeer.dev/blog/search): Search published blog content.
-- [Portfolio](https://gummibeer.dev/portfolio): Projects and open-source work.
-- [About](https://gummibeer.dev/me): Personal profile and background.
+- [Portfolio](https://gummibeer.dev/portfolio): Websites and projects Tom has worked on.
 
 ## Feeds and discovery
 
