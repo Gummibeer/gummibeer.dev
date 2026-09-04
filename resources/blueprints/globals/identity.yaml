@@ -82,6 +82,22 @@ tabs:
               validate:
                 - required
           -
+            handle: x_url
+            field:
+              type: link
+              display: X
+              required: true
+              validate:
+                - required
+          -
+            handle: instagram_url
+            field:
+              type: link
+              display: Instagram
+              required: true
+              validate:
+                - required
+          -
             handle: steam_url
             field:
               type: link

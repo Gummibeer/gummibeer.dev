@@ -1,7 +1,10 @@
+@inject ('schemaOrg', 'App\Services\SchemaOrg')
+
 @extends ('web')
 
 @push ('head')
     <x-og.website />
+    {!! $schemaOrg->profilePage($page)->toScript() !!}
 @endpush
 
 @section ('content')

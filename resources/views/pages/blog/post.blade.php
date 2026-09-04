@@ -1,5 +1,7 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $page */ ?>
 
+@inject ('schemaOrg', 'App\Services\SchemaOrg')
+
 @extends ('web')
 
 @push ('head')
@@ -11,6 +13,8 @@
         :post="$page"
         :site-name="$identity->site_name"
     />
+    {!! $schemaOrg->blogPosting($page)->toScript() !!}
+    {!! $schemaOrg->breadcrumbs($page)->toScript() !!}
 @endpush
 
 @section ('content')
