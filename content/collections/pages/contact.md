@@ -17,14 +17,6 @@ For work, longer questions, private topics or anything that doesn't belong into 
 
 If it's about one of my projects, an issue or a pull request, use [GitHub](https://github.com/Gummibeer). Keeping project discussions next to the code usually makes more sense than moving them into email.
 
-## X
-
-For quick public tech conversations you can find me on [X](https://x.com/devgummibeer).
-
-## Instagram
-
-For the less code-heavy side of things, I'm also on [Instagram](https://instagram.com/dev.gummibeer).
-
 ## Phone
 
 If you already know me or the topic actually needs a call, you can reach me at [+49 162 1525105](tel:+491621525105).
