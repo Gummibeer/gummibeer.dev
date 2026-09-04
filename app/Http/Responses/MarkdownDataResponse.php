@@ -2,30 +2,34 @@
 
 namespace App\Http\Responses;
 
+use Illuminate\Support\Stringable;
+use Illuminate\Support\Str;
 use Statamic\Http\Responses\DataResponse;
 
 class MarkdownDataResponse extends DataResponse
 {
     protected function contents(): string
     {
-        $content = trim((string) $this->data->value('content'));
+        $description = Str::of((string) $this->data->value('description'))->trim();
 
-        if (preg_match('/^#\s+\S/', $content) === 1) {
-            return $content.PHP_EOL;
-        }
-
-        $markdown = ['# '.trim((string) $this->data->title())];
-        $description = trim((string) $this->data->value('description'));
-
-        if ($description !== '') {
-            $markdown[] = $description;
-        }
-
-        if ($content !== '') {
-            $markdown[] = $content;
-        }
-
-        return implode(PHP_EOL.PHP_EOL, $markdown).PHP_EOL;
+        return Str::of((string) $this->data->value('content'))
+            ->trim()
+            ->unless(
+                fn (Stringable $content): bool => $content->startsWith('# '),
+                fn (Stringable $content): Stringable => Str::of((string) $this->data->title())
+                    ->trim()
+                    ->prepend('# ')
+                    ->when(
+                        $description->isNotEmpty(),
+                        fn (Stringable $markdown): Stringable => $markdown->append(PHP_EOL.PHP_EOL, $description),
+                    )
+                    ->when(
+                        $content->isNotEmpty(),
+                        fn (Stringable $markdown): Stringable => $markdown->append(PHP_EOL.PHP_EOL, $content),
+                    ),
+            )
+            ->append(PHP_EOL)
+            ->toString();
     }
 
     protected function adjustResponseType(): static
