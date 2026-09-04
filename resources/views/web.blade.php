@@ -59,6 +59,12 @@
         href="{{ route('sitemap.xml') }}"
     />
     <link
+        rel="alternate"
+        type="text/plain"
+        href="{{ url('/llms.txt') }}"
+        title="LLMs"
+    />
+    <link
         rel="canonical"
         href="{{ $page?->permalink ?? request()->url() }}"
     />
