@@ -10,7 +10,7 @@
         </summary>
         <pre
             id="{{ $id }}"
-            class="m-0 overflow-x-auto whitespace-pre-wrap break-words p-4 font-mono text-sm leading-snug text-inherit"
+            class="m-0 overflow-x-auto p-4 font-mono text-sm leading-snug break-words whitespace-pre-wrap text-inherit"
         >{{ $prompt }}</pre>
     </details>
     <div class="absolute top-0 right-0 flex h-12 items-center gap-2 px-4">
