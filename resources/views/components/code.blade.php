@@ -4,7 +4,7 @@
 <?php /** @var string $lang */ ?>
 
 <div class="mt-4 mb-6">
-    <header class="flex space-x-2 rounded-t-2 bg-snow-10 px-4 dark:bg-night-20">
+    <header class="flex space-x-2 rounded-t-2 bg-snow-10 px-4">
         <div class="py-2 text-right text-xs leading-none font-bold uppercase">{{ $lang }}</div>
         <div class="grow truncate py-2 text-center font-mono text-xs leading-none">{{ $name }}</div>
         <button
@@ -17,7 +17,7 @@
             <span class="sr-only">copy code to clipboard</span>
         </button>
     </header>
-    <section class="rounded-b-2 border-2 border-t-0 border-snow-10 bg-white dark:border-night-20 dark:bg-night-10">
+    <section class="rounded-b-2 border-2 border-t-0 border-snow-10 bg-white">
         <pre><code class="language-{{ $lang }}">{{ $slot }}</code></pre>
     </section>
 </div>

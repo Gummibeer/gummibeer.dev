@@ -14,6 +14,6 @@
         @if ($width) width="{{ $width }}" @endif
         @if ($height) height="{{ $height }}" @endif
         loading="lazy"
-        {{ $attributes->merge(['class' => 'w-full h-auto dark:opacity-75 dark:hover:opacity-100 transition-opacity duration-500 ease-out']) }}
+        {{ $attributes->merge(['class' => 'w-full h-auto']) }}
     />
 </picture>

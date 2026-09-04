@@ -5,7 +5,7 @@
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
             @foreach ($charities as $charity)
-                <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
+                <div class="overflow-hidden rounded-4 bg-white shadow">
                     <a
                         href="{{ $charity->website }}"
                         target="_blank"

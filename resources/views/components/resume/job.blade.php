@@ -1,4 +1,4 @@
-<div class="py-4 @if($job->has_end) text-snow-20 dark:text-snow-10 @endif">
+<div class="py-4 @if($job->has_end) text-snow-20 @endif">
     <div class="flex flex-row sm:items-center sm:space-x-4">
         @if ($job->logo)
             <div class="hidden h-24 w-24 sm:block">
@@ -19,7 +19,7 @@
                     <a
                         href="{{ $job->website }}"
                         target="_blank"
-                        class="inline-block p-1 text-xs text-snow-20 hover:text-brand dark:text-snow-10"
+                        class="inline-block p-1 text-xs text-snow-20 hover:text-brand"
                     >
                         {{ $job->website_host }}
                     </a>
@@ -30,7 +30,7 @@
                         -
                         <time datetime="{{ ($job->end_at ?? now())->toIso8601String() }}">{{ optional($job->end_at)->year ?? 'now' }}</time>
                     </div>
-                    <span class="text-snow-20 dark:text-snow-10">{{ Illuminate\Support\Str::money($job->salary ?? 0) }}</span>
+                    <span class="text-snow-20">{{ Illuminate\Support\Str::money($job->salary ?? 0) }}</span>
                 </aside>
             </div>
             <strong class="block @if(!$job->has_end) font-bold @else text-sm font-normal @endif">{{ $job->role }}</strong>

@@ -9,7 +9,7 @@
                 <a
                     href="{{ $paginate['prev_page'] }}"
                     rel="prev"
-                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white"
                 >
                     <x-icon name="ski-chevron-left" />
                 </a>
@@ -23,7 +23,7 @@
                     <li>
                         <a
                             href="{{ $paginate['links']['all'][0]['url'] }}"
-                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white"
                             >1</a
                         >
                     </li>
@@ -35,7 +35,7 @@
                     <li>
                         <a
                             href="{{ $paginate['links']['all'][$paginate['total_pages'] - 1]['url'] }}"
-                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                            class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white"
                             >{{ $paginate['total_pages'] }}</a
                         >
                     </li>
@@ -47,7 +47,7 @@
                 <a
                     href="{{ $paginate['next_page'] }}"
                     rel="next"
-                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white dark:bg-night-20"
+                    class="inline-block h-10 w-10 rounded-full bg-white text-center leading-10 shadow hover:bg-brand hover:text-white"
                 >
                     <x-icon name="ski-chevron-right" />
                 </a>
