@@ -19,14 +19,32 @@ Route::get('{uri}.md', GetMarkdownController::class)
 Route::get('sitemap.xml', GetSitemapController::class)->name('sitemap.xml');
 
 Route::get('robots.txt', static function (): Response {
-    $content = collect([
-        'User-agent' => '*',
-        'Allow' => '/',
-        null,
-        'Sitemap' => route('sitemap.xml'),
-    ])
-        ->map(fn (?string $value, string $key): string => $value ? "{$key}: {$value}" : '')
-        ->implode(PHP_EOL);
+    $content = implode(PHP_EOL, [
+        'User-agent: *',
+        'Allow: /',
+        '',
+        'User-agent: GPTBot',
+        'Allow: /',
+        '',
+        'User-agent: ClaudeBot',
+        'Allow: /',
+        '',
+        'User-agent: PerplexityBot',
+        'Allow: /',
+        '',
+        'User-agent: OAI-SearchBot',
+        'Allow: /',
+        '',
+        'User-agent: CCBot',
+        'Disallow: /',
+        '',
+        'User-agent: ByteSpider',
+        'Disallow: /',
+        '',
+        'Content-Signal: search=yes, ai-train=no',
+        '',
+        'Sitemap: '.route('sitemap.xml'),
+    ]);
 
     return response($content)
         ->header('Content-Type', 'text/plain; charset=UTF-8');
