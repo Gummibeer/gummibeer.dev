@@ -1,9 +1,5 @@
-<?php /** @var Illuminate\Support\HtmlString $contents */ ?>
+@extends ('web')
 
-@extends('web')
-
-@section('content')
-    <x-article class="prose md:prose-lg lg:prose-xl">
-        {{ $contents }}
-    </x-article>
+@section ('content')
+    <x-article class="prose md:prose-lg lg:prose-xl"> {{ $content }} </x-article>
 @endsection

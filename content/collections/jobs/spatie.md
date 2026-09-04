@@ -1,0 +1,13 @@
+---
+id: 62e43e52-11fa-45d8-8e02-54a9a569a318
+blueprint: job
+title: Spatie
+role: 'Open Source Developer'
+start_at: 2016-08-01
+website: 'https://spatie.be'
+stack:
+    - PHP
+    - Laravel
+icon: ski-ribbon
+logo: company/spatie.png
+---

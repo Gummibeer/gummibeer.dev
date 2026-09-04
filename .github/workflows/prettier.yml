@@ -2,19 +2,24 @@ name: prettier
 
 on:
   push:
-    paths:
-      - '**.md'
-      - '**.js'
-      - '**.scss'
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions:
+  contents: read
 
 jobs:
-  pretify:
+  prettier:
     runs-on: ubuntu-latest
-    steps:
-      - name: Git checkout
-        uses: actions/checkout@v7
+    timeout-minutes: 5
 
-      - name: Prettify markdown
-        uses: creyD/prettier_action@v4.6
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
         with:
-          prettier_options: --write *.md resources/content/**/*.md resources/js/*.js resources/scss/*.scss resources/scss/**/*.scss
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm run format:check

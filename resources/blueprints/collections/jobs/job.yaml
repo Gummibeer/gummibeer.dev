@@ -1,0 +1,72 @@
+title: Job
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              display: Company
+              required: true
+              validate:
+                - required
+          -
+            handle: role
+            field:
+              type: text
+              display: Role
+          -
+            handle: start_at
+            field:
+              type: date
+              display: Start
+              validate: required
+          -
+            handle: end_at
+            field:
+              type: date
+              display: End
+          -
+            handle: website
+            field:
+              type: link
+              display: Website
+          -
+            handle: stack
+            field:
+              type: list
+              display: Stack
+          -
+            handle: icon
+            field:
+              type: text
+              display: Icon
+          -
+            handle: logo
+            field:
+              type: assets
+              display: Logo
+              container: images
+              folder: company
+              restrict: true
+              allow_uploads: true
+              max_files: 1
+          -
+            handle: salary
+            field:
+              type: integer
+              display: Salary
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'

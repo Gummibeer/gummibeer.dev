@@ -2,7 +2,7 @@
 
 namespace App\View\Components;
 
-use Astrotomic\Unavatar\Laravel\Unavatar;
+use Astrotomic\Unavatar\Unavatar;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
@@ -32,6 +32,6 @@ class Avatar extends Component
             return $this->src;
         }
 
-        return Unavatar::make($this->search, $this->provider)->toUrl();
+        return (new Unavatar($this->search, $this->provider))->toUrl();
     }
 }

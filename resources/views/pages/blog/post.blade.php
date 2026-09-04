@@ -1,30 +1,36 @@
-<?php /** @var App\Post $post */ ?>
-<?php /** @var App\Services\MetaBag $meta */ ?>
+<?php /** @var Statamic\Contracts\Entries\Entry $page */ ?>
 
-@extends('web')
+@extends ('web')
 
-@push('head')
-    <link rel="index" href="{{ route('blog.index') }}">
-    <x-og.article :post="$post"/>
-    @if($post->author->payment_pointer)
-        <meta name="monetization" content='{{ $post->author->payment_pointer }}'>
-    @endif
+@push ('head')
+    <link
+        rel="index"
+        href="{{ $page->collection()->url() }}"
+    />
+    <x-og.article
+        :post="$page"
+        :site-name="$identity->site_name"
+    />
 @endpush
 
-@section('content')
+@section ('content')
     <x-article class="markdown">
         <header class="mb-8">
-            <x-post.image :post="$post"/>
-            @if($post->categories()->isNotEmpty())
-                <x-post.ul-categories :post="$post" class="mb-4"/>
+            <x-post.image :post="$page" />
+            @if ($page->categories->isNotEmpty())
+                <x-post.ul-categories
+                    :post="$page"
+                    class="mb-4"
+                />
             @endif
-            <x-post.aside :post="$post"/>
+            <x-post.aside :post="$page" />
         </header>
         <main class="prose md:prose-lg lg:prose-xl">
-            <h1>{{ $post->title }}</h1>
-            {{ $post->contents }}
+            <h1>{{ $page->title }}</h1>
+            {!! $page->content !!}
         </main>
-        <script src="https://utteranc.es/client.js"
+        <script
+            src="https://utteranc.es/client.js"
             repo="Gummibeer/gummibeer.de"
             issue-term="pathname"
             label="💬 comment"
@@ -32,6 +38,5 @@
             crossorigin="anonymous"
             async
         ></script>
-        <x-post.webmentions :url="$post->url" class="pt-12 mt-12 border-t-2 border-snow-10"/>
     </x-article>
 @endsection

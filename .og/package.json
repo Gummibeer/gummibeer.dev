@@ -1,9 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "marked": "^7.0.1",
-    "puppeteer": "^21.0.2",
-    "twemoji": "^14.0.2",
-    "yargs": "^17.7.2"
-  }
-}

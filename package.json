@@ -1,40 +1,42 @@
 {
     "private": true,
+    "type": "module",
+    "packageManager": "npm@11.17.0",
+    "engines": {
+        "node": ">=22"
+    },
     "scripts": {
-        "dev": "npm run development",
-        "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --disable-host-check --config=node_modules/laravel-mix/setup/webpack.config.js",
-        "prod": "npm run production",
-        "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --no-progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+        "build": "vite build",
+        "chrome:install": "puppeteer browsers install chrome",
+        "dev": "vite",
+        "format": "prettier --write \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\" \"content/**/*.{md,yml,yaml}\"",
+        "format:check": "prettier --check \"resources/**/*.{blade.php,css,js}\" \".github/**/*.{yml,yaml}\" \"*.{json,md,yml,yaml}\" \"content/**/*.{md,yml,yaml}\"",
+        "check": "npm run format:check && npm run build"
+    },
+    "allowScripts": {
+        "puppeteer": false
     },
     "devDependencies": {
-        "alex": "^8.1.1",
-        "cross-env": "^7.0",
-        "glob": "^7.1.6",
-        "laravel-mix": "^5.0.1",
-        "postcss-discard-comments": "^4.0.2",
-        "resolve-url-loader": "^3.1.0",
-        "sass": "^1.15.2",
-        "sass-loader": "^8.0.0",
-        "vue-template-compiler": "^2.6.11"
+        "@tailwindcss/vite": "^4.3.3",
+        "laravel-vite-plugin": "^3.2.0",
+        "prettier": "^3.9.6",
+        "prettier-plugin-blade": "^3.3.0",
+        "prettier-plugin-tailwindcss": "^0.8.1",
+        "vite": "^8.2.2"
     },
     "dependencies": {
-        "@fortawesome/fontawesome-pro": "^5.13.0",
-        "@tailwindcss/aspect-ratio": "^0.2.0",
-        "@tailwindcss/typography": "^0.2.0",
-        "alpinejs": "^2.3.5",
-        "clipboard": "^2.0.6",
-        "lodash": "^4.17.20",
-        "mburger-css": "^1.3.3",
-        "prism-themes": "^1.4.0",
-        "prismjs": "^1.20.0",
-        "tailwindcss": "^1.9.0",
-        "twemoji": "^13.0.1",
-        "twemoji-emojis": "^13.0.1",
-        "typeface-fira-code": "^1.1.4",
-        "typeface-inter": "^3.12.0",
-        "typeface-permanent-marker": "^0.0.72"
+        "@fontsource-variable/fira-code": "^5.3.0",
+        "@fontsource-variable/inter": "^5.3.0",
+        "@fontsource/permanent-marker": "^5.3.0",
+        "@fortawesome/fontawesome-free": "^7.3.1",
+        "@sketchyicons/static": "^0.5.0",
+        "@tailwindcss/typography": "^0.5.20",
+        "@twemoji/api": "^17.0.3",
+        "alpinejs": "^3.16.3",
+        "clipboard": "^2.0.11",
+        "prism-themes": "^1.9.0",
+        "prismjs": "^1.30.0",
+        "puppeteer": "^25.9.0",
+        "tailwindcss": "^4.3.3"
     }
 }

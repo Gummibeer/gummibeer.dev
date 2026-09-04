@@ -2,67 +2,111 @@
 
 namespace App\Providers;
 
-use App\Repositories\AuthorRepository;
-use App\Repositories\CategoryRepository;
-use App\Repositories\JobRepository;
-use App\Repositories\PostRepository;
+use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
-use App\Services\MetaBag;
 use App\Services\ParagraphRenderer;
-use Illuminate\Foundation\Http\Events\RequestHandled;
+use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
+use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
-use Illuminate\Support\Facades\Event;
-use Illuminate\Support\Facades\View;
+use Illuminate\Routing\Router;
+use Illuminate\Support\Arr;
 use Illuminate\Support\ServiceProvider;
-use League\CommonMark\Block\Element\FencedCode;
-use League\CommonMark\Block\Element\Paragraph;
-use League\CommonMark\CommonMarkConverter;
-use League\CommonMark\ConverterInterface;
-use League\CommonMark\Inline\Element\Image;
+use Illuminate\Support\Str;
+use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
+use League\CommonMark\Node\Block\Paragraph;
+use League\Glide\Api\Api;
+use League\Glide\Manipulators\ManipulatorInterface;
+use League\Glide\Manipulators\Size;
+use League\Glide\Server;
+use LogicException;
+use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Facades\Collection as StatamicCollection;
+use Statamic\Facades\Markdown;
 
 class AppServiceProvider extends ServiceProvider
 {
     public function register(): void
     {
-        $this->registerMeta();
-        $this->registerRepositories();
-        $this->registerCommonmark();
+        $this->registerPixpipeGlide();
     }
 
-    public function boot(): void
+    public function boot(Router $router): void
     {
+        $this->app->booted(
+            fn () => $router->pushMiddlewareToGroup('statamic.cp', AutoLoginStatamicControlPanel::class),
+        );
+
         Paginator::useTailwind();
 
-        Event::listen(RequestHandled::class, fn () => $this->registerMeta());
+        $this->registerComputedContentValues();
+        $this->registerMarkdown();
     }
 
-    public function registerMeta(): void
+    public function registerComputedContentValues(): void
     {
-        $this->app->singleton(MetaBag::class);
+        StatamicCollection::computed('posts', [
+            'image' => static function (EntryContract $entry, mixed $value): ?string {
+                $images = $entry->value('images');
 
-        View::share('meta', $this->app->make(MetaBag::class));
+                return $value ?? (is_array($images) ? Arr::first($images) : null);
+            },
+            'read_time' => static function (EntryContract $entry, mixed $value): float {
+                $html = Markdown::parse((string) $entry->value('content'));
+                $wordCount = mb_strlen(strip_tags($html)) / 5;
+                $wordsPerMinute = 60 * 3;
+                $minutes = ceil(($wordCount / $wordsPerMinute) * 2) / 2;
+
+                return max(1, $minutes);
+            },
+        ]);
+
+        StatamicCollection::computed('streams', [
+            'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => CarbonInterval::fromString((string) $value),
+            'image' => static function (EntryContract $entry, mixed $value): string {
+                $videoId = basename((string) parse_url((string) $entry->value('video'), PHP_URL_PATH));
+
+                return 'https://i.ytimg.com/vi/'.$videoId.'/maxresdefault.jpg';
+            },
+        ]);
+
+        StatamicCollection::computed('jobs', [
+            'website_host' => static fn (EntryContract $entry, mixed $value): string => (string) parse_url((string) $entry->value('website'), PHP_URL_HOST),
+            'icon_class' => static fn (EntryContract $entry, mixed $value): string => Str::start((string) $entry->value('icon'), 'ski-'),
+            'has_end' => static fn (EntryContract $entry, mixed $value): bool => filled($entry->value('end_at')),
+        ]);
     }
 
-    public function registerRepositories(): void
+    public function registerMarkdown(): void
     {
-        $this->app->singleton(PostRepository::class);
-        $this->app->singleton(AuthorRepository::class);
-        $this->app->singleton(CategoryRepository::class);
-        $this->app->singleton(JobRepository::class);
+        Markdown::addRenderers(fn (): array => [
+            [FencedCode::class, new FencedCodeRenderer, 10],
+            [Paragraph::class, new ParagraphRenderer, 10],
+            [Image::class, new ImageRenderer, 10],
+        ]);
     }
 
-    public function registerCommonmark(): void
+    public function registerPixpipeGlide(): void
     {
-        $this->app->singleton(ConverterInterface::class, \App\Services\CommonMarkConverter::class);
-        $this->app->alias(ConverterInterface::class, CommonMarkConverter::class);
-        $this->app->alias(ConverterInterface::class, 'markdown');
+        $this->app->extend(Server::class, function (Server $server): Server {
+            $api = $server->getApi();
 
-        $commonMark = $this->app->make(ConverterInterface::class);
-        /** @var \League\CommonMark\Environment $environment */
-        $environment = $commonMark->getEnvironment();
-        $environment->addBlockRenderer(FencedCode::class, new FencedCodeRenderer());
-        $environment->addBlockRenderer(Paragraph::class, new ParagraphRenderer());
-        $environment->addInlineRenderer(Image::class, new ImageRenderer());
+            if (! $api instanceof Api) {
+                throw new LogicException('Statamic Glide must use the concrete League Glide API.');
+            }
+
+            $manipulators = array_map(
+                fn (ManipulatorInterface $manipulator): ManipulatorInterface => $manipulator instanceof Size
+                    ? new PixpipeSize
+                    : $manipulator,
+                $api->getManipulators(),
+            );
+
+            $api->setManipulators($manipulators);
+            $server->setApi($api);
+
+            return $server;
+        });
     }
 }

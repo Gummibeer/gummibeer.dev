@@ -2,12 +2,11 @@
 
 namespace App\View\Components;
 
-use Astrotomic\Imgix\Facades\Imgix;
-use Astrotomic\LaravelMime\Facades\MimeTypes;
-use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Illuminate\View\View;
+use Statamic\Assets\Asset;
+use Statamic\Contracts\Imaging\UrlBuilder;
 
 class Img extends Component
 {
@@ -23,40 +22,33 @@ class Img extends Component
 
     private bool $crop;
 
+    private UrlBuilder $urlBuilder;
+
     public function __construct(
-        string $src,
+        string|Asset $src,
         ?int $width = null,
         ?int $height = null,
         ?string $ratio = null,
         bool $crop = false
     ) {
+        $this->urlBuilder = app(UrlBuilder::class);
         $this->ratio = $ratio;
         $this->crop = $crop;
         $this->setWidth($width);
         $this->setHeight($height);
 
-        if (Str::startsWith($src, ['http://', 'https://'])) {
-            $filename = hash('md5', $src);
-            $tmppath = public_path('vendor/images/'.$filename);
-            $filepath = Arr::first(glob($tmppath.'.*'));
-
-            if (empty($filepath)) {
-                @mkdir(dirname($tmppath), 0755, true);
-                file_put_contents($tmppath, file_get_contents($src));
-                $mimetype = MimeTypes::guessMimeType($tmppath);
-                $extension = Arr::first(MimeTypes::getExtensions($mimetype));
-                $filepath = $tmppath.'.'.$extension;
-                rename($tmppath, $filepath);
-            }
-
-            $this->src = trim(str_replace(public_path(), '', $filepath), '/');
+        if ($src instanceof Asset) {
+            $this->src = $src->id();
+        } elseif (Str::startsWith($src, ['http://', 'https://'])) {
+            $this->src = $src;
         } else {
-            $this->src = parse_url($src, PHP_URL_PATH);
+            $path = trim((string) parse_url($src, PHP_URL_PATH), '/');
+            $this->src = Str::startsWith($path, 'images/')
+                ? 'images::'.Str::after($path, 'images/')
+                : $path;
         }
 
-        if (! app()->environment('local')) {
-            $this->setDefaultParams();
-        }
+        $this->setDefaultParams();
     }
 
     public function render(): View
@@ -66,11 +58,7 @@ class Img extends Component
 
     public function src(?string $format = null): string
     {
-        if (app()->environment('local')) {
-            return asset($this->src);
-        }
-
-        return Imgix::createURL(
+        return $this->urlBuilder->build(
             $this->src,
             $this->getParams($format),
         );
@@ -78,15 +66,24 @@ class Img extends Component
 
     public function srcSet(?string $format = null, array $options = []): string
     {
-        if (app()->environment('local')) {
-            return asset($this->src).' 1x';
+        $params = $this->getParams($format);
+        $srcset = [$this->urlBuilder->build($this->src, $params).' 1x'];
+
+        if ($this->width !== null || $this->height !== null) {
+            $retina = $params;
+
+            if (isset($retina['w'])) {
+                $retina['w'] *= 2;
+            }
+
+            if (isset($retina['h'])) {
+                $retina['h'] *= 2;
+            }
+
+            $srcset[] = $this->urlBuilder->build($this->src, $retina).' 2x';
         }
 
-        return Imgix::createSrcSet(
-            $this->src,
-            $this->getParams($format),
-            $options
-        );
+        return implode(', ', $srcset);
     }
 
     protected function setHeight(?int $height): self
@@ -117,37 +114,33 @@ class Img extends Component
 
     protected function setDefaultParams(): void
     {
-        $this->params['auto'] = 'compress';
         $this->params['fit'] = 'max';
 
         if ($this->ratio) {
             $this->crop = true;
-            $this->params['ar'] = $this->ratio;
+            [$ratioWidth, $ratioHeight] = array_map('intval', explode(':', $this->ratio, 2));
 
             if ($this->width !== null && $this->height === null) {
-                $this->setHeight($this->width / explode(':', $this->ratio)[0] * explode(':', $this->ratio)[1]);
+                $this->setHeight((int) round($this->width / $ratioWidth * $ratioHeight));
             }
 
             if ($this->width === null && $this->height !== null) {
-                $this->setWidth($this->height / explode(':', $this->ratio)[1] * explode(':', $this->ratio)[0]);
+                $this->setWidth((int) round($this->height / $ratioHeight * $ratioWidth));
             }
         }
 
         if ($this->crop) {
-            $this->params['fit'] = 'crop';
-            $this->params['crop'] = 'edges';
+            $this->params['fit'] = 'smartcrop';
         }
     }
 
     protected function getParams(?string $format = null): array
     {
-        $params = array_merge(
+        return array_merge(
             $this->params,
             array_filter([
                 'fm' => $format,
             ])
         );
-
-        return $params;
     }
 }

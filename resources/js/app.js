@@ -1,78 +1,38 @@
-window.ASSET_URL = document
-  .querySelector("head > link[rel=dns-prefetch]#ASSET_URL")
-  .getAttribute("href")
-  .replace(/\/+$/, "");
+import Alpine from 'alpinejs';
+import ClipboardJS from 'clipboard';
+import Prism from 'prismjs';
+import 'prismjs/components/prism-markup-templating';
+import 'prismjs/components/prism-php';
+import 'prismjs/components/prism-ini';
+import 'prismjs/components/prism-scss';
+import 'prismjs/plugins/line-numbers/prism-line-numbers';
+import twemoji from '@twemoji/api';
 
-require("alpinejs");
+Alpine.data('slider', (delay = 3) => ({
+    delay: delay * 1000,
+    images: [],
+    index: 0,
+    init() {
+        this.images = Array.from(this.$el.getElementsByTagName('img'));
+        this.render();
+        window.setInterval(() => this.next(), this.delay);
+    },
+    next() {
+        this.index = this.index < this.images.length - 1 ? this.index + 1 : 0;
+        this.render();
+    },
+    render() {
+        this.images.forEach((image, index) => {
+            image.classList.toggle('hidden', index !== this.index);
+        });
+    },
+}));
 
-const Prism = require("prismjs");
-require("prismjs/components/prism-markup-templating");
-require("prismjs/components/prism-php");
-require("prismjs/components/prism-ini");
-require("prismjs/components/prism-scss");
-require("prismjs/plugins/line-numbers/prism-line-numbers");
+window.Alpine = Alpine;
+Alpine.start();
+
 Prism.highlightAll();
+new ClipboardJS('button[data-clipboard-text]');
 
-import ClipboardJS from "clipboard";
-new ClipboardJS("button[data-clipboard-text]");
-
-window._ = require("lodash");
-window.search = {
-  items: null,
-  fuse: null,
-  query: "",
-  results: [],
-  search() {
-    let url = new URL("https://search.gummibeer.dev");
-    url.searchParams.set("q", this.query);
-    url.searchParams.set("t", Date.now());
-
-    fetch(url)
-      .then((res) => res.json())
-      .then((results) => {
-        this.results = _(results)
-          .orderBy("score", "asc")
-          .take(3)
-          .map((r) => r.item)
-          .values();
-      });
-  },
-};
-
-window.components = {};
-window.components.slider = (delay) => ({
-  delay: delay ? delay * 1000 : 3000,
-  images: [],
-  index: 0,
-  init() {
-    this.images = Array.from(this.$el.getElementsByTagName("img"));
-
-    this.render();
-
-    setInterval(() => {
-      this.next();
-    }, this.delay);
-  },
-  next() {
-    this.index = this.index < this.images.length - 1 ? this.index + 1 : 0;
-
-    this.render();
-  },
-  render() {
-    this.images.forEach((img) => {
-      img.classList.add("hidden");
-    });
-
-    this.images[this.index].classList.remove("hidden");
-  },
-});
-
-window.twemoji = function (content) {
-  const parse = require("twemoji").default.parse;
-  parse(content, {
-    base: window.ASSET_URL + "/vendor/twemoji/",
-    folder: "svg",
-    ext: ".svg",
-  });
-};
+window.twemoji = (content) => twemoji.parse(content, { folder: 'svg', ext: '.svg' });
 window.twemoji(document.body);

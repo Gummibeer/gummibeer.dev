@@ -1,0 +1,23 @@
+name: 'Tom Herrmann'
+slug: gummibeer
+nickname: Gummibeer
+firstname: Tom
+lastname: Herrmann
+super: true
+id: gummibeer
+preferences:
+  collections:
+    charities:
+      view: list
+    hacktoberfest:
+      view: list
+    posts:
+      view: list
+    jobs:
+      view: list
+    pages:
+      view: tree
+    projects:
+      view: list
+    streams:
+      view: list

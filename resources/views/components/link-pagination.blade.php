@@ -1,12 +1,20 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var App\Services\Paginator $paginator */ ?>
-
-<link rel="first" href="{{ $paginator->url(1) }}">
-@unless ($paginator->onFirstPage())
-    <link rel="prev" href="{{ $paginator->previousPageUrl() }}">
-@endunless
-@if($paginator->hasMorePages())
-    <link rel="next" href="{{ $paginator->nextPageUrl() }}">
+<link
+    rel="first"
+    href="{{ $paginate['links']['all'][0]['url'] }}"
+/>
+@if ($paginate['prev_page'])
+    <link
+        rel="prev"
+        href="{{ $paginate['prev_page'] }}"
+    />
 @endif
-<link rel="last" href="{{ $paginator->url($paginator->lastPage()) }}">
+@if ($paginate['next_page'])
+    <link
+        rel="next"
+        href="{{ $paginate['next_page'] }}"
+    />
+@endif
+<link
+    rel="last"
+    href="{{ $paginate['links']['all'][$paginate['total_pages'] - 1]['url'] }}"
+/>

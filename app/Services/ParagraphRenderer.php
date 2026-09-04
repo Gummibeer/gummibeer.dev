@@ -2,39 +2,52 @@
 
 namespace App\Services;
 
-use Illuminate\Support\Arr;
 use InvalidArgumentException;
-use League\CommonMark\Block\Element\AbstractBlock;
-use League\CommonMark\Block\Element\Paragraph;
-use League\CommonMark\Block\Renderer\BlockRendererInterface;
-use League\CommonMark\ElementRendererInterface;
-use League\CommonMark\HtmlElement;
-use League\CommonMark\Inline\Element\Image;
+use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
+use League\CommonMark\Node\Block\Paragraph;
+use League\CommonMark\Node\Block\TightBlockInterface;
+use League\CommonMark\Node\Node;
+use League\CommonMark\Renderer\ChildNodeRendererInterface;
+use League\CommonMark\Renderer\NodeRendererInterface;
+use League\CommonMark\Util\HtmlElement;
 
-class ParagraphRenderer implements BlockRendererInterface
+class ParagraphRenderer implements NodeRendererInterface
 {
-    /**
-     * @param  Paragraph  $block
-     * @return HtmlElement|string
-     */
-    public function render(AbstractBlock $block, ElementRendererInterface $htmlRenderer, bool $inTightList = false)
+    public function render(Node $node, ChildNodeRendererInterface $childRenderer): \Stringable|string|null
     {
-        if (! ($block instanceof Paragraph)) {
-            throw new InvalidArgumentException('Incompatible block type: '.get_class($block));
+        if (! $node instanceof Paragraph) {
+            throw new InvalidArgumentException('Incompatible node type: '.get_class($node));
         }
 
-        $children = $block->children();
+        $firstChild = $node->firstChild();
 
-        if (count($children) === 1 && Arr::first($children) instanceof Image) {
-            return $htmlRenderer->renderInlines($children);
+        if ($firstChild instanceof Image && $firstChild->next() === null) {
+            return $childRenderer->renderNodes($node->children());
         }
 
-        if ($inTightList) {
-            return $htmlRenderer->renderInlines($children);
+        if ($this->inTightList($node)) {
+            return $childRenderer->renderNodes($node->children());
         }
 
-        $attrs = $block->getData('attributes', []);
+        return new HtmlElement(
+            'p',
+            $node->data->get('attributes'),
+            $childRenderer->renderNodes($node->children()),
+        );
+    }
 
-        return new HtmlElement('p', $attrs, $htmlRenderer->renderInlines($children));
+    private function inTightList(Paragraph $node): bool
+    {
+        $levels = 2;
+
+        while (($parent = $node->parent()) && $levels--) {
+            if ($parent instanceof TightBlockInterface) {
+                return $parent->isTight();
+            }
+
+            $node = $parent;
+        }
+
+        return false;
     }
 }

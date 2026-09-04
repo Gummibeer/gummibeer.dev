@@ -1,0 +1,35 @@
+title: Strava
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Totals
+        fields:
+          -
+            handle: count
+            field:
+              type: integer
+              display: Count
+              min: 0
+          -
+            handle: distance
+            field:
+              type: integer
+              display: Distance
+              append: m
+              min: 0
+          -
+            handle: elevation_gain
+            field:
+              type: integer
+              display: 'Elevation Gain'
+              append: m
+              min: 0
+          -
+            handle: moving_time
+            field:
+              type: integer
+              display: 'Moving Time'
+              append: s
+              min: 0

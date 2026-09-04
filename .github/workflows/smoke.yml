@@ -1,0 +1,51 @@
+name: smoke
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  smoke:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      APP_ENV: production
+      APP_DEBUG: false
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      APP_URL: http://localhost
+      CP_ENABLED: false
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: shivammathur/setup-php@v2
+        with:
+          php-version: 8.5
+          extensions: gd, intl
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+          cache: npm
+
+      - run: cp .env.example .env
+      - run: composer install --no-dev --prefer-dist --no-interaction --no-progress --optimize-autoloader --no-scripts
+      - run: npm ci --no-audit --no-fund
+      - run: php artisan package:discover --ansi --no-interaction
+      - run: php artisan about --only=environment
+      - run: php artisan route:list --except-vendor
+      - run: php artisan optimize:clear --no-interaction
+      - run: php artisan statamic:stache:clear --no-interaction
+      - run: php artisan statamic:stache:warm --no-interaction
+      - run: php artisan statamic:search:update --all --no-interaction
+      - run: php artisan config:cache --no-interaction
+      - run: php artisan route:cache --no-interaction
+      - run: php artisan view:cache --no-interaction
+      - run: php artisan icons:cache --no-interaction
+      - run: npm run build

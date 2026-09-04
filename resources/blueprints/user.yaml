@@ -1,0 +1,45 @@
+title: User
+fields:
+  -
+    handle: name
+    field:
+      type: text
+      display: Name
+      required: true
+      validate: required
+  -
+    handle: email
+    field:
+      type: text
+      input: email
+      display: Email Address
+  -
+    handle: slug
+    field:
+      type: text
+      display: Slug
+  -
+    handle: nickname
+    field:
+      type: text
+      display: Nickname
+  -
+    handle: firstname
+    field:
+      type: text
+      display: 'First name'
+  -
+    handle: lastname
+    field:
+      type: text
+      display: 'Last name'
+  -
+    handle: roles
+    field:
+      type: user_roles
+      width: 50
+  -
+    handle: groups
+    field:
+      type: user_groups
+      width: 50

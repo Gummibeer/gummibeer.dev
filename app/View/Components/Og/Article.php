@@ -2,40 +2,38 @@
 
 namespace App\View\Components\Og;
 
-use App\Post;
-use App\Services\MetaBag;
 use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
+use Carbon\Carbon;
 use Illuminate\View\Component;
+use Statamic\Contracts\Entries\Entry as EntryContract;
 
 class Article extends Component
 {
-    protected MetaBag $meta;
+    protected EntryContract $post;
 
-    protected Post $post;
+    protected string $siteName;
 
-    public function __construct(MetaBag $meta, Post $post)
+    public function __construct(EntryContract $post, string $siteName)
     {
-        $this->meta = $meta;
         $this->post = $post;
+        $this->siteName = $siteName;
     }
 
     public function render(): string
     {
+        $title = $this->post->value('title').' | '.$this->siteName;
+        $description = (string) $this->post->value('description');
+
         return implode(PHP_EOL, [
-            OpenGraph::article($this->meta->title)
-                ->url(url()->current())
-                ->when($this->meta->description)->description($this->meta->description)
-                ->author($this->post->author->url)
-                ->publishedAt($this->post->date)
-                ->modifiedAt($this->post->modified_at)
-                ->when($this->meta->image)->image($this->meta->image)
+            OpenGraph::article($title)
+                ->url((string) $this->post->absoluteUrl())
+                ->when($description)->description($description)
+                ->publishedAt($this->post->date())
+                ->modifiedAt(Carbon::createFromTimestampUTC(filemtime($this->post->path())))
                 ->locale(str_replace('-', '_', app()->getLocale())),
-            Twitter::summaryLargeImage($this->meta->title)
-                ->when($this->meta->description)->description($this->meta->description)
-                ->when($this->meta->image)->image($this->meta->image)
-                ->site(config('app.name'))
-                ->creator($this->post->author->twitter),
+            Twitter::summaryLargeImage($title)
+                ->when($description)->description($description),
         ]);
     }
 }

@@ -1,0 +1,88 @@
+title: Post
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: title
+            field:
+              type: text
+              required: true
+              display: Title
+              validate: required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              container: images
+              folder: posts
+              restrict: true
+          -
+            handle: categories
+            field:
+              type: terms
+              display: Categories
+              taxonomies:
+                - categories
+              mode: select
+              create: true
+          -
+            handle: image
+            field:
+              type: assets
+              display: Image
+              container: images
+              folder: posts
+              restrict: true
+              allow_uploads: true
+              max_files: 1
+          -
+            handle: images
+            field:
+              type: assets
+              display: Images
+              container: images
+              folder: posts
+              restrict: true
+              allow_uploads: true
+              mode: grid
+          -
+            handle: image_credits
+            field:
+              type: text
+              display: 'Image Credits'
+          -
+            handle: author
+            field:
+              type: users
+              display: Author
+              required: true
+              max_items: 1
+              mode: select
+              default: current
+              validate: required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+  sidebar:
+    sections:
+      -
+        fields:
+          -
+            handle: slug
+            field:
+              type: slug
+              localizable: true
+              validate:
+                - 'max:200'
+                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+          -
+            handle: date
+            field:
+              type: date
+              required: true
+              default: now

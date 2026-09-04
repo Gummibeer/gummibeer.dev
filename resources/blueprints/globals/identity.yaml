@@ -1,0 +1,134 @@
+title: Identity
+tabs:
+  main:
+    display: Main
+    sections:
+      -
+        display: Identity
+        fields:
+          -
+            handle: site_name
+            field:
+              type: text
+              display: 'Site Name'
+              required: true
+              validate:
+                - required
+          -
+            handle: brand_name
+            field:
+              type: text
+              display: 'Brand Name'
+              required: true
+              validate:
+                - required
+          -
+            handle: tagline
+            field:
+              type: text
+              display: Tagline
+              required: true
+              validate:
+                - required
+          -
+            handle: copyright_name
+            field:
+              type: text
+              display: 'Copyright Name'
+              required: true
+              validate:
+                - required
+          -
+            handle: copyright_since
+            field:
+              type: text
+              input_type: number
+              display: 'Copyright Since'
+              required: true
+              validate:
+                - required
+                - integer
+      -
+        display: Contact
+        fields:
+          -
+            handle: phone
+            field:
+              type: text
+              input_type: tel
+              display: Phone
+              required: true
+              validate:
+                - required
+          -
+            handle: email
+            field:
+              type: text
+              input_type: email
+              display: Email
+              required: true
+              validate:
+                - required
+                - email
+      -
+        display: Social
+        fields:
+          -
+            handle: github_url
+            field:
+              type: link
+              display: GitHub
+              required: true
+              validate:
+                - required
+          -
+            handle: steam_url
+            field:
+              type: link
+              display: Steam
+              required: true
+              validate:
+                - required
+      -
+        display: Legal
+        fields:
+          -
+            handle: imprint_label
+            field:
+              type: text
+              display: 'Imprint Label'
+              required: true
+              validate:
+                - required
+          -
+            handle: imprint_page
+            field:
+              type: entries
+              display: 'Imprint Page'
+              collections:
+                - pages
+              max_items: 1
+              mode: select
+              required: true
+              validate:
+                - required
+          -
+            handle: privacy_label
+            field:
+              type: text
+              display: 'Privacy Label'
+              required: true
+              validate:
+                - required
+          -
+            handle: privacy_page
+            field:
+              type: entries
+              display: 'Privacy Page'
+              collections:
+                - pages
+              max_items: 1
+              mode: select
+              required: true
+              validate:
+                - required

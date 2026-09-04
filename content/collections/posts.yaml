@@ -1,0 +1,13 @@
+title: Posts
+default_status: draft
+date: true
+date_behavior:
+  past: public
+  future: private
+sort_dir: desc
+search_index: blog
+mount: ff99d13f-f5d7-4dd7-8d71-60aeb0f1bd43
+route: '/{mount}/{year}/{slug}'
+template: pages/blog/post
+taxonomies:
+  - categories

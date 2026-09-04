@@ -2,75 +2,122 @@
 
 namespace App\Console\Commands;
 
-use App\Post;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
-use Symfony\Component\Process\ExecutableFinder;
-use Symfony\Component\Process\Process;
+use RuntimeException;
+use Spatie\Browsershot\Browsershot;
+use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Entries\Entry as StatamicEntry;
+use Statamic\Facades\Entry;
+use Statamic\Facades\GlobalSet;
 
 class GenerateOgImages extends Command
 {
     protected $signature = 'generate:og:images {--force}';
 
-    protected $description = 'Generate all og:images for posts and static pages.';
+    protected $description = 'Generate all og:images for posts, pages, and standalone routes.';
 
     public function handle(): void
     {
-        Post::all()->each(function (Post $post): void {
-            $html = <<<HTML
-                <div style="font-size:8rem;">
-                    <div class="font-logo text-center text-brand" style="font-size:10rem;margin-bottom: 0.75em;">Tom Herrmann</div>
-                    <h1 class="text-black text-center" style="margin-bottom: 0.5em;">{$post->title}</h1>
-                    <div class="text-snow-20 text-sm" style="font-size:0.5em;">
-                        <ul class="flex flex-row list-none" style="justify-content:center;">
-                            <li style="margin-right: 1em;">
-                                <i class="fal fa-fw fa-calendar" style="margin-right: 0.25em;"></i>
-                                {$post->date->format('M jS, Y')}
-                            </li>
-                            <li>
-                                <i class="fal fa-fw fa-clock" style="margin-right: 0.25em;"></i>
-                                {$post->read_time} min read
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            HTML;
+        Entry::query()
+            ->where('collection', 'posts')
+            ->whereStatus('published')
+            ->get()
+            ->each(function (EntryContract $post): void {
+                $date = $post->date();
 
-            $this->saveImage("images/og/posts/{$post->date->format('Y-m-d')}.{$post->slug}.png", $html);
-        });
+                $this->saveImage(
+                    "images/og/posts/{$date->format('Y-m-d')}.{$post->slug()}.png",
+                    [
+                        'title' => (string) $post->value('title'),
+                        'date' => $date,
+                        'readTime' => $post->read_time,
+                    ],
+                );
+            });
 
-        collect([
-            'home' => 'Developer / Biker / Gamer',
-            'me' => 'Developer / Biker / Gamer',
-            'blog' => 'Blog',
-            'portfolio' => 'Portfolio',
-            'charity' => 'Charity',
-            'uses' => 'Uses',
-        ])->each(function (string $title, string $slug): void {
-            $html = <<<HTML
-                <div style="font-size:8rem;">
-                    <div class="font-logo text-center text-brand" style="font-size:10rem;margin-bottom: 0.75em;">Tom Herrmann</div>
-                    <h1 class="text-black text-center">{$title}</h1>
-                </div>
-            HTML;
+        Entry::whereCollection('pages')
+            ->each(function (mixed $page): void {
+                if (! $page instanceof StatamicEntry || ! $page->published()) {
+                    return;
+                }
 
-            $this->saveImage("images/og/static/{$slug}.png", $html);
-        });
+                $this->saveImage(
+                    "images/og/static/{$page->slug()}.png",
+                    ['title' => (string) $page->value('title')],
+                );
+            });
+
+        $identity = GlobalSet::findByHandle('identity');
+
+        if (! $identity) {
+            throw new RuntimeException('The Statamic identity global is missing.');
+        }
+
+        $this->saveImage(
+            'images/og/static/home.png',
+            ['title' => (string) $identity->inDefaultSite()->get('tagline')],
+        );
     }
 
-    protected function saveImage(string $path, string $html): void
+    /**
+     * @param  array{title: string, date?: mixed, readTime?: float}  $data
+     */
+    protected function saveImage(string $path, array $data): void
     {
         $path = resource_path($path);
         File::ensureDirectoryExists(dirname($path));
 
-        if(!File::exists($path) || $this->option('force')) {
-            $process = new Process([
-                (new ExecutableFinder)->find('node'),
-                base_path('.og/index.js'),
-                '--path=' . $path,
-                trim($html),
-            ]);
-            $process->mustRun();
+        if (File::exists($path) && ! $this->option('force')) {
+            return;
         }
+
+        $html = view('og.image', [
+            ...$data,
+            'identity' => GlobalSet::findByHandle('identity')->inDefaultSite(),
+            'stylesheet' => $this->stylesheet(),
+            'interFont' => $this->fontDataUrl(base_path('node_modules/@fontsource-variable/inter/files/inter-latin-wght-normal.woff2')),
+            'logoFont' => $this->fontDataUrl(base_path('node_modules/@fontsource/permanent-marker/files/permanent-marker-latin-400-normal.woff2')),
+        ])->render();
+
+        Browsershot::html($html)
+            ->setNodeModulePath(base_path('node_modules'))
+            ->windowSize(2048, 1170)
+            ->waitForFunction('document.fonts.status === "loaded"')
+            ->save($path);
+    }
+
+    private function stylesheet(): string
+    {
+        $manifestPath = public_path('build/manifest.json');
+
+        if (! File::exists($manifestPath)) {
+            throw new RuntimeException('Vite assets are missing. Run `npm run build` before generating OG images.');
+        }
+
+        /** @var array<string, array{file?: string}> $manifest */
+        $manifest = json_decode(File::get($manifestPath), true, 512, JSON_THROW_ON_ERROR);
+        $stylesheet = $manifest['resources/css/app.css']['file'] ?? null;
+
+        if ($stylesheet === null) {
+            throw new RuntimeException('The Vite manifest does not contain resources/css/app.css.');
+        }
+
+        $stylesheetPath = public_path('build/'.$stylesheet);
+
+        if (! File::exists($stylesheetPath)) {
+            throw new RuntimeException('The compiled Vite stylesheet is missing. Run `npm run build` before generating OG images.');
+        }
+
+        return File::get($stylesheetPath);
+    }
+
+    private function fontDataUrl(string $path): string
+    {
+        if (! File::exists($path)) {
+            throw new RuntimeException("Font asset is missing at {$path}. Run `npm install` before generating OG images.");
+        }
+
+        return 'data:font/woff2;base64,'.base64_encode(File::get($path));
     }
 }
