@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\AddLinkHeaders;
 use App\Http\Middleware\NegotiateMarkdown;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -25,6 +26,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ShareErrorsFromSession::class,
             PreventRequestForgery::class,
         ]);
+        $middleware->prependToGroup('web', AddLinkHeaders::class);
         $middleware->appendToGroup('web', NegotiateMarkdown::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
