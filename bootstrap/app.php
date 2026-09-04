@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Middleware\NegotiateMarkdown;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Application;
@@ -24,6 +25,7 @@ return Application::configure(basePath: dirname(__DIR__))
             ShareErrorsFromSession::class,
             PreventRequestForgery::class,
         ]);
+        $middleware->appendToGroup('web', NegotiateMarkdown::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         $exceptions->shouldRenderJsonWhen(
@@ -45,6 +47,6 @@ return Application::configure(basePath: dirname(__DIR__))
             return response()
                 ->view('errors.404-markdown', status: 404)
                 ->header('Content-Type', 'text/markdown; charset=UTF-8')
-                ->header('Vary', 'Accept');
+                ->header('Vary', 'Accept, Accept-Encoding');
         });
     })->create();

@@ -11,8 +11,7 @@ class MarkdownDataResponse extends DataResponse
     protected function contents(): string
     {
         $description = Str::of((string) $this->data->value('description'))->trim();
-
-        return Str::of((string) $this->data->value('content'))
+        $markdown = Str::of((string) $this->data->value('content'))
             ->trim()
             ->unless(
                 fn (Stringable $content): bool => $content->startsWith('# '),
@@ -27,8 +26,21 @@ class MarkdownDataResponse extends DataResponse
                         $content->isNotEmpty(),
                         fn (Stringable $markdown): Stringable => $markdown->append(PHP_EOL.PHP_EOL, $content),
                     ),
-            )
-            ->append(PHP_EOL)
+            );
+        $frontmatter = [
+            '---',
+            'title: '.$this->yamlScalar((string) $this->data->title()),
+        ];
+
+        if ($description->isNotEmpty()) {
+            $frontmatter[] = 'description: '.$this->yamlScalar($description->toString());
+        }
+
+        $frontmatter[] = 'canonical: '.$this->yamlScalar($this->data->absoluteUrl());
+        $frontmatter[] = '---';
+
+        return Str::of(implode(PHP_EOL, $frontmatter))
+            ->append(PHP_EOL.PHP_EOL, $markdown, PHP_EOL)
             ->toString();
     }
 
@@ -48,7 +60,16 @@ class MarkdownDataResponse extends DataResponse
             '<%s>; rel="canonical"; type="text/html"',
             $this->data->absoluteUrl(),
         );
+        $this->setVary(array_unique([...$this->getVary(), 'Accept', 'Accept-Encoding', 'User-Agent']));
 
         return $this;
+    }
+
+    private function yamlScalar(string $value): string
+    {
+        return json_encode(
+            $value,
+            JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE | JSON_THROW_ON_ERROR,
+        );
     }
 }
