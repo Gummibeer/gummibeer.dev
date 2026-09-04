@@ -10,13 +10,13 @@ class MarkdownDataResponse extends DataResponse
 {
     protected function contents(): string
     {
+        $title = Str::of((string) $this->data->value('title'))->trim();
         $description = Str::of((string) $this->data->value('description'))->trim();
         $markdown = Str::of((string) $this->data->value('content'))
             ->trim()
             ->unless(
                 fn (Stringable $content): bool => $content->startsWith('# '),
-                fn (Stringable $content): Stringable => Str::of((string) $this->data->title())
-                    ->trim()
+                fn (Stringable $content): Stringable => $title
                     ->prepend('# ')
                     ->when(
                         $description->isNotEmpty(),
@@ -29,7 +29,7 @@ class MarkdownDataResponse extends DataResponse
             );
         $frontmatter = [
             '---',
-            'title: '.$this->yamlScalar((string) $this->data->title()),
+            'title: '.$this->yamlScalar($title->toString()),
         ];
 
         if ($description->isNotEmpty()) {
