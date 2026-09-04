@@ -60,7 +60,16 @@ class MarkdownDataResponse extends DataResponse
             '<%s>; rel="canonical"; type="text/html"',
             $this->data->absoluteUrl(),
         );
-        $this->setVary(array_unique([...$this->getVary(), 'Accept', 'Accept-Encoding', 'User-Agent']));
+        $vary = array_filter(array_map(
+            trim(...),
+            explode(',', (string) ($this->headers['Vary'] ?? '')),
+        ));
+        $this->headers['Vary'] = implode(', ', array_unique([
+            ...$vary,
+            'Accept',
+            'Accept-Encoding',
+            'User-Agent',
+        ]));
 
         return $this;
     }
