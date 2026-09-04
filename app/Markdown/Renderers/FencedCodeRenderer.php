@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Services;
+namespace App\Markdown\Renderers;
 
 use Illuminate\Support\HtmlString;
 use InvalidArgumentException;

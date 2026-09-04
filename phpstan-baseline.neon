@@ -4,4 +4,4 @@ parameters:
 			message: '#^Calling htmlspecialchars\(\) is forbidden, set the \$flags parameter to `ENT_QUOTES` to also convert single quotes to entities to prevent some HTML injection bugs\.$#'
 			identifier: disallowed.function
 			count: 1
-			path: app/Services/FencedCodeRenderer.php
+			path: app/Markdown/Renderers/FencedCodeRenderer.php
