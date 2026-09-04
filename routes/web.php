@@ -4,7 +4,6 @@ use App\Http\Controllers\Blog\Category\FeedController as CategoryFeedController;
 use App\Http\Controllers\Blog\FeedController as BlogFeedController;
 use App\Http\Controllers\GetMarkdownController;
 use App\Http\Controllers\GetSitemapController;
-use Illuminate\Http\Response;
 use Illuminate\Support\Facades\Route;
 
 Route::name('blog.')->group(function (): void {
@@ -17,41 +16,3 @@ Route::get('{uri}.md', GetMarkdownController::class)
     ->where('uri', '.*')
     ->name('markdown');
 Route::get('sitemap.xml', GetSitemapController::class)->name('sitemap.xml');
-
-Route::get('robots.txt', static function (): Response {
-    $content = implode(PHP_EOL, [
-        'User-agent: *',
-        'Allow: /',
-        '',
-        'User-agent: OAI-SearchBot',
-        'Allow: /',
-        '',
-        'User-agent: Claude-SearchBot',
-        'Allow: /',
-        '',
-        'User-agent: Claude-User',
-        'Allow: /',
-        '',
-        'User-agent: PerplexityBot',
-        'Allow: /',
-        '',
-        'User-agent: GPTBot',
-        'Disallow: /',
-        '',
-        'User-agent: ClaudeBot',
-        'Disallow: /',
-        '',
-        'User-agent: CCBot',
-        'Disallow: /',
-        '',
-        'User-agent: ByteSpider',
-        'Disallow: /',
-        '',
-        'Content-Signal: search=yes, ai-train=no',
-        '',
-        'Sitemap: '.route('sitemap.xml'),
-    ]);
-
-    return response($content)
-        ->header('Content-Type', 'text/plain; charset=UTF-8');
-})->name('robots.txt');
