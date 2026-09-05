@@ -2,8 +2,8 @@
 
 namespace App\Http\Responses;
 
-use Illuminate\Support\Stringable;
 use Illuminate\Support\Str;
+use Illuminate\Support\Stringable;
 use Statamic\Http\Responses\DataResponse;
 
 class MarkdownDataResponse extends DataResponse
