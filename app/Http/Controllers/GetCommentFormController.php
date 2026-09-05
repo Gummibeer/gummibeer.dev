@@ -9,9 +9,10 @@ class GetCommentFormController
 {
     public function __invoke(string $post): View
     {
-        $entry = Entry::find($post);
-
-        abort_unless($entry && $entry->collection()->handle() === 'posts', 404);
+        $entry = Entry::query()
+            ->where('collection', 'posts')
+            ->where('id', $post)
+            ->firstOrFail();
 
         return view('comments.form', [
             'post' => $entry,
