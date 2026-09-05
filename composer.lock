@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "8cd9b2b6ca4977b1e8d3eb20b192101f",
+    "content-hash": "2cf1508f07b003c0f011a87f2d43c38b",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -2236,6 +2236,87 @@
                 "source": "https://github.com/JamesHeinrich/getID3/tree/v1.9.25"
             },
             "time": "2026-03-10T11:56:47+00:00"
+        },
+        {
+            "name": "laragear/turnstile",
+            "version": "v2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Laragear/Turnstile.git",
+                "reference": "7658007d5f9273108381d827e7956d91de1ec92e"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Laragear/Turnstile/zipball/7658007d5f9273108381d827e7956d91de1ec92e",
+                "reference": "7658007d5f9273108381d827e7956d91de1ec92e",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*",
+                "illuminate/container": "12.*|13.*",
+                "illuminate/events": "12.*|13.*",
+                "illuminate/http": "12.*|13.*",
+                "illuminate/routing": "12.*|13.*",
+                "illuminate/session": "12.*|13.*",
+                "illuminate/support": "12.*|13.*",
+                "php": "^8.3"
+            },
+            "require-dev": {
+                "filament/filament": "5.*",
+                "livewire/livewire": "4.*",
+                "orchestra/testbench": "10.*|11.*"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "aliases": {
+                        "Turnstile": "Laragear\\Turnstile\\Facades\\Turnstile"
+                    },
+                    "providers": [
+                        "Laragear\\Turnstile\\TurnstileServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Laragear\\Turnstile\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Italo Israel Baeza Cabrera",
+                    "email": "darkghosthunter@gmail.com",
+                    "homepage": "https://github.com/sponsors/DarkGhostHunter"
+                }
+            ],
+            "description": "Use Cloudflare's no-CAPTCHA with HTTP/3 in your Laravel application.",
+            "keywords": [
+                "captcha",
+                "cloudflare",
+                "http2",
+                "http3",
+                "laragear",
+                "turnstile"
+            ],
+            "support": {
+                "issues": "https://github.com/Laragear/Turnstile/issues",
+                "source": "https://github.com/Laragear/Turnstile"
+            },
+            "funding": [
+                {
+                    "url": "https://github.com/sponsors/DarkGhostHunter",
+                    "type": "Github Sponsorship"
+                },
+                {
+                    "url": "https://paypal.me/darkghosthunter",
+                    "type": "Paypal"
+                }
+            ],
+            "time": "2026-04-16T18:18:11+00:00"
         },
         {
             "name": "laragraph/utils",
