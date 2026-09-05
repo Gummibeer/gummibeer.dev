@@ -54,7 +54,7 @@ class StoreComment
             $this->throwTurnstileValidationException();
         }
 
-        if (! $challenge->successful || $challenge->isNotAction('comment')) {
+        if ($challenge->isFailure() || $challenge->isNotAction('comment')) {
             $this->throwTurnstileValidationException();
         }
     }
