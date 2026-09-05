@@ -56,6 +56,7 @@ Alpine.data('comments', (formUrl, siteKey) => ({
             }
 
             this.$refs.form.innerHTML = await response.text();
+            Alpine.initTree(this.$refs.form);
 
             if (!siteKey) {
                 throw new Error('Turnstile site key is missing.');
