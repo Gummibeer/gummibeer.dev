@@ -55,6 +55,7 @@ Alpine.data('comments', (siteKey) => ({
                 action: 'comment',
             });
         } catch {
+            this.opened = false;
             this.error = 'Could not load comment verification. Please try again.';
         } finally {
             this.loading = false;
