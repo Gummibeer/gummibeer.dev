@@ -10,7 +10,10 @@
                 <article>
                     <header class="mb-2 flex flex-wrap items-baseline gap-x-2 text-sm">
                         <strong>{{ $comment->value('name') }}</strong>
-                        <time datetime="{{ $comment->date()->toAtomString() }}" class="text-night-60">
+                        <time
+                            datetime="{{ $comment->date()->toAtomString() }}"
+                            class="text-night-60"
+                        >
                             {{ $comment->date()->format('M j, Y') }}
                         </time>
                     </header>
@@ -30,13 +33,15 @@
         </button>
     </div>
 
-    <div x-ref="form" x-show="opened && !success" x-cloak>
+    <div
+        x-ref="form"
+        x-show="opened && !success"
+        x-cloak
+    >
         <x-comments.form :post="$post" />
     </div>
 
-    <p x-show="success" x-cloak class="font-bold">
-        Thanks! Your comment is waiting for approval.
-    </p>
+    <p x-show="success" x-cloak class="font-bold">Thanks! Your comment is waiting for approval.</p>
 
     <p x-show="error" x-cloak class="mt-3 text-sm font-bold" x-text="error"></p>
 </section>

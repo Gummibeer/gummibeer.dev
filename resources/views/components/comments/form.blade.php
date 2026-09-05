@@ -1,4 +1,4 @@
-@props(['post'])
+@props (['post'])
 
 <form
     method="POST"
@@ -6,12 +6,24 @@
     class="space-y-4"
     @submit.prevent="submit($event.currentTarget)"
 >
-    <input type="hidden" name="post" value="{{ $post->id() }}" />
+    <input
+        type="hidden"
+        name="post"
+        value="{{ $post->id() }}"
+    />
 
-    <div class="hidden" aria-hidden="true">
+    <div
+        class="hidden"
+        aria-hidden="true"
+    >
         <label>
             Email
-            <input type="email" name="email" tabindex="-1" autocomplete="off" />
+            <input
+                type="email"
+                name="email"
+                tabindex="-1"
+                autocomplete="off"
+            />
         </label>
     </div>
 
