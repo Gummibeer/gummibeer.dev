@@ -1,6 +1,6 @@
 <section
     class="mt-16 border-t border-night-10 pt-8"
-    x-data="comments(@js(config('services.turnstile.site_key')))"
+    x-data="comments"
 >
     <h2 class="mb-6 text-2xl font-bold">Comments</h2>
 
