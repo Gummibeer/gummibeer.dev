@@ -38,5 +38,5 @@
         Thanks! Your comment is waiting for approval.
     </p>
 
-    <p x-show="error && opened" x-cloak class="mt-3 text-sm font-bold" x-text="error"></p>
+    <p x-show="error" x-cloak class="mt-3 text-sm font-bold" x-text="error"></p>
 </section>
