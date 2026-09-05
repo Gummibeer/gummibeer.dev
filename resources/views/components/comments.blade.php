@@ -1,6 +1,6 @@
 <section
     class="mt-16 border-t border-night-10 pt-8"
-    x-data="comments(@js(route('comments.form', $post->id())), @js(config('services.turnstile.site_key')))"
+    x-data="comments(@js(config('services.turnstile.site_key')))"
 >
     <h2 class="mb-6 text-2xl font-bold">Comments</h2>
 
@@ -20,23 +20,23 @@
         </div>
     @endif
 
-    <div x-show="!loaded && !success">
+    <div x-show="!opened && !success">
         <button
             type="button"
-            class="rounded-1 bg-brand px-4 py-2 font-bold text-night-0 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-wait disabled:opacity-50"
-            @click="load"
-            :disabled="loading"
+            class="rounded-1 bg-brand px-4 py-2 font-bold text-night-0 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+            @click="showForm"
         >
-            <span x-show="!loading">Leave a comment</span>
-            <span x-show="loading" x-cloak>Loading…</span>
+            Leave a comment
         </button>
     </div>
 
-    <div x-ref="form" x-show="loaded && !success" x-cloak></div>
+    <div x-ref="form" x-show="opened && !success" x-cloak>
+        @include('comments.form')
+    </div>
 
     <p x-show="success" x-cloak class="font-bold">
         Thanks! Your comment is waiting for approval.
     </p>
 
-    <p x-show="error && !loaded" x-cloak class="mt-3 text-sm font-bold" x-text="error"></p>
+    <p x-show="error && opened" x-cloak class="mt-3 text-sm font-bold" x-text="error"></p>
 </section>
