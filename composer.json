@@ -23,6 +23,7 @@
         "astrotomic/php-unavatar": "^0.3.0",
         "astrotomic/pixpipe": "^0.1.0",
         "blade-ui-kit/blade-icons": "^1.10.1",
+        "laragear/turnstile": "^2.1",
         "laravel/framework": "^13.30.1",
         "league/commonmark": "^2.10",
         "spatie/browsershot": "^5.4",
