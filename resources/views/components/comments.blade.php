@@ -31,7 +31,7 @@
     </div>
 
     <div x-ref="form" x-show="opened && !success" x-cloak>
-        @include('comments.form')
+        <x-comments.form :post="$post" />
     </div>
 
     <p x-show="success" x-cloak class="font-bold">
