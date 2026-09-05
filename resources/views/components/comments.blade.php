@@ -1,14 +1,3 @@
-@props(['post'])
-
-@php
-    $comments = \Statamic\Facades\Entry::query()
-        ->where('collection', 'comments')
-        ->whereStatus('published')
-        ->where('post', $post->id())
-        ->orderBy('date', 'asc')
-        ->get();
-@endphp
-
 <section
     class="mt-16 border-t border-night-10 pt-8"
     x-data="comments(@js(route('comments.form', $post->id())), @js(config('services.turnstile.site_key')))"
