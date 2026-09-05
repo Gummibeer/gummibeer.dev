@@ -28,7 +28,7 @@ const loadTurnstile = () => {
     return turnstilePromise;
 };
 
-Alpine.data('comments', (siteKey) => ({
+Alpine.data('comments', () => ({
     opened: false,
     loading: false,
     success: false,
@@ -44,15 +44,12 @@ Alpine.data('comments', (siteKey) => ({
         this.error = null;
 
         try {
-            if (!siteKey) {
-                throw new Error('Turnstile site key is missing.');
-            }
-
             const turnstile = await loadTurnstile();
-            const container = this.$refs.form.querySelector('[data-turnstile]');
+            const container = this.$refs.form.querySelector('.cf-turnstile');
+
             this.widgetId = turnstile.render(container, {
-                sitekey: siteKey,
-                action: 'comment',
+                sitekey: container.dataset.sitekey,
+                action: container.dataset.action,
             });
         } catch {
             this.opened = false;
