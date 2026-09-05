@@ -4,9 +4,11 @@ namespace App\Listeners;
 
 use Carbon\CarbonImmutable;
 use Illuminate\Http\Client\ConnectionException;
-use Illuminate\Support\Facades\Http;
+use Illuminate\Http\Client\RequestException;
 use Illuminate\Support\Str;
 use Illuminate\Validation\ValidationException;
+use Laragear\Turnstile\Exceptions\InvalidChallengeException;
+use Laragear\Turnstile\Facades\Turnstile;
 use Statamic\Events\FormSubmitted;
 use Statamic\Facades\Entry;
 
@@ -40,33 +42,27 @@ class StoreComment
 
     private function validateTurnstile(): void
     {
-        $secret = (string) config('services.turnstile.secret_key');
         $token = (string) request()->input('cf-turnstile-response');
 
-        if ($secret === '' || $token === '') {
-            throw ValidationException::withMessages([
-                'turnstile' => 'Turnstile verification failed. Please try again.',
-            ]);
+        if ($token === '') {
+            $this->throwTurnstileValidationException();
         }
 
         try {
-            $response = Http::asForm()
-                ->connectTimeout(2)
-                ->timeout(5)
-                ->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
-                    'secret' => $secret,
-                    'response' => $token,
-                ]);
-        } catch (ConnectionException) {
-            throw ValidationException::withMessages([
-                'turnstile' => 'Turnstile verification failed. Please try again.',
-            ]);
+            $challenge = Turnstile::getChallenge($token, save: false);
+        } catch (ConnectionException|RequestException|InvalidChallengeException) {
+            $this->throwTurnstileValidationException();
         }
 
-        if (! $response->successful() || ! $response->json('success') || $response->json('action') !== 'comment') {
-            throw ValidationException::withMessages([
-                'turnstile' => 'Turnstile verification failed. Please try again.',
-            ]);
+        if (! $challenge->successful || $challenge->isNotAction('comment')) {
+            $this->throwTurnstileValidationException();
         }
+    }
+
+    private function throwTurnstileValidationException(): never
+    {
+        throw ValidationException::withMessages([
+            'turnstile' => 'Turnstile verification failed. Please try again.',
+        ]);
     }
 }
