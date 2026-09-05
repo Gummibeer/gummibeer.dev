@@ -59,7 +59,6 @@ class StoreComment
                 ->post('https://challenges.cloudflare.com/turnstile/v0/siteverify', [
                     'secret' => $secret,
                     'response' => $token,
-                    'remoteip' => request()->ip(),
                 ]);
         } catch (ConnectionException) {
             throw ValidationException::withMessages([
