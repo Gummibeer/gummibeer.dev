@@ -16,7 +16,7 @@
         </div>
         <x-grid class="xl:grid-cols-4">
             @foreach ($hacktoberfests as $hacktoberfest)
-                <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
+                <div class="overflow-hidden rounded-4 bg-white shadow">
                     <x-img
                         :src="$hacktoberfest->image"
                         width="1024"
@@ -25,7 +25,7 @@
                     />
                     <div class="px-4 py-2">
                         <strong class="block">{{ $hacktoberfest->title }}</strong>
-                        <p class="text-sm text-snow-20 dark:text-snow-10">{{ $hacktoberfest->description }}</p>
+                        <p class="text-sm text-snow-20">{{ $hacktoberfest->description }}</p>
                     </div>
                 </div>
             @endforeach

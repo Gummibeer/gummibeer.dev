@@ -5,7 +5,7 @@
     <x-section class="bg-dotted">
         <x-grid class="xl:grid-cols-4">
             @foreach ($projects as $project)
-                <div class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
+                <div class="overflow-hidden rounded-4 bg-white shadow">
                     @if ($project->image)
                         <a
                             href="{{ $project->website }}"
@@ -30,7 +30,7 @@
                         >
                             <strong>{{ $project->value('title') }}</strong>
                         </a>
-                        <p class="text-sm text-snow-20 dark:text-snow-10">{{ $project->value('description') }}</p>
+                        <p class="text-sm text-snow-20">{{ $project->value('description') }}</p>
                     </div>
                 </div>
             @endforeach

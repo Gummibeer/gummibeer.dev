@@ -78,7 +78,7 @@
     @endif
     @stack ('head')
 </head>
-<body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0 dark:bg-night-0 dark:text-snow-0">
+<body class="line-numbers flex min-h-dvh flex-col bg-snow-0 text-night-0">
     <x-menu :identity="$identity" />
 
     <main class="relative flex-1">

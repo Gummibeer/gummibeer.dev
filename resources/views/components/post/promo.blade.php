@@ -24,7 +24,7 @@
                 class="mb-8 md:text-xl"
             />
         @endif
-        <h3 class="mb-8 text-3xl leading-none font-bold text-night-0 dark:text-white">
+        <h3 class="mb-8 text-3xl leading-none font-bold text-night-0">
             <a
                 href="{{ $post->permalink }}"
                 class="hover:underlined"

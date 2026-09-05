@@ -1,6 +1,6 @@
 @props (['identity'])
 
-<header class="sticky top-0 right-0 left-0 z-10 bg-white shadow dark:bg-night-10">
+<header class="sticky top-0 right-0 left-0 z-10 bg-white shadow">
     <nav
         class="flex flex-col px-4 md:flex-row md:justify-between md:px-8 lg:px-10 xl:px-12"
         x-data="{ show: false }"
@@ -50,7 +50,7 @@
                 <li class="flex items-center">
                     <a
                         href="{{ $url }}"
-                        class="@if ($is_current || ($url !== '/' && $is_parent)) text-brand @else text-black dark:text-white hover:text-brand @endif block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4"
+                        class="@if ($is_current || ($url !== '/' && $is_parent)) text-brand @else text-black hover:text-brand @endif block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4"
                         @if ($is_current) aria-current="page" @endif
                         >{{ $title }}</a
                     >

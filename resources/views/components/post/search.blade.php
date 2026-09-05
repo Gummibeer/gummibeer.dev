@@ -18,11 +18,11 @@
         placeholder="Search &mldr;"
         autocomplete="off"
         minlength="3"
-        class="min-w-0 flex-1 rounded-1 border-b-2 border-night-10 bg-white px-4 py-2 shadow focus:border-brand focus:outline-none dark:border-snow-10 dark:bg-night-10"
+        class="min-w-0 flex-1 rounded-1 border-b-2 border-night-10 bg-white px-4 py-2 shadow focus:border-brand focus:outline-none"
     />
     <button
         type="submit"
-        class="rounded-1 bg-brand px-4 py-2 font-bold text-night-0 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 dark:ring-offset-night-0"
+        class="rounded-1 bg-brand px-4 py-2 font-bold text-night-0 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
     >
         Search
     </button>

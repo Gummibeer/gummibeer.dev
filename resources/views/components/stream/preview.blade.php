@@ -3,7 +3,7 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $stream */ ?>
 @props (['stream'])
 
-<article class="overflow-hidden rounded-4 bg-white shadow dark:bg-night-20">
+<article class="overflow-hidden rounded-4 bg-white shadow">
     <a href="{{ $stream->video }}">
         <x-img
             :src="$stream->image"
@@ -20,7 +20,7 @@
             />
             <strong class="uppercase"> stream </strong>
         </div>
-        <h3 class="mb-4 text-2xl leading-none font-bold text-night-0 dark:text-white">
+        <h3 class="mb-4 text-2xl leading-none font-bold text-night-0">
             <a
                 href="{{ $stream->video }}"
                 class="hover:underlined"

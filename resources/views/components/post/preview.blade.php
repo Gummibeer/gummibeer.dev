@@ -2,7 +2,7 @@
 <?php /** @var Illuminate\Support\HtmlString $slot */ ?>
 <?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
 
-<article {{ $attributes->except('post')->merge(['class' => 'rounded-4 shadow bg-white dark:bg-night-20 overflow-hidden']) }}>
+<article {{ $attributes->except('post')->merge(['class' => 'rounded-4 shadow bg-white overflow-hidden']) }}>
     @if ($post->image)
         <a href="{{ $post->permalink }}">
             <x-img
@@ -21,7 +21,7 @@
                 class="mb-4"
             />
         @endif
-        <h3 class="mb-4 text-2xl leading-none font-bold text-night-0 dark:text-white">
+        <h3 class="mb-4 text-2xl leading-none font-bold text-night-0">
             <a
                 href="{{ $post->permalink }}"
                 class="hover:underlined"

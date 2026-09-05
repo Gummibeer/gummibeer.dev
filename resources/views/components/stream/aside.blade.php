@@ -3,7 +3,7 @@
 <?php /** @var Statamic\Contracts\Entries\Entry $stream */ ?>
 @props (['stream'])
 
-<aside {{ $attributes->merge(['class' => 'text-snow-20 dark:text-snow-10']) }}>
+<aside {{ $attributes->merge(['class' => 'text-snow-20']) }}>
     <ul class="flex list-none flex-col sm:flex-row sm:space-x-3">
         <li>
             <x-icon
