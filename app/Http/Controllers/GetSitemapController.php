@@ -23,6 +23,7 @@ class GetSitemapController
                 $sitemap->add(
                     Url::create($entry->absoluteUrl())
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                        ->setLastModificationDate($entry->last_modified_at)
                         ->setPriority(1)
                 );
             });

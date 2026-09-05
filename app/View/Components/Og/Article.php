@@ -4,7 +4,6 @@ namespace App\View\Components\Og;
 
 use Astrotomic\OpenGraph\OpenGraph;
 use Astrotomic\OpenGraph\Twitter;
-use Carbon\Carbon;
 use Illuminate\View\Component;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 
@@ -30,7 +29,7 @@ class Article extends Component
                 ->url((string) $this->post->absoluteUrl())
                 ->when($description)->description($description)
                 ->publishedAt($this->post->date())
-                ->modifiedAt(Carbon::createFromTimestampUTC(filemtime($this->post->path())))
+                ->modifiedAt($this->post->last_modified_at->toDateTime())
                 ->locale(str_replace('-', '_', app()->getLocale())),
             Twitter::summaryLargeImage($title)
                 ->when($description)->description($description),
