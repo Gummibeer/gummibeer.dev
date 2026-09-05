@@ -28,53 +28,34 @@ const loadTurnstile = () => {
     return turnstilePromise;
 };
 
-Alpine.data('comments', (formUrl, siteKey) => ({
+Alpine.data('comments', (siteKey) => ({
+    opened: false,
     loading: false,
-    loaded: false,
     success: false,
     error: null,
     widgetId: null,
-    async load() {
-        if (this.loaded || this.loading) {
+    async showForm() {
+        if (this.opened) {
             return;
         }
 
+        this.opened = true;
         this.loading = true;
         this.error = null;
 
         try {
-            const response = await fetch(formUrl, {
-                headers: {
-                    Accept: 'text/html',
-                    'X-Requested-With': 'XMLHttpRequest',
-                },
-            });
-
-            if (!response.ok) {
-                throw new Error('Comment form request failed.');
-            }
-
-            this.$refs.form.innerHTML = await response.text();
-
-            const form = this.$refs.form.querySelector('form');
-            form.addEventListener('submit', (event) => {
-                event.preventDefault();
-                this.submit(form);
-            });
-
             if (!siteKey) {
                 throw new Error('Turnstile site key is missing.');
             }
 
             const turnstile = await loadTurnstile();
-            const container = form.querySelector('[data-turnstile]');
+            const container = this.$refs.form.querySelector('[data-turnstile]');
             this.widgetId = turnstile.render(container, {
                 sitekey: siteKey,
                 action: 'comment',
             });
-            this.loaded = true;
         } catch {
-            this.error = 'Could not load the comment form. Please try again.';
+            this.error = 'Could not load comment verification. Please try again.';
         } finally {
             this.loading = false;
         }
