@@ -7,6 +7,7 @@ use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\ParagraphRenderer;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
+use Carbon\CarbonImmutable;
 use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Router;
@@ -59,6 +60,11 @@ class AppServiceProvider extends ServiceProvider
                 $minutes = ceil(($wordCount / $wordsPerMinute) * 2) / 2;
 
                 return max(1, $minutes);
+            },
+            'last_modified_at' => static function (EntryContract $entry, mixed $value): ?CarbonImmutable {
+                $modifiedAt = $entry->value('updated_at') ?? $entry->date() ?? filemtime($entry->path());
+
+                return CarbonImmutable::make($modifiedAt);
             },
         ]);
 
