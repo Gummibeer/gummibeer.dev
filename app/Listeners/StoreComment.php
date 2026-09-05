@@ -20,13 +20,10 @@ class StoreComment
 
         $this->validateTurnstile();
 
-        $post = Entry::find((string) $event->submission->get('post'));
-
-        if (! $post || $post->collection()->handle() !== 'posts') {
-            throw ValidationException::withMessages([
-                'post' => 'This post does not exist.',
-            ]);
-        }
+        $post = Entry::query()
+            ->where('collection', 'posts')
+            ->where('id', (string) $event->submission->get('post'))
+            ->firstOrFail();
 
         Entry::make()
             ->collection('comments')
