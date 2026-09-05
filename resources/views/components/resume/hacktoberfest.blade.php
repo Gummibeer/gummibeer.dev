@@ -3,7 +3,7 @@
     as="hacktoberfests"
 >
     <x-section>
-        <div class="mx-auto prose mb-8 w-full sm:max-w-screen-sm sm:px-4 md:prose-lg md:max-w-screen-md md:px-0 lg:prose-xl">
+        <div class="mx-auto prose mb-8 w-full sm:max-w-screen-sm sm:px-4 md:prose-lg md:max-w-screen-md md:px-0 lg:prose-xl lg:max-w-screen-lg">
             <h2>Hacktoberfest</h2>
             <p>A monthlong celebration of open source software hosted by DigitalOcean, Intel and DEV. Hacktoberfest is open to everyone in the global community. All backgrounds and skill levels are encouraged to complete the challenge.</p>
             <small class="block"
