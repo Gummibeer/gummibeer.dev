@@ -37,7 +37,7 @@
         ></textarea>
     </label>
 
-    <div data-turnstile></div>
+    <x-turnstile::widget data-action="comment" />
 
     <p data-comment-error class="hidden text-sm font-bold"></p>
 
