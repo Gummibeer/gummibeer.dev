@@ -31,7 +31,6 @@ const loadTurnstile = () => {
 Alpine.data('comments', (formUrl, siteKey) => ({
     loading: false,
     loaded: false,
-    submitting: false,
     success: false,
     error: null,
     widgetId: null,
@@ -56,14 +55,19 @@ Alpine.data('comments', (formUrl, siteKey) => ({
             }
 
             this.$refs.form.innerHTML = await response.text();
-            Alpine.initTree(this.$refs.form);
+
+            const form = this.$refs.form.querySelector('form');
+            form.addEventListener('submit', (event) => {
+                event.preventDefault();
+                this.submit(form);
+            });
 
             if (!siteKey) {
                 throw new Error('Turnstile site key is missing.');
             }
 
             const turnstile = await loadTurnstile();
-            const container = this.$refs.form.querySelector('[data-turnstile]');
+            const container = form.querySelector('[data-turnstile]');
             this.widgetId = turnstile.render(container, {
                 sitekey: siteKey,
                 action: 'comment',
@@ -75,10 +79,14 @@ Alpine.data('comments', (formUrl, siteKey) => ({
             this.loading = false;
         }
     },
-    async submit(event) {
-        const form = event.currentTarget;
-        this.submitting = true;
-        this.error = null;
+    async submit(form) {
+        const button = form.querySelector('button[type="submit"]');
+        const error = form.querySelector('[data-comment-error]');
+
+        button.disabled = true;
+        button.textContent = 'Sending…';
+        error.classList.add('hidden');
+        error.textContent = '';
 
         try {
             const response = await fetch(form.action, {
@@ -92,7 +100,8 @@ Alpine.data('comments', (formUrl, siteKey) => ({
             const payload = await response.json();
 
             if (!response.ok) {
-                this.error = payload.errors?.join(' ') ?? 'Could not send your comment. Please check the form and try again.';
+                error.textContent = payload.errors?.join(' ') ?? 'Could not send your comment. Please check the form and try again.';
+                error.classList.remove('hidden');
                 window.turnstile?.reset(this.widgetId);
 
                 return;
@@ -100,10 +109,12 @@ Alpine.data('comments', (formUrl, siteKey) => ({
 
             this.success = true;
         } catch {
-            this.error = 'Could not send your comment. Please try again.';
+            error.textContent = 'Could not send your comment. Please try again.';
+            error.classList.remove('hidden');
             window.turnstile?.reset(this.widgetId);
         } finally {
-            this.submitting = false;
+            button.disabled = false;
+            button.textContent = 'Send comment';
         }
     },
 }));
