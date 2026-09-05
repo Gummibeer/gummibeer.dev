@@ -1,0 +1,35 @@
+title: Comments
+tabs:
+  main:
+    sections:
+      -
+        fields:
+          -
+            handle: name
+            field:
+              type: text
+              display: Name
+              required: true
+              validate:
+                - required
+                - 'max:100'
+          -
+            handle: comment
+            field:
+              type: textarea
+              display: Comment
+              required: true
+              validate:
+                - required
+                - 'max:5000'
+          -
+            handle: post
+            field:
+              type: entries
+              display: Post
+              collections:
+                - posts
+              max_items: 1
+              create: false
+              required: true
+              validate: required

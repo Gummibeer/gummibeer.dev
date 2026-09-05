@@ -1,0 +1,5 @@
+title: Comments
+default_status: draft
+date: true
+sort_dir: asc
+title_format: '{{ name }}'
