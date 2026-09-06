@@ -5,7 +5,6 @@
 >
     @push ('head')
         <x-link-pagination :paginate="$paginate" />
-        <x-link-feed route="blog.feed" />
     @endpush
 
     <x-section>
