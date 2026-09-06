@@ -53,9 +53,6 @@ final class Feed extends SpatieFeed
             throw new RuntimeException('The Statamic post author is missing.');
         }
 
-        $categories = $post->categories
-            ->map(static fn ($term): string => (string) $term->slug())
-            ->all();
         $url = (string) $post->absoluteUrl();
 
         return FeedItem::create()
@@ -66,7 +63,7 @@ final class Feed extends SpatieFeed
             ->summary((string) $post->value('description'))
             ->updated($post->date())
             ->link($url)
-            ->category(...$categories);
+            ->category((string) $post->value('category'));
     }
 
     public static function streamItem(EntryContract $stream): FeedItem

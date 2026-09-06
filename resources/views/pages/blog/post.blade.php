@@ -17,9 +17,9 @@
     <x-article class="markdown">
         <header class="mb-8">
             <x-post.image :post="$page" />
-            @if ($page->categories->isNotEmpty())
-                <x-post.ul-categories
-                    :post="$page"
+            @if ($page->category)
+                <x-post.category
+                    :category="$page->category"
                     class="mb-4"
                 />
             @endif

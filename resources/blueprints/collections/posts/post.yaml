@@ -20,14 +20,17 @@ tabs:
               folder: posts
               restrict: true
           -
-            handle: categories
+            handle: category
             field:
               type: terms
-              display: Categories
+              display: Category
               taxonomies:
-                - categories
+                - category
               mode: select
-              create: true
+              create: false
+              max_items: 1
+              required: true
+              validate: required
           -
             handle: image
             field:
