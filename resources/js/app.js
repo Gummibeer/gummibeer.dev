@@ -8,6 +8,88 @@ import 'prismjs/components/prism-scss';
 import 'prismjs/plugins/line-numbers/prism-line-numbers';
 import twemoji from '@twemoji/api';
 
+let turnstilePromise;
+
+const loadTurnstile = () => {
+    if (window.turnstile) {
+        return Promise.resolve(window.turnstile);
+    }
+
+    turnstilePromise ??= new Promise((resolve, reject) => {
+        const script = document.createElement('script');
+        script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit';
+        script.async = true;
+        script.defer = true;
+        script.onload = () => resolve(window.turnstile);
+        script.onerror = reject;
+        document.head.appendChild(script);
+    }).catch((error) => {
+        turnstilePromise = undefined;
+
+        throw error;
+    });
+
+    return turnstilePromise;
+};
+
+Alpine.data('commentForm', () => ({
+    loading: false,
+    submitting: false,
+    error: null,
+    widgetId: null,
+    async initTurnstile(container) {
+        if (this.widgetId !== null || this.loading) {
+            return;
+        }
+
+        this.loading = true;
+        this.error = null;
+
+        try {
+            const turnstile = await loadTurnstile();
+
+            this.widgetId = turnstile.render(container, {
+                sitekey: container.dataset.sitekey,
+                action: container.dataset.action,
+            });
+        } catch {
+            this.error = 'Could not load comment verification. Please try again.';
+        } finally {
+            this.loading = false;
+        }
+    },
+    async submit(form) {
+        this.submitting = true;
+        this.error = null;
+
+        try {
+            const response = await fetch(form.action, {
+                method: 'POST',
+                body: new FormData(form),
+                headers: {
+                    Accept: 'application/json',
+                    'X-Requested-With': 'XMLHttpRequest',
+                },
+            });
+            const payload = await response.json();
+
+            if (!response.ok) {
+                this.error = payload.errors?.join(' ') ?? 'Could not send your comment. Please check the form and try again.';
+                window.turnstile?.reset(this.widgetId);
+
+                return;
+            }
+
+            this.$dispatch('comment-submitted');
+        } catch {
+            this.error = 'Could not send your comment. Please try again.';
+            window.turnstile?.reset(this.widgetId);
+        } finally {
+            this.submitting = false;
+        }
+    },
+}));
+
 Alpine.data('slider', (delay = 3) => ({
     delay: delay * 1000,
     images: [],

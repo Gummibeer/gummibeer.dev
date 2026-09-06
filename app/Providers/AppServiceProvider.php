@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use App\Http\Middleware\AutoLoginStatamicControlPanel;
+use App\Listeners\StoreComment;
 use App\Services\FencedCodeRenderer;
 use App\Services\ImageRenderer;
 use App\Services\ParagraphRenderer;
@@ -12,6 +13,7 @@ use Carbon\CarbonInterval;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Event;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
@@ -23,6 +25,7 @@ use League\Glide\Manipulators\Size;
 use League\Glide\Server;
 use LogicException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Events\FormSubmitted;
 use Statamic\Facades\Collection as StatamicCollection;
 use Statamic\Facades\Markdown;
 
@@ -38,6 +41,8 @@ class AppServiceProvider extends ServiceProvider
         $this->app->booted(
             fn () => $router->pushMiddlewareToGroup('statamic.cp', AutoLoginStatamicControlPanel::class),
         );
+
+        Event::listen(FormSubmitted::class, StoreComment::class);
 
         Paginator::useTailwind();
 
