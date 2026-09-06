@@ -10,7 +10,7 @@ class FeedController
 {
     public function __invoke(string $category, string $format)
     {
-        $category = Term::find('categories::'.$category);
+        $category = Term::find('category::'.$category);
 
         abort_unless($category, 404);
 

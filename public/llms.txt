@@ -4,8 +4,8 @@
 
 gummibeer.dev is a public personal website and developer blog.
 The primary technical topics are PHP, Laravel, PostgreSQL, geography/GIS, open source, and web development.
-Content also covers personal projects, work, biking, gaming, charity, and other things Tom writes about or builds.
-Blog posts are the canonical long-form articles and include publication dates, categories, code examples, and source links where relevant.
+Content also covers personal projects, professional life, TTRPGs, biking, gaming, charity, and other things Tom writes about or builds.
+Blog posts are the canonical long-form articles and include publication dates, exactly one audience category (Engineering, Professional, Personal, or TTRPG), code examples, and source links where relevant.
 Recorded streams are older long-form development sessions.
 The portfolio lists websites and projects Tom has worked on.
 
