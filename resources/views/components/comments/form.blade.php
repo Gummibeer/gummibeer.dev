@@ -52,6 +52,7 @@
 
     <x-turnstile::widget
         data-action="comment"
+        x-ref="turnstile"
         x-init="initTurnstile($el)"
     />
 
@@ -61,6 +62,16 @@
         class="text-sm font-bold"
         x-text="error"
     ></p>
+
+    <button
+        type="button"
+        class="rounded-1 bg-night-10 px-4 py-2 font-bold text-night-100 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+        x-show="!loading && widgetId === null && error"
+        x-cloak
+        @click="initTurnstile($refs.turnstile)"
+    >
+        Retry verification
+    </button>
 
     <button
         type="submit"
