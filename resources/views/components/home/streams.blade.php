@@ -9,9 +9,8 @@
             <a
                 href="/streams"
                 class="font-bold text-brand hover:underlined"
+                >all streams</a
             >
-                all streams
-            </a>
         </div>
         <x-grid>
             @foreach ($streams as $stream)
