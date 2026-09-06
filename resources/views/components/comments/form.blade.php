@@ -65,7 +65,7 @@
 
     <button
         type="button"
-        class="rounded-1 bg-night-10 px-4 py-2 font-bold text-night-100 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
+        class="text-night-100 rounded-1 bg-night-10 px-4 py-2 font-bold shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2"
         x-show="!loading && widgetId === null && error"
         x-cloak
         @click="initTurnstile($refs.turnstile)"
