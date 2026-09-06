@@ -14,7 +14,7 @@ Common agent use cases:
 - Summarize a post while preserving the original context and opinions.
 - Locate posts about Laravel, PHP, PostgreSQL, geography, open source, and related development topics.
 - Find Tom's public projects, profile information, resume, tools, and setup.
-- Use the site search, sitemap, or feeds to discover published content instead of guessing URLs.
+- Use the site search, sitemap, or journal feed to discover published content instead of guessing URLs.
 - Propose corrections or content changes through the public GitHub repository.
 
 Access and integration:
@@ -22,26 +22,27 @@ Access and integration:
 - There is no public REST API for gummibeer.dev.
 - There is no public GraphQL API for gummibeer.dev.
 - There is currently no MCP server or dedicated agent-action API.
-- Use the public HTML pages, search, RSS/Atom feeds, and sitemap for discovery.
+- Use the public HTML pages, search, journal RSS/Atom feed, and sitemap for discovery.
 - There are no payment or checkout flows on this site.
 
 ## Primary content
 
 - [Home](https://gummibeer.dev/): Personal profile, latest posts and streams, biking, and site overview.
 - [Blog](https://gummibeer.dev/blog): Published developer and personal articles.
+- [Streams](https://gummibeer.dev/streams): Recorded development streams.
 - [Portfolio](https://gummibeer.dev/portfolio): Websites and projects Tom has worked on.
 
 ## Search
 
 - [Blog search](https://gummibeer.dev/blog/search): Public search for published blog content. No authentication is required.
 
-For bulk discovery, prefer the sitemap or feeds over repeated searches.
+For bulk discovery, prefer the sitemap or journal feed over repeated searches.
 
 ## Feeds and discovery
 
 - [Sitemap](https://gummibeer.dev/sitemap.xml): Canonical crawlable URL inventory.
-- [Blog RSS](https://gummibeer.dev/blog.rss): RSS feed for published blog posts.
-- [Blog Atom](https://gummibeer.dev/blog.atom): Atom feed for published blog posts.
+- [Journal RSS](https://gummibeer.dev/journal.rss): RSS feed containing published posts and streams.
+- [Journal Atom](https://gummibeer.dev/journal.atom): Atom feed containing published posts and streams.
 - [Robots](https://gummibeer.dev/robots.txt): Crawler policy and sitemap location.
 
 ## Changing content
