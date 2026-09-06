@@ -5,6 +5,7 @@
 >
     @push ('head')
         <x-link-pagination :paginate="$paginate" />
+        <x-link-feed route="streams.feed" />
     @endpush
 
     <x-section>
