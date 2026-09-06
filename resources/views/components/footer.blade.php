@@ -51,7 +51,7 @@
                 >
             </li>
         </ul>
-        <ul class="list-inline flex flex-row space-x-4 text-xs">
+        <ul class="list-inline flex flex-row flex-wrap gap-x-4 gap-y-2 text-xs">
             <li>
                 <a
                     href="{{ route('journal.feed', ['format' => 'rss']) }}"
