@@ -13,17 +13,9 @@ class FeedController
             ->where('collection', 'posts')
             ->whereStatus('published')
             ->get()
-            ->merge(
-                Entry::query()
-                    ->where('collection', 'streams')
-                    ->whereStatus('published')
-                    ->get()
-            )
             ->sortByDesc(fn ($entry) => $entry->date())
             ->values()
-            ->map(fn ($entry) => $entry->collection()->handle() === 'posts'
-                ? Feed::postItem($entry)
-                : Feed::streamItem($entry));
+            ->map(fn ($entry) => Feed::postItem($entry));
 
         return Feed::make(
             'Blog',
