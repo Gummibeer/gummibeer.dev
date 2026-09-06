@@ -23,49 +23,44 @@ const loadTurnstile = () => {
         script.onload = () => resolve(window.turnstile);
         script.onerror = reject;
         document.head.appendChild(script);
+    }).catch((error) => {
+        turnstilePromise = undefined;
+
+        throw error;
     });
 
     return turnstilePromise;
 };
 
-Alpine.data('comments', () => ({
-    opened: false,
+Alpine.data('commentForm', () => ({
     loading: false,
-    success: false,
+    submitting: false,
     error: null,
     widgetId: null,
-    async showForm() {
-        if (this.opened) {
+    async initTurnstile(container) {
+        if (this.widgetId !== null || this.loading) {
             return;
         }
 
-        this.opened = true;
         this.loading = true;
         this.error = null;
 
         try {
             const turnstile = await loadTurnstile();
-            const container = this.$refs.form.querySelector('.cf-turnstile');
 
             this.widgetId = turnstile.render(container, {
                 sitekey: container.dataset.sitekey,
                 action: container.dataset.action,
             });
         } catch {
-            this.opened = false;
             this.error = 'Could not load comment verification. Please try again.';
         } finally {
             this.loading = false;
         }
     },
     async submit(form) {
-        const button = form.querySelector('button[type="submit"]');
-        const error = form.querySelector('[data-comment-error]');
-
-        button.disabled = true;
-        button.textContent = 'Sending…';
-        error.classList.add('hidden');
-        error.textContent = '';
+        this.submitting = true;
+        this.error = null;
 
         try {
             const response = await fetch(form.action, {
@@ -79,21 +74,18 @@ Alpine.data('comments', () => ({
             const payload = await response.json();
 
             if (!response.ok) {
-                error.textContent = payload.errors?.join(' ') ?? 'Could not send your comment. Please check the form and try again.';
-                error.classList.remove('hidden');
+                this.error = payload.errors?.join(' ') ?? 'Could not send your comment. Please check the form and try again.';
                 window.turnstile?.reset(this.widgetId);
 
                 return;
             }
 
-            this.success = true;
+            this.$dispatch('comment-submitted');
         } catch {
-            error.textContent = 'Could not send your comment. Please try again.';
-            error.classList.remove('hidden');
+            this.error = 'Could not send your comment. Please try again.';
             window.turnstile?.reset(this.widgetId);
         } finally {
-            button.disabled = false;
-            button.textContent = 'Send comment';
+            this.submitting = false;
         }
     },
 }));
