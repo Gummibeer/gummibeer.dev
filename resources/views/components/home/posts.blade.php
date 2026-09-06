@@ -10,9 +10,8 @@
                 <a
                     href="/blog"
                     class="font-bold text-brand hover:underlined"
+                    >all posts</a
                 >
-                    all posts
-                </a>
             </div>
             @if ($posts->isNotEmpty())
                 <x-post.promo :post="$posts->first()" />
