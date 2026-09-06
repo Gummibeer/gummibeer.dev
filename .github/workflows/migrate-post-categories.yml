@@ -1,0 +1,32 @@
+name: Migrate post categories
+
+on:
+  push:
+    branches:
+      - single-post-categories
+
+permissions:
+  contents: write
+
+jobs:
+  migrate:
+    if: github.actor != 'github-actions[bot]'
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Migrate post frontmatter
+        run: python .github/scripts/migrate-post-categories.py
+
+      - name: Commit migrated posts
+        run: |
+          if git diff --quiet -- content/collections/posts; then
+            exit 0
+          fi
+
+          git config user.name github-actions[bot]
+          git config user.email 41898282+github-actions[bot]@users.noreply.github.com
+          git add content/collections/posts
+          git commit -m "Migrate posts to single categories"
+          git push
