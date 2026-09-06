@@ -54,6 +54,20 @@
         <ul class="list-inline flex flex-row space-x-4 text-xs">
             <li>
                 <a
+                    href="{{ route('journal.feed', ['format' => 'rss']) }}"
+                    class="hover:text-brand"
+                    >Journal RSS</a
+                >
+            </li>
+            <li>
+                <a
+                    href="{{ route('journal.feed', ['format' => 'atom']) }}"
+                    class="hover:text-brand"
+                    >Journal Atom</a
+                >
+            </li>
+            <li>
+                <a
                     href="{{ $identity?->contact_page?->permalink }}"
                     class="hover:text-brand"
                     >{{ $identity?->contact_label }}</a
