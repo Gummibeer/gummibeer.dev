@@ -4,7 +4,8 @@
     method="POST"
     action="{{ \Statamic\Facades\Form::find('comments')->actionUrl() }}"
     class="space-y-4"
-    @submit.prevent="submit($event.currentTarget)"
+    x-data="commentForm"
+    @submit.prevent="submit($el)"
 >
     <input
         type="hidden"
@@ -49,15 +50,22 @@
         ></textarea>
     </label>
 
-    <x-turnstile::widget data-action="comment" />
+    <x-turnstile::widget
+        data-action="comment"
+        x-init="initTurnstile($el)"
+    />
 
-    <p data-comment-error class="hidden text-sm font-bold"></p>
+    <p
+        x-show="error"
+        x-cloak
+        class="text-sm font-bold"
+        x-text="error"
+    ></p>
 
     <button
         type="submit"
         class="rounded-1 bg-brand px-4 py-2 font-bold text-night-0 shadow transition hover:brightness-95 focus:outline-none focus-visible:ring-2 focus-visible:ring-brand focus-visible:ring-offset-2 disabled:cursor-wait disabled:opacity-50"
-        :disabled="loading || widgetId === null"
-    >
-        Send comment
-    </button>
+        :disabled="loading || submitting || widgetId === null"
+        x-text="submitting ? 'Sending…' : 'Send comment'"
+    ></button>
 </form>
