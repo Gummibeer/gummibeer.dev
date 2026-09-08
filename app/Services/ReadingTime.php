@@ -20,13 +20,11 @@ use League\CommonMark\Parser\MarkdownParser;
 final class ReadingTime
 {
     /**
-     * Average adult silent reading rate for English non-fiction.
-     *
-     * Marc Brysbaert, "How many words do we read per minute? A review and
-     * meta-analysis of reading rate", Journal of Memory and Language 109 (2019).
-     * https://doi.org/10.1016/j.jml.2019.104047
+     * Silent reading: Adults average 238 WPM for general text.
+     * Reading aloud: Adults average 183 WPM.
+     * Second language (English): Non-native readers often range between 100 and 200 WPM on familiar material depending on vocabulary knowledge.
      */
-    private const int WORDS_PER_MINUTE = 238;
+    private const int WORDS_PER_MINUTE = 183;
 
     private readonly MarkdownParser $parser;
 
@@ -81,11 +79,7 @@ final class ReadingTime
     {
         $ancestor = $node->parent();
 
-        if ($ancestor === null) {
-            return false;
-        }
-
-        do {
+        while ($ancestor !== null) {
             if (
                 $ancestor instanceof Code
                 || $ancestor instanceof FencedCode
@@ -95,7 +89,9 @@ final class ReadingTime
             ) {
                 return true;
             }
-        } while (($ancestor = $ancestor->parent()) !== null);
+
+            $ancestor = $ancestor->parent();
+        }
 
         return false;
     }
