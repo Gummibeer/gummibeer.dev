@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Blog;
+namespace App\Http\Controllers\Journal;
 
 use App\Services\Feed;
 use Statamic\Facades\Entry;
@@ -26,8 +26,8 @@ class FeedController
                 : Feed::streamItem($entry));
 
         return Feed::make(
-            'Blog',
-            'Feed of all blog posts.',
+            'Journal',
+            'Feed of all posts and streams.',
             $items,
             $format
         );
