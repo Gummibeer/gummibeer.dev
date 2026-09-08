@@ -25,7 +25,7 @@
         />
     @endif
 
-    <title>{{ $page?->title ? $page->title.' | '.($identity?->site_name ?? config('app.name')) : ($identity?->site_name ?? config('app.name')) }}</title>
+    <title>{{ $page?->title ? $page->title.' | '.($identity?->name ?? config('app.name')) : ($identity?->name ?? config('app.name')) }}</title>
     @if ($page?->description)
         <meta
             name="description"

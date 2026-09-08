@@ -31,7 +31,7 @@ final class Feed extends SpatieFeed
         }
 
         return new self(
-            $title.' | '.$identity->inCurrentSite()->get('site_name'),
+            $title.' | '.$identity->inCurrentSite()->get('name'),
             $items,
             request()->url(),
             'feed::'.$format,

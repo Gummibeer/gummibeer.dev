@@ -12,7 +12,7 @@
                     href="{{ url('/') }}"
                     class="inline-block px-0 py-4 font-logo text-2xl leading-none tracking-wider whitespace-nowrap lg:text-3xl"
                 >
-                    {{ $identity?->brand_name }}
+                    {{ $identity?->name }}
                 </a>
             </div>
 

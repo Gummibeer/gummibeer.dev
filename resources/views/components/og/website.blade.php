@@ -1,5 +1,5 @@
 @cascade ([
-    'site',
+    'identity',
     'page' => null,
 ])
 
@@ -9,7 +9,7 @@
 />
 <meta
     property="og:title"
-    content="{{ $page?->title ? $page->title.' | '.$site->site_name : $site->site_name }}"
+    content="{{ $page?->title ? $page->title.' | '.$identity->name : $identity->name }}"
 />
 <meta
     property="og:url"
@@ -31,7 +31,7 @@
 />
 <meta
     name="twitter:title"
-    content="{{ $page?->title ? $page->title.' | '.$site->site_name : $site->site_name }}"
+    content="{{ $page?->title ? $page->title.' | '.$identity->name : $identity->name }}"
 />
 @if ($page?->description)
     <meta

@@ -7,18 +7,10 @@ tabs:
         display: Identity
         fields:
           -
-            handle: site_name
+            handle: name
             field:
               type: text
-              display: 'Site Name'
-              required: true
-              validate:
-                - required
-          -
-            handle: brand_name
-            field:
-              type: text
-              display: 'Brand Name'
+              display: Name
               required: true
               validate:
                 - required
@@ -27,14 +19,6 @@ tabs:
             field:
               type: text
               display: Tagline
-              required: true
-              validate:
-                - required
-          -
-            handle: copyright_name
-            field:
-              type: text
-              display: 'Copyright Name'
               required: true
               validate:
                 - required
