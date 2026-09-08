@@ -5,7 +5,7 @@
 @endpush
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl"> {!! $content !!} </x-article>
+    <x-article class="prose max-w-none md:prose-lg lg:prose-xl"> {!! $content !!} </x-article>
 
     <x-home.posts />
     <x-home.streams />
@@ -43,7 +43,7 @@
             </div>
 
             <ul class="grid list-none grid-cols-4 gap-4 text-center text-4xl sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12">
-                @foreach (collect(['BG', 'CZ', 'DE', 'ES', 'FR', 'PL', 'PT', 'BE', 'NL', 'DK', 'LU', 'AT', 'CH', 'IT', 'GB'])->sort() as $country)
+                @foreach (collect(['BG', 'CZ', 'DE', 'ES', 'FR', 'PL', 'PT', 'BE', 'NL', 'DK', 'LU', 'AT', 'CH', 'IT', 'GB', 'ME'])->sort() as $country)
                     <li>
                         <x-twemoji> {{ \Spatie\Emoji\Emoji::countryFlag($country) }} </x-twemoji>
                     </li>
