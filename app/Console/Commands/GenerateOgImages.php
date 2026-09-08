@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use Carbon\CarbonInterval;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
 use RuntimeException;
@@ -61,7 +62,7 @@ class GenerateOgImages extends Command
     }
 
     /**
-     * @param  array{title: string, date?: mixed, readTime?: float}  $data
+     * @param  array{title: string, date?: mixed, readTime?: CarbonInterval}  $data
      */
     protected function saveImage(string $path, array $data): void
     {
