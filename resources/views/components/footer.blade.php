@@ -56,14 +56,7 @@
                 <a
                     href="{{ route('journal.feed', ['format' => 'rss']) }}"
                     class="hover:text-brand"
-                    >Journal RSS</a
-                >
-            </li>
-            <li>
-                <a
-                    href="{{ route('journal.feed', ['format' => 'atom']) }}"
-                    class="hover:text-brand"
-                    >Journal Atom</a
+                    >RSS</a
                 >
             </li>
             <li>

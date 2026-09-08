@@ -4,14 +4,7 @@
     as="streams"
 >
     <x-section>
-        <div class="mb-8 flex items-baseline justify-between gap-4">
-            <h2 class="text-4xl leading-none font-bold text-night-0">Latest Streams</h2>
-            <a
-                href="/streams"
-                class="hover:underlined font-bold text-brand"
-                >all streams</a
-            >
-        </div>
+        <h2 class="mb-8 text-4xl leading-none font-bold text-night-0">Latest Streams</h2>
         <x-grid>
             @foreach ($streams as $stream)
                 <x-stream.preview :stream="$stream" />
