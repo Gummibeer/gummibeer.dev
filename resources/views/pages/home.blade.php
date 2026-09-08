@@ -5,7 +5,7 @@
 @endpush
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl max-w-none"> {!! $content !!} </x-article>
+    <x-article class="prose max-w-none md:prose-lg lg:prose-xl"> {!! $content !!} </x-article>
 
     <x-home.posts />
     <x-home.streams />
@@ -14,7 +14,7 @@
         <x-svg.tire class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block" />
 
         <x-article class="space-y-8">
-            <div class="prose max-w-none md:prose-lg lg:prose-xl max-w-none">
+            <div class="prose max-w-none md:prose-lg lg:prose-xl">
                 <h2>Biking</h2>
                 <p>As a compensation to my job sitting at a desk all day long and starring on a screen - I try to ride as much bike as possible.</p>
                 <p>Most of the time I'm riding my mountainbike - even if I live in Hamburg and we have no mountains. I feel comfortable in the saddle, the steering and wheels provides good control on every ground and with an enormous bandwidth of gears I can keep my cadence.</p>
@@ -43,7 +43,7 @@
             </div>
 
             <ul class="grid list-none grid-cols-4 gap-4 text-center text-4xl sm:grid-cols-8 md:grid-cols-10 lg:grid-cols-12">
-                @foreach (collect(['BG', 'CZ', 'DE', 'ES', 'FR', 'PL', 'PT', 'BE', 'NL', 'DK', 'LU', 'AT', 'CH', 'IT', 'GB'])->sort() as $country)
+                @foreach (collect(['BG', 'CZ', 'DE', 'ES', 'FR', 'PL', 'PT', 'BE', 'NL', 'DK', 'LU', 'AT', 'CH', 'IT', 'GB', 'ME'])->sort() as $country)
                     <li>
                         <x-twemoji> {{ \Spatie\Emoji\Emoji::countryFlag($country) }} </x-twemoji>
                     </li>

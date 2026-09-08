@@ -1,7 +1,7 @@
 @extends ('web')
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl max-w-none">
+    <x-article class="prose max-w-none md:prose-lg lg:prose-xl">
         <h1>Not Found</h1>
 
         <p>The page you've entered isn't available. Please verify that it's written correctly.</p>
