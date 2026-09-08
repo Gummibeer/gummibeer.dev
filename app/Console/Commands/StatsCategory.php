@@ -21,7 +21,7 @@ class StatsCategory extends Command
                 'title' => 'Title',
                 'post_count' => 'Posts',
             ],
-            Term::whereTaxonomy('categories')
+            Term::whereTaxonomy('category')
                 ->map(fn (TermContract $category): array => [
                     'slug' => $category->slug(),
                     'title' => $category->title(),

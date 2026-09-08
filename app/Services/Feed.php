@@ -8,6 +8,7 @@ use Spatie\Feed\Feed as SpatieFeed;
 use Spatie\Feed\FeedItem;
 use Statamic\Contracts\Auth\User as UserContract;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Contracts\Taxonomies\Term as TermContract;
 use Statamic\Entries\Entry as StatamicEntry;
 use Statamic\Facades\GlobalSet;
 use Statamic\Facades\User;
@@ -53,9 +54,12 @@ final class Feed extends SpatieFeed
             throw new RuntimeException('The Statamic post author is missing.');
         }
 
-        $categories = $post->categories
-            ->map(static fn ($term): string => (string) $term->slug())
-            ->all();
+        $category = $post->category;
+
+        if (! $category instanceof TermContract) {
+            throw new RuntimeException('The Statamic post category is missing.');
+        }
+
         $url = (string) $post->absoluteUrl();
 
         return FeedItem::create()
@@ -66,7 +70,7 @@ final class Feed extends SpatieFeed
             ->summary((string) $post->value('description'))
             ->updated($post->date())
             ->link($url)
-            ->category(...$categories);
+            ->category((string) $category->slug());
     }
 
     public static function streamItem(EntryContract $stream): FeedItem

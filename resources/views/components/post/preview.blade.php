@@ -15,9 +15,9 @@
         </a>
     @endif
     <div class="p-4">
-        @if ($post->categories->isNotEmpty())
-            <x-post.ul-categories
-                :post="$post"
+        @if ($post->category)
+            <x-post.category
+                :category="$post->category"
                 class="mb-4"
             />
         @endif
