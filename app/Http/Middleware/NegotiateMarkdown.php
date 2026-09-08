@@ -40,7 +40,7 @@ class NegotiateMarkdown
         }
 
         if ($request->wantsMarkdown() || $this->isAiBot($request)) {
-            return new MarkdownDataResponse($data);
+            return (new MarkdownDataResponse($data))->toResponse($request);
         }
 
         $response = $next($request);
