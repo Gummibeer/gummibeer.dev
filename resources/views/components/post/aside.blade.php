@@ -16,7 +16,7 @@
                 name="ski-clock"
                 class="mr-1"
             />
-            {{ $post->read_time }} min read
+            {{ $post->read_time->forHumans(['minimumUnit' => 'minute']) }} read
         </li>
     </ul>
 </aside>
