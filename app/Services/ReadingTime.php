@@ -39,8 +39,7 @@ final class ReadingTime
 
     public function estimate(string $markdown): CarbonInterval
     {
-        $minutes = $this->wordCount($markdown) / self::WORDS_PER_MINUTE;
-        $minutes = max(1, ceil($minutes * 2) / 2);
+        $minutes = max(1, ceil($this->wordCount($markdown) / self::WORDS_PER_MINUTE));
 
         return CarbonInterval::seconds((int) round($minutes * 60))->cascade();
     }
