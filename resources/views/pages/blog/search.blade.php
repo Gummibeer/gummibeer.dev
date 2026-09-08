@@ -2,7 +2,6 @@
 
 @push ('head')
     <x-og.website />
-    <x-link-feed route="blog.feed" />
 @endpush
 
 @section ('content')

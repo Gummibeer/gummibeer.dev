@@ -58,6 +58,7 @@
         type="application/xml"
         href="{{ route('sitemap.xml') }}"
     />
+    <x-link-feed route="journal.feed" />
     <link
         rel="alternate"
         type="text/plain"

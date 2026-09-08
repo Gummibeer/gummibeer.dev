@@ -4,10 +4,6 @@
 
 @push ('head')
     <x-og.website />
-    <x-link-feed
-        route="blog.category.feed"
-        :parameters="['category' => $page->slug()]"
-    />
 @endpush
 
 @section ('content')
