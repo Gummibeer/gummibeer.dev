@@ -34,12 +34,12 @@ return [
         'blog' => [
             'driver' => 'local',
             'searchables' => ['collection:posts'],
-            'fields' => ['title', 'description', 'categories', 'content'],
+            'fields' => ['title', 'description', 'category', 'content'],
             'min_characters' => 3,
             'property_weights' => [
                 'title' => 4,
                 'description' => 2,
-                'categories' => 2,
+                'category' => 2,
                 'content' => 1,
             ],
             'use_stemming' => true,

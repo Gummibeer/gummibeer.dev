@@ -18,9 +18,9 @@
         </div>
     @endif
     <div class="w-full md:w-1/2 lg:w-2/3">
-        @if ($post->categories->isNotEmpty())
-            <x-post.ul-categories
-                :post="$post"
+        @if ($post->category)
+            <x-post.category
+                :category="$post->category"
                 class="mb-8 md:text-xl"
             />
         @endif
