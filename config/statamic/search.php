@@ -55,7 +55,10 @@ return [
     | Driver Defaults
     |--------------------------------------------------------------------------
     |
-    | Here you can specify default configuration to be applied to all indexes.
+    | Here you can specify default configuration to be applied to all indexes
+    | that use the corresponding driver. For instance, if you have two
+    | indexes that use the "local" driver, both of them can have the
+    | same base configuration. You may override for each index.
     |
     */
 
@@ -74,15 +77,46 @@ return [
 
     ],
 
+    /*
+    |--------------------------------------------------------------------------
+    | Search Defaults
+    |--------------------------------------------------------------------------
+    |
+    | Here you can specify default configuration to be applied to all indexes
+    | regardless of the driver. You can override these per driver or per index.
+    |
+    */
+
     'defaults' => [
         'fields' => ['title'],
     ],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Indexing Queue
+    |--------------------------------------------------------------------------
+    |
+    | Here you may configure the queue name and connection used when indexing
+    | documents, along with a timeout (in seconds) for each indexing job.
+    |
+    */
 
     'queue' => env('STATAMIC_SEARCH_QUEUE'),
 
     'queue_connection' => env('STATAMIC_SEARCH_QUEUE_CONNECTION'),
 
     'queue_timeout' => env('STATAMIC_SEARCH_QUEUE_TIMEOUT'),
+
+    /*
+    |--------------------------------------------------------------------------
+    | Chunk Size
+    |--------------------------------------------------------------------------
+    |
+    | Here you can configure the chunk size used when indexing documents.
+    | The higher you make it, the more memory it will use, but the quicker
+    | the indexing process will be.
+    |
+    */
 
     'chunk_size' => 100,
 
