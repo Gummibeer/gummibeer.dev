@@ -44,7 +44,7 @@ final class SyncStream extends Command
 
             $category = $this->option('category');
 
-            if ($entry === null || filled($category)) {
+            if ($entry === null || blank($data['category'] ?? null) || filled($category)) {
                 $data['category'] = $this->category(is_string($category) ? $category : null);
             }
 
