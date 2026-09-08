@@ -5,8 +5,9 @@ namespace App\View\Components;
 use Illuminate\Support\Str;
 use Illuminate\View\Component;
 use Illuminate\View\View;
-use Statamic\Assets\Asset;
+use Statamic\Contracts\Assets\Asset;
 use Statamic\Contracts\Imaging\UrlBuilder;
+use Statamic\Facades\Asset as AssetFacade;
 
 class Img extends Component
 {
@@ -17,6 +18,8 @@ class Img extends Component
     private array $params = [];
 
     private string $src;
+
+    private ?Asset $asset = null;
 
     private ?string $ratio;
 
@@ -29,7 +32,8 @@ class Img extends Component
         ?int $width = null,
         ?int $height = null,
         ?string $ratio = null,
-        bool $crop = false
+        bool $crop = false,
+        ?string $focus = null,
     ) {
         $this->urlBuilder = app(UrlBuilder::class);
         $this->ratio = $ratio;
@@ -38,6 +42,7 @@ class Img extends Component
         $this->setHeight($height);
 
         if ($src instanceof Asset) {
+            $this->asset = $src;
             $this->src = $src->id();
         } elseif (Str::startsWith($src, ['http://', 'https://'])) {
             $this->src = $src;
@@ -48,7 +53,7 @@ class Img extends Component
                 : $path;
         }
 
-        $this->setDefaultParams();
+        $this->setDefaultParams($focus);
     }
 
     public function render(): View
@@ -112,7 +117,7 @@ class Img extends Component
         return $this;
     }
 
-    protected function setDefaultParams(): void
+    protected function setDefaultParams(?string $focus = null): void
     {
         $this->params['fit'] = 'max';
 
@@ -129,9 +134,26 @@ class Img extends Component
             }
         }
 
-        if ($this->crop) {
-            $this->params['fit'] = 'smartcrop';
+        if (! $this->crop) {
+            return;
         }
+
+        if (! filled($focus)) {
+            $focus = $this->assetFocus();
+        }
+
+        $this->params['fit'] = filled($focus)
+            ? 'crop-'.$focus
+            : 'smartcrop';
+    }
+
+    private function assetFocus(): ?string
+    {
+        if ($this->asset === null && ! Str::startsWith($this->src, ['http://', 'https://'])) {
+            $this->asset = AssetFacade::find($this->src);
+        }
+
+        return $this->asset?->get('focus');
     }
 
     protected function getParams(?string $format = null): array
