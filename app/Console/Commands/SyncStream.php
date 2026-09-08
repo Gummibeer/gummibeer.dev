@@ -7,7 +7,9 @@ use App\Data\YouTubeVideo;
 use App\Services\YouTube;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use RuntimeException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Contracts\Taxonomies\Term as TermContract;
 use Statamic\Facades\Entry;
 use Statamic\Facades\Term;
 use Throwable;
@@ -97,16 +99,16 @@ final class SyncStream extends Command
         }
 
         $categories = Term::whereTaxonomy('category')
-            ->sortBy(fn ($term): string => $term->title())
+            ->sortBy(fn (TermContract $term): string => $term->title())
             ->values();
 
         if ($categories->isEmpty()) {
-            throw new \RuntimeException('No categories exist.');
+            throw new RuntimeException('No categories exist.');
         }
 
         $slug = (string) $this->choice(
             'Category',
-            $categories->map(fn ($term): string => $term->slug())->all(),
+            $categories->map(fn (TermContract $term): string => $term->slug())->all(),
         );
 
         $this->validateCategory($slug);
@@ -117,7 +119,7 @@ final class SyncStream extends Command
     private function validateCategory(string $category): void
     {
         if (Term::find('category::'.$category) === null) {
-            throw new \RuntimeException("Unknown category [{$category}].");
+            throw new RuntimeException("Unknown category [{$category}].");
         }
     }
 
