@@ -29,14 +29,5 @@
             <h1>{{ $page->title }}</h1>
             {!! $page->content !!}
         </main>
-        <script
-            src="https://utteranc.es/client.js"
-            repo="Gummibeer/gummibeer.de"
-            issue-term="pathname"
-            label="💬 comment"
-            theme="github-light"
-            crossorigin="anonymous"
-            async
-        ></script>
     </x-article>
 @endsection
