@@ -33,14 +33,16 @@ return [
 
         'blog' => [
             'driver' => 'local',
-            'searchables' => ['collection:posts'],
-            'fields' => ['title', 'description', 'category', 'content'],
+            'searchables' => ['collection:posts', 'collection:streams'],
+            'fields' => ['title', 'description', 'category', 'content', 'channel_name', 'transcript_text'],
             'min_characters' => 3,
             'property_weights' => [
                 'title' => 4,
                 'description' => 2,
                 'category' => 2,
                 'content' => 1,
+                'channel_name' => 1,
+                'transcript_text' => 1,
             ],
             'use_stemming' => true,
             'use_alternates' => true,
@@ -53,10 +55,7 @@ return [
     | Driver Defaults
     |--------------------------------------------------------------------------
     |
-    | Here you can specify default configuration to be applied to all indexes
-    | that use the corresponding driver. For instance, if you have two
-    | indexes that use the "local" driver, both of them can have the
-    | same base configuration. You may override for each index.
+    | Here you can specify default configuration to be applied to all indexes.
     |
     */
 
@@ -75,46 +74,15 @@ return [
 
     ],
 
-    /*
-    |--------------------------------------------------------------------------
-    | Search Defaults
-    |--------------------------------------------------------------------------
-    |
-    | Here you can specify default configuration to be applied to all indexes
-    | regardless of the driver. You can override these per driver or per index.
-    |
-    */
-
     'defaults' => [
         'fields' => ['title'],
     ],
-
-    /*
-    |--------------------------------------------------------------------------
-    | Indexing Queue
-    |--------------------------------------------------------------------------
-    |
-    | Here you may configure the queue name and connection used when indexing
-    | documents, along with a timeout (in seconds) for each indexing job.
-    |
-    */
 
     'queue' => env('STATAMIC_SEARCH_QUEUE'),
 
     'queue_connection' => env('STATAMIC_SEARCH_QUEUE_CONNECTION'),
 
     'queue_timeout' => env('STATAMIC_SEARCH_QUEUE_TIMEOUT'),
-
-    /*
-    |--------------------------------------------------------------------------
-    | Chunk Size
-    |--------------------------------------------------------------------------
-    |
-    | Here you can configure the chunk size used when indexing documents.
-    | The higher you make it, the more memory it will use, but the quicker
-    | the indexing process will be.
-    |
-    */
 
     'chunk_size' => 100,
 

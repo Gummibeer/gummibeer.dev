@@ -3,6 +3,7 @@ tabs:
   main:
     sections:
       -
+        display: YouTube
         fields:
           -
             handle: title
@@ -16,11 +17,73 @@ tabs:
             field:
               type: video
               display: Video
+              required: true
+              validate: required
+          -
+            handle: description
+            field:
+              type: textarea
+              display: Description
+          -
+            handle: channel_name
+            field:
+              type: text
+              display: Channel
+          -
+            handle: channel_url
+            field:
+              type: text
+              display: 'Channel URL'
+          -
+            handle: channel_id
+            field:
+              type: text
+              display: 'Channel ID'
           -
             handle: duration
             field:
               type: text
               display: Duration
+          -
+            handle: image
+            field:
+              type: text
+              display: Image
+          -
+            handle: youtube_tags
+            field:
+              type: list
+              display: 'YouTube Tags'
+      -
+        display: Content
+        fields:
+          -
+            handle: category
+            field:
+              type: terms
+              display: Category
+              taxonomies:
+                - category
+              mode: select
+              create: false
+              max_items: 1
+              required: true
+              validate:
+                - required
+          -
+            handle: content
+            field:
+              type: markdown
+              display: Content
+              container: images
+              folder: streams
+              restrict: true
+          -
+            handle: transcript
+            field:
+              type: text
+              display: Transcript
+              instructions: 'Public asset path written by the transcript provider.'
   sidebar:
     sections:
       -
@@ -32,7 +95,7 @@ tabs:
               localizable: true
               validate:
                 - 'max:200'
-                - 'new \Statamic\Rules\UniqueEntryValue({collection}, {id}, {site})'
+                - 'new \\Statamic\\Rules\\UniqueEntryValue({collection}, {id}, {site})'
           -
             handle: date
             field:

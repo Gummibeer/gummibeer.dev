@@ -4,3 +4,9 @@ date_behavior:
   past: public
   future: private
 sort_dir: desc
+search_index: blog
+mount: c4b4c269-3f44-4d2d-8a90-6b7a39adf469
+route: '/{mount}/{year}/{slug}'
+template: pages/streams/show
+taxonomies:
+  - category

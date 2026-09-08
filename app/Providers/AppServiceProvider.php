@@ -2,21 +2,24 @@
 
 namespace App\Providers;
 
+use App\Contracts\StreamTranscriptProvider;
 use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use App\Markdown\MarkdownExtension;
+use App\Services\NullStreamTranscriptProvider;
 use App\Services\ReadingTime;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterval;
+use DateInterval;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Routing\Router;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Str;
 use League\Glide\Api\Api;
 use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
-use League\Glide\Server;
 use LogicException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Collection as StatamicCollection;
@@ -27,6 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(ReadingTime::class);
+        $this->app->bind(StreamTranscriptProvider::class, NullStreamTranscriptProvider::class);
         $this->registerPixpipeGlide();
     }
 
@@ -61,12 +65,18 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         StatamicCollection::computed('streams', [
-            'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => CarbonInterval::fromString((string) $value),
+            'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $value),
+            'read_time' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $entry->value('duration')),
             'image' => static function (EntryContract $entry, mixed $value): string {
+                if (filled($value)) {
+                    return (string) $value;
+                }
+
                 $videoId = basename((string) parse_url((string) $entry->value('video'), PHP_URL_PATH));
 
                 return 'https://i.ytimg.com/vi/'.$videoId.'/maxresdefault.jpg';
             },
+            'transcript_text' => static fn (EntryContract $entry, mixed $value): ?string => self::streamTranscript($entry),
         ]);
 
         StatamicCollection::computed('jobs', [
@@ -102,5 +112,35 @@ class AppServiceProvider extends ServiceProvider
 
             return $server;
         });
+    }
+
+    private static function streamDuration(string $value): CarbonInterval
+    {
+        return str_starts_with($value, 'P')
+            ? new CarbonInterval(new DateInterval($value))
+            : CarbonInterval::fromString($value);
+    }
+
+    private static function streamTranscript(EntryContract $entry): ?string
+    {
+        $path = (string) $entry->value('transcript');
+
+        if (blank($path)) {
+            return null;
+        }
+
+        $root = realpath(public_path('assets/streams/transcripts'));
+        $resolved = realpath(public_path($path));
+
+        if (
+            $root === false
+            || $resolved === false
+            || ! str_starts_with($resolved, $root.DIRECTORY_SEPARATOR)
+            || ! is_file($resolved)
+        ) {
+            return null;
+        }
+
+        return File::get($resolved);
     }
 }

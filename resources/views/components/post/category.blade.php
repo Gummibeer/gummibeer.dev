@@ -3,7 +3,7 @@
 
 <strong {{ $attributes->except('category')->merge(['class' => 'uppercase']) }}>
     <a
-        href="{{ $category->url }}"
+        href="{{ url('/category/'.$category->slug) }}"
         class="text-brand"
     >
         {{ $category->title }}
