@@ -50,8 +50,9 @@ class AppServiceProvider extends ServiceProvider
 
                 return $value ?? (is_array($images) ? Arr::first($images) : null);
             },
-            'read_time' => static fn (EntryContract $entry, mixed $value): float => app(ReadingTime::class)
-                ->estimate((string) $entry->value('content')),
+            'read_time' => static function (EntryContract $entry, mixed $value): CarbonInterval {
+                return app(ReadingTime::class)->estimate((string) $entry->value('content'));
+            },
             'last_modified_at' => static function (EntryContract $entry, mixed $value): ?CarbonImmutable {
                 $modifiedAt = $entry->value('updated_at') ?? $entry->date() ?? filemtime($entry->path());
 

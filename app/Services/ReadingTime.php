@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Markdown\Nodes\Prompt;
 use App\Markdown\Parsers\PromptParser;
+use Carbon\CarbonInterval;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
@@ -37,14 +38,15 @@ final class ReadingTime
         $this->parser = new MarkdownParser($environment);
     }
 
-    public function estimate(string $markdown): float
+    public function estimate(string $markdown): CarbonInterval
     {
         $minutes = $this->wordCount($markdown) / self::WORDS_PER_MINUTE;
+        $minutes = max(1, ceil($minutes * 2) / 2);
 
-        return max(1, ceil($minutes * 2) / 2);
+        return CarbonInterval::seconds((int) round($minutes * 60))->cascade();
     }
 
-    public function wordCount(string $markdown): int
+    private function wordCount(string $markdown): int
     {
         $count = preg_match_all(
             "/[\\p{L}\\p{N}]+(?:['’‐‑‒–—-][\\p{L}\\p{N}]+)*/u",
