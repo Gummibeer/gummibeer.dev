@@ -5,6 +5,7 @@ namespace App\Services;
 use App\Markdown\Nodes\Prompt;
 use App\Markdown\Parsers\PromptParser;
 use Carbon\CarbonInterval;
+use Illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
 use League\CommonMark\Extension\CommonMark\CommonMarkCoreExtension;
 use League\CommonMark\Extension\CommonMark\Node\Block\FencedCode;
@@ -48,12 +49,7 @@ final class ReadingTime
 
     private function wordCount(string $markdown): int
     {
-        $count = preg_match_all(
-            "/[\\p{L}\\p{N}]+(?:['’‐‑‒–—-][\\p{L}\\p{N}]+)*/u",
-            $this->readableText($markdown),
-        );
-
-        return $count === false ? 0 : $count;
+        return Str::wordCount($this->readableText($markdown));
     }
 
     private function readableText(string $markdown): string
@@ -83,7 +79,13 @@ final class ReadingTime
 
     private function hasExcludedAncestor(Node $node): bool
     {
-        for ($ancestor = $node->parent(); $ancestor !== null; $ancestor = $ancestor->parent()) {
+        $ancestor = $node->parent();
+
+        if ($ancestor === null) {
+            return false;
+        }
+
+        do {
             if (
                 $ancestor instanceof Code
                 || $ancestor instanceof FencedCode
@@ -93,7 +95,7 @@ final class ReadingTime
             ) {
                 return true;
             }
-        }
+        } while (($ancestor = $ancestor->parent()) !== null);
 
         return false;
     }
