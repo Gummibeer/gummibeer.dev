@@ -23,6 +23,8 @@ final class ReadingTime
      * Silent reading: Adults average 238 WPM for general text.
      * Reading aloud: Adults average 183 WPM.
      * Second language (English): Non-native readers often range between 100 and 200 WPM on familiar material depending on vocabulary knowledge.
+     *
+     * @link https://doi.org/10.1016/j.jml.2019.104047
      */
     private const int WORDS_PER_MINUTE = 183;
 
