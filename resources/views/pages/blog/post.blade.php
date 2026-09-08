@@ -25,7 +25,7 @@
             @endif
             <x-post.aside :post="$page" />
         </header>
-        <main class="prose md:prose-lg lg:prose-xl">
+        <main class="prose md:prose-lg lg:prose-xl max-w-none">
             <h1>{{ $page->title }}</h1>
             {!! $page->content !!}
         </main>

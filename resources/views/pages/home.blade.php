@@ -5,7 +5,7 @@
 @endpush
 
 @section ('content')
-    <x-article class="prose md:prose-lg lg:prose-xl"> {!! $content !!} </x-article>
+    <x-article class="prose md:prose-lg lg:prose-xl max-w-none"> {!! $content !!} </x-article>
 
     <x-home.posts />
     <x-home.streams />
@@ -14,7 +14,7 @@
         <x-svg.tire class="absolute bottom-0 left-0 -z-10 hidden max-h-full opacity-10 md:block" />
 
         <x-article class="space-y-8">
-            <div class="prose max-w-none md:prose-lg lg:prose-xl">
+            <div class="prose max-w-none md:prose-lg lg:prose-xl max-w-none">
                 <h2>Biking</h2>
                 <p>As a compensation to my job sitting at a desk all day long and starring on a screen - I try to ride as much bike as possible.</p>
                 <p>Most of the time I'm riding my mountainbike - even if I live in Hamburg and we have no mountains. I feel comfortable in the saddle, the steering and wheels provides good control on every ground and with an enormous bandwidth of gears I can keep my cadence.</p>
