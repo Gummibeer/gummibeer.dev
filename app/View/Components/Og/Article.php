@@ -11,17 +11,17 @@ class Article extends Component
 {
     protected EntryContract $post;
 
-    protected string $siteName;
+    protected string $name;
 
-    public function __construct(EntryContract $post, string $siteName)
+    public function __construct(EntryContract $post, string $name)
     {
         $this->post = $post;
-        $this->siteName = $siteName;
+        $this->name = $name;
     }
 
     public function render(): string
     {
-        $title = $this->post->value('title').' | '.$this->siteName;
+        $title = $this->post->value('title').' | '.$this->name;
         $description = (string) $this->post->value('description');
 
         return implode(PHP_EOL, [

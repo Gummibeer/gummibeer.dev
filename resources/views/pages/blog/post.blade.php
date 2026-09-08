@@ -9,7 +9,7 @@
     />
     <x-og.article
         :post="$page"
-        :site-name="$identity->site_name"
+        :name="$identity->name"
     />
 @endpush
 
