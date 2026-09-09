@@ -13,7 +13,7 @@ final class YouTubeTranscript implements StreamTranscriptProvider
         $token = (string) config('services.youtube_transcript.token');
 
         if (blank($token)) {
-            return null;
+            throw new RuntimeException('YOUTUBE_TRANSCRIPT_API_TOKEN is not configured.');
         }
 
         $response = Http::withHeaders([
