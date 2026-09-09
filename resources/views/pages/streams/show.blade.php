@@ -39,14 +39,10 @@
             <h1>{{ $page->title }}</h1>
 
             @if ($page->channel_name)
-                <p>
-                    Streamed by
-                    <a
-                        href="{{ $page->channel_url }}"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >{{ $page->channel_name }}</a>.
-                </p>
+                <p>Streamed by
+                <a href="{{ $page->channel_url }}"
+                    target="_blank"
+                    rel="noopener noreferrer">{{ $page->channel_name }}</a>.</p>
             @endif
 
             @if ($page->description)
@@ -65,7 +61,8 @@
                     href="{{ $page->video }}"
                     target="_blank"
                     rel="noopener noreferrer"
-                >Watch on YouTube</a>
+                    >Watch on YouTube</a
+                >
             </p>
         </main>
 
