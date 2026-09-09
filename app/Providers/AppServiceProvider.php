@@ -68,15 +68,6 @@ class AppServiceProvider extends ServiceProvider
         StatamicCollection::computed('streams', [
             'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $value),
             'read_time' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $entry->value('duration')),
-            'image' => static function (EntryContract $entry, mixed $value): string {
-                if (filled($value)) {
-                    return (string) $value;
-                }
-
-                $videoId = basename((string) parse_url((string) $entry->value('video'), PHP_URL_PATH));
-
-                return 'https://i.ytimg.com/vi/'.$videoId.'/maxresdefault.jpg';
-            },
             'transcript_text' => static fn (EntryContract $entry, mixed $value): ?string => self::streamTranscript($entry),
         ]);
 
