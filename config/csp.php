@@ -3,7 +3,6 @@
 use Spatie\Csp\Directive;
 use Spatie\Csp\Keyword;
 use Spatie\Csp\Nonce\RandomString;
-use Spatie\Csp\Presets\CloudflareWebAnalytics;
 use Spatie\Csp\Value;
 
 return [
