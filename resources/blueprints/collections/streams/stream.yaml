@@ -47,8 +47,13 @@ tabs:
           -
             handle: image
             field:
-              type: text
+              type: assets
               display: Image
+              container: images
+              folder: streams
+              restrict: true
+              allow_uploads: true
+              max_files: 1
           -
             handle: youtube_tags
             field:
