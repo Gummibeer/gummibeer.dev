@@ -7,6 +7,8 @@ use App\Data\YouTubeVideo;
 use App\Services\YouTube;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
+use Illuminate\Support\Facades\Http;
+use Illuminate\Support\Facades\Storage;
 use RuntimeException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Contracts\Taxonomies\Term as TermContract;
@@ -29,6 +31,7 @@ final class SyncStream extends Command
             $entry = $this->findStream($video->id);
             $created = $entry === null;
             $data = $entry?->data()->all() ?? [];
+            $image = $this->downloadImage($video);
 
             $data = array_merge($data, [
                 'title' => $video->title,
@@ -38,7 +41,7 @@ final class SyncStream extends Command
                 'channel_id' => $video->channelId,
                 'channel_name' => $video->channelName,
                 'channel_url' => $video->channelUrl,
-                'image' => $video->image,
+                'image' => $image,
                 'youtube_tags' => $video->tags,
             ]);
 
@@ -127,6 +130,20 @@ final class SyncStream extends Command
         if (Term::find('category::'.$category) === null) {
             throw new RuntimeException("Unknown category [{$category}].");
         }
+    }
+
+    private function downloadImage(YouTubeVideo $video): string
+    {
+        $relativePath = 'streams/'.$video->id.'.jpg';
+        $response = Http::timeout(30)->get($video->image)->throw();
+
+        if (! str_starts_with((string) $response->header('Content-Type'), 'image/')) {
+            throw new RuntimeException('YouTube thumbnail response is not an image.');
+        }
+
+        Storage::disk('images')->put($relativePath, $response->body());
+
+        return $relativePath;
     }
 
     private function writeTranscript(YouTubeVideo $video, string $transcript): string
