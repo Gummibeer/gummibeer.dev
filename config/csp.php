@@ -7,9 +7,7 @@ use Spatie\Csp\Presets\CloudflareWebAnalytics;
 use Spatie\Csp\Value;
 
 return [
-    'presets' => [
-        CloudflareWebAnalytics::class,
-    ],
+    'presets' => [],
 
     'directives' => [
         [Directive::DEFAULT, Keyword::NONE],
