@@ -43,32 +43,52 @@ final class YouTubeTranscript implements StreamTranscriptProvider
 
     /**
      * @param  array<array-key, mixed>  $response
-     * @return array<string, mixed>|null
+     * @return array<array-key, mixed>|null
      */
     private function video(array $response, string $videoId): ?array
     {
-        if (($response['id'] ?? null) === $videoId) {
-            return $response;
+        $videos = $response['data'] ?? $response;
+
+        if (! is_array($videos)) {
+            return null;
         }
 
-        foreach ($response as $video) {
+        if (($videos['id'] ?? null) === $videoId) {
+            return $videos;
+        }
+
+        foreach ($videos as $video) {
             if (is_array($video) && ($video['id'] ?? null) === $videoId) {
                 return $video;
             }
+        }
+
+        if (count($videos) === 1) {
+            $video = reset($videos);
+
+            return is_array($video) ? $video : null;
         }
 
         return null;
     }
 
     /**
-     * @param  array<string, mixed>  $video
+     * @param  array<array-key, mixed>  $video
      */
     private function text(array $video): ?string
     {
-        $text = $video['text'] ?? null;
+        $text = $video['text'] ?? $video['transcript'] ?? null;
 
         if (is_string($text) && filled($text)) {
             return trim($text);
+        }
+
+        if (is_array($text)) {
+            $text = $this->segments($text);
+
+            if (filled($text)) {
+                return $text;
+            }
         }
 
         $tracks = $video['tracks'] ?? null;
@@ -82,21 +102,31 @@ final class YouTubeTranscript implements StreamTranscriptProvider
                 continue;
             }
 
-            $segments = [];
+            $text = $this->segments($track['transcript']);
 
-            foreach ($track['transcript'] as $segment) {
-                $segmentText = is_array($segment) ? ($segment['text'] ?? null) : null;
-
-                if (is_string($segmentText) && filled($segmentText)) {
-                    $segments[] = trim($segmentText);
-                }
-            }
-
-            if ($segments !== []) {
-                return implode(PHP_EOL, $segments);
+            if (filled($text)) {
+                return $text;
             }
         }
 
         return null;
+    }
+
+    /**
+     * @param  array<array-key, mixed>  $segments
+     */
+    private function segments(array $segments): ?string
+    {
+        $lines = [];
+
+        foreach ($segments as $segment) {
+            $text = is_array($segment) ? ($segment['text'] ?? null) : null;
+
+            if (is_string($text) && filled($text)) {
+                $lines[] = trim($text);
+            }
+        }
+
+        return $lines === [] ? null : implode(PHP_EOL, $lines);
     }
 }
