@@ -1,4 +1,4 @@
-import Alpine from 'alpinejs';
+import Alpine from '@alpinejs/csp';
 import ClipboardJS from 'clipboard';
 import Prism from 'prismjs';
 import 'prismjs/components/prism-markup-templating';

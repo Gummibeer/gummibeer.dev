@@ -14,17 +14,6 @@
         content="width=device-width, initial-scale=1"
     />
 
-    @if (app()->environment('production'))
-        <link
-            rel="dns-prefetch"
-            href="https://static.cloudflareinsights.com"
-        />
-        <link
-            rel="dns-prefetch"
-            href="https://cloudflareinsights.com"
-        />
-    @endif
-
     <title>{{ $page?->title ? $page->title.' | '.($identity?->name ?? config('app.name')) : ($identity?->name ?? config('app.name')) }}</title>
     @if ($page?->description)
         <meta
