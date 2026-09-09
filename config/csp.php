@@ -17,7 +17,7 @@ return [
         [Directive::SCRIPT_ATTR, Keyword::NONE],
         [Directive::STYLE, Keyword::SELF],
         [Directive::STYLE_ATTR, Keyword::NONE],
-        [Directive::IMG, [Keyword::SELF, 'https://cdn.jsdelivr.net', 'https://i.ytimg.com']],
+        [Directive::IMG, [Keyword::SELF, 'https://cdn.jsdelivr.net']],
         [Directive::FONT, Keyword::SELF],
         [Directive::CONNECT, [Keyword::SELF, 'https://u.gummibeer.dev']],
         [Directive::OBJECT, Keyword::NONE],
