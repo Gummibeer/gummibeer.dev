@@ -1,0 +1,2687 @@
+[1s] all right hi everyone uh
+[4s] tom is it streaming on youtube i i don't
+[6s] have it open
+[7s] is it all good i don't see it yet
+[12s] okay live i will i will do a refresh
+[15s] okay
+[22s] people can ask can you let us people
+[23s] know if you can see us and hear us in
+[25s] the comments i can see the comments i
+[26s] just can't see whether we are actually
+[28s] live on youtube or not
+[30s] stream is working thank you okay
+[34s] so before we start excuse our
+[37s] very professional
+[40s] slideshow we just couldn't figure out
+[42s] how to you know it was just never
+[44s] mind well just going to show you the
+[45s] slides this way uh
+[47s] but yeah welcome to our stream laura bus
+[49s] stream our first live stream
+[52s] um we're going to be building a laravel
+[54s] package
+[55s] this originally came out of my
+[58s] discussion with tom when he just pointed
+[1m] out that one thing in the newsletter
+[1m 1s] really looked nice this
+[1m 2s] tweet i'm going to show you in a minute
+[1m 4s] and he said why don't you build it as a
+[1m 5s] package i was like well i don't know how
+[1m 7s] and he said well i'll help you
+[1m 9s] and few weeks later here we are doing a
+[1m 12s] live stream
+[1m 13s] to be honest i have no idea what am i
+[1m 15s] even doing how would this happen it was
+[1m 17s] supposed to be
+[1m 17s] you know friendly just like a mentoring
+[1m 20s] session between me and some and suddenly
+[1m 21s] we are on youtube so
+[1m 23s] this is going to be fun a little bit
+[1m 26s] about myself
+[1m 27s] i am susanna i am the founder of
+[1m 30s] larabelles
+[1m 31s] it still seems weird to say that but i
+[1m 33s] suppose it's official
+[1m 35s] i am a web developer i am laravel
+[1m 37s] developer currently
+[1m 39s] started as a wordpress wordpress
+[1m 41s] developer but laravel is
+[1m 43s] my place and yeah so this is me
+[1m 47s] now i'm going to pass you on to tom yeah
+[1m 51s] hello all
+[1m 52s] i'm tom i'm a developer professional
+[1m 55s] since
+[1m 56s] 2013 and started
+[2m 1s] 15 years ago and
+[2m 5s] yeah i'm pretty active as an open source
+[2m 7s] developer and
+[2m 8s] laravel community and
+[2m 12s] yeah i will try to help susanna today to
+[2m 16s] build a
+[2m 17s] lava package
+[2m 19s] [Music]
+[2m 20s] i try my best so
+[2m 24s] let's show our initial
+[2m 28s] trigger for this again very high tech
+[2m 31s] sorry oh hold on let me download
+[2m 32s] pictures so this is
+[2m 34s] our i think most recent newsletter
+[2m 36s] february yes the march one by the way is
+[2m 39s] coming out next week so when tom
+[2m 41s] received this newsletter he pointed out
+[2m 43s] that he really liked this snippet
+[2m 45s] and exactly so how cool is it to
+[2m 50s] mail a tweet i've seen
+[2m 53s] it in several newsletters that a tweet
+[2m 56s] was
+[2m 57s] yeah like quoted but
+[3m] never this cool so
+[3m 4s] i've asked susanna how she did it and
+[3m 6s] she said it was like
+[3m 9s] a template or similar snippet in her
+[3m 13s] newsletter tool and yeah so
+[3m 16s] i asked her to bring it to laravel
+[3m 18s] community
+[3m 20s] so we can do
+[3m 21s] [Laughter]
+[3m 23s] so we can do it in all our projects like
+[3m 26s] plain larval
+[3m 27s] and also spatia
+[3m 31s] male i forgot the name i'm sorry sparta
+[3m 36s] the newsletter mail package of spatia
+[3m 39s] you know what i mean
+[3m 41s] and similar things like this exactly
+[3m 44s] this
+[3m 44s] is what we try to create today it will
+[3m 47s] be
+[3m 48s] a blade component so we can switch to
+[3m 50s] the next slide
+[3m 53s] and by the way i don't think we're going
+[3m 54s] to finish everything today
+[3m 57s] so yeah sure yeah i think so too
+[4m] so super first will be uh possibly
+[4m 4s] obvious
+[4m 4s] but we will keep it and
+[4m 7s] keep it on stream so everyone can follow
+[4m 10s] from the
+[4m 11s] totally start we will create a repo and
+[4m 15s] after this we create the basic log of a
+[4m 18s] package things like composer json
+[4m 19s] servers provider
+[4m 21s] initial directories and
+[4m 24s] initialize php unit as it's very helpful
+[4m 27s] in testing your package and after this
+[4m 30s] third step we'll be creating the blade
+[4m 33s] component so it's a real
+[4m 35s] logic and view and so on
+[4m 38s] we want to bring into the package and
+[4m 40s] the first step will be
+[4m 42s] to retrieve the twitter
+[4m 45s] treat data via api
+[4m 48s] so to have it dynamic
+[4m 51s] and yeah
+[4m 54s] and you've kindly provided us us with
+[4m 57s] some
+[4m 57s] resources yeah i have
+[5m] collected some links and resources so
+[5m 3s] links are for tools you have to use or
+[5m 8s] could need like packages this is a way
+[5m 11s] to go to
+[5m 12s] publish a composer package and the first
+[5m 15s] two
+[5m 16s] links are really helpful they are
+[5m 17s] provided by github so you can
+[5m 20s] use this rapport.new to create a new
+[5m 22s] github repository
+[5m 25s] shields io is a cool page you can
+[5m 28s] you've possibly seen these small batches
+[5m 31s] on the top of nearly every readme file
+[5m 34s] with containing the mrt license and php
+[5m 37s] version how many
+[5m 38s] downloads and so on so this is what gs
+[5m 42s] sheets io does and last one is from
+[5m 45s] beyond code
+[5m 47s] save clone
+[5m 51s] open graph image tool and
+[5m 54s] customized it for composer packages
+[5m 58s] it's cool so you can add an open graph
+[6m 1s] and header image for your
+[6m 3s] package so it looks kind of professional
+[6m 5s] if you share it and also on the readme
+[6m 8s] and so for resources below are some
+[6m 11s] links
+[6m 12s] i think the most important one is the
+[6m 14s] first one
+[6m 15s] levelpackage.com it contains a lot
+[6m 18s] really a lot of resources also linking
+[6m 20s] to several other things like
+[6m 23s] uh saspatie packet skeleton and
+[6m 26s] boilerplate also and some six lexus
+[6m 30s] the second one is paid one if you want
+[6m 32s] to go really deep into
+[6m 34s] package development it's provided by
+[6m 36s] spatia and
+[6m 37s] is a paid course for
+[6m 40s] larger package development and
+[6m 44s] yeah third one is a skeleton which is
+[6m 46s] helpful if you
+[6m 48s] just want to care about your yeah your
+[6m 50s] app
+[6m 51s] your package logic and don't uh care
+[6m 54s] about the
+[6m 55s] surrounding stuff like service provider
+[6m 56s] and so on and
+[6m 58s] the fourth one is a little bit outdated
+[7m 1s] i think it's
+[7m 2s] also a skeleton provider by provided by
+[7m 5s] beyond code
+[7m 6s] but they haven't upgraded yet to the
+[7m 8s] latest larger versions and php versions
+[7m 11s] or at least it was so
+[7m 12s] one month ago i've used it so last time
+[7m 16s] yeah okay some of the things i had i
+[7m 18s] mean when you sent me the links i didn't
+[7m 20s] know even the
+[7m 20s] the repo dot new it's so nice
+[7m 23s] i mean i had no idea i'm gonna we're
+[7m 25s] gonna use it in a minute so if people
+[7m 26s] don't know but i had no idea and i don't
+[7m 28s] know about
+[7m 29s] so this shields dot io i've seen these
+[7m 31s] patches on repos but i never kind of
+[7m 33s] looked into how they're done
+[7m 35s] and it's just yeah so it's going to be
+[7m 37s] fun so we're going to take this project
+[7m 38s] from
+[7m 39s] beginning to the end and apparently we
+[7m 42s] are not taking any shortcuts
+[7m 44s] which is going to be fun because i'm
+[7m 45s] going to be coding everything from
+[7m 47s] scratch so we're not not using the
+[7m 49s] skeleton
+[7m 51s] no and i don't know how i feel about it
+[7m 54s] i'm just going to go with the flow
+[7m 55s] because like
+[7m 56s] you know what i'm gonna i'm gonna be
+[7m 58s] honest with you all i mean i've done
+[8m] php package for work a few months ago
+[8m 3s] some months ago i don't know how long
+[8m 4s] ago but i forgot everything since then
+[8m 6s] because i moved on to other things
+[8m 8s] and i said i thought should i prepare
+[8m 10s] should i like do some you know revision
+[8m 12s] before the stream and then i was like no
+[8m 13s] i'm not going to because
+[8m 14s] if i do i might not ask some of the
+[8m 16s] right questions like i don't wanna i
+[8m 18s] want this to be beginner-friendly so if
+[8m 20s] nobody or if somebody never done a
+[8m 22s] package before so they don't feel like
+[8m 23s] oh
+[8m 24s] i wish i knew that so i'm gonna try to
+[8m 26s] ask all these
+[8m 27s] the right questions so that's why i
+[8m 29s] didn't prepare which also means that i'm
+[8m 31s] kind of putting myself up
+[8m 32s] for a it's gonna be either great fun or
+[8m 35s] it's gonna be terrible
+[8m 37s] but we will just see how it goes so you
+[8m 39s] know i'm just gonna
+[8m 41s] go with the flow we'll see how it goes
+[8m 43s] so
+[8m 44s] what questions and the comment uh yes i
+[8m 47s] think we will
+[8m 48s] publish the links and resources and also
+[8m 50s] stuff possibly on
+[8m 52s] slide show share whatever or
+[8m 55s] put them in the repository we will
+[8m 57s] create right now so
+[8m 58s] you will definitely get access to them i
+[9m] can also copy some right now and try to
+[9m 3s] post them
+[9m 4s] but i think you can't click the links in
+[9m 7s] in youtube comments
+[9m 9s] i'm gonna add them to the description
+[9m 10s] after this video after we finished and
+[9m 12s] i'm gonna edit the description of the
+[9m 14s] video and then in the readme of the
+[9m 17s] project as well right so we're gonna add
+[9m 19s] as many things as we can into the readme
+[9m 22s] and yeah so what do we do now what
+[9m 26s] should we do first
+[9m 27s] so let me just clear this way first one
+[9m 31s] repo okay
+[9m 34s] so uh your keyboard lost connection
+[9m 38s] i know see this is the thing i said that
+[9m 40s] my keyboard
+[9m 41s] does not like me streaming and i'm like
+[9m 45s] oh no don't tell me i have to sign up
+[9m 48s] i'm just gonna do it obviously
+[9m 50s] no we won't use package tools as it's a
+[9m 53s] shorthand and we want to create it the
+[9m 58s] original way and just mention
+[10m 1s] tools like this so experienced
+[10m 4s] developers can shortcut
+[10m 6s] but people want to getting started and
+[10m 10s] understand everything that's required
+[10m 13s] uh also can follow and understand what
+[10m 17s] uh
+[10m 18s] what's done behind the scenes yeah yeah
+[10m 21s] so after i just took it off the screen
+[10m 23s] because i had to i've
+[10m 24s] as recently switched to this two-factor
+[10m 27s] authentication for github so now every
+[10m 28s] time i want to log in
+[10m 29s] it sends me and asks me for this
+[10m 31s] authentication code and
+[10m 33s] yeah so what are we going to call this
+[10m 35s] thing do we have it anywhere
+[10m 37s] so it was i think we don't have a name
+[10m 40s] right
+[10m 41s] now but uh i would vote for
+[10m 44s] laravel component
+[10m 48s] yeah i think that's pretty
+[10m 52s] exactly what we will create do we do any
+[10m 55s] of these things or do we just
+[10m 57s] create repo or do you want to initialize
+[10m 59s] anything
+[11m] um i always take the readme and
+[11m 3s] choose a license okay which license
+[11m 7s] mit is is like the default
+[11m 11s] if you want to go really deep into
+[11m 13s] licenses there are
+[11m 15s] tools out there that explain licenses
+[11m 17s] and
+[11m 18s] you can ask your lawyer so
+[11m 21s] okay so that's the way to go but mit is
+[11m 23s] a yeah it's like the default
+[11m 26s] i think you have to refresh right now
+[11m 28s] github pass
+[11m 29s] back into the last weeks exactly so if
+[11m 33s] you create a repository
+[11m 34s] these two check boxes you will or should
+[11m 37s] end in this view
+[11m 39s] okay the one before is the view for an
+[11m 41s] empty repository so it seems that
+[11m 44s] github doesn't wait anymore until these
+[11m 46s] two files are committed
+[11m 48s] okay so now check out
+[11m 52s] check out what do you mean check out
+[11m 55s] clone superpository sorry
+[11m 57s] the code and use https or ssa
+[12m 1s] yeah right let me just find my
+[12m 7s] well done
+[12m 16s] i'm just gonna take things off the
+[12m 19s] screen randomly
+[12m 21s] because this is the first time and i
+[12m 23s] just don't want to
+[12m 24s] show something i shouldn't show but this
+[12m 26s] is all good
+[12m 28s] right next one i should also remind you
+[12m 31s] people if you can if you want me to zoom
+[12m 33s] in
+[12m 33s] let me know i'm going to try to remember
+[12m 35s] to zoom in
+[12m 37s] but if something needs to be bigger
+[12m 39s] please just shout
+[12m 42s] yeah um yeah go on so next one
+[12m 46s] next step will be open set clone
+[12m 50s] repository in
+[12m 51s] phpstorm vs code whatever editor you use
+[12m 55s] sublime
+[12m 57s] okay this is part to you
+[13m] yeah with phpstorm you can also
+[13m 4s] check out the repository from phpstorm
+[13m 6s] um
+[13m 7s] i do it all the time as it is pretty
+[13m 9s] neat and has a
+[13m 12s] yeah an amazing uh get
+[13m 15s] to yeah i like it because you get to see
+[13m 18s] all the changes
+[13m 19s] you've done and so quite like exactly i
+[13m 21s] think i'm i'm not i'm sure i'm using
+[13m 24s] like
+[13m 24s] 10 of all the php storm functionality
+[13m 27s] but
+[13m 27s] yeah but the things i'm using are really
+[13m 29s] useful i keep saying
+[13m 30s] i need to take a proper course because
+[13m 32s] i'm sure once you know the tool you're
+[13m 33s] using you can be so much more productive
+[13m 35s] but
+[13m 36s] yeah i can only recommend uh i think it
+[13m 39s] was christopher
+[13m 41s] uh who is our laravel
+[13m 44s] php storm legend yeah it is
+[13m 48s] he also has a course mastering php storm
+[13m 51s] yeah and
+[13m 51s] it's he also shares a lot of free stuff
+[13m 54s] on twitter so
+[13m 55s] yeah also for php store yeah i watched
+[13m 59s] his talk on the
+[14m] the last latest lara con online which
+[14m 2s] was was it january
+[14m 4s] february and he had a talk about
+[14m 7s] php storm so that was there were quite a
+[14m 9s] few tips that i got from that
+[14m 11s] so what do we do now what do we do next
+[14m 14s] uh
+[14m 14s] and collapse opens a lot of retweet
+[14m 17s] component directory in the project yeah
+[14m 19s] and i've sent you and
+[14m 22s] zip archive we will walk through all the
+[14m 25s] files but
+[14m 26s] now it's the moment you can copy all the
+[14m 28s] files
+[14m 29s] to this repository
+[14m 35s] so fire i've sent you on discord
+[14m 38s] oh yeah hold on what was that they are
+[14m 41s] so prepared oh yeah i've got it so
+[14m 44s] prepared
+[14m 45s] i've um never mind i'm not gonna even
+[14m 48s] let me open it while i'm doing this just
+[14m 52s] just keep talking you know yeah i will
+[14m 54s] answer some questions so uh
+[14m 56s] mohammed and catherine already said that
+[15m] uh why we don't use this but here
+[15m 3s] package juice like
+[15m 4s] if you use a shortcut you don't
+[15m 6s] understand what's running or
+[15m 7s] going on under the hood and this is what
+[15m 10s] you
+[15m 11s] what we want to you be able
+[15m 14s] to you know you know what i want to say
+[15m 17s] i hope
+[15m 20s] and yeah
+[15m 25s] okay so i'm gonna first read me i'm
+[15m 27s] gonna copy
+[15m 29s] what you send me into yes
+[15m 32s] optional uh important rcs.files
+[15m 37s] so i hope you have dot files visible
+[15m 40s] in your finder i do have that file for
+[15m 44s] this so do you want me to
+[15m 47s] say a git ignore get attributes
+[15m 50s] there should be a change log md
+[15m 58s] no i thought i had enabled why did i not
+[16m] have it
+[16m 1s] where do i enable dot files command
+[16m 4s] shift and
+[16m 4s] dot command shift and dot
+[16m 8s] i should have it enabled because i see
+[16m 10s] other ones the
+[16m 12s] the folder you send me what i see is
+[16m 14s] okay i'm just gonna
+[16m 16s] i'm just going to hold down there's
+[16m 19s] nothing secret then so you can
+[16m 21s] so this is what i what i've gotten this
+[16m 23s] is what you sent me right
+[16m 24s] so i'm just gonna go into this
+[16m 28s] directory it is open this is all i have
+[16m 31s] one two three four yeah
+[16m 32s] and send command shift and dot i did
+[16m 35s] command shift and dot it's not doing
+[16m 38s] anything
+[16m 39s] as for for different keyboard layouts
+[16m 44s] no but i'm sure i had it enabled because
+[16m 47s] i can see other
+[16m 48s] you can also other people
+[16m 53s] yeah so
+[16m 58s] let me just google it hold on let me
+[17m] have this open what do people say people
+[17m 2s] have any recommendations
+[17m 5s] no show hidden files and finder
+[17m 10s] and possibly your language or keyboard
+[17m 12s] layout as it seems to
+[17m 14s] be different but i've done it it says
+[17m 17s] command shift and period command
+[17m 21s] catherine you're right thanks i
+[17m 24s] haven't zipped the file so
+[17m 27s] ah you want to send it again or
+[17m 31s] let me just copy what you did send me
+[17m 33s] hold on
+[17m 37s] [Music]
+[17m 41s] we are really prepared but you know
+[17m 44s] it's this is the way to do it i mean
+[17m 49s] so this is the read me you sent me
+[17m 53s] yeah so i will only try to use the dot
+[17m 55s] files now that's fine
+[17m 58s] are you going to send it on discord yes
+[18m] okay
+[18m 1s] so get actually boots get ignored
+[18m 14s] thanks casper for pointing out what's my
+[18m 17s] bet
+[18m 20s] right so i'm fine there okay i've got
+[18m 23s] them now
+[18m 28s] if i just i think discord trimmed
+[18m 32s] the leading dots uh you have to rename
+[18m 34s] sam afterwards
+[18m 35s] yeah i will
+[18m 40s] moving dot phrase from one pc to another
+[18m 43s] is really a pain
+[18m 44s] what do you refactor
+[18m 50s] so that's one thing yeah
+[18m 54s] can ignore as well if i
+[18m 57s] before i do that no so when i'm
+[18m 59s] refactoring i would
+[19m] assume that it will offer the option to
+[19m 3s] rename the file straight away but it
+[19m 5s] doesn't
+[19m 6s] i think it was some time ago
+[19m 11s] but possibly save moved it into a
+[19m 14s] special setting or something like that
+[19m 17s] okay
+[19m 19s] [Music]
+[19m 22s] yeah and composer json and changelog
+[19m 28s] so others aren't important
+[19m 32s] or you already have them well i've just
+[19m 34s] i've just copied over
+[19m 35s] what was in your readme and the other
+[19m 37s] one was the license
+[19m 39s] but license is already has been already
+[19m 41s] that's fine
+[19m 42s] yeah okay now what exactly
+[19m 45s] so let's go through the files from top
+[19m 48s] to bottom
+[19m 49s] uh get edge attributes as
+[19m 52s] a git file it tells uh tools like
+[19m 56s] composer and i think also npm
+[19m 59s] which files from the version control
+[20m 1s] systems they should ignore if they
+[20m 3s] export it through the dist
+[20m 8s] so the distribution part and
+[20m 11s] this way you can tell a packages
+[20m 14s] composer to ignore the git ignore file
+[20m 17s] php unit tests
+[20m 18s] hub directory and
+[20m 22s] so say don't end in your users vendor
+[20m 25s] directory
+[20m 26s] okay as for example the test directory
+[20m 29s] can
+[20m 31s] lead to some not space problems but auto
+[20m 34s] completion will be
+[20m 36s] bloated if all the tests are available
+[20m 38s] available in phpstorm
+[20m 41s] okay so that's why we ignore some
+[20m 44s] for export second is get ignore i think
+[20m 47s] or
+[20m 48s] hopes that most know it yeah
+[20m 51s] we will ignore the vendor directory as
+[20m 53s] it contains on these
+[20m 55s] composer dependencies so composer log
+[20m 58s] file
+[20m 58s] for packages it's not important to
+[21m 1s] contain it
+[21m 3s] possibly different for your app
+[21m 5s] development
+[21m 6s] where you want to have the log file
+[21m 8s] included
+[21m 9s] and we ignore the phpunit.xml
+[21m 13s] don't get confused we have a phpunit.xml
+[21m 17s] file yeah says
+[21m 20s] this is handy in
+[21m 23s] in p2p unit you can include this xml
+[21m 26s] disk so it's a distributed one
+[21m 29s] and every developer can have its own php
+[21m 32s] unit.xml
+[21m 33s] file for his own local configuration
+[21m 36s] he wants to have
+[21m 40s] so
+[21m 43s] yeah change log is uh
+[21m 47s] yeah what it says the changelog yeah um
+[21m 51s] it's only a markdown file we have to
+[21m 53s] replace this a package minus name
+[21m 55s] on the first sentence with a larval
+[21m 59s] minus three minus component
+[22m 1s] okay uh is there a way it shouldn't
+[22m 6s] isn't that a way or is it was it on the
+[22m 8s] skeleton that you can run a script to
+[22m 10s] replace all those like a package name or
+[22m 13s] like with the actions
+[22m 16s] if you use a real skeleton it will have
+[22m 19s] this functionality included here
+[22m 20s] so this party skeleton has its uh
+[22m 24s] beyond code package generator has it
+[22m 27s] at what point do you introduce the like
+[22m 30s] the namespace larabelle's forward slash
+[22m 32s] and then the package name
+[22m 33s] do we just use the package name in this
+[22m 34s] place or do we already name space with
+[22m 36s] larabees
+[22m 37s] it's change log i only use the package
+[22m 39s] name
+[22m 41s] and yeah you you could even
+[22m 45s] uh trim also package name as the
+[22m 47s] changelog is directly
+[22m 48s] related to your package you don't have
+[22m 51s] one
+[22m 51s] changelog for all your lover builds
+[22m 53s] packages but one per
+[22m 55s] package okay so
+[22m 58s] um so that's done this is our
+[23m 1s] composer jason that we do exactly
+[23m 4s] do we have to do anything here yeah we
+[23m 7s] have
+[23m 8s] but it's a bit more uh several some
+[23m 11s] questions or comments on uh youtube
+[23m 14s] yeah uh from has i hope i
+[23m 17s] spot it correctly um yeah it's a dot
+[23m 20s] idea
+[23m 22s] should be included in your global get
+[23m 24s] ignore file like edge reinstate
+[23m 26s] as it's your local environment config
+[23m 29s] configuration and
+[23m 31s] you don't want to maintain all ide
+[23m 34s] related
+[23m 34s] excludes things uh as a package
+[23m 37s] maintainer
+[23m 39s] so if when these code developer comes on
+[23m 42s] they want to exclude whatever vs code
+[23m 44s] has and
+[23m 46s] yeah the dot editor config right you can
+[23m 49s] include it i've
+[23m 51s] dropped it from here as it's really
+[23m 54s] optional
+[23m 54s] and has nearly no effect on
+[23m 58s] most ends as we want to
+[24m 2s] enforce code styles with uh our
+[24m 6s] continuous integration and
+[24m 12s] okay you know what else was it realized
+[24m 15s] that because i copied those files from
+[24m 17s] you how
+[24m 18s] if somebody is starting from scratch how
+[24m 19s] would they do those files they do
+[24m 21s] composer in it all
+[24m 23s] um you can run composer in it to get the
+[24m 26s] composer json
+[24m 27s] it will ask you some questions and come
+[24m 30s] up with
+[24m 31s] yeah a bit less than what we have here
+[24m 34s] okay um for example the level specific
+[24m 37s] ones for
+[24m 38s] uh for sure missing like this extra
+[24m 41s] level providers
+[24m 42s] you have on bottom screen and um
+[24m 46s] it also misses out the load parts for
+[24m 48s] example the scripts
+[24m 50s] for to run php unit i can
+[24m 53s] really recommend you to copy it from a
+[24m 56s] package you trust like
+[24m 59s] let's name it as party phone for for
+[25m 1s] example
+[25m 2s] um this is the same for
+[25m 6s] all these files like get extra boots
+[25m 9s] change look at ignore
+[25m 11s] or use the skeleton for example for
+[25m 12s] these files
+[25m 15s] i i don't know any source where you can
+[25m 18s] find
+[25m 19s] these files in a in the documentation
+[25m 23s] array
+[25m 24s] so there isn't a laravel documentation
+[25m 28s] section on the official docs so far i
+[25m 30s] know
+[25m 31s] or at least not once that includes all
+[25m 34s] these files you
+[25m 35s] should have yeah it's really one thing
+[25m 39s] you have to copy and paste or really get
+[25m 42s] into it
+[25m 42s] and do it yourself which isn't this cool
+[25m 47s] okay so what do we have to change in
+[25m 49s] this one because i assume we're going to
+[25m 50s] change
+[25m 50s] this bit and then
+[25m 58s] a bit more it starts on the second line
+[26m] with the name
+[26m 2s] oh okay this is where we know
+[26m 5s] is the first or so total second or the
+[26m 8s] first one
+[26m 10s] exactly so vendor exactly
+[26m 13s] this is your vendor name so your
+[26m 16s] most times you use a name or if you have
+[26m 18s] a group like larabee spartier subatomic
+[26m 21s] or whatever it will be it's a company
+[26m 23s] group name
+[26m 24s] and second one is the most time
+[26m 26s] repository name
+[26m 28s] um but you could customize it
+[26m 31s] okay since third line is the type of
+[26m 36s] yours
+[26m 38s] of this repository package it's library
+[26m 41s] as
+[26m 41s] it's there are some times uh types
+[26m 44s] defined in the composer shamer
+[26m 46s] by this library for all packages
+[26m 48s] description
+[26m 50s] is we can show description text we can
+[26m 53s] do it later
+[26m 53s] um keywords are like some search
+[26m 57s] keywords where we can
+[26m 58s] unfold later again yeah define some
+[27m 1s] keywords we want to
+[27m 2s] be found um the packages
+[27m 6s] right this is this is those keywords
+[27m 8s] other ones that yeah okay
+[27m 10s] say outside like takes um yeah home page
+[27m 13s] is your github repository in most cases
+[27m 16s] if you don't have a real dedicated
+[27m 19s] website for this project like uh past
+[27m 21s] website for example
+[27m 23s] yeah and so you can copy super rl yeah
+[27m 26s] i'm just gonna go and copy it keep you
+[27m 28s] keep describing it i'm just gonna go and
+[27m 30s] copy it over
+[27m 30s] yeah next one is license so this should
+[27m 34s] correspond to your
+[27m 36s] license file you have included in your
+[27m 38s] package
+[27m 40s] so if you shouldn't use mit you
+[27m 43s] have to customize this also for
+[27m 46s] private packages there's also a
+[27m 48s] proprietary option you can enter
+[27m 50s] send autos in this case i've
+[27m 54s] included the full block um these are
+[27m 57s] the four attributes available for autos
+[27m 59s] you don't have to use all of them
+[28m 2s] okay so i'll just say laravels here
+[28m 5s] right because
+[28m 6s] for example but you can also really
+[28m 9s] contain the real persons
+[28m 11s] that have created this what can you have
+[28m 13s] it's not related to the license okay
+[28m 16s] it's out to us you have can have two so
+[28m 18s] you just
+[28m 19s] it's an array of objects oh it's an
+[28m 22s] array okay
+[28m 23s] so our choice isn't no no no what do you
+[28m 26s] mean
+[28m 27s] oh you mean two arrays i get it yeah i
+[28m 28s] get it so awesome
+[28m 30s] area of objects so line 9 to 14
+[28m 34s] yeah could be cloned
+[28m 39s] okay so let's have you and then me
+[28m 48s] um has asked if you can but i think you
+[28m 52s] already have increased font size
+[28m 54s] even more okay let me do it even more i
+[28m 57s] don't know it was four minutes ago
+[28m 59s] so oh dude let me go 20.
+[29m 3s] yeah just be sure is it
+[29m 6s] are you people happy okay uh
+[29m 9s] home page
+[29m 16s] and rollable yeah that's fine okay
+[29m 18s] anything in the requirement
+[29m 20s] so roll is a says an enum or something
+[29m 23s] so you can
+[29m 24s] type in whatever you want typically it's
+[29m 28s] left out or it's developer but if you
+[29m 31s] have like
+[29m 32s] a big project where you have a designer
+[29m 34s] for example that created some cool
+[29m 36s] images or whatever you can also
+[29m 38s] say role designer so someone
+[29m 42s] checking also repository knows oh if i
+[29m 45s] have questions regarding uh art for
+[29m 48s] example i have to contact
+[29m 49s] uh neko for example
+[30m] oh he wants to move closer to the screen
+[30m 2s] is it still not big enough
+[30m 4s] can go even more if you want he's
+[30m 6s] watching on the big teeth
+[30m 8s] he said he's watching the video come on
+[30m 10s] but this is just
+[30m 12s] you move closer to the tv now
+[30m 15s] right next anything to do with it
+[30m 17s] require
+[30m 19s] uh require is a super basic for a larger
+[30m 22s] package
+[30m 23s] um i think we can stick with php 74 and
+[30m 27s] 8 support
+[30m 28s] we don't have to use php 8 only
+[30m 32s] um illuminate support is is the one and
+[30m 35s] only
+[30m 36s] real dependency for every larva project
+[30m 38s] as
+[30m 39s] this contains the service provider for
+[30m 41s] example okay
+[30m 43s] so this is the one that is like
+[30m 45s] necessary for every level package
+[30m 47s] yeah we could think if we also want to
+[30m 50s] support lava
+[30m 51s] 7 um i think we should go with it
+[30m 56s] to it leads to problems so that's always
+[31m] my way to go
+[31m 1s] so so then you add level of seven in
+[31m 3s] here or what how do you add
+[31m 5s] yeah do you it's it's uh how is it named
+[31m 8s] so
+[31m 8s] to no uh not as a dedicated dependency
+[31m 13s] but as
+[31m 13s] a as a new version in the illuminate
+[31m 16s] support version constraint like whisper
+[31m 18s] php above so and this
+[31m 21s] is the string that's oh i'll get it get
+[31m 23s] it so it's the rooftop
+[31m 25s] uh yep got it so you can enter
+[31m 28s] i think i don't even know what this is
+[31m 31s] now you have opened a new string oh
+[31m 34s] yeah oh my goodness i'll get it right
+[31m 38s] hold on
+[31m 39s] so we supporting copy 7
+[31m 42s] if you yeah 7.0
+[31m 47s] 0 or do we do star zero
+[31m 50s] zero and uh two pipes here
+[31m 53s] with level f six
+[31m 56s] i think yeah it was six until level six
+[32m] it was uh some minor versions that were
+[32m 3s] upgraded
+[32m 4s] every half a year with breaking changes
+[32m 7s] and this isn't semantic versioning and
+[32m 9s] with level
+[32m 10s] six taylor says we want to stick to
+[32m 13s] somatic versioning and i think with
+[32m 17s] the new upcoming larval
+[32m 21s] nine he has announced that
+[32m 24s] they want to still stick to semantic
+[32m 28s] versioning so if i understand it
+[32m 30s] but don't stick to this half here
+[32m 33s] breaking
+[32m 34s] changes cycle so it could be that
+[32m 38s] level 10 doesn't appear in
+[32m 41s] early 2022 but like end
+[32m 44s] 2022 or even 2023 for example
+[32m 49s] okay and yeah then we have the required
+[32m 52s] f dependencies
+[32m 53s] so these are only for our local
+[32m 56s] development
+[32m 58s] the second one is php unit and there was
+[33m 1s] a
+[33m 2s] configuration change in php unit 9.3 so
+[33m 6s] we require 9.3
+[33m 10s] two don't have to support two different
+[33m 12s] configurations
+[33m 14s] and so octostar testbench is a package
+[33m 18s] uh that includes all allowable stuff in
+[33m 21s] php unit
+[33m 22s] so we have a real laravel application
+[33m 25s] running
+[33m 26s] but we don't have to care about it in
+[33m 28s] our own package
+[33m 30s] but into this version constraint for
+[33m 32s] orchestra testbench you also have to
+[33m 35s] add a version 5 support as this
+[33m 38s] is the cost ponding version of orchestra
+[33m 41s] test bench for
+[33m 43s] laravel 7. like this
+[33m 46s] and also adrian is saying that he's only
+[33m 49s] using the one pipe
+[33m 51s] instead of two he's never seen two so
+[33m 52s] does it mean this yeah either
+[33m 55s] one or two it's both the same one pipe
+[33m 58s] is valid
+[33m 59s] but uh two pipes are normalized
+[34m 4s] and i'm a fan yeah i'm a huge fan of
+[34m 7s] normalized composer jason says a tool
+[34m 10s] um i forgot to
+[34m 13s] wrote it as which adds a composer
+[34m 15s] normalized commands it
+[34m 16s] also sorts all keys
+[34m 20s] like config extra autoload and so on so
+[34m 22s] they always have the same order in your
+[34m 24s] composer js
+[34m 26s] okay cool next config do we do anything
+[34m 29s] what's this
+[34m 30s] what's this about set something i've
+[34m 34s] saved right now sorts of packages um
+[34m 38s] so they are in alphabetical order in the
+[34m 41s] to require blocks okay cool
+[34m 45s] and the extra block extra is a
+[34m 49s] composer key for extra information that
+[34m 52s] don't belong to the composer
+[34m 54s] shamer yeah and laravel uses
+[34m 57s] uses it to automatically
+[35m] detect package service providers
+[35m 4s] so here we have to change the namespace
+[35m 7s] for our service provider
+[35m 11s] no also the whole stuff so
+[35m 14s] the first one will be your vendor yes
+[35m 16s] the second one
+[35m 17s] is um it's the name of the package
+[35m 21s] in i think it's title case but
+[35m 25s] most time i left out the lava part oh
+[35m 28s] so just tweet component you think yes
+[35m 30s] this is
+[35m 32s] this is the way i am doing it okay um
+[35m 36s] in the end you are totally free it's
+[35m 37s] your name space to whatever you want you
+[35m 39s] can also
+[35m 40s] say it's larabee as fubar for example
+[35m 43s] um it only has to be unique and
+[35m 46s] shouldn't conflict with
+[35m 47s] other packages so if you wouldn't use
+[35m 51s] larabees
+[35m 52s] and say hey let's name it the first bit
+[35m 55s] sparsi for example you will probably
+[35m 58s] get two problems and
+[36m 1s] then that's it's the second part of the
+[36m 4s] namespace
+[36m 5s] yeah so this is how i name names service
+[36m 9s] providers
+[36m 9s] i take the second part of the namespace
+[36m 12s] and
+[36m 13s] append service provider okay
+[36m 18s] or second part of the namespace so you
+[36m 20s] mean this the whole thing
+[36m 22s] no no it's this is totally right now
+[36m 25s] okay
+[36m 27s] and the autoload
+[36m 30s] will be larabes slash tweet component
+[36m 34s] yeah i'm getting the idea now
+[36m 37s] important here is that you have to
+[36m 40s] append these
+[36m 42s] two leading backslashes
+[36m 45s] yeah as it's a namespace and not a full
+[36m 48s] qualified class name
+[36m 50s] okay and same for the autoload dev
+[36m 54s] um so what would happen if i don't have
+[36m 56s] the leading
+[36m 57s] backslashes is it going to throw an
+[37m] error or is it just not going to do
+[37m 1s] something
+[37m 2s] i think composer will throw an error if
+[37m 4s] you run composer update
+[37m 7s] okay but it will definitely not find
+[37m 9s] your classes
+[37m 11s] so it will be obvious that something's
+[37m 13s] wrong okay
+[37m 14s] yeah so now with the autoload we've
+[37m 18s] defined
+[37m 19s] two directories we have to create it's
+[37m 22s] the source and
+[37m 23s] tests directory
+[37m 34s] [Music]
+[37m 44s] well why test when it says test here
+[37m 48s] does it not have to this is
+[37m 51s] a script name uh you can define
+[37m 54s] yeah like shortcuts uh in composer
+[37m 58s] so you can run composer test which will
+[38m 1s] run when or bin php unit behind the
+[38m 4s] scenes
+[38m 4s] okay cool so this is super useful for
+[38m 7s] some more complex commands
+[38m 9s] yeah very similar to npm file i think so
+[38m 12s] you think it's just used when you define
+[38m 14s] scripts there as well i just never
+[38m 15s] thought of
+[38m 16s] checking how to do it in composer file
+[38m 18s] as well yeah
+[38m 19s] and you can even provide an an array so
+[38m 22s] you can run
+[38m 23s] multiple commands with one composer
+[38m 26s] shortcut
+[38m 27s] oh okay cool okay so this is
+[38m 30s] this file i think so we've gone through
+[38m 32s] this what do we do next
+[38m 35s] next one will be creating the service
+[38m 37s] provider we defined in the extras so you
+[38m 39s] can
+[38m 39s] copy this uh service provider name so
+[38m 42s] tweet
+[38m 43s] component service provider so the last
+[38m 45s] car yeah
+[38m 47s] and where do we create it is it going to
+[38m 50s] be in the
+[38m 51s] root folder or it's going to be in the
+[38m 52s] source no it will be in the source
+[38m 54s] directory
+[38m 55s] uh or the package logic we want to
+[38m 58s] publish will be in the source
+[39m] okay
+[39m 6s] exactly so
+[39m 9s] now i have to open one of my service
+[39m 12s] providers on my second screen
+[39m 15s] exactly so php opening tag and
+[39m 19s] second one or first one will be the
+[39m 20s] namespace so can you first tell me what
+[39m 23s] is the point of service provider why are
+[39m 24s] we doing this
+[39m 25s] what is it about service providers um
+[39m 28s] uh
+[39m 32s] entry point for every package and you
+[39m 35s] possibly also know
+[39m 36s] know some from your real larva
+[39m 39s] application
+[39m 40s] every lava application comes with i
+[39m 42s] think five service providers
+[39m 44s] so app route broadcast events and so on
+[39m 48s] and it's an entry point to run logic
+[39m 50s] while
+[39m 51s] your application boots so
+[39m 54s] there are two main methods in every
+[39m 56s] service provider it's a boot method and
+[39m 58s] it's a register method
+[40m] okay and i just stopped it the namespace
+[40m 4s] so is it the namespace or is it
+[40m 6s] which one is it the whole thing where
+[40m 10s] was it
+[40m 11s] it's a larabee slay slash tweet
+[40m 13s] component so it's this whole thing
+[40m 16s] is it going to be yeah okay
+[40m 19s] one more yeah
+[40m 22s] it's a backslash is it really i never
+[40m 26s] know what is in there or i need to pay
+[40m 27s] my attention
+[40m 28s] it is
+[40m 32s] okay yeah so now uh
+[40m 38s] yeah so phpstorm autocomplete got really
+[40m 40s] up and during the last update so
+[40m 43s] please jetbrains fix it
+[40m 47s] they said there was one call was the yes
+[40m 49s] so the class will be
+[40m 52s] what's it going to be just type start to
+[40m 54s] type tweet and
+[40m 55s] phpstorm will provide it yeah hopefully
+[40m 58s] so next one will be
+[41m 3s] our service provider has to extend in
+[41m 5s] class so it will be class feed component
+[41m 7s] service provider extends
+[41m 10s] service provider and
+[41m 13s] start to type it i know we have
+[41m 16s] we haven't run composer update or
+[41m 19s] install
+[41m 19s] [Music]
+[41m 20s] okay hold on if we do it now with this
+[41m 23s] incomplete is it gonna complain
+[41m 24s] oh no everything fine okay let me
+[41m 28s] bring back my so
+[41m 31s] composer update update install
+[41m 34s] whatever you want yeah oh you should run
+[41m 37s] a composer self update
+[41m 41s] i will later i will
+[41m 46s] tomorrow you know it's like with the mac
+[41m 48s] update so i'm going to update you
+[41m 50s] to you know big sur tomorrow tomorrow
+[41m 52s] tomorrow eventually
+[41m 54s] one question by has also already
+[41m 57s] answered by
+[41m 58s] hans yes it doesn't have to be src
+[42m 1s] or source you can name it whatever you
+[42m 4s] want
+[42m 5s] but source is like the
+[42m 8s] standard naming it's a not
+[42m 11s] really defined common standard so
+[42m 14s] if you use something else uh
+[42m 18s] some other people's will have problems
+[42m 20s] to get onto your package
+[42m 23s] you said so this should extend service
+[42m 26s] provider right it's still not coming up
+[42m 27s] as a it's indexing
+[42m 30s] so oh it says isn't it oh yeah
+[42m 34s] it will happen okay it will catch up
+[42m 37s] eventually so what do we do in this
+[42m 38s] class
+[42m 39s] so you said there are two methods there
+[42m 40s] was the boot and register right
+[42m 43s] yeah um something for katherine
+[42m 46s] you are totally right for um
+[42m 50s] for applications but for packages
+[42m 53s] install and update should result to
+[42m 57s] the same runnable code as
+[43m] you don't provide to compose a log file
+[43m 2s] and every
+[43m 4s] user of your package will answer install
+[43m 6s] the package with
+[43m 8s] only your version constraints so
+[43m 11s] if there's a version included in your
+[43m 13s] constraints that
+[43m 15s] doesn't work with your package you
+[43m 17s] should
+[43m 18s] uh reduce your possible version set of
+[43m 22s] vsa constraints there's no way uh
+[43m 26s] you can provide the composer log file
+[43m 27s] for users so as a developer it's totally
+[43m 30s] okay or a package developer it's totally
+[43m 33s] fine to always run composer update and
+[43m 35s] not install
+[43m 36s] as this way you can always test with the
+[43m 39s] latest versions and see if there's
+[43m 41s] something
+[43m 42s] breaking as some other developer did
+[43m 45s] crazy stuff in his own package
+[43m 50s] cool thank you for you know keeping an
+[43m 53s] eye on the questions because i'm like
+[43m 54s] i'm sitting here
+[43m 55s] i don't know what to do and you keep an
+[43m 57s] eye on the questions okay yeah
+[43m 59s] so what do we do now um
+[44m 3s] boot register exactly um
+[44m 6s] you should move the register method up
+[44m 9s] as this is the one
+[44m 10s] that's called first okay i always move
+[44m 14s] it
+[44m 14s] up because the naming of these two
+[44m 16s] methods could lead to the opposite
+[44m 18s] as boot is the naming for we want to
+[44m 21s] boot something
+[44m 22s] yeah but in this context is the second
+[44m 25s] method
+[44m 25s] uh you run the register for all service
+[44m 29s] providers and after this it will run the
+[44m 31s] boot method for all service prices
+[44m 34s] so this is a real difference between
+[44m 37s] these two methods and your register
+[44m 39s] method should only
+[44m 40s] register new classes to uh for example
+[44m 43s] your
+[44m 44s] dependency container okay and the booth
+[44m 48s] boot method can do things with these
+[44m 51s] classes so for example if you want to uh
+[44m 56s] [Music]
+[44m 59s] to use the config values for example
+[45m 1s] with your classes
+[45m 3s] and do things like this this should have
+[45m 5s] this booth
+[45m 6s] boot method but we will uh
+[45m 10s] get to this in okay in a few moment
+[45m 13s] in a few seconds so for now
+[45m 17s] this is totally fine um one thing for
+[45m 20s] the
+[45m 20s] totally type save developers like me
+[45m 24s] i always adds a return type of
+[45m 27s] void to both methods as both methods are
+[45m 32s] shouldn't return anything do i no do i
+[45m 35s] just leave it like that why is it
+[45m 37s] complaining oh it's a real language
+[45m 41s] yeah you
+[45m 45s] you can switch it no uh go to the void
+[45m 49s] and on the hover thing switch to php
+[45m 54s] seven zero then possibly you have to
+[45m 57s] do it again with the seven one yeah
+[45m 59s] phpstorm is sometimes
+[46m 1s] a bit silly okay there you go no it's
+[46m 4s] cool
+[46m 6s] now it's cool so exactly
+[46m 9s] now we have the service provider and
+[46m 11s] because we don't have
+[46m 12s] any classes until now we don't do
+[46m 15s] anything in the service provider
+[46m 17s] yeah um
+[46m 20s] no so all these things if you use the
+[46m 24s] skeleton all these
+[46m 25s] things would come prepared for you or
+[46m 28s] yeah i think we should also at some
+[46m 30s] point
+[46m 30s] maybe at the end do the same thing what
+[46m 33s] we are doing now from scratch and then
+[46m 34s] do it using a
+[46m 35s] skeleton just to see all the things
+[46m 38s] that we don't have to do if we use a
+[46m 40s] skeleton
+[46m 42s] it's really a lot less work yeah
+[46m 45s] and you know even looking at the service
+[46m 46s] provider i use it all the time in
+[46m 48s] laravel but i never look at it like that
+[46m 49s] you know because you don't
+[46m 51s] write them you just add stuff to them
+[46m 54s] and like
+[46m 54s] having it right to myself i'm kind of
+[46m 56s] suddenly thinking you know normally i
+[46m 58s] would just go and see
+[46m 59s] you know in my other projects seeing how
+[47m 1s] it's done and now i don't have that
+[47m 3s] it's yeah it's a different kind of
+[47m 4s] experience doing it from scratch when
+[47m 6s] you
+[47m 7s] yeah yeah that's also something for your
+[47m 9s] larva applications
+[47m 11s] you aren't limited to these five default
+[47m 13s] service providers
+[47m 14s] you can always add another one in your
+[47m 17s] own larvae application
+[47m 18s] so if you think that so
+[47m 21s] what you want to do in the service
+[47m 23s] provider doesn't really match
+[47m 25s] one also already present yeah and
+[47m 28s] personally i always try to keep the app
+[47m 30s] service provider nearly empty
+[47m 32s] sometimes i also delete it or unregister
+[47m 35s] it
+[47m 37s] because app service provider is yeah for
+[47m 40s] for the staff set it's really random
+[47m 43s] but for most things i try to create new
+[47m 46s] service providers that
+[47m 48s] set name what they will do like create
+[47m 51s] new macros or mix ends and
+[47m 55s] do some stuffs with this carbon
+[47m 58s] or whatever you want to do in service
+[48m] providers
+[48m 1s] okay okay what do we do next
+[48m 7s] so um
+[48m 12s] i think we should set up a php unit
+[48m 14s] environment
+[48m 16s] okay what
+[48m 19s] is this one yeah
+[48m 22s] so the php unit xml um
+[48m 25s] says a command in php unit so if you
+[48m 28s] have installed it with composer you can
+[48m 30s] run php unit in it i think it is
+[48m 34s] this will ask you also some questions
+[48m 37s] and creates this php unit xml i think it
+[48m 39s] will create a php and xml not so this
+[48m 42s] one but you can rename it afterwards
+[48m 44s] or you copy it from any package does it
+[48m 47s] have to have the test
+[48m 48s] uh extension it has to have if you have
+[48m 52s] excluded the php unit xml so it's also
+[48m 55s] just in your kitknow file
+[48m 57s] okay which we have done yeah so
+[49m 1s] uh just a quick run through um
+[49m 4s] all these config things and the php on
+[49m 6s] that opening take our config things you
+[49m 9s] can leave them
+[49m 10s] like this yes and you have to test
+[49m 12s] suites
+[49m 13s] as a package developer we normally have
+[49m 15s] only one
+[49m 17s] if you want to if you have a really
+[49m 19s] large package with feature tests unit
+[49m 21s] tests and all the stuff you can
+[49m 24s] also add a second test to it for example
+[49m 26s] and this is because of
+[49m 27s] this being called tests that's why our
+[49m 30s] tests
+[49m 31s] directly has to be broadcast are they
+[49m 33s] these have to be the same so it could be
+[49m 34s] called
+[49m 35s] also composer yeah and your composer
+[49m 38s] json
+[49m 38s] in the autoload dev we also have the
+[49m 41s] test directory oh yes i can see it for
+[49m 43s] the
+[49m 44s] uh component tests
+[49m 47s] we want to change it we have to change
+[49m 48s] it in these through three places
+[49m 50s] like these three places they need to be
+[49m 52s] the same okay cool exactly
+[49m 54s] and the coverage run will uh
+[49m 57s] be important if you want to have code
+[49m 59s] coverage it just says that
+[50m 1s] for coverage it should include all php
+[50m 4s] files in the source directory
+[50m 6s] um if you have a more complex file
+[50m 9s] structure
+[50m 10s] you can also add more directories to fix
+[50m 12s] filters whatever
+[50m 15s] but it's a this is the default uh php
+[50m 18s] unit config and i think i haven't
+[50m 20s] changed it in
+[50m 20s] any package so you can get pretty far
+[50m 24s] with it
+[50m 25s] okay so we're not doing anything in here
+[50m 29s] no uh first thing we have to do is
+[50m 32s] create a
+[50m 33s] test case php file in the test directory
+[50m 37s] so test as a singular
+[50m 40s] and case and another tests director is
+[50m 44s] already present
+[50m 46s] um that i'm making a file yeah yeah yeah
+[50m 49s] upper tier and upper c
+[50m 53s] case dot php yeah yeah
+[50m 58s] so again open php
+[51m 1s] tag okay and namespace
+[51m 5s] labels tweet component it should
+[51m 10s] still doesn't come up it doesn't
+[51m 13s] that was said it was yeah yeah there you
+[51m 15s] go
+[51m 16s] and another backslash and tests
+[51m 21s] i need to get rid of that hot hot corner
+[51m 24s] thing
+[51m 25s] uh so disable some in your settings uh
+[51m 27s] tests
+[51m 29s] are but here yeah yeah one note
+[51m 32s] uh if you should have a test directory
+[51m 35s] in your
+[51m 36s] source source folder you get into
+[51m 38s] trouble
+[51m 39s] here and so if you do any package
+[51m 42s] related
+[51m 42s] tests or you want to provide something
+[51m 45s] in
+[51m 45s] a tests sub name space or whatever
+[51m 48s] reason you have to create a test
+[51m 50s] directory in your source
+[51m 52s] uh you should switch to another
+[51m 55s] namespace for your
+[51m 56s] tests one way for example would be
+[51m 59s] larva's tweet component and without the
+[52m 1s] second backslash
+[52m 3s] just tweet component tests for example
+[52m 5s] so yeah i get it
+[52m 6s] put it into one namespace on that arbus
+[52m 13s] as adrian is asking sorry could you
+[52m 15s] create a new class instead of a new file
+[52m 18s] i don't know could i should i you can
+[52m 21s] all i always don't do it as
+[52m 24s] it's a lot more typing for me and just
+[52m 26s] create a new class and
+[52m 28s] create a new php file and i always have
+[52m 31s] another package open in a second
+[52m 33s] phpstorm instance where i can copy paste
+[52m 35s] so for the moment it could be a bit less
+[52m 39s] typing if we create a new class yeah
+[52m 42s] um because then i also i just it's i've
+[52m 44s] got to so it's command
+[52m 46s] and for new and then just d for director
+[52m 50s] file yeah i know i know class is down
+[52m 52s] where is this do i just say c
+[52m 54s] php class yeah anyway let's stick with
+[52m 57s] what we have and
+[52m 59s] next time it's the best thing is what
+[53m 2s] you know best so yeah
+[53m 5s] it will be an abstract class oh is it
+[53m 9s] again is it always this scary oh
+[53m 10s] somebody's coming upstairs this is the
+[53m 12s] thing with having kids in the house you
+[53m 14s] never know if they're going to come
+[53m 16s] abstract
+[53m 20s] yeah it doesn't have to be an abstract
+[53m 23s] class but it makes clear that this class
+[53m 25s] isn't
+[53m 25s] used directly and
+[53m 28s] your abstract class test case extends
+[53m 31s] again
+[53m 32s] a class
+[53m 36s] uh test case and no no no one no
+[53m 47s] so what is the difference between php
+[53m 48s] unit framework and orchestra does bench
+[53m 51s] the php unit framework is a super
+[53m 54s] default one
+[53m 55s] you will use uh in your larva
+[53m 58s] applications for example
+[54m] so acroster testbench x uh wrapped or
+[54m 3s] extensive php unit framework test case
+[54m 6s] and puts in
+[54m 6s] all the stuff you need for a lava
+[54m 11s] test environment so it boots a real love
+[54m 14s] application for example
+[54m 15s] it's it provides an app
+[54m 18s] property and some special methods you
+[54m 21s] can use to
+[54m 22s] inject some larvae logic
+[54m 29s] now this will lead to problems why
+[54m 33s] because your defined class has the same
+[54m 36s] name as the class you extend
+[54m 39s] i i always use aliases so use ultrastar
+[54m 42s] testbench test case
+[54m 43s] as orchestra test case
+[54m 46s] yes
+[54m 51s] like that and no
+[54m 55s] okay exactly okay so this is the way i'm
+[54m 59s] doing
+[54m 59s] you can also extend and it's a full
+[55m 2s] qualified
+[55m 2s] class name yeah i don't like them in the
+[55m 5s] when you use them in
+[55m 6s] classes so that's why i always use the
+[55m 7s] use use statement because otherwise
+[55m 9s] it gets i just yeah it looks messy to me
+[55m 12s] let me just check the comments so
+[55m 15s] phpstorm ability create test php unit
+[55m 17s] unit
+[55m 18s] testbench you can have a yeah
+[55m 22s] just something so you can improve your
+[55m 24s] php
+[55m 25s] storm skills yeah i know it exists
+[55m 29s] that's true and sometimes i try to and
+[55m 31s] i'm creating other tests like a future
+[55m 33s] test a few times i try to
+[55m 34s] use the php storm functionality and then
+[55m 38s] yeah i know it's there but let's do it
+[55m 40s] the slow way now
+[55m 41s] but it's true that if i do like a create
+[55m 44s] and if we do
+[55m 46s] command new and then we've got all the
+[55m 49s] so we could have created a file class
+[55m 51s] then there is php test
+[55m 53s] and unit tests and all these so yeah
+[55m 55s] it's possible
+[55m 56s] but for example if you create a php unit
+[55m 58s] test from this
+[55m 59s] drop down you have to replace the
+[56m 2s] extended clasp
+[56m 3s] you just create a plain pgp unit test
+[56m 7s] case yeah
+[56m 7s] a few times i have just said okay okay
+[56m 9s] okay and you know without really reading
+[56m 11s] through it
+[56m 12s] and it wasn't very helpful so yeah
+[56m 16s] so now uh a method get package providers
+[56m 19s] just type get package provided no no
+[56m 22s] just without that
+[56m 24s] what phpstorm is really great as it's a
+[56m 27s] method you
+[56m 28s] set defined the lowest one exactly
+[56m 31s] yeah and phpstorm will do all this
+[56m 34s] protected function
+[56m 35s] stuff um return type array
+[56m 41s] so yeah you return an array and you can
+[56m 43s] also add the type hint
+[56m 45s] and so you mean up there you mean up
+[56m 47s] here okay
+[56m 48s] both is right yeah and in say array
+[56m 52s] we no no it was correct yeah
+[56m 56s] and we will return the full qualified
+[57m] class name of our package service
+[57m 2s] provider so uh
+[57m 3s] tweet component service provider yeah
+[57m 6s] exactly
+[57m 7s] dot class or uh house
+[57m 18s] i've already got the class yes the class
+[57m 21s] name and send
+[57m 22s] you know what you've done is right but
+[57m 24s] these two double
+[57m 25s] dot things are are named kalanor
+[57m 30s] non-native speaker yeah colon double
+[57m 32s] colon i think
+[57m 34s] yeah people correct them
+[57m 37s] there's two non-native english-speaking
+[57m 39s] speakers speaking so you know
+[57m 42s] is it common yeah yeah catherine's
+[57m 45s] saying that it saves all the typing the
+[57m 47s] thing with oh it's about opinions and
+[57m 48s] compromise yes cathy you're right and i
+[57m 50s] think people different people will have
+[57m 51s] different ways
+[57m 52s] and we are doing it the slow way
+[57m 53s] currently because at least i'll get the
+[57m 55s] the chance to ask all the questions
+[57m 57s] but you're right like next time if i do
+[57m 59s] it by myself i'm not going to be doing
+[58m] all the typing
+[58m 1s] it's just right now i'm using tom to ask
+[58m 3s] all the questions i might have or i
+[58m 5s] didn't even know i had
+[58m 7s] but if i did it by myself i wouldn't do
+[58m 9s] it this way let's let's just put it this
+[58m 11s] way i would probably use it
+[58m 12s] yeah skeleton thanks catherine for
+[58m 14s] double colin thanks
+[58m 16s] thank you yeah so
+[58m 20s] so what else this is the one
+[58m 23s] really required method for uh
+[58m 28s] for a basic test case for a package it
+[58m 31s] tells the
+[58m 32s] octostat test case which service
+[58m 33s] providers it has to boot so
+[58m 36s] this method is similar to what you are
+[58m 38s] doing in
+[58m 39s] your config app.php in a real hour
+[58m 42s] application
+[58m 44s] and what laravel automatically does with
+[58m 47s] a
+[58m 48s] package
+[58m 50s] this package detection yeah if you run
+[58m 53s] composer update
+[58m 55s] and okay
+[58m 58s] exactly so this is what we have to do
+[59m 1s] here next one i think we
+[59m 4s] should create our component
+[59m 9s] okay um do we then
+[59m 12s] create a new directory or do we do it
+[59m 14s] all and uh
+[59m 16s] i would create a new directory i always
+[59m 18s] try to stick as close as possible
+[59m 21s] to the default uh laravel
+[59m 24s] directory structure in a lot of
+[59m 27s] applications
+[59m 28s] so this would be resource resources now
+[59m 30s] or just do
+[59m 31s] straight to component no this one will
+[59m 34s] be
+[59m 35s] the class name uh the component class
+[59m 39s] so it's a part that lies in your lava
+[59m 42s] app directory by default so it's
+[59m 44s] view as direct views
+[59m 47s] views use i think
+[59m 51s] and then components let me check my mjx
+[59m 54s] package which horror has it's again it's
+[59m 57s] one of these things that you don't kind
+[59m 59s] of
+[59m 59s] like you use it every day all the time
+[60m 1s] but
+[60m 2s] yeah i think it's views
+[60m 5s] it might be no i think that's weird
+[60m 8s] component
+[60m 9s] i think it's senior like could it be uh
+[60m 12s] yeah
+[60m 15s] my own website should have
+[60m 19s] and my computer gets slower with three
+[60m 21s] open it's singular
+[60m 23s] view okay
+[60m 28s] yeah adrian uh you're totally right it's
+[60m 30s] double point
+[60m 34s] dub or even double double double top
+[60m 39s] um so german is cool
+[60m 50s] i haven't done it yet i just wanted to
+[60m 51s] rename the views to view
+[60m 54s] and yeah
+[60m 59s] yeah as this is auto load piece
+[61m 4s] for a standard so your directory
+[61m 7s] structure has to
+[61m 8s] exactly match your class uh your
+[61m 11s] namespaces
+[61m 13s] i'm gonna do it just delete it yeah
+[61m 20s] view comment and component with capital
+[61m 23s] c again
+[61m 24s] exactly and one see on components
+[61m 28s] yeah thank you catherine thank you
+[61m 31s] captain don't go away please stay
+[61m 34s] okay i think catherine should took my
+[61m 37s] part
+[61m 38s] no no it's cool so like we are learning
+[61m 41s] as a community we are all
+[61m 42s] well i am learning and you are all
+[61m 44s] teaching me yeah
+[61m 46s] so next the php
+[61m 49s] class file so pick whatever ray you want
+[61m 52s] to create it
+[61m 53s] okay so let's do okay let's do the the
+[61m 56s] class php class yeah let's see what php
+[62m] storm can do
+[62m 1s] the name will be tweet i think so the
+[62m 4s] component name is tweet yeah
+[62m 6s] and namespace will be the larabee street
+[62m 10s] component
+[62m 13s] do i have to always do the back
+[62m 16s] tweet component is suggested now you
+[62m 18s] have to add a backslash
+[62m 20s] view this isn't
+[62m 24s] all the completed and this is the part i
+[62m 26s] mean age ran with
+[62m 28s] a lot more typing here or
+[62m 31s] the same timing i would have to do in
+[62m 33s] the normal editor
+[62m 34s] and it's also again backslash components
+[62m 37s] oh
+[62m 38s] okay and
+[62m 41s] do i do the semicolon at the end or just
+[62m 44s] no i think you can leave it there okay
+[62m 48s] so file name tweet directories through
+[62m 51s] template class fire extension yeah
+[62m 54s] should be
+[62m 54s] all things fine i think we could use
+[62m 57s] these lower extents and implements but i
+[63m] think we are faster if we are doing it
+[63m 1s] here
+[63m 2s] so i don't i don't see it being much
+[63m 4s] faster using that
+[63m 6s] rather than just typing it because here
+[63m 8s] at least if i use the name spacing it
+[63m 10s] would autocomplete
+[63m 11s] while using that functionality it's
+[63m 13s] faster if you already have this
+[63m 15s] namespace
+[63m 16s] uh phpstorm can't recommend namespaces
+[63m 19s] that don't exist so if you would create
+[63m 21s] a second component now
+[63m 22s] uh it would be faster as you could type
+[63m 25s] in components into namespace and
+[63m 26s] phpstorm would
+[63m 28s] list the larabee street component view
+[63m 30s] components namespace
+[63m 32s] so it's class tweet and it will extend
+[63m 35s] the component class
+[63m 38s] and component from the illuminate view
+[63m 42s] yeah this one yeah see could you add
+[63m 44s] this
+[63m 45s] to as we recommend creating it via the
+[63m 48s] php storm functionality could you then
+[63m 50s] add the
+[63m 51s] extent part or you can't do it there i
+[63m 53s] don't think i think
+[63m 54s] you can do it just right click uh create
+[63m 57s] new
+[63m 59s] php class
+[64m 2s] [Music]
+[64m 4s] and in the lower part parent classes
+[64m 7s] extends and implements
+[64m 8s] okay okay that's something to do next
+[64m 11s] time
+[64m 12s] so this is the first thing uh we use
+[64m 15s] uh a new illuminate namespace
+[64m 19s] uh until now we only have used to
+[64m 21s] illuminate support in the service
+[64m 23s] provider now we use the illuminate view
+[64m 25s] namespace
+[64m 26s] so we have to go to the composer.js file
+[64m 32s] and up to require
+[64m 35s] yes and
+[64m 38s] clones illuminate support line and
+[64m 40s] replace support with view
+[64m 43s] okay
+[64m 46s] so yeah so version constraint will be
+[64m 49s] exactly the same
+[64m 50s] and then and we only add the view
+[64m 54s] the reason why you already have this
+[64m 56s] installed is because of octostar
+[64m 58s] testbench
+[64m 59s] which installs a whole larger
+[65m 1s] application
+[65m 2s] yeah and this can be tricky because you
+[65m 6s] have access to every illuminate class
+[65m 10s] but you haven't required it in your
+[65m 12s] composer requirements
+[65m 13s] oh so if you want to use it you still
+[65m 16s] have to
+[65m 16s] require it and if you publish it and
+[65m 19s] someone installs it locally
+[65m 21s] say could possibly don't have it
+[65m 24s] installed
+[65m 25s] with illuminate dependencies it's most
+[65m 27s] times not a problem because
+[65m 28s] all illuminate dependencies are part of
+[65m 30s] the normal
+[65m 31s] replication but before i do the
+[65m 36s] computer update so i think was it
+[65m 38s] catherine who was saying that you should
+[65m 39s] do composer install because if you do
+[65m 41s] composer update it's going to update all
+[65m 42s] the dependencies whether you like it or
+[65m 44s] not so it's but for us it doesn't
+[65m 46s] whether i do it update or install it
+[65m 48s] doesn't matter
+[65m 49s] exactly i think i've answered it uh yeah
+[65m 52s] it's the moment katherine
+[65m 53s] asks us yeah for real applications it's
+[65m 57s] totally right that you should use
+[65m 58s] install not update
+[65m 59s] for package development you i think it's
+[66m 3s] even possibly recommended to use update
+[66m 5s] to always have the latest dependencies
+[66m 8s] so adrian wrote some things phpstorm
+[66m 11s] those namespaces
+[66m 12s] set up folder structure
+[66m 15s] yeah uh it could be said phpstorm
+[66m 18s] doesn't recommend the
+[66m 19s] namespaces from uh
+[66m 23s] directory structure because we haven't
+[66m 25s] set up
+[66m 26s] phpstorm project properly yeah but
+[66m 29s] that's something for
+[66m 30s] someone sometimes yeah
+[66m 35s] so why is it complaining class must be
+[66m 38s] declared abstract or implement methods
+[66m 40s] so do we have simple method render
+[66m 43s] exactly so it has to be protected again
+[66m 46s] or just the public function
+[66m 48s] just type render and phpstorm will
+[66m 52s] tell you but as it's yeah
+[66m 56s] okay and
+[66m 59s] i would add the return type hint of
+[67m 3s] view in this case the contract
+[67m 7s] so view illuminate contracts view
+[67m 9s] exactly
+[67m 12s] why
+[67m 14s] this uh contracts are interfaces in
+[67m 16s] laravel
+[67m 17s] so all interfaces are named contracts in
+[67m 19s] larva
+[67m 20s] and the view contract is
+[67m 24s] the interface for all views and the
+[67m 28s] render method has to
+[67m 30s] i think it has to return okay let's
+[67m 33s] check it
+[67m 33s] um it has to return
+[67m 38s] an instance of a view or a string and
+[67m 41s] because we want to
+[67m 42s] use a blade view for some blade niceness
+[67m 46s] we will return a view instance not a
+[67m 48s] string so string is helpful if you have
+[67m 51s] really small components and want to use
+[67m 54s] here docs for example
+[67m 55s] or not or really just drink
+[67m 59s] con concatenation yeah
+[68m 3s] in this case you could use string yeah
+[68m 5s] okay
+[68m 6s] and catherine said yeah if you if you
+[68m 8s] click on the other line it offers you
+[68m 10s] what you can do with it now it's yeah
+[68m 14s] the error has gone by yeah okay what do
+[68m 16s] we do now
+[68m 18s] so now
+[68m 22s] it will return view so the view global
+[68m 25s] function
+[68m 27s] so return
+[68m 30s] and lower view how you do it in a
+[68m 34s] in a real level application controller
+[68m 35s] for example yeah exactly okay get it
+[68m 38s] yeah
+[68m 39s] you yeah
+[68m 43s] so what are we returning
+[68m 52s] yeah um we will use uh
+[68m 55s] i think it's slug case of the
+[68m 59s] the second namespace part so tweet
+[69m 1s] component uh
+[69m 2s] log has tweet minus component
+[69m 8s] and now the double column i've learned
+[69m 12s] oh this one yeah and let's name it
+[69m 15s] feet to explain it
+[69m 20s] at this i've never seen this before
+[69m 22s] explain this to me because i don't think
+[69m 23s] i've ever seen
+[69m 24s] using the being view used this way
+[69m 27s] i will um blade offers the
+[69m 31s] possibility to name space views
+[69m 34s] in your default love application you
+[69m 36s] won't do it because you have all your
+[69m 39s] views inside of your
+[69m 41s] resources views directory yeah but
+[69m 44s] packages
+[69m 44s] can prevent conflicts with other
+[69m 47s] packages
+[69m 48s] and local views this way so imagine you
+[69m 51s] wouldn't
+[69m 52s] have this tweet component namespace
+[69m 54s] before just name a tweet
+[69m 56s] and another package for example would
+[69m 58s] also publish a tweet view or
+[70m] sudoku developer wants to have a tweet
+[70m 2s] view because of whatever reason
+[70m 4s] um in this case you would get into
+[70m 7s] trouble so that's
+[70m 8s] i think by yeah by us using all the name
+[70m 10s] spacing we should avoid this anyway
+[70m 12s] so what does it matter whether the view
+[70m 14s] is called just tweet
+[70m 16s] um the view blade file doesn't
+[70m 20s] know name spaces like php oh yeah okay
+[70m 23s] so that's why we
+[70m 26s] introduce let's name it fake name space
+[70m 30s] sets the tweet component before this
+[70m 32s] double column
+[70m 33s] and i think internally blade names sims
+[70m 38s] hints but most people name some
+[70m 42s] namespace every package should use its
+[70m 45s] own
+[70m 45s] namespace in this case it's
+[70m 49s] relatively
+[70m 52s] prevented that we get into conflicts if
+[70m 55s] you want to
+[70m 56s] go really safe you could say allowables
+[70m 59s] minus tweet minus component
+[71m 3s] but i think there won't be another
+[71m 5s] package tweet component and
+[71m 7s] a user set installs both packages in his
+[71m 10s] application
+[71m 11s] if so blame him
+[71m 14s] yeah we came up with it first so don't
+[71m 16s] try to you know
+[71m 17s] since this is going to take us a while
+[71m 19s] so if somebody else says
+[71m 21s] i'm just going to do it now because this
+[71m 22s] is taking so long so don't
+[71m 24s] because this is our namespace just
+[71m 26s] saying you know it's official now it's
+[71m 28s] on youtube this is our namespace
+[71m 32s] yeah um
+[71m 35s] exactly that's everything we do right
+[71m 38s] now
+[71m 39s] in this component we will do some more
+[71m 41s] things later
+[71m 42s] um now create the directory in the
+[71m 46s] package root so on the same levels
+[71m 49s] like source tests vendor yeah
+[71m 52s] and name it resources
+[71m 56s] lower lower l sorry oh come on sometimes
+[72m] it's traffic those are
+[72m 1s] lower i'm sorry uh no it's not you it's
+[72m 5s] not i should know i work with laravel
+[72m 7s] every day i should know but it's
+[72m 8s] oh why delete it create it new it's just
+[72m 12s] all changes it's i'm changing one letter
+[72m 16s] i think it's it's one checkbox you have
+[72m 19s] to
+[72m 19s] uncheck if you rename it so phpstorm
+[72m 22s] doesn't
+[72m 23s] try to be more intelligent than you
+[72m 27s] um exactly so now we will create
+[72m 30s] recreates this default lava application
+[72m 33s] directory structure so it will be
+[72m 34s] resources uh subdirective
+[72m 36s] directory reviews this time
+[72m 40s] uh plural and it's lower components
+[72m 44s] exactly and lowercase components
+[72m 47s] components yeah
+[72m 48s] yeah got it and sarah we will create
+[72m 51s] this
+[72m 52s] tweet.blade.php file
+[72m 58s] yeah hey we're getting there perfect
+[73m 2s] so no uh you can create delete this
+[73m 6s] opening php
+[73m 7s] and now just add
+[73m 11s] hello hello for example yeah just add
+[73m 14s] some text
+[73m 14s] hello tweet whatever you want um
+[73m 19s] there you go so just we have something
+[73m 22s] to test
+[73m 23s] yeah now we have to tell
+[73m 27s] lava in our application our package
+[73m 29s] service provider
+[73m 30s] said we have views for this package and
+[73m 33s] we also have this
+[73m 34s] the tweet component namespace so opens
+[73m 37s] the service provider
+[73m 42s] yeah and in the
+[73m 48s] it will all happen in this boot method
+[73m 51s] so
+[73m 51s] okay what are we gonna do with the
+[73m 52s] register then nothing yet
+[73m 55s] we will call uh load views
+[73m 59s] from uh as a method on says
+[74m 2s] dollar sales
+[74m 5s] so what second inside of the boot method
+[74m 8s] yeah so what do i do sorry
+[74m 19s] [Laughter]
+[74m 24s] it's always hard to to do these
+[74m 28s] step-by-step things only on a verbal
+[74m 31s] basis
+[74m 32s] i bet you are regretting this now so
+[74m 36s] method name is load views from so
+[74m 39s] load views and said is yeah
+[74m 43s] yeah um
+[74m 47s] and the first argument it has two
+[74m 50s] the first one is the dear constant so
+[74m 53s] underscore understood
+[74m 54s] here yeah there it is
+[74m 58s] uh dots and quotes for
+[75m 1s] string concatenation
+[75m 5s] uh what the these ones are the normal
+[75m 7s] ones it's the normal ones
+[75m 9s] yeah so once you've tried tried first
+[75m 12s] this from javascript yeah
+[75m 14s] yeah and then slash
+[75m 18s] dot dot another slash
+[75m 21s] and then resources views um
+[75m 27s] yeah and if phpstorm
+[75m 31s] can also suggest you know said it's the
+[75m 33s] right one
+[75m 35s] and this is a the absolute path to
+[75m 39s] your directory with also uh
+[75m 43s] uh with all the blade views scissors
+[75m 47s] and second argument is the namespace
+[75m 51s] so a simple string and you will name it
+[75m 54s] a tweet
+[75m 54s] component doesn't matter if it's
+[75m 57s] capital yeah it should be the exact same
+[76m 1s] you've used before this double column in
+[76m 4s] the component class and the render
+[76m 6s] method
+[76m 7s] oh is it in there what was it
+[76m 11s] to this this one it has to be the same
+[76m 13s] as this exactly
+[76m 17s] yeah okay
+[76m 20s] yeah so now we've
+[76m 23s] told laravels that we have our own
+[76m 27s] package views in this directory and want
+[76m 29s] to use the tweet component namespace for
+[76m 31s] them
+[76m 31s] to prevent conflict and
+[76m 35s] now uh line breaks two
+[76m 38s] after this method call
+[76m 42s] what do you mean two line breaks no
+[76m 45s] insights a boot method
+[76m 48s] we won't do anything outside now yeah
+[76m 51s] and and if
+[76m 54s] with the condition sys property app
+[76m 58s] so dollar sales property app
+[77m 2s] now as a property get it
+[77m 6s] this is what i mean no as a property not
+[77m 8s] a method
+[77m 9s] oh my god i really had it
+[77m 13s] a good way to do it okay
+[77m 24s] i say property because it's a property
+[77m 26s] of the current class
+[77m 28s] yeah and on this app
+[77m 31s] you will call uh now a method so
+[77m 34s] against this dash and create a
+[77m 38s] sun sign no no inside the condition
+[77m 42s] what so in the condition of your first
+[77m 45s] if yeah
+[77m 46s] this app and now a method call
+[77m 50s] on app
+[77m 53s] yeah no no and the method name is
+[77m 56s] running and console
+[77m 58s] okay yeah so
+[78m 2s] you could know this method if you have
+[78m 4s] done
+[78m 5s] some cool things in your laravel
+[78m 7s] application or advanced things
+[78m 9s] don't want to judge um
+[78m 13s] it just has some cool things to detect
+[78m 16s] if your current
+[78m 17s] runtime is in console environment or not
+[78m 21s] so this what you do inside this
+[78m 25s] if block will just run if you call it
+[78m 28s] via artisan yeah get it it won't happen
+[78m 31s] if you uh use it via your
+[78m 35s] nginx apache whatever okay and
+[78m 38s] inside this one we want to do a call
+[78m 42s] the method publishers on sys so
+[78m 45s] dollar sales and the method publishers
+[78m 49s] published yeah and first argument is an
+[78m 52s] array
+[78m 54s] yeah common
+[78m 58s] standard is line break now so a
+[79m 1s] multi-line array
+[79m 2s] yeah and again we use the gear constant
+[79m 21s] again it's the same path the one is
+[79m 24s] above
+[79m 25s] okay yeah this one yeah
+[79m 29s] okay exactly and this is the key
+[79m 33s] now you have to
+[79m 36s] uses equal exactly for the value and the
+[79m 39s] value is
+[79m 40s] the global function resource path
+[79m 45s] yeah and
+[79m 50s] send type and views
+[79m 53s] as no sorry as a string and
+[79m 57s] all lower case
+[80m] yeah we use slash vendor
+[80m 6s] slash and
+[80m 10s] now
+[80m 13s] copies the namespace of your
+[80m 16s] you've used in the first line so tweet
+[80m 19s] minus component
+[80m 20s] so view namespace sorry says tweet minus
+[80m 23s] component string
+[80m 25s] or you can type it yeah
+[80m 28s] yeah you know what i can understand why
+[80m 30s] people use
+[80m 31s] skeletons because this is just like
+[80m 34s] so there's a lot of typing and it's
+[80m 36s] always the same it's it follows
+[80m 39s] a really good standard yeah um
+[80m 42s] so like once you do it like the packages
+[80m 44s] they all follow the same thing so once
+[80m 46s] you do it you just copy paste and change
+[80m 47s] the names yeah
+[80m 49s] that's what i'm doing and i've created
+[80m 53s] nearly uh 30 packages this way so it
+[80m 55s] works
+[80m 57s] and i think it's also the same since it
+[80m 59s] does with
+[81m] her own skeleton yeah and
+[81m 4s] there's a question from catherine will
+[81m 5s] that load views from
+[81m 7s] from work correctly since the component
+[81m 10s] component class says tweet component
+[81m 13s] colon colony yeah
+[81m 14s] eat catherine i i had it in mind i
+[81m 16s] wanted to
+[81m 17s] do it afterwards but you are totally
+[81m 19s] correct we've done
+[81m 21s] a mistake in our component class
+[81m 24s] let's fix it in in a minute so let's
+[81m 28s] let's finish this one
+[81m 30s] and the second argument of the
+[81m 32s] publishers
+[81m 33s] so after the array yeah will be a string
+[81m 38s] and it's named vuse
+[81m 46s] yeah uh i think you he knows this
+[81m 49s] artisan vendor
+[81m 51s] cullen publish command yeah yes i know
+[81m 54s] that one
+[81m 54s] so is this what publishes the exactly
+[81m 58s] as a survey service provider can tell
+[82m] laravel
+[82m 1s] which assets they want to publish
+[82m 5s] and the second argument we used here the
+[82m 8s] views
+[82m 9s] is a group or tag so one package
+[82m 12s] can publish several things like
+[82m 15s] commander's views translations config
+[82m 18s] migrations stuff like this and
+[82m 22s] uh yeah again i've used it many times
+[82m 26s] but i never looked into
+[82m 27s] how it works so this is really this is
+[82m 30s] important or interesting
+[82m 32s] and important not just for package
+[82m 33s] development but for how laravel works in
+[82m 35s] general
+[82m 36s] which is great and this is fuse the user
+[82m 40s] can pick only the views for example so
+[82m 42s] if you want to customize the views in uh
+[82m 44s] used by this package
+[82m 46s] he can say artisan vendor published
+[82m 50s] uh the namespace as a full qualified
+[82m 53s] namespace of the package service
+[82m 55s] provider as an option
+[82m 56s] and at minus minus group equal views
+[83m] i think it is uh to publish only the
+[83m 2s] views
+[83m 3s] and not the config translations whatever
+[83m 5s] we have also as
+[83m 6s] resources cool so
+[83m 11s] now we have uh configurative use and the
+[83m 15s] third thing we have to do here i
+[83m 18s] will i will send you on discord because
+[83m 20s] it's it's a lot of typing and
+[83m 23s] i think we will be a lot faster this way
+[83m 25s] yeah
+[83m 28s] and this is still inside the boot method
+[83m 31s] right
+[83m 32s] exactly but outside the if statement
+[83m 35s] yeah or is it yeah it's alternative
+[83m 38s] statement yeah
+[83m 38s] yeah so like you can see it's one of my
+[83m 41s] packages so a blade compo
+[83m 42s] piler exactly yeah and
+[83m 47s] now mgx will be replaced with our tweet
+[83m 50s] class so this is a
+[83m 54s] exactly the php class of our component
+[83m 57s] we want to use
+[83m 59s] this one and the second one is alias
+[84m 3s] so it will be tweet
+[84m 4s] [Music]
+[84m 6s] so what are we doing here what what does
+[84m 8s] we register as the
+[84m 10s] blade component so it's usable this is
+[84m 13s] uh
+[84m 15s] this is x minus feet uh plate
+[84m 18s] html text thing okay so you introduced
+[84m 21s] in larval seven
+[84m 23s] yeah you could use
+[84m 26s] a blade facet double colon component
+[84m 30s] but i've seen this call after resolving
+[84m 33s] in
+[84m 34s] the blade ui kit package by trees and
+[84m 37s] because dries does this and works at
+[84m 39s] lava
+[84m 40s] i think he knows what he does and i
+[84m 42s] think this has a reason
+[84m 44s] so i've just copied it i haven't found
+[84m 48s] something
+[84m 48s] that breaks if you do it the short way
+[84m 52s] but i think it's like the safer way also
+[84m 54s] more correct way to do this
+[84m 57s] to register the component after the
+[84m 59s] blade compiler is resolved
+[85m 1s] so if the lower methods are really
+[85m 4s] readable so
+[85m 5s] what we are doing here is we call this
+[85m 7s] callback functions this function
+[85m 9s] void and which we register as a
+[85m 11s] component
+[85m 12s] after the blade compiler service is
+[85m 16s] resolved in the dependency injection
+[85m 18s] container
+[85m 19s] okay why not load view component as
+[85m 24s] you say a method load view component as
+[85m 26s] adrien
+[85m 28s] i haven't used it
+[85m 32s] he means instead of this one or instead
+[85m 35s] of what no
+[85m 36s] i think he means instead of the first
+[85m 39s] line of support methods
+[85m 42s] could be said there is a shorthand
+[85m 44s] method that does all
+[85m 45s] the cool stuff for us
+[85m 49s] we turn more lights on it's getting dark
+[85m 51s] in here so let me just keep trying
+[85m 53s] keep turning more lights on
+[85m 56s] oh yeah this method does exactly what we
+[85m 58s] have done
+[85m 59s] ourselves here is it shorter or is it
+[86m 3s] just
+[86m 3s] a different way to do stuff
+[86m 7s] it's shorter for you uh behind the
+[86m 10s] scenes it does exactly the same
+[86m 13s] so it's kind of do whatever you like uh
+[86m 17s] so there is a load view component
+[86m 20s] components as method on dollar sys
+[86m 24s] you have to use it instead of the call
+[86m 27s] after resolving method
+[86m 29s] okay it does exactly the same we have
+[86m 32s] done
+[86m 32s] here on these three lines 26 to
+[86m 36s] 28. yeah so i let's say uh let's keep it
+[86m 40s] uh the other one is
+[86m 43s] is a shorthand uh it's cool thing but i
+[86m 46s] think
+[86m 47s] yeah that's what aj
+[86m 50s] you said it's the way you don't have to
+[86m 51s] know how it works yeah that's that's my
+[86m 53s] way yeah
+[86m 54s] exactly it works that's all i need to
+[86m 56s] know okay
+[86m 58s] well you could add it as a as a comment
+[87m] in the lineup or for example so
+[87m 2s] slash slash to do load view components
+[87m 5s] as
+[87m 7s] no no in in line now 27 or now 25
+[87m 15s] just as a hint that is something
+[87m 19s] what's the is it the php storm to do is
+[87m 22s] it dash to do or
+[87m 24s] to do i think it's one word okay so
+[87m 29s] what was it called uh view components
+[87m 33s] as
+[87m 34s] [Music]
+[87m 36s] okay yeah we'll do that eventually
+[87m 40s] yeah okay
+[87m 44s] so now get back to the blade components
+[87m 47s] class
+[87m 48s] uh and do what catherine said
+[87m 52s] no no it's a classic how do you mean the
+[87m 53s] source view components
+[87m 55s] it's the tweet class with the render
+[87m 57s] method
+[87m 58s] yeah which one was it it is this one you
+[88m 1s] have
+[88m 2s] yeah yeah and catherine is totally right
+[88m 6s] um we have to use after
+[88m 9s] doublecolon components.tweet
+[88m 16s] okay now with an s components
+[88m 20s] [Music]
+[88m 22s] right because we have registered
+[88m 25s] resources views
+[88m 26s] as our packages view root
+[88m 29s] directory and so we have to
+[88m 32s] keep the relative blade component
+[88m 36s] view path from there on so it's
+[88m 38s] components as a directory
+[88m 40s] and tweet as a blade view name yeah
+[88m 44s] so yeah okay cool so this this part
+[88m 47s] after this double column is a
+[88m 48s] is a default view thing you also do in
+[88m 51s] your own
+[88m 52s] yes application controllers and so on
+[88m 55s] yeah so now
+[89m] now i think we are good to go to
+[89m 4s] our tests and just check if we have
+[89m 7s] done everything correctly okay and our
+[89m 12s] uh plate components redness
+[89m 15s] yeah so i think once we test it
+[89m 19s] we should wrap up for today because we
+[89m 20s] are one and a half hours in
+[89m 28s] i will send you another method which is
+[89m 31s] copied from
+[89m 32s] a larval foundation
+[89m 36s] um i think we should have done it from
+[89m 38s] the beginning instead of me typing
+[89m 40s] everything you just send it to me and
+[89m 41s] i'll copy paste it
+[89m 43s] you just just it's just a big part
+[89m 46s] and paste it into the test case
+[89m 50s] so in your abstract case yeah yeah and
+[89m 53s] where
+[89m 54s] into where as a new method okay
+[89m 58s] yeah so yeah so this is uh
+[90m 1s] copied from our man
+[90m 4s] i think it's illuminate foundation
+[90m 6s] testing
+[90m 7s] interacts with views trade
+[90m 12s] says adds a blade method which returns
+[90m 17s] a rendered view from a simple string you
+[90m 19s] put
+[90m 20s] in so it's it creates a epsilon view
+[90m 23s] and line uh 25 temp file
+[90m 27s] puts in your template string and renders
+[90m 29s] this reads the
+[90m 30s] default fusing i think we have to uh
+[90m 34s] use some namespaces so it's a view will
+[90m 37s] be sufficed
+[90m 41s] in the condition 21 or 22.
+[90m 45s] yeah oh yeah it's it come on
+[90m 49s] illuminate support view fsh view yeah
+[90m 52s] okay exactly and sends a string
+[90m 56s] in 30 sdr
+[91m] yeah now i was just thinking why is it
+[91m 2s] not
+[91m 3s] uh it's a facade and uh
+[91m 6s] doc block only contains uh real
+[91m 10s] public methods laravel wants you to use
+[91m 13s] ad location is a message that's part of
+[91m 15s] the underlying service but it's not a
+[91m 17s] method
+[91m 17s] larva promotes to the user
+[91m 21s] yeah yeah exactly and
+[91m 24s] now we will create a new class in the
+[91m 27s] tests
+[91m 29s] so we're creating a new class or new
+[91m 31s] test so it's a test now
+[91m 34s] it's a test yeah okay so php
+[91m 37s] test oh freak or frag is here it's a fun
+[91m 42s] stream yes it is
+[91m 45s] yeah i think if frick joined in and
+[91m 48s] i don't know how is the audience or you
+[91m 50s] are uh from my side we could
+[91m 52s] also proceed so we could do two hours or
+[91m 55s] whatever is needed
+[91m 57s] two hours i don't know i don't know how
+[92m] you
+[92m] how your brain is still working and
+[92m 2s] how's your evening going
+[92m 4s] or what your plans are i've got no plan
+[92m 7s] i've got no life i'm fine
+[92m 8s] it's just like wondering how much hope
+[92m 10s] people how much you know
+[92m 12s] time they have
+[92m 15s] so from if somebody just comes behind me
+[92m 18s] yeah so if somebody comes behind me it's
+[92m 20s] my kids so i just i told them not
+[92m 22s] to but yeah i don't know yeah i think we
+[92m 25s] know it from tv
+[92m 26s] since corona everything is
+[92m 29s] yeah okay so what do we do here
+[92m 36s] yeah i don't know this window so
+[92m 40s] i can't uh what we want to
+[92m 43s] end with is a it's a tweet
+[92m 46s] component test case or test
+[92m 50s] so tweet component test.php
+[92m 54s] but it's a fully qualified name so
+[92m 57s] just say okay and we will see we'll see
+[93m] what happens
+[93m 2s] see what see that's the thing every time
+[93m 4s] i do it it just
+[93m 6s] doesn't it's nearly perfect you just
+[93m 8s] have to delete the
+[93m 12s] yeah and delete line five so use
+[93m 15s] statement
+[93m 16s] yeah i really need to look into phpstorm
+[93m 20s] because i keep coming up with these
+[93m 21s] little things
+[93m 22s] and i'm never i never take the time to
+[93m 24s] look into it properly i just
+[93m 26s] cancel it and do it manually but yeah
+[93m 28s] yeah
+[93m 30s] so the tweet component test uh exactly
+[93m 33s] so now it's a bit up to you how you
+[93m 36s] define
+[93m 37s] single test methods do you use the
+[93m 40s] add test annotation or do you use the
+[93m 43s] test prefix okay
+[93m 44s] no hold on just looking at the comments
+[93m 49s] adrian right click
+[93m 50s] the test folder mark it as test folder
+[93m 53s] why
+[93m 54s] right click yes mark directory as
+[93m 58s] it's very in the lower part of the
+[94m] screen
+[94m 2s] oh yeah why what does it matter test
+[94m 4s] sources route
+[94m 5s] route and the same you can do for the
+[94m 8s] source
+[94m 10s] mark directory as sources root and i
+[94m 13s] think adrian can explain why this is
+[94m 16s] helpful
+[94m 17s] i already i like the color no no you've
+[94m 19s] you've
+[94m 20s] marked it as as test right right
+[94m 24s] well then mark s yeah unmark as test
+[94m 27s] sources
+[94m 28s] and mark as sources
+[94m 35s] sources and resource route what is the
+[94m 37s] difference between these two
+[94m 39s] uh adren it's your part in the comments
+[94m 43s] so you tell us you started this
+[94m 46s] ended now proceed with the test case uh
+[94m 51s] public function i would say it renders
+[94m 55s] just keep it simple it surrenders
+[94m 58s] yeah yeah i always add return type and
+[95m 2s] void because
+[95m 4s] php unit test cases don't have to return
+[95m 7s] anything
+[95m 8s] um and now you can use
+[95m 15s] let's define variable.html for example
+[95m 22s] yeah equals dollar sys
+[95m 26s] method blade so dollars is
+[95m 30s] calling blade yeah
+[95m 34s] and semicolon afterwards yeah
+[95m 38s] and the first argument for blade is a
+[95m 41s] string we would use in the views file
+[95m 43s] normally so it's uh
+[95m 45s] less than so let's say opening
+[95m 49s] x minus feet
+[95m 52s] oh get it yeah yeah and uh
+[95m 56s] slash closing so yeah
+[95m 59s] yeah and for the easy part
+[96m 2s] let's call dump.html afterwards
+[96m 9s] so we just see uh what we have
+[96m 12s] created and send open your terminal and
+[96m 16s] run
+[96m 17s] composer test or php unit or whatever
+[96m 20s] you want to use
+[96m 30s] test case array must be compatible
+[96m 35s] ah yeah go to the test case
+[96m 39s] i've already wondered why but i thought
+[96m 42s] that we have
+[96m 43s] possibly changed it as a get package
+[96m 45s] providers method has
+[96m 47s] a dollar app argument
+[96m 52s] don't know why phpstorm hasn't
+[96m 54s] autocompleted it
+[96m 56s] yeah i think internally it's called
+[96m 59s] application but you can name it app
+[97m 2s] you won't use it so let's name it short
+[97m 4s] sorry i've just
+[97m 5s] run the test i should have waited for
+[97m 6s] you but yay it's green yeah perfect
+[97m 9s] and there we see hello tweet yeah so
+[97m 13s] until here we've created this basic
+[97m 16s] setup for a package that
+[97m 18s] publishes a blade component
+[97m 21s] i mean you know what
+[97m 27s] yeah i appreciate the skeletons package
+[97m 30s] skeletons because this is
+[97m 32s] yeah wow okay
+[97m 36s] um so now you see why skeletons are
+[97m 39s] really helpful
+[97m 40s] yeah now one and a half hour we've used
+[97m 44s] to create this part that would
+[97m 46s] do a skeleton in let's say five minutes
+[97m 48s] this is incredible
+[97m 51s] but you know what i'm glad we are going
+[97m 54s] yeah
+[97m 54s] if you if you know what you're doing you
+[97m 56s] could reduce it let to
+[97m 58s] yeah let's say half an hour for example
+[98m 1s] um
+[98m 2s] but it's still a lot of time it's a lot
+[98m 4s] of copy pasting
+[98m 5s] and you have to adjust and string
+[98m 8s] replace a lot of things and stuff like
+[98m 10s] this
+[98m 11s] so uh using it it's good to know
+[98m 14s] yeah it's good that we've gone through
+[98m 16s] it because now i can see how much time
+[98m 18s] i'm gonna save when i'm gonna use
+[98m 20s] the skeleton because this is just yeah i
+[98m 23s] have a new appreciation for these tools
+[98m 26s] thank you freak and thank you
+[98m 28s] uh beyond code and everyone else who
+[98m 31s] created package skeletons because this
+[98m 33s] is yeah
+[98m 35s] wow so
+[98m 38s] i think one thing we could definitely do
+[98m 41s] is copy paste your
+[98m 43s] html you've created for just feed
+[98m 46s] component into the view
+[98m 48s] oh yeah where did i save it
+[98m 52s] you go back to the comments and let me
+[98m 54s] just um
+[98m 56s] yeah say i know comments you look at the
+[98m 58s] comments i'll try to remember where i
+[98m 59s] saved it
+[99m] ask anything if you have questions or
+[99m 3s] recommendations or whatever
+[99m 4s] uh type it in the comments i will read
+[99m 7s] it and answer it soon
+[99m 9s] um oh found it except i've got few of
+[99m 13s] them i can't remember which one we
+[99m 14s] settled on i've got
+[99m 19s] well then mail street package
+[99m 23s] um by the way in them so just to tell
+[99m 25s] people what we're doing because i
+[99m 26s] prepared the markdown beforehand so we
+[99m 28s] don't have to spend time doing the html
+[99m 30s] and the tailwinds
+[99m 31s] uh i have it here but it's it has assets
+[99m 34s] as well because we've got the icons
+[99m 36s] there so do i just take the whole thing
+[99m 38s] and copy it into the well what do you
+[99m 41s] want
+[99m 41s] to do with it then because i've got html
+[99m 44s] yeah
+[99m 46s] uh so assets are
+[99m 49s] twitter logo svg okay yeah okay
+[99m 55s] so
+[99m 58s] copy the part for your component from
+[100m 1s] the
+[100m 2s] index html you've created hold on let me
+[100m 5s] just
+[100m 6s] copy the whole thing let me open it so i
+[100m 8s] can copy everything yeah
+[100m 10s] yeah you can reduce it later so let's
+[100m 13s] render a whole html page with a
+[100m 15s] component
+[100m 16s] yeah so this is bad for now gonna be
+[100m 19s] fixed
+[100m 20s] um and i would just invite the
+[100m 24s] svg file as it's the only uh
+[100m 27s] asset we have is it okay
+[100m 30s] whatever two there was the logo there
+[100m 31s] was a png logo
+[100m 34s] people retrieve the logo from the
+[100m 36s] twitter api later
+[100m 38s] oh yeah that's true so it will be a
+[100m 40s] twitter cdn link
+[100m 43s] so let me just
+[100m 47s] um twitter where we are placing it
+[100m 51s] here but if we are in lining it as we
+[100m 53s] cheated no no
+[100m 54s] this is the logo you have to say um
+[100m 59s] but still we are in lining it is it not
+[101m 2s] gonna
+[101m 3s] what do i
+[101m 7s] right because the file as we have it it
+[101m 10s] has all these xml
+[101m 11s] devs description devs and g icon it's uh
+[101m 15s] i'm just thinking here copies the
+[101m 17s] content of the svg file
+[101m 19s] the path the whole no no it's a whole
+[101m 22s] whole thing or the whole thing
+[101m 23s] it's a whole thing yeah everything
+[101m 26s] everything
+[101m 28s] so also ways to make it a bit cleaner so
+[101m 31s] we could
+[101m 32s] publish the svg as a second view for
+[101m 34s] example so as a package
+[101m 36s] by kaneko i think to
+[101m 39s] handle svgs in a pretty way but for the
+[101m 42s] moment
+[101m 43s] we are good to do this
+[101m 46s] this is all we have and this is messy
+[101m 48s] now but okay
+[101m 50s] yeah yeah it's messy but it works and so
+[101m 52s] only thing we have to do is copy the
+[101m 54s] class from the image
+[101m 55s] yeah and put it on this opening svgtech
+[102m 3s] does it end yeah
+[102m 6s] and deletes this image yeah okay
+[102m 10s] oh no
+[102m 14s] i know i know what i'm doing i know what
+[102m 15s] i'm doing
+[102m 18s] okay now what
+[102m 22s] so now uh
+[102m 25s] because we let's go back to the test
+[102m 30s] so this is test php yeah
+[102m 34s] we have to rename it copy the class name
+[102m 36s] and rename the file
+[102m 39s] otherwise composer will complain
+[102m 44s] okay so we are calling it
+[102m 47s] tweet component test
+[102m 51s] yeah there you go no phpstorm is also
+[102m 54s] happy
+[102m 56s] and instead of dumping it i would just
+[102m 58s] use
+[102m 59s] file put content
+[103m 2s] we are doing uh now something that said
+[103m 5s] i am doing always
+[103m 7s] i misuse the php unit test to as
+[103m 10s] an as a run environment and
+[103m 14s] just test manually and afterwards if i
+[103m 19s] what i see in my manual testing is what
+[103m 21s] i wanted it
+[103m 24s] i think you forgot the first or second
+[103m 26s] argument
+[103m 27s] well the file put contents uh first
+[103m 30s] argument has to be
+[103m 32s] path which means
+[103m 36s] the path to the files or yeah and yeah
+[103m 39s] it's it's there for example no no no no
+[103m 42s] no i'll fix it i'll fix it there
+[103m 46s] yeah okay add dots and
+[103m 50s] just name it tweet.html so slash tweet
+[103m 53s] i think you have to add to the slash
+[103m 55s] yeah
+[103m 56s] html comma yeah
+[104m 4s] and no
+[104m 8s] could it be that you used some double
+[104m 10s] curling
+[104m 12s] braces in the html file somewhere it is
+[104m 15s] possible
+[104m 15s] because yeah the twitter username
+[104m 20s] these were my like notes so let me
+[104m 23s] just get rid of them is it anywhere else
+[104m 34s] i think the rest is fine yeah try it
+[104m 36s] again
+[104m 42s] okay it says run and php and just tells
+[104m 45s] us that there is no assertion so the
+[104m 47s] test is useless
+[104m 48s] but this is fine for the moment so now
+[104m 51s] if you go back to
+[104m 52s] it says the tweet html and if you right
+[104m 54s] click it
+[104m 55s] and yeah say open in browser
+[105m] where is opening uh in the middle
+[105m 4s] yeah a bit down bit down two sections
+[105m 6s] down oh there you go
+[105m 8s] whatever browser you use
+[105m 12s] yay look at that perfect isn't this
+[105m 15s] pretty
+[105m 16s] so i think there's some
+[105m 19s] stuff yeah we could oh yeah i need to
+[105m 22s] svg looks a bit strange
+[105m 24s] yeah but uh in general it works yeah
+[105m 28s] and that's a tweet cool look at setup is
+[105m 31s] experiencing issues yeah
+[105m 33s] it's because of our stream and all the
+[105m 35s] people are doing pages right now so
+[105m 37s] github is down oh wow that's great
+[105m 41s] is it really did we break it up
+[105m 44s] we broke it up
+[105m 48s] okay github.com
+[105m 52s] this is good yeah
+[105m 56s] all services down all incident
+[106m] api requests experiencing decreated it
+[106m 3s] yeah we broke github okay
+[106m 4s] oh wow you know
+[106m 9s] frick stop publishing packages and yeah
+[106m 11s] follow our stream
+[106m 13s] do it your own way and stop it it's
+[106m 16s] freak learning from us
+[106m 18s] i bet he is you know it's just
+[106m 23s] and also there was another unchecked
+[106m 24s] search in comments adrian what are you
+[106m 26s] what do you mean uncheck search in
+[106m 28s] comments uh
+[106m 30s] if you if you rename files uh
+[106m 33s] there's a checkbox search and comments i
+[106m 36s] think
+[106m 36s] so let's just try to go to rename
+[106m 40s] yeah this bit and there's the search for
+[106m 44s] references and comments
+[106m 47s] thank you is that all it is if you
+[106m 50s] untick all of them
+[106m 52s] it will be a simple rename yeah and if
+[106m 55s] you
+[106m 55s] tick one or another it will do whatever
+[106m 58s] it
+[106m 59s] does behind this checkbox
+[107m 4s] now we render our component so it's
+[107m 7s] pretty now
+[107m 8s] but we render a whole html i think
+[107m 13s] we should change it at last step and
+[107m 17s] add this twitter api calls
+[107m 21s] if you have the brain capacities now
+[107m 25s] to do so i think it's almost two hours
+[107m 27s] in i think we better
+[107m 29s] save it and when github is back i'm
+[107m 32s] gonna push it off
+[107m 33s] push it to get her perfect because i
+[107m 35s] think yeah
+[107m 36s] wow i'm gonna have to re-watch it which
+[107m 39s] is gonna be fun because i can't listen
+[107m 41s] to myself so i'm gonna
+[107m 42s] watch it mute i'll just listen to you
+[107m 45s] because this was so much information
+[107m 48s] yeah just do
+[107m 49s] two last things uh open secret ignore
+[107m 52s] file
+[107m 53s] uh yeah and adsense.phpunit.result.cache
+[107m 59s] yeah
+[108m] okay exactly is this what this is
+[108m 4s] no no it's on the root uh
+[108m 7s] php unit publishes a result cache
+[108m 11s] okay some last versions i don't know
+[108m 13s] since when and
+[108m 15s] it contains some caching so pgp unit can
+[108m 18s] run faster or compan
+[108m 20s] compare runs uh i don't know
+[108m 23s] but we don't need it in the repository
+[108m 26s] and we could also add the tweet html for
+[108m 30s] the moment
+[108m 31s] so it doesn't get pushed that's what i
+[108m 34s] mean
+[108m 35s] no no it's the tests oh that's this one
+[108m 38s] okay so it will be our dummy file
+[108m 44s] um
+[108m 47s] yeah okay and now
+[108m 50s] you can push all the files if if github
+[108m 54s] is available again
+[108m 56s] just fine i go yeah let me just see
+[109m] we've done
+[109m 1s] so much look at this i mean it doesn't
+[109m 2s] look like much but it was a lot of work
+[109m 5s] it was a lot it it was a lot of typing
+[109m 8s] at least yeah
+[109m 12s] and at least we have this pretty uh view
+[109m 16s] so if we would publish it everyone could
+[109m 19s] uh use the same tweet of viewers
+[109m 23s] yeah and his own projects nice enjoy
+[109m 27s] what do i say create function basic
+[109m 28s] functionality or what did we do
+[109m 30s] like what did we do we just if we've
+[109m 33s] created some basic
+[109m 35s] package structure and logic's uh
+[109m 38s] great basic yeah it's wrong yeah
+[109m 42s] and it's fine
+[109m 47s] i think this doesn't work let's see if
+[109m 49s] it works
+[109m 53s] maybe i just fixed github we broke it
+[109m 55s] and then we fixed it again let's see if
+[109m 57s] it works yeah
+[109m 58s] no it it still has incidents and but
+[110m 1s] possibly uh
+[110m 2s] not to get upper yeah following the get
+[110m 5s] started github
+[110m 7s] starters uh kit operations are also
+[110m 9s] included
+[110m 10s] possibly you are lucky and your machine
+[110m 13s] has a stable connection
+[110m 14s] special that's what what can i say
+[110m 16s] special
+[110m 19s] well this has been honestly this was
+[110m 22s] harder than i thought like i said
+[110m 25s] because i didn't prepare
+[110m 27s] and i didn't look into anything and i
+[110m 28s] didn't want to but i have to say even if
+[110m 31s] i did look into
+[110m 32s] things i probably wouldn't be like
+[110m 34s] looking into the things we did right now
+[110m 35s] because like
+[110m 36s] you never look at those things those
+[110m 38s] functions you just like you said you
+[110m 39s] copy paste it or it's already provided
+[110m 41s] for you
+[110m 42s] so no matter how much i prepared i
+[110m 45s] wouldn't have known these things so this
+[110m 46s] is really this was amazing
+[110m 49s] so so this part we have done now is this
+[110m 52s] thing
+[110m 52s] uh you can copy paste from a similar
+[110m 56s] package for example
+[110m 57s] and customize it to your needs or you
+[111m 1s] have already
+[111m 2s] created a package similar to this one
+[111m 4s] your own
+[111m 5s] or your nose a bit and can you reuse
+[111m 8s] them
+[111m 10s] so since these two hours get a lot
+[111m 13s] faster and a lot easier
+[111m 14s] on your second package and your third
+[111m 17s] one and if you
+[111m 18s] use one of the skeletons or copy from
+[111m 20s] any existence package
+[111m 22s] so i can tell you that some of my
+[111m 24s] astrotomic packages for example are
+[111m 26s] really small
+[111m 28s] so you don't have to delete a lot of
+[111m 30s] things uh
+[111m 31s] i know that several sparsio ones for
+[111m 33s] example are really large so you have to
+[111m 36s] remove a lot of custom stuff so you
+[111m 38s] don't need if you just want to publish
+[111m 40s] the single component
+[111m 42s] um yeah yeah i'm gonna stop
+[111m 46s] sharing the screen because i just
+[111m 47s] realized that i pushed everything
+[111m 49s] let you see all the mess the what you
+[111m 51s] call it like when you've got repeat
+[111m 53s] the repeated mirrors you keep seeing
+[111m 55s] deeper and deeper
+[111m 58s] let me stop the screenshot and now i'm
+[112m 1s] gonna
+[112m 3s] yeah move it so that i can actually look
+[112m 5s] at you
+[112m 7s] ah this was good let's do it well we
+[112m 10s] have to finish it because
+[112m 11s] it otherwise yeah let's try to show you
+[112m 14s] the next friday again
+[112m 16s] i think i'm available yeah yeah let's
+[112m 19s] yeah let's see if nothing else comes up
+[112m 21s] but next friday should be fun
+[112m 24s] well thank you tom i mean i'm amazed at
+[112m 27s] all the knowledge you have that you know
+[112m 28s] exactly what's
+[112m 29s] what's going on in every function like
+[112m 32s] this is
+[112m 33s] yeah that's this has been great i just
+[112m 36s] have a lot of php storm instances open
+[112m 39s] with
+[112m 40s] some reference projects yeah but still
+[112m 43s] you know
+[112m 44s] what you know you know what needs to be
+[112m 46s] done so
+[112m 47s] and i also have to say i'm not i'm never
+[112m 48s] gonna do this again
+[112m 50s] i didn't like the building from scratch
+[112m 52s] if someone
+[112m 53s] put me on a new machine without any of
+[112m 56s] my projects and say
+[112m 58s] write a new package i would be nearly
+[113m] the same you are
+[113m 1s] because i don't know any of these uh
+[113m 4s] things in my
+[113m 5s] head i just know where to find it
+[113m 8s] yeah so i could open github and copy
+[113m 10s] from there at least but
+[113m 12s] yeah it's not that i have everything in
+[113m 15s] my brain
+[113m 16s] and if someone says write a package i
+[113m 18s] can sit down on your
+[113m 19s] blank new machine right and from scratch
+[113m 23s] yeah this is this doesn't work and
+[113m 26s] i think uh if frank is here he
+[113m 30s] will uh he will say the same that
+[113m 33s] uh even after like a hundred or two
+[113m 37s] hundred packages
+[113m 38s] wouldn't be able to write a from scratch
+[113m 41s] new one without any reference project on
+[113m 44s] a blank new machine
+[113m 46s] yeah he's saying copying stuff all the
+[113m 48s] time same here yeah
+[113m 50s] oh adrian said that the reason i could
+[113m 52s] push was because i'm using ssh
+[113m 54s] come on don't don't spoil it for us no
+[113m 56s] no no i fixed github
+[113m 58s] let's leave it at that no ssh fixed
+[114m 1s] video that that's what it was
+[114m 2s] oh that we are special one or the other
+[114m 8s] well thank you all for coming and
+[114m 10s] watching us me
+[114m 11s] struggle but i mean for me it was fun i
+[114m 15s] really it was fun
+[114m 16s] and i was really not nervous because i
+[114m 17s] don't do live streaming
+[114m 19s] as you know at least i don't do live
+[114m 21s] coding on a stream
+[114m 22s] and so i thought i'm gonna forget
+[114m 24s] everything like my fingers are not gonna
+[114m 26s] listen to me i will forget how to type
+[114m 28s] but it was okay
+[114m 29s] it could have been much worse could have
+[114m 31s] been much worse
+[114m 32s] so i was great thank you thank you all
+[114m 35s] for coming
+[114m 36s] hope you had fun and uh
+[114m 39s] see you next time probably friday
+[114m 42s] yeah next week next week see ya bye

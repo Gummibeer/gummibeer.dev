@@ -1,0 +1,1275 @@
+[1s] hallo und herzlich willkommen zu unserem
+[4s] ich glaube inzwischen fünften verdacht
+[8s] meetup im mai 2021
+[11s] ich hoffe euch gibt es einen gut ihr
+[15s] seid alle gesund ihre lange fit und dann
+[21s] würde ich sagen liegen wir direkt los
+[23s] ich kenne er wahrscheinlich schon ich
+[25s] bin lars und über mir ist lukas mit geld
+[30s] könnt ihr wahrscheinlich auch konnte
+[32s] dann haben wir noch unsere zwei gäste
+[35s] die heute einen vortrag halten und den
+[39s] ersten davon
+[40s] den kann ich euch gleich jetzt mal
+[43s] direkt vorstellen das ist der turm
+[44s] witkowski und der möchte uns heute was
+[47s] erzählen über level jobs optimierung
+[52s] kuhlmann sagt kühl oder kuh ist richtig
+[56s] gesprochen kühlte sich das ist so ein
+[59s] mensch wie du möchtest
+[1m] okay dann haben wir uns darauf schon mal
+[1m 3s] geeinigt und werde ich jetzt nicht zu
+[1m 7s] vergessen habe dann würde ich sagen
+[1m 9s] bevor wir hier jetzt irgendwie
+[1m 10s] irgendeine abend trägheit verfallen holt
+[1m 13s] euch noch schneller lieblingsgetränk und
+[1m 16s] dann übergebe ich das wort direkt an
+[1m 19s] dich und dann kannst du direkt mit einem
+[1m 23s] talk loslegen und wir machen unsere
+[1m 25s] kameras aus und dann gehört die bühne
+[1m 27s] die dann gedanke so genau
+[1m 35s] also ich bin topfit kowski und einige
+[1m 39s] kennen mich vielleicht aus diversen
+[1m 43s] gitter professors geschichten rund um
+[1m 45s] lager will hat vor einigen jahren ist
+[1m 47s] otto mitgegründet und letzten monat auch
+[1m 50s] open door veröffentlicht wer ist noch
+[1m 54s] nicht gehört hat oder angeschaut hat
+[1m 55s] gerne mal reinschauen kleine plattform
+[1m 58s] tool community für den ganzen open
+[2m 2s] source crm ist das meine kamera
+[2m 5s] ausgegangen
+[2m 6s] genau und wer mich irgendwie finden
+[2m 10s] möchte im großen internet kann es da
+[2m 13s] unten auf einen von den ganzen wegen und
+[2m 15s] gibt noch viele mehr versuchen genau das
+[2m 22s] allererste wie es überhaupt dazu kam
+[2m 25s] ich habe hier momentan dass unser
+[2m 27s] projekt offen und das macht eine ganze
+[2m 30s] menge an der crew um genau zu sein
+[2m 31s] eigentlich fast alles weil die
+[2m 34s] grundlegende geschichte weil das alles
+[2m 35s] macht ist ganz viele daten von geht
+[2m 37s] abgreifen
+[2m 39s] das bedeutet kurz unterbrechen kannst du
+[2m 42s] vielleicht deine kamera aus machen wir
+[2m 43s] das ist leicht unscharf wesentlich
+[2m 50s] bessere also ohne kamera ist es
+[2m 52s] wesentlich schärfer okay dann muss man
+[2m 54s] es aus so genau
+[3m] also ob händler machen die ganze menge
+[3m 2s] in der eu greift gtp daten von allen
+[3m 5s] möglichen stellen ob und wie schwer das
+[3m 8s] bitte noch etwas größer die schriftart
+[3m 12s] ebenso schön getestet gehabt und das sei
+[3m 13s] eigentlich gut aus ja ich denke es
+[3m 17s] reicht eskalieren wir direkt so genau
+[3m 25s] und mittlerweile hat es ein volumen
+[3m 28s] erreicht von wenn es alles gut läuft
+[3m 32s] weit über hunderttausend jobs innerhalb
+[3m 35s] von ungefähr einer stunde und knapp
+[3m 38s] 10.000 jobs die minute das also ein
+[3m 42s] bisschen mehr als eine stunde braucht
+[3m 44s] aber dass es so der umfang der dadurch
+[3m 46s] läuft und da war schon ganze menge
+[3m 49s] optimierung drin
+[3m 50s] am anfang gab es dann job der ja nach
+[3m 55s] sechs stunden geteilt ist und ich hatte
+[3m 57s] keine lust noch weiter die teils hoch zu
+[3m 58s] schieben ist sonntag ging es halt
+[3m 59s] definitiv so in die richtung was kann
+[4m 2s] ich jetzt eigentlich alles einstellen in
+[4m 3s] level was kann ich machen damit die kur
+[4m 7s] an sich die jobs besser verarbeitet aber
+[4m 8s] auch was kann ich in den jobs machen
+[4m 11s] damit der job überhaupt gar nicht erst
+[4m 13s] sechs stunden braucht und da will ich
+[4m 15s] jetzt ein bisschen durchgehend der erste
+[4m 17s] teil ist sowas bietet
+[4m 20s] wie überhaupt alles an jobs damit die
+[4m 22s] halt besser verarbeiten können
+[4m 24s] ein großteil bezieht sich gegebenenfalls
+[4m 27s] auf reisen oder sagte ich verwende
+[4m 30s] überall wo reisen aber eigentlich ist
+[4m 31s] keins der features wirklich explizit von
+[4m 33s] risen außer dann wenn ich in die
+[4m 35s] konfitüren mal reinschauen
+[4m 37s] die ganzen anderen sachen funktionieren
+[4m 39s] auch mit dem ganz normalen kyu werker
+[4m 41s] befehle oder sonstigen geschichten genau
+[4m 47s] hier sehen könnt ich habe mir so einen
+[4m 50s] abstract job gemacht am anfang der
+[4m 52s] verwendet hier die standard trades
+[4m 54s] das sind ein paar properties zum
+[4m 57s] beispiel schon mal großteil ist
+[5m] dokumentiert aber die sind halt
+[5m 2s] standardmäßig nicht da das ist immer so
+[5m 3s] ein bisschen traurig man muss dann
+[5m 5s] natürlich die doppel gehen und gucken
+[5m 7s] wie heißt jetzt genau wo hinein kopieren
+[5m 9s] und so weiter der erste ist das kennt
+[5m 14s] ihr vielleicht das problem wenn euer job
+[5m 15s] irgendwie weil die klugheit zu voll ist
+[5m 18s] länger braucht oder würde sagt erst nach
+[5m 21s] einer halben stunde zum beispiel
+[5m 22s] angefangen und zu verarbeiten und in der
+[5m 24s] zeit der nutzer den kommentar zum
+[5m 27s] beispiel schon wieder gelöscht hat oder
+[5m 28s] was weiß ich so
+[5m 29s] wir kennen uns alle auf twitter du
+[5m 31s] schickst du hast einen trainer lässt ihn
+[5m 33s] wieder positive noch mal neu und wenn du
+[5m 35s] dann clubs der sich auf diesen ersten
+[5m 36s] tweet bezieht läuft dann natürlich auf 1
+[5m 39s] 404 und es gibt einige fälle oder
+[5m 43s] vielleicht sogar die meisten in dem man
+[5m 46s] jetzt nicht möchte dass der job als
+[5m 47s] fehlt markiert ist weil das einfach
+[5m 50s] erwartet essverhalten sozusagen ist dass
+[5m 53s] der nutzer durchaus jobs nicht die
+[5m 56s] models von jobs wieder löschen kann
+[5m 58s] und dann kann man mit der property
+[6m] einstellen dass der job einfach gelöscht
+[6m 3s] wird der wird quasi ignoriert vonstatten
+[6m 6s] nicht als statistik und ist dann so als
+[6m 9s] ob sie den job nie gegeben hätte genauso
+[6m 10s] wie das model dazu quasi genau mit time
+[6m 16s] out ja definiert man an dem job selbst
+[6m 18s] dann noch mal explizit welchen teil
+[6m 20s] modeljob hat das ist relativ wichtig
+[6m 22s] weil in den seltensten fällen will man
+[6m 26s] den time out für alle jobs gleichung die
+[6m 30s] allermeisten jobs sollte so die
+[6m 31s] zielstellung sein laufenden
+[6m 33s] einer sekunde bisschen weniger manchmal
+[6m 36s] ein bisschen mehr maximum minute so und
+[6m 39s] dann gibt es ein paar vielleicht die
+[6m 40s] laufen wird nicht lange als auch was
+[6m 41s] weiß ich wollte eine riesige csv datei
+[6m 43s] importieren zum beispiel der job braucht
+[6m 45s] dann halt eine halbe stunde oder keine
+[6m 47s] ahnung
+[6m 48s] und dann könnt ihr für den job explizit
+[6m 50s] das time-out hoch setzen ohne dass die
+[6m 52s] anderen jobs auch eine halbe stunde
+[6m 54s] warten bis sie auslaufen sondern die
+[6m 55s] werden genauso nach zwei sekunden zum
+[6m 58s] rechten weg gilt oder solche sachen
+[7m 1s] genau mit trucks sessions dann gibt es
+[7m 5s] hier unten auch metro anteile zum
+[7m 7s] beispiel
+[7m 8s] damit könnt ihr alles einstellen wie oft
+[7m 12s] und wie lange unter welchen umständen
+[7m 15s] jobs ja wieder neu versucht werden das
+[7m 21s] am ende nummer das bedeutet jedes mal
+[7m 24s] wenn der job gestattet wird geht dann
+[7m 25s] natürlich hoch und wenn der job dann ihr
+[7m 28s] habt da zum beispiel drei eingetragen
+[7m 30s] wenn der job dann dreimal gefehlt ist
+[7m 32s] damit er halt wirklich final als gefehlt
+[7m 34s] markiert und nicht mehr neu versucht max
+[7m 38s] exceptions ist ein bisschen
+[7m 39s] unterschiedlich aber ähnliches verhalten
+[7m 42s] zu treis job kann theoretisch nicht
+[7m 47s] fehlen aber ein we try bekommen zum
+[7m 49s] beispiel indem es auch manuell triggert
+[7m 51s] oder solche sagen ohne dass ein
+[7m 53s] exception geflogen ist und unter den
+[7m 56s] umständen könnte zum beispiel sagen okay
+[7m 58s] ich will denen maximal fünf mal laufen
+[8m] lassen aber mach zwei exceptions will
+[8m 3s] ich dann einfach schon weg töten weil
+[8m 4s] mein 2x gekommen sind heißt es für mich
+[8m 7s] dass der job wirklich einfach kaputt ist
+[8m 9s] so das hat dann nichts mehr damit zu tun
+[8m 11s] dass die erwartete fehler kommen sondern
+[8m 13s] dass nations die meistens unbehandelt
+[8m 16s] kann die also wirklich irgendwie
+[8m 18s] aussagen da ist was fehl am platz und
+[8m 22s] reid warnte dass so ein bisschen wenn er
+[8m 25s] sagt nicht fünfmal neu versuchen sondern
+[8m 29s] versucht das einfach sechs stunden lang
+[8m 31s] so oft wie du kannst du dann kann der
+[8m 34s] mieter an tool verwenden das hier gebt
+[8m 38s] ihr am ende detail mit der face zurück
+[8m 39s] zum beispiel also in karben
+[8m 43s] inter war aber zum beispiel das war das
+[8m 53s] bedeuten eine stunde nachdem der job das
+[8m 57s] erste mal dass patch wurde soll den job
+[9m 2s] immer wieder versuchen
+[9m 4s] egal wie auch das ist das bedeutet wenn
+[9m 6s] auch wie zum beispiel komplett leer ist
+[9m 7s] und der job jedes mal nach einer sekunde
+[9m 9s] fehlt so dass dann lass mich lügen 3600
+[9m 12s] angriffe das ist natürlich eine sache
+[9m 15s] die deutlich höhere read write zahlen
+[9m 18s] verursacht als sie normalerweise ihr und
+[9m 21s] mit streiks einstellen zum beispiel bei
+[9m 25s] ried rannte kommt daher ein zweiter
+[9m 28s] relativ wichtige sache mit rein und zwar
+[9m 31s] ist dass die hier unten die bag auf
+[9m 35s] methode prinzipiell wenn ein job fehlt
+[9m 40s] und neu erneut in die kinos zurück
+[9m 42s] geschoben wird ist das quasi immer zu
+[9m 45s] sofort das bedeutet wenn euer job jetzt
+[9m 48s] gerade in gefehlt des objektes leer
+[9m 50s] dann würde direkt danach macht man neue
+[9m 52s] verarbeitet ohne wartezeit wenn ihr also
+[9m 54s] auf dem fremdsystemen zb basiert was
+[9m 57s] einfach gerade eben zum beispiel die
+[10m 1s] pleite wird und deshalb eine downtime
+[10m 3s] von der minute oder höher ist auch
+[10m 7s] manchmal anfällig so solche sachen dann
+[10m 10s] würde er direkt quasi wieder die selben
+[10m 12s] fehler rein lauf und da ist bleibt oft
+[10m 14s] ganz sinnvoll
+[10m 15s] ihr könnt ihr entweder mit einem
+[10m 17s] einzelnen täter also die anzahl von
+[10m 19s] sekunden oder auch eine mary das aus der
+[10m 21s] marktstrategie quasi angeben um wie
+[10m 26s] lange immer wieder gewartet werden
+[10m 28s] sollte das bedeutet in dem fall hier
+[10m 29s] wenn mein job das erst mal fehlt soll
+[10m 32s] eine minute warten bis er denselben job
+[10m 34s] noch mal versucht liegt einfach daran
+[10m 38s] weil ich sage okay gegebenenfalls war es
+[10m 41s] ein fehler
+[10m 42s] dann rettet der sich ein paar sekunden
+[10m 45s] danach oder sowas aber ich will auch ein
+[10m 47s] bisschen zeit geben dass er in der
+[10m 48s] minute
+[10m 50s] andere jobs verarbeiten kann weil
+[10m 53s] ansonsten können natürlich auch das
+[10m 54s] problem haben wir damit wie trottel
+[10m 56s] arbeitet zum beispiel und kein backup
+[10m 59s] habt dann kann es passieren dass dann
+[11m 2s] irgendwie der einen job in der nur ein
+[11m 3s] burger habt euren worker komplett
+[11m 4s] blockiert und nichts anderes mehr
+[11m 6s] durchgeht das hat das bag auf da auch
+[11m 8s] ganz sinnvoll und wichtig und deshalb im
+[11m 12s] idealfall hier auch mit seiner strategie
+[11m 14s] wo ja quasi schritt für schritt nach
+[11m 16s] oben geht also das erste mal eine minute
+[11m 18s] dann 15 15 30 eine stunde damit die zeit
+[11m 24s] und der die kuh dann die ganzen anderen
+[11m 26s] sachen die sind was zu tun hat machen
+[11m 28s] kann immer größer wird weil es
+[11m 29s] anscheinend ein echtes problem mit dem
+[11m 30s] job gibt was sich gegebenenfalls auch
+[11m 34s] gar nicht von selbst löst die stunde ist
+[11m 37s] in dem fall hier in meinem projekt und
+[11m 39s] bisschen der der letzte versuch weil
+[11m 43s] alle möglichen kita parade zb und
+[11m 46s] ähnliche geschichten resetten sich immer
+[11m 49s] nach einer stunde das bedeutet wenn ich
+[11m 50s] eine stunde später wieder versuchen es
+[11m 52s] immer noch fehlschlägt dann ist dann
+[11m 53s] scheint wirklich einfach was kaputt das
+[11m 57s] bezieht sich aber natürlich auf jedes
+[11m 58s] von eurem projekten
+[11m 59s] ich würde bei dem ersten nie wirklich
+[12m 3s] höher als minute gehen es sei denn ihr
+[12m 4s] habt jetzt einen echten grund dafür
+[12m 6s] quasi weil er sagt okay er hat mir fremd
+[12m 8s] system das darf ich zum beispiel nicht
+[12m 9s] öfter als einmal die stunde anfragen
+[12m 11s] oder einmal die viertel- oder was weiß
+[12m 15s] nicht was ihre restriktionen habt dann
+[12m 17s] müsst ihr hier natürlich den
+[12m 18s] entsprechenden minimalwert eintragen
+[12m 21s] aber grund legen würde ich hier immer
+[12m 23s] sekunden bis eine minute bereich bleiben
+[12m 25s] und dann halt weiter nach oben gehen
+[12m 31s] so und was dann jedoch mit dazu kommt
+[12m 40s] ist so ein bisschen acceptance
+[12m 43s] hintergrund lägen nicht immer was
+[12m 44s] schlimmes weil viele teile eure anderen
+[12m 47s] werfen einfach exceptions weist ein
+[12m 48s] guter weg ist zu kommunizieren nennen
+[12m 51s] diesmal innerhalb der anwendung das
+[12m 53s] bedeutet ihr solltet ihr euren shops auf
+[12m 54s] jeden fall exceptions tier bewusst oder
+[12m 58s] von denen er wusste dass sie passieren
+[13m] können ohne dass jetzt wirklich bedeuten
+[13m 1s] dass auch anwendern kaputt ist auch
+[13m 4s] entsprechend behandeln zum beispiel hier
+[13m 7s] in meinem gitter beispiel gibt es
+[13m 10s] natürlich den raid limit dann kommt hier
+[13m 12s] der pittenharter und status korreliert
+[13m 16s] ansteht dann auch man sieht es mit reset
+[13m 20s] wie viel ich theorie nicht noch habe und
+[13m 21s] so weiter und so fort
+[13m 22s] und das ist für mich natürlich einen
+[13m 24s] fall der kann passieren so du kannst
+[13m 27s] immer irgendwelche raid levels reihen
+[13m 29s] laufen und deshalb soll die anderen und
+[13m 31s] dem fall den job einfach bis zu dem
+[13m 34s] moment wo geht hab mir sagt dass ich
+[13m 36s] wieder versuchen darf weil das raid
+[13m 37s] level sich reset hat den job auch einmal
+[13m 41s] aufheben und das dann neu versuchen
+[13m 44s] und deshalb habe ich hier die regel mit
+[13m 46s] methode die schaut die exakte gekommen
+[13m 50s] ist den sponsored status stimmen top
+[13m 53s] gehälter vorhanden ist wenn ja nämlich
+[13m 55s] mit den value ausmacht da draußen kamen
+[13m 58s] objekt das ist dann der moment an dem
+[14m 2s] reset wird ich glaube mir das immer
+[14m 5s] einmal weg weil grundlegendes für mich
+[14m 8s] natürlich schon eine wichtige info ist
+[14m 10s] zu wissen wenn ich das permanent zum
+[14m 11s] beispiel mit den weg laufen sollte ich
+[14m 13s] an meiner anwendung struktur irgendwas
+[14m 14s] ändern dass die jobs besser verteilt
+[14m 17s] werden oder solche sachen das habe ich
+[14m 20s] mir das hier als info- und danach gibt
+[14m 22s] es die release methode die sagt versuche
+[14m 28s] den job in einer in soundsoviel sekunden
+[14m 31s] erneut das bedeutet am ende jenes
+[14m 34s] funktionsprinzip wie wenn er beim
+[14m 36s] initial dispatch sagt mit die le mans ja
+[14m 40s] auch angeben können so ich möchte den
+[14m 42s] rcds patchen
+[14m 43s] aber warte bitte eine halbe stunde oder
+[14m 45s] so was besitzt den job anfängt und hier
+[14m 52s] habe ich dann noch ein paar mehr hier
+[14m 54s] seht ihr den aufruf der regel mit
+[14m 55s] methode kann natürlich auch sein dass
+[14m 58s] die die ressource bei github schon
+[15m 1s] gelöscht wurde oder solche sachen
+[15m 2s] das muss natürlich auch explizit
+[15m 4s] behandeln und nur wenn es quasi keine
+[15m 7s] exception ist über die ich weiß dass sie
+[15m 10s] passieren kann darauf schrägstrich soll
+[15m 12s] dann werde ich sie hat erneut und dann
+[15m 14s] knallt die natürlich auch entsprechende
+[15m 16s] exception händler löst die ganze logik
+[15m 19s] aus mit was wir gerade eben besprochen
+[15m 22s] hatten den entsprechenden read write die
+[15m 25s] counter wären links momente und im
+[15m 29s] schlimmsten fall würde job dann hat es
+[15m 30s] fehlt markiert wenn er das alles
+[15m 32s] überschreitet dann einmal kurz zu einem
+[15m 42s] kleinen horizon ausflug das ist hier die
+[15m 46s] ganze config und genau eine sache die
+[15m 51s] ich immer mache das ist so habe ich mir
+[15m 53s] vor einer ganzen weile von marcel war
+[15m 55s] das damals abgeguckt haben intervall in
+[15m 58s] konferenzen macht die ganze geschichte
+[16m 1s] einfach viel lesbar ich weiß in stent
+[16m 3s] okay hier gibt es nur eine minute und
+[16m 4s] der wert den ich trage ist die zahl soll
+[16m 7s] am ende in sekunden sein weil in vielen
+[16m 9s] fällen schwankte zwischen und steht
+[16m 11s] nicht mal in den in den kommentaren dazu
+[16m 14s] soll hier unten seht ihr zum beispiel
+[16m 16s] schon sind minuten drin und das macht es
+[16m 19s] immer ein bisschen schwierig wenn jetzt
+[16m 20s] total einfach nur ihr kennt das alles
+[16m 23s] entweder so ein riesen intel steht oder
+[16m 25s] dann dieses prinzip 60 x 60 x 24 zweiter
+[16m 29s] alles nicht blöd den blog hier zum
+[16m 33s] beispiel habe ich ein bisschen angepasst
+[16m 35s] der funktioniert mit dem qs snapshot
+[16m 40s] kommen zusammen und bestimmt quasi das
+[16m 43s] nie zahlen esport verreisen das bedeutet
+[16m 56s] bei der reisen einmal aufmacht kann
+[17m 14s] gerade noch ein fehler so wenn er einmal
+[17m 20s] aufmacht seht ihr hier oben die werte
+[17m 23s] jobs pro minute weiter und zum beispiel
+[17m 25s] die beiden hier so einen sinnlos
+[17m 27s] angepasst standardmäßig ist das glaube
+[17m 29s] ich in beiden fällen nur eine stunde und
+[17m 32s] er ist ein monitoring schon relativ kurz
+[17m 35s] also wenn ich immer nur eine stunde zeit
+[17m 37s] habe um zu sehen wie viele jobs zum
+[17m 39s] beispiel gerade verarbeitet wurden
+[17m 41s] aber auch um zu sehen wie viele jobs
+[17m 44s] dann gefehlt sind und so weiter ist da
+[17m 47s] schon ein bisschen kurz deshalb habe ich
+[17m 48s] das hier auf ein tag in dem von
+[17m 50s] hochgesetzt können natürlich auch
+[17m 51s] einstellen was nochmal ihr wollt eine
+[17m 54s] sache die er da wird wissen solltet eure
+[17m 57s] rettet läuft relativ schnell ziemlich
+[18m] voll wenn er ordentlich an zahlen von q
+[18m 3s] jobs durch schiebt also in meinem fall
+[18m 6s] zum beispiel mit sechsstelligen youtubes
+[18m 8s] pro tag wenn ich gezielt einstellen
+[18m 11s] würde das bedeuten dass ich einfach
+[18m 13s] schon eine million einträge einfach nur
+[18m 16s] durch die dispatcher jobs und money
+[18m 18s] matters haben das ist jetzt noch nicht
+[18m 21s] irgendwie ultra 4
+[18m 23s] also da laufen wir rechtzeitig noch
+[18m 25s] nicht in irgendwelche limits aber nie
+[18m 29s] aufgefallen wenn man kann dem rettet
+[18m 31s] sich anschaut und dann das verhältnis
+[18m 32s] zwischen der reisen datenbank und der
+[18m 34s] normalen cash datenbank zum beispiel
+[18m 36s] sieht dann ist das schon auch fällig
+[18m 39s] wenn der reisen datenbank irgendwie
+[18m 40s] tausendmal so viel keystone entstehen
+[18m 43s] oder so das bedeutet das solltet ihr
+[18m 46s] einfach ein bisschen im hinterkopf
+[18m 47s] behalten wenn er natürlich noch viel
+[18m 50s] mehr jobs dadurch schiebt dann wenn es
+[18m 52s] entsprechend auch mehr einträge die
+[18m 54s] ihrem red ist dann immer wieder behaltet
+[18m 59s] und das hier sind dann die trimm
+[19m 1s] snapshot er ist nicht mehr ganz so
+[19m 4s] leserlich weil das durch 54 in dem fall
+[19m 6s] kommt von dem sketch command realer fünf
+[19m 11s] minuten drückt hier snapshot commentary
+[19m 15s] five minutes
+[19m 18s] deshalb muss ich quasi einmal weil er
+[19m 21s] hier die anzahl möchte von snapshots die
+[19m 22s] aufheben soll die gesamten minuten von
+[19m 26s] dem zeitraum den ich aufheben möchte
+[19m 27s] geteilt durch in dem 5 um auch die
+[19m 30s] theoretische anzahl die es pro tag an
+[19m 32s] snapshots gibt einzustellen
+[19m 36s] genau und hier unten das dann wieder für
+[19m 40s] jeden ich musst du selber bestimmen
+[19m 43s] hier kann man auch schon ein time-out
+[19m 45s] festlegen das gilt ja quasi für die
+[19m 47s] gesamte crew und jeden job der kein
+[19m 48s] eigenes bestimmt wenn er also eine
+[19m 52s] europe die einfach wo alle jobs der rein
+[19m 54s] fliegen entsprechend länger brauchen
+[19m 56s] dürfen könnte da das team auch hier
+[19m 58s] einfach stellen und mussten es nicht an
+[20m] jedem job extra machen und dann einmal
+[20m 6s] zurück zu dem job was ihr jetzt in einem
+[20m 9s] job selbst machen könnt um die laufzeit
+[20m 12s] quasi zu optimieren zu verkürzen
+[20m 16s] ich habe mich am anfang von dem job
+[20m 18s] erzählt der je nachdem welches model das
+[20m 21s] betroffenheit bis zu sechs stunden
+[20m 22s] gebraucht hat und ein time out war da
+[20m 25s] ging es am ende um den hier und was der
+[20m 30s] job tut ist er holt sich alle computers
+[20m 33s] für ein repository von guitar und je
+[20m 39s] nachdem wie tori das ist ist das auch
+[20m 42s] mit paketierung eine ganze menge
+[20m 45s] da gab es zum beispiel ein repository
+[20m 47s] was insgesamt knapp 25.000 computers
+[20m 50s] hatte 100 einträge pro seite ist das
+[20m 53s] maximum was geht da anbietet und da
+[20m 57s] kommen wir dann also auf 250 wie quests
+[21m 1s] alleine nur für die jeweiligen regierung
+[21m 3s] und geht hab gibt nur von den ersten 500
+[21m 8s] computers ein vollständiges user bett
+[21m 10s] zurück
+[21m 11s] und das ist das was den job wirklich am
+[21m 13s] langsamsten gemacht hat dann alle
+[21m 15s] anderen computers kommt quasi nur mit
+[21m 17s] denen daten zurück die auch eure lokales
+[21m 19s] geht los zur verfügung stellt es berührt
+[21m 22s] e mail adresse am ende und noch der name
+[21m 25s] aber der name ist ja da kann jeder
+[21m 27s] eintragen was so lustig ist und weil ich
+[21m 31s] jetzt arbeiten nicht nur die ersten 500
+[21m 33s] mädchen wollte weil das nicht ganz dem
+[21m 36s] sinn der plattform passt versuche ich
+[21m 39s] natürlich auch die verbleibenden
+[21m 41s] contributors zu matchen
+[21m 42s] und das funktioniert dann am ende
+[21m 45s] einfach nur mit der e mail adresse und
+[21m 48s] weil jeder nutzer auf github ja nicht
+[21m 52s] nur einige interesse haben kann sondern
+[21m 53s] mehrere
+[21m 55s] muss ich da am ende über einen airbag
+[21m 58s] darüber laufen und das ist jetzt der
+[22m] optimierte code aber am anfang lief das
+[22m 3s] ganze so ab dass alles was auch der job
+[22m 5s] zum beispiel tut mit dem ersten trainer
+[22m 8s] war das bedeutet für jede seite immer
+[22m 11s] ein loop gegenüber alle 100 einträge
+[22m 13s] darüber cook auf den nutzer findet oder
+[22m 16s] ob die länder zwar lägen kannst und
+[22m 19s] macht das für jeden von den 100 dann
+[22m 20s] meine nächste seite wieder 100 mal
+[22m 22s] durchlaufen und so weiter mittlerweile
+[22m 29s] ist auch der bei e-mails coop ordentlich
+[22m 33s] optimiert indem die e-mails bald also
+[22m 39s] plural hier die datenbank mit gewandert
+[22m 42s] ist und davor war das aber ein
+[22m 46s] überladenes attribut auf dem user model
+[22m 48s] und was aus dem bett kam weiß natürlich
+[22m 51s] andererseits bedeutet hat dass ich jeden
+[22m 53s] nutzer überhaupt ist mein eloquent
+[22m 55s] aufbauen musste um entsprechend gegen
+[22m 57s] red ist zu laufen zu gucken gibt es die
+[22m 59s] e mailadresse da drin und so weiter und
+[23m 1s] [Musik]
+[23m 2s] grundlegend war das jetzt auch nicht
+[23m 4s] langsam
+[23m 5s] also wir haben ja immer noch von weit
+[23m 8s] unter einer sekunde pro durchlauf
+[23m 10s] gesprochen und in der normalen anwendung
+[23m 16s] wenn er das im controller zum beispiel
+[23m 18s] habt oder so werde das ist auch nicht
+[23m 20s] unbedingt ein punkt gewesen wo er sagt
+[23m 21s] das muss ich hier tod optimieren
+[23m 25s] weil normalen controller zum beispiel
+[23m 27s] auch nicht über 25.000 nutzer darüber
+[23m 29s] laufen deutet auf youtube ist das
+[23m 32s] allerdings relativ gang und gäbe
+[23m 34s] natürlich und dann werden solche loops
+[23m 38s] plötzlich zum absoluten killer
+[23m 40s] weil wenn er innerhalb des loops
+[23m 42s] irgendwas tut was ich muss ein bisschen
+[23m 46s] mit den einheiten einfach zu rechnen
+[23m 49s] sozusagen eine sekunde länger braucht
+[23m 52s] oder eher eine sekunde einsparen könnte
+[23m 54s] und ihr habt in den loop 3000 einträge
+[23m 59s] zum beispiel was jetzt noch nicht so
+[24m 2s] viel ist also wenn ich an manche
+[24m 3s] datenbanken carrier denke dass man da ja
+[24m 5s] doch eher im hunderttausenden oder
+[24m 7s] millionen bereich dann kommt man
+[24m 10s] plötzlich in richtung stunden tage
+[24m 13s] teilweise und das ist schon echt wichtig
+[24m 16s] dass man da entsprechend wirklich
+[24m 18s] teilweise millisekunden raus reduziert
+[24m 22s] dinge optimieren die man sonst unsere
+[24m 24s] normale anwendungen gedacht hatte und
+[24m 28s] das ist ganz viele trial error am ende
+[24m 31s] das bedeutet versucht euro jobs immer
+[24m 35s] lokal mit zu produktiv ähnlichen daten
+[24m 38s] wie es geht durch laufen zu lassen oder
+[24m 40s] am besten sogar mit echten produktiv
+[24m 42s] daten wenn das könnte und im idealfall
+[24m 45s] auch die datenbank so produktiv nahe wie
+[24m 48s] möglich gefüllt weil natürlich fällt
+[24m 51s] sich eure datenbank bei tausend
+[24m 52s] einträgen anders als bei 20 millionen
+[24m 57s] von da kommen dann eben solche
+[25m] millisekunden geschichten heraus die in
+[25m 2s] entsprechenden situationen einfach zu
+[25m 4s] stunden sich hoch eskalieren können und
+[25m 8s] das zweite was ich hier gemacht habe was
+[25m 10s] auch echten riesen effekt mit hatte
+[25m 14s] nutzt die crew und die möglichkeit dass
+[25m 16s] ihr viele wörter parallelen könnte das
+[25m 19s] bedeutet wenn er seinen job hat der
+[25m 20s] lange braucht schaut ob ihr ihnen
+[25m 23s] verteilen könnt in dem fall zum beispiel
+[25m 26s] habe ich selbst verteilt ich frage die
+[25m 30s] gitter pp immer nach den 100 einträgen
+[25m 32s] an
+[25m 32s] und weil das was lange gebraucht hat
+[25m 34s] nicht wahr die kita pp nach den 100
+[25m 37s] einträge als
+[25m 37s] bei sonne die 100 einträge zu
+[25m 39s] verarbeiten füge ich quasi für jeden
+[25m 42s] eintrag der response einen neuen job zu
+[25m 45s] dem aktuellen patch hinzu seitdem leide
+[25m 51s] patches hat ist das natürlich auch zur
+[25m 53s] zur gruppierung und zum nachverfolgen
+[25m 55s] dass das immer alles durchläuft deutlich
+[25m 58s] einfacher geworden weil er einfach in
+[25m 59s] den patch entstehen könnte und nicht
+[26m 1s] mehr selber schauen müsst ist da noch
+[26m 2s] irgendwo ein job der offen ist genau und
+[26m 7s] jetzt das plötzlich quasi für jede seite
+[26m 9s] einfach 100 jobs zurück in die crew kann
+[26m 11s] danach direkt die nächste seite anfragen
+[26m 14s] wie dort 100 jobs das patchen und ja am
+[26m 18s] ende resultiert dass quasi den 250 girl
+[26m 22s] requested sie hier in ihren job selbst
+[26m 24s] wenn davon jeder eine sekunde braucht
+[26m 25s] sind wir dann bei 2 24 minuten
+[26m 30s] das ist für youtube absolut akzeptabel
+[26m 34s] und ich kann euch sagen die brauchen
+[26m 36s] deutlich kürzer als eine sekunde also
+[26m 38s] der komplette job läuft es mittlerweile
+[26m 40s] in zwei sekunden fünf sekunden teilweise
+[26m 44s] durch und andersrum ist jeder von diesen
+[26m 50s] job setzte innerhalb von bruchteilen von
+[26m 52s] sekunden fertigt und mit zehn wörtern zb
+[26m 55s] auf meinem system gehen das ganze
+[26m 57s] natürlich bedeutend schneller war
+[26m 58s] einfach zehn bürger parallel immer zehn
+[27m 1s] sachen machen können das bedeutet selbst
+[27m 2s] wenn ich innerhalb des jobs nicht
+[27m 5s] optimiert hatte wurde das trotzdem
+[27m 6s] bedeutet dass der gesamte der
+[27m 8s] gesamtprozess zehnmal schneller läuft
+[27m 11s] weil einfach zehn mal parallel dieselbe
+[27m 14s] logik abgearbeitet werden kann statt wie
+[27m 17s] es vorher warte mal schön sequenziell
+[27m 20s] genau dasselbe gilt natürlich auch für
+[27m 23s] andere sachen csv import ist so ein
+[27m 26s] typisches beispiel zum beispiel was ihr
+[27m 28s] habt könnt
+[27m 29s] und da gilt genau dasselbe wenn das was
+[27m 34s] die zeit wirklich beansprucht ist die
+[27m 36s] einzelne zeilen der csv zu verarbeiten
+[27m 39s] weil er irgendwie mit einer lokalen
+[27m 41s] datenbank menschenwürde schauen was
+[27m 42s] gibt's das schon eintrag muss ich den
+[27m 44s] updaten erzeugen was auch immer
+[27m 47s] dann schaut dass er quasi für jede zeile
+[27m 49s] einen neuen job des patchs und nicht
+[27m 52s] alles in einen großen job macht das
+[27m 56s] funktioniert meistens noch bei euch
+[27m 57s] lokal zum beispiel wenn er irgendwie mit
+[27m 59s] einer fake csv arbeitete ich so 1000
+[28m 1s] zeilen hat und dann kommt das erste mal
+[28m 4s] der kunde mit produktiv daten später
+[28m 6s] eine csv-datei eine irgendwie mit einer
+[28m 8s] million zeilen und eure crew timeout
+[28m 11s] plötzlich oder was weiß ich was war per
+[28m 13s] default ist zum beispiel auch der crew
+[28m 16s] und der weiße teil recht niedrig bei
+[28m 18s] wenigen minuten
+[28m 19s] ich weiß gar nicht genau ob fünf oder
+[28m 22s] zehn
+[28m 23s] und das kann euch dann echt das genick
+[28m 27s] brechen
+[28m 27s] wenn ihr lokal vorher das ganze auch
+[28m 29s] nicht mit produktiven daten getestet hat
+[28m 33s] und jetzt sind wir schon kurz vor einer
+[28m 37s] halben stunde ich bin hier durch einige
+[28m 39s] sachen vom pew jobs durchgegangen und
+[28m 43s] bin dahingehend jetzt quasi auch am ende
+[28m 46s] fragestunde machen wir später bis gott
+[28m 48s] ich weiß nicht ganz oft getappt auf
+[28m 52s] youtube gerade fragen schon aufgekommen
+[28m 53s] sind
+[29m] ich schalte mich mal dazwischen noch mal
+[29m 5s] genau das sind glaube ich ein paar
+[29m 8s] fragen aufgekommen
+[29m 10s] du kannst ein auge drauf hatte zum
+[29m 13s] beispiel sehe ich aber gerade darin
+[29m 16s] hatte zum beispiel gefragt ob du
+[29m 19s] er hat gefragt benutzt du eigentlich den
+[29m 22s] gleichen ready server für cash & co oder
+[29m 25s] hast du für beides separate this server
+[29m 29s] aktuell habe ich den selben server
+[29m 32s] allerdings getrennte datenbanken also
+[29m 34s] ein rätsel ist kommt der standard möchte
+[29m 37s] ich glaube mit zwölf datenbanken daher
+[29m 39s] also die sind also durchnummeriert 0 1 2
+[29m 41s] und so weiter das könnt ihr hier bei
+[29m 44s] database genau
+[29m 47s] habt ihr dieses config die vor ort cash
+[29m 51s] & carry you sind mittlerweile glaube ich
+[29m 55s] die fort früher musste man die auch
+[29m 57s] selbst noch anlegen den reisen habe ich
+[29m 58s] quasi jetzt noch selbstständig dazu
+[30m] gepackt und wenn ihr merken solltet also
+[30m 4s] ganz wichtig ist natürlich immer nicht
+[30m 6s] verändert wird so schwierig allgemein zu
+[30m 8s] beantworten ist ja auch mal so eine
+[30m 11s] preis nutzen fragemann skaliert am ende
+[30m 13s] häufig irgendwie erst mit dem server
+[30m 15s] hoch und wenn man dann den punkt
+[30m 17s] erreicht hat dass zum beispiel günstiger
+[30m 18s] ist einfach eine zweite kiste
+[30m 19s] unternehmen zu stellen als den nächsten
+[30m 22s] skalierung schritt der einen server
+[30m 23s] kisten zu machen dann ist es hier dank
+[30m 26s] der ganzen konfigurationen natürlich
+[30m 29s] auch relativ easy nimmst die android app
+[30m 31s] stores dann reisen ray discs oder host
+[30m 34s] oder was auch immer und hat innerhalb
+[30m 36s] von 12 minuten die drittbeste nennt von
+[30m 40s] conficker passen muss
+[30m 42s] horizon schlecht riecht gut dann auf
+[30m 44s] einen server ausgelagert was ganz
+[30m 47s] wichtig ist vielleicht reisen hat am
+[30m 49s] ende nichts mit europa zu tun sondern da
+[30m 51s] stehen die ganzen ist wenn es mal
+[30m 52s] metadaten drin was beweisen also mit dem
+[30m 56s] snapshots auch anstelle der kalkulierte
+[30m 58s] so ein paar werte wie lange die jobs so
+[31m] durchschnitt brauchen was gut ist was
+[31m 3s] der deal ist und so weiter
+[31m 4s] das kommt alles daran die jobs liegen
+[31m 8s] immer noch hier interview genau
+[31m 12s] ich hoffe dass jetzt beantwortet ja
+[31m 19s] lukas das ist alles zu samstag in der
+[31m 21s] frage aufgeschnappt oder war es dass das
+[31m 25s] an dieser stelle ich habe jetzt auch
+[31m 26s] keine frage mehr aufgeschnappt sehr
+[31m 29s] interessantes thema ich mache ja selber
+[31m 32s] auch viel mit dem register bei ping ping
+[31m 35s] und man kann wenn man es optimiert
+[31m 38s] wirklich so viel rausholen
+[31m 40s] also was halt vielleicht auch noch ein
+[31m 42s] ganz interessanter effekt ist wie ihr am
+[31m 43s] auf dem rede server sparen könnt gibt
+[31m 46s] keine eloquent models rhein in euren job
+[31m 49s] quasi in konstanter sondern nimmt die
+[31m 51s] idee und kate die in dem job selber
+[31m 54s] vielleicht so kann man sich zumindest
+[31m 56s] den ramsch sparen und
+[31m 58s] da ich dann auch entsprechend kosten
+[32m 1s] obwohl also wahlweise gibt ja
+[32m 4s] mittlerweile auch keine kompletten bonus
+[32m 7s] mehr rein zum glück also hier seht ihr
+[32m 11s] zum beispiel ich arbeite momentan noch
+[32m 14s] mit direct modus
+[32m 15s] natürlich ist nur die id immer noch ein
+[32m 17s] bisschen weniger als das komplett lesen
+[32m 21s] aber es ist zum glück nicht mehr die
+[32m 23s] komplette user instanz mit allen
+[32m 25s] attributen und allem drum und dran
+[32m 26s] ich glaube das war früher mal so lara
+[32m 30s] will 56 oder so was noch mittlerweile
+[32m 34s] ist es aber quasi so sehr realisiert das
+[32m 36s] model was er dann selbst wieder gegen
+[32m 38s] die ki soll weshalb diese krise hier die
+[32m 43s] geht für ein missing models fleck
+[32m 45s] relativ wichtig geworden das war der
+[32m 46s] quasi jedes mal neu gegen die datenbank
+[32m 49s] läuft und wenn das model dann natürlich
+[32m 50s] nicht mehr da ist kommt er dann seinen
+[32m 53s] first topmodel not found genau abends
+[33m 1s] klar würde ich sagen an dieser stelle
+[33m 3s] ganz ganz herzlichen dank dass du diesen
+[33m 6s] vortrag vorbereitet und hier auch
+[33m 8s] gehalten hast und dann würde ich jetzt
+[33m 11s] das zepter weitergeben an unseren
+[33m 15s] zweiten speaker des heutigen abends der
+[33m 17s] hat einen etwas kürzeren top vorbereitet
+[33m 21s] und da geht es um consumer driven
+[33m 25s] contract testing und derjenige durch das
+[33m 29s] jetzt erzählen wird das ist eine
+[33m 31s] variante
+[33m 32s] und ja dann würde ich sagen stell dich
+[33m 36s] vorher deinen screen und kannst gerne
+[33m 40s] direkt loslegen
+[33m 42s] die bühne gehörte die ja alles klar
+[33m 45s] danke dir ich ja mal könnt ihr sehen ob
+[33m 50s] ich jetzt das ja da wurde hat es nicht
+[33m 54s] sehen ich mir du also ich sehe was gut
+[33m 57s] konnte auch michael sehr gut ich bin
+[33m 59s] gerade ich habe mir heute das dann mal
+[34m 2s] konzentrieren kontrakt testing
+[34m 3s] vorgenommen in 15 minuten mal gucken
+[34m 6s] ob es dabei auch wie ich es schaffe es
+[34m 10s] ist ein großes thema so bin ich ich bin
+[34m 12s] nie viel software entwickler arbeitet
+[34m 13s] hier in berlin bei ratepay und ich
+[34m 17s] möchte nicht so viel zeit vergeuden mit
+[34m 18s] meiner persönlichkeit und deswegen gehe
+[34m 20s] ich einfach weiter zum thema worum geht
+[34m 23s] es geht um konsumenten contract testing
+[34m 25s] vielleicht hat das schon mal der eine
+[34m 26s] oder andere was davon gehört oder
+[34m 28s] vielleicht verwendet er ist schon sogar
+[34m 31s] ansonsten werde ich eine mehr oder
+[34m 34s] weniger detaillierte eine empfehlung
+[34m 36s] geben was es ist und wieso sollten wir
+[34m 42s] zu benutzen warum warum ist das wichtig
+[34m 43s] welche tools können wir benutzen was ist
+[34m 45s] packt und welche stolperfallen gibt es
+[34m 49s] und welche einschränkungen kann man
+[34m 50s] dabei finden habe ich mich verhört
+[34m 55s] das heißt die firma
+[35m 2s] ja was ist konzentriert kontrakt testing
+[35m 5s] es ist erstmal ein sehr lang sehr großen
+[35m 8s] wort ja es besteht aus verschiedenen
+[35m 12s] begriffen aus der die eine oder andere
+[35m 15s] habe ja schon mal gehört in der laufbahn
+[35m 18s] so lasst uns mal diese diese
+[35m 20s] begrifflichkeiten aufsplitten vielleicht
+[35m 21s] verstehen wir was ist was gemeint ist
+[35m 25s] consumer der consumer ist quasi der
+[35m 28s] client consumer bezieht eine api und
+[35m 32s] nimmt daten hingegen und kann sie
+[35m 34s] verarbeiten
+[35m 35s] ein consumer to consumer dreaming ist
+[35m 38s] hier gemeint dass der client quasi
+[35m 41s] definiert was er erwartet von der api
+[35m 44s] also was er will was er haben will und
+[35m 46s] was er damit machen möchte er will zum
+[35m 49s] beispiel einen bestimmten protokoll oder
+[35m 51s] einen bestimmten quest benutzen oder
+[35m 54s] vielleicht will oder ein paar properties
+[35m 56s] haben das kanäle definieren und das
+[35m 59s] macht er alles in einen vertrag in
+[36m 1s] seinem kontrakt und diesen kontrakt soll
+[36m 5s] zentral verwaltet werden oder jedenfalls
+[36m 8s] verfügbar für beiden seiten seien
+[36m 11s] es muss von beiden zeitungen zugestimmt
+[36m 13s] werden und deswegen muss der provider
+[36m 17s] deshalb ist der service anbieter quasi
+[36m 20s] die api die muss das verifizieren dass
+[36m 23s] er das tatsächlich liefern kann
+[36m 25s] genau in anderen worten konzentrieren
+[36m 30s] kontrakt testing
+[36m 33s] keine ahnung ich habe das übersetzte
+[36m 35s] weil eigentlich hatte ich den talk auf
+[36m 37s] englisch vorbereitet machen wir es oft
+[36m 40s] deutsch konzentrieren contracting ist
+[36m 43s] eine strategie um die kommunikation
+[36m 45s] zwischen services in einem per vertrag
+[36m 47s] vereinbarten rahmen testen zu können
+[36m 50s] verträge werden explizit durch den
+[36m 52s] service nehmer definiert und durch den
+[36m 54s] serviceanbieter modifiziert
+[36m 57s] warum ist das wichtig weil brauchen wir
+[36m 59s] das was dein problem löst das überhaupt
+[37m 3s] dafür habe ich so einen kleinen
+[37m 5s] beispielen ja so auf gedacht wo wir das
+[37m 9s] sehen könnten
+[37m 10s] wir haben hier eine api oder ein
+[37m 12s] serviceanbieter der hat eine liste an
+[37m 15s] kundendaten und die könnten die kann
+[37m 17s] abgefragt werden von bestimmten oder von
+[37m 20s] verschiedenen clients
+[37m 21s] die sind die consumer emc und die sind
+[37m 25s] aber nicht interessiert an den gleichen
+[37m 27s] daten z manche wollen mehr daten haben
+[37m 30s] manche wollen weniger daten haben so ist
+[37m 32s] es üblicherweise auch und ja am anfang
+[37m 36s] sind sie alle glücklich der der provider
+[37m 39s] der hut sein daten z bereitgestellt es
+[37m 42s] macht alle glücklich auch wenn sonst
+[37m 43s] immer wenig alle daten nimmt oder den
+[37m 45s] konsum ac mehr daten braucht als die
+[37m 47s] anderen
+[37m 48s] die api erfüllt alle anforderungen
+[37m 52s] nun aber kann es sein dass einer der
+[37m 55s] consumer oder eine der clients sagt ich
+[37m 59s] möchte mehr daten oder weniger daten
+[38m] oder eine andere struktur in den daten
+[38m 2s] haben
+[38m 3s] hier haben wir zum beispiel consumer aa
+[38m 5s] der sagt ja ich bin nicht einverstanden
+[38m 7s] mit der benennung diese dieses feldes
+[38m 9s] bitte verändere den namen
+[38m 11s] er hat sich gewünscht dass soll es ab
+[38m 14s] heute date of word heißen und nicht mehr
+[38m 17s] birthday provider lkw hat gedacht gut
+[38m 23s] das kann man machen machen wir ändern
+[38m 24s] wir schlecht für consumer c der hat
+[38m 27s] jetzt ein problem seine erwischen oder
+[38m 29s] seine daten die er bezieht sie nicht
+[38m 31s] mehr vollständig es wusste ich aber
+[38m 33s] unbedingt so sein dass er das provider
+[38m 35s] erst wenig verändert hat kann sein dass
+[38m 38s] er eine rundmail geschickt hat an einer
+[38m 39s] kollegin bittet jack ma
+[38m 40s] ob das für euch feuerstelle wand ist ja
+[38m 43s] werden hier eine änderung durch vögel ja
+[38m 46s] aber wie man es kennt manche antworten
+[38m 48s] schneller als andere branchen wurden gar
+[38m 50s] nicht
+[38m 51s] und da bleiben sachen auf die strecke
+[38m 53s] ziemlich spät stellt man fest es gibt
+[38m 55s] probleme
+[38m 56s] man kann diese probleme umgehen nach
+[38m 58s] verschiedene arten umfassen
+[39m] vielleicht habt ihr schon mal gehört von
+[39m 2s] postel slo
+[39m 3s] es ist quasi das robuste prinzip und die
+[39m 7s] besagt dass ich hab's mir aufgeschrieben
+[39m 10s] unsere vorlesen sei streng mit dem was
+[39m 12s] du tust sei offen mit dem was du von
+[39m 14s] anderen akzeptierst in anderen worten
+[39m 18s] provider muss sehr streng seien mit den
+[39m 21s] sachen die er tut er kann ich einfach
+[39m 23s] sachen verändern
+[39m 25s] darüber hinaus und muss in die consumer
+[39m 27s] offen sein für den was sie bekommen
+[39m 29s] machen sie auch durchgängig also man
+[39m 32s] sieht es der bekommt weniger daten und
+[39m 33s] ist trotzdem glücklich aber provider
+[39m 36s] muss aufpassen sachen zu verändern was
+[39m 38s] er machen kann ist natürlich er packt
+[39m 40s] eine weitere objektive mit den anderen
+[39m 43s] namen mit dem neuen namen wo dupliziert
+[39m 45s] präsident wert das macht kannst du mal
+[39m 47s] glücklich und konzerte hat nicht mal
+[39m 49s] mitbekommen dass das sich was verändert
+[39m 51s] hat das ist eine lösung die wiso einen
+[39m 53s] gewissen grad funktionieren könnte
+[39m 56s] irgendwann stolpert man an der falle
+[39m 59s] dass zu viele daten zu viel wiederholung
+[40m 2s] und weniger value
+[40m 4s] dabei entsteht eine andere lösung dafür
+[40m 8s] wäre die applikation ja warum denn nicht
+[40m 11s] das kann man von vornherein schon planen
+[40m 16s] gut dabei ist das problem dass er jede
+[40m 20s] erinnerung an die neue version oder aber
+[40m 22s] jede breaking change eine neue version
+[40m 24s] entsteht die kann aber einen bestimmten
+[40m 26s] grad nicht mehr verwaltbar sein man kann
+[40m 30s] den überblick verlieren welche wörter
+[40m 32s] version war noch mal was oder man man
+[40m 36s] fällt in einem problem war version 1 ist
+[40m 39s] es benutzt überhaupt jemand können wir
+[40m 41s] das abschalten müssen wir das immer noch
+[40m 43s] anbieten
+[40m 45s] bei beiden lösungen also beide lösen
+[40m 48s] beide lösungen sind okay beide lösungen
+[40m 50s] gut es lösen aber nicht
+[40m 54s] es löst nicht die frage
+[40m 57s] wie kann der service anbieter unabhängig
+[41m 2s] von seinen von seinen dienst abnehmer
+[41m 6s] wie kann er unabhängig von denen
+[41m 8s] weiterentwickeln wie kann es da hin
+[41m 9s] verändern ohne dass er angst davor haben
+[41m 12s] muss sachen zu verändern
+[41m 13s] er kennt ja mehr oder weniger gewehr
+[41m 15s] seine abnehmer sind vielleicht hat er
+[41m 17s] der einen vergessen oder vielleicht was
+[41m 19s] ja nicht genau was er damit den daten
+[41m 21s] tut muss ja auch nicht wissen könnte
+[41m 24s] wissen muss er aber nicht und da hilft
+[41m 28s] auf jeden fall soll ein tool zu haben wo
+[41m 31s] man per vertrag weiß wer was braucht
+[41m 33s] denn da könnte der service provider
+[41m 36s] jeder zeigt sich darauf berühren sagen
+[41m 38s] übrigens diese property wird von den da
+[41m 41s] verwendet deswegen sollte ich die dann
+[41m 42s] noch lassen und konnte problemlos weiter
+[41m 45s] entwickeln ohne in einen penalty
+[41m 48s] konflikt zu fallen
+[41m 51s] so wiegt was kann man nutzen um aus dem
+[41m 57s] problem zu kommen weil welche tools gibt
+[41m 58s] es ist überhaupt die mit konzentriert
+[42m 1s] kontrakt testing arbeiten könnten
+[42m 4s] es gibt eine reihe von tools die man
+[42m 6s] durch die kombination dieses problem
+[42m 11s] lösen könnten
+[42m 12s] jeder kennt vielleicht zwecke oder
+[42m 15s] opelfiat ja meistens oder sehr häufig
+[42m 22s] eigentlich ip anbieter bringen und so
+[42m 25s] eine dokumentation mit einer mp3-datei
+[42m 28s] boni wie es soll ja oder es gibt auch
+[42m 31s] blueprint und es gibt tools die diese
+[42m 34s] dokumentation oder diese datei lassen
+[42m 37s] können passen können und daraus requests
+[42m 40s] automatisiert ausführen können sodass
+[42m 43s] sie testen ob dann ob die ap immer noch
+[42m 45s] die daten liefern die erwartet sind das
+[42m 49s] wäre quasi konnte man sich vorstellen
+[42m 51s] dass die cia datei dann der kontrakt ist
+[42m 53s] und dann haben wir ein tool wie draht
+[42m 56s] der diese dieser datei ausliest und dann
+[42m 59s] rückwärts gegen die abliefert in
+[43m 2s] regelmäßigen abständen oder in der
+[43m 3s] pipeline
+[43m 4s] und da weiß man bei jeder änderung
+[43m 6s] ja die api erfüllt die man auf den
+[43m 8s] vertrag oder nicht andrea tools die es
+[43m 11s] gibt ist zum beispiel postman vielleicht
+[43m 14s] kennt ihr das noch ich glaube inzwischen
+[43m 16s] ist im song ja ziemlich berühmt aber
+[43m 18s] postmann benutze ich immer noch gerne es
+[43m 20s] ist ein desktop eine desktop anwendung
+[43m 23s] mit der man seine api ab franken und
+[43m 27s] sehr viele crazy sachen machen kann wie
+[43m 30s] zum beispiel test und experimente und
+[43m 32s] collections und die kann man verwendet
+[43m 34s] tatsächlich also man kann an der calle
+[43m 35s] an ein requests speichern in einem
+[43m 37s] collection die kammern exportieren als
+[43m 39s] jason und dann mit seinen kollegen
+[43m 40s] teilen und diese collection kann man
+[43m 43s] aber auch automatisieren die leute von
+[43m 46s] postma die haben ein weiteres tool
+[43m 48s] entwickelt das ihr leid tue
+[43m 49s] der nennt sich newman und der kann diese
+[43m 52s] collection quasi noch ausbügeln und die
+[43m 55s] tests wirklich zieren die definiert
+[43m 57s] worden sind das ist nicht cool aber
+[44m] eigentlich dies dieser tests werden
+[44m 3s] niemals von consumer definiert also eine
+[44m 6s] träger datei wird niemals oder
+[44m 7s] vielleicht gibt es im fall dass ein
+[44m 10s] service macht eine ep klein schreibt
+[44m 14s] eines mega datei und sagt bitte das ist
+[44m 16s] meine träger datei bei mir diese api das
+[44m 18s] wird niemals vorkommen oder kann ich mir
+[44m 21s] nicht vorstellen
+[44m 21s] es war gut zu haben es bildet aber nicht
+[44m 24s] denn consumer driven kontrakt testing
+[44m 27s] dafür gibt es aber ein anderes tool der
+[44m 30s] das komplett anbietet seine eine
+[44m 32s] komplette plattform und das respekt und
+[44m 36s] pack funktioniert komplett komplett
+[44m 38s] agnostisch vom von der sprache das
+[44m 40s] funktioniert mit jeder
+[44m 41s] programmiersprache zumindest die
+[44m 43s] durchgesetzt habe es funktioniert auch
+[44m 46s] mit verschiedenen test rainer also packt
+[44m 50s] werden auch eigentlich geschrieben als
+[44m 51s] test zu deswegen kann ich aus filmen in
+[44m 54s] jedem test ran ich habe ich habe es mit
+[44m 56s] passt also beispiel passt noch nicht
+[44m 58s] getestet wollte man nicht alles machen
+[45m] um zu sehen wie das aussieht
+[45m 2s] ja aber für psp und bittet auf jeden
+[45m 6s] fall eine vollständige unterstützung und
+[45m 8s] bietet habe ich auch schon mal
+[45m 9s] ausprobiert und es ging problemlos
+[45m 12s] so gehen wir noch mal tiefer suspekt wie
+[45m 15s] sieht das aus was is packed
+[45m 17s] ja also gemüse ihre dokumentation oder
+[45m 20s] was auf ihr gesamtes schreiben packte
+[45m 22s] sein kontrakt testing tools und kontrakt
+[45m 25s] testing the way it services solcher
+[45m 28s] service provider sind klein kein
+[45m 30s] communicator dies aber so wie dort
+[45m 32s] konnte der service community ist by
+[45m 36s] using expensive and brettl integration
+[45m 38s] test und das ist schon wahr also um zu
+[45m 42s] testen ob tatsächlich ein client
+[45m 45s] besonders wenn die externen ist mit
+[45m 48s] einer api kommunizieren kann muss man
+[45m 50s] schon sehr viel drumherum basteln in der
+[45m 53s] pipeline oder in diversen tools und
+[45m 56s] firewalls auch mal und keine ahnung was
+[45m 57s] nur um so profitieren dass dieser
+[46m] interent es funktioniert muss es aber
+[46m 3s] nicht sein denn wir wollen ja nicht ein
+[46m 4s] end to end test bauen wir wollen
+[46m 6s] eigentlich nur dieses interface checken
+[46m 9s] unqualifizierten dass diese daten immer
+[46m 11s] noch in dem format oder in der struktur
+[46m 13s] geliefert werden wie es an gefordert ist
+[46m 16s] so dafür habe ich eine kleine demo
+[46m 19s] vorbereitet ich habe ein projekt
+[46m 22s] vorbereitet ist auf der iss auf github
+[46m 26s] und das kann ich kurz posten hier
+[46m 29s] falls ihr mal gewollt und ich würde gern
+[46m 33s] kurz ganz kurz zeigen wie so ein test
+[46m 35s] aussieht so in meinem beispiel was man
+[46m 39s] schon hier sehen kann
+[46m 42s] ich habe einige services oder ein paar
+[46m 46s] anwendungen
+[46m 48s] es gibt ein kundenservice
+[46m 50s] es gibt ein order services geht man
+[46m 52s] panel service und diese miteinander
+[46m 53s] verknüpft warum auch immer ich wollte
+[46m 56s] ich hier nur test schreiben deswegen
+[46m 57s] habe ich die so verknüpft muss aber
+[47m] nicht so sein
+[47m 2s] also im grunde der just jetzt ist es so
+[47m 7s] ich kann mich als kunde ihnen waren
+[47m 9s] anmelden
+[47m 10s] ich sehe eine liste von meinen käufen
+[47m 12s] von einer bestellungen und wenn ich die
+[47m 15s] auf mache sehe ich die einzahlungen und
+[47m 18s] dem warenkorb von meiner bestellung
+[47m 20s] das ist ziemlich simpel die daten werden
+[47m 22s] abgelegt in den verschiedenen services
+[47m 25s] und zwischen diesen services die
+[47m 28s] kommentar die doku die kommunikation ist
+[47m 30s] getestet durch packs oder festgelegte
+[47m 33s] fest definiert durch pecs als erstes
+[47m 37s] schauen wir hatten uns in dem portal
+[47m 39s] also quasi das frontend
+[47m 42s] er bezieht daten aus der api aus der api
+[47m 47s] von den kunden um die leute zu
+[47m 49s] identifizieren also man will sich da
+[47m 51s] anmelden mit seiner e-mail-adresse und
+[47m 52s] diese daten liegen in einen externen
+[47m 55s] service so für diese kommunikation haben
+[48m] wir so einen test hier definiert die
+[48m 2s] integration besteht auf seine also den
+[48m 5s] test besteht aus einer integration und
+[48m 7s] ihnen diese interaktion wird festgelegt
+[48m 9s] war wie sieht der requisite response und
+[48m 12s] man kann oder man muss eigentlich einen
+[48m 15s] eindeutigen titel für diesen test gäbe
+[48m 20s] also der soll beschreiben was diese
+[48m 22s] integration überhaupt macht so gucken
+[48m 26s] wir was war denn requests den weg fest
+[48m 31s] ist ziemlich simpel man sagt welche
+[48m 35s] therapie methode verwendet wird auf
+[48m 38s] welchem platz geht unsere unseren call
+[48m 41s] wie sieht der badi von unseren call und
+[48m 44s] welche hannah wir mit senden werden der
+[48m 47s] response ist endlich ein bisschen mehr
+[48m 51s] vielleicht der unterschied ist ja der
+[48m 53s] manager also der response sagt welche
+[48m 57s] stars wie erwarten wenn wir den call
+[48m 58s] machen werden wie wäsche hey was wir
+[49m 1s] sehen wollen und bei der badi aussieht
+[49m 4s] vielleicht sendet er uns mehr daten aber
+[49m 6s] diese sind jedenfalls die daten die wir
+[49m 8s] erwarten und der match ist dafür da dass
+[49m 12s] wir die daten nicht eins zu eins testen
+[49m 15s] wir wollen wir wollen nicht gucken ob er
+[49m 19s] genau die id 1 geliefert hat sondern uns
+[49m 21s] ist wichtig dass diese struktur passt
+[49m 23s] und welche zahlt am ende steht das soll
+[49m 26s] das soll ich ja nicht in diesem test
+[49m 28s] definiert während dieser test test nicht
+[49m 30s] die daten der testet nur das interface
+[49m 35s] weiterhin im test verwende ich die
+[49m 40s] klassen oder den kleinen den ich in
+[49m 41s] meiner applikation verwendet also ist
+[49m 44s] barth aus maine code wieso ist es so es
+[49m 48s] ist so weil pact oder diesem prozess in
+[49m 52s] diesem test der wird tatsächlich ein
+[49m 54s] requests gegen eine api abfeuern und
+[49m 57s] diese api ist es aber nicht die echte ab
+[50m] wie die identifikation api oder den
+[50m 2s] consumer rappi diese api ist es ein fake
+[50m 5s] ist es ein mob und diese mod muss erst
+[50m 7s] mal gestartet werden
+[50m 9s] deswegen habe ich dieses set up before
+[50m 12s] class hier in dem ich einmal selber
+[50m 16s] konfigurieren
+[50m 17s] ich sage ihnen woher starten soll mit
+[50m 20s] welchen auf welchem portal starten soll
+[50m 22s] und jedenfalls die namen von
+[50m 23s] konzernfremder die ab 4 jahren werden
+[50m 25s] oder die daten abgeben wenn ich den
+[50m 30s] server starte dann kann ich hier mein
+[50m 32s] call-by-call ausbildung und das ist
+[50m 35s] tatsächlich ein echter request und er
+[50m 38s] würden wir natürlich den response geben
+[50m 40s] dass ich ideen habe und diese kulisse
+[50m 43s] response wird validiert kann sein dass
+[50m 46s] ich ihm einen code immer noch fälle habe
+[50m 48s] und trotzdem mehr daten benutzen oder
+[50m 50s] andere daten liefere an diablo und
+[50m 53s] deswegen passt nicht und deswegen ist
+[50m 55s] dieser park wichtig also verifiziert
+[50m 57s] dass die daten die ich liefere genauso
+[50m 58s] das sind was ich spezifizierte dass ich
+[51m] liefern werde
+[51m 2s] und der letzte party calls ist
+[51m 6s] eigentlich nur damit damit beispiel unit
+[51m 10s] nicht meckert war eigentlich damit ist
+[51m 12s] unser kontrakt schon festgelegt das
+[51m 15s] heißt es durch und was passiert als
+[51m 17s] nächstes ist wir wollen diesen kontrakt
+[51m 19s] dass wir erzeugt haben wir wollen das
+[51m 21s] auf eine zentrale stelle hochladen und
+[51m 23s] das ist bei pact der sogenannte broker
+[51m 25s] es ist eine kleine anwendung wo alle
+[51m 28s] contrexx hochgeladen werden und so sie
+[51m 31s] denn so sieht dann ließ er von contrexx
+[51m 32s] aus für diese konsum also das ist der
+[51m 35s] consumer und das ist der provider und
+[51m 37s] das ist die liste von contract sie haben
+[51m 39s] die haben 33 kontrakt und genau das
+[51m 43s] gleiche was im test stellt wird hier auf
+[51m 45s] eine andere art und weise dargestellt
+[51m 48s] ich kann kurz diesen test ausflügen und
+[51m 53s] sind was dann passiert so und lass uns
+[52m 11s] mal das filtern ich möchte nicht alles
+[52m 14s] aus schwimmen
+[52m 21s] es ist durch was ist denn hier passiert
+[52m 26s] ist genau das was ich erzählt habe
+[52m 30s] es wird ein im hintergrund wird ein
+[52m 33s] service neu gestartet das ist der mox
+[52m 35s] service und der enthält die
+[52m 38s] konfiguration die ich ihnen geht ein
+[52m 39s] getragen habe auf den gleichen auf die
+[52m 43s] gleiche erklärte gestern dass sich
+[52m 44s] festgelegt habe und diesen wir sind
+[52m 47s] breakfast ist durchgegangen das heißt
+[52m 49s] wenn wir gucken dem broker haben wir
+[52m 52s] einen weiteren kontrakt und so sieht er
+[52m 55s] aus und was hier auffällt ist der ist
+[52m 58s] gar nicht mehr infiziert diese tests in
+[53m] assing krohn das heißt ja consumer
+[53m 1s] definiert ein kontrakt oder eine version
+[53m 3s] eines kontrakts und der provider muss
+[53m 6s] das qualifiziert das muss aber nicht
+[53m 7s] sofort passieren
+[53m 8s] damit ist die aufgabe von den consumer
+[53m 11s] schon erledigt er kann weiterhin an
+[53m 13s] seine an seine entwicklung arbeiten
+[53m 16s] während der provider die zeit hat diese
+[53m 20s] diese anforderung zu implementieren
+[53m 22s] ich füge noch mal als letztes die
+[53m 26s] antwort also die belieferung von den von
+[53m 30s] den anderen tests damit wir den test tun
+[53m 32s] haben und dann sehen wir wie das
+[53m 34s] aussieht
+[53m 45s] [Musik]
+[53m 51s] okay ich habe zu wenige tests oder ich
+[53m 57s] habe einen plan
+[54m 3s] habe ich nicht gerechnet ich habe einen
+[54m 4s] fehler in mein gott hat vorher von sich
+[54m 8s] gut ich glaube ich bin über die zeit
+[54m 12s] ich wurde ich meine ich konnte weiterhin
+[54m 14s] erzählen aber ich glaube ich bin über
+[54m 16s] die zeitung wir können gerne nochmal ein
+[54m 17s] mängel weiter darüber reden
+[54m 20s] ich kann da ist inter fragen im chat so
+[54m 29s] ich schaue mal nein ich glaube da sind
+[54m 34s] jetzt keine fragen im chat daher gefragt
+[54m 38s] ja genau keine frage ich glaube ich habe
+[54m 41s] jetzt nicht aufgepasst läuft dieser test
+[54m 44s] jetzt beim consumer oder beim provider
+[54m 46s] geht es in der durch gegangen ist der
+[54m 49s] läuft beim consumer to consumer hat
+[54m 51s] diesen test quasi geschrieben mit den
+[54m 54s] erwartungen die er hat und der provider
+[54m 57s] ich kann den test beim provider zeigen
+[55m] der sieht anders aus okay das ist der
+[55m 11s] test für den provider der provider der
+[55m 14s] muss ja nur verifizieren der muss ja
+[55m 15s] keine keine response bauen oder keine
+[55m 18s] rückwärts bauen er lädt eigentlich diese
+[55m 20s] diese kontrakt herunter vom broker und
+[55m 24s] verifiziert also es er macht auch ein
+[55m 26s] call gegen sich selbst deswegen hier
+[55m 28s] sagte das ist meine bessere laune macht
+[55m 31s] ein call gegen sich selbst wie es so
+[55m 33s] definiert ist in kontakt und er wird wie
+[55m 37s] vieh ziert das der response genau
+[55m 39s] entspricht was erwartet wird
+[55m 45s] bei dem franck
+[55m 50s] wenn keine weiteren fahrer sind darm
+[55m 54s] niveaus würde ich hätte dieser stelle
+[55m 56s] sagen vielen dank
+[55m 57s] zu dem vortrag war sehr interessant und
+[56m 1s] vielleicht findest du ja den einen
+[56m 3s] fehler sonst noch und kannst dann im mai
+[56m 5s] anknüpfen und das wäre jetzt auch das
+[56m 9s] stichwort wir mängeln jetzt nämlich auf
+[56m 12s] dem offiziellen dach des core server den
+[56m 17s] link findet ihr auf der website da könnt
+[56m 20s] ihr einfach aufspringen reinräumen in
+[56m 22s] einen der panels und jordan schnacken
+[56m 27s] wir noch ein bisschen und lassen den
+[56m 30s] abend bei einem kaltgetränk ausklinken
+[56m 35s] ausklinken ausklingen so ja dann würde
+[56m 40s] ich sagen vielen vielen dank noch mal an
+[56m 41s] die beiden vortragenden jahren das
+[56m 44s] nächste level meetup ist wann was sagt
+[56m 49s] der kalender
+[56m 50s] ich schaue kurz sollte sich herausfinden
+[56m 55s] lassen das ist auf jeden fall im juni
+[56m 57s] und zwar ist es am 17 juni wenn ich mich
+[57m 2s] nicht vertue richtig montag der siebte
+[57m 5s] juni 2020 21
+[57m 10s] sehen wir uns wieder und wenn ihr da
+[57m 13s] gerne auch so ein schnitt einen vortrag
+[57m 15s] halten wollt dann lasst es uns sehr
+[57m 18s] gerne wissen ihr könnt einfach twittern
+[57m 20s] an nicht zum beispiel oder an asien oder
+[57m 24s] nada will dach wir haben glaube ich auch
+[57m 27s] so ein formular auf unserer webseite
+[57m 28s] seit neuestem gleich kann der wind das
+[57m 31s] nochmal auf twitter teilen oder sonstwo
+[57m 34s] da könnt ihr euch auch einfach mit einer
+[57m 36s] talk idee ein fragen und dann gucken wir
+[57m 39s] wo wir euch da rein kriegen und ja dann
+[57m 43s] könnt ihr hier mit dabei sein und was
+[57m 46s] erzählen
+[57m 47s] ich könnte mir übrigens oft fliegen
+[57m 49s] gehört die agora ihr könnt ihr bei ich
+[57m 52s] kann das alles finden sie seien genau
+[57m 57s] und ja dann an dieser stelle vielen dank
+[58m] dass ihr dabei wird und dann sehen wir
+[58m 3s] uns gleich
+[58m 4s] desktop wiedersehen gab noch einen
+[58m 6s] schönen abend

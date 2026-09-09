@@ -35,4 +35,12 @@ return [
         ],
     ],
 
+    'youtube' => [
+        'key' => env('YOUTUBE_API_KEY'),
+    ],
+
+    'youtube_transcript' => [
+        'token' => env('YOUTUBE_TRANSCRIPT_API_TOKEN'),
+    ],
+
 ];

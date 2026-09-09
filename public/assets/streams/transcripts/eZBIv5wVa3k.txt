@@ -1,0 +1,2652 @@
+[0s] right super and has are
+[3s] already live yeah yeah so it looks like
+[5s] we are live
+[6s] can you people tell us if if we can see
+[9s] us and hear us
+[11s] because if i try to go on youtube it's
+[13s] gonna
+[14s] start playing really loud but
+[17s] let's assume that everything is okay
+[21s] hope anyway so everyone welcome back to
+[24s] our part two of building larabel's
+[27s] well laravel's package development
+[30s] building a laravel package last friday
+[32s] we did a part one where we
+[35s] built a package from scratch just the
+[38s] basic one
+[39s] and i said just but it wasn't just it
+[42s] was a lot of work it took us two hours
+[44s] and it's a great example why we should
+[47s] use skeletons if we can don't do
+[49s] everything ourselves
+[51s] and today we'll continue and hopefully
+[53s] make
+[54s] make it work so instead of just having a
+[55s] package that doesn't that's like a
+[57s] static
+[58s] and doesn't do anything let's make it
+[1m] dynamic and
+[1m 1s] do stuff um oh hi
+[1m 6s] everyone welcome back yes so people can
+[1m 8s] see us
+[1m 9s] thank you so like i said
+[1m 12s] let's get started so my name is susanna
+[1m 14s] just to remind you all
+[1m 16s] um i'm a web developer i'm the founder
+[1m 18s] of larabelles
+[1m 20s] and i am the one who constantly puts
+[1m 22s] herself
+[1m 23s] out there and you know does all the
+[1m 25s] embarrassing things in public because
+[1m 28s] why not and my co-host is tom
+[1m 32s] tom there you go hello i'm also a web
+[1m 35s] developer
+[1m 36s] and focused on php back-end development
+[1m 40s] and i try to help susanna get the
+[1m 44s] package done
+[1m 46s] and also yeah propped up with the
+[1m 50s] initial idea of the package so just
+[1m 54s] as a reminder we susana sent a tweet in
+[1m 58s] one of her newsletters which looked
+[2m] nearly exactly like a
+[2m 1s] real tweet and now we try to recreate
+[2m 5s] this
+[2m 6s] for laravel with a blade view so you can
+[2m 9s] send it in emails put them
+[2m 10s] in your blog post or whatever you want
+[2m 14s] yeah yeah so last week
+[2m 17s] we did those first two steps where we
+[2m 20s] created a
+[2m 21s] repo and then we started a package or we
+[2m 23s] built it
+[2m 25s] yeah we've also did yeah
+[2m 28s] 0.3 this was the last
+[2m 33s] like 10 minutes or so yeah and
+[2m 37s] today it's all about four
+[2m 40s] makes a plate component dynamic and
+[2m 43s] possibly
+[2m 44s] some things that aren't listed here
+[2m 48s] which are general uh package stuff like
+[2m 51s] put it on packages publish it create the
+[2m 54s] first release
+[2m 56s] uh write some unit tests so this will
+[2m 58s] also have to be done
+[3m] and yeah we will see how far we get
+[3m 2s] today
+[3m 4s] yeah let's let's try to keep it shorter
+[3m 6s] than two hours
+[3m 7s] i mean even last week it wasn't the plan
+[3m 10s] but you know let's just see
+[3m 12s] and these are some of the links and
+[3m 14s] resources
+[3m 15s] we've got for you i think i said that
+[3m 18s] i'm gonna add it to the description and
+[3m 20s] i haven't but i will
+[3m 21s] i promise i will have i done it i don't
+[3m 23s] think i have but yeah i'll make a note
+[3m 24s] and i'm gonna definitely add it to the
+[3m 26s] description of the video of this one and
+[3m 28s] last week's one
+[3m 31s] okay right
+[3m 35s] let's get started let me close this
+[3m 41s] and yep again if you think
+[3m 44s] i should make it any bigger please let
+[3m 46s] me know i'll try to
+[3m 48s] increase the font already but yeah
+[3m 51s] except for you house if you are watching
+[3m 52s] on tv don't watch us on tv
+[3m 55s] watch it on a computer like everyone
+[3m 58s] else
+[4m 1s] okay so so what do we do now
+[4m 4s] do you want us do you want to walk us
+[4m 5s] through what we did
+[4m 7s] last week yeah i think a quick
+[4m 10s] walkthrough
+[4m 11s] so we should start with a service
+[4m 14s] provider i think
+[4m 16s] yep so this is the entry point of our
+[4m 19s] package
+[4m 21s] and we have these two methods register
+[4m 24s] and boot
+[4m 25s] these are the same for your already
+[4m 28s] known
+[4m 28s] app service providers you have we did
+[4m 31s] some stuff in the booth like
+[4m 33s] loading the viewers allowed to publish
+[4m 35s] the user as a view and customize it with
+[4m 37s] the
+[4m 38s] artisan vendor publish command and we
+[4m 42s] registered the blade component
+[4m 45s] in the last three lines there are some
+[4m 50s] alternatives to do this but we did
+[4m 53s] this way so like most times in larva you
+[4m 56s] have a different
+[4m 58s] ways to do it and
+[5m 3s] sorry trains better to close the window
+[5m 5s] yeah
+[5m 9s] have the second things that component
+[5m 11s] class
+[5m 12s] says source view components tweet php
+[5m 20s] this is also the same if you create a
+[5m 23s] blade component in your app
+[5m 25s] so right now it only has a render method
+[5m 29s] we have talked about this view name
+[5m 32s] spacing so this
+[5m 33s] tweet minus component double colon
+[5m 37s] and yeah the last one is a tweet blade
+[5m 41s] php which holds all the html susanna has
+[5m 46s] prepared
+[5m 47s] right now also including this
+[5m 50s] really full html with a head and yeah
+[5m 53s] body and link to the tailwind css
+[5m 58s] which allows us to test it really
+[6m] quickly but
+[6m 1s] after we finish testing
+[6m 5s] we will reduce it to the parts that's
+[6m 7s] really about the tweet
+[6m 9s] okay yeah okay
+[6m 12s] and then we did the tests as well yeah
+[6m 15s] not a real test yet
+[6m 17s] we just created this plate method which
+[6m 20s] renders a
+[6m 21s] tweet component without any argument
+[6m 24s] right now
+[6m 25s] and yeah we put html in this tweet.html
+[6m 29s] file
+[6m 30s] so you run it again yeah me
+[6m 33s] see if we can oh hold on let me close a
+[6m 35s] lot of things
+[6m 40s] keep talking let me just i'm just gonna
+[6m 43s] yeah
+[6m 44s] so we put a html in a
+[6m 47s] test html file so we can quickly open it
+[6m 50s] in the browser and check it out
+[6m 52s] and we will also replace places with
+[6m 55s] real assertions
+[6m 56s] like possibly snapshot surgeons or
+[7m 1s] testing like string contains the
+[7m 4s] username or whatever you want to test
+[7m 6s] yet
+[7m 8s] and today we will put the
+[7m 11s] twitter api client in the component
+[7m 14s] class
+[7m 15s] and susana actually
+[7m 18s] do it from here easier
+[7m 23s] i also like the integrated terminal
+[7m 26s] yeah what was the
+[7m 30s] test command wasn't it composer test
+[7m 33s] just composer test wasn't it yeah yeah
+[7m 39s] so we got this and then we get this and
+[7m 45s] i need to open it with open
+[7m 49s] open browser chrome
+[7m 53s] and then i'm just gonna
+[7m 56s] bring it over so this is what it looks
+[7m 58s] like right now
+[8m] so things are missing but we'll fix them
+[8m 2s] because these were all the things when i
+[8m 4s] created the component just with html i
+[8m 6s] just
+[8m 6s] added those uh added the avatar and the
+[8m 9s] svgs
+[8m 10s] manually but obviously because some
+[8m 12s] information is missing now
+[8m 13s] it's all messed up but it will be it
+[8m 15s] will look good eventually
+[8m 18s] so yeah this is our test for now
+[8m 22s] okay
+[8m 25s] so what do we do now first one is a
+[8m 28s] twitter
+[8m 30s] api client i'm sad that there are
+[8m 34s] or isn't a really official one
+[8m 37s] for php so we have to take
+[8m 40s] a a community one i've
+[8m 44s] picked one i don't know if it's really
+[8m 47s] the best or
+[8m 49s] whatever but this one i've already used
+[8m 53s] so i think we are safe to do it
+[8m 54s] with this one uh
+[8m 58s] should i spell it or send it
+[9m 2s] should i go on shall we go
+[9m 5s] it has a website or
+[9m 9s] how did you oh look this is breathe yeah
+[9m 12s] even
+[9m 13s] moments are telling me to breathe okay
+[9m 16s] well don't let me go here
+[9m 21s] i've said here's the squad
+[9m 27s] so that's the one we are using yeah
+[9m 31s] i think with over five thousand six
+[9m 34s] thousand downloads per month it's okay
+[9m 36s] to use it
+[9m 37s] okay good yeah
+[9m 40s] so this is composer require yeah
+[9m 44s] where is the first one
+[9m 51s] okay next
+[9m 55s] well you tell me what to do i'm not
+[9m 56s] going to read it you tell me
+[10m 1s] we have to open the blade component
+[10m 3s] class so the tweet php
+[10m 6s] yeah no this is the view
+[10m 9s] which is the class one or the class this
+[10m 12s] one sorry
+[10m 14s] yeah and i would add a new method
+[10m 19s] like uh retrieve
+[10m 22s] data or something it could be protected
+[10m 26s] which we what sweden retrieve
+[10m 29s] or retrieve
+[10m 34s] and you don't want it public do you oh
+[10m 37s] it should be protected
+[10m 39s] okay yeah
+[10m 43s] and now we will
+[10m 46s] do it a bit dirtier for the moment
+[10m 49s] um it's new twitter
+[10m 54s] and phpstorm should suggest that from
+[10m 56s] yeah it's a
+[10m 57s] dg twitter one exactly yeah yeah
+[11m 2s] and yeah you can assign it to a variable
+[11m 5s] like
+[11m 5s] dollar twitter
+[11m 9s] okay and you have to pass
+[11m 12s] for credentials to it's a consumer key
+[11m 15s] secret and
+[11m 16s] access token and secret okay and
+[11m 20s] so these are the things that need to be
+[11m 22s] in the environmental
+[11m 24s] like exactly yeah not to be shared and
+[11m 28s] okay i'm just gonna
+[11m 29s] [Music]
+[11m 31s] so i'm gonna be doing it you can't see
+[11m 33s] it can you no i moved it so
+[11m 35s] in my env file which i actually don't
+[11m 38s] have
+[11m 38s] interestingly enough so let me create
+[11m 40s] one
+[11m 43s] and in the env file i am going to add
+[11m 47s] what should i add
+[11m 49s] well let me just bring it back so just
+[11m 50s] before i add stuff but anyway so we are
+[11m 53s] going to be adding the
+[11m 57s] so super first you should add the dot in
+[11m 59s] v file to the git ignore
+[12m 1s] yeah i can only recommend every laravel
+[12m 5s] developer to access to your
+[12m 7s] global ignore file because you never
+[12m 9s] want to push a dot env
+[12m 11s] file i think i have it but let's be safe
+[12m 14s] and i'll add it to this one
+[12m 15s] if i have it in both it's just being
+[12m 17s] extra secure right
+[12m 18s] if i don't have it in this one and the
+[12m 20s] global one is
+[12m 21s] takes priority
+[12m 25s] yeah exactly and uh you
+[12m 28s] didn't have it in your global one
+[12m 30s] because phpstorm
+[12m 32s] showed the dot in v as red which means
+[12m 35s] that it's a
+[12m 35s] not added but new git file
+[12m 38s] interesting another thing i need to
+[12m 40s] check let me take you know
+[12m 44s] i thought i did in global
+[12m 47s] get ignored
+[12m 50s] catherine you are totally right um
+[12m 54s] for we could do it in the service
+[12m 57s] provider
+[12m 58s] i'm not so sure if we really
+[13m 1s] wanted to do to add a twitter api client
+[13m 5s] to the global
+[13m 7s] service container as possibly someone
+[13m 11s] wants to use his own one
+[13m 13s] so this is something to be discussed for
+[13m 16s] the moment
+[13m 17s] i think we are okay to do it as a
+[13m 19s] component and we can move the
+[13m 22s] the api construction uh to wherever we
+[13m 25s] want in the later
+[13m 26s] someone later if it if everything works
+[13m 31s] okay so yeah
+[13m 34s] here's this dot in v file and
+[13m 38s] now we need four variables
+[13m 41s] all prefixed with twitter underscore and
+[13m 44s] it will be twitter consumer key
+[13m 49s] one word or consumer key right yeah
+[13m 52s] i write it this one yeah yes and
+[13m 55s] consumer secret
+[14m] and access token
+[14m 6s] and access token secret i know twitter
+[14m 9s] is super secure regarding this
+[14m 14s] okay they want you to add all your
+[14m 18s] credentials
+[14m 19s] now move it out so the things i got from
+[14m 23s] twitter i've got an api key and i've got
+[14m 25s] an api secret and then i've got a better
+[14m 27s] token these are the credentials they
+[14m 29s] gave me
+[14m 30s] so what do i have
+[14m 33s] what do i do this is a bit strange
+[14m 36s] um let's check out
+[14m 40s] the documentation developer
+[14m 45s] okay and
+[14m 51s] possibly if you if you've got the bearer
+[14m 54s] token we
+[14m 55s] don't need this package anymore so
+[14m 58s] this could also be so what do you want
+[15m 1s] me to do
+[15m 4s] and then we shoot
+[15m 8s] docs on the upper menu
+[15m 11s] yeah documentation
+[15m 15s] yep twitter api
+[15m 19s] uh on some yeah
+[15m 24s] and
+[15m 27s] i think we should click on get started i
+[15m 30s] hope that's a
+[15m 36s] getting access sounds okay
+[15m 41s] so okay you should apply for the
+[15m 44s] developer account exactly
+[15m 46s] so save your apps key and tokens
+[15m 50s] api key so i've got this one and
+[15m 54s] yeah the bearer but i don't remember
+[15m 55s] seeing this one so how do i
+[15m 59s] it's going to be fun if i found that i
+[16m] didn't get all the keys and then we just
+[16m 1s] go say okay see you next week
+[16m 5s] hold on so how do i uh where i'm gonna
+[16m 8s] take it off screen because i don't want
+[16m 10s] to share in case
+[16m 11s] i suddenly reveal the keys so let me see
+[16m 15s] if i go to my um
+[16m 19s] why don't i don't know what do i you
+[16m 22s] guys just look at my
+[16m 23s] lovely background let me just uh
+[16m 26s] collapse these things can i not collapse
+[16m 28s] it no no
+[16m 29s] no wrong place sorry
+[16m 33s] i'm gonna put something else you can be
+[16m 37s] looking at there you go you can also
+[16m 39s] look at the puppy
+[16m 41s] oh yeah bring the puppy on oh there's a
+[16m 44s] puppy people you look at puppies
+[16m 47s] and i'm gonna try to find oh
+[16m 52s] you shouldn't eat your pullover
+[16m 56s] and also not my headset
+[17m 2s] so i've created my project and stuff but
+[17m 6s] how do i
+[17m 15s] short break break can you make it longer
+[17m 18s] because i don't know where do i find the
+[17m 20s] stuff
+[17m 20s] i'll bring this back in because i have
+[17m 22s] not been able to find anything and
+[17m 23s] anyway even if i reveal the keys
+[17m 25s] accidentally i'm just going to have them
+[17m 27s] uh i can't i can't have them regenerated
+[17m 30s] right surely i'm sure i can
+[17m 33s] yeah so
+[17m 36s] how where do i find them these are just
+[17m 39s] the dogs but if i were to go to my app
+[17m 42s] the one that i would develop a portal on
+[17m 44s] the top
+[17m 46s] yeah yeah okay let me take it away
+[17m 50s] i don't see anything wrong here okay
+[17m 52s] bring it back
+[17m 54s] now what and it would be in here right
+[17m 57s] it will be in here okay let me take it
+[17m 59s] away
+[18m] sorry guys you know if we were using
+[18m 2s] like obs or something i could have just
+[18m 3s] always just put the secret screen on
+[18m 6s] but nope not me we're doing it the
+[18m 8s] old-fashioned way
+[18m 10s] authentic it's a two screen way yeah
+[18m 14s] well in here all i can see is the name
+[18m 16s] app id
+[18m 18s] permissions authentication settings
+[18m 21s] but i can't see the actual
+[18m 24s] would it be on that no it won't be there
+[18m 26s] okay let me bring it back even if
+[18m 28s] i show the credentials so you cannot
+[18m 30s] really show the credentials
+[18m 32s] because they are one only okay so i can
+[18m 35s] regenerate them
+[18m 38s] oh look i found them so i can regenerate
+[18m 40s] look it says okay i can bring it back
+[18m 42s] because it doesn't actually
+[18m 44s] show the keys look consumer keys and i
+[18m 46s] can regenerate regenerate regenerate
+[18m 49s] so right so the top ones are
+[18m 53s] the consumer keys and the lower ones are
+[18m 55s] these uh
+[18m 56s] authentication and so on so which one
+[19m] should i bring it back again so i'm
+[19m 2s] going i'm going to need this one
+[19m 4s] no so you should reach no you have
+[19m 7s] already copied
+[19m 8s] copied to the consumer keys yes so
+[19m 12s] you don't have to regenerate them and
+[19m 14s] you have to click on generate
+[19m 17s] on this access token and secret don't do
+[19m 19s] it on screen
+[19m 21s] don't stop don't do it okay so i'm gonna
+[19m 23s] you can't see anything can you
+[19m 25s] you can see i can't see it i can see
+[19m 27s] your your clock and brush and
+[19m 30s] what is your main focus today from
+[19m 33s] brockton in england
+[19m 36s] i have no idea where about brokenness no
+[19m 39s] idea
+[19m 39s] it's just this uh i i don't even know
+[19m 41s] it's the extension i have that it always
+[19m 43s] says
+[19m 44s] good evening good morning you know so
+[19m 47s] hold on so i am now
+[19m 49s] and that's nine degree in in water beach
+[19m 53s] yeah so it's it's a bit cool to
+[19m 58s] to go to the beach yeah
+[20m 1s] even if it's warm here
+[20m 8s] no it's sunny today it's just chilly
+[20m 11s] okay i think i've got them copied
+[20m 14s] yes i saved them okay let me bring back
+[20m 18s] the there you go so
+[20m 21s] now this is for now empty so what am i
+[20m 23s] going to
+[20m 24s] uh so the one you already have are the
+[20m 27s] consumer keys and the one you've
+[20m 30s] generated one minute ago are the access
+[20m 32s] tokens okay
+[20m 34s] so now i'll keep this one this was the
+[20m 37s] wrong one
+[20m 38s] yeah so people must be like yeah come on
+[20m 41s] you are developers you should make
+[20m 44s] much better i'm so like this it's fine
+[20m 47s] so hold on let me copy it
+[20m 49s] but anyway we're doing it like how
+[20m 51s] people i would assume not everyone has a
+[20m 53s] proper like a workflow set up you know
+[20m 55s] so i think we do it how people would
+[20m 57s] normally do it surely
+[20m 59s] yeah applying for twitter api is is
+[21m 2s] really
+[21m 2s] not cool
+[21m 6s] you have to answer all
+[21m 9s] these questions like what you are doing
+[21m 11s] with the data what you want to create
+[21m 13s] and
+[21m 14s] at the end i have to say twitter doesn't
+[21m 16s] care anything about your answers
+[21m 19s] yeah and yeah okay so i've got it i've
+[21m 23s] copied it and i
+[21m 24s] closed the dot env file so now you can't
+[21m 27s] see it but i have it there
+[21m 29s] now please stop me if i try to open it
+[21m 31s] again tell me not to
+[21m 34s] okay so now i've got the credentials
+[21m 36s] what do we do now
+[21m 37s] can you hide dot files in phpstorm
+[21m 41s] i don't know we can
+[21m 45s] now we should be able to how what what
+[21m 47s] how
+[21m 48s] search for dot files or hidden files
+[21m 56s] sure hidden files and directories okay
+[21m 59s] so how do i hide them then
+[22m 4s] how do i this this says show them but i
+[22m 6s] want to
+[22m 7s] i want to hide them how do i hide them
+[22m 9s] then
+[22m 11s] possibly the same like toggle
+[22m 14s] and they just no it's still one
+[22m 18s] but but don't configure phpstorm now
+[22m 22s] no that's probably this will lead us to
+[22m 23s] two hours again
+[22m 26s] okay let's see if people have some
+[22m 28s] opinions in the chat
+[22m 31s] what can you know what you can see what
+[22m 33s] can you see
+[22m 34s] don't do not stress me out like don't he
+[22m 37s] says he could see my token yeah he can't
+[22m 41s] and he's just
+[22m 42s] he's trying to throw me off and i'm not
+[22m 44s] going to let him because i'm i'm cool
+[22m 46s] today
+[22m 48s] and thanks ross for uh searching where
+[22m 51s] brokenness
+[22m 53s] and at least i know where
+[22m 56s] birmingham is so i have i have an idea
+[23m 2s] so uh what are we gonna i think we
+[23m 5s] should do
+[23m 6s] the at first the dirty way like uh
+[23m 10s] using the env function and
+[23m 13s] just test if everything works because we
+[23m 15s] don't have to do it's a pretty way if
+[23m 17s] your credentials don't work
+[23m 19s] and make it work first and then we can
+[23m 23s] make it pretty
+[23m 24s] yeah so using the env function
+[23m 28s] and it will be
+[23m 31s] your at first the twitter consumer key
+[23m 35s] oh why is it showing it did you did it
+[23m 37s] show it
+[23m 39s] yeah it did yeah no no no not
+[23m 42s] it chose of value hold on it shows the
+[23m 45s] value what value did it show that
+[23m 47s] it wouldn't show the actual value of the
+[23m 49s] thing right
+[23m 51s] it does it didn't show although it
+[23m 54s] didn't show all of it
+[23m 55s] but still like so if you just trying to
+[23m 57s] call it from twitter
+[23m 58s] you know it says if i for example select
+[24m] the twitter access token
+[24m 2s] you know when phpstorm offers you that
+[24m 4s] little drop down
+[24m 6s] yeah together with the drop down it
+[24m 7s] actually shows you the value
+[24m 9s] which is normal okay anyway what's right
+[24m 12s] so let me do it off screen
+[24m 13s] no no it's not access token the first
+[24m 15s] one is the consumer key
+[24m 17s] okay second one is consumer secret
+[24m 20s] consumer key next one is it
+[24m 24s] uh each of them is a string okay so it's
+[24m 27s] a consumer
+[24m 32s] and third one the access token and last
+[24m 35s] one sex is token secret
+[24m 39s] so what was it so first is the twitter
+[24m 42s] consumer key then it's twitter consumer
+[24m 45s] token
+[24m 50s] if you if you've named some yeah oh
+[24m 54s] i i did
+[24m 57s] so let me just yeah carlos you are right
+[25m 1s] uh
+[25m 1s] in general you should always regenerate
+[25m 4s] credentials you use on stream i think
+[25m 6s] just to be sure yeah but
+[25m 10s] you can also do some bad stuff in
+[25m 13s] with insist two hours people please
+[25m 16s] don't be nice
+[25m 17s] but anyway that little pop-up that
+[25m 19s] showed up it didn't show the whole of
+[25m 20s] it just so you know just the beginning
+[25m 22s] of the credential wrong one
+[25m 24s] so it's not like even if people were to
+[25m 26s] be naughty they wouldn't be able to
+[25m 28s] guess the rest of the string so it
+[25m 30s] should be okay but still
+[25m 32s] php store not cool not cool no
+[25m 36s] it's cool for your own but there should
+[25m 38s] be a php storms
+[25m 40s] public or stream mode
+[25m 43s] hold on let me just because i had the
+[25m 45s] thing i had the
+[25m 47s] file open there you go
+[25m 50s] so is that how i do it why is it all
+[25m 52s] under
+[25m 54s] no uh you have to use uh the env file
+[25m 58s] for every
+[25m 59s] key oh okay so i have to do it like this
+[26m 3s] close it oh get it open a new one
+[26m 9s] now i don't want it to again show so
+[26m 12s] only if you
+[26m 13s] put a click can you not like
+[26m 16s] array of dot env and then pass an array
+[26m 19s] no it's nothing
+[26m 20s] okay class doesn't want an array
+[26m 24s] if you would create it it could be an
+[26m 27s] array but it isn't
+[26m 28s] okay if i okay
+[26m 32s] get it there you go now what
+[26m 36s] so now we have the twitter and
+[26m 39s] now it's uh twitter and
+[26m 43s] some method request huh
+[26m 46s] you know what i should do onto variable
+[26m 48s] twitter we call
+[26m 50s] uh some method request
+[26m 54s] yeah yeah and now you have to open your
+[26m 57s] chrome again with the twitter api
+[26m 59s] documentation
+[27m 1s] oh i've closed it already hold on yeah
+[27m 4s] you can open a new one
+[27m 13s] let me bring it back
+[27m 16s] what and
+[27m 20s] yeah you can you could use the search
+[27m 23s] search the docs
+[27m 24s] yeah what are we searching it's
+[27m 28s] uh how does is it spelled
+[27m 32s] s
+[27m 41s] no it's just status no yeah but says
+[27m 44s] want it with es
+[27m 56s] so what am i googling for twitter api
+[28m] and sends statuses
+[28m 6s] and slash show slash
+[28m 10s] show okay
+[28m 14s] yeah ross i know this is just a quick
+[28m 16s] chat
+[28m 17s] uh not chat check set our setup works
+[28m 21s] and then we can and we'll move
+[28m 24s] the things to config and all also stuff
+[28m 28s] so we're doing it quick and dangerously
+[28m 31s] as well
+[28m 34s] we're living our life on the edge okay
+[28m 38s] so what do we do now now uh
+[28m 43s] it's just copies statuses slash
+[28m 46s] show slash
+[28m 50s] id yeah yeah
+[28m 54s] copy it and put it in the request as
+[28m 57s] string
+[29m 2s] okay and then you should should open
+[29m 4s] twitter and pick
+[29m 6s] a tweet you want to use this is why is
+[29m 8s] it
+[29m 10s] required okay it's waiting for um okay
+[29m 12s] anyway
+[29m 13s] yeah so i'll go to my twitter
+[29m 17s] yeah and i'm gonna pick my tweet
+[29m 20s] right yeah
+[29m 24s] okay and now what uh
+[29m 28s] you could copy the url and we can show
+[29m 30s] how you can get the
+[29m 32s] id from url here okay i have the url
+[29m 35s] copied
+[29m 36s] and where do i paste it go back to page
+[29m 39s] add a comment above this twitter
+[29m 41s] request okay and just paste it
+[29m 45s] yeah and since this last part says 137
+[29m 50s] ending with seven zero that's the id
+[29m 53s] exactly and this should be placed where
+[29m 57s] column id is so replaces column id
+[30m 3s] and then you can add or wrap this
+[30m 7s] twitter request
+[30m 8s] in a dd call so we dump and die
+[30m 11s] yeah and yes the second argument
+[30m 15s] is a string get uppercase
+[30m 19s] does it have to be uppercased does it
+[30m 21s] matter it's actually a question i've
+[30m 22s] always
+[30m 23s] always wanted to ask does it matter if
+[30m 25s] the methods are uppercase or lowercase
+[30m 28s] uh in in the http protocol it doesn't
+[30m 31s] so it depends on
+[30m 34s] on your uh client library but
+[30m 38s] this one uses some comparison with the
+[30m 41s] method
+[30m 42s] and say compared to uppercase get
+[30m 45s] so you have to use it uppercase
+[30m 49s] and this is kind of the package from
+[30m 51s] yeah from the package for
+[30m 52s] this one i think places in laravel are
+[30m 56s] case insensitive so you can get uh use
+[30m 59s] get in lowercase to uppercase and
+[31m 1s] possibly even mixed cased
+[31m 3s] but some packages don't call and
+[31m 7s] like a string to lower or something like
+[31m 9s] this on
+[31m 10s] user argument so you have to pass the
+[31m 12s] value like the library uses it
+[31m 15s] okay yeah and now you can call
+[31m 19s] uh the method retrieve data in the
+[31m 21s] render method
+[31m 22s] of this class okay yeah
+[31m 26s] so in the do i get rid of this no or
+[31m 30s] what do i
+[31m 31s] just add a line above the return yeah
+[31m 35s] yeah and call it you don't have to
+[31m 38s] return it we dump and die so
+[31m 39s] oh so just uh what was it called it just
+[31m 42s] has to be executed
+[31m 45s] okay now what
+[31m 52s] and now you have to run phpunit again
+[31m 55s] and it should
+[31m 56s] dump and die the response of twitter and
+[31m 59s] in best case
+[32m 3s] ah error
+[32m 8s] document one must be of types ah okay
+[32m 11s] yeah
+[32m 11s] we haven't registered the env for the
+[32m 14s] moment
+[32m 15s] as this was this is a a customization
+[32m 19s] secret in the tests
+[32m 20s] so go to your test case
+[32m 24s] it's a base one yeah yeah and
+[32m 27s] i will send you a snippet on on this
+[32m 30s] card
+[32m 30s] okay
+[32m 34s] so every time we use dot env when
+[32m 37s] testing this is what we have to do
+[32m 39s] yeah um
+[32m 45s] no just paste it wherever you want
+[32m 49s] okay walk us through this so
+[32m 52s] resolve application is part of the
+[32m 54s] orchestra package we use
+[32m 56s] and orchestra comes with a full
+[33m] laravel application like you get if you
+[33m 2s] run composer create project laravel
+[33m 5s] inside of your vendor directory so if
+[33m 7s] you open the vendor directory
+[33m 10s] and go down to orchestra
+[33m 18s] yeah on the middle yeah and then you
+[33m 20s] have the
+[33m 22s] i always mix some weak required test
+[33m 24s] bench but it
+[33m 25s] opens this one just so the top one yeah
+[33m 28s] okay yeah exactly that's why i always
+[33m 31s] miss uh
+[33m 31s] mixer we require orchestra test bench
+[33m 35s] but the code is in testbench core so
+[33m 39s] directory it's a test benchmark exactly
+[33m 42s] and there you have this directory logo
+[33m 44s] and if you open this one
+[33m 46s] yeah you have this full app bootstrap
+[33m 49s] database and also stuff
+[33m 51s] and orchestra hasn't changed where
+[33m 55s] the environment file is located by
+[33m 59s] default
+[34m] so it will search for your dot env
+[34m 3s] file in this orchestra test bench call
+[34m 5s] allowable
+[34m 6s] directory okay so if you would move it
+[34m 9s] there it should work um but we want to
+[34m 12s] keep it outside of the render directory
+[34m 14s] just to be sure that the composer update
+[34m 16s] doesn't delete your env file
+[34m 18s] yeah so so this is why we change this so
+[34m 21s] resolve application um
+[34m 25s] which is uh
+[34m 28s] part of orchestra which how it boots
+[34m 32s] your larvae application
+[34m 33s] and so we resolve application
+[34m 36s] is what you get if you just say
+[34m 39s] new application so this application
+[34m 42s] class of larva
+[34m 43s] yeah and then we call immediately use
+[34m 46s] environment path on it
+[34m 48s] and it should be yeah discord has
+[34m 51s] removed it underscore underscore ds so
+[34m 53s] it's a constant
+[34m 57s] and also at the end yeah good that we
+[35m 1s] walk through
+[35m 3s] and should we run the test again
+[35m 7s] we should and it should pet yeah
+[35m 12s] something else second chance must be tap
+[35m 14s] string null given
+[35m 16s] oh so is this because of the credentials
+[35m 20s] type string now given
+[35m 27s] could you open the env file on your
+[35m 29s] second screen
+[35m 30s] and just add a full this value bar
+[35m 34s] environment variable yeah so we have
+[35m 37s] something we could test with
+[35m 39s] um yeah i'm going to just instead of
+[35m 41s] opening another thing
+[35m 43s] so so am i which one's all of them
+[35m 46s] really
+[35m 48s] and then i'm just gonna
+[35m 50s] [Music]
+[35m 52s] then i'm gonna revert back no
+[35m 55s] you you could also add a fifth variable
+[35m 58s] it shouldn't matter
+[36m 2s] [Music]
+[36m 4s] just one we could dump and play with
+[36m 7s] without
+[36m 8s] publishing any secrets yeah
+[36m 12s] okay i've changed stuff
+[36m 15s] so now do i i go back to the
+[36m 18s] speed component wasn't it yeah and you
+[36m 21s] could do a dump in v4
+[36m 24s] above this retrieve data call or a
+[36m 26s] boosters
+[36m 28s] dd i would do it yeah you do it down
+[36m 31s] dd here yeah and env
+[36m 35s] and this variable you've add the foo
+[36m 38s] or whatever you used
+[36m 42s] oh i get it now what i did i actually
+[36m 44s] replaced the twitter consumer keys with
+[36m 46s] some
+[36m 46s] random things and then i'm just gonna
+[36m 49s] roll back the changes so
+[36m 51s] now if i hold on let me just open it
+[36m 53s] here just in case
+[36m 55s] yeah now my credentials are not my
+[36m 58s] actual credentials so
+[36m 59s] i can just leave it as it is let's
+[37m 3s] see hello yo bye hi clever huh
+[37m 6s] yeah okay so we've got this
+[37m 10s] i think you should move it above this
+[37m 12s] new call
+[37m 14s] because the exception of course in the
+[37m 16s] moment you call
+[37m 17s] new twitter what do you mean uh
+[37m 22s] move it in in the first line of the
+[37m 24s] retrieve data method
+[37m 27s] but okay because uh
+[37m 30s] the exception comes from the call yeah
+[37m 33s] but how is it gonna be
+[37m 34s] oh get it yes get it sorry i'm i'm with
+[37m 36s] you now
+[37m 37s] just friday afternoon you know right you
+[37m 40s] just want to check if
+[37m 41s] if we get uh okay say now okay yeah
+[37m 44s] this is not cool um not cool at all
+[37m 47s] not cool twitter no
+[37m 51s] so we resolve application
+[38m] are you going through the docs of the
+[38m 3s] library
+[38m 7s] it's not the library it's a package
+[38m 13s] where i've tried it php unit
+[38m 17s] and it works on my why does it work in
+[38m 20s] my end
+[38m 23s] okay so let's go back to this uh test
+[38m 26s] case
+[38m 28s] okay okay
+[38m 34s] so resolve application
+[38m 42s] now this is the time and i'm glad i'm
+[38m 44s] only just typing i'm not thinking
+[38m 48s] i got it what is it you missed a
+[38m 50s] property i've sent it
+[38m 51s] yet it's good to you okay
+[38m 59s] where do i put that into the test case
+[39m 3s] like outside of the reserve application
+[39m 5s] or in within this method
+[39m 7s] as property of the test case outside of
+[39m 10s] the method
+[39m 10s] okay yeah so this is
+[39m 14s] also part of the orchestra package it
+[39m 16s] tells
+[39m 17s] us that we want to load environment
+[39m 19s] variables
+[39m 20s] and if this isn't true it won't load any
+[39m 24s] environment so now we should get the
+[39m 28s] value
+[39m 29s] if we run composer test hello okay
+[39m 32s] so let me know you can go back
+[39m 37s] do secret stuff i'm doing secrets now
+[39m 40s] okay i've done secret stuff i'll close
+[39m 44s] the file
+[39m 45s] bring it back and now if i run the test
+[39m 49s] what is it gonna show by the way is it
+[39m 51s] gonna show the credentials no it
+[39m 52s] shouldn't it should show
+[39m 55s] let's the tweet response of twitter
+[39m 58s] but if i go hold on
+[40m 1s] because right now we are this is what we
+[40m 4s] are trying to
+[40m 6s] so i need to get rid of this see if i
+[40m 8s] left that ddr
+[40m 10s] it would have shown the credentials good
+[40m 12s] thinking good
+[40m 13s] good thing right so now nothing's gonna
+[40m 17s] show
+[40m 17s] okay um just make it small
+[40m 21s] in case something shows
+[40m 26s] error no no not error
+[40m 30s] it isn't it's because of the dumbbell
+[40m 31s] diaper so okay
+[40m 33s] look i'm slowly revealing yeah
+[40m 36s] it's all fine this is this is the
+[40m 39s] response of
+[40m 40s] of the api so
+[40m 43s] we have all the stuff like created ad id
+[40m 46s] text
+[40m 47s] and now we have to filter it a bit
+[40m 51s] okay so to the properties we want
+[40m 54s] so what do we want
+[40m 58s] in first place it's a
+[41m 1s] is it
+[41m 5s] treat
+[41m 8s] request returns mixed yeah thank you
+[41m 12s] it returns mixed okay um
+[41m 22s] so
+[41m 25s] response id yeah okay it's an object so
+[41m 33s] we could return uh
+[41m 38s] instead of dd okay
+[41m 41s] what are we returning yeah it's a
+[41m 43s] request response
+[41m 48s] we returning an array or do i return it
+[41m 51s] as this or what do i do
+[41m 53s] it will be an object and i think it's
+[41m 57s] like an std class
+[42m 2s] and yeah there isn't a way to make it an
+[42m 5s] error
+[42m 8s] so yeah just return it and
+[42m 13s] okay what did i do could we try to
+[42m 17s] collect
+[42m 18s] no make it easy so
+[42m 22s] uh
+[42m 27s] i think we should make it an array
+[42m 29s] somehow so
+[42m 32s] try to collect it so
+[42m 35s] run the collect function
+[42m 40s] just like that yeah and uh
+[42m 44s] call dd method on the collect
+[42m 47s] yeah um okay so it's
+[42m 52s] why don't i save it into a variable and
+[42m 54s] then ddd variable
+[42m 55s] or does it now because you can chain it
+[42m 58s] so okay collection collections have a dd
+[43m 1s] method
+[43m 2s] oh do they so you can yeah save edit at
+[43m 5s] something in
+[43m 7s] i think it's 8 or 7
+[43m 10s] and okay
+[43m 15s] now what now run the unit test again
+[43m 23s] okay okay perfect and
+[43m 29s] yeah that's a lot of stuff now
+[43m 32s] and instead of cd you can
+[43m 35s] call to array
+[43m 40s] yeah yeah and now you can say
+[43m 44s] that retrieve data returns a type array
+[43m 47s] so it's a return type end
+[43m 50s] yeah okay so now you have
+[43m 54s] uh we can put cis retrieve data
+[43m 58s] as a second argument to the view call in
+[44m 1s] the render method
+[44m 4s] so instead of just calling it we should
+[44m 7s] just have put it well here yeah
+[44m 10s] online online 13 yeah we
+[44m 13s] recall it so it copies this expression
+[44m 18s] this whole thing no no online
+[44m 21s] copy it yeah or
+[44m 24s] cut it yeah let's yeah
+[44m 27s] and added a second argument to so now
+[44m 30s] line 13 the view call
+[44m 34s] so we pass the data we retrieved from
+[44m 37s] from twitter
+[44m 38s] yeah uh to the to the view so the view
+[44m 41s] has access now it makes sense
+[44m 43s] all the data yes i can see it now now
+[44m 46s] once i have to kind of zoom out
+[44m 47s] and instead of seeing just like stuff on
+[44m 50s] the screen i need to look at the actual
+[44m 52s] method names for example okay got that
+[44m 55s] and and just to make it easier for us
+[44m 58s] you can add a dump instead of the dd
+[45m 2s] before you can add a dump call before
+[45m 5s] the to everyone
+[45m 10s] yeah so it will collect the response
+[45m 13s] dump it to us
+[45m 14s] and make it an array and pass it to the
+[45m 17s] view
+[45m 18s] so we have always access to the data we
+[45m 21s] passed to the view
+[45m 22s] and can check which keys we have to use
+[45m 26s] yeah and now we can
+[45m 32s] call phpunit again and it should create
+[45m 35s] a
+[45m 36s] a new tweet html and tell us there's no
+[45m 39s] assertions yeah perfect
+[45m 41s] but if you scroll a bit up it should
+[45m 43s] have this
+[45m 50s] it's funny how it says like okay okay
+[45m 52s] but incomplete
+[45m 54s] it's okay but it could be better
+[45m 58s] okay there isn't an arrow but also not a
+[46m 1s] success
+[46m 2s] yeah it's yeah it's good enough for me
+[46m 6s] right now good enough for me
+[46m 8s] yeah i have also this uh two-day api
+[46m 11s] documentation on my second screen so i
+[46m 13s] can help you a bit with the
+[46m 15s] keys we have to use okay so you can go
+[46m 18s] to the tweet blade php
+[46m 19s] so it's a blade file and
+[46m 23s] now which is the first one we have to
+[46m 25s] replace is
+[46m 26s] it the avatar it should be this yes
+[46m 30s] yeah so
+[46m 35s] it is
+[46m 48s] shall i have a look at the um does the
+[46m 52s] user not contain
+[46m 56s] profile settings
+[46m 59s] profile okay so it should be
+[47m 3s] the user key so dollar user
+[47m 7s] in your case because yeah
+[47m 10s] yeah and
+[47m 13s] here it was array key
+[47m 17s] profile underscore image underscore
+[47m 22s] url
+[47m 36s] yeah and underscore url yeah
+[47m 40s] underscore https
+[47m 43s] okay yeah okay now we can
+[47m 46s] yeah let me delete if i don't delete the
+[47m 50s] street html it will be
+[47m 53s] okay yeah yes we just use file put
+[47m 57s] content so
+[47m 58s] it will just replace it so
+[48m 2s] let's run this and there's an error
+[48m 7s] you cannot use object of type std class
+[48m 10s] as array
+[48m 12s] okay yeah
+[48m 16s] i already have an idea so don't use uh
+[48m 20s] array key but uh
+[48m 23s] property so minus and
+[48m 28s] uh greater than yeah and
+[48m 35s] yeah also yeah
+[48m 38s] another try
+[48m 41s] okay yeah so now if you open so tweet
+[48m 46s] in browser
+[48m 50s] oh there it is look yeah perfect
+[48m 55s] oh well we have to fix this but good
+[48m 59s] yeah there should be a rounded full or
+[49m 1s] something but
+[49m 2s] yeah i'm going to have it in place html
+[49m 4s] this is so cool
+[49m 7s] right let's keep going
+[49m 12s] username so the username is this one
+[49m 17s] yeah this is user and property
+[49m 20s] name underscore name no no no no
+[49m 24s] not the property we have sorry
+[49m 28s] just name the same yeah by the way what
+[49m 31s] what is the page you're reading this
+[49m 32s] from if i go here
+[49m 34s] it's exactly this one yeah and you can
+[49m 36s] scroll down
+[49m 37s] and no a bit down or up yeah
+[49m 42s] so you have these profile background
+[49m 44s] image url things
+[49m 46s] and if you go a bit up description says
+[49m 49s] user this is the user i get it yes so we
+[49m 53s] needed a name um that's it username
+[49m 56s] and then we'll have a description okay
+[49m 58s] get it so
+[50m] username let's just fill out others as
+[50m 2s] well
+[50m 3s] i'll get rid of the comments now and
+[50m 5s] then we can run the test again
+[50m 7s] instead of running it every time user
+[50m 10s] handles so what do we
+[50m 12s] what is the user handle called it's a
+[50m 14s] screen underscore name
+[50m 16s] oh and there you go
+[50m 20s] and
+[50m 25s] yeah but now you've removed this uh
+[50m 29s] sign yeah we want in front of the handle
+[50m 33s] but uh if you put it right in front of
+[50m 37s] these blade things blade wants to uh
+[50m 40s] tries to interpret it as a director
+[50m 42s] directive so you have to remove it from
+[50m 45s] there
+[50m 46s] and use a string concatenation inside of
+[50m 49s] this blade echo expression so
+[50m 51s] right in front of the dollar sign of
+[50m 53s] user yeah
+[50m 55s] but at least this this is array uh i've
+[50m 58s] i'm doing it and you have to use a
+[51m] straight quotes nazis uh
+[51m 2s] oh is it hold on okay so do i do this
+[51m 6s] one
+[51m 7s] right add symbol yeah then
+[51m 11s] at dot after the last code yes that's it
+[51m 14s] okay
+[51m 15s] exactly three date
+[51m 19s] tweet date sir this will be a
+[51m 23s] bit more up created
+[51m 27s] so it's just dollar created ad okay get
+[51m 30s] it
+[51m 34s] and
+[51m 37s] this will just echo what uh twitter
+[51m 40s] gives us so
+[51m 41s] i think we will or want to pass it to
+[51m 44s] carbon
+[51m 46s] by the way so i'm not using user anymore
+[51m 48s] because it's not really in the user
+[51m 50s] array
+[51m 50s] so i'm just using simply created right
+[51m 53s] exactly
+[51m 55s] but with the dollar sign why it's a
+[51m 58s] variable
+[51m 59s] it's a variable not a content oh of
+[52m 1s] course yeah
+[52m 4s] you know okay so
+[52m 7s] just run phpunit again just for a quick
+[52m 10s] check
+[52m 13s] yeah everything fine and if you open
+[52m 15s] refresh
+[52m 17s] perfect yeah it's changed and now you
+[52m 20s] see this
+[52m 21s] frymar 19 and the time zone offset and
+[52m 25s] all the stuff so we have to pass this to
+[52m 28s] carbon
+[52m 30s] um do you do that inside the
+[52m 33s] curly bracket then we do carbon
+[52m 38s] can we i've never done an in plate is
+[52m 40s] this how we do it in blades
+[52m 42s] i would do it like this and
+[52m 46s] and i think it's a make method or pass
+[52m 52s] all right yeah
+[52m 57s] okay okay
+[53m 1s] i'll leave it for now but like because
+[53m 3s] it's a blade file can we still do like
+[53m 5s] use statements on top of the
+[53m 7s] blade file we can yeah
+[53m 10s] because it's a php file and anyway we'll
+[53m 14s] we'll make it prettier later let me just
+[53m 17s] oh look so this is
+[53m 20s] the carbon to string but we want to it's
+[53m 23s] a pretty one you had
+[53m 25s] before so we have to call
+[53m 28s] format on the result of path
+[53m 32s] and
+[53m 36s] then put in whatever we want as a date
+[53m 39s] format
+[53m 40s] so what normally i'm just looking at
+[53m 42s] twitter normally it's
+[53m 44s] time that then am and then month
+[53m 47s] day and then year so which format is it
+[53m 52s] could could we remove the uh a.m
+[53m 55s] yeah yeah i'm sure we could just german
+[53m 58s] i hate it
+[53m 59s] so i think really i don't know which is
+[54m 2s] the more common
+[54m 3s] across the whole world
+[54m 7s] is it 24 hour format some more common
+[54m 9s] one or the 12 hour amp m1
+[54m 11s] i don't know how is it in however in in
+[54m 14s] india
+[54m 15s] or china or australia
+[54m 18s] brazil so this
+[54m 23s] let is know we can do it 24 hours for
+[54m 25s] now and
+[54m 27s] if we need to change it we'll change it
+[54m 28s] later so how do we do the 24 hour
+[54m 31s] format so yeah i i would call
+[54m 35s] for the moment one of these uh
+[54m 36s] predefined formats
+[54m 38s] from carbon so which is uh
+[54m 43s] i checked which we have
+[54m 50s] to
+[54m 54s] you know we can if i click on the
+[54m 56s] comments in stream yard
+[54m 58s] they will be shown on the screen so let
+[54m 59s] me just nice
+[55m 1s] positive one look yay thank you
+[55m 7s] then i'm gonna hide it again
+[55m 10s] try to date time local string
+[55m 15s] where do i do it instead of format
+[55m 18s] yeah hold on that is saying am pm is
+[55m 22s] more common
+[55m 24s] yeah okay and then make it follow the
+[55m 27s] local of the site we can do that later
+[55m 31s] as a
+[55m 33s] to clean up this what do you think yeah
+[55m 36s] just put in something that works
+[55m 39s] for now so instead of format i'm going
+[55m 41s] to to
+[55m 43s] date time to date no day date
+[55m 46s] time string yeah day day time
+[55m 49s] no this is just date stream hold on
+[55m 52s] i saw it two lanes at first day
+[55m 55s] like like a day monday tuesday
+[55m 59s] today daytime yeah
+[56m 2s] exactly okay so we can check what what
+[56m 5s] is the result and
+[56m 6s] if you want to use it for the moment
+[56m 8s] okay
+[56m 12s] now sets now me and large for all people
+[56m 18s] oh oh i think susana has
+[56m 22s] no so it seems like susanna's laptop
+[56m 28s] crashed
+[56m 42s] oh
+[56m 44s] at least i can't see her on stream yet
+[56m 46s] so
+[56m 48s] something happened
+[56m 58s] okay yeah her laptop crashed so we have
+[57m] a few minutes
+[57m 2s] uh if you have any questions i
+[57m 6s] i could or should answer don't hold back
+[57m 9s] it can be
+[57m 10s] whatever you want to ask so
+[57m 13s] some php stuff or
+[57m 18s] not too personal but also personal
+[57m 21s] things or
+[57m 22s] things you always wanted to ask so
+[57m 30s] i think the official name is amar emma
+[57m 33s] ask me anything
+[57m 42s] sorry i'm glad that it stayed on
+[57m 46s] because my browser crashed and to be
+[57m 48s] honest my mouse is now misbehaving wow
+[57m 50s] this is going to be interesting
+[57m 52s] i don't know should i restart the whole
+[57m 54s] computer or
+[57m 56s] i don't let me share again and i might
+[57m 58s] it will it's going to be
+[58m 1s] i offer people to ask me anything but uh
+[58m 3s] no one had any questions so
+[58m 5s] i am happy that it stayed on i was
+[58m 7s] afraid that the whole thing would crash
+[58m 9s] but it's just
+[58m 10s] yeah my mouse is now not happy so i'm
+[58m 12s] going to be have to be
+[58m 13s] using my touchpad which is great anyway
+[58m 17s] but uh this is the result so i think
+[58m 20s] this is perfect
+[58m 21s] that's great we can definitely go with
+[58m 23s] it for the moment
+[58m 25s] just a second table
+[58m 29s] mouse like it's not even uh wireless or
+[58m 32s] bluetooth
+[58m 33s] but now it's just like decided that my
+[58m 35s] comp it was too much for my computer
+[58m 37s] anyway i'm just going to pull it out and
+[58m 39s] put it back in i did
+[58m 41s] some time or blows this i
+[58m 44s] this laser sensor sometimes there's a
+[58m 47s] small hair or something like this no
+[58m 49s] because my whole browser crashed and now
+[58m 51s] the
+[58m 52s] everything is like lagging can you see
+[58m 54s] like my smile is on the screen
+[58m 57s] yeah it should be much faster
+[59m 2s] super you mean since this is a a mango
+[59m 5s] lassi
+[59m 6s] so some yogurt drink with mango
+[59m 10s] i think it's originally from somewhere
+[59m 12s] else around your region so
+[59m 14s] i i think you you know it
+[59m 18s] i hope i'm not racist now
+[59m 22s] but in germany this is something you
+[59m 24s] always get in
+[59m 25s] pakistani or india restaurant so
+[59m 29s] i hope this is also surreal origin
+[59m 35s] okay let's do it i'm just gonna have to
+[59m 37s] be using the touchpad
+[59m 39s] instead of my actual mouse but yeah as
+[59m 41s] long as the keyboard works it should go
+[59m 44s] should be that's gonna be even more
+[59m 45s] interesting now okay
+[59m 47s] now you can prove your uh shortcut
+[59m 50s] keyboard
+[59m 51s] uh shortcut but my keyboard is not oh
+[59m 53s] okay oh no the keyboard is gonna be
+[59m 55s] funny now i shouldn't have touched the
+[59m 58s] keyboard
+[60m 2s] hold on because i've touched my keyboard
+[60m 4s] and on my other screen
+[60m 6s] you know in the keyboard is when you've
+[60m 8s] got like when you want to
+[60m 9s] tap through your the different
+[60m 11s] applications you've got open
+[60m 12s] now my keyboard is going round and round
+[60m 15s] so basically anything that was connected
+[60m 17s] to my computer is not working now so i'm
+[60m 19s] gonna be
+[60m 21s] no should i try to restart i'm just
+[60m 22s] afraid if i try to restart
+[60m 24s] that the stream will end but it
+[60m 27s] shouldn't
+[60m 28s] right anyway let's just you were fully
+[60m 31s] disconnected
+[60m 31s] uh some moment before and the stream was
+[60m 34s] still live so
+[60m 35s] yeah oh honestly it's going can you see
+[60m 38s] it now
+[60m 38s] on the screen except it's not me doing
+[60m 40s] it it's my keyboard now doing it
+[60m 42s] and now it's gone anyway
+[60m 45s] yeah let's just keep going and we'll see
+[60m 47s] what happens
+[60m 48s] okay if you want to
+[60m 52s] i'm just going to typing is going to be
+[60m 54s] harder now but it's fine because i'm
+[60m 55s] going to be typing on my
+[60m 56s] laptop that is on the stand instead of
+[60m 58s] the keyboard it's fine
+[61m] i'm going to remove the keyboard right
+[61m 1s] let's do it so what are we doing now
+[61m 5s] yeah go to the next one
+[61m 6s] [Music]
+[61m 8s] tweet url yeah
+[61m 12s] so instead of that
+[61m 16s] it will be here is it user
+[61m 20s] no no not it's not the url of the user
+[61m 23s] it's the one of the tweet
+[61m 25s] so it's just url
+[61m 28s] you can just url okay yeah yeah so
+[61m 31s] dot url okay
+[61m 36s] got it and then this is a whole sdg
+[61m 39s] thing yeah yeah tweet body uh
+[61m 43s] replace this whole lorem ipsum
+[61m 47s] i think it's text
+[61m 51s] just text yeah okay
+[61m 56s] then tweet url
+[61m 59s] what's the tweet euro url
+[62m 4s] oh yeah it's the same one yeah okay
+[62m 8s] but no do we have we don't have the urls
+[62m 11s] here
+[62m 13s] we have it here and now we have it here
+[62m 17s] and then in here what does it say on
+[62m 19s] twitter normally hold on
+[62m 21s] no um normally
+[62m 24s] so now we don't have this uh
+[62m 28s] yeah because normally on twitter you've
+[62m 30s] got this like
+[62m 31s] continue so you can only display i don't
+[62m 33s] know how many characters of the tweet
+[62m 35s] and then
+[62m 35s] it shortens yeah and you get that i
+[62m 37s] think we could
+[62m 38s] we can remove this tweet dot url uh
+[62m 41s] there
+[62m 42s] yeah it's that link for example is the
+[62m 45s] time
+[62m 46s] so i think on twitter if you click uh if
+[62m 49s] you click the time of a tweet you get to
+[62m 51s] the tweet
+[62m 53s] yeah i mean everything currently if you
+[62m 56s] click
+[62m 58s] where else did we use they tweet your
+[62m 59s] anyway so what shall i leave this what
+[63m 2s] should i do instead of this so instead
+[63m 3s] of url
+[63m 4s] so delete the whole thing yeah
+[63m 7s] [Music]
+[63m 11s] okay yeah and
+[63m 14s] like okay so
+[63m 18s] we will see if we get this information
+[63m 22s] i'm sure we should yeah
+[63m 25s] here favorite count
+[63m 30s] despite the american way right yeah
+[63m 33s] favorite account and the school count
+[63m 37s] was it
+[63m 38s] yeah no yeah yeah
+[63m 41s] okay and
+[63m 46s] see
+[63m 49s] there is so see
+[63m 53s] what was it user dot a user screen
+[63m 56s] name what's that
+[63m 59s] like yeah yeah it's yeah
+[64m 2s] or do you want to displace a pretty one
+[64m 6s] i don't know which one is hold on if i
+[64m 8s] go here
+[64m 10s] oh i think it's it's a full sentence so
+[64m 12s] we could use
+[64m 13s] name oh so just name it
+[64m 16s] yeah but name can contain
+[64m 20s] uh
+[64m 23s] white spaces okay
+[64m 26s] so your name can be for example on my
+[64m 29s] start page
+[64m 30s] westboss so res white space boss
+[64m 34s] yeah but then it will work and then you
+[64m 37s] should apostrophe
+[64m 38s] s yeah okay
+[64m 42s] and that should be it yeah we have to
+[64m 45s] put in the link on the a tag for this uh
+[64m 48s] you want to see
+[64m 49s] other tweets yeah yeah so
+[64m 53s] this is a user url so dollar user
+[64m 57s] and send url
+[65m 2s] yeah and now we can do a re-render
+[65m 10s] that error
+[65m 14s] you are always unidentified
+[65m 19s] undefined
+[65m 29s] is it because of um
+[65m 34s] this is user url
+[65m 38s] it should be user url
+[65m 48s] no we
+[65m 52s] we don't get the url to the tweet
+[65m 56s] we we can't have it we can generate it
+[66m] but look there's the entities then
+[66m 3s] there's url yeah
+[66m 5s] entities is the things you use
+[66m 9s] or is urls no
+[66m 13s] this is the linked entities you use in
+[66m 16s] the tweet
+[66m 17s] so for like listed hashtags
+[66m 20s] and user mentions and if you put in a
+[66m 23s] url
+[66m 24s] for example if you post about larabelles
+[66m 26s] and put them to larabel's website get it
+[66m 28s] it will list a lot of us websites there
+[66m 30s] this is the user url
+[66m 32s] this is the also not useful then you
+[66m 35s] have the same entities there for the
+[66m 37s] description of the user
+[66m 39s] and then joe lang so we have to generate
+[66m 43s] it from the id
+[66m 44s] okay hold on oh so we just do
+[66m 47s] because it's like you said it is made of
+[66m 51s] uh if i go back to twitter hold on
+[66m 54s] it's made of the screen name of the user
+[66m 56s] and the id of the tweet
+[66m 58s] yeah so it should be easy let me just
+[67m] get the link again
+[67m 2s] so i'll copy paste it
+[67m 5s] okay
+[67m 9s] so
+[67m 12s] so this is the so what do what we need
+[67m 15s] is the
+[67m 17s] we need this whole bit it's going to be
+[67m 20s] hard coded
+[67m 21s] isn't it yeah
+[67m 24s] then we'll do
+[67m 28s] not url it will be the
+[67m 31s] user name no screen name
+[67m 36s] screen name is your twitter handle yeah
+[67m 39s] screen name then and this
+[67m 41s] and then forward slash status forward
+[67m 44s] slash
+[67m 46s] now dollar id okay
+[67m 49s] yep let's see now you have to remove the
+[67m 53s] com
+[67m 54s] the comment because it's not a comment
+[67m 57s] oh yeah
+[68m] oh never mind it's fine
+[68m 3s] so i'm typing i'm typing on my laptop
+[68m 6s] with my hands like that
+[68m 8s] i'm gonna be in pain
+[68m 12s] oh you're doing it all for the for for
+[68m 14s] youtube you know for laravels for
+[68m 16s] everyone
+[68m 18s] okay now let's refresh
+[68m 24s] yeah okay well this isn't looking great
+[68m 28s] yeah without truncates could we
+[68m 32s] possibly say as a there is a
+[68m 36s] parameter we could pass to twitter and
+[68m 39s] the other thing is like so in this tweet
+[68m 41s] i
+[68m 41s] actually mentioned you so is there a way
+[68m 43s] for there is no way because once i'm
+[68m 45s] patching the tweet data i don't know
+[68m 48s] what's in it so how could we possibly
+[68m 51s] render the data so it like makes this
+[68m 54s] clickable do you think there is a way
+[68m 59s] it says so this is the one we had in
+[69m 3s] entities yeah but you don't know so for
+[69m 6s] example if i go into the
+[69m 8s] body because we we just
+[69m 11s] fetch the text so how do you tell it
+[69m 14s] because you don't know what's in the
+[69m 15s] text
+[69m 17s] you have to replace it your own but in
+[69m 21s] if you open the the documentation again
+[69m 24s] yeah and then the entities you have this
+[69m 27s] url's example
+[69m 29s] and then you have zero our it links to
+[69m 34s] expanded urls uh one the user under
+[69m 37s] display url
+[69m 39s] and you have this indices yeah and
+[69m 42s] these are the pointers in your text
+[69m 46s] string so you have to replace
+[69m 50s] everything between pointer 117 and 114
+[69m 54s] f40 and make it a clickable link
+[70m] wow yeah but again this is just an
+[70m 3s] example of this
+[70m 4s] one tweet normally oh is this always
+[70m 7s] like this so this is always this is the
+[70m 8s] api so it's always yeah yeah
+[70m 10s] okay so every time there is something
+[70m 13s] yeah
+[70m 15s] and we dump always so if you make the
+[70m 17s] terminal a big
+[70m 18s] a big bitter a bit bigger yeah
+[70m 22s] and scroll a bit up
+[70m 25s] so here
+[70m 29s] no this is uh this is from the user
+[70m 33s] yeah so you have to scroll a bit more oh
+[70m 36s] yeah there are two entities
+[70m 38s] yeah yeah and there you have user
+[70m 40s] mentions
+[70m 41s] yeah and you see 87 and 100.
+[70m 47s] yeah but again you only know that
+[70m 51s] i don't know that tell me what to do and
+[70m 53s] when once i see it i'll understand it
+[70m 56s] i hope i think we we leave it like this
+[70m 59s] this is really advanced
+[71m] stuff uh we can do for a later release
+[71m 4s] yeah for the moment i think it's fine
+[71m 7s] okay um
+[71m 10s] i'm checking if there's a way to get the
+[71m 13s] not truncated
+[71m 17s] part of of a tweet yeah
+[71m 21s] so there's a boolean so tells you uh
+[71m 24s] it's truncated says
+[71m 28s] truncated right below text so scroll a
+[71m 31s] bit up
+[71m 32s] okay no
+[71m 37s] no i don't know anyway where is it where
+[71m 40s] was it
+[71m 42s] why is this so big
+[71m 45s] i'm i'm like you know without my normal
+[71m 48s] keyboard
+[71m 49s] i am like without hands this is so hard
+[71m 51s] to type on the laptop like this
+[71m 53s] anyway so chuck it to true so if we can
+[71m 55s] reset it to false
+[71m 57s] no this is a response so we need a
+[72m 2s] we need a parameter we can set but
+[72m 5s] i can't find one so
+[72m 9s] you can say include entities include all
+[72m 12s] text for images
+[72m 14s] include a card yuri
+[72m 20s] you can say that you want to trim the
+[72m 22s] user
+[72m 26s] so twitter api
+[72m 30s] get not truncated
+[72m 35s] post body hands
+[72m 38s] i'm just checking the comments hans is
+[72m 40s] saying that if we don't put any
+[72m 41s] parameters into the two-time string
+[72m 43s] he thinks it will lose the locale
+[72m 45s] automatically shall we try it yeah
+[72m 48s] try it sure
+[72m 50s] [Music]
+[72m 54s] yeah this one is so into
+[72m 57s] two time string so instead of using two
+[73m] daytime string
+[73m 1s] we just say two
+[73m 5s] time string let's re-run
+[73m 9s] the test go here
+[73m 13s] refresh now it just gives us time
+[73m 20s] but we need the time but we also need
+[73m 23s] the date as well so how would we do it
+[73m 25s] so we get the time
+[73m 26s] that's uh the user local but but also
+[73m 29s] the date
+[73m 31s] anyway i'll take it back to what it was
+[73m 34s] for now
+[73m 34s] [Music]
+[73m 39s] and susana is off again
+[73m 44s] but i think i've i found a way says
+[73m 47s] uh i am sorry i don't know what's going
+[73m 51s] on
+[73m 52s] hold on let me share again
+[73m 56s] see this is what happens because i said
+[73m 58s] earlier that i am not
+[74m] nervous about the screen stream so
+[74m 3s] i shouldn't have been nervous because
+[74m 4s] now my computer said i'll show you
+[74m 9s] okay so i'll leave it at this one
+[74m 13s] yeah um
+[74m 16s] with a two day date time yeah
+[74m 20s] possibly i found a way so go to the
+[74m 24s] tweet component class
+[74m 28s] yeah and we place this uh
+[74m 33s] statuses show with
+[74m 37s] two just two as a as a number
+[74m 43s] yeah slash tweets
+[74m 48s] so no plural so an s
+[74m 53s] yeah okay so are there's a new version
+[74m 56s] of the twitter api
+[74m 58s] so version two and
+[75m 2s] this has some some more things and i've
+[75m 5s] read somewhere
+[75m 6s] that it contains a full text
+[75m 10s] okay sorry yeah
+[75m 13s] and yes dubai i know it happened again
+[75m 15s] it's
+[75m 16s] i it's friday afternoon my computer has
+[75m 19s] had enough
+[75m 20s] my my keyboard has given up on me my
+[75m 23s] mouse has given up on me
+[75m 26s] we are just about managing so sorry
+[75m 29s] it does not exist oh no
+[75m 34s] okay so it seems like it doesn't support
+[75m 38s] uh version 2 of the api
+[75m 43s] yeah yeah okay yeah just let's stick
+[75m 46s] with what we have and
+[75m 47s] yeah the community can fix it for us
+[75m 50s] this is what open source is about
+[75m 52s] yeah let me go back to
+[75m 55s] let me see refresh yep
+[75m 59s] okay so i need to fix this to make it
+[76m 2s] but so let's see we've got like i'll
+[76m 4s] make it prettier but how do we actually
+[76m 7s] use it because right now we had to get
+[76m 10s] some idea hard-coded yeah yeah so
+[76m 13s] how do we make it dynamic next thing
+[76m 16s] will be
+[76m 17s] a construct on the component so at the
+[76m 20s] construct on the top
+[76m 22s] yep
+[76m 27s] yep and we add a property
+[76m 32s] id
+[76m 39s] i think we should type in it to string
+[76m 43s] as twitter says that she's numerical ids
+[76m 49s] can
+[76m 49s] get pretty large and possibly
+[76m 52s] get bigger than your language's
+[76m 56s] integer range okay yeah
+[76m 59s] and we only need it as a string we don't
+[77m 1s] have to do any
+[77m 3s] any math on it or something and
+[77m 6s] yeah i would also type in the prop as a
+[77m 8s] property so protected
+[77m 14s] string
+[77m 23s] we use uh php74 you can increase your
+[77m 26s] php store i should have php it's
+[77m 30s] eight now running but it may be a php
+[77m 33s] storm has a language level setting per
+[77m 37s] project oh okay how do i find this
+[77m 41s] uh it's languages and frameworks
+[77m 46s] yeah and php and just php
+[77m 50s] so so one yeah and then you have php
+[77m 53s] language level
+[77m 54s] and you can set it to seven four okay
+[77m 58s] yeah and now everything is fine
+[78m 2s] right yeah so scroll a bit down
+[78m 6s] to the retrieve data and
+[78m 11s] now it's it's a bit up to you if you
+[78m 13s] want to use us
+[78m 14s] as printf string concatenation or
+[78m 17s] interpolation
+[78m 19s] but we have to put in
+[78m 22s] our class property id instead of this
+[78m 26s] one three seven part
+[78m 29s] what do you think is the best way to do
+[78m 30s] it for such a simple thing i
+[78m 33s] prefer string interpolation so double
+[78m 36s] quotes instead of single quotes
+[78m 45s] yeah yeah let's copy this id
+[78m 48s] first got it
+[78m 52s] go to uh to our tweet component test
+[78m 58s] yeah and add attribute id to this
+[79m 2s] extrude component
+[79m 4s] so after this x tweet an empty spencer
+[79m 7s] plate
+[79m 8s] so string you pass in yeah yeah
+[79m 11s] no no in in the string okay yeah sorry
+[79m 15s] so yeah and pass n
+[79m 19s] id just like that
+[79m 22s] or would you read the the number okay id
+[79m 25s] equals um
+[79m 29s] string paste yeah just paste what you
+[79m 32s] have
+[79m 32s] yeah okay and now you will see if this
+[79m 35s] works
+[79m 36s] possibly i could imagine that blade
+[79m 38s] components has a list of
+[79m 41s] of uh html
+[79m 45s] attributes like id class and so on but
+[79m 47s] we will see
+[79m 48s] but we didn't do anything here do we do
+[79m 50s] anything in here yeah
+[79m 52s] and now we can replace this with a curly
+[79m 54s] brackets
+[79m 56s] opening and closing but a single one on
+[79m 58s] it no no
+[79m 59s] a single one on each side yeah yeah and
+[80m 2s] now
+[80m 2s] dollar says it's i think without
+[80m 6s] without white space uh and property as a
+[80m 10s] minus id yeah okay
+[80m 15s] again do you think it matters if there
+[80m 16s] is white space inside the brackets or it
+[80m 19s] doesn't matter
+[80m 20s] what do you think i would say it matters
+[80m 24s] because it's a php string interpolation
+[80m 27s] and not any
+[80m 29s] template language or something like this
+[80m 31s] but i
+[80m 32s] i don't know if it matters i mean i
+[80m 34s] would understand if there is a
+[80m 35s] gap like in space be before the the
+[80m 39s] curly brackets but anyway let's shall we
+[80m 41s] run the test again
+[80m 46s] oh look it didn't fail yeah perfect let
+[80m 49s] me go to
+[80m 50s] here let me refresh and now if you open
+[80m 54s] twitter and copy
+[80m 55s] uh another tweet your id okay
+[80m 59s] hold on
+[81m 5s] i'm gonna copy just the id
+[81m 9s] okay got it go here yeah
+[81m 16s] yeah it was in the test yeah i got it
+[81m 17s] yeah
+[81m 23s] and now runs the test case again
+[81m 29s] hey look at me perfect
+[81m 33s] cool and this is looking okay i mean i
+[81m 36s] need to
+[81m 37s] i don't know why this moved to the left
+[81m 38s] but i'll fix that but and look
+[81m 41s] the number of tweets and this is a if i
+[81m 44s] click on it
+[81m 46s] it takes me to my website though it
+[81m 48s] doesn't take me to the tweet
+[81m 49s] to my okay uh you know what
+[81m 53s] the twitter url so that we need to fix
+[81m 57s] okay so it seems we don't get any url
+[82m] for the entities itself
+[82m 3s] it's the url you have in your profile so
+[82m 6s] we have to go back to the
+[82m 8s] to the view yeah and
+[82m 11s] instead of user url we use user screen
+[82m 15s] name
+[82m 19s] yeah and put in this https twitter.com
+[82m 24s] in front of yeah yeah i got it i had it
+[82m 27s] somewhere else you know anyway
+[82m 33s] yeah yeah
+[82m 38s] okay let's refresh and let's click the
+[82m 42s] link yeah and i can see on the bottom it
+[82m 43s] will take me to my twitter
+[82m 47s] perfect cool
+[82m 51s] okay let's see that honey
+[82m 54s] zubair i know it happened again i know
+[82m 56s] say something positive
+[83m] motivate us motivate don't put me down
+[83m 3s] ah okay next so what do we do now
+[83m 9s] i think we shouldn't spend a lot of time
+[83m 12s] on
+[83m 12s] make it prettier for the moment no
+[83m 16s] job you can't do off-screen so i think
+[83m 19s] most people will know
+[83m 21s] tailbind or how classes and css work so
+[83m 25s] this isn't really important for the
+[83m 26s] stream um
+[83m 29s] i would go for a real test case now
+[83m 32s] okay so shall i shall i put oh no let me
+[83m 36s] just
+[83m 37s] commit it uh because this is working
+[83m 46s] uh fetch real data
+[83m 51s] that's what we do okay right
+[83m 54s] so now real test case so let's go here
+[83m 58s] yeah and
+[84m 3s] instead of this file put contents we
+[84m 5s] have to do some searches on the html
+[84m 9s] and i would go
+[84m 12s] for snapshot assertions okay
+[84m 17s] do you know snapchatter surgeons no
+[84m 21s] there's a spatial package so spot here
+[84m 24s] php unit snapshot or something like this
+[84m 26s] on google
+[84m 27s] and you will find it
+[84m 36s] exactly and snapshot assertions make it
+[84m 39s] easier to
+[84m 41s] compare whole strings
+[84m 45s] okay also or better a lot of text
+[84m 48s] so if you want to
+[84m 51s] check that for example two html snippets
+[84m 54s] are
+[84m 55s] exactly equal snapshot resurgence will
+[84m 59s] save the result of the or
+[85m 2s] saves the value of your actual
+[85m 5s] so it's the one you want to test yeah in
+[85m 8s] a file
+[85m 9s] and on second run it will compare this
+[85m 12s] file
+[85m 13s] to your now actual value okay so
+[85m 17s] uh
+[85m 20s] yeah you have to run it once and it will
+[85m 23s] create a snapshot
+[85m 25s] and on second run it can compare them
+[85m 29s] okay so i've installed it and then use
+[85m 32s] the
+[85m 32s] training your test case okay we'll do
+[85m 38s] yep in my test case so
+[85m 42s] [Music]
+[85m 46s] okay what else
+[85m 49s] so now you have to really use it
+[85m 54s] right now you only import it yeah so how
+[85m 56s] do i use it
+[85m 58s] go to go back to phpstorm yeah
+[86m 3s] below this class opening bracket you
+[86m 6s] have to
+[86m 7s] do a line break yeah and
+[86m 10s] say use matches snapshots
+[86m 15s] so one outside of the class is only set
+[86m 18s] you import it so you have
+[86m 19s] don't have to use this full qualified
+[86m 21s] class yeah and then just use it inside
+[86m 23s] get it
+[86m 24s] yeah it's like it's similar to what is
+[86m 26s] it with the migrations in laravel
+[86m 29s] with the database anyway that is yeah
+[86m 31s] yeah
+[86m 32s] it's it's just a bit bad wording that
+[86m 35s] php users use for
+[86m 37s] for import and trade using but it was
+[86m 40s] actually
+[86m 40s] that confused me for a while i said like
+[86m 42s] use that's actually but don't you have
+[86m 44s] to import it before you use it until i
+[86m 46s] realized that use
+[86m 47s] means import really but yeah but it also
+[86m 51s] means use it
+[86m 52s] depending on where you place it
+[86m 55s] okay right yeah
+[86m 58s] and now you can
+[87m 2s] yes we are i know it's looking great
+[87m 4s] thank you zubair thank you
+[87m 6s] can i do the same no i don't have i
+[87m 8s] don't have the power
+[87m 10s] but if you do if you see a message you
+[87m 12s] want me to like you know showcase tell
+[87m 13s] me
+[87m 14s] yeah i will right
+[87m 18s] and now instead of five put contents we
+[87m 20s] call
+[87m 22s] sis yeah
+[87m 28s] and what is it asset
+[87m 32s] matches and we
+[87m 36s] can use matches html snapshot
+[87m 39s] what does this do
+[87m 40s] [Music]
+[87m 42s] it's always so confusing if my mouse is
+[87m 45s] exactly there and i want to say
+[87m 47s] do where my mouse is i wish i knew where
+[87m 50s] it is
+[87m 51s] okay yeah and then remove this first
+[87m 55s] argument we don't have to use this path
+[87m 57s] anymore
+[87m 58s] yeah yeah and what
+[88m 2s] the second argument html keeps
+[88m 5s] how is it okay okay uh this is the one
+[88m 9s] the value we want to assert so we want
+[88m 11s] to
+[88m 12s] what it does now is if you run php unit
+[88m 15s] so composer test
+[88m 20s] it will tell you snapshot created for
+[88m 23s] tweet component test it renders
+[88m 25s] one it has also this
+[88m 28s] i in in the progress bar
+[88m 32s] uh yes here yeah yeah
+[88m 35s] which means uh incomplete okay and if
+[88m 38s] you run it again now
+[88m 44s] you will have the dot and it says one is
+[88m 47s] okay
+[88m 47s] and if you make the terminal a bit
+[88m 49s] smaller
+[88m 52s] yeah and go back to
+[88m 56s] left click on the directory structure
+[89m] yeah yeah okay phpstorm always needs
+[89m 3s] some time
+[89m 4s] uh you can find that
+[89m 15s] it shows the same thing
+[89m 18s] very cool and
+[89m 22s] you can delete this tweet html file we
+[89m 24s] had before
+[89m 26s] yeah we don't need it anymore
+[89m 29s] and yeah this is our our first test
+[89m 32s] um some problems we have now um
+[89m 36s] the test is working but yeah it requires
+[89m 38s] real twitter api credentials
+[89m 40s] yeah it has all it has also the
+[89m 43s] requirement
+[89m 44s] of an app twitter api
+[89m 47s] so if they have a downtime or our
+[89m 51s] ci dns isn't working or whatever reason
+[89m 53s] we have that secure request fails our
+[89m 56s] test case will fail
+[89m 57s] yeah and we
+[90m] depend said you will never delete the
+[90m 3s] street
+[90m 5s] okay because as soon you delete it our
+[90m 8s] test case will fail
+[90m 9s] with a 404 not font to work around this
+[90m 14s] i would say that we can use
+[90m 17s] no we can't use the hdp
+[90m 22s] mocking because we don't use it we use
+[90m 25s] another package
+[90m 27s] so was if we would use a as a
+[90m 31s] larva http client introduced in laurel 7
+[90m 34s] i think
+[90m 35s] yeah it would be re really easy because
+[90m 38s] we could
+[90m 39s] call fake on on the http
+[90m 43s] fs8 yeah and put in
+[90m 46s] a response we expect on a given request
+[90m 49s] yeah
+[90m 50s] which is super handy
+[90m 54s] but we use this full to the
+[90m 58s] api client thing so
+[91m 4s] yeah uh
+[91m 9s] you know we can think about that i think
+[91m 11s] one thing that we should do
+[91m 13s] also is like what ross said that we
+[91m 15s] shouldn't be using.env files
+[91m 16s] in the code instead of conflict should
+[91m 18s] we fix this first
+[91m 20s] before i think yeah i think this is
+[91m 24s] possibly really
+[91m 25s] something i would
+[91m 29s] move to the back and possibly even fix
+[91m 31s] it my own later because okay
+[91m 34s] okay uh i would deep dive this package
+[91m 38s] for example or redo it later if we have
+[91m 40s] some time but
+[91m 41s] let's make the package real for some
+[91m 43s] moment
+[91m 45s] i would go to this tweet components
+[91m 48s] first
+[91m 48s] so the component class and removes this
+[91m 52s] dump
+[91m 52s] call
+[91m 56s] yeah so we don't spam our php unit
+[92m] output all the time
+[92m 2s] and let me try if i can use the keyboard
+[92m 6s] again i mean
+[92m 7s] if i disappear it's the keyboard
+[92m 10s] it would really help me let me just see
+[92m 12s] hold on
+[92m 14s] it needs to wake up first
+[92m 18s] no it's not even waking up i and before
+[92m 20s] somebody says
+[92m 21s] it's the batteries it's not the
+[92m 23s] batteries because i've changed the
+[92m 24s] batteries anyway i'm not using it
+[92m 27s] i don't know i'll just keep it oh no
+[92m 29s] it's connected
+[92m 30s] it's connected hold on let me try again
+[92m 34s] oh it's working now maybe just but it's
+[92m 36s] still laggy oh no
+[92m 38s] no no i'm not gonna use it hold on
+[92m 42s] never mind okay i just thought i would
+[92m 44s] make it easier on me but obviously today
+[92m 49s] um so i've sent you a short snippet on
+[92m 52s] on discord yeah where do i put this
+[92m 56s] you can replace all these env calls with
+[93m] it
+[93m 2s] okay starting from new twitter and then
+[93m 6s] instead of the dot envy i'll have yeah
+[93m 9s] and do a line break after and before
+[93m 13s] so i like if i have this long argument
+[93m 17s] chains i want to have them all on a
+[93m 19s] single line
+[93m 21s] so oh so you still want to config
+[93m 23s] everything on one line or do you want
+[93m 25s] them all in individual lines yeah
+[93m 26s] no no i exactly like this but uh another
+[93m 30s] line break
+[93m 31s] before this closing uh bracket of the
+[93m 34s] twitter yeah exactly yeah
+[93m 38s] now it's readable or easier to read and
+[93m 44s] okay possibly you should have copied the
+[93m 46s] part before but you have to
+[93m 48s] move outside now for a moment
+[93m 52s] not yet
+[93m 55s] go to the test case yeah
+[93m 59s] and
+[94m 3s] create a new setup method
+[94m 7s] so just type setup and phpstorm should
+[94m 11s] no just set up and
+[94m 14s] so yeah it's this one and
+[94m 19s] after the parent setup call
+[94m 23s] yeah we can call config so the global
+[94m 27s] function config
+[94m 30s] close it and set
+[94m 33s] and now as a method oh you need to call
+[94m 37s] this
+[94m 37s] set yeah yeah exactly
+[94m 40s] and now it's the key services
+[94m 54s] yeah yeah and after the string comma
+[94m 59s] and open an array
+[95m 3s] and now it will be consumer key
+[95m 6s] consumer secret access token access
+[95m 8s] token secret as keys
+[95m 11s] so lowercase consumer key
+[95m 15s] yeah this underscore not a dot oh is it
+[95m 18s] okay
+[95m 21s] yeah and
+[95m 26s] consumer secret
+[95m 32s] and access token
+[95m 38s] and access token secret
+[95m 43s] okay no token secret
+[95m 47s] oh yeah
+[95m 50s] so if anyone's asking
+[95m 54s] sis is we are using the already
+[95m 57s] available services configuration
+[96m] and this is by default
+[96m 3s] set up from lava if you install it and
+[96m 6s] it contains by default
+[96m 7s] configurations like what is it
+[96m 12s] for for mail gun for example
+[96m 15s] and postmark and also stuff so
+[96m 19s] ses some services your application could
+[96m 22s] use
+[96m 23s] and this is a typical place you put in
+[96m 26s] credentials to third-party services
+[96m 29s] and twitter is one so i think this is a
+[96m 31s] good
+[96m 32s] way to do it uh i don't want to
+[96m 36s] introduce a new
+[96m 38s] package configuration yeah
+[96m 42s] because this would be kind of overhead
+[96m 45s] and it also
+[96m 46s] enforces a user who has for example
+[96m 49s] several packages depending on
+[96m 53s] to the api client have to duplicate all
+[96m 56s] the stuff
+[96m 59s] yeah but now we only have the keys
+[97m 2s] so you have to assign a value to
+[97m 4s] consumer key
+[97m 8s] env and don't type it move now out of
+[97m 11s] screen
+[97m 13s] i've learned my lesson okay fill in
+[97m 16s] all the four values okay yeah
+[97m 20s] and as you have opened this beta
+[97m 22s] snapshot package uh i can talk a bit
+[97m 24s] about it
+[97m 25s] uh because i'm using it a lot
+[97m 28s] or a bit more and it's really useful
+[97m 33s] like i said you can do large
+[97m 36s] string assertions with it so
+[97m 40s] under the hood it uses something like a
+[97m 42s] php unit assert equals or same
+[97m 44s] i don't know and just compares the file
+[97m 48s] contents of the snapshot file we have
+[97m 50s] and the
+[97m 51s] value of the variable we pass in
+[97m 54s] and for really large
+[97m 58s] strings this is pretty useful because
+[98m 2s] you would otherwise have to type type in
+[98m 5s] or
+[98m 5s] copy also stuff in your
+[98m 8s] test case possibly you will use here dog
+[98m 12s] or
+[98m 12s] really a string or something like this
+[98m 15s] and
+[98m 17s] yeah with all these different types like
+[98m 20s] html json xml and so on it also has some
+[98m 24s] some formatters which ensures that
+[98m 27s] even if you have some line break or
+[98m 29s] white space
+[98m 31s] changes for example it will be still
+[98m 34s] the same so if you want real strict
+[98m 37s] comparisons this
+[98m 38s] possibly isn't for you but as we only
+[98m 41s] want to have
+[98m 42s] or ensure that the html we get is the
+[98m 45s] same
+[98m 46s] and don't care if there is any white
+[98m 48s] space between text
+[98m 50s] everything is fine yeah
+[98m 54s] and now you are ready perfect
+[98m 59s] so this part is something we would have
+[99m 2s] to
+[99m 2s] add to readme and install our
+[99m 6s] configuration part
+[99m 7s] so the user knows that he has to have
+[99m 11s] twitter key to the services config and
+[99m 13s] put in cs4
+[99m 16s] keys and yeah in this
+[99m 20s] case i would possibly also add a link to
+[99m 22s] twitter developer portal
+[99m 24s] and a one to two sentence description
+[99m 29s] how to retrieves all c's for credentials
+[99m 33s] yeah got it got the notes i'm gonna get
+[99m 35s] it done
+[99m 36s] okay so now
+[99m 40s] it's gonna be seven o'clock again by the
+[99m 42s] way or in my time yeah eight in you know
+[99m 44s] i think we won't be able to do all that
+[99m 46s] we wanted
+[99m 48s] but oh no no
+[99m 55s] oh people stop liking posts we use for
+[99m 59s] snapshot assertions
+[100m] [Laughter]
+[100m 3s] two people have uh liked your posts
+[100m 20s] say it's say snapshots snapshots can be
+[100m 24s] updated by passing minus the
+[100m 26s] minus minus update snapshots so
+[100m 30s] you copy it and i think now you can't
+[100m 33s] call
+[100m 34s] composer test oh so you can try it
+[100m 37s] right right now hold on it didn't
+[100m 41s] no hold on you know
+[100m 44s] i'm trying you know how hard it is to do
+[100m 46s] this
+[100m 47s] on ah on the laptop let's understand
+[100m 53s] use right click
+[100m 56s] no but it doesn't no no i
+[101m] mark it with your mouse and use right
+[101m 2s] click copy instead of
+[101m 6s] with your keyboard hey so just paste it
+[101m 8s] or do i do the composition
+[101m 10s] first without any commands this won't
+[101m 14s] work
+[101m 15s] so you can try to call composer test
+[101m 20s] and append these options
+[101m 24s] like this yeah
+[101m 28s] yeah okay so composer tries to interpret
+[101m 31s] this so
+[101m 32s] you have to call rendor slash bin slash
+[101m 35s] php unit
+[101m 36s] like you would do it normally is it you
+[101m 39s] know
+[101m 40s] yeah yeah yeah okay
+[101m 44s] exactly and now you have this incomplete
+[101m 46s] because it has
+[101m 47s] rewritten the snapshot yeah so let's
+[101m 50s] just run test
+[101m 51s] i get it now cool i've never heard of
+[101m 54s] this package before but i like it
+[101m 56s] thank you it's really useful if you do
+[101m 59s] for example blade component tests
+[102m 4s] yeah and now we have the configuration
+[102m 7s] we don't use our environment variables
+[102m 10s] in the package anymore
+[102m 12s] yeah uh we have
+[102m 15s] the viewer runner yeah we have
+[102m 18s] components that retrieves uh dynamic
+[102m 20s] data and passes
+[102m 22s] it to the view
+[102m 25s] um we have the service providers that
+[102m 28s] sets up
+[102m 29s] all the stuff yeah um we still wanted to
+[102m 32s] do this but we can do that later
+[102m 35s] yeah i'm glad this is something yeah
+[102m 38s] someone can do as a pull request for
+[102m 40s] example
+[102m 41s] so it works right now so i don't care
+[102m 45s] if we use this three lines or as
+[102m 48s] a shorter one one line thing and your
+[102m 50s] keyboard lost connection
+[102m 52s] i'm not even touching that keyboard that
+[102m 54s] keyboard is evil today
+[102m 59s] so the only thing i would do
+[103m 2s] now is what i i think it was kathryn
+[103m 7s] said somewhere earliest in the stream
+[103m 10s] said we could bind this twitter api
+[103m 13s] client to the container
+[103m 16s] and because i've done this uh
+[103m 20s] in my own application i can send you the
+[103m 22s] whole part
+[103m 24s] so we don't have to to say
+[103m 28s] and describe what i get yeah so we'll go
+[103m 31s] to the to the service provider yeah yeah
+[103m 34s] systems register method yeah
+[103m 38s] because we want to register a new
+[103m 41s] service
+[103m 42s] so today i know what this means because
+[103m 44s] i was
+[103m 46s] this is today i spent all this time
+[103m 48s] looking into service providers that's
+[103m 50s] what i did today so now i actually
+[103m 51s] understand what this method does
+[103m 53s] i'm proud to say perfect
+[103m 56s] okay yeah
+[103m 59s] and sets this part and now we can go to
+[104m 5s] the
+[104m 5s] tweet component class yeah
+[104m 9s] and remove this dollar twitter new
+[104m 11s] twitter
+[104m 12s] thing
+[104m 15s] and you can already use assist twitter
+[104m 19s] and uh so this twitter request
+[104m 23s] which means here right now below sir
+[104m 27s] collect dot assist where you have this
+[104m 30s] dollar twitter right now
+[104m 32s] it will be this twitter so dollar sales
+[104m 37s] yeah exactly exactly and
+[104m 41s] you can also do add property yeah let's
+[104m 44s] let phpstorm edit already
+[104m 46s] everything fine so and it will be typing
+[104m 50s] it to twitter
+[104m 52s] as it will contain our twitter client
+[104m 57s] what do you mean on the top on the top
+[104m 59s] yeah
+[105m] twitter with an upper t
+[105m 5s] it's not an internal type yeah yeah
+[105m 8s] exactly
+[105m 9s] and in the construct we have to add a
+[105m 12s] string id
+[105m 14s] comma and twitter.
+[105m 18s] yeah and assign it to the property yeah
+[105m 22s] oh no
+[105m 28s] perfect and now we will do
+[105m 32s] a new test run
+[105m 37s] still green sets the best scenario
+[105m 43s] well let's leave it at that today so
+[105m 47s] this is the case why for later
+[105m 49s] development test cases are so
+[105m 51s] important because uh you can check on a
+[105m 54s] on a really fast ray said
+[105m 58s] even if you have changed everything said
+[106m] it still works the same way
+[106m 2s] yeah definitely so
+[106m 6s] i'm gonna i'm gonna push that or maybe
+[106m 9s] i'm gonna do
+[106m 9s] i'm gonna push this to github then i'm
+[106m 12s] going to
+[106m 14s] add the readme or fix the readme at the
+[106m 16s] info to the readme
+[106m 18s] and i think next week we'll do all the
+[106m 20s] other stuff because there's no point
+[106m 22s] it's almost
+[106m 23s] seven or in your case eight o'clock
+[106m 25s] there's no point pushing it any further
+[106m 27s] we we seem to be unable to do anything
+[106m 30s] less than two hours
+[106m 32s] but i do apologize
+[106m 40s] so i'm glad it kept on going but yeah
+[106m 42s] it's technology
+[106m 43s] but i've managed i think we have uh
+[106m 46s] one thing we can do today because
+[106m 50s] somehow the package is finished
+[107m 1s] it's exactly what we plan to get
+[107m 5s] yeah it only misses like a documentation
+[107m 8s] uh more expressive and extensive testing
+[107m 11s] for example
+[107m 12s] and stuff like this but this is uh
+[107m 16s] yeah without documentation props
+[107m 18s] possibly
+[107m 19s] no one will use it
+[107m 23s] but it's a starting point and i think
+[107m 26s] with a release like 0.0.1
+[107m 30s] we are fine which is like uh everyone
+[107m 33s] will see if you have at least 001
+[107m 36s] everyone will know okay this isn't final
+[107m 40s] and yeah but we haven't released
+[107m 44s] and we can go to packages and do this
+[107m 46s] stuff
+[107m 47s] not until now it's today okay next time
+[107m 50s] because
+[107m 51s] this doesn't take this long so push
+[107m 53s] everything
+[107m 54s] yeah okay yeah
+[107m 58s] can you hear the trains in the
+[108m] background i always wondered if you can
+[108m 1s] hear the
+[108m 2s] trains it yeah
+[108m 6s] so what did we do um
+[108m 9s] what did we just do we added the
+[108m 13s] snapshot assertion
+[108m 15s] and so at testing
+[108m 20s] and improve container binding for
+[108m 22s] example
+[108m 32s] yeah super says this isn't how it works
+[108m 36s] we have to at least provide insta
+[108m 39s] uh how you install the package and use
+[108m 43s] it
+[108m 44s] thank you sabine
+[108m 47s] no we need to i need to do it properly
+[108m 50s] at least the first one needs to be done
+[108m 51s] properly
+[108m 52s] yeah so that i have something to go back
+[108m 54s] to and if you know next time i'm making
+[108m 56s] something at least i'll have the whole
+[108m 57s] process
+[108m 58s] done properly okay so i've pushed it
+[109m] what do you want
+[109m 1s] do you want to do the uh com packages
+[109m 4s] this stuff today exactly so everything
+[109m 7s] we
+[109m 8s] have to do now is in browser uh so open
+[109m 11s] the package we've created in
+[109m 13s] in your browser so github take it away
+[109m 16s] just in case who knows what i'm going to
+[109m 18s] type in
+[109m 21s] yeah i can't you know don't trust my
+[109m 23s] comp i don't trust myself don't judge
+[109m 25s] the computer
+[109m 27s] where is it
+[109m 35s] what's good news we already have an idea
+[109m 37s] for a second package so
+[109m 39s] yeah which should hopefully take less
+[109m 41s] time
+[109m 42s] okay so we will use the skeleton
+[109m 45s] yeah oh definitely yes yeah so
+[109m 49s] you have this add test on the proof one
+[109m 51s] minute it goes okay so we have the
+[109m 53s] latest things
+[109m 55s] we don't have a dot env file in which is
+[109m 58s] also a good check
+[109m 59s] we have components and so
+[110m 2s] everything looks fine so you can
+[110m 6s] click on the right side create a new
+[110m 9s] release
+[110m 12s] uh why do you do that yes yeah
+[110m 15s] yeah and 0.0.1
+[110m 22s] okay and
+[110m 25s] i always use the same i have as a tag
+[110m 28s] but prefix with a v so v 0.0.1
+[110m 35s] yeah yeah if you want you can also add
+[110m 39s] no on github you don't have to have to
+[110m 41s] add the date because github shows the
+[110m 43s] date you have created it
+[110m 45s] by default um yeah and keep
+[110m 48s] description empty or say work and
+[110m 51s] progress release or
+[110m 54s] first release or whatever you want to
+[110m 56s] say
+[110m 58s] in your own don't use on your own risk
+[111m 5s] if you find out how to use it uh you are
+[111m 8s] okay to use it
+[111m 9s] yeah well let's just hope
+[111m 13s] people have watched this this is a
+[111m 16s] pre-release is this what you press
+[111m 18s] before you go to
+[111m 18s] version one or you don't have to which
+[111m 22s] pre-release is something if you
+[111m 25s] add minus beta for example or minus rc
+[111m 29s] um you have this on the right side
+[111m 32s] you have this uh minus alpha beta
+[111m 35s] oh i see it yeah now let's see our
+[111m 38s] pre-releases
+[111m 39s] and yeah i think we are okay with the
+[111m 41s] version 0.041
+[111m 43s] yeah pre-releases with composer means
+[111m 45s] that you possibly have to
+[111m 47s] downgrade your minimums
+[111m 50s] stable constraint
+[111m 54s] so as a configuration for your composer
+[111m 56s] project where you have could say that
+[111m 58s] you want to have
+[111m 59s] only stable or at least they have to be
+[112m 3s] released candidates or beta or
+[112m 5s] a lot of it i think it's by default def
+[112m 8s] so you are able to pull in depth master
+[112m 10s] for example
+[112m 12s] um yeah but that's what
+[112m 15s] three releases are about yeah should i
+[112m 17s] publish
+[112m 19s] yeah and now we have this release
+[112m 23s] and now you have to go to packages
+[112m 32s] yeah yeah there's also packages.com
+[112m 37s] which is for private
+[112m 39s] oh yeah so for example if you have nova
+[112m 43s] you could use packages.com i'll have to
+[112m 46s] create an account
+[112m 47s] quickly let me create an account it's
+[112m 50s] it's just github out
+[112m 52s] oh is it i don't have to yeah so you can
+[112m 55s] just sign in
+[112m 57s] sign in oh okay well i still need to
+[112m 59s] remember what is oh do i
+[113m 1s] it's just like i don't know my
+[113m 5s] you don't know your github chris
+[113m 6s] password no i don't know my password
+[113m 9s] do you i have one car
+[113m 12s] so i don't know it but i know where to
+[113m 14s] find it
+[113m 19s] [Music]
+[113m 22s] can you talk about something interesting
+[113m 24s] let me see
+[113m 27s] i've put in a peanut butter cup um
+[113m 30s] what i have to see that i'm sorry
+[113m 36s] oh nice you should know some
+[113m 40s] uh i've i found them the first time in
+[113m 44s] in london yeah yeah these are the
+[113m 46s] reese's cups
+[113m 48s] exactly but you see that these aren't
+[113m 53s] in germany we don't have reese's okay or
+[113m 55s] at least
+[113m 56s] not in my in my local supermarket
+[114m] but they are a cheap copy
+[114m 6s] but still delicious
+[114m 9s] enjoy it while i'm trying to log in
+[114m 20s] so it keeps saying invite credentials
+[114m 25s] i don't know why surely by username they
+[114m 28s] mean larabelles because we are doing it
+[114m 29s] under laraborous right
+[114m 31s] why does no no no you have to use your
+[114m 33s] your personal account oh
+[114m 36s] okay see you should have said that you
+[114m 39s] can't log in
+[114m 41s] no that's what isn't password you can't
+[114m 43s] log in with an organization
+[114m 45s] oh i don't realize
+[114m 49s] but this isn't a problem because
+[114m 52s] uh now with this very first package on
+[114m 55s] packages you block this
+[114m 58s] larabelle's uh vendor prefix for
+[115m 1s] everyone so no one can release a larabee
+[115m 4s] slash
+[115m 5s] anything package
+[115m 9s] this is pretty nice from composer it's
+[115m 12s] it's different to
+[115m 13s] npm i think with npm you don't have
+[115m 17s] these
+[115m 17s] prefixes and everyone could possibly
+[115m 22s] add a package with your prefix because
+[115m 25s] there isn't anything
+[115m 28s] any blocking logic or something
+[115m 31s] it still says account could not be
+[115m 33s] linked correctly i don't know why okay
+[115m 35s] let me just show you i've i've logged in
+[115m 37s] with github
+[115m 38s] i approved or like get you know
+[115m 40s] authorized
+[115m 41s] packages let me take it out again i
+[115m 44s] don't know why it doesn't work
+[115m 45s] and that isn't any secret you can you
+[115m 47s] can keep it on screen
+[115m 49s] yeah well it's not doing it look if i
+[115m 50s] just say login with github
+[115m 55s] it tries and it just says account could
+[115m 57s] not be linked correctly and i don't know
+[115m 59s] why
+[116m] okay
+[116m 4s] create account on the top try that
+[116m 8s] but do i do i have to because i thought
+[116m 10s] you said i can sign
+[116m 11s] in with github so i didn't try to create
+[116m 14s] it i just want to sign
+[116m 15s] in
+[116m 18s] this is strange let me try again
+[116m 23s] no it's just could not be linked
+[116m 25s] correctly i don't know why
+[116m 28s] do i have any messages here
+[116m 33s] no but i thought maybe we might get like
+[116m 36s] an email or something saying somebody's
+[116m 37s] trying to do something and they're not
+[116m 39s] able to i don't know why but try to
+[116m 42s] create an account with
+[116m 44s] with your github username and the same
+[116m 46s] email address
+[116m 47s] okay and now you can move out of the
+[116m 51s] screen
+[116m 52s] yeah yeah easier because then i'm gonna
+[116m 55s] struggle again because what is the email
+[116m 58s] i use for github you know like
+[117m 1s] are you so anything
+[117m 3s] [Music]
+[117m 6s] this is why password managers are so
+[117m 10s] important
+[117m 12s] you know what i know
+[117m 17s] okay so now i'm activated but hold on
+[117m 20s] let me bring it back
+[117m 22s] oh yeah okay and now go to
+[117m 26s] settings yeah
+[117m 30s] connect accounts
+[117m 35s] oh so this way it will work hopefully
+[117m 38s] okay so it just didn't work the original
+[117m 40s] way okay okay
+[117m 42s] so now so you just can't create a new
+[117m 44s] account from github
+[117m 46s] which is strange but okay
+[117m 50s] and now you have to submit on the top
+[117m 53s] menu
+[117m 54s] exactly and now you copy the link
+[117m 58s] to your github package paste it in
+[118m 2s] and check and now it asks you if you
+[118m 6s] want to
+[118m 8s] create the package for i always check
+[118m 10s] the
+[118m 11s] spelling so it says no tupo or something
+[118m 14s] it's la belle's slash larva minus tweet
+[118m 17s] minus component
+[118m 18s] yes it looks okay to me so i can't find
+[118m 21s] it
+[118m 22s] yeah okay
+[118m 28s] why
+[118m 31s] you don't want to tell me that someone
+[118m 34s] already created a lot of bills
+[118m 37s] that would be annoying how do we check
+[118m 40s] you just can you just search through
+[118m 42s] okay let me just copy paste and search
+[118m 44s] can i not
+[118m 45s] oh this is so annoying no no i can't
+[118m 48s] find
+[118m 49s] larabelles let me try and paste it again
+[118m 54s] github it hum.com here it is the same
+[118m 59s] now it's two times yeah github
+[119m 1s] larabelle's laravel tweet this is the
+[119m 3s] web this is the url
+[119m 4s] check
+[119m 8s] or it exists so maybe it created it
+[119m 12s] yeah it just told us yeah oh okay it's
+[119m 15s] strange
+[119m 18s] and now refresh the page
+[119m 22s] yeah okay um
+[119m 28s] and that's it for now right kind of yeah
+[119m 31s] but it seems that
+[119m 32s] the github web hook isn't set up so
+[119m 37s] uh stop stop go back
+[119m 40s] go back no no no everything okay
+[119m 44s] uh you can click on it okay
+[119m 48s] uh yeah this is only how you do it
+[119m 51s] and these four list points on the bottom
+[119m 56s] pay dot url content type secrets your
+[119m 59s] uh as soon as you click on this packages
+[120m 2s] api
+[120m 3s] token uh yeah this shouldn't be a secret
+[120m 7s] already because you have to click
+[120m 8s] another time like
+[120m 9s] show my credentials let me click on it
+[120m 14s] and yeah so it doesn't show it okay let
+[120m 16s] me bring it back
+[120m 17s] okay and now if you click show api token
+[120m 20s] it would show it
+[120m 21s] do i want to show we don't know not on
+[120m 23s] the phone
+[120m 26s] but then don't say you want to click
+[120m 28s] show api i don't want to click
+[120m 31s] um okay and
+[120m 34s] what what else and yeah go back to the
+[120m 39s] uh to these four list points so one page
+[120m 42s] back
+[120m 45s] and this is something you have to do in
+[120m 47s] github
+[120m 48s] yeah but normally it it does it by
+[120m 50s] default if you create a package so
+[120m 52s] this is something i'm a bit
+[120m 56s] that's a bit strange
+[121m 5s] oh no the package packages application
+[121m 8s] has access to all the github
+[121m 9s] organizations you need to publish
+[121m 10s] packages from
+[121m 12s] okay so click on the packages
+[121m 14s] application
+[121m 18s] yeah and now on the bottom
+[121m 22s] larabees grant friends
+[121m 25s] yeah okay go
+[121m 28s] back no
+[121m 32s] refresh if you click update
+[121m 37s] this one yeah
+[121m 43s] this is a manual update and possibly it
+[121m 45s] also tries to create
+[121m 47s] a web book no just didn't work
+[121m 50s] okay so click on the susana
+[121m 54s] on the top menu yeah
+[121m 57s] profile or yeah it's profile
+[122m 1s] and click this retry hook sync
+[122m 11s] okay perfect okay
+[122m 15s] so setups all web hooks for you
+[122m 18s] and so with that okay now it says it's
+[122m 22s] all good
+[122m 23s] so web hook is important so you don't
+[122m 25s] have to click update on packages
+[122m 27s] if you create a new release on github
+[122m 30s] yeah
+[122m 30s] that's what that book is for so yeah you
+[122m 33s] push or you have a new release and
+[122m 36s] github will tell packages and packages
+[122m 38s] will update this view
+[122m 40s] yeah okay and now
+[122m 43s] everyone who wants to do it can at your
+[122m 46s] own
+[122m 46s] race yeah it's mit license so it's
+[122m 51s] always on your own risk
+[122m 52s] oh that's true yeah but wow so
+[122m 56s] i can't believe we've done that it's
+[122m 59s] like uh
+[122m 59s] there's a lot of belts have a package on
+[123m 2s] packages
+[123m 3s] let's celebrate this is that beauty is
+[123m 5s] like say
+[123m 6s] no one can now publish a larabee slash
+[123m 9s] anything package for you
+[123m 10s] yeah that's good you have blocked this
+[123m 12s] namespace so
+[123m 14s] yeah no one can use it good
+[123m 18s] you better not be nobody because this is
+[123m 20s] our
+[123m 21s] this is our stuff well thank you this is
+[123m 24s] oh my god this was
+[123m 26s] today i mean the code wasn't hard it was
+[123m 28s] the technical difficulties
+[123m 30s] my hands are like really hurting no
+[123m 31s] because i was typing you know with my
+[123m 33s] hands like that
+[123m 35s] but i'm glad that the stream didn't and
+[123m 38s] let me just
+[123m 38s] bring it let me stop
+[123m 42s] sharing so i can we are we done we are
+[123m 44s] done now right
+[123m 46s] so we are done yeah hold on let me put
+[123m 49s] us both on the screen
+[123m 50s] yeah oh well thank you
+[123m 54s] that was that was
+[123m 57s] hard it wasn't that hard no last week
+[124m] was harder this week i actually
+[124m 1s] understood most of the things we were
+[124m 3s] doing so that was good
+[124m 4s] well thank you so much next are we still
+[124m 7s] going to do next week or are we done
+[124m 8s] with this one
+[124m 9s] i the rest of the stuff i can do off
+[124m 10s] stream right because there's nothing
+[124m 12s] more
+[124m 13s] really crucial that should be done on
+[124m 15s] stream or is there
+[124m 18s] [Music]
+[124m 20s] you can think about it um
+[124m 23s] there are some github meta files you can
+[124m 26s] use uh to for example
+[124m 28s] for github sponsors and so contribution
+[124m 33s] uh guidelines and things like this yeah
+[124m 36s] file and yeah i don't know if it's
+[124m 39s] streamworthy
+[124m 40s] and probably not i can do that by myself
+[124m 45s] and the github actions to test on
+[124m 48s] ci yes it has been
+[124m 52s] very useful yes
+[124m 58s] i don't know if you want to stream
+[125m] github actions for me it's always just
+[125m 2s] copy and paste from another package
+[125m 3s] though but i haven't done it so
+[125m 6s] yeah let's do it yeah so let's do it
+[125m 10s] yeah oh thank you lord we've got another
+[125m 13s] one thank you so much
+[125m 15s] yay it was not easy
+[125m 18s] but i'm sure like all the next ones are
+[125m 20s] going to be because i think it's really
+[125m 22s] important
+[125m 23s] we could have done we could we could
+[125m 24s] have taken shortcuts but
+[125m 26s] if we did i've you know not only me i'm
+[125m 29s] sure other people will find it useful
+[125m 31s] knowing like what to do
+[125m 33s] first of all when you go to get those
+[125m 34s] errors and then the whole package is
+[125m 36s] stuff like
+[125m 38s] i think it's useful and if not for other
+[125m 39s] people it's definitely useful for me so
+[125m 41s] you know
+[125m 43s] it's all good oh
+[125m 46s] cool thank you so much thank you
+[125m 47s] everyone for watching again another two
+[125m 49s] hour stream i think we just that's
+[125m 51s] that's the way we roll
+[125m 52s] i just can't do it any faster and even
+[125m 55s] next week
+[125m 56s] if we do just a quick thing next week
+[125m 58s] it's gonna be two hours ago yeah
+[126m] but i think you can't do something
+[126m 3s] valuable in less than two hours at least
+[126m 7s] with two people so we have to
+[126m 10s] communicate
+[126m 10s] and yeah you had technical
+[126m 14s] difficulties and oh yeah there are also
+[126m 18s] some things we have done yeah
+[126m 21s] right we have to read through the to the
+[126m 24s] api documentation
+[126m 26s] and yeah but i think this is how it's
+[126m 28s] done anyway this is how most of the
+[126m 30s] development is done like people don't
+[126m 31s] just know stuff you go to documentation
+[126m 33s] you try and you fail and you do it again
+[126m 35s] so that was just uh this is how it's
+[126m 38s] done anyway
+[126m 40s] so yeah cool well let's wrap it up for
+[126m 42s] today
+[126m 43s] thank you everyone for watching hope you
+[126m 45s] had fun
+[126m 46s] and we'll be back next week see you
+[126m 50s] bye

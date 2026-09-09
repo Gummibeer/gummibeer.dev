@@ -1,0 +1,1979 @@
+[28s] so
+[42s] do
+[1m 38s] so
+[2m 6s] so
+[2m 34s] do
+[6m 18s] hello
+[6m 22s] can anyone can anyone hear me
+[6m 32s] absolutely no sound or only luke again
+[6m 51s] hey daniel hey super hey steve
+[6m 55s] and cool that you can hear me
+[7m 2s] hello oh yeah i think hello
+[7m 6s] all right so cool said you were online
+[7m 9s] for seven minutes without any audio
+[7m 12s] well to be fair we were playing a video
+[7m 14s] before i think that worked
+[7m 16s] okay hopefully no terminator voice
+[7m 21s] yeah uh marion is absolutely right you
+[7m 24s] should write a pest test
+[7m 25s] before stream that checks if your
+[7m 27s] microphone works
+[7m 30s] that's the next level isn't it
+[7m 33s] yes steve you're uh you're a thief
+[7m 37s] how are you this evening tom what
+[7m 41s] how are you i'm fine uh
+[7m 44s] stressy day but uh still fine so
+[7m 53s] yeah i had to eat something because it
+[7m 54s] was my first meal today
+[7m 56s] so that's why i'm a bit late no worries
+[8m 1s] i was only sorting my audio out anyway
+[8m 2s] so you've missed nothing
+[8m 6s] your audio is coupled to to my presence
+[8m 9s] in your stream
+[8m 10s] that's it exactly i'm forever tied and
+[8m 13s] indebted to you
+[8m 15s] yeah all right let's jump in
+[8m 19s] so we've had some some goodies added to
+[8m 23s] pest
+[8m 23s] since we last played with the stream two
+[8m 25s] weeks ago it's amazing
+[8m 27s] how quickly time flies really um
+[8m 31s] so i kind of wanted to start by going
+[8m 33s] over the tests that we
+[8m 35s] started writing last week and see if we
+[8m 36s] can chuck a few of these goodies in
+[8m 40s] because i think so you've added
+[8m 44s] a lot of things to pests since then so
+[8m 51s] you are only noise
+[8m 56s] i have absolutely no idea what you are
+[8m 58s] doing sets
+[9m 8s] but steve if your daughter is still
+[9m 10s] watching the hey you
+[9m 29s] should we probably just have a phone
+[9m 30s] call and i
+[9m 32s] put you on on loudspeaker and
+[9m 36s] everyone hears you via my microphone
+[9m 47s] steve tell me what have you done said it
+[9m 50s] worked yesterday
+[9m 51s] for you and luke so
+[9m 57s] said we can repeat it
+[10m] yeah three four
+[10m 3s] that was um i don't know what's going on
+[10m 6s] because
+[10m 9s] actually i worked yesterday right worked
+[10m 11s] on the street worked on the past meetup
+[10m 13s] it worked yesterday maybe it's something
+[10m 14s] to do with when i host uh
+[10m 17s] when i host or maybe restream
+[10m 21s] yeah maybe let's blame restream steve
+[10m 23s] just for the fun
+[10m 25s] we could also blame wednesday or
+[10m 34s] all right i'm gonna crack on you just
+[10m 36s] like say something if my
+[10m 38s] microphone stops working and i just have
+[10m 40s] to unplug and replug again
+[10m 42s] yeah um so
+[10m 46s] all things added to pest first of all i
+[10m 49s] wanted to turn
+[10m 49s] this test that we did last time into a
+[10m 52s] higher order test
+[10m 56s] um first of all we already refactored
+[10m 59s] this right
+[11m] so i'm pretty sure we can say now this
+[11m 3s] user
+[11m 7s] and when we do that we obviously get the
+[11m 12s] just a bit of a nicer syntax there let's
+[11m 15s] see if that works
+[11m 21s] it does um
+[11m 25s] and basically we only use this once
+[11m 27s] right and then the only other time we
+[11m 29s] use it is to refresh
+[11m 31s] yeah so
+[11m 35s] perhaps if we were to inline
+[11m 41s] this how would we go about doing it
+[11m 44s] close this off first of all we need to
+[11m 48s] maybe tap right the tap is a new helper
+[11m 52s] that was added to
+[11m 55s] um just over a week ago
+[11m 59s] basically i think the pull request was
+[12m 2s] opened
+[12m 3s] during our stream but it wasn't watched
+[12m 5s] yet yes
+[12m 7s] um i think it did have a couple of
+[12m 10s] updates so which you'll see
+[12m 11s] in a moment um after the stream
+[12m 15s] so there's some ideas that came from
+[12m 16s] that stream that kind of went into it as
+[12m 18s] well but basically what tap allows you
+[12m 19s] to do is
+[12m 21s] dive into the test case to do something
+[12m 24s] to perform some action right but then
+[12m 26s] have the
+[12m 27s] test case returned to you to carry on
+[12m 29s] your higher order expectation chain
+[12m 32s] or your higher order test chain i should
+[12m 33s] say um
+[12m 36s] so in this case we want to do this
+[12m 38s] action
+[12m 41s] and i think we probably want to set the
+[12m 43s] user
+[12m 45s] to this user
+[12m 48s] so i'm just setting a property
+[12m 52s] on the test object itself here
+[12m 55s] called user which will be equal to an
+[12m 57s] instance of a github user
+[12m 59s] and then obviously dispatching the job
+[13m 1s] there
+[13m 4s] let's bring all of this out and get rid
+[13m 6s] of this at the bottom
+[13m 9s] and we
+[13m 12s] have one two you know one few uh
+[13m 16s] uh bracket that we need there we go so
+[13m 19s] this is our higher
+[13m 20s] order test um obviously we've got a
+[13m 23s] little bit of a syntax problem here
+[13m 24s] which
+[13m 25s] we can fix with the other thing that was
+[13m 27s] in that same pr
+[13m 29s] which is passing a callable or a closure
+[13m 32s] to the expect method
+[13m 38s] and that will just become this user
+[13m 41s] refresh
+[13m 42s] because we want to access this object
+[13m 44s] here right
+[13m 48s] other than that let's run this test
+[13m 51s] again
+[14m 1s] ah there we go happy days
+[14m 4s] so yeah that's that's the higher order
+[14m 6s] version of the test we wrote last week
+[14m 9s] so we are done for today and can go
+[14m 11s] offline that's it
+[14m 12s] thanks guys i i really enjoyed
+[14m 16s] really enjoyed having you so that was
+[14m 19s] that's pretty cool and i did
+[14m 20s] i did kind of perhaps explain these two
+[14m 23s] methods in a bit more detail on the past
+[14m 25s] meetup
+[14m 26s] so if you've not watched that yet go
+[14m 27s] check that out um
+[14m 31s] thought about that is we can remove that
+[14m 32s] use soon as we never actually deal with
+[14m 34s] the user model anymore
+[14m 37s] and that's that's that test done isn't
+[14m 40s] it let's move on to our user test
+[14m 42s] because there are some other sweet
+[14m 44s] treats from
+[14m 46s] uh since two weeks ago right so again we
+[14m 50s] can higher order test here
+[14m 52s] and that's as simple as making this
+[14m 56s] expect a chained method
+[15m] and passing a closure in because we're
+[15m 3s] obviously accessing the test case
+[15m 4s] anytime you access the test case you
+[15m 5s] need to pass a closure
+[15m 7s] in higher order tests and i think we're
+[15m 11s] done there right
+[15m 12s] so test see if it passes
+[15m 17s] it does i think steve uh
+[15m 20s] asked a pretty good question how you
+[15m 23s] would use things like bus fake you fake
+[15m 26s] mail fake notification fake and all of
+[15m 28s] these
+[15m 29s] level fake things uh would you use the
+[15m 32s] tap method
+[15m 33s] or um i think we actually
+[15m 36s] so we did touch on this very very
+[15m 38s] slightly in steve's stream yesterday
+[15m 42s] i i think if you're doing something over
+[15m 44s] and over on each test you should
+[15m 45s] probably
+[15m 46s] move it into the test case as a method
+[15m 49s] on the test case because you can call
+[15m 51s] any method on the test case
+[15m 53s] in higher order tests so anything
+[15m 55s] available on the test case is available
+[15m 56s] in a higher order test
+[15m 58s] um i think tap is more for those
+[16m 1s] times where you it's a one-time use
+[16m 3s] right you don't need it in any other
+[16m 4s] test
+[16m 5s] you need to fake some end point and once
+[16m 7s] you've faked it that's it you're not
+[16m 9s] going to be doing anything else in
+[16m 10s] another test with that same data
+[16m 14s] so just to go back to this file here
+[16m 18s] if we end up doing this over and over
+[16m 20s] again
+[16m 21s] it probably will be an indication that
+[16m 25s] we need to
+[16m 26s] to move the functionality into the test
+[16m 27s] case itself rather than
+[16m 29s] have it in a tap but we'll see
+[16m 34s] we'll see okay
+[16m 37s] i i do need an m1 steve yeah i'm i'm
+[16m 41s] kind of holding off
+[16m 41s] until the next one's come out but i
+[16m 43s] guess i could be saying that forever
+[16m 44s] right
+[16m 45s] but i also have to get it past the wife
+[16m 50s] something i it i think it's only
+[16m 54s] like an air layers for tap but something
+[16m 57s] i would really love
+[16m 58s] to see is like a prepare method or
+[17m 1s] something like this
+[17m 2s] or before set up however you want to
+[17m 5s] name it but
+[17m 7s] like and not
+[17m 11s] not the surreal setup method you have in
+[17m 13s] php units that runs for
+[17m 15s] all cases in this class
+[17m 18s] but to to do some preparation
+[17m 21s] for this specific test
+[17m 24s] so like for example
+[17m 27s] if you go back to the first test case we
+[17m 31s] um defining this uh cis users this user
+[17m 35s] coming beer
+[17m 36s] it doesn't feel right to do it in the
+[17m 39s] tab method
+[17m 40s] yeah because it's some preparation
+[17m 44s] that's not part of the test logic in
+[17m 47s] that case but it's
+[17m 49s] it has to be done to be able to run the
+[17m 53s] test
+[17m 54s] so i know this before each but it could
+[17m 57s] be something like that yeah
+[17m 58s] i certainly see what you're saying i i
+[18m] agree to be fair
+[18m 2s] um if we would add a second test case
+[18m 4s] here that shouldn't use gummy bear but
+[18m 7s] uh luke for example yeah we would have
+[18m 10s] to do something else
+[18m 11s] it would be specul to have a
+[18m 14s] attainable setup before prepare whatever
+[18m 18s] method
+[18m 19s] so it can sets does
+[18m 22s] exactly the same like the tab method i
+[18m 24s] think but
+[18m 26s] one step before i mean i guess you could
+[18m 29s] you can double tap yeah
+[18m 32s] so you could do something like that
+[18m 39s] but because te past is all about this
+[18m 41s] readability
+[18m 42s] and yeah so on yeah i don't care as a
+[18m 46s] user even if it's just
+[18m 49s] putting into the same stack with an
+[18m 51s] array
+[18m 53s] array not push but opposite to push it
+[18m 57s] to the front
+[18m 58s] uh i don't care how it works behind the
+[19m 1s] scenes but
+[19m 2s] having an explicit before method
+[19m 5s] yeah yeah would make it much more
+[19m 7s] readable
+[19m 8s] definitely definitely and i tell you
+[19m 11s] what we'll do actually
+[19m 12s] i'm going to leave this like this for
+[19m 13s] now maybe come back and refactor that in
+[19m 16s] a bit
+[19m 16s] in a bit but there's something that kind
+[19m 18s] of touches on this point of
+[19m 20s] wanting to add things to uh pest
+[19m 25s] that you can actually do in your
+[19m 26s] projects and it's really cool and it's
+[19m 28s] it's a little bit underutilized in my
+[19m 29s] opinion
+[19m 30s] um so we'll i'm actually tell you what
+[19m 32s] let's look at that now right
+[19m 34s] um it's these postgres sql tests right
+[19m 38s] yeah at the moment we require
+[19m 41s] postgresql to run these tests and all
+[19m 43s] that's doing under the hood
+[19m 45s] is it checks if the current database
+[19m 48s] is compatible and if it's not we mark
+[19m 51s] the testers skipped
+[19m 52s] now since last the last stream as well
+[19m 58s] pest has been updated to again
+[20m 2s] receive a callable to skip and inside
+[20m 5s] this callable you have access to the
+[20m 7s] test case again
+[20m 9s] so you can actually
+[20m 14s] if i go get the logic here right
+[20m 19s] you can actually bring this in and
+[20m 22s] and you can just drop that in there
+[20m 26s] and that will skip if the database
+[20m 29s] driver isn't postgres sql so you can get
+[20m 31s] rid of this line
+[20m 33s] but the only thing i don't like about
+[20m 35s] this at this point
+[20m 36s] is a we have to copy this
+[20m 39s] into every test where we want to skip
+[20m 43s] but also um you can't set the message
+[20m 47s] here right
+[20m 47s] or you can set the message but you'd
+[20m 49s] also have to set the message for every
+[20m 50s] text
+[20m 52s] yeah copy it every single single time
+[20m 55s] exactly
+[20m 56s] which i'm not i don't want to do that
+[20m 57s] either um but
+[20m 59s] we can add something to the pest um
+[21m 2s] the pest file to basically
+[21m 6s] handle it for us in a really declarative
+[21m 8s] call so i'm going to copy
+[21m 10s] this here and just remove it i'll
+[21m 14s] probably regret that later
+[21m 17s] but i'll come down to functions here and
+[21m 19s] just paste it in
+[21m 21s] and we'll grab the db and obviously it's
+[21m 25s] no longer in a class so we don't want
+[21m 27s] a function and i'm not going to return
+[21m 30s] void i'm going to return test
+[21m 34s] and if the db driver is not equal to
+[21m 37s] postgres sql
+[21m 39s] rather than saying this i can just say
+[21m 41s] test with
+[21m 42s] no arguments passed so you'll you'll
+[21m 46s] you'll be familiar with test from this
+[21m 48s] right test it works
+[21m 50s] or yeah if you don't pass out just the
+[21m 52s] same
+[21m 53s] like it exactly yeah but if you don't
+[21m 56s] pass
+[21m 57s] uh you're muted i i i hear oh
+[22m 1s] now i'll say it's music
+[22m 4s] there is music oh it's the music on
+[22m 7s] on my headphones i
+[22m 10s] uh i'm hoping there's not me i can't
+[22m 12s] hear any music so
+[22m 14s] if there is there's something very
+[22m 15s] strange going on
+[22m 19s] yeah i think my girlfriend connected my
+[22m 21s] headphones and turned on the music
+[22m 24s] wait
+[22m 29s] uh let me just check catch up with the
+[22m 31s] uh with the chat
+[22m 32s] could you set this as a global
+[22m 34s] functioning pest that returns a boolean
+[22m 36s] couldn't use a data set now uh which
+[22m 39s] test are we
+[22m 40s] talking about here steve just so have we
+[22m 42s] already passed that
+[22m 43s] but i can always come back and have
+[22m 45s] another look at it if
+[22m 47s] if um you let me know which test
+[22m 52s] make sure you get 32 gigs of ram
+[22m 55s] yeah yeah i shall i just don't know
+[22m 58s] whether to
+[22m 59s] to try and wait it out until the the
+[23m 1s] next generation
+[23m 3s] hopefully just around the corner but
+[23m 4s] yeah basically uh we can add this
+[23m 6s] function to the pest file right
+[23m 8s] requires postgresql it's the exact same
+[23m 11s] logic but instead of accessing via this
+[23m 13s] we access via test
+[23m 14s] as a function with no arguments and that
+[23m 17s] will always return the test case
+[23m 19s] and you'll notice too that i return the
+[23m 21s] test at the bottom which will allow me
+[23m 22s] to chain
+[23m 23s] in higher order expectations or higher
+[23m 25s] order tests
+[23m 26s] so now if we come back to our test case
+[23m 30s] or rather to our user test instead of
+[23m 33s] having to
+[23m 34s] do the skipping here we can change it to
+[23m 36s] the bottom so first thing is i'm just
+[23m 37s] going to go and update the
+[23m 40s] um i'm just going to go and update the
+[23m 42s] test name so it
+[23m 44s] finds a user
+[23m 47s] by the github email
+[23m 50s] hey tom and
+[23m 54s] there we have our function call and
+[23m 56s] because we've now got that global
+[23m 57s] function
+[23m 58s] we don't have to put it there anymore we
+[24m] can remove that
+[24m 2s] and chain it onto the end
+[24m 7s] so now when pest kind of comes to this
+[24m 11s] functionality we've not got it in the
+[24m 13s] feature test anymore in the base test
+[24m 15s] case so it won't look there
+[24m 16s] it will look in the past.php file it
+[24m 19s] will find this
+[24m 21s] and it's going to still be able to
+[24m 23s] access dbget driver name because by the
+[24m 25s] time it runs we've already set up the
+[24m 28s] test case
+[24m 29s] and here we can mark the testers skipped
+[24m 31s] and provide our own message
+[24m 33s] which means that any time we want to
+[24m 35s] skip a test now
+[24m 37s] if i can choose the correct test case
+[24m 39s] anytime we want to skip a test for the
+[24m 41s] reason that it requires postgres
+[24m 43s] we literally just chain that method onto
+[24m 45s] the end of our test and we get
+[24m 46s] the full description output everything
+[24m 49s] you'd expect
+[24m 50s] i just i think that's real clean um
+[24m 54s] i should probably actually run the test
+[24m 55s] to prove that rather than just
+[24m 57s] saying go and do it and then not working
+[25m 2s] yeah here we go so it skipped that test
+[25m 5s] um and if we were to run that in the
+[25m 7s] actual
+[25m 8s] um runner you'd see the message as well
+[25m 12s] so i think that kind of because that was
+[25m 14s] one of the things you you mentioned
+[25m 16s] last week i think tom wasn't it like how
+[25m 18s] do we actually do that in a nice way
+[25m 23s] and i after playing around a little bit
+[25m 25s] i think that's the nicest way
+[25m 30s] so only thing i don't like about this
+[25m 34s] pest file is that you
+[25m 36s] said you put everything in the global
+[25m 39s] namespace
+[25m 41s] so you really have to be careful with
+[25m 44s] naming of these methods
+[25m 46s] yes personally i think i would prefer
+[25m 49s] something like
+[25m 51s] this test helper function with a macro
+[25m 54s] for example method
+[25m 56s] so i could be sure that this method is
+[25m 59s] available on the test but i don't
+[26m 1s] i don't want it to be available
+[26m 3s] everywhere so
+[26m 4s] it's not a function i will call
+[26m 8s] out of nowhere it's a function i would
+[26m 10s] call on
+[26m 11s] a test case yeah yeah i i i
+[26m 14s] agree with you um for sure um
+[26m 18s] is it there vs code this is phpstorm
+[26m 22s] i just strip it right back so i feel
+[26m 24s] quite honored that you think this is vs
+[26m 26s] code
+[26m 26s] it's like vs code but it takes
+[26m 30s] 10 times more ram so you know
+[26m 33s] [Music]
+[26m 37s] i'd like to test immediately know that
+[26m 39s] it's skipped yeah i get that i get that
+[26m 41s] i mean there's nothing to stop you using
+[26m 42s] the standard uh
+[26m 43s] this mark as skip functionality but i
+[26m 46s] tend to like to put
+[26m 47s] everything um that's to do with
+[26m 51s] this not to do with the test itself
+[26m 54s] after the test um just
+[26m 57s] that's how i like to do it i mean of
+[26m 59s] course if we if we move this into a
+[27m] higher order test which we'll try and do
+[27m 2s] in a moment
+[27m 4s] then you could obviously chain and put
+[27m 7s] requires postgres sql as the first
+[27m 10s] line in the higher order test so then
+[27m 13s] you'd still get that functionality
+[27m 15s] but to to to touch on what you were just
+[27m 17s] saying as well
+[27m 18s] um tom because i definitely agree that
+[27m 21s] you can allow this file to fill up
+[27m 24s] very quickly and it can be messy
+[27m 27s] um i would say that
+[27m 30s] most of the time you want to be trying
+[27m 32s] to put these in your in custom test
+[27m 34s] cases
+[27m 34s] rather than putting them in global
+[27m 36s] functions
+[27m 38s] but in those cases where you want to put
+[27m 40s] them in here and you need access to the
+[27m 42s] test case
+[27m 43s] it's the test helper that will get you
+[27m 46s] there
+[27m 48s] if i would put it in the abstract test
+[27m 51s] case
+[27m 51s] we already have and in that case i could
+[27m 55s] use
+[27m 56s] cis and also returns this or probably
+[27m 59s] yeah it
+[28m] behaves the same let's try it uh yeah
+[28m 4s] i think i just wanted to kind of
+[28m 9s] so one question by steve i think i can
+[28m 11s] answer so
+[28m 12s] he asked um why it needs post address
+[28m 17s] at all um there's some special query
+[28m 22s] um in the email scope of the user
+[28m 27s] because there's an emails plural
+[28m 31s] column on the user model and
+[28m 34s] this operator i'm using there is a
+[28m 37s] postgres
+[28m 38s] specific so it doesn't work on escolite
+[28m 40s] or i'm not sure if it
+[28m 42s] works on mysql but definitely not on
+[28m 44s] sqlite
+[28m 45s] and that's why i only run cs if there is
+[28m 49s] a postgres database
+[28m 51s] to run against and why i've decided for
+[28m 53s] postgres
+[28m 54s] instead of i think mysql
+[28m 57s] is because postgres has some pretty cool
+[29m 1s] features
+[29m 1s] i miss in mysql like
+[29m 5s] space level indexes for example and
+[29m 9s] it also has better support for json
+[29m 10s] columns in my opinion so
+[29m 13s] um top buyers
+[29m 16s] patri and i um
+[29m 21s] we haven't discussed it each other but
+[29m 23s] we had the discussion for example with
+[29m 25s] uh
+[29m 26s] busan and some others on twitter
+[29m 29s] why we prefer prosperous and
+[29m 33s] in favor of mysql so it's definitely
+[29m 37s] some
+[29m 38s] a bit of personal opinion but for me
+[29m 40s] there's also a real technical reason to
+[29m 43s] do so
+[29m 44s] um yeah
+[29m 50s] and just so steve just asked israel to
+[29m 53s] refresh the data part way through the
+[29m 54s] higher order test
+[29m 56s] so using the new data set pr could you
+[29m 58s] switch data set part way through
+[30m 1s] um not sure i follow steve i
+[30m 4s] i'm going to say no based on what i'm
+[30m 8s] trying to to discern from
+[30m 11s] what you said there um
+[30m 14s] but if i've got you wrong then then hit
+[30m 17s] me
+[30m 17s] from what i'm reading you're asking can
+[30m 20s] you have a data set so can you use
+[30m 22s] with and pass in a bunch of data into
+[30m 24s] with right
+[30m 26s] um and can you switch this out
+[30m 30s] part way through and the answer is no it
+[30m 33s] will always sequentially run through the
+[30m 35s] items
+[30m 36s] um if that's not what you're asking
+[30m 40s] then then correct me please and so i was
+[30m 43s] looking at this test here right
+[30m 44s] and i realized the only reason we ever
+[30m 48s] knew up a user to is to check that
+[30m 51s] they're
+[30m 51s] the same model yeah
+[30m 55s] so we could actually refactor that a
+[30m 57s] little bit
+[30m 58s] by just working on a single
+[31m 3s] user and then checking
+[31m 6s] that that user but if you need callbacks
+[31m 10s] it has to be closure you definitely do
+[31m 13s] so
+[31m 13s] so that would fail without this one so
+[31m 16s] this is another cool thing
+[31m 17s] right this is a custom method
+[31m 20s] and doing this won't do anything because
+[31m 22s] in our custom method in the test case
+[31m 25s] we accept a user or nothing else so
+[31m 29s] the question is how can we make it work
+[31m 31s] so that we can also accept a callable
+[31m 32s] and that callable has access to the test
+[31m 34s] case
+[31m 35s] so let's just go and do that now i'm
+[31m 38s] just going to finish this
+[31m 39s] off before we do that
+[31m 42s] so to drop those in there which allows
+[31m 46s] us to remove all of that
+[31m 49s] and then we'll go into that base test
+[31m 51s] case right
+[31m 52s] uh or actually is it the test case or
+[31m 54s] did we put that in the pest.php file
+[31m 58s] i'm not sure i i think it's there yeah
+[32m 3s] to be used to be model so
+[32m 6s] no so it's a lower one to be model yes
+[32m 9s] so here's the comparison right
+[32m 10s] and at the moment yeah we're forcing
+[32m 12s] that comparison to
+[32m 14s] be basically a an identical model
+[32m 19s] if it wants to pass but
+[32m 22s] we could actually say well is the
+[32m 24s] comparison an
+[32m 25s] instance of a closure
+[32m 30s] and if the comparison is an instance of
+[32m 33s] a closure
+[32m 33s] then we can reassign the comparison
+[32m 37s] to closure
+[32m 40s] wrong one close your bind
+[32m 44s] and we pass the comparison in because
+[32m 46s] it's obviously a closure
+[32m 47s] and then as the second thing we can pass
+[32m 49s] uh test
+[32m 51s] again with no arguments and then
+[32m 54s] you just have to invoke that right so
+[32m 57s] this will call the closure that we pass
+[33m 1s] in
+[33m 2s] but it will provide the closure access
+[33m 4s] to the test case
+[33m 6s] but i think we could also use uh dollar
+[33m 8s] sis instead of test function
+[33m 11s] like we do in the other parts of some
+[33m 13s] method so we return this we
+[33m 16s] as a same this value
+[33m 19s] ah yes okay obviously
+[33m 23s] we are into expectations without this
+[33m 25s] expectation here
+[33m 28s] not to test good catch yeah so we
+[33m 30s] definitely want to bind to the test
+[33m 32s] there is there is actually a class
+[33m 34s] called reflection
+[33m 36s] um which is in pest support
+[33m 40s] and that has bind callable which will
+[33m 42s] bind straight to the test case always
+[33m 44s] but reflection is internal so don't use
+[33m 47s] that
+[33m 51s] but yeah this is basically the same
+[33m 54s] functionality as that but
+[33m 55s] with a custom integration yeah
+[33m 59s] so if we come back now to our user test
+[34m 3s] let's see if we can run this
+[34m 6s] hey now i'm always so happy when test
+[34m 9s] pass on stream that's like
+[34m 11s] that's the best thing
+[34m 14s] okay so to be honest luke isn't running
+[34m 18s] the test he's editing he has some
+[34m 20s] background tests that
+[34m 21s] just do as a true true yeah
+[34m 25s] it's just the stone fire this is a
+[34m 27s] pre-recorded video
+[34m 32s] um yeah so that
+[34m 35s] that's really cool because any function
+[34m 38s] that you define
+[34m 40s] can basically work in the same way as
+[34m 42s] these higher order
+[34m 43s] callables like expect and tap which
+[34m 45s] means
+[34m 46s] basically anything you can do in the
+[34m 50s] um in standard pest tests you can also
+[34m 52s] do in higher order tests with a little
+[34m 54s] bit of
+[34m 55s] work um and i think it's that's just so
+[34m 59s] neat i mean
+[35m 1s] that is so nice to actually read and
+[35m 2s] look at
+[35m 5s] okay so this one is
+[35m 8s] a little more interesting isn't it again
+[35m 11s] we're going to block them
+[35m 13s] and then it looks like we're going to
+[35m 15s] grab both of them
+[35m 17s] and on each instance of that user
+[35m 21s] we do those same checks again
+[35m 25s] so again i was looking at this a little
+[35m 28s] bit earlier
+[35m 30s] and there are two two things you could
+[35m 32s] think here first of all we could
+[35m 33s] attempt to put all of this into a single
+[35m 35s] higher order test
+[35m 37s] which i imagine would have a lot of taps
+[35m 41s] but let's take a test two tips
+[35m 45s] well yeah because well we've got to have
+[35m 46s] the safe let's well let's just try it
+[35m 50s] so we've got to do this we need to tap
+[35m 52s] to go and grab a
+[35m 53s] a new user right yeah so it will be
+[35m 56s] this prepare tab
+[36m 3s] so this user equals this user
+[36m 8s] and then you're gonna update the user
+[36m 11s] which at that point has to be another
+[36m 13s] tap right
+[36m 22s] uh already got that there we go
+[36m 25s] so now we can remove that you need
+[36m 28s] another bracket uh yep
+[36m 32s] i do expect is going to become a chained
+[36m 38s] method
+[36m 43s] and this is going to become a function
+[36m 47s] as we're interested in using this again
+[36m 50s] where we access this user and then we
+[36m 52s] get a new instance of user which allows
+[36m 55s] us then to check on each
+[36m 56s] instance um and we could actually i
+[37m] guess go one step further by
+[37m 2s] always asserting that these are a github
+[37m 4s] user
+[37m 5s] or is it just is it just that it returns
+[37m 6s] a user it's just user
+[37m 8s] i've omitted the github prefixes because
+[37m 12s] there is only a user from github there
+[37m 15s] isn't any other user
+[37m 20s] right
+[37m 22s] there you go uh there you go is a bear
+[37m 26s] the uh the tests are failing
+[37m 29s] proof that this is real uh argument one
+[37m 32s] must be type user pesticide
+[37m 36s] um so if i remove that
+[37m 41s] because obviously by the time the user
+[37m 43s] gets passed in
+[37m 48s] pesticide
+[37m 54s] i can just imagine steve crying now
+[37m 56s] because there are no named arguments
+[37m 59s] sorry steve i'm pretty happy with it
+[38m 4s] i'm the total opposite of steve
+[38m 7s] i use them when saying i need it and not
+[38m 10s] only because i have some free time
+[38m 14s] you you guys should should get an
+[38m 15s] agreement and battle it out
+[38m 18s] oh no i i'm fine with c uh doing
+[38m 22s] named arguments everywhere and me doing
+[38m 24s] sir
+[38m 25s] nowhere totally okay
+[38m 28s] two sides of the coin um i mean
+[38m 31s] right okay so again this might be
+[38m 34s] pushing it too far it probably is and
+[38m 35s] i'm probably gonna undo this
+[38m 38s] but because we're in laravel we can make
+[38m 41s] use of laravel's helpers right
+[38m 43s] so technically here you could actually
+[38m 45s] tap this using laravel's tap
+[38m 48s] where you create a user called gummy
+[38m 52s] bear
+[38m 53s] stop it you can stop it
+[38m 56s] and then we retrieve a user which we
+[38m 59s] then update
+[39m] right and then you only got to use one
+[39m 2s] tap
+[39m 4s] yeah only one tab there's another tab in
+[39m 6s] it
+[39m 10s] i mean this is quite clean in all
+[39m 12s] honesty and feel free to disagree with
+[39m 13s] me
+[39m 14s] i actually think this is testing two
+[39m 16s] things
+[39m 17s] um it it tests that the user can be
+[39m 20s] updated
+[39m 22s] with a block reason which is kind of a
+[39m 25s] mixture of this here
+[39m 26s] and this this here but then it's also
+[39m 29s] testing that if we
+[39m 30s] pull that user again using the um
+[39m 33s] github user fetch details
+[39m 36s] methodology that it's it's going to be
+[39m 39s] able to retrieve it even though we've
+[39m 40s] gone
+[39m 41s] blocked in is that would you agree with
+[39m 42s] that
+[39m 46s] i agree partially but if i would test
+[39m 50s] that i can update fields for every
+[39m 51s] single attribute i have
+[39m 53s] we weren't gonna finish the live stream
+[39m 56s] so
+[39m 58s] oh yeah for me updating an attribute
+[40m 1s] isn't a test so
+[40m 2s] uh if there is an attribute that isn't
+[40m 5s] fillable
+[40m 6s] or is the column is deleted from the
+[40m 9s] database there
+[40m 10s] will be definitely any test exploding
+[40m 14s] yeah and it i don't need
+[40m 17s] one specific test telling me hey you
+[40m 19s] deleted a columns that is still in use
+[40m 23s] um i'm fine with just any randomly test
+[40m 26s] exploding and telling me
+[40m 28s] you dump don't change the
+[40m 30s] database structure without chatting
+[40m 32s] uh checking the columns are still needed
+[40m 34s] so yeah
+[40m 36s] so i guess then that being the case and
+[40m 39s] again this is this might be much of a
+[40m 40s] muchness
+[40m 42s] um but technically when we're doing
+[40m 45s] these tests on the user here
+[40m 46s] they're a little bit redundant because
+[40m 48s] that's going to be the case anyway
+[40m 50s] because we trust this code up here so we
+[40m 53s] could actually simplify this
+[40m 54s] slightly by instead of just expecting on
+[40m 57s] a new user
+[40m 58s] and not requiring the each statement
+[41m 4s] because the functionality is assumed
+[41m 7s] that when you create a user and update
+[41m 10s] it
+[41m 11s] those columns are going to be equal to
+[41m 13s] that on that particular object
+[41m 15s] yeah good point so i mean i
+[41m 21s] i am all for the each statement of
+[41m 22s] course
+[41m 24s] um you will not stop me writing in each
+[41m 26s] statement but
+[41m 27s] sometimes it just reads a little bit
+[41m 29s] nicer to have
+[41m 30s] like a single a single level of flow
+[41m 33s] going on
+[41m 34s] um all right we actually need to
+[41m 38s] switch over to to actually write and
+[41m 39s] change these tests here we need postgres
+[41m 42s] actually i think one one thing we could
+[41m 44s] do
+[41m 45s] is um add one
+[41m 49s] method val return value high order test
+[41m 53s] because
+[41m 54s] um on the user models there is a trade
+[41m 58s] called blockable and this should define
+[42m 1s] a method
+[42m 4s] is blocked
+[42m 7s] so
+[42m 11s] yeah it's blocked exactly oh
+[42m 18s] i'm proving that it's actually my
+[42m 19s] computer and it wasn't code with me
+[42m 21s] yesterday steve
+[42m 26s] all right so we could actually say is
+[42m 29s] blocked
+[42m 31s] to be true right yeah
+[42m 36s] so now i definitely agree that this test
+[42m 38s] is testing multiple things
+[42m 40s] but for me this is definitely fine
+[42m 42s] instead of doing the same preparation
+[42m 45s] multiple times only to have one test
+[42m 48s] testing that the block reason
+[42m 50s] is the same i filled in and one test
+[42m 52s] checking
+[42m 53s] unit test likes that this method returns
+[42m 55s] true if the block reason is fit in
+[42m 58s] yeah so and and also here
+[43m 1s] like we've got this block column and the
+[43m 3s] is block method is now obviously
+[43m 5s] checking that that column is correct
+[43m 7s] right
+[43m 7s] so yeah the test is is more complete
+[43m 11s] absolutely yeah awesome let's move on to
+[43m 15s] this one then
+[43m 15s] um so i have already gone ahead
+[43m 20s] and um where's my xml gun
+[43m 24s] there we go and prepared this
+[43m 28s] earlier i can switch these two things
+[43m 31s] over
+[43m 33s] without disrupting the flow of the
+[43m 35s] stream too much
+[43m 37s] so if we run this test now it shouldn't
+[43m 38s] skip and it should indeed
+[43m 40s] pass
+[43m 45s] and it does all right which means we can
+[43m 47s] start
+[43m 48s] hacking it to pieces yeah
+[43m 51s] first things first we already have
+[43m 53s] refactored this so let's go grab that
+[43m 55s] from up here
+[43m 59s] and we're just calling update on that
+[44m 1s] from the looks of things
+[44m 4s] so we'll call update on that
+[44m 9s] and get rid of that and
+[44m 12s] we go grab another user by email
+[44m 17s] we okay this is where we might need to
+[44m 20s] go and add a new expectation just to
+[44m 22s] wrap this and no
+[44m 24s] it's the same like we had before to be
+[44m 26s] used yeah
+[44m 27s] so we can say expect a url terminator
+[44m 34s] again
+[44m 40s] even if it sounded more like a like a
+[44m 42s] tattoo machine
+[44m 44s] this is fast spinning needle
+[44m 54s] we lasted so long there i thought i
+[44m 56s] thought that it had given up i thought
+[44m 58s] that the
+[44m 59s] the ghost in the machine had gone away
+[45m 1s] apparently not
+[45m 3s] uh awesome yeah so we have that and then
+[45m 6s] we can higher order that right let's
+[45m 8s] move this into here
+[45m 14s] we expect that it's obviously a user and
+[45m 16s] then we expect that the
+[45m 18s] name is
+[45m 21s] tell me there yeah
+[45m 24s] do you know out of your head if to be
+[45m 27s] useless as an equals or as the same
+[45m 30s] yeah so to be is this there's two
+[45m 32s] there's two equal which is
+[45m 34s] which is type um loose
+[45m 38s] and then there's to be which is type
+[45m 40s] script
+[45m 41s] okay so yeah if you if you want it to
+[45m 45s] check that it's the subject it's to be
+[45m 48s] basically um
+[45m 52s] awesome and obviously for strings
+[45m 53s] because they're um
+[45m 58s] a word that isn't coming to my head now
+[46m] then
+[46m 1s] they will patch to be as well as long as
+[46m 3s] they're the exact same content
+[46m 5s] yeah uh that's cool yeah i think we can
+[46m 8s] inline this now and this will make
+[46m 9s] the bear happy i think because we should
+[46m 11s] be able to put this at the top of the
+[46m 13s] test
+[46m 15s] and um we should be able to now say tap
+[46m 24s] do this little piece of logic here
+[46m 31s] and then exit
+[46m 36s] again i think i would at least line
+[46m 39s] breaks this
+[46m 40s] update array so having email and email
+[46m 43s] verified ad on
+[46m 44s] on separate lines
+[46m 59s] and prefect that's the next one let's
+[47m 2s] just see
+[47m 8s] that
+[47m 10s] oh there we go all right
+[47m 13s] all right so that was a little bit of
+[47m 16s] attached to me as well actually i didn't
+[47m 17s] know whether that was gonna work at the
+[47m 18s] top it does work at the top
+[47m 20s] we're happy all right moving on to the
+[47m 23s] next one uh it finds a
+[47m 24s] user by the github email very similar
+[47m 27s] thing here right we can
+[47m 28s] first of all
+[47m 32s] get rid of that we can move this call
+[47m 34s] here to the top
+[47m 36s] it's the exact same test but just with
+[47m 39s] another email value so
+[47m 41s] possibly let's let's let's really
+[47m 44s] compare them it could be that we could
+[47m 46s] use a data set here
+[47m 48s] yeah that's a good idea so the
+[47m 51s] difference update is the same
+[47m 52s] from github is the same as a user
+[47m 55s] and we assets the same name so yeah
+[47m 59s] it's literally just that in which case
+[48m 2s] i think we can can't we we can say
+[48m 8s] with open up a data set
+[48m 12s] and in each of those we need to pass in
+[48m 15s] an array of values and i will put these
+[48m 18s] on separate lines
+[48m 20s] to appease everybody
+[48m 24s] don't need to shoot me yet
+[48m 29s] and we grab that put that in there
+[48m 32s] and now in the expect from today
+[48m 36s] um so hot off to press this we can pass
+[48m 40s] in
+[48m 40s] the email which is being passed from the
+[48m 43s] data set right
+[48m 45s] so we pass the email in there
+[48m 49s] which lets us remove these tests
+[48m 55s] and moment of truth i guess right
+[49m 1s] two tests that's a positive start
+[49m 4s] these tests are obvious to take a little
+[49m 6s] longer because at this point we're
+[49m 7s] booting up
+[49m 9s] a a postgres database both passed
+[49m 12s] how happy so yeah that's the that's the
+[49m 15s] new functionality
+[49m 17s] could you check how the name of the test
+[49m 20s] was we have deleted
+[49m 22s] uh yes i will bring so on onto left
+[49m 26s] yeah so what always the name
+[49m 30s] [Music]
+[49m 33s] no that is by their github email okay
+[49m 38s] so could we use name data set
+[49m 41s] no no not a name data set but an
+[49m 44s] associative area in the data set
+[49m 48s] so yeah so so you're saying that we'd
+[49m 50s] say this is the github
+[49m 53s] exactly and this is normal yep
+[49m 56s] yeah i'm pretty sure that works um it
+[49m 59s] does
+[50m 1s] so this is something i've already used
+[50m 3s] and knows that
+[50m 9s] [Music]
+[50m 10s] oh then is this something else
+[50m 14s] i think it's uh if you delete it so test
+[50m 17s] again
+[50m 19s] i that's
+[50m 24s] fine using it that's a different test
+[50m 25s] isn't it oh then
+[50m 27s] one way to find out let me just remove
+[50m 28s] these
+[50m 37s] it could be set to terminators back
+[50m 45s] yeah it was you
+[50m 58s] hello i think hey i think i'm gonna have
+[51m 1s] to
+[51m 1s] maybe try um streamyard next week or
+[51m 4s] something
+[51m 5s] yeah see if it it it's got to be
+[51m 7s] something like that
+[51m 9s] um anyway so i
+[51m 12s] i know that pest will give us more
+[51m 14s] descriptive outputs by default anyway
+[51m 16s] like these will be included in the
+[51m 17s] description
+[51m 19s] so it will say like test testing find
+[51m 22s] users by email
+[51m 23s] with and then it'll it'll show this
+[51m 25s] email in the in the test description
+[51m 28s] uh in fact you might be able to see it
+[51m 29s] here look yeah here we go
+[51m 32s] so you'll see that which is more than
+[51m 33s] php unit but for some reason passing it
+[51m 35s] as an associative array doesn't work
+[51m 37s] perhaps one to look at
+[51m 38s] so so it's the same output like php unit
+[51m 44s] php unit also displaces
+[51m 48s] yeah but the real problem here is
+[51m 51s] for this normal email it's totally fine
+[51m 53s] but like you see
+[51m 54s] versus a github email for example or if
+[51m 56s] you have
+[51m 57s] multiple arguments so you could have a
+[51m 59s] data set with like
+[52m 1s] two or three arguments you want to pass
+[52m 3s] in as this
+[52m 5s] format is really horrible so
+[52m 8s] yeah yeah that's actually skipped it
+[52m 11s] hasn't as well
+[52m 12s] it's it's skipped over this one
+[52m 16s] that's interesting that's interesting
+[52m 17s] that's uh that's one to file
+[52m 21s] next time
+[52m 25s] back report yep pr
+[52m 28s] going up i was going to share the uh
+[52m 32s] i was going to do the pr for the data
+[52m 34s] provider values
+[52m 36s] on stream today and then by the time i
+[52m 39s] i'd actually finished thinking about
+[52m 40s] that i'd already got the p already and i
+[52m 42s] was like oh no
+[52m 43s] i'm just going to leave it maybe
+[52m 47s] we'll have to look at that one it might
+[52m 48s] be one that we could do on stream um
+[52m 51s] so it finds user by
+[52m 54s] name only github email yeah
+[52m 59s] okay so what's going on here you can
+[53m 2s] again scroll up and duplicate the
+[53m 6s] the first data set entry
+[53m 11s] no no only uh first six one
+[53m 15s] eight seven exactly
+[53m 18s] you just want that yeah no no only
+[53m 21s] just adding a new entry to city center
+[53m 24s] oh
+[53m 24s] this one yeah
+[53m 29s] i wanted to say it duplicate it and
+[53m 32s] remove the id in front but yeah
+[53m 36s] and could we move the it's only a small
+[53m 38s] thing but could we move this dev at
+[53m 40s] coming beer dot the e to the top
+[53m 43s] so it checks the normal emu at first
+[53m 45s] yeah that's a good plan yeah
+[53m 47s] and this email this test is doing
+[53m 48s] nothing other than that yeah
+[53m 51s] i think again absolutely it's the same
+[53m 53s] awesome
+[53m 55s] and then this is the same as well right
+[53m 58s] yep but only
+[53m 58s] id okay let's get rid of that
+[54m 5s] so for all of you interested in these
+[54m 8s] github emails
+[54m 8s] um the first one is the officially
+[54m 11s] supported one
+[54m 12s] so this is id plus name the last one is
+[54m 16s] also officially supported because this
+[54m 18s] plus name is
+[54m 19s] like on gmail you can use these email
+[54m 22s] suffixes that aren't
+[54m 24s] handled by the real mail inbox
+[54m 28s] delivery whatever
+[54m 31s] dispatch service but it's only for you
+[54m 34s] so it's that you can assign labels for
+[54m 36s] example
+[54m 36s] but this mid one is the name only this
+[54m 39s] is not officially supported but
+[54m 41s] i think it was some time back
+[54m 44s] and this is why some users still use
+[54m 47s] this format
+[54m 48s] and as long as i'm able to find
+[54m 52s] someone i thought that it's okay to
+[54m 54s] support it as well
+[54m 57s] that's very inclusive of you
+[55m 2s] i try my best okay this is actually the
+[55m 5s] last
+[55m 6s] this is a beast right but it's the last
+[55m 7s] test case
+[55m 9s] of the of the of the class
+[55m 13s] this is one uh susanna and i created
+[55m 16s] because uh she found a bug let's name it
+[55m 20s] and we solved it not on stream but in a
+[55m 24s] in a mentoring live coding session and
+[55m 27s] she said
+[55m 28s] yeah let's add a test for it to prevent
+[55m 30s] the same error
+[55m 32s] in the future and so this price is test
+[55m 35s] cases set
+[55m 37s] okay yeah so what's the actual
+[55m 42s] error like what was actually happening
+[55m 44s] what's the test testing for
+[55m 47s] problem was uh github usernames can be
+[55m 50s] upper and lowercase and github keeps it
+[55m 52s] and like i think nearly all of you know
+[55m 56s] by default sorting in php and i think
+[55m 59s] all other languages
+[56m] is a case sensitive so if you have lexus
+[56m 3s] algolia and that's atomic both starting
+[56m 5s] with an a
+[56m 6s] but one with a lower case the next one
+[56m 8s] was an upper case so they have
+[56m 10s] different let's say sword priorities
+[56m 14s] and this was a problem because um
+[56m 18s] in this test case we have this algolia
+[56m 20s] with a lower a barry
+[56m 22s] thunderhead with a lower b and
+[56m 24s] astrotomic with an upper a
+[56m 26s] and if you sort alphabetically
+[56m 30s] the normal user would expect okay a
+[56m 32s] goliath first astronomic second
+[56m 33s] and very third but what was happening
+[56m 36s] was
+[56m 36s] algolia first barry second at s atomic
+[56m 39s] cert
+[56m 40s] and this is what we have fixed and this
+[56m 42s] is also what this test
+[56m 44s] tests said this order is always
+[56m 48s] uh to the lowercase enforced order and
+[56m 50s] what the user would expect to see
+[56m 53s] yeah that makes sense that makes
+[56m 55s] complete sense
+[56m 57s] so i think first of all let's go about
+[57m] um like 10 tip methods
+[57m 4s] well i think i think at some point
+[57m 7s] you've got to give up on
+[57m 8s] on higher order but let's at least first
+[57m 10s] of all move over to expectations
+[57m 12s] reflect the way we can and then we'll
+[57m 14s] see we'll see if it makes sense for a
+[57m 17s] higher order or whether it's more
+[57m 18s] sensible to leave it inside the function
+[57m 21s] um so it returns
+[57m 25s] vendors alphabetically
+[57m 29s] yeah i would add something like sorted
+[57m 32s] or ordered
+[57m 34s] uh it returns ordered vendors
+[57m 37s] alphabetically regardless of case
+[57m 40s] yeah so we've already got this
+[57m 43s] it's just going to be this user
+[57m 48s] um and we already have that expect
+[57m 53s] user the user
+[57m 58s] and we already have this which is going
+[58m 1s] to be
+[58m 4s] this user we don't need
+[58m 7s] that user's tag
+[58m 10s] so what we don't have yet is a um an
+[58m 13s] organization helper
+[58m 14s] which i think might might be helpful
+[58m 17s] yeah definitely we already needed three
+[58m 20s] times
+[58m 20s] only for this test and very likely
+[58m 24s] some more times in the future if we
+[58m 26s] write tests for organization model
+[58m 30s] so we can say organization which should
+[58m 33s] have
+[58m 34s] a name and i use organization with the
+[58m 37s] set
+[58m 38s] if i'm right yeah so not with an s but
+[58m 41s] with a
+[58m 42s] with a set uh my english is
+[58m 45s] coming out one second
+[58m 51s] i'm pretty sure it's one of these links
+[58m 53s] like the uk english and
+[58m 54s] u.s english or whatever
+[58m 58s] i don't want to start that argument on
+[59m] stream that would it'd be a bad screen
+[59m 2s] wouldn't it
+[59m 3s] um what's your most common one with
+[59m 7s] should i use astrotomic as the default
+[59m 11s] yeah i think so yeah so
+[59m 14s] that will basically be doing that by
+[59m 16s] default and
+[59m 18s] we will go
+[59m 24s] return organization
+[59m 27s] this will return an organization
+[59m 31s] and here we can just pass the name in
+[59m 38s] i missed off a little hey
+[59m 41s] that's nice gives it
+[59m 45s] a nice helper we can reuse in many
+[59m 47s] places
+[59m 48s] so let's go select those
+[59m 54s] organization
+[59m 59s] and then i think you have a double sis
+[60m 2s] on
+[60m 2s] the second one
+[60m 6s] organization oh yeah
+[60m 11s] okay so let's jump over that for now
+[60m 16s] we sync the repositories
+[60m 20s] book the vendor names so assert equals
+[60m 22s] can become expect
+[60m 26s] render names all
+[60m 30s] to equal and then we'll take that
+[60m 35s] there is um a another one that you might
+[60m 39s] want to use or you can use is to match
+[60m 41s] array
+[60m 42s] but the only thing with that is it
+[60m 44s] matches array partials as well so if you
+[60m 46s] want to be specific and say it has to be
+[60m 49s] the whole array
+[60m 50s] um you want to use two equal instead of
+[60m 52s] to match array
+[60m 54s] but in in certain cases like if you're
+[60m 55s] just testing a part of a
+[60m 57s] api response for example you can use to
+[61m] match array and you'll just get the
+[61m 1s] subset which is really useful when
+[61m 3s] you're not interested in the id or
+[61m 4s] whatever further up
+[61m 6s] yeah cool um and i think we can actually
+[61m 11s] do a sweet sweet sequence here right
+[61m 15s] effect vendor names sequence
+[61m 23s] um let's say vendor
+[61m 29s] to be how golia
+[61m 35s] out a few times
+[61m 49s] so only thing i'm not sure if we used to
+[61m 51s] be instead
+[61m 52s] of to equal yeah
+[61m 56s] does to be or as a same
+[61m 59s] compare every positions i think so
+[62m 9s] yes this will be an endless repertoire i
+[62m 12s] think it's faster to
+[62m 13s] just switch positions of some arguments
+[62m 16s] and
+[62m 17s] so it's a in the upper one because we
+[62m 20s] we test on the vendor names and both
+[62m 22s] times so
+[62m 23s] just replace to equal with to be
+[62m 28s] yeah and switch algolia and s atomic for
+[62m 31s] example
+[62m 32s] in this array here yeah
+[62m 38s] and let's run the test and if it fails
+[62m 42s] on this expectation we can
+[62m 46s] we can remove the sequence because
+[62m 49s] in that case we already checked
+[62m 55s] yeah oh
+[62m 58s] transaction aborted
+[63m 2s] exception
+[63m 6s] it's interesting
+[63m 10s] let's have a look
+[63m 14s] the transactions board command's ignored
+[63m 17s] until end of transaction block
+[63m 25s] ah any clue
+[63m 34s] not from this point
+[63m 47s] this is nice and silly but let me just
+[63m 49s] come back here
+[63m 53s] so only idea but i think this one also
+[63m 57s] requires
+[63m 58s] what does it
+[64m 1s] ah well that's an interesting one isn't
+[64m 3s] it it might be something to do with the
+[64m 5s] refresh database trait perhaps
+[64m 8s] possibly yeah maybe the interaction
+[64m 11s] is uh yeah okay
+[64m 15s] so let's switch them back and we can
+[64m 17s] remove the sequence
+[64m 24s] simplifies that nicely also means that
+[64m 26s] we can
+[64m 27s] inline that
+[64m 33s] [Music]
+[64m 36s] what's the idea with these two lines
+[64m 38s] here tom
+[64m 44s] i think the expectation here can be
+[64m 46s] removed
+[64m 51s] now only is expectation you still need
+[64m 53s] to be user
+[64m 55s] yeah oh yeah because we think their
+[64m 57s] contributions later down the line
+[65m] but we could move down
+[65m 3s] the user to where the contributions are
+[65m 6s] synced
+[65m 7s] i like that cleaner keeps it all grouped
+[65m 10s] together
+[65m 11s] and then we still need the user don't we
+[65m 23s] okay
+[65m 26s] let's see if that works
+[65m 35s] it does man awesome so
+[65m 38s] by looking at this let's be quite honest
+[65m 42s] i don't think
+[65m 43s] it's going to get much simpler is it
+[65m 47s] we have to do these steps if we
+[65m 50s] move to higher order we're just going to
+[65m 53s] be tapping over and over again
+[65m 55s] but we don't win anything yeah it's not
+[65m 58s] going to make it any cleaner
+[65m 59s] so i i think in this case we we have to
+[66m 3s] put the white handkerchief out and and
+[66m 6s] kind of just accept that
+[66m 7s] that it's not going to be higher order
+[66m 9s] test but still very clean
+[66m 11s] still very clean which is nice yeah
+[66m 14s] um all right cool
+[66m 17s] that's this test case then completely
+[66m 20s] moved over to
+[66m 22s] higher order tests slash slash using all
+[66m 24s] the latest updates
+[66m 26s] um and even the new
+[66m 30s] the new data higher order data providers
+[66m 31s] which is cool
+[66m 34s] um awesome all right
+[66m 37s] have we got any other tests we've got
+[66m 39s] this example test but that's not really
+[66m 41s] doing anything is it
+[66m 44s] i don't it's just what it takes i don't
+[66m 48s] think we've got any other tests
+[66m 49s] that have been created that we haven't
+[66m 51s] migrated to pest have we
+[66m 54s] like said there aren't many tests
+[66m 57s] so most of these user tests were added
+[67m] to
+[67m 1s] provide an example how i want to test
+[67m 4s] some of these github related and
+[67m 8s] keyword related things yeah yeah
+[67m 13s] but no one in the community provided a
+[67m 15s] new test
+[67m 18s] hey you just have to wait you just have
+[67m 19s] to imagine the right people
+[67m 22s] and push this up so let's commit and
+[67m 26s] yeah we could start with the first
+[67m 29s] organization test for example
+[67m 42s] i might have to go back and change the
+[67m 45s] uh
+[67m 47s] revert the phpunit.dist file
+[67m 50s] well they're quite useful to have their
+[67m 53s] people can just go in and quickly
+[67m 55s] uncomment those lines
+[67m 59s] i mean what do you usually do how do you
+[68m 2s] usually handle that time like if you
+[68m 4s] were testing
+[68m 6s] and you wanted to test using postgres
+[68m 8s] would you go into the the
+[68m 10s] um php unit file and manually alter
+[68m 13s] those lines or
+[68m 14s] how do you usually tackle that
+[68m 19s] i'm doing what php unit would expect me
+[68m 22s] to do
+[68m 22s] and copy the php unit xml dist to a php
+[68m 26s] unix some lfi
+[68m 28s] and alter this one because this file is
+[68m 31s] on the git ignore
+[68m 32s] so i don't have to worry about
+[68m 35s] not committing the file and php unit has
+[68m 38s] a priority of picking
+[68m 40s] first the phpunit.xml file if it is
+[68m 43s] present and if not it will pick up the
+[68m 45s] php.xml.list
+[68m 47s] which is part of the repository so
+[68m 51s] if i want to adjust my local php unit
+[68m 54s] environment without touching
+[68m 56s] the repository php unit
+[68m 59s] i just copy
+[69m 2s] some php on the dxml dist and adjusted
+[69m 7s] yeah which makes complete sense
+[69m 10s] um all right
+[69m 14s] so i think for appender i even have a
+[69m 17s] php unit.xml
+[69m 20s] dot dot postgres or something like that
+[69m 24s] so i can just
+[69m 27s] rename this file
+[69m 31s] yours would literally be although they
+[69m 33s] get ignored it's not picked up
+[69m 35s] interesting
+[69m 42s] below the yarn arrow yeah
+[69m 46s] cool in which case i can come in keep
+[69m 49s] those there
+[69m 51s] head back into here remove those lines
+[70m] exactly
+[70m 3s] and everyone stays happy
+[70m 8s] all right everyone okay everyone's still
+[70m 11s] with us
+[70m 13s] we're not moving too much
+[70m 18s] a lot of time i'm not sure if they all
+[70m 21s] fall asleep or
+[70m 24s] have left us alone i mean we're not
+[70m 27s] moving
+[70m 28s] extreme pace but i i kind of like to uh
+[70m 31s] take my time when i'm doing side
+[70m 33s] projects because it's where i learn
+[70m 35s] things
+[70m 36s] yeah boys this deep with us that they
+[70m 40s] aren't
+[70m 41s] able to write comments so they could
+[70m 44s] they could well be
+[70m 45s] so deep in it and i think you
+[70m 49s] again wrote organization with some s
+[70m 51s] instead of saying
+[70m 52s] um you you would point that out wouldn't
+[70m 56s] you
+[70m 56s] i'm just trying to slide one through
+[70m 58s] okay just one
+[71m 1s] [Laughter]
+[71m 4s] all right um so organizations
+[71m 7s] what what can you tell us about
+[71m 8s] organizations one question i have first
+[71m 11s] is
+[71m 12s] you have this uh pest plugin installed
+[71m 14s] and
+[71m 16s] in the tests feature models directory
+[71m 20s] these two files have this pest icon why
+[71m 22s] does this
+[71m 24s] update user details test doesn't have
+[71m 26s] the test icon
+[71m 27s] right okay the only thing i can think
+[71m 30s] and i need to ask oliver about this
+[71m 31s] because he's the guru
+[71m 33s] is that at some point in higher order
+[71m 36s] syntax
+[71m 38s] whatever the plug-in is doing to detect
+[71m 40s] a pest test
+[71m 42s] like stops understanding what's going on
+[71m 48s] so i the the only thing i can think of
+[71m 51s] um is that because if i simplify this if
+[71m 55s] i get rid of these
+[71m 56s] here look look at that okay but when we
+[71m 59s] bring in higher order tests
+[72m 1s] in higher order expectations which to be
+[72m 3s] fair is like
+[72m 7s] quite crazy anyway but when we do that
+[72m 10s] it does disappear so i think i just need
+[72m 12s] to to chat with oliver and
+[72m 14s] uh no doubt he can update it to also
+[72m 18s] allow for properties yes i wrote the
+[72m 21s] tests
+[72m 22s] i think the easiest would be just check
+[72m 24s] in if the file contains
+[72m 26s] uh a call to the global namespace
+[72m 29s] to the global function it or test yeah
+[72m 33s] yeah because this is what identifies a
+[72m 36s] pest test
+[72m 37s] yeah yeah and absolutely not caring if
+[72m 40s] it has a
+[72m 41s] closure argument or some higher order
+[72m 44s] chaining to
+[72m 45s] the end of life i i feel like super
+[72m 48s] sorry for oliver though because
+[72m 50s] he does like such an awesome job
+[72m 51s] maintaining that plugin and then
+[72m 53s] every week one of us goes in and creates
+[72m 56s] some new monstrosity that he's got
+[72m 59s] an understanding poor guy you think
+[73m 2s] he's also on his couch now and saying
+[73m 5s] stop
+[73m 6s] providing new ps i want just to
+[73m 10s] to finish this project yeah i think he
+[73m 13s] is
+[73m 14s] i'm really sorry okay so
+[73m 17s] organizations are yeah nearly the same
+[73m 21s] like a user
+[73m 22s] from um business logic level
+[73m 25s] the only difference is that immigration
+[73m 28s] said an organization has a relationship
+[73m 30s] to users as well
+[73m 32s] and so users can be members of
+[73m 36s] organizations
+[73m 37s] and organizations can't be contributors
+[73m 40s] to repositories
+[73m 42s] so in fact an organization has members
+[73m 45s] it can own repositories and
+[73m 48s] sets it okay so
+[73m 52s] i mean is there any any point in kind of
+[73m 55s] copying some of the testing
+[73m 57s] from here into our organization test and
+[74m] then seeing what correlates and what
+[74m 1s] doesn't
+[74m 3s] um scroll to the top and i can tell you
+[74m 7s] so i think the first one can be copied
+[74m 10s] and the second one also
+[74m 15s] the third one as well because
+[74m 17s] organizations can be blocked
+[74m 20s] and the other ones
+[74m 24s] are unique to users okay that's quite
+[74m 26s] good there that only puts us with
+[74m 28s] two tests that can't be copied
+[74m 32s] so let's go grab those
+[74m 36s] drop this in here and
+[74m 39s] we haven't created a 2b organization
+[74m 41s] expectation yet have we
+[74m 44s] we don't have so you can go do that
+[74m 56s] perfect i had to
+[74m 59s] i had like a brain freeze there just
+[75m 1s] trying to work out what i had to do
+[75m 6s] and yeah doesn't exist and would also
+[75m 11s] have to be written with a set okay okay
+[75m 16s] i'm sorry no worries what is a cert user
+[75m 19s] actually doing
+[75m 22s] a lot all right
+[75m 25s] this is fine though i mean that's the
+[75m 26s] the most basic is this right
+[75m 28s] and then we want to let the id is an
+[75m 31s] integer
+[75m 32s] and i think you changed this only to
+[75m 36s] showcase
+[75m 36s] that we can use expectations insist
+[75m 40s] and you wanted to proceed but you've
+[75m 42s] also seen that
+[75m 43s] as a lot going on and stopped it yeah
+[75m 49s] you know me too well i don't like this
+[75m 52s] so personally
+[75m 52s] i would also be fine if we refactors
+[75m 55s] expect actually
+[75m 56s] to back to the php unit
+[75m 59s] uh like
+[76m 2s] someone's no not this but like this
+[76m 5s] asset is inter
+[76m 6s] isn't yeah that's a instance of
+[76m 18s] all right so
+[76m 21s] we sort of want to take this user
+[76m 24s] assertion
+[76m 25s] almost duplicate it out but then change
+[76m 29s] quite a few things
+[76m 31s] a lot of things
+[76m 37s] organization assertions yes
+[76m 42s] organization
+[76m 45s] actual and
+[76m 48s] yeah this is where we want to also say
+[76m 50s] and perhaps we want to go back and
+[76m 51s] update the other one as well but that
+[76m 53s] you could pass in a
+[76m 54s] closure right no you can't pass this to
+[76m 58s] to spawn you can pass it to
+[77m 2s] to the pest expect extension
+[77m 6s] yeah but you can change the param app
+[77m 9s] models
+[77m 10s] organization nice nice absolutely
+[77m 13s] correct
+[77m 13s] you will also have to change the trade
+[77m 15s] name
+[77m 18s] you don't have to no just
+[77m 24s] and yeah
+[77m 27s] you could have also just press enter
+[77m 33s] and so id has to be an integer
+[77m 37s] name is a string you can remove the
+[77m 40s] email
+[77m 40s] as certain organizations don't have one
+[77m 43s] github email will be the same avatar url
+[77m 47s] is twitter is emails can be removed
+[77m 52s] github access token can be removed
+[77m 58s] description keeps in location should
+[78m 1s] we keep in and i'm thinking
+[78m 4s] said full name is display name on
+[78m 9s] its organization is the have we got
+[78m 12s] every
+[78m 12s] organization's table can we check that
+[78m 16s] you can also go to the organization
+[78m 18s] model because i have all attributes on
+[78m 21s] in the doc block are you an organized
+[78m 23s] person
+[78m 24s] yeah i'm using the idea but so full name
+[78m 27s] oh so as a full name okay
+[78m 33s] oh yeah so display name was what i'm
+[78m 36s] using
+[78m 36s] if i'm not sure what i need because this
+[78m 39s] planning falls back to the normal name
+[78m 41s] if there isn't a full name defined as
+[78m 44s] you can see
+[78m 45s] the full name can be nullable as well
+[78m 49s] right okay yeah and can we so are we
+[78m 52s] saying that we can
+[78m 54s] we could also do the same with display
+[78m 55s] name
+[78m 58s] it's display no display name is not an
+[78m 59s] audible right so it has to have a
+[79m] display name
+[79m 2s] yeah so we could almost uh does it have
+[79m 5s] a name name
+[79m 7s] lots of names so this display name
+[79m 11s] is the actual oh no we do have a name
+[79m 13s] yeah
+[79m 16s] display name is an overloaded attribute
+[79m 21s] so it's not in the database it's just in
+[79m 23s] peach people
+[79m 24s] and you want to do are we wanting to
+[79m 26s] assert that that is a string
+[79m 32s] i haven't tested overloaded attributes
+[79m 35s] on the user
+[79m 36s] but we could edit in both cases sure
+[79m 42s] so yeah it's got it's got to return it
+[79m 45s] hasn't it
+[79m 47s] so might as well give this a test uh
+[79m 50s] without having to do individual tests
+[79m 53s] yeah
+[79m 54s] and then it is an organization can be
+[79m 56s] blocked she said didn't
+[79m 58s] it's also blockable yeah yeah so
+[80m 1s] we don't need this email can be removed
+[80m 8s] argument has to be changed to
+[80m 9s] organization
+[80m 14s] and everything keeps the same
+[80m 19s] avatar url also changes the argument to
+[80m 21s] organization
+[80m 23s] but everything keeps the same so twitter
+[80m 27s] one
+[80m 28s] argument has to change the organization
+[80m 30s] but everything
+[80m 32s] also keeps the same
+[80m 36s] and emails can be moved
+[80m 40s] not so bad brings up
+[80m 47s] awesome okay so now back into our past
+[80m 51s] we can say
+[80m 55s] organization assertions
+[80m 59s] so organization this value
+[81m 3s] yep
+[81m 6s] well that was simple
+[81m 11s] right organizations test so we actually
+[81m 13s] want this to be
+[81m 17s] organization
+[81m 20s] um this is going to change to
+[81m 23s] organization right
+[81m 25s] and we probably want to pass the default
+[81m 28s] of astrotomic
+[81m 31s] yeah that's about that and so so test
+[81m 33s] name is also creates organization from
+[81m 35s] github
+[81m 38s] thank you
+[81m 43s] i guess that comes from the fixture
+[81m 44s] right
+[81m 47s] yeah name is right
+[81m 50s] also name is correct i'm just gonna
+[81m 54s] move that off to the side but keep it
+[81m 55s] open in case we want to reference it
+[81m 57s] and email can be removed
+[82m] yeah and this register
+[82m 4s] isn't doesn't exist on the organization
+[82m 7s] it can be also removed is there anything
+[82m 10s] organization specific at like the low
+[82m 12s] level or
+[82m 13s] or like like well i guess the opposite
+[82m 15s] way actually like the high
+[82m 16s] organization model level that we want to
+[82m 18s] test oh i forgot one attribute specific
+[82m 21s] to organizations we can add to the
+[82m 23s] organization assertions
+[82m 25s] yeah and it's a php unit asset is
+[82m 30s] boolean
+[82m 33s] let's put it here
+[82m 39s] and is verified should it be
+[82m 51s] and marion i'm using the organization
+[82m 53s] with the set because
+[82m 54s] it's how github writes it and because
+[82m 58s] i'm using github as a base of
+[82m 59s] everything i've also just copied how
+[83m 3s] organization is written and i think it's
+[83m 7s] like yeah like i said it's one of these
+[83m 9s] words that
+[83m 11s] uh both things are correct i think
+[83m 14s] so with an s and this is set
+[83m 17s] i think it could be something like one
+[83m 19s] in the us at once the uk
+[83m 22s] um but i don't have any idea so
+[83m 27s] best to stick to um convention if in
+[83m 29s] doubt yeah
+[83m 32s] and johnny my light theme i lasted like
+[83m 35s] six hours man and then
+[83m 37s] i couldn't do it i tried honestly i
+[83m 40s] tried hey
+[83m 41s] have you tried for tone scenes uh i've
+[83m 44s] downloaded it i've yet to give it a
+[83m 45s] proper
+[83m 46s] i gave it like 10 minutes but i need to
+[83m 48s] give it a proper coding session
+[83m 50s] before i can give judgment
+[83m 53s] give it a try now on live stream because
+[83m 55s] light seems are easier for
+[83m 57s] for the viewers to to watch oh my
+[84m 2s] goodness that doesn't mean that that's
+[84m 3s] going to make it even harder for me to
+[84m 4s] code though
+[84m 7s] i'll tell you what let's let's save it
+[84m 9s] for next time because it's
+[84m 10s] uh we're one hour 24 in and i don't want
+[84m 12s] to try and keep these to like an hour
+[84m 14s] and a half
+[84m 15s] yeah so let's
+[84m 18s] tell you what i'm going to comment all
+[84m 20s] of these out other than this top one
+[84m 24s] and then we'll go in this is going to be
+[84m 26s] the problem now look
+[84m 28s] tell you what that's here's a cool
+[84m 31s] thing if you're using pest tests you can
+[84m 34s] tag only on which means that when you
+[84m 36s] run the test suite the only one that's
+[84m 37s] going to be run
+[84m 39s] is the one with only cool okay so
+[84m 42s] failed asserting that null is of type
+[84m 44s] bull and this is obviously from our
+[84m 45s] little organization assertions
+[84m 47s] so let's go in and
+[84m 52s] just look at the properties
+[84m 55s] get attributes is is verified a dynamic
+[84m 59s] attribute
+[85m 2s] oh yeah i think yeah it should be a
+[85m 5s] nullable as certain
+[85m 10s] now you have to replace php unit with
+[85m 12s] nullable assertions
+[85m 14s] it should be auto completed because we
+[85m 16s] are using yeah
+[85m 18s] and asset is nullable boolean yeah
+[85m 21s] i think with that i'll probably put this
+[85m 23s] down here
+[85m 24s] yeah exactly
+[85m 29s] and you can move it to to the location
+[85m 31s] and description block
+[85m 33s] so no need for this empty line
+[85m 39s] cool and we've got a passing test again
+[85m 41s] right
+[85m 43s] perfect same thing here but this is
+[85m 47s] both of these are going to become
+[85m 48s] organization
+[85m 51s] i did that one without even thinking
+[85m 52s] about it look at that
+[85m 56s] and it finds an organization from github
+[86m 15s] happy days
+[86m 19s] and this test here
+[86m 23s] start with this essentially in fact i'm
+[86m 25s] trying to be clever
+[86m 26s] use a user user
+[86m 30s] user you should have dances for the
+[86m 33s] whole file
+[86m 36s] hey man we're learning as we go okay
+[86m 39s] yeah
+[86m 41s] this is a past stream not a php storm
+[86m 43s] stream
+[86m 47s] yeah but being able to do this just
+[86m 49s] shows
+[86m 50s] how similar user and organization model
+[86m 53s] are
+[86m 54s] yeah so which is nice
+[86m 57s] and again let's just tap only on there
+[86m 59s] while we run this test
+[87m 6s] happy days so we can remove that
+[87m 9s] and now we have three organization model
+[87m 12s] tests right
+[87m 13s] yeah that discovering the same
+[87m 17s] behavior we ensure the user has
+[87m 20s] is there any organization specific
+[87m 22s] behavior that we should
+[87m 24s] that we should think about or tackle
+[87m 28s] yeah i think same like um
+[87m 31s] for the user so we have it partially
+[87m 35s] covered with the last test to send an
+[87m 37s] eye added to the user
+[87m 38s] but we aren't testing any of the
+[87m 41s] relationships
+[87m 42s] so we don't test that organization can
+[87m 44s] be had members
+[87m 46s] and we don't test such an organization
+[87m 48s] can own repositories
+[87m 51s] yeah okay same user so and when you
+[87m 54s] should
+[87m 55s] eat things but if you want to stick with
+[87m 57s] one and a half hour i think
+[87m 59s] it's also fine to yeah to end
+[88m 2s] commit here yeah that's just so just
+[88m 4s] thinking about next time then
+[88m 7s] when you when you think about when
+[88m 9s] you're saying we're testing the
+[88m 10s] relationships are you talking about the
+[88m 13s] a level of test where we're literally
+[88m 15s] using model factories to build those
+[88m 17s] things or you're talking about going
+[88m 18s] through the system
+[88m 19s] coming out the other side and checking
+[88m 21s] that it has
+[88m 23s] i don't know it has repositories for
+[88m 25s] example
+[88m 27s] yeah i think like the
+[88m 31s] the last test we have in this user test
+[88m 34s] file
+[88m 35s] so preparing some uh preparing a user
+[88m 38s] filling in some repositories i don't
+[88m 41s] have any factories
+[88m 42s] because i load all the data from these
+[88m 44s] picture files
+[88m 46s] and yeah for
+[88m 49s] testing relationships i have a model
+[88m 51s] assertions
+[88m 52s] class in my php unit composite assertion
+[88m 56s] package
+[88m 57s] which also has a asset related method
+[89m 2s] i think uh
+[89m 6s] let me not lie but i think
+[89m 10s] adrienne casey had the idea to edit
+[89m 22s] so
+[89m 25s] aiden sorry aiden casey
+[89m 28s] and
+[89m 32s] so if next time then we start taking a
+[89m 35s] look at perhaps those relationships
+[89m 40s] yeah and how we might we might go about
+[89m 42s] testing those
+[89m 44s] on the organization that sets us up
+[89m 46s] nicely
+[89m 47s] um yeah we've got quite a few little a
+[89m 50s] few little tests coming to the fore now
+[89m 51s] though
+[89m 52s] starting to build up isn't it yeah
+[89m 54s] definitely
+[89m 55s] so other idea would be to test the jobs
+[89m 58s] in more detail
+[89m 59s] yeah so we have this update user details
+[90m 1s] test
+[90m 2s] we can add the same one for update
+[90m 5s] organization details
+[90m 6s] and we have a lot of more
+[90m 9s] jobs so like loading the repositories
+[90m 13s] and loading contributors and
+[90m 17s] these job tests will also test uh some
+[90m 20s] relationships already
+[90m 21s] so yeah yeah i mean just just as like a
+[90m 25s] final point
+[90m 26s] and this is i guess this is just a bit
+[90m 27s] of a discussion to
+[90m 29s] finish things off do you tend to
+[90m 32s] like as you were building would you
+[90m 34s] always go for the
+[90m 36s] the level of um i want to test something
+[90m 39s] that my application does
+[90m 40s] or would you test kind of the bare bones
+[90m 43s] of how things are put together
+[90m 44s] and then build up to and this is how
+[90m 46s] they work as a unit
+[90m 49s] in general i'm a big fan of feature
+[90m 51s] tests because they are
+[90m 53s] a lot closer to how you
+[90m 56s] think your application behaves and are
+[90m 59s] also similar to
+[91m 1s] if i click this button i want this
+[91m 3s] happen
+[91m 5s] and in general we don't think in unit so
+[91m 11s] i don't care which services parts there
+[91m 13s] or how many classes or units are
+[91m 15s] implemented i just want to know if it's
+[91m 18s] a
+[91m 18s] controller or if i dispatch this job
+[91m 21s] i want this final result and
+[91m 26s] this is what feature tests cover very
+[91m 28s] nicely for me
+[91m 30s] yeah and with the new hdp
+[91m 33s] fake which i absolutely love so it's one
+[91m 37s] of
+[91m 38s] really it's one of the best things
+[91m 40s] laravel has added
+[91m 42s] since yes so not reducing the value of
+[91m 45s] all the other things but
+[91m 47s] uh mocking and faking castle itself was
+[91m 50s] a pain in the u.s
+[91m 51s] and now it's hdp fake it's so easy it's
+[91m 54s] it's yeah it's like you would expect the
+[91m 57s] formula
+[91m 58s] from level so it's so easy it's easy to
+[92m 1s] understand it's easy to
+[92m 2s] do and
+[92m 5s] yeah we were able to get it yeah
+[92m 8s] definitely
+[92m 9s] i think as well obviously the
+[92m 11s] application is already kind of
+[92m 12s] it's built it's finished it's there it
+[92m 15s] exists
+[92m 16s] so you you're not wondering what an
+[92m 19s] object is going to look like
+[92m 20s] because you have it there in front of
+[92m 21s] you it's not like you're building with
+[92m 23s] tdd where you're thinking what's this
+[92m 25s] going to
+[92m 26s] how is this going to look when i'm
+[92m 27s] finished i never do
+[92m 29s] tdd in its plane definition so i always
+[92m 33s] write the code first and says test
+[92m 35s] second
+[92m 37s] tend to be similar in my experience
+[92m 40s] there's nearly
+[92m 41s] no time uh when you're
+[92m 45s] when your ticket or task to do is cis
+[92m 48s] specific
+[92m 49s] uh written out what say the author of
+[92m 53s] the issue expects you to do
+[92m 55s] and which attributes you have to add and
+[92m 58s] how the route will be named and
+[93m 1s] all these things so i think we all know
+[93m 4s] it's if you do something
+[93m 5s] you see another problem and have to
+[93m 8s] solve it
+[93m 9s] and as a sole developer
+[93m 13s] writing the implementation first and
+[93m 15s] this test second matches much
+[93m 17s] more my
+[93m 20s] my way of doing it because otherwise i
+[93m 23s] would have to adjust to the test
+[93m 25s] several times and separate those tests
+[93m 27s] also it's the same like it
+[93m 28s] like i iterate over the implementation
+[93m 31s] and
+[93m 33s] yeah yeah yeah i think i think
+[93m 36s] i think you are muted again
+[93m 39s] right
+[93m 43s] but not terminators this time only only
+[93m 46s] silence
+[93m 48s] um yeah i think that um it kind of goes
+[93m 51s] to show there's no like
+[93m 52s] right way still silence is it is that
+[93m 54s] only me i don't
+[93m 56s] oh no can you hear me now he's coming up
+[93m 58s] here saying that i
+[94m 1s] i am talking it there still someone
+[94m 4s] watching and could write in the comments
+[94m 5s] if you can hear
+[94m 7s] luke
+[94m 11s] hi i'm not speaking so i can't hear you
+[94m 14s] i have no idea what to say
+[94m 16s] oh then oh then it's coming up for
+[94m 18s] saying that
+[94m 19s] see what someone says
+[94m 23s] hi hey luke yeah okay synchro csu so it
+[94m 26s] seems like it's
+[94m 26s] it's me
+[94m 31s] i mean i think let me just
+[94m 34s] private chat you because
+[94m 40s] right um so
+[94m 44s] hopefully tom can hear us just before
+[94m 46s] the end but i think we've kind of come
+[94m 48s] to a logical conclusion for today's
+[94m 51s] uh stream i hope you've enjoyed some of
+[94m 54s] the cool stuff
+[94m 55s] that's been added to past recently it is
+[94m 58s] becoming honestly like an absolute joy
+[95m] to work with
+[95m 1s] um and going back to
+[95m 5s] standard tests feels quite gross to be
+[95m 8s] honest
+[95m 8s] so if you've not yet picked test up in a
+[95m 10s] real project to go and do it
+[95m 12s] and uh yeah if this stuff that you you
+[95m 16s] have a questions you have then
+[95m 17s] get in touch with myself
+[95m 21s] or you know you know if he's not busy
+[95m 25s] on twitter and we'll try and pick it up
+[95m 27s] um
+[95m 28s] or any of the past team there it's a
+[95m 30s] real cool community to be fair
+[95m 32s] and obviously getting larger all the
+[95m 34s] time seems to have
+[95m 36s] spiked in interest a lot lately which is
+[95m 37s] really nice so
+[95m 40s] thanks for watching really appreciate
+[95m 41s] you all being here again and we'll be
+[95m 43s] streaming again next week
+[95m 44s] so we'll see you there can you hear us
+[95m 47s] again tom you
+[95m 48s] i can hear you you're back i just want
+[95m 50s] to say thanks
+[95m 51s] uh very much for joining us again really
+[95m 53s] appreciate that
+[95m 57s] and it's been it's been cool to hang
+[96m] and uh yeah i will see you all next week
+[96m 3s] then
+[96m 4s] yeah thank you for inviting me again so
+[96m 8s] have a nice week and thank you for
+[96m 10s] contributing the tests
+[96m 15s] yo it's my pleasure it's nice to work on
+[96m 17s] someone else's code
+[96m 21s] all right take care guys and have a good
+[96m 23s] evening or whatever time zone you're in
+[96m 26s] enjoy it bye
+[96m 29s] bye

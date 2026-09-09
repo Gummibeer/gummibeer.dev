@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\CarbonImmutable;
 use Illuminate\Http\Request;
 use Spatie\Sitemap\Sitemap;
 use Spatie\Sitemap\Tags\Url;
@@ -24,6 +25,19 @@ class GetSitemapController
                     Url::create($entry->absoluteUrl())
                         ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
                         ->setLastModificationDate($entry->last_modified_at)
+                        ->setPriority(1)
+                );
+            });
+
+        Entry::query()
+            ->where('collection', 'streams')
+            ->whereStatus('published')
+            ->get()
+            ->each(function (EntryContract $entry) use ($sitemap): void {
+                $sitemap->add(
+                    Url::create($entry->absoluteUrl())
+                        ->setChangeFrequency(Url::CHANGE_FREQUENCY_DAILY)
+                        ->setLastModificationDate(CarbonImmutable::createFromTimestamp(filemtime($entry->path())))
                         ->setPriority(1)
                 );
             });

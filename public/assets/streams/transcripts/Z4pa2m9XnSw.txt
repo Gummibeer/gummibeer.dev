@@ -1,0 +1,3130 @@
+[0s] all right i think we are live
+[3s] now hello everyone welcome back to
+[7s] part three of our adventure
+[12s] so this should be yeah this is part
+[14s] number three
+[16s] we the previous two videos i'm going to
+[18s] link to in the description of the video
+[20s] and this time today so we've done the
+[23s] basic work on the package
+[24s] and today we're going to work well tom
+[27s] is going to take over
+[29s] finally i can sit back and relax and
+[31s] he's going to show us
+[32s] github actions what else did you say
+[34s] some
+[36s] files and exactly so yeah
+[39s] some github meta files so
+[43s] files you can create and github will
+[46s] pass so like the license
+[48s] file for example but there are also some
+[51s] more files
+[52s] and yeah some some secrets
+[57s] you can do with github uh you don't have
+[1m] to
+[1m] but yeah you can and it makes your life
+[1m 3s] a bit easier
+[1m 4s] possibly more likely and yeah
+[1m 8s] cool so today it's not really about the
+[1m 10s] package it's
+[1m 11s] more about github and things you can do
+[1m 14s] with github to make your package life
+[1m 16s] easier
+[1m 17s] okay and your package is also more
+[1m 19s] stable for example
+[1m 21s] like with github actions yeah okay
+[1m 25s] let's start with you again yeah ken
+[1m 29s] so i'm susanna i'm a larabee founder
+[1m 32s] and i'm a web developer honestly i need
+[1m 36s] to work on my elevator
+[1m 38s] pitch because i never know what to say
+[1m 39s] about myself but yeah
+[1m 41s] and you've got it there on the screen
+[1m 44s] what about you tom
+[1m 46s] yeah one thing i yeah
+[1m 49s] i thought the last two weeks and always
+[1m 51s] forgot what is larabelle
+[1m 53s] so for our viewers who haven't
+[1m 56s] seen the larabee's website okay so
+[1m 59s] larabelles
+[2m] is a community for women non-binary and
+[2m 3s] trans developers
+[2m 5s] and we are trying to uh
+[2m 8s] like amplify i mean the the pitch is to
+[2m 11s] amplify the voices
+[2m 12s] of developers uh
+[2m 15s] but i think in general i'm trying to do
+[2m 17s] is and not only make more
+[2m 19s] uh women non-binary and a trans
+[2m 21s] developer was more visible within the
+[2m 23s] labour community because
+[2m 24s] it seems like there aren't many but
+[2m 26s] there's quite a few of us
+[2m 27s] and so i'm working to you know make sure
+[2m 29s] that people know about us and so they
+[2m 31s] don't there's no more excuses as in like
+[2m 33s] oh we don't have any female speakers
+[2m 35s] because we don't know about any
+[2m 36s] well now if you want to have any female
+[2m 38s] speakers in your meet up or conferences
+[2m 40s] you can go to
+[2m 41s] okay right now if you go to arbor's
+[2m 43s] website you're not going to see much
+[2m 45s] however this is going to change soon so
+[2m 47s] we're going to have a directory of all
+[2m 49s] or not all well i'm working on a
+[2m 51s] directory of uh
+[2m 52s] laravel developers that you could
+[2m 54s] contact yeah this is the old ugly
+[2m 56s] website
+[2m 57s] it's not going to be this for much
+[2m 59s] longer i promise
+[3m 1s] but yes so and other things that we are
+[3m 4s] doing is other than me building this
+[3m 6s] directory of minor developers we have a
+[3m 8s] newsletter we have a discord channel i'm
+[3m 11s] trying to encourage women to
+[3m 12s] do what me and you are doing right now
+[3m 14s] to be take more
+[3m 16s] public role in the you know be
+[3m 20s] more visible in public and maybe do more
+[3m 22s] learning online in public
+[3m 23s] just so that you know it's not always
+[3m 25s] men doing tutorials and men doing
+[3m 27s] everything like
+[3m 28s] we are there we exist so i'm trying to
+[3m 31s] i'm hoping to you know help women
+[3m 34s] non-binary and entrance trans developers
+[3m 37s] to feel more comfortable
+[3m 39s] being in the public eye so that and i
+[3m 42s] can tell you all
+[3m 43s] they are definitely here very
+[3m 47s] capable or yeah cool developers
+[3m 50s] also in the in the female and
+[3m 54s] trans and community so
+[3m 58s] i'm only in the public part of the
+[3m 59s] larva's discord but
+[4m 1s] some cool things already showed up there
+[4m 4s] so
+[4m 4s] yeah yeah it's going to
+[4m 8s] yeah and we're working it's a work in
+[4m 10s] progress i mean
+[4m 11s] i i when i see something that needs
+[4m 14s] doing or that could be beneficial to a
+[4m 15s] community i try to start it so i don't
+[4m 18s] have a
+[4m 18s] like a year-long plan i just you know
+[4m 20s] pay attention to what's going in the
+[4m 22s] community and
+[4m 23s] and i react to what people want and need
+[4m 26s] so yeah okay let's move on
+[4m 30s] we should have done that like in part
+[4m 32s] one but anyway
+[4m 34s] we should have but i thought better
+[4m 36s] later than never
+[4m 37s] exactly exactly so now to my part
+[4m 41s] uh i'm tom uh possibly also known as
+[4m 44s] kumibir
+[4m 45s] which is my website and twitter handle
+[4m 47s] and so on um i'm deep feb developer
+[4m 50s] primary backend focus php larval
+[4m 53s] but also biker yeah part-time gamer
+[4m 58s] primary couch co-op and single player
+[5m] and
+[5m 1s] yeah my latest addition to this title
+[5m 4s] line
+[5m 4s] is a mentor and i'm trying my best
+[5m 8s] and already had some so
+[5m 11s] if you have any questions or want to get
+[5m 14s] a review or whatever
+[5m 15s] you can always ping me on twitter or
+[5m 18s] email
+[5m 19s] and i will see what i can do for you
+[5m 22s] yeah so thank you next one
+[5m 26s] is our goals um we already checked we
+[5m 29s] should have added some cool check mark
+[5m 31s] here
+[5m 31s] yeah we already done
+[5m 35s] all of this so the package itself is uh
+[5m 38s] is available
+[5m 41s] for all i haven't
+[5m 45s] seen it yet it's this one
+[5m 48s] it's not really ready yet so we are on
+[5m 53s] versions001
+[5m 55s] but we have the basic structure and
+[5m 57s] everyone can pull requests from here
+[6m] and yeah do some cool stuff to improve
+[6m 4s] it
+[6m 5s] and we'll also see what i can do to the
+[6m 7s] next throughout the next days and weeks
+[6m 9s] so
+[6m 10s] yeah i've done some changes to the
+[6m 12s] layout of the tweet
+[6m 14s] on the local side so i just want me to
+[6m 16s] push it
+[6m 17s] and you know what you see there is still
+[6m 19s] the last week's stuff but and i also
+[6m 21s] want to
+[6m 22s] fix the readme but yeah hopefully over
+[6m 24s] the weekend
+[6m 25s] but then again it's the weekend so you
+[6m 27s] know
+[6m 30s] it will happen it will happen today
+[6m 33s] it feels like everything is weekend with
+[6m 35s] corona and home office
+[6m 37s] it's just yeah it is and last one uh
+[6m 40s] our links and resources uh
+[6m 44s] for the ones who just don't know it says
+[6m 46s] uh
+[6m 47s] these two dot new links uh published or
+[6m 50s] maintained by github so you can quickly
+[6m 53s] create a new repository or guest
+[6m 55s] and there's packages we handled in the
+[6m 57s] last minutes of
+[6m 59s] last week's stream so to publish a
+[7m 3s] package
+[7m 3s] and says shields io and banners beyond
+[7m 7s] code
+[7m 8s] we will handle in today's stream and
+[7m 11s] yeah some resources here i think susana
+[7m 15s] has
+[7m 16s] linked some now in the description and
+[7m 20s] if not it will happen but you know what
+[7m 23s] just
+[7m 24s] my defense is that i have been working
+[7m 25s] on the larabars youtube channel and it's
+[7m 27s] just yeah it takes longer than i oh it
+[7m 29s] took longer than i assumed so
+[7m 31s] i had to download the videos from my
+[7m 32s] personal account upload them to the new
+[7m 34s] one and yeah
+[7m 35s] so i am we're saying fine yeah but i
+[7m 38s] know
+[7m 39s] you don't have to defend
+[7m 42s] okay so
+[7m 45s] let's head over to phpstorm and
+[7m 49s] hi ross just saying golarability
+[7m 55s] i will go with one of my largest
+[7m 58s] packages so now the translatable one
+[8m 1s] so you see here are some yeah can you
+[8m 5s] can you increase the font i can i can
+[8m 7s] try so
+[8m 10s] how do i it's
+[8m 13s] preferences
+[8m 17s] is it two no it's font
+[8m 21s] zoom in or this really
+[8m 29s] no
+[8m 38s] fun
+[8m 40s] okay yeah so what is a 16
+[8m 43s] 16 or sometimes i have 18 but 16 should
+[8m 46s] be
+[8m 47s] i don't know go 18 if you can
+[8m 50s] so people can see really everything yeah
+[8m 53s] okay
+[8m 55s] so let's close
+[8m 59s] all the secret changes
+[9m 3s] no nothing secret it's just the changes
+[9m 6s] for the upcoming version
+[9m 8s] 12. so github actions
+[9m 12s] um i think
+[9m 16s] yeah a lot of you will have
+[9m 19s] already heard about them as they
+[9m 25s] have nearly replaced all other
+[9m 28s] continuous integration tools like
+[9m 29s] travis or circle ci also also stuff
+[9m 33s] because they are so powerful flexible
+[9m 37s] easy to integrate and primarily really
+[9m 40s] integrated into
+[9m 42s] github because they are made by github
+[9m 45s] so
+[9m 46s] github actions can do things you weren't
+[9m 48s] able to do with travis ci for example
+[9m 50s] before
+[9m 52s] so this is a landing page for actions
+[9m 55s] and if we go down and put here
+[10m] you see a lot of tools you can use here
+[10m 4s] so for example you can automate
+[10m 6s] automatically label
+[10m 7s] pull requests if they come in so if a
+[10m 10s] pull request contains a keyword you can
+[10m 12s] automatically apply as a
+[10m 14s] label bug fix or
+[10m 17s] feature or whatever you want you can
+[10m 20s] also
+[10m 21s] deploy your applications to nearly
+[10m 24s] everything so you have for sure
+[10m 27s] for google cloud amazon web services
+[10m 32s] also hetzner and digitalocean and
+[10m 36s] yeah everything and something
+[10m 40s] i use on my packages for example is also
+[10m 43s] this
+[10m 44s] stale action which helps you to keep
+[10m 47s] your yeah your issues and pull requests
+[10m 50s] clean
+[10m 51s] because as a maintainer you will
+[10m 55s] face those situations that someone opens
+[10m 57s] an issue
+[10m 58s] you respond to it and nothing happens
+[11m 2s] so he reports for example a bug in his
+[11m 6s] opinion
+[11m 7s] and you ask for for feedback
+[11m 10s] more details a stack trace or whatever
+[11m 13s] and nothing happens and yeah you don't
+[11m 16s] want to
+[11m 17s] go through all your open issues every
+[11m 20s] day or every week and check
+[11m 22s] is it stale is it still is there a new
+[11m 24s] response or whatever
+[11m 26s] so this stale action here can help you a
+[11m 29s] lot to
+[11m 30s] automatically close your issues after by
+[11m 33s] default for example seven days
+[11m 35s] for sure you can increase it to 14 days
+[11m 38s] or a month or whatever you want
+[11m 41s] you have a lot of configuration here and
+[11m 45s] a basic implementation is this one here
+[11m 49s] so every github action
+[11m 53s] workflow file is a yamacon
+[11m 56s] is a yama file and it's placed in
+[12m] dot github as in directory and the
+[12m 3s] subdirectory workflows
+[12m 5s] it has to be this way exactly this has
+[12m 9s] to be
+[12m 10s] this dot github directory is also used
+[12m 12s] for other things like
+[12m 14s] you can see here issue templates for
+[12m 15s] example
+[12m 17s] and it's the same for pull request
+[12m 19s] templates
+[12m 20s] and you can also place your license file
+[12m 22s] in here if you don't want it
+[12m 24s] in in the root directory
+[12m 28s] so yeah this is directory
+[12m 31s] reserved by github and the workflows are
+[12m 35s] yeah it's a workflow set directory and
+[12m 39s] every workflow has this
+[12m 42s] on keyword which lists the triggers
+[12m 47s] this workflow will handle if you
+[12m 51s] check out the github actions
+[12m 56s] documentation
+[13m 2s] i will
+[13m 6s] you here
+[13m 8s] [Music]
+[13m 12s] says somewhere let's get back
+[13m 16s] [Music]
+[13m 18s] um
+[13m 20s] yeah so workflow syntax
+[13m 26s] and this lists all keys
+[13m 29s] you can define
+[13m 32s] and forces on for example
+[13m 36s] you have several available triggers
+[13m 39s] so you can run this workflow and push so
+[13m 43s] push is triggered if someone pushes
+[13m 46s] changes to this repository
+[13m 50s] so it isn't triggered by forks for
+[13m 52s] example so
+[13m 54s] if susana would create this workflow
+[13m 57s] triggered by push
+[13m 58s] and her new labels
+[14m 2s] uh package and i fork it do some changes
+[14m 5s] and uh create a pull request
+[14m 9s] these actions won't run for my changes
+[14m 12s] until susana clicks
+[14m 13s] merge to run these
+[14m 17s] workflows also in pull requests you have
+[14m 19s] also this pull request
+[14m 22s] trigger and you can also
+[14m 27s] limit it by branches for example so
+[14m 31s] for pull requests it could be that you
+[14m 32s] only want to run
+[14m 35s] cs this workflow on pull request with
+[14m 39s] the main
+[14m 39s] branch or for earlier repositories it
+[14m 43s] will
+[14m 44s] be master um as a target
+[14m 47s] so if someone's create a pull request
+[14m 50s] and targets
+[14m 51s] whatever's a develop branch for example
+[14m 54s] or
+[14m 54s] any other branch this will also not run
+[14m 58s] okay and it's the same for push so
+[15m 2s] if you want to do
+[15m 5s] a final build for example if something
+[15m 8s] is pushed to your to your main branch
+[15m 11s] you can
+[15m 12s] limit it by push branches main and
+[15m 16s] you can push to all the other branches
+[15m 18s] and this workflow will still
+[15m 19s] not run okay yeah
+[15m 23s] you also have a release for example this
+[15m 27s] is a super useful
+[15m 28s] if you want to do deployment um
+[15m 31s] or binary compilation so for example if
+[15m 35s] you have
+[15m 36s] not php but an electron app for example
+[15m 39s] and you automatically want to create
+[15m 41s] some binaries for windows mac os and so
+[15m 44s] on
+[15m 45s] you can use this release trigger say
+[15m 49s] created which limits the
+[15m 52s] release trigger to create so it's not
+[15m 55s] run
+[15m 56s] if you added an existing release for
+[15m 59s] example
+[16m] or if you only pre-release it
+[16m 5s] um so you have here these other
+[16m 7s] available types
+[16m 9s] and yeah you can do whatever you want
+[16m 12s] like deploy and website on release or
+[16m 15s] build binaries you can attach to this
+[16m 17s] release
+[16m 20s] exactly so here you have
+[16m 24s] the sub configurations like types
+[16m 26s] branches and tags
+[16m 28s] um you can also use wildcards so
+[16m 32s] if you have a branch naming convention
+[16m 35s] in your
+[16m 36s] company for example and you want to run
+[16m 39s] this
+[16m 39s] uh workflow for all yeah like your
+[16m 43s] releases
+[16m 44s] branches so if you use this full git
+[16m 47s] flows
+[16m 48s] uh convention or you want to
+[16m 51s] do it for death punches or feature or
+[16m 54s] whatever or
+[16m 55s] yeah tags you can also use wildcards
+[16m 59s] and yeah you can also ignore specific
+[17m 3s] branches or tags
+[17m 6s] there's a lot you can do yeah
+[17m 10s] surpass configuration it's really useful
+[17m 12s] if you want to
+[17m 14s] trigger this workflow by every push but
+[17m 17s] only
+[17m 17s] if specific fight specific files have
+[17m 20s] changed
+[17m 21s] so this is useful i have this composer
+[17m 25s] normalize
+[17m 26s] um for the ones you don't know
+[17m 30s] says this package
+[17m 33s] and i think they have changed the seven
+[17m 36s] or also owner
+[17m 38s] um i will check it
+[17m 43s] no okay it's and
+[17m 46s] this command this package
+[17m 49s] adds this composer normalize command
+[17m 52s] which helps you to keep
+[17m 54s] your composer.json file in specific
+[17m 58s] order of these elements so if i move
+[18m 1s] this
+[18m 2s] outer section for example down here
+[18m 5s] and also change
+[18m 10s] the order of my required dependencies so
+[18m 12s] it's the aren't
+[18m 13s] alphabetically ordered and
+[18m 16s] now i
+[18m 20s] run compose and normalize
+[18m 25s] i have to do a composer up at first
+[18m 32s] so once wandering you can use
+[18m 36s] shorter parts of the original command so
+[18m 38s] this is
+[18m 39s] composer update in original
+[18m 42s] and as long as the shorter part is
+[18m 44s] unique it will automatically
+[18m 46s] match so install for example you have to
+[18m 49s] use a bit longer as there are commands
+[18m 53s] versus in
+[18m 54s] naming yeah um
+[18m 57s] but i can also do this for example
+[19m] i think that this is powered by uh the
+[19m 4s] underlying symphony
+[19m 6s] process component and not process
+[19m 8s] console component
+[19m 10s] and i think artisan supports it's the
+[19m 13s] same way
+[19m 14s] you can do uh
+[19m 17s] always only the first letter of these
+[19m 21s] different parts and it will match if
+[19m 22s] it's
+[19m 23s] yeah if it can match and now you'll see
+[19m 26s] everything is
+[19m 27s] uh sorted backs out to this top here
+[19m 30s] or requirements are in alphabetical
+[19m 33s] order
+[19m 34s] and i'm back to only this change
+[19m 39s] yeah and because i like it so much i
+[19m 42s] enforce it uh with the github actions
+[19m 45s] workflow
+[19m 47s] and i run it always if the composer.json
+[19m 50s] file has changed on push
+[19m 52s] this is a useful case of pass for
+[19m 55s] example
+[19m 56s] another one is if you want to pretty
+[19m 58s] fine
+[20m] your markdown files oj javascript files
+[20m 3s] for example
+[20m 4s] you can use all those file card here so
+[20m 7s] this action is triggered for every
+[20m 10s] markdown file
+[20m 11s] i'm not sure i think i have to use two
+[20m 15s] asterisks to match really every markdown
+[20m 18s] file
+[20m 19s] okay in the repository but i only want
+[20m 21s] to match the one
+[20m 22s] in one
+[20m 25s] in the root directory oh okay so if you
+[20m 27s] have one asterisk it only matches
+[20m 29s] whatever is in the root directory but if
+[20m 31s] you use
+[20m 31s] two asterisks it will match everything
+[20m 33s] within the whole repository
+[20m 38s] yeah i think under the hood it uses a
+[20m 41s] javascript node.js glob function
+[20m 45s] um or at once that's pretty similar
+[20m 48s] and you can also do
+[20m 52s] sales for example that matches every
+[20m 54s] markdown file
+[20m 55s] in in sub-directories
+[20m 59s] possibly it could be also said you have
+[21m 3s] combined them if we want to match really
+[21m 5s] every markdown file
+[21m 7s] so this one you possibly have to play a
+[21m 10s] bit around with
+[21m 12s] and this also exactly one step you have
+[21m 16s] to do
+[21m 17s] and that's a bit disadvantage
+[21m 20s] of uh github actions so there's
+[21m 23s] no local way to test them
+[21m 26s] so i was i was just going to ask you how
+[21m 28s] do you say like you might have to play
+[21m 30s] around with the markdown files like
+[21m 32s] how too much what you want to match so
+[21m 34s] how would you test it then
+[21m 35s] to make sure you always have to trigger
+[21m 37s] it so
+[21m 39s] if you have this push for example and
+[21m 41s] you want to to test this path filter
+[21m 44s] you will have to push this action
+[21m 47s] for sure and after this uh create a new
+[21m 50s] push
+[21m 50s] when you changed uh open your markdown
+[21m 54s] and
+[21m 54s] just add a line break or whatever you
+[21m 57s] want
+[21m 58s] the best thing you can do is create a
+[22m] new
+[22m 1s] repository just for playing around with
+[22m 3s] github actions
+[22m 5s] and yeah create your
+[22m 9s] github action you want to use because
+[22m 12s] this one is
+[22m 13s] i always copy it just copy paste it it's
+[22m 15s] always the same
+[22m 16s] it doesn't care about the package or
+[22m 19s] repository itself
+[22m 21s] it doesn't install or require any
+[22m 24s] package package.json or whatever
+[22m 26s] it uses this docker container here
+[22m 29s] it's a pretty action and
+[22m 34s] yeah some other things here
+[22m 37s] or the next thing this is jobs key
+[22m 41s] and this is
+[22m 46s] down here you can define
+[22m 49s] multiple jobs for one workflow
+[22m 52s] so linting for example is a good example
+[22m 56s] um if you have php and javascript
+[23m 1s] dependencies in your repository so a
+[23m 3s] package.json and a composer.json
+[23m 6s] and you very likely want to lint both
+[23m 10s] of them so you want to run as lind for
+[23m 13s] example
+[23m 14s] and php cs fixer or
+[23m 19s] titan tland or whatever tools you want
+[23m 21s] to use
+[23m 22s] and to make this easier or faster
+[23m 26s] you can run some in different jobs
+[23m 29s] so you would create a a php cs job and
+[23m 33s] an
+[23m 34s] eslint job for example and
+[23m 38s] you can configure them configure them to
+[23m 41s] run
+[23m 41s] in parallel so this is also the default
+[23m 45s] and if you if every job is dependent
+[23m 49s] so for example a deployment
+[23m 53s] uh you only want to deploy if the test
+[23m 57s] and build and
+[23m 59s] linting and also stuff has passed
+[24m 3s] says does the order of the jobs matter
+[24m 9s] so what are not no it's
+[24m 12s] it's just here
+[24m 16s] can you can you make it so oh there you
+[24m 18s] go yeah
+[24m 19s] well can you make it so that if one job
+[24m 21s] finishes then you run another one that's
+[24m 23s] dependent only on the first one
+[24m 24s] finishing
+[24m 25s] exactly so yeah this one here
+[24m 29s] run job one job2
+[24m 33s] needs job1 and job3 needs job1
+[24m 37s] and job2 to finish so
+[24m 40s] you can also do remove this one
+[24m 43s] and in this case job 1 and job 2 will
+[24m 46s] run
+[24m 46s] in parallel and job 3 will wait to
+[24m 50s] suppose jobs have finished okay and
+[25m 2s] you can also
+[25m 6s] notice this one not um
+[25m 14s] no it was you know it was cloudy and
+[25m 16s] raining all day and just as i'm
+[25m 19s] doing this i've got this sun right in my
+[25m 21s] face
+[25m 22s] i'm just gonna move this way it's gonna
+[25m 25s] move
+[25m 27s] okay no idea
+[25m 31s] but surplus here uses
+[25m 36s] noses already um
+[25m 46s] it up has really improved it so
+[25m 51s] if you run a job you have this
+[25m 54s] this board here and you can zoom in and
+[25m 57s] out
+[25m 58s] if if there's more and if you have
+[26m 1s] dependent jobs
+[26m 2s] you will have a another box on the right
+[26m 6s] and see connection lines between
+[26m 9s] the dependent job so you can have a
+[26m 12s] great graph
+[26m 13s] and can see so if
+[26m 16s] if the job runs here will be i think a
+[26m 19s] spinner
+[26m 20s] so you see okay this is running and
+[26m 23s] after this they get the screen
+[26m 25s] check so you see okay so this is
+[26m 26s] finished this is finished
+[26m 28s] and you can also click on each of them
+[26m 31s] and
+[26m 32s] see here how far server side output here
+[26m 37s] and if they are running it's the same so
+[26m 39s] it starts with a spinner here get the
+[26m 41s] checks here
+[26m 42s] next spinner here and so on um
+[26m 47s] if you have a longer one like the test
+[26m 51s] so it's a really large test suite
+[26m 56s] and yeah
+[27m] you also see every output here like
+[27m 3s] setup php
+[27m 7s] executes the test
+[27m 10s] it also supports a colored output so
+[27m 14s] you can use a unzi flag for every
+[27m 17s] command
+[27m 18s] if it isn't by default so you get cool
+[27m 21s] colored output and can easily detect
+[27m 24s] everything
+[27m 26s] yeah okay
+[27m 30s] so this is for more complex setups and
+[27m 34s] i think you won't need it for packages
+[27m 37s] but it's really useful if you use github
+[27m 40s] actions for
+[27m 41s] your own possibly company applications
+[27m 44s] so
+[27m 44s] if you want to create a deployment
+[27m 46s] pipeline
+[27m 47s] or whatever
+[27m 52s] so and
+[27m 55s] something else that gets useful because
+[27m 58s] in
+[27m 58s] private repositories you pay per minute
+[28m 2s] and composer
+[28m 5s] version one i think with two
+[28m 8s] it's fixed has sometimes
+[28m 13s] like a hiccup and just stop
+[28m 16s] doing anything but hasn't
+[28m 20s] killed the process and this ended in
+[28m 25s] yeah running running and running and one
+[28m 29s] hour later you check and your
+[28m 31s] github workflow is still running and
+[28m 34s] you check your credit card and
+[28m 39s] it's also running running so
+[28m 43s] uh with timeout minutes you can define
+[28m 46s] uh the maximum amount of minutes this
+[28m 50s] work
+[28m 50s] or this job is allowed to run so
+[28m 53s] for very simple ones like a pretty up
+[28m 56s] or it's a composer normalize command
+[28m 59s] here
+[29m 1s] say finish in around 20 to 30 seconds
+[29m 6s] so it's okay to tell one minute
+[29m 10s] more complex ones like
+[29m 14s] a normal test one with uh
+[29m 18s] setting up php installing all the
+[29m 20s] composer dependencies running php unit
+[29m 23s] and so on you will
+[29m 26s] more likely have we can see check it out
+[29m 30s] i think it's around one yeah one minute
+[29m 34s] also um if we go with uh
+[29m 40s] yeah it's around one minute always
+[29m 43s] um so for safety i would say like three
+[29m 48s] minutes time out
+[29m 50s] [Music]
+[29m 52s] but this is really helpful to uh not
+[29m 55s] have
+[29m 55s] blocking workflows because
+[29m 59s] you are i don't know if it's a limit on
+[30m 1s] your account or on the repository
+[30m 4s] but you definitely have a limit of
+[30m 7s] concurrent
+[30m 8s] workflows so or jobs
+[30m 13s] in my in this complex setup for example
+[30m 16s] i think
+[30m 18s] only 8 to 12 jobs are running in
+[30m 21s] parallel
+[30m 22s] and the other ones are yeah are queued
+[30m 25s] and waiting for
+[30m 27s] any of the other jobs uh finish
+[30m 30s] so if one of these jobs will run
+[30m 35s] forever without getting killed and not
+[30m 37s] finishing itself
+[30m 39s] so waiting job won't start and
+[30m 42s] this is also not cool so
+[30m 45s] this timeout is really helpful
+[30m 48s] so do you have one on that that job did
+[30m 51s] you have one there on this one
+[30m 53s] i don't have one now and one
+[30m 58s] yeah yeah exactly
+[31m 1s] again doesn't matter where in the job in
+[31m 4s] the yaml file you put it
+[31m 6s] does the order matter or not really so
+[31m 8s] order it doesn't matter only so
+[31m 10s] the level of in indentation um
+[31m 15s] so i think ptp storm has added github
+[31m 19s] workflow yaml support um
+[31m 23s] in one of the last versions so like it
+[31m 25s] says here
+[31m 27s] shamer validation incompatible types
+[31m 29s] required one of
+[31m 30s] blah blah
+[31m 34s] it will tell you if it's yeah if it's i
+[31m 36s] think
+[31m 37s] it's incorrect it even helps you with
+[31m 40s] auto suggestions like
+[31m 41s] is it is it the default of phpstorm
+[31m 43s] would you have to install a package
+[31m 46s] i think it's it's a default i haven't
+[31m 49s] installed a package but i don't know if
+[31m 51s] it's the
+[31m 52s] latest public version or if it's still
+[31m 55s] in the in the early nexus program
+[31m 58s] one um so i'm on the early access
+[32m 2s] so could be
+[32m 6s] i don't know can i see the version
+[32m 8s] somewhere
+[32m 10s] about phpstorm here so i'm on
+[32m 14s] 2023 i don't know if it's already added
+[32m 18s] in 2022.
+[32m 20s] let me check which one do i have i've
+[32m 21s] got 2020
+[32m 23s] 1.4 so you should definitely update it
+[32m 26s] yeah it's not something you check often
+[32m 30s] you know
+[32m 30s] just shouldn't it update like
+[32m 32s] automatically
+[32m 34s] uh no only minor updates
+[32m 38s] but it it always tells you somewhere on
+[32m 40s] on the lower end here such as an update
+[32m 42s] and you should install it
+[32m 44s] you know the things that i ignore with
+[32m 46s] 2021 you are
+[32m 48s] unable to use php 8 features oh really
+[32m 52s] yeah php support was added in 2023
+[32m 56s] okay i'm not going to update it now
+[32m 59s] because i'm afraid
+[33m 2s] that's the reason why i've
+[33m 6s] joined the early access program because
+[33m 8s] i need php
+[33m 10s] 8 support before official php storm
+[33m 14s] release for yeah for
+[33m 17s] packages and okay so i had to join the
+[33m 21s] early exodus program
+[33m 25s] another important key is this runs on
+[33m 28s] you can see it here by default
+[33m 32s] i don't know if it's really to default
+[33m 34s] by github
+[33m 37s] but yeah
+[33m 41s] you can pick one of these uh
+[33m 44s] yeah of c's uh operation system
+[33m 48s] versions and types one thing
+[33m 52s] to notice um github actions if you have
+[33m 54s] to paste them so
+[33m 56s] in a in a private repository surprising
+[33m 59s] for
+[34m] linux windows and mac os is different
+[34m 3s] linux is the cheapest windows is
+[34m 6s] like the second one and mac os is
+[34m 9s] don't use it if you don't really really
+[34m 12s] really need it it's like three times as
+[34m 16s] much
+[34m 16s] or something i don't know hold on can i
+[34m 20s] just so
+[34m 20s] you're saying with a private repo you
+[34m 23s] have to pay for it doesn't mean that
+[34m 24s] any private repo you would have to pay
+[34m 26s] for github actions
+[34m 28s] or only specific or forever so any
+[34m 31s] private repo you have
+[34m 32s] if you want to use github actions you
+[34m 34s] have to pay for it okay
+[34m 35s] yeah not from the beginning so
+[34m 39s] you have these included minutes with the
+[34m 42s] free account you have 2000 minutes per
+[34m 44s] user
+[34m 45s] with a pro or team account you have
+[34m 47s] three three thousand minutes
+[34m 50s] and enterprise fifty thousand um
+[34m 54s] c three three thousand if you have an
+[34m 56s] organization with a team
+[34m 58s] plan uh say ah per
+[35m 1s] cis organization so it it
+[35m 5s] it's not dependent if you have one or
+[35m 8s] 10 or 100 members committing and pushing
+[35m 12s] so you have these three thousand
+[35m 14s] missiles if you have
+[35m 16s] 1000 employees and everyone pushes
+[35m 19s] one time per day and triggers a workflow
+[35m 23s] running for
+[35m 24s] three minutes you are done with one day
+[35m 26s] of work
+[35m 28s] and i have to pay
+[35m 31s] for it and here you see linux is uh
+[35m 34s] yeah 0.8 cents and windows is 1.6 cents
+[35m 39s] and
+[35m 40s] mac os is 8 cents so this is not the
+[35m 43s] cheaper it's really 8 cents so 10
+[35m 45s] 10 times as much as linux mod why
+[35m 48s] and yeah because
+[35m 51s] mega s isn't this easy to spin up
+[35m 57s] i think for linux you can use whatever
+[35m 59s] you want you can use a docker container
+[36m 1s] or as there are a ton of virtualization
+[36m 5s] boxes or whatever you want
+[36m 7s] it's relatively the same for windows but
+[36m 12s] it's not so easy to spin up a mac os
+[36m 15s] operation system
+[36m 16s] and i think it could all it could also
+[36m 18s] be some
+[36m 19s] license stuff so apple wants
+[36m 23s] to have four cents of these eight cents
+[36m 25s] or whatever
+[36m 27s] probably or ten
+[36m 35s] yeah and
+[36m 38s] one thing to mention here possibly also
+[36m 42s] good um
+[36m 45s] all my astro atomic uh packages are
+[36m 48s] licensed as a tree where here
+[36m 50s] yeah and it's it's a new kind of stuff
+[36m 54s] like
+[36m 54s] space here has used the post hardware
+[36m 56s] for example
+[36m 58s] um it's just yeah
+[37m 3s] in theory you are enforced if you use it
+[37m 5s] in production
+[37m 7s] but for sure i can't control it so good
+[37m 10s] luck checking that
+[37m 12s] um but because of
+[37m 15s] uh yeah our current climate situation
+[37m 18s] and so on uh
+[37m 19s] planting trees is definitely one ray and
+[37m 23s] this
+[37m 23s] this link is a bit outdated but it's
+[37m 25s] redirected with ecology
+[37m 27s] it's uh really easy to do so there's
+[37m 30s] this trivia forest
+[37m 32s] it's already in the top 20 of the
+[37m 33s] ecology leaderboard
+[37m 35s] and you can say give tree just pick
+[37m 38s] whatever you want
+[37m 40s] you can see it's it's really not this
+[37m 43s] expensive so
+[37m 44s] 25 to use for four euros
+[37m 49s] it isn't said you get poor and end on
+[37m 52s] the street
+[37m 53s] yeah and
+[37m 56s] the connection to github actions is that
+[38m] every minute of you using any action
+[38m 4s] for sure consumes a server as
+[38m 7s] serverless isn't really serverless there
+[38m 9s] are still
+[38m 10s] still hardware running your code and
+[38m 15s] our data centers are one of the yeah
+[38m 18s] of the bigger problems and in our
+[38m 21s] climate situation because of
+[38m 23s] all this cooling stuff you have to run
+[38m 25s] for a data center
+[38m 27s] and so also you as a maintainer have the
+[38m 30s] chance to
+[38m 32s] yeah to keep your footprint low
+[38m 35s] as possible yeah to offset your your
+[38m 37s] damage you're doing to
+[38m 39s] damage you want to make it sound really
+[38m 41s] bad every time you run github actions
+[38m 43s] you are damaging the environment
+[38m 44s] remember that next time you're running
+[38m 46s] it like twice a day
+[38m 49s] so even if you don't have to pay for it
+[38m 52s] as a
+[38m 53s] as a open source maintainer with a
+[38m 55s] public repository
+[38m 56s] you still don't have to like runs on
+[39m] you can use this matrix here
+[39m 5s] so don't do this this
+[39m 8s] right now only for this work in progress
+[39m 10s] testing
+[39m 13s] so i can be really sure i will reduce it
+[39m 17s] to
+[39m 18s] this later um
+[39m 22s] that's a really interesting really
+[39m 24s] important point to raise though like
+[39m 25s] it's really good that you mentioned it
+[39m 27s] that like it's not just the minute you
+[39m 29s] pay to github potentially
+[39m 31s] it's the reason there is a reason behind
+[39m 34s] that and
+[39m 35s] yeah and you can also reduce it
+[39m 38s] like if you don't
+[39m 42s] have a php application because with php
+[39m 44s] it's
+[39m 45s] super unlikely that windows on mac os we
+[39m 48s] have difference and ubuntu
+[39m 50s] says only a handful of functions uh
+[39m 54s] behaving different on different uh
+[39m 57s] operation systems
+[39m 58s] and there are only a few use cases that
+[40m 2s] you need one of these functions
+[40m 4s] so in like 99 of the cases php is php
+[40m 9s] and runs the same on every operation
+[40m 11s] system
+[40m 13s] but for sure s code behaving different
+[40m 16s] of different operation systems
+[40m 18s] and if you have to test it there are
+[40m 21s] still ways like using
+[40m 23s] different uh jobs or workflows
+[40m 27s] possibly and using filters here so
+[40m 31s] test your code for example only with
+[40m 33s] ubuntu on
+[40m 35s] your on your develop branches and
+[40m 38s] run the windows and make us tests only
+[40m 40s] on your
+[40m 41s] on your main branch so after a after
+[40m 44s] merging or
+[40m 45s] possibly even only before
+[40m 49s] before releasing so if you put it into a
+[40m 51s] reese branch
+[40m 55s] these are also possibilities you keep
+[40m 57s] your
+[40m 58s] your workflow time so also your feedback
+[41m 2s] time
+[41m 2s] as your developers have to rate for
+[41m 6s] finishing all these jobs
+[41m 9s] but also your footprint as small as
+[41m 12s] possible
+[41m 13s] yeah cool
+[41m 17s] yeah so
+[41m 22s] the next important part here is so
+[41m 24s] strategy
+[41m 26s] um it's like the configuration
+[41m 30s] in uh containing those matrix and so on
+[41m 34s] so
+[41m 36s] on which kinds of
+[41m 39s] uh of configurations your
+[41m 42s] workflow runs um by default you only
+[41m 46s] have one
+[41m 46s] like here it says timeouts after a
+[41m 50s] minute it runs on ubuntu and the cs has
+[41m 53s] seized two steps so it checkouts the
+[41m 55s] code runs the pretty fire
+[41m 56s] and it's done and sets it
+[42m] and like you have seen on github
+[42m 4s] this workflow creates like
+[42m 7s] i think it was 20 jobs so
+[42m 11s] this is done by the matrix um
+[42m 14s] so you can see i haven't done a lot in
+[42m 17s] the last days
+[42m 27s] you create a matrix of all these
+[42m 29s] variables
+[42m 31s] so i run on php eight and seven four on
+[42m 34s] log level eight and seven
+[42m 37s] i use these prefer lowest and prefer
+[42m 39s] stable flag for
+[42m 40s] composer install
+[42m 44s] down here or compose update
+[42m 48s] and also
+[42m 53s] every of these runs on ubuntu
+[42m 58s] and i can also use this include
+[43m 3s] to add new variables
+[43m 6s] so for every job such has
+[43m 9s] solar 7 configuration
+[43m 12s] independent of php dependency version or
+[43m 15s] operation system
+[43m 17s] it will add the testbench version 5
+[43m 20s] variable
+[43m 21s] yeah and yeah
+[43m 24s] same for if it's number eight it will be
+[43m 27s] test match six
+[43m 29s] um you can also
+[43m 32s] say uh primary if you support
+[43m 36s] a large range of love regressions well
+[43m 38s] this is what caps
+[43m 41s] exclude
+[43m 44s] um like larval
+[43m 49s] i don't know ticket six um
+[43m 53s] doesn't have support for php eight
+[43m 58s] and so
+[44m 1s] if i would add normal six up here
+[44m 6s] um it will exclude the configuration
+[44m 10s] uh set we'll use level 6 and php 8.
+[44m 14s] so it won't run lava 6 on php 8 with
+[44m 17s] preferred laws prefer stable
+[44m 19s] and on ubuntu these will
+[44m 22s] be killed um
+[44m 27s] one thing you can do with include is
+[44m 29s] also adding
+[44m 31s] totally new configurations so
+[44m 36s] for example um if you want to run
+[44m 40s] php with uh i don't know
+[44m 43s] uh just use this right now and
+[44m 47s] run your tests on on the latest nightly
+[44m 50s] build of php
+[44m 53s] don't take this for granted this could
+[44m 55s] be different but
+[44m 56s] you know what i mean um and
+[45m] yeah only use the latest large version
+[45m 2s] for it
+[45m 4s] you can add this here it will be
+[45m 7s] also prefer
+[45m 12s] energy version
+[45m 16s] um
+[45m 27s] if you add a totally new configuration
+[45m 29s] you have to
+[45m 30s] define all matrix variables you have you
+[45m 34s] want to use
+[45m 35s] that's why i also define this dependency
+[45m 38s] version and os
+[45m 39s] right here because
+[45m 43s] otherwise these two variables will
+[45m 44s] simply be undefined
+[45m 46s] um yes should you add them to the two
+[45m 49s] above ones as well to the level eight
+[45m 51s] that's bench
+[45m 52s] six should you should they all have the
+[45m 53s] same thing oh yeah
+[45m 55s] yeah it's just one as well so
+[46m] really define everything so uh github
+[46m 3s] will
+[46m 4s] go here see okay you want to include
+[46m 7s] something for php nightly
+[46m 10s] go up here and see it okay nightly isn't
+[46m 12s] part of this so
+[46m 13s] i will start a totally new configuration
+[46m 16s] okay so it won't use
+[46m 17s] any of these
+[46m 20s] and another thing you can define here is
+[46m 25s] fail fast which means if you have
+[46m 29s] 20 jobs right now here and
+[46m 32s] if any of these job fails
+[46m 35s] all other jobs will be killed right away
+[46m 39s] so if one of your tests fails
+[46m 43s] all running jobs will be killed and all
+[46m 46s] pending jobs won't
+[46m 47s] start okay
+[46m 49s] [Music]
+[46m 51s] this can be useful to save execution
+[46m 54s] time
+[46m 56s] it can also be problematic if you
+[47m] need feedback for all environments
+[47m 3s] because this can
+[47m 4s] also be result or result and you fix
+[47m 7s] a problem with php8 and lava 7 for
+[47m 11s] example
+[47m 12s] and because the configuration of lava 8
+[47m 15s] with
+[47m 15s] php 7 has been killed you
+[47m 18s] push the fix for 8 and 7 here and
+[47m 23s] the workflow runs again and this now
+[47m 26s] passes
+[47m 26s] but you see okay i also have a problem
+[47m 28s] with lava 8 and php 74
+[47m 31s] and yeah so this is a bit up to you you
+[47m 35s] have to see
+[47m 38s] which problems you face in your
+[47m 41s] continuous integration and if it's
+[47m 44s] useful to you to
+[47m 45s] just kill everything or yeah
+[47m 49s] run any everything to them okay
+[47m 55s] yeah and you can use
+[47m 58s] some matrix variable also here also runs
+[48m 2s] on for example
+[48m 4s] so this will use
+[48m 8s] if i would add the windows latest for
+[48m 10s] example here again
+[48m 12s] um the variable defined here
+[48m 16s] will be used and the runs on up here
+[48m 18s] yeah
+[48m 19s] so okay
+[48m 23s] and yeah you can also use them
+[48m 26s] right on the name here so you can see
+[48m 30s] on github um
+[48m 34s] you can quickly see okay this is a test
+[48m 37s] for php 7.3 with level 8
+[48m 40s] prefer stable on ubuntu and
+[48m 45s] this is the one for lot of the six
+[48m 49s] yeah okay
+[48m 53s] and going back here
+[48m 56s] so really important part for each job is
+[48m 59s] these steps here
+[49m 1s] so every code related
+[49m 5s] workflow will nearly always start with
+[49m 9s] this user's
+[49m 10s] actions checkout which just means a
+[49m 14s] checkout super repository
+[49m 17s] you have
+[49m 22s] if i go here
+[49m 26s] view workflow file
+[49m 40s] now someone backstabber linked
+[49m 44s] so you could could click here
+[49m 48s] to see which repository it is but
+[49m 52s] you can also use just copy it
+[50m] so here and you see this
+[50m 3s] usage example so
+[50m 6s] if you want to check out for example a
+[50m 9s] different repository
+[50m 11s] you can define it here you can check out
+[50m 14s] the different
+[50m 14s] reference by default it will be always
+[50m 18s] referenced triggered as a workflow
+[50m 22s] but if you want to check out because of
+[50m 25s] whatever
+[50m 26s] reason another commit you can define it
+[50m 29s] also
+[50m 31s] if you do things like this it's likely
+[50m 34s] that you have to define your own github
+[50m 36s] access token
+[50m 38s] because the one used by um
+[50m 42s] by the workflow there's one defined or
+[50m 45s] created
+[50m 46s] by default
+[50m 50s] but it's limited to um
+[50m 55s] yeah to assist repository i think
+[50m 58s] so
+[51m 2s] [Music]
+[51m 7s] exactly the token's permissions are
+[51m 8s] limited to the repositories that
+[51m 10s] contains your workflow
+[51m 12s] so with this automatically created
+[51m 15s] github token
+[51m 17s] you can't check out a different
+[51m 18s] repository as long as it's private if
+[51m 21s] it's public
+[51m 22s] you for sure can check out it
+[51m 26s] yeah you can also do the same with ssh
+[51m 28s] here
+[51m 30s] you can check out the given part or to a
+[51m 32s] given path
+[51m 33s] and large file system support
+[51m 37s] also loading sub-modules if you use
+[51m 39s] github modules
+[51m 40s] um yeah
+[51m 44s] but in most cases it will be enough to
+[51m 47s] just say
+[51m 48s] actions checkout and you are done
+[51m 52s] one thing the name here is optional so
+[51m 55s] if you want to have a shorter
+[52m] configuration jumble you can remove the
+[52m 2s] name
+[52m 5s] this is just for for the github actions
+[52m 8s] ui
+[52m 9s] so you don't see this ugly
+[52m 12s] action slash checkout but just so pretty
+[52m 16s] check out code
+[52m 19s] can be really helpful in cases like like
+[52m 22s] this here
+[52m 24s] insta dependencies is definitely clearer
+[52m 26s] than a truncated composer require
+[52m 29s] and it will end somewhere here
+[52m 33s] yeah the next one is this actions cache
+[52m 37s] which is a bit outdated in this
+[52m 39s] repository so let's
+[52m 41s] go to another one
+[52m 45s] um
+[52m 58s] github provides a cache between
+[53m 1s] runs of workflows
+[53m 5s] so for composer for example you can
+[53m 8s] cache the composer cache between runs
+[53m 13s] so that you save a bit of download time
+[53m 20s] because it has the files on the local
+[53m 22s] system
+[53m 24s] this is also available as version 2
+[53m 26s] already
+[53m 28s] you have this with a path
+[53m 31s] is the directory you want to cache
+[53m 35s] so it will cache everything in home
+[53m 38s] composer cache files
+[53m 40s] and key is the cash key it's like
+[53m 43s] redis or whatever uh key value storage
+[53m 47s] so in this case it will be dependencies
+[53m 50s] larva
+[53m 51s] includes the version we are running here
+[53m 55s] it also contains a php version we're
+[53m 58s] running
+[53m 58s] and says this helper function hash files
+[54m 2s] which will create a i think it's an md5
+[54m 6s] hash of composer json
+[54m 8s] so if your composer json change your
+[54m 10s] cache key will be different
+[54m 13s] and here we are aren't doing it
+[54m 19s] but
+[54m 22s] this one you also have this
+[54m 26s] restore keys in which you can list uh
+[54m 30s] shorter versions of this cache key so
+[54m 33s] for composer for example the composer
+[54m 36s] cache is
+[54m 37s] nearly always helpful even if the
+[54m 39s] composer json has changed
+[54m 42s] because it's likely that we only have
+[54m 44s] added or possibly
+[54m 45s] even removed a single dependency but
+[54m 48s] a lot of dependencies are still the same
+[54m 50s] it can be reused
+[54m 52s] so this is the first key we try
+[54m 55s] if this key doesn't exist we try to get
+[54m 58s] the k
+[54m 59s] the last cache with the same lava and
+[55m 1s] php version ignoring the composer.json
+[55m 6s] and if this key also doesn't exist we
+[55m 9s] try to find
+[55m 11s] as the latest cache with the same larger
+[55m 13s] version and
+[55m 15s] yeah here if even we don't find a cache
+[55m 19s] for the same lovable version we
+[55m 20s] will just take the latest cache
+[55m 22s] independent of
+[55m 24s] lava and php and whatever just take any
+[55m 26s] case you can find
+[55m 33s] a lot of updates here
+[55m 36s] this is a not an official one by
+[55m 39s] github but the community one and
+[55m 43s] it's likely the official one for php
+[55m 45s] developers
+[55m 46s] um as it helps you to
+[55m 51s] yeah to set up your local php
+[55m 53s] environment
+[55m 54s] so
+[55m 57s] yeah you can see a lot of things you can
+[55m 59s] do with it
+[56m 1s] and you can
+[56m 5s] configure different php versions so
+[56m 9s] that's why what we are doing here we
+[56m 12s] reuse this
+[56m 13s] matrix php variable from off
+[56m 16s] up here and
+[56m 20s] so i don't have to care like on
+[56m 23s] other continuous integrations you have
+[56m 26s] to do this up get install php
+[56m 29s] and all the stuff
+[56m 32s] isn't part of github actions you can
+[56m 35s] define extensions you want to use
+[56m 39s] this is a pretty default string we don't
+[56m 42s] use all of these extensions but
+[56m 44s] some are used by composer for example
+[56m 46s] like the sip one
+[56m 47s] and pdos golight reuse for php unit
+[56m 52s] dominant curl just default mp string is
+[56m 56s] required by laravel
+[56m 59s] yeah you can define coverage tools if
+[57m 2s] you
+[57m 3s] want to get code coverage and
+[57m 8s] so what do we have here yeah so this
+[57m 11s] extension support
+[57m 12s] and yes coverage
+[57m 16s] you can use xd back uh
+[57m 20s] p2p curve and disable it
+[57m 24s] you can also use a phpd rig here
+[57m 28s] and yeah if you don't want coverage
+[57m 32s] reports
+[57m 33s] i can recommend to use none because it
+[57m 35s] will
+[57m 36s] speed up your execution time of php unit
+[57m 41s] and we've skipped those tools you can
+[57m 45s] also
+[57m 47s] install typically php tools like
+[57m 51s] somewhere here so composer normalize for
+[57m 53s] example
+[57m 55s] blackfire php unit even if you don't
+[57m 57s] have it in
+[57m 58s] your composer j json
+[58m 2s] and so on you can define these tools
+[58m 5s] here
+[58m 6s] and you can use them like if you have
+[58m 9s] done a composer global require
+[58m 11s] php unit for example yeah
+[58m 15s] so how how is this file how does it
+[58m 19s] differ between projects or do you pretty
+[58m 21s] much copy paste
+[58m 22s] this most of the time because that's a
+[58m 24s] lot of setup
+[58m 27s] [Music]
+[58m 28s] a lot of times i only copy paste it
+[58m 31s] because it's nearly always the same for
+[58m 33s] every project
+[58m 35s] you want to check out it you have this
+[58m 36s] cache for composer
+[58m 38s] you want to define your php environment
+[58m 40s] with version extensions and
+[58m 42s] possibly coverage or tools
+[58m 45s] it's always nearly the same for
+[58m 50s] let's say organization or company
+[58m 52s] environment so
+[58m 53s] it's unlikely that you use
+[58m 57s] x debug in one project and php cough in
+[59m] a
+[59m] in another project if you do
+[59m 4s] just change it here so
+[59m 8s] then you have to do this composer
+[59m 11s] install and update
+[59m 12s] things here um you want to run your php
+[59m 15s] unit tests
+[59m 16s] and yeah this is nearly always the same
+[59m 20s] yeah so only thing that changes or
+[59m 23s] really changes
+[59m 24s] is most times a matrix so
+[59m 27s] this is different between packages and
+[59m 29s] projects you
+[59m 30s] have packages only running on php eight
+[59m 33s] you have some running on
+[59m 34s] eight and seven four or possibly even
+[59m 36s] seven three
+[59m 37s] you have different lava versions you
+[59m 39s] support
+[59m 41s] this one is nearly always the same um i
+[59m 44s] can really recommend it
+[59m 45s] for package developers because
+[59m 48s] uh it's pretty easy to forget about your
+[59m 53s] lower bounds in the composer.json
+[59m 55s] because you always do this composer
+[59m 57s] update on your local machine
+[59m 59s] and only run on the latest version and
+[60m 2s] yeah sometimes you use
+[60m 6s] or possibly use a method introduced in
+[60m 10s] yeah love 7 15 for example
+[60m 14s] and you still have it here on
+[60m 18s] 7.0 um because on your local machine it
+[60m 21s] runs
+[60m 22s] uh as it has in style so latest louder
+[60m 24s] seven which is 7
+[60m 26s] 24 or whatever and you don't
+[60m 30s] yeah you don't see it and
+[60m 33s] with prefer lowest uh composer will try
+[60m 35s] to install
+[60m 36s] the lowest versions possible with your
+[60m 40s] constraints here so if
+[60m 43s] nothing uh requires a php 7
+[60m 46s] 15 for example it will install
+[60m 50s] php 7.0 uh not php sorry
+[60m 54s] yeah uh it will install lava
+[60m 57s] 7.0 and then you will run your php unit
+[61m 1s] test
+[61m 2s] and it will explode somewhere in your
+[61m 5s] source code because you have called uh
+[61m 8s] whatever method was introduced later um
+[61m 12s] yeah and then you can see okay uh i have
+[61m 15s] to
+[61m 16s] upgrade the requirement for illuminate
+[61m 18s] database for example
+[61m 20s] because something changed in lava 7
+[61m 23s] 15 and then you can write 7
+[61m 28s] 15. push it run it again and it will
+[61m 31s] pass
+[61m 32s] so yeah yeah and
+[61m 36s] this possibly doesn't sound important
+[61m 39s] for
+[61m 39s] most developers because nearly every
+[61m 42s] developer does
+[61m 43s] a composer update but i know
+[61m 46s] some companies primary as the ones also
+[61m 50s] sticking to
+[61m 51s] long-time support releases which is also
+[61m 54s] not a good idea for harvard but it's a
+[61m 56s] different topic
+[62m] say don't want to update dependencies
+[62m 3s] say just say never change the running
+[62m 5s] system pitch
+[62m 6s] allowance 7.0 works and we won't leave
+[62m 10s] it
+[62m 10s] so possibly we even have this constraint
+[62m 14s] in cellular project and if you
+[62m 18s] now requires this package that uses code
+[62m 22s] introduced in larvae715
+[62m 24s] yeah they are simply unable to run it
+[62m 27s] because
+[62m 27s] save is you you
+[62m 31s] will face the same if you don't if you
+[62m 33s] run it with the prefer lowest here
+[62m 36s] so it's just an easy way to check that
+[62m 39s] your
+[62m 40s] composer constraints are really
+[62m 43s] lower constraints and not just somewhere
+[62m 47s] around level 7
+[62m 48s] it will work yeah
+[62m 54s] yeah so
+[62m 58s] yeah this is run you can just run
+[63m 3s] no no it was drag and drop you can just
+[63m 6s] run
+[63m 6s] a shell command so composer php
+[63m 11s] whatever you want and here this is
+[63m 13s] vendor php unit
+[63m 15s] so just run a command yeah
+[63m 19s] yeah and that's pretty it
+[63m 24s] about this one here i can show you
+[63m 29s] this is really really com like yeah you
+[63m 32s] you would have to copy paste it most of
+[63m 33s] the time because this is there is a lot
+[63m 35s] to remember a lot that can be done
+[63m 42s] it's amazing how much how much we
+[63m 44s] developers
+[63m 45s] rely on copy pasting
+[63m 49s] so um this is a real project a real
+[63m 54s] larva application
+[63m 55s] using postgresql database
+[63m 58s] and sorry i have to close it because my
+[64m 3s] my macbook doesn't like too much
+[64m 6s] phpstorm instances
+[64m 8s] so this one uses postgres and you can
+[64m 11s] spin up
+[64m 12s] this postgres instance with this
+[64m 15s] services key here
+[64m 18s] so if we go to chrome
+[64m 24s] and
+[64m 27s] strategy services
+[64m 34s] um
+[64m 38s] let's say any
+[64m 41s] any sheet list which services no
+[64m 48s] somewhere else they have a cheat list
+[64m 50s] which services are available
+[64m 52s] but most common so like engine x redis
+[64m 55s] postgres mysql are available um
+[64m 59s] you can configure them with uh
+[65m 2s] with a specific image here you want to
+[65m 5s] use this as a
+[65m 6s] docker image environment variables to
+[65m 9s] pass to this image
+[65m 11s] options you want to use you can use port
+[65m 14s] mapping so
+[65m 15s] if you want to use a different port just
+[65m 18s] change it
+[65m 20s] um and this way you can
+[65m 24s] test your application with a real
+[65m 25s] database
+[65m 27s] because i know in application context
+[65m 29s] it's
+[65m 30s] sometimes that you write or choose
+[65m 32s] postgres because
+[65m 34s] of postgis plugin for example uh because
+[65m 36s] you use uh
+[65m 38s] geo data with coordinates
+[65m 41s] and you have some postgres specific
+[65m 44s] queries
+[65m 45s] and you are simply unable to run your
+[65m 48s] project on sqlite mysql or whatever
+[65m 51s] because of these uh
+[65m 52s] postgres specific queries so you have to
+[65m 56s] spin up a postgres for your test
+[65m 57s] environment so this is also possible
+[66m] with this
+[66m] service key here and yeah you see a
+[66m 4s] suicide project but it's nearly
+[66m 6s] all also same check out set up php
+[66m 9s] yeah uh this is a dynamic way to get the
+[66m 14s] composer cache for this
+[66m 15s] path here so if you
+[66m 18s] remember here we have a hardly defined
+[66m 22s] path which doesn't
+[66m 26s] always work with a windows primary
+[66m 30s] because windows has these uh
+[66m 34s] other slashes for paths and also
+[66m 38s] sometimes some some different namings
+[66m 40s] for directories
+[66m 43s] so you can use the output of
+[66m 48s] commands of steps
+[66m 51s] important forces is that the step has an
+[66m 54s] idea
+[66m 54s] id so the id of the step is composer
+[66m 58s] cache
+[66m 59s] and we run
+[67m 3s] this composer config cache files here
+[67m 6s] if i copy it and
+[67m 12s] appear
+[67m 14s] these are just some warnings of my
+[67m 15s] composer but
+[67m 17s] here you see the full directory of my
+[67m 21s] cache files
+[67m 23s] and
+[67m 27s] this year is a bit of prefixing stuff
+[67m 30s] required to
+[67m 31s] get this as output
+[67m 35s] um i don't
+[67m 40s] output
+[67m 55s] yeah here for example
+[67m 59s] yeah okay you even can can't configure
+[68m 3s] the outputs uh before the steps but this
+[68m 6s] also works
+[68m 9s] um and at the end you get
+[68m 12s] a new variable so here steps
+[68m 16s] the id of the step outputs and
+[68m 19s] the name of this output so one
+[68m 22s] step can have multiple outputs in theory
+[68m 25s] but we want the
+[68m 26s] directory one so
+[68m 29s] this is the safe way to use a cache for
+[68m 33s] example
+[68m 35s] but it's still the same with the cache
+[68m 38s] we
+[68m 39s] use a composer cache here we run
+[68m 41s] composer installer
+[68m 43s] in this case with a secret we manage on
+[68m 46s] github because we have some private
+[68m 49s] repositories we
+[68m 51s] use as packages and that's actually run
+[68m 55s] our quality assurance tools so php
+[68m 59s] gold style teal and php unit php
+[69m 2s] insights and also stuff
+[69m 6s] this one is also helpful upload
+[69m 9s] artifacts
+[69m 10s] um answers if
+[69m 14s] we could also use this one
+[69m 19s] always means runs is always uh
+[69m 22s] on failed and some successful jobs
+[69m 26s] um if failed means runs a step only
+[69m 29s] visit
+[69m 30s] if the job has failed mm-hmm
+[69m 34s] and i don't know if there is an if
+[69m 37s] success i think it's the default if you
+[69m 39s] don't have an
+[69m 39s] if
+[69m 43s] and upload artifacts uploads
+[69m 46s] a defined file or path
+[69m 49s] i will zip it and
+[69m 52s] you can access it
+[69m 58s] no wrong one summary
+[70m 2s] um yeah so
+[70m 6s] if i would have an artifact you will
+[70m 8s] have a widget here
+[70m 9s] listing artifacts and you can download
+[70m 11s] it which is useful
+[70m 13s] for logs for example because sometimes
+[70m 17s] php unit doesn't list the real problem
+[70m 22s] it only says the test has failed
+[70m 26s] if you do api testing for example with
+[70m 28s] fake requests
+[70m 30s] you will get an uh response
+[70m 33s] status doesn't match 200 because it is
+[70m 36s] 500 but we don't know okay which
+[70m 39s] exception has
+[70m 40s] created this 500 status code so it's
+[70m 43s] helpful to get this uh
+[70m 44s] say access to the log file
+[70m 49s] yeah but you see uh it's pretty similar
+[70m 52s] to
+[70m 52s] to our package one
+[70m 56s] okay so when you when you create these
+[70m 59s] files
+[71m] do you is that all you have to do do you
+[71m 1s] need to register them somehow at github
+[71m 3s] or once you push the
+[71m 4s] repository up or what you put push them
+[71m 7s] up they will all get registered and
+[71m 10s] run you just have to push it by default
+[71m 13s] you can go to settings and
+[71m 17s] actions so if you have
+[71m 21s] a good administrator
+[71m 24s] uh he will likely don't use this all
+[71m 28s] uh law or actions but limited to
+[71m 32s] selected actions or local ones or
+[71m 35s] whatever
+[71m 36s] [Music]
+[71m 38s] in this case it's possible primaries
+[71m 41s] this one
+[71m 42s] said you have to add it here
+[71m 46s] but by default it's this one allow all
+[71m 48s] actions so just push it and it will run
+[71m 52s] if the trigger uh it's true it says
+[71m 54s] regardless of who authored it and where
+[71m 57s] it is defined so what they mean by where
+[71m 59s] it is defined i thought it can only be
+[72m] defined in that github dot
+[72m 2s] yeah sorry um so
+[72m 6s] the workflow has to be defined in
+[72m 10s] in your uh in your repository
+[72m 13s] but you have these steps like users
+[72m 16s] actions checkout for example
+[72m 18s] yeah and these are what
+[72m 21s] they mean with actions so
+[72m 24s] uh these are just uh
+[72m 28s] docker containers sometimes or i think
+[72m 32s] there's a
+[72m 33s] node.js environment you can use to
+[72m 35s] create your own actions
+[72m 38s] but it's foreign code you don't have
+[72m 40s] control
+[72m 42s] you can partly control it if you define
+[72m 45s] a
+[72m 46s] more precise version constraint here for
+[72m 49s] example
+[72m 50s] yeah but you still don't have control
+[72m 52s] over it
+[72m 53s] so for these official github actions
+[72m 56s] it's pretty okay to use them
+[73m] and also this one for example but
+[73m 4s] it could be that you find an action
+[73m 6s] somewhere on github that looks cool
+[73m 10s] but is created by a malicious user who
+[73m 13s] creates something
+[73m 15s] pretty and cool to get some users on and
+[73m 18s] pushes a new miner release so
+[73m 21s] or even fix release possible to get
+[73m 24s] all user install it and
+[73m 28s] actions have access to everything in
+[73m 30s] your
+[73m 32s] in your workflow environment so to your
+[73m 34s] code of your repository
+[73m 36s] to a secrets you have to find your
+[73m 39s] environment variables and
+[73m 40s] also stuff so it's definitely
+[73m 45s] dangerous yeah a dangerous thing and you
+[73m 48s] have to trust them
+[73m 49s] like with installing uh composer
+[73m 51s] dependencies
+[73m 53s] yeah so it's also a kind of trust
+[73m 56s] because if i would be a malicious
+[73m 59s] developer i could
+[74m] uh do some curl calls somewhere in my
+[74m 4s] service provider for example
+[74m 7s] and send your whole application
+[74m 9s] configuration somewhere to my server a
+[74m 14s] fixed release
+[74m 14s] and you run composer update
+[74m 18s] and even if it's only the local
+[74m 20s] environment of a single developer and he
+[74m 23s] immediately noticed it
+[74m 27s] i still have all the configuration
+[74m 30s] variables of
+[74m 31s] this local environment which will
+[74m 33s] possibly
+[74m 34s] also contain some secrets like
+[74m 37s] we have possibly only sandbox
+[74m 39s] credentials for stripe or whatever but
+[74m 41s] still secret
+[74m 43s] yeah and it's very unlikely that
+[74m 46s] the developer will notice it so he will
+[74m 48s] do a composer update everything
+[74m 50s] runs fine that's one thing like when you
+[74m 53s] say
+[74m 55s] yeah even if they notice how would the
+[74m 57s] developer notice that something
+[74m 58s] malicious is going on how can you notice
+[75m 2s] checking his uh developer
+[75m 5s] network lock of his whole machine
+[75m 8s] going through vendor files um
+[75m 12s] it's a sticky like an ecb yeah and
+[75m 14s] there's like basically
+[75m 16s] like 99 of internet runs on those
+[75m 19s] packages like whether it's npm
+[75m 21s] or composer and it's like it always
+[75m 24s] worries me like i'm thinking it's just
+[75m 27s] so easy
+[75m 28s] to do something malicious and i'm hoping
+[75m 31s] that there must be some sort of
+[75m 32s] protection but i don't know if there is
+[75m 34s] no isn't it um so only way
+[75m 38s] you can protect it is checking your
+[75m 41s] vendor files
+[75m 42s] um i don't know if there are tools like
+[75m 46s] uh possibly blackfire with some plugins
+[75m 49s] or
+[75m 50s] some other tools uh that help you to
+[75m 54s] debug your code and
+[75m 55s] will list the curl call for example so
+[75m 59s] um i think blackfire could do it um
+[76m 2s] i'm not a backfire proof expert but this
+[76m 5s] is one tool that
+[76m 7s] comes to mind um that analyzes your
+[76m 10s] whole runtime
+[76m 12s] and lists all heavy things you are doing
+[76m 15s] like uh
+[76m 15s] curl call is a heavy thing it requires
+[76m 18s] like 100 milliseconds or 200
+[76m 20s] milliseconds and so it's likely that
+[76m 23s] this could be
+[76m 24s] discovered with a tool like blackfire
+[76m 28s] but
+[76m 31s] a good way to do it for example would
+[76m 33s] also be some
+[76m 35s] or a good way adding some
+[76m 38s] uh yes some conditionals like only do it
+[76m 41s] a production server
+[76m 43s] yeah and possibly even don't do it
+[76m 47s] syllabusly but push it to the queue
+[76m 51s] nearly every application uses a queue
+[76m 54s] and yes harmon it's blackfire but i
+[76m 56s] think
+[76m 57s] without a white space it's a
+[77m] pretty mighty tool um
+[77m 4s] created by symphony core team um
+[77m 8s] but also compatible with every other php
+[77m 10s] application
+[77m 12s] which helps you to yeah to find
+[77m 15s] uh like loops so endless loops or
+[77m 18s] long running loops um
+[77m 22s] recursive method calls and
+[77m 25s] heavy method calls so if you have a
+[77m 27s] method that runs for
+[77m 29s] 200 milliseconds or a second or whatever
+[77m 32s] you have
+[77m 33s] as a threshold uh it also
+[77m 36s] shows you a graphic graph of your
+[77m 39s] stack trace is it is it this one
+[77m 42s] exactly so yeah there was
+[77m 45s] also a a presentation by
+[77m 49s] i think it was riaz on the la con etu
+[77m 53s] who created uh
+[77m 58s] an algorithm in php
+[78m 1s] set uh created a
+[78m 5s] an image only of triangles
+[78m 8s] um with a real jpeg as
+[78m 12s] as a template so check out this call he
+[78m 14s] uses backfire to optimize this code
+[78m 17s] um it's a good presentation i think um
+[78m 21s] what was who was it again do you
+[78m 22s] remember i think it was riaz um
+[78m 35s] european people and
+[78m 39s] yeah i'm lucky that it still says
+[78m 43s] the old page so somewhere down here
+[78m 51s] i think it was a side talk so possibly
+[78m 53s] not listed here
+[78m 55s] but i do have i mean i found it let me
+[78m 58s] just
+[78m 59s] post a link uh youtube
+[79m 2s] there's a video on youtube is that the
+[79m 5s] one
+[79m 6s] we should be able to okay that's really
+[79m 8s] i mean nice point let's just google
+[79m 10s] or go on youtube and look for blackfyre
+[79m 12s] under the hood
+[79m 13s] blackfire like on eu online 2021.
+[79m 17s] yeah fire was a sponsor of a lark on eu
+[79m 20s] this year
+[79m 21s] i think so there are some videos of
+[79m 24s] blackfary
+[79m 26s] yeah check it out exactly and
+[79m 29s] i think if i remember correctly there
+[79m 31s] was a package on npm
+[79m 33s] and the developer decided to to test
+[79m 37s] this
+[79m 37s] uh this approach so he wasn't a real
+[79m 41s] malicious uh developer
+[79m 43s] but he wanted to to raise awareness of
+[79m 45s] it so
+[79m 47s] he created a package i think it was one
+[79m 50s] that
+[79m 50s] uh allows to
+[79m 53s] create colored output on on console
+[79m 56s] commands
+[79m 57s] yeah uh in the easy way like uh just
+[80m] calling red method and so on and put in
+[80m 2s] the text and get red text
+[80m 4s] and
+[80m 8s] he got a lot of users so
+[80m 11s] really millions because also a lot of
+[80m 13s] other packages used his code in
+[80m 16s] ser packages and he knows the chain
+[80m 19s] and after this he or after he got a lot
+[80m 22s] of users he
+[80m 24s] put in not a malicious thing but
+[80m 27s] a simple pink call so
+[80m 31s] every installation of this package has
+[80m 33s] sent a ping
+[80m 35s] to one of his urls so he knows okay
+[80m 39s] it was installed on this machine
+[80m 42s] and i think there was also a payload
+[80m 45s] like hostname
+[80m 46s] or something like that so nothing really
+[80m 49s] dangerous but still enough to showcase
+[80m 53s] i can send a request to whatever i want
+[80m 56s] with
+[80m 56s] payload whatever i want from your
+[80m 58s] machine after
+[80m 59s] you start my package and yeah
+[81m 3s] he pushed it out in a release and some
+[81m 7s] minutes hours later he got millions of
+[81m 10s] pings
+[81m 12s] and it wasn't discovered for weeks
+[81m 16s] so this shows uh how dangerous
+[81m 21s] this whole package and open source
+[81m 23s] ecosystem is and
+[81m 25s] how important it is to trust your open
+[81m 27s] source developers
+[81m 28s] yeah so it is scary
+[81m 34s] what was the alternative just build
+[81m 36s] everything ourselves
+[81m 38s] uh this was the alternative like uh
+[81m 42s] yeah it's not this far i think
+[81m 45s] around six seven years ago um
+[81m 49s] it was still since uh when i started my
+[81m 52s] my carrier as a trainee and companies
+[81m 55s] said no
+[81m 56s] we don't use open source open source is
+[81m 58s] uh not dangerous but
+[82m] bad because syste at this time i think
+[82m 3s] there wasn't even composer
+[82m 5s] yeah it started one or two years later
+[82m 8s] and
+[82m 9s] um swords were really yeah just some
+[82m 12s] script kitties playing around and
+[82m 15s] putting out some code except some very
+[82m 18s] few libraries like a swift beta for
+[82m 20s] example
+[82m 22s] um our php itself for sure is also
+[82m 26s] so um but this open source ecosystem we
+[82m 30s] have right now
+[82m 31s] with uh titan and lava and uh spacia
+[82m 35s] and all the people pushing
+[82m 38s] out free code for everyone to use
+[82m 42s] wasn't there and the developers
+[82m 45s] who did it this time
+[82m 49s] vern cis experts or
+[82m 53s] created quality code so companies
+[82m 56s] usually say no we don't use it we write
+[82m 59s] everything our own and
+[83m 1s] even if there was quality code say
+[83m 3s] rejected to use it and
+[83m 6s] sen yeah it really happened during
+[83m 10s] two or three years the whole
+[83m 16s] yeah the whole business of
+[83m 19s] internet and agencies and all the stuff
+[83m 21s] doing
+[83m 22s] doing websites had changed from we are
+[83m 25s] doing everything our own to
+[83m 28s] why isn't there open source package for
+[83m 30s] it so
+[83m 31s] from the packages fully rejecting to use
+[83m 34s] any open source code to expecting such
+[83m 37s] as open source for everything they want
+[83m 41s] and this is a complete
+[83m 45s] turn and yeah yeah the downside of it
+[83m 49s] is that before companies had had to pay
+[83m 52s] their own developers for everything so
+[83m 55s] if they needed like uh
+[83m 58s] activity lock for example for laravel uh
+[84m] if larva would exist
+[84m 2s] they had to write it some on and can't
+[84m 5s] just do a composer requires party
+[84m 7s] activity log
+[84m 8s] and done and this would take like
+[84m 11s] let's go easy one hour of work for one
+[84m 13s] people for example
+[84m 15s] so i don't know uh eight hundred dollars
+[84m 18s] for
+[84m 18s] so and now they save these eight hundred
+[84m 22s] dollars but don't uh
+[84m 24s] give give it to someone to no one
+[84m 27s] not the employees they have not so
+[84m 31s] maintainers they depend their whole
+[84m 33s] business on it
+[84m 34s] and it's not about these uh and
+[84m 38s] let's name them not in a bad meaning but
+[84m 41s] these
+[84m 42s] secondary uh open source maintainers
+[84m 46s] like uh
+[84m 46s] me and sparcia and so on creating
+[84m 49s] packages but
+[84m 50s] uh we have a fundamental layer of open
+[84m 53s] source
+[84m 54s] uh dependencies like redis
+[84m 57s] php um all cc
+[85m] libraries and also stuff um maintained
+[85m 3s] by a few people
+[85m 5s] sometimes a single one like redis for
+[85m 7s] example
+[85m 8s] i think it's what's red is when sets a
+[85m 11s] uh said yeah it
+[85m 14s] was uh end of last year or beginning of
+[85m 17s] this year
+[85m 18s] uh said the maintainer of radius said i
+[85m 20s] don't want to maintain it anymore
+[85m 22s] it's too much work it has grown too much
+[85m 26s] and i don't have time to it and
+[85m 29s] this is a really dangerous situation
+[85m 32s] because
+[85m 33s] uh we all use redis
+[85m 36s] for horizon for cash for whatever for
+[85m 39s] sessions
+[85m 40s] and if the maintainer steps down you
+[85m 42s] could end up
+[85m 43s] in two situations you have an organized
+[85m 46s] handover
+[85m 49s] so say as a secondary maintainer for
+[85m 51s] example who's on board since
+[85m 53s] some years and knows the history and
+[85m 56s] also stuff and can
+[85m 58s] just take over or
+[86m 2s] you end in a in a chaos situation of
+[86m 5s] everyone forking reddish just to keep
+[86m 7s] sure the source code is
+[86m 9s] secured and maintained somewhere and
+[86m 12s] everyone
+[86m 13s] scripting around and just doing whatever
+[86m 15s] they want and
+[86m 17s] you end up with 1000 different radis
+[86m 20s] and this isn't the goal we want to have
+[86m 24s] and yeah this is something companies
+[86m 28s] could
+[86m 28s] protect their own from if they would
+[86m 31s] pay at least these maintainers of these
+[86m 34s] fundamental open source packages
+[86m 37s] it's really not about me and spasia if
+[86m 40s] my packages would go away no one would
+[86m 42s] care
+[86m 44s] or possibly some thousands
+[86m 47s] would have to create their own
+[86m 49s] translatable logic but they still would
+[86m 51s] have this
+[86m 51s] code so and that's working but with
+[86m 55s] redis
+[86m 55s] and apache engine exp and
+[86m 58s] all these things open source and yeah
+[87m 2s] don't have most times any funding so
+[87m 5s] pgps send and i think engine x has also
+[87m 8s] a
+[87m 8s] enterprise uh plan but it's uh
+[87m 12s] they are paying their open source work
+[87m 14s] with their own product and
+[87m 17s] if no one or not enough use this
+[87m 20s] enterprise product
+[87m 21s] because open source one is enough uh
+[87m 23s] there isn't any money
+[87m 26s] well yeah i think it's important to
+[87m 27s] raise awareness of this because like you
+[87m 29s] say
+[87m 29s] like most a lot of big projects rely on
+[87m 32s] open source yet they don't
+[87m 35s] seem to do anything to make sure that it
+[87m 38s] keeps on running
+[87m 41s] also a composer for example it's
+[87m 44s] maintained or primarily maintained by
+[87m 46s] two people really yeah yeah
+[87m 50s] there are two primary maintainers of
+[87m 52s] composer
+[87m 54s] [Music]
+[87m 56s] and they are funding their work only by
+[87m 58s] packages.com
+[88m] so it's a private version of packages
+[88m 4s] yeah so here you can see these are the
+[88m 7s] two
+[88m 9s] primary maintainers of composer
+[88m 14s] wow um thank you
+[88m 18s] jordy and
+[88m 21s] niels niels is also from germany so i'm
+[88m 23s] pretty proud
+[88m 25s] yay go germany
+[88m 29s] yeah and these are the heroes of php
+[88m 33s] because let's be honest php wouldn't
+[88m 36s] see current situation without composer
+[88m 39s] so composer is a base for everything
+[88m 41s] for symphony for the other for all
+[88m 45s] the packages we do in our free time yeah
+[88m 49s] and if you check out yes the sponsoring
+[88m 54s] um there are 87 people
+[88m 57s] sponsoring zelda hold on
+[89m 1s] how what are the tiers there are tiers
+[89m 3s] you can
+[89m 4s] yeah yeah i am sponsoring so i have to
+[89m 8s] select a new tier
+[89m 10s] okay 5 25 100.
+[89m 13s] um it's
+[89m 16s] it's really when you oh yeah when you i
+[89m 18s] mean any job
+[89m 20s] whatever it is if you are employed you
+[89m 22s] can just leave
+[89m 23s] and you know the company will have to
+[89m 25s] deal with it
+[89m 26s] but in a way if you're an employee the
+[89m 28s] company should make sure that you're not
+[89m 30s] the only one
+[89m 30s] that knows what what you're doing so if
+[89m 33s] you go on holidays you ail or you leave
+[89m 35s] that the company just doesn't stop so
+[89m 38s] this is the basic this is like a common
+[89m 40s] sense every company should do
+[89m 41s] yes they that doesn't seem to be the
+[89m 43s] same common sense when it comes to open
+[89m 45s] source
+[89m 46s] that they don't they have no no control
+[89m 49s] over whether the
+[89m 50s] maintainers what are they doing how much
+[89m 51s] time they spend how much time they can
+[89m 53s] spend
+[89m 54s] it's it is really
+[89m 57s] fragile jordy is kind of lucky with
+[90m 1s] 87. yeah niels has
+[90m 5s] six six seriously come on let's all
+[90m 8s] sponsor neils can we hold on
+[90m 11s] with me
+[90m 14s] after we finish some more uh
+[90m 18s] silent heroes of our uh
+[90m 21s] ecosystem so like symphony i always
+[90m 24s] forgot his github handle uh
+[90m 28s] it's a cool one always i see it but yeah
+[90m 31s] fab what can exactly which one
+[90m 35s] febbert fabian potencia i hope it's
+[90m 38s] spelled correctly i'm not french so
+[90m 40s] uh 50 52 and he's
+[90m 44s] a creator of symphony and the base
+[90m 47s] of lava yeah basically just without
+[90m 50s] symphony
+[90m 50s] so and these are the unsung
+[90m 54s] heroes of our php and open source system
+[90m 58s] and to get back to our package thing
+[91m 2s] hold on there it is asking can we trust
+[91m 6s] the packages that are only made for
+[91m 8s] local and not for production
+[91m 10s] well like what you said even though that
+[91m 12s] that package you know the guy you
+[91m 13s] mentioned that just made the
+[91m 14s] terminal output different color even if
+[91m 17s] it was just locally
+[91m 18s] he would still send a ping to
+[91m 21s] or did i understand correctly so even
+[91m 23s] though it's used for local
+[91m 24s] only i think he means
+[91m 28s] if you have a project you have your
+[91m 30s] local environment on your own machine
+[91m 31s] and you have some production environment
+[91m 33s] on your
+[91m 34s] digital ocean server for example um but
+[91m 36s] i don't
+[91m 37s] and i think the packages you mean are
+[91m 40s] like
+[91m 40s] ide helper and love the debug bar for
+[91m 44s] example if i'm correctly
+[91m 46s] and for cs it's not recommended because
+[91m 51s] say contain malicious code
+[91m 54s] but it's recommended because they
+[91m 56s] contain
+[91m 59s] some ways malicious user could get
+[92m 2s] details of your application
+[92m 6s] sets they shouldn't be able to get
+[92m 9s] because they have some public http apis
+[92m 11s] for example so it's a debug bar
+[92m 14s] you can disable them with an environment
+[92m 16s] variable but the easier way is to just
+[92m 19s] keep them out by using them as a
+[92m 22s] required dev
+[92m 23s] um and not as a require so
+[92m 27s] just as a develop dependency like you
+[92m 29s] have php unit
+[92m 31s] and mockery and
+[92m 34s] this larva or what was it five
+[92m 38s] six five eight or something like this we
+[92m 40s] got this a
+[92m 42s] lot of discover command
+[92m 45s] which can automatically discover all
+[92m 48s] service providers in your vendor
+[92m 49s] directory
+[92m 51s] and this is pretty useful because before
+[92m 54s] before you had to put some in your app
+[92m 57s] configuration on your own
+[92m 59s] if you remember and
+[93m 2s] this was a bit tricky with packages like
+[93m 4s] ide helper
+[93m 6s] and debug bar because you had to
+[93m 9s] register c service providers by
+[93m 11s] condition
+[93m 12s] and this is now
+[93m 16s] super easy if you have a dev dependency
+[93m 19s] and it doesn't exist larva won't
+[93m 21s] discover it and if it exists now we'll
+[93m 23s] discover it
+[93m 23s] so that's it so this cover command make
+[93m 27s] it
+[93m 28s] really easy and improved uh having dev
+[93m 31s] dependencies
+[93m 32s] with service providers a lot um yeah
+[93m 37s] yeah and to get uh the turn to
+[93m 40s] our we should we should
+[93m 44s] publish the first secret uh it's now one
+[93m 47s] and a half hour
+[93m 48s] yeah come on i said we're gonna make a
+[93m 49s] short this time come on
+[93m 51s] no we we have a good talk here and
+[93m 55s] yeah and it's like it's a friday thing
+[93m 57s] it's just a friday thing to have a
+[93m 58s] two-hour chat now
+[93m 59s] serena
+[94m 2s] says array uh you can
+[94m 6s] maintain these uh license no i think
+[94m 9s] license isn't
+[94m 10s] but this is funding jumble for example
+[94m 13s] contributing
+[94m 14s] markdown code of conduct files
+[94m 18s] in a single place throughout all of your
+[94m 21s] repositories
+[94m 22s] so if i close some of them
+[94m 26s] and go to larva translatable
+[94m 30s] um if you go here
+[94m 33s] you don't see any of these uh
+[94m 36s] contributing or code of conduct for
+[94m 38s] example
+[94m 39s] but i think it's insights and community
+[94m 43s] exactly if you go here you see uh
+[94m 47s] said i have a readme i have a code of
+[94m 48s] conduct i have a contributing a license
+[94m 51s] issue templates uh yeah can you link to
+[94m 54s] them though because like normally people
+[94m 56s] would expect to see them in the root
+[94m 58s] directory so can you link to those files
+[95m 1s] yeah uh if you include them in me for
+[95m 4s] example
+[95m 5s] you can as this view is public so
+[95m 8s] every user can click on insights
+[95m 10s] community
+[95m 12s] and just see all the stuff and click off
+[95m 14s] code of conduct
+[95m 16s] um and see this version
+[95m 19s] i have in cis.github repository
+[95m 23s] so the naming is important it has to be
+[95m 25s] dot github
+[95m 26s] like the god.github directory we had
+[95m 30s] uh in our repository yeah um
+[95m 34s] and from there it's the same structure
+[95m 37s] so everything you could place in
+[95m 39s] here except workflows for sure you could
+[95m 43s] have in here
+[95m 50s] and linking is possible but you have to
+[95m 53s] keep in mind that it hasn't ever
+[95m 55s] relative past to your
+[95m 58s] uh to a repository
+[96m 1s] so if you go here i don't know if you
+[96m 3s] can see it but
+[96m 4s] uh here on the down left yeah dot
+[96m 8s] it's astrotomic.get and if we click
+[96m 12s] the edit pen goes somewhere down here
+[96m 19s] contributing you see that i have this
+[96m 22s] absolute link https.github
+[96m 27s] so you can link to them for sure but you
+[96m 30s] have to link to the version
+[96m 31s] in this repository and not to any
+[96m 35s] magic link in this one this could be a
+[96m 38s] way
+[96m 39s] github could improve this feature so you
+[96m 41s] get a magic
+[96m 43s] version of this contributing markdown
+[96m 46s] for example
+[96m 47s] inside of this so i could do like a
+[96m 50s] country contributing nd
+[96m 54s] and it will automatically close
+[96m 57s] uh but i'm just saying like it's it's
+[96m 59s] good
+[97m] because i mean it's for me most i would
+[97m 2s] usually look for those files in the root
+[97m 4s] directory
+[97m 5s] i would look for them in inside so yes
+[97m 7s] they are they're available
+[97m 8s] but unless people know this is where you
+[97m 9s] look for them they will not know so
+[97m 11s] that's why i mentioned
+[97m 13s] linking to them from the readme
+[97m 16s] github has fully integrated sam uh
+[97m 19s] here so
+[97m 22s] exactly so if you have have full
+[97m 25s] resources
+[97m 27s] i can click github uh contributing and
+[97m 29s] you see
+[97m 30s] i also end up in the astrotomic.github
+[97m 33s] repository
+[97m 34s] as this times a commit specific version
+[97m 37s] to the latest commit um but still
+[97m 41s] someone in in this repository
+[97m 44s] and also a code of contact conduct um
+[97m 49s] okay yeah
+[97m 54s] so it's fully integrated in in github
+[97m 56s] itself
+[97m 58s] so only thing you have to do your own is
+[98m 2s] linking and readme for example yeah
+[98m 8s] and one thing because we talked about
+[98m 12s] sponsoring money and funding and also
+[98m 14s] stuff
+[98m 15s] is a funding jammel
+[98m 18s] you've likely seen these new buttons up
+[98m 22s] here with a pink heart
+[98m 24s] yeah if you click it you get this pop-up
+[98m 27s] and
+[98m 28s] this is configured in this funding
+[98m 30s] yammer um you can define
+[98m 33s] i think up to five github usernames you
+[98m 35s] want to
+[98m 36s] or you who have sponsoring enabled
+[98m 40s] yeah and you want to get sponsored so
+[98m 44s] for example i've now kind of employed
+[98m 48s] sarah and if sarah would get her own
+[98m 51s] sponsor profile i could list her here
+[98m 54s] and i could also think about getting of
+[98m 56s] an official astrodomic and put it here
+[99m] it works with issue hunt
+[99m 3s] you can also add custom links like i've
+[99m 6s] done here
+[99m 7s] so this trivia thing is linked
+[99m 10s] and the absolute beauty of this is um
+[99m 14s] it's one central point so if i go here
+[99m 17s] and would add now
+[99m 20s] uh like i have an now official
+[99m 23s] astronomic sponsoring page for example
+[99m 25s] and put this here save it it would
+[99m 28s] change throughout all of my repositories
+[99m 30s] so i would have as here i would have it
+[99m 33s] in the
+[99m 34s] web mentions package and the phpv card
+[99m 38s] package and
+[99m 39s] in every package
+[99m 42s] this is the beauty of this
+[99m 44s] central.github repository
+[99m 47s] yeah because it shares these things
+[99m 50s] across
+[99m 50s] all your public repositories
+[99m 57s] like make sure that because i haven't
+[99m 59s] realized it's for the
+[100m 1s] main astro it's for the parent
+[100m 3s] repository
+[100m 4s] not for each individual one so yeah
+[100m 7s] us here for example um doesn't use this
+[100m 10s] until now
+[100m 12s] come on i have to i have to blame some
+[100m 14s] now
+[100m 17s] if you go to dot github you see this
+[100m 19s] funding
+[100m 20s] and if you check out here you see here
+[100m 23s] nothing
+[100m 24s] something has changed it when uh sparty
+[100m 27s] got an official github sponsor page
+[100m 29s] and yeah if you check uh
+[100m 33s] is it here
+[100m 43s] history so
+[100m 46s] and this has to be done in every
+[100m 49s] repository and sparta has
+[100m 50s] around 200 whatever
+[100m 54s] do they know about this secret maybe you
+[100m 56s] should tell them by the way
+[100m 58s] yeah i will see i will send freak a link
+[101m] to
+[101m 1s] this minute pointer when i started to
+[101m 4s] talk about the
+[101m 5s] github repository um
+[101m 9s] this is really clever yeah so it changes
+[101m 11s] for all the yeah
+[101m 13s] in my case if you wonder why i have this
+[101m 15s] three-way md file here for example
+[101m 17s] um it contains a template so yeah i have
+[101m 20s] this a little repo
+[101m 22s] updater which is a node.js utilizing
+[101m 25s] this octo kit package by
+[101m 27s] github i shouldn't i should stop to
+[101m 29s] click everything
+[101m 33s] it's it's a bit dirty but it works
+[101m 37s] it can send
+[101m 40s] changes to all my public repositories so
+[101m 46s] if i have this update trivia here for
+[101m 49s] example it calls the update readme
+[101m 52s] and it uses this trivia md file
+[101m 58s] and
+[102m 1s] search for the triva headline so
+[102m 4s] in every new package i only have to
+[102m 6s] place the trivia headline
+[102m 8s] and will automatically get the whole
+[102m 11s] three
+[102m 12s] sections there so
+[102m 15s] here this update labels is also
+[102m 20s] cool you have for
+[102m 24s] new repositories
+[102m 28s] possibility to define default labels
+[102m 31s] um where is it
+[102m 35s] repository defaults and here you have
+[102m 38s] labels
+[102m 38s] so you can define all the labels you
+[102m 41s] want to get
+[102m 42s] also with these colors so by default you
+[102m 44s] get
+[102m 45s] some not so pretty
+[102m 50s] colors so if you have a style guide
+[102m 53s] or like i am doing here an estro
+[102m 54s] astrotomic want to get some
+[102m 56s] yeah some of these uh softer cutters
+[103m] uh you can define some here but it's all
+[103m 2s] only available for
+[103m 4s] for new repositories and
+[103m 7s] this means if you configure it now and
+[103m 11s] already have 20 repositories
+[103m 13s] you have to change this in all 20. yeah
+[103m 15s] and since something
+[103m 16s] sets this method makes easier it also
+[103m 19s] uses this
+[103m 20s] update label endpoint of the ecu's
+[103m 24s] octokid so it's a rest api and i've
+[103m 27s] listed all my
+[103m 28s] my labels i want with the matching color
+[103m 30s] code here and sent
+[103m 32s] the label updates to all my packages
+[103m 36s] so really impressive yeah
+[103m 39s] and yeah i've also have these delete
+[103m 42s] file um because
+[103m 44s] these are the files you are able to
+[103m 46s] define uh
+[103m 48s] ansys.github repository so the funding
+[103m 50s] code of contact contributing security
+[103m 52s] markdown support markdown
+[103m 58s] and so how do you run this file then how
+[104m] do you
+[104m 1s] at what point and how i run it on my
+[104m 4s] local machine because i
+[104m 5s] it has some it is not perfect
+[104m 8s] now because if
+[104m 12s] a package require a repository requires
+[104m 15s] multiple changes so like uh
+[104m 17s] i have to delete two files and updates
+[104m 20s] readme three times
+[104m 24s] i haven't fixed it yet because it works
+[104m 26s] somehow
+[104m 27s] it has these commit reference problems
+[104m 31s] because
+[104m 33s] the second commit tries to send its
+[104m 37s] changes to the reference of the commit
+[104m 40s] before the first
+[104m 41s] change so let's read me the first time
+[104m 46s] so i have the commit reference one and
+[104m 48s] yeah
+[104m 49s] now i changed my readme uh the first
+[104m 51s] time because i had the trivia section
+[104m 53s] which gets uh commit uh reference too
+[104m 56s] yeah and after this i
+[104m 58s] updates read me this uh this
+[105m] contributing section here for example
+[105m 3s] yeah and this one now gets a problem
+[105m 5s] because it tries to send its update to
+[105m 7s] reference one
+[105m 8s] and not reference to get it yeah uh this
+[105m 11s] is a problem with this octokid
+[105m 12s] client here and i i bet it's fixable but
+[105m 16s] i don't want to waste time to it so
+[105m 19s] i just run this command uh
+[105m 22s] in a loop until it passes and no
+[105m 25s] exception is thrown
+[105m 26s] and everything is fine after it um
+[105m 30s] yeah so if you check out like yeah uh
+[105m 34s] the whole commit history uh
+[105m 37s] says uh yeah update read me update read
+[105m 40s] me update read me
+[105m 45s] up no these uh
+[105m 48s] but you will find these uh things um and
+[105m 51s] some of my repositories
+[105m 53s] when i had to yeah here delete code of
+[105m 56s] conduct delete of code update update
+[106m 1s] some of these spam commits
+[106m 4s] don't care about them
+[106m 8s] but okay it's just a presentation set uh
+[106m 11s] this octokid client is pretty more
+[106m 12s] powerful and
+[106m 15s] this is also a possibility you could do
+[106m 18s] with github actions
+[106m 20s] and one thing i am doing here is
+[106m 24s] also sharing the same github actions
+[106m 27s] across
+[106m 27s] all my repositories okay um i have this
+[106m 30s] workflow shared
+[106m 32s] c3 composer normalized marked on
+[106m 34s] normalize and state
+[106m 35s] issues because c3 are really the
+[106m 38s] exact same for every repository
+[106m 43s] so the run tests could be slightly
+[106m 44s] different because of these larva
+[106m 46s] differences and php version differences
+[106m 49s] but these are exactly the same so i will
+[106m 52s] send
+[106m 53s] c3 through all my repositories and now
+[106m 56s] i'm reading the comment to say any
+[106m 57s] resource guidance about the config
+[107m] yes um you have to know about it
+[107m 4s] but as there is
+[107m 10s] just have to google it
+[107m 12s] [Music]
+[107m 21s] possibly with alcis
+[107m 24s] oh yeah possibly we have to put it into
+[107m 29s] quotes
+[107m 32s] match yeah yeah
+[107m 38s] and this is
+[107m 41s] the documentation for the code of
+[107m 42s] conduct file and
+[107m 45s] somewhere here
+[107m 48s] it's mentioned exactly creating a
+[107m 50s] repository for default files so
+[107m 52s] it's not even a real documentation page
+[107m 55s] on its own it's only mentioned in
+[107m 58s] how you say so
+[108m 2s] and here it tells you to create a new
+[108m 3s] repository selects a
+[108m 5s] user organization you want to create it
+[108m 8s] for
+[108m 8s] you have to name it dot github uh it has
+[108m 12s] to be public
+[108m 14s] and re initialized wizard.readme so you
+[108m 18s] can do changes in the github ui
+[108m 21s] without this initial readme file you
+[108m 24s] aren't able to do this and create
+[108m 26s] repository
+[108m 28s] and then you can create all of these
+[108m 30s] files
+[108m 32s] code of contact contributing funding
+[108m 35s] there's also a config jamble for issues
+[108m 38s] and
+[108m 38s] templates and also stuff
+[108m 41s] security and support and
+[108m 45s] you can also create these your templates
+[108m 53s] yeah this is really i mean i never
+[108m 56s] thought about
+[108m 56s] i never looked into it because it's uh
+[109m] it's a similar secret to what you are
+[109m 2s] able to do
+[109m 3s] with uh this is repository named
+[109m 7s] by no
+[109m 10s] nuno uh then by your own name
+[109m 15s] so i know that nunu has one and
+[109m 20s] oh yeah can you create a yeah i know
+[109m 22s] about that secret oh i know a secret
+[109m 25s] and you create a repository of your own
+[109m 27s] username you will get to
+[109m 28s] style the landing page well the github
+[109m 31s] user
+[109m 32s] landing page pretty much yeah and you
+[109m 35s] have to create a readme and everything
+[109m 36s] you put into readme is displayed
+[109m 39s] yeah on your user profile so you can do
+[109m 42s] some pretty
+[109m 43s] image and text and whatever stuff you
+[109m 45s] want to do here
+[109m 46s] uh that you can't do on the site um
+[109m 49s] another possible secret uh i can't show
+[109m 52s] it on
+[109m 53s] nuno or again is this you have this
+[109m 56s] twitter handle down here
+[109m 57s] so yeah what i can't show is how you get
+[110m] there so
+[110m 1s] it's just open your own profile
+[110m 4s] edit profile and put it here yeah
+[110m 9s] some people have their twitter url
+[110m 12s] in their website so now you are able to
+[110m 14s] define your website and your twitter
+[110m 17s] which is also useful so sarah did it
+[110m 21s] i have to give credits where needed
+[110m 25s] and on our astrotomic landing page
+[110m 30s] if you check out freight for example
+[110m 33s] yeah freak acid these informations are
+[110m 37s] available via
+[110m 39s] api and so i can displace the twitter
+[110m 42s] and
+[110m 43s] yeah frick is a perfect example because
+[110m 44s] he has the twitter feature and the
+[110m 46s] twitter url
+[110m 47s] in his website
+[110m 50s] a poor freak like we can't pick up on
+[110m 53s] him like
+[110m 54s] choose a different person
+[110m 58s] so david has it uh yeah his website and
+[111m 1s] twitter handle and yeah we need to tell
+[111m 5s] him frick you need to watch this
+[111m 7s] you've been mentioned a lot
+[111m 10s] and one thing also important for your
+[111m 13s] github actions
+[111m 14s] um yeah
+[111m 17s] i have to open another one
+[111m 21s] so like yeah let's let's take this to
+[111m 25s] dummy just
+[111m 26s] true from
+[111m 29s] a website
+[111m 35s] here it is and
+[111m 42s] yeah it's a deploy one and here you can
+[111m 46s] see
+[111m 46s] this secrets variable and
+[111m 49s] also down here primary for deployments
+[111m 53s] it's likely
+[111m 54s] that you have secrets so like the mgx
+[111m 56s] signing key
+[111m 57s] netify out and site id
+[112m] yeah a special github token whatever you
+[112m 3s] need
+[112m 3s] uh front off sound token for it's a pro
+[112m 6s] version of an awesome
+[112m 8s] and yeah you don't want to put some in
+[112m 13s] in plain text in your in your workflow
+[112m 16s] file so don't do it
+[112m 17s] uh not in private and primarily not a
+[112m 20s] public repositories
+[112m 23s] uh i wouldn't by the way i mean you
+[112m 25s] looked at me i wouldn't
+[112m 27s] i wouldn't and to still manage this
+[112m 31s] you have this github repository settings
+[112m 34s] and
+[112m 34s] co can go to secrets
+[112m 37s] and i don't have to care about
+[112m 42s] publishing any secrets so
+[112m 45s] you have these repository secrets
+[112m 49s] okay cool and i have no idea oh oh
+[112m 52s] it's uh
+[112m 55s] let's take some website so you reference
+[112m 58s] them in the
+[112m 58s] in the in your code but they're actually
+[113m 1s] like
+[113m 3s] yeah yeah um it's like the dot env file
+[113m 8s] for example
+[113m 9s] and using it in your config yeah
+[113m 12s] and i think uh heroku hiroko also has
+[113m 15s] something that
+[113m 15s] i've used heroku for one project and
+[113m 17s] they also a possibility to add the
+[113m 20s] secrets to the heroku dashboard and then
+[113m 22s] reference them from your
+[113m 24s] config also circle ci has a travis ci
+[113m 28s] so this is a pretty common way to do it
+[113m 32s] and you can create a new repository
+[113m 36s] secret for sure
+[113m 38s] just key value so put in your name
+[113m 42s] add some value and save it
+[113m 45s] yeah cool
+[113m 50s] and one cool thing why i really like to
+[113m 54s] to do all open source stuff in
+[113m 56s] organizations and not my private
+[113m 58s] user account i can tell you some more
+[114m 1s] reasons
+[114m 2s] uh is that you have organization secrets
+[114m 5s] for example
+[114m 5s] so um my netif
+[114m 9s] out token for example could be the same
+[114m 11s] because it's one per account and if i
+[114m 13s] use
+[114m 14s] one astrotomic latify account it will be
+[114m 17s] always the same
+[114m 18s] for sure i could also do for every
+[114m 20s] repository but it could be the same
+[114m 23s] so i can create it as an organization
+[114m 25s] secret
+[114m 26s] and this will be available in all
+[114m 29s] repositories
+[114m 30s] yeah so i don't have to care about this
+[114m 33s] or
+[114m 35s] similar is the font awesome token which
+[114m 37s] is always the same because it's the same
+[114m 40s] account i'm using
+[114m 41s] yeah and you have some more so
+[114m 44s] like uh if you use nova and have a team
+[114m 47s] license you can
+[114m 48s] put in your nova token and credentials
+[114m 50s] here
+[114m 51s] yeah um so you can use the same
+[114m 54s] secrets and all your repositories
+[114m 57s] without always have to go to if you have
+[115m] a new project go to settings secrets
+[115m 2s] created them yeah yeah
+[115m 4s] you have to manage it so you always have
+[115m 6s] to search whereas the token
+[115m 8s] saved and most time you end up with
+[115m 10s] generating a new one because
+[115m 12s] in a team developer a has created it for
+[115m 15s] repository one
+[115m 17s] and hasn't saved it in the password
+[115m 19s] manager and
+[115m 20s] now developer 2 needs it and you know
+[115m 23s] this stuff
+[115m 24s] yeah and some
+[115m 27s] one thing i've seen now is environment
+[115m 29s] secrets
+[115m 31s] i can show this also with this atomic
+[115m 34s] website
+[115m 36s] there's a key safe introduced
+[115m 39s] lately
+[115m 45s] where it is
+[115m 48s] oh is it here no i have to show it on my
+[115m 51s] own website status
+[115m 57s] could you use this so these are only
+[116m] action secrets right
+[116m 1s] like you wouldn't use any other like the
+[116m 3s] twitter
+[116m 4s] things we use the twitter keys
+[116m 10s] yeah but i have it here you would put in
+[116m 12s] your twitter
+[116m 14s] keys as secrets for this repository to
+[116m 17s] use them
+[116m 18s] in in your ci so in your github actions
+[116m 21s] okay yeah and here i have this deploy
+[116m 24s] and
+[116m 25s] since this environment you have a name
+[116m 29s] and can put in the url so this is the
+[116m 32s] deployment for production if you would
+[116m 34s] have a development or staging
+[116m 35s] environment it would be named staging
+[116m 37s] dev whatever and
+[116m 38s] change the url and
+[116m 44s] if i go to
+[116m 48s] on here um
+[116m 52s] i see environments on the right and have
+[116m 55s] this plot environment
+[116m 58s] and i can see all deployments for system
+[117m] environment so the latest deployments
+[117m 2s] for this environment
+[117m 4s] i can go here to check out the
+[117m 7s] deployment itself
+[117m 11s] see it here and so actions
+[117m 14s] if i has a deployment i can see
+[117m 18s] the url of the environment i have
+[117m 20s] deployed to right into action
+[117m 22s] so yeah i see it passed so i can click
+[117m 26s] here
+[117m 27s] and see my website and see okay
+[117m 29s] everything is fine
+[117m 31s] uh i've right a lot of bike and
+[117m 35s] yeah a lot of you see the time i mean
+[117m 37s] come on
+[117m 40s] is the time in minutes or hours by the
+[117m 42s] way
+[117m 43s] uh no there wasn't a time is there a
+[117m 46s] time
+[117m 47s] it was kilometers no time
+[117m 50s] time in hours
+[117m 56s] is it like a bike as a bicycle or bike
+[117m 58s] as a motorbike
+[117m 59s] like no a bicycle bicycle only muscle
+[118m 3s] power
+[118m 5s] it could be you know you need to put you
+[118m 8s] need to be specific because if it's like
+[118m 10s] a motorbike
+[118m 11s] it's not that impressive anymore yeah
+[118m 17s] yeah and i think this is environment
+[118m 20s] secrets so
+[118m 21s] if i have different secrets for my
+[118m 23s] production and staging environment for
+[118m 25s] example i can
+[118m 26s] put in some here in the environment
+[118m 27s] secrets
+[118m 29s] so i can use the same name like uh
+[118m 34s] digital ocean key because i'm deploying
+[118m 36s] to digital ocean
+[118m 38s] and i have different ones for uh staging
+[118m 41s] and
+[118m 41s] production i can use digital ocean key
+[118m 45s] here as a as a name of the secret and
+[118m 48s] have
+[118m 49s] different values for production and
+[118m 51s] stitching yeah
+[118m 52s] so so it's super powerful um
+[118m 56s] something you also can do i'm switching
+[118m 59s] a lot of
+[119m 1s] uh
+[119m 4s] repositories right here um
+[119m 8s] is this social preview image so
+[119m 13s] okay when you link to it when you
+[119m 16s] yeah exactly and go to twitter and
+[119m 19s] twitter card
+[119m 21s] put in thing against this
+[119m 25s] large pretty if you didn't have
+[119m 28s] if you didn't have this image what would
+[119m 29s] it show actually i don't know
+[119m 33s] i never thought to think about it
+[119m 36s] okay get it yeah yeah that will just
+[119m 39s] grab the first image on the page so
+[119m 41s] your organization or user avatar yeah
+[119m 44s] if you don't have this it will just be
+[119m 46s] empty but it's
+[119m 48s] uh definitely this small uh
+[119m 51s] link card and not a cool large run you
+[119m 54s] want because
+[119m 55s] larger cards are clicked more likely
+[119m 58s] are they really yeah
+[120m 2s] because they pop up more uh
+[120m 5s] yeah the smaller ones could be just
+[120m 7s] scrolled away because you
+[120m 9s] even haven't seen it's a link
+[120m 12s] and this is the one where we get to the
+[120m 15s] badge
+[120m 16s] beyond b beyond
+[120m 20s] code
+[120m 24s] no uh keynote
+[120m 27s] the website is nick
+[120m 35s] close close enough come on sorry
+[120m 38s] ben us okay
+[120m 44s] so the original tool is from
+[120m 47s] where it's of reversal
+[120m 50s] to have this thing you can deploy
+[120m 53s] traversal it uses
+[120m 55s] reversal functions
+[120m 58s] and it generates an image from html
+[121m 1s] so if you want to create your very
+[121m 5s] own one uh reversal
+[121m 11s] it's something like this or the image
+[121m 13s] here
+[121m 15s] you can fork it and put in your own html
+[121m 21s] i don't know where it is it's somewhere
+[121m 24s] any of these file has html
+[121m 28s] you can also put in your own css and
+[121m 31s] whatever you want
+[121m 32s] and by default they have this uh
+[121m 36s] cool configuration view here so you can
+[121m 39s] switch to
+[121m 40s] this is a customized one from from
+[121m 43s] beyond code you have different styles
+[121m 46s] you can
+[121m 48s] put in uh the name of your package so
+[121m 52s] yeah something i'll need to do
+[121m 56s] um this package is so
+[122m 1s] cool um i don't know it doesn't support
+[122m 5s] emojis
+[122m 6s] no it doesn't
+[122m 10s] and you can choose a package manager so
+[122m 13s] composer for all the php ones npm yarn
+[122m 17s] and
+[122m 18s] adjusts this system down here
+[122m 21s] so we have a composer package and it's
+[122m 25s] destroyed yeah i need i'm gonna do
+[122m 28s] translatable
+[122m 29s] i'm gonna do that for the labels package
+[122m 34s] so we get to go back to light and
+[122m 38s] normal style um you can pick and one of
+[122m 41s] these logos so a lot of
+[122m 44s] php and they have
+[122m 48s] i think font awesome for version
+[122m 51s] 4 uh icon so you can emoji
+[122m 54s] yeah yeah it's not the emojis it's a
+[122m 57s] it's i can fonts svgs whatever
+[123m 1s] and you can say if you want these this
+[123m 3s] small watermark down here
+[123m 5s] yes or no and if you have
+[123m 8s] if you are happy with it right click
+[123m 12s] save
+[123m 15s] and yeah there you get this image and
+[123m 19s] it has a perfect proper um
+[123m 22s] width and height for this social image
+[123m 24s] stuff
+[123m 25s] so you can just take it and say
+[123m 28s] upload an image and
+[123m 32s] pick your image upload it and you have a
+[123m 34s] cool
+[123m 36s] um yeah yeah i'm doing that
+[123m 39s] for the largest package that's
+[123m 42s] definitely that's cool
+[123m 43s] that's very clever um some check boxes
+[123m 47s] you have here
+[123m 48s] is these features um so you have to
+[123m 51s] enable sponsor
+[123m 52s] sponsorships um yeah i think it's
+[123m 56s] on by default if you have this dot
+[123m 58s] github repository
+[124m 1s] but if you don't have this you would
+[124m 3s] have to create this funding number in
+[124m 5s] each repository so it's off by default
+[124m 8s] wikis is something i disable all the
+[124m 11s] time
+[124m 12s] because uh wikis are in my opinion a bad
+[124m 15s] place to manage knowledge
+[124m 17s] uh because you don't have any markdown
+[124m 19s] files you could export or deploy to
+[124m 21s] somewhere else or whatever
+[124m 23s] so if you want to change your look and
+[124m 25s] feel
+[124m 26s] or switch from github to reversal
+[124m 28s] netlife whatever
+[124m 30s] this isn't possible with wikis
+[124m 34s] you can restrict access a law or
+[124m 38s] enable disable issues so if you
+[124m 41s] say use it and leave me alone you can
+[124m 45s] disable issues and say
+[124m 47s] use it as is and do whatever you want
+[124m 51s] and preservative this repository is um
+[124m 54s] you've possibly seen it on twitter or on
+[124m 57s] some profiles
+[124m 58s] and they have started this github
+[125m] archive program where they
+[125m 2s] put code on on some super
+[125m 6s] solid uh hard drives and put them in the
+[125m 9s] arctic snow
+[125m 10s] so uh humans a thousand year laters can
+[125m 14s] use our open source code and say yes
+[125m 17s] the hell has
+[125m 22s] yeah table of contents is a new one uh i
+[125m 25s] think they've released it today or
+[125m 26s] yesterday
+[125m 28s] um save edits this small
+[125m 32s] thing here oh cool how to generate a
+[125m 35s] table
+[125m 35s] of contents of your readme file can i
+[125m 38s] just ask
+[125m 38s] how do you keep up with all those new uh
+[125m 40s] releases then how did you know about
+[125m 42s] this
+[125m 42s] like how do you know uh net has treated
+[125m 46s] it
+[125m 46s] and so he's tweeted it today
+[125m 50s] and i've seen it when i've opened one of
+[125m 54s] my repository i seen this
+[125m 56s] yes this one here you paid too much
+[125m 58s] attention like
+[126m] i would just scroll way past everywhere
+[126m 2s] else you know
+[126m 3s] okay uh it's it's much more obvious on
+[126m 6s] mobile devices
+[126m 7s] so if you have it was on my phone
+[126m 11s] and here you notice this small button
+[126m 14s] a lot faster yeah and this is also cool
+[126m 17s] that it works on mobile because on
+[126m 19s] mobile it's much more important to
+[126m 21s] quickly
+[126m 22s] jump to the changelog and
+[126m 25s] open it so yeah so clever
+[126m 28s] um what else do we have
+[126m 32s] well i have to say we are past two hours
+[126m 34s] now so we might have to wrap it up
+[126m 37s] yeah i
+[126m 40s] and i did oh i did say we wanted to make
+[126m 43s] it shorter today oh well
+[126m 45s] oh well we tried i didn't wanted to
+[126m 47s] respond on twitter and
+[126m 49s] uh pops a bottle bubble uh right after
+[126m 52s] you stated just to github how long can
+[126m 55s] it take possibly
+[126m 56s] okay you can't spend hours with
+[127m] everything okay well i can see that you
+[127m 2s] know i never i mean i use github daily
+[127m 4s] but i just don't look for these things
+[127m 6s] it's just like you are so i'm so stuck
+[127m 8s] in my way of doing things
+[127m 10s] that unless somebody like you i read
+[127m 12s] something somewhere it just
+[127m 13s] brings my attention to what's possible i
+[127m 15s] would just never i just keep going you
+[127m 16s] know
+[127m 17s] my own ways uh this is really clever
+[127m 21s] this is your templates which are pretty
+[127m 23s] useful if you click
+[127m 24s] if you have some and click new issue
+[127m 26s] yeah um
+[127m 27s] your user has to choose the bug report
+[127m 30s] feature request
+[127m 31s] question or security
+[127m 34s] so we want to ask for a new feature
+[127m 37s] and in this case this uh
+[127m 41s] this body box is pre-filled
+[127m 44s] yeah and i've seen three types of people
+[127m 48s] um person one
+[127m 51s] simply ignoring this template and
+[127m 53s] writing i
+[127m 55s] want to whatever i want
+[127m 59s] possibly above or below this template
+[128m 2s] um person two select everything delete
+[128m 6s] everything yeah
+[128m 8s] i don't care about your template
+[128m 12s] and yeah crossing three
+[128m 15s] right right so i want to
+[128m 18s] as a maintainer i can really say tell
+[128m 21s] you if there's an issue template and you
+[128m 23s] don't use it
+[128m 24s] i have a very
+[128m 28s] s simple and cool feature
+[128m 31s] and it's called close
+[128m 35s] so do you even tell them please use the
+[128m 38s] template or just close it
+[128m 40s] it depends uh it really depends
+[128m 44s] your mood how late in the day it is
+[128m 48s] on six this and also
+[128m 52s] how he's used uh
+[128m 55s] the two inputs so there are even people
+[128m 59s] just saying here i want to and not
+[129m 2s] caring about the length so uh
+[129m 4s] say we'll type in a whole sentence
+[129m 6s] ignoring the whole body
+[129m 8s] and submitted and
+[129m 11s] this is the case when i definitely
+[129m 13s] immediately just
+[129m 14s] click close because really
+[129m 18s] i have to spend my time to answer you
+[129m 21s] and
+[129m 22s] fulfill your feature request if you not
+[129m 25s] even have the
+[129m 26s] two minutes to fill out my
+[129m 29s] form which makes it easier for me as a
+[129m 31s] maintainer to to get what you want
+[129m 33s] yeah makes sense so normally no what we
+[129m 36s] should do
+[129m 37s] after this this video we should well you
+[129m 39s] should really
+[129m 41s] because i'm probably not gonna like
+[129m 43s] write a blog post with all those little
+[129m 45s] tips
+[129m 46s] like or just at least i should probably
+[129m 48s] do those
+[129m 49s] time stamps on the video just say like
+[129m 50s] at this minute we talk about it and that
+[129m 52s] and that because you've said so many
+[129m 54s] like the discussion we've had about
+[129m 56s] what it's like to you know for
+[129m 58s] maintainers of open source i think these
+[130m] things should be really
+[130m 2s] we should shout about this and like
+[130m 4s] things about you know for example the
+[130m 6s] the uh these oh
+[130m 9s] templates you know simple things can
+[130m 11s] make things easier
+[130m 13s] i don't think people talk about it
+[130m 15s] enough so and this is a long video and
+[130m 17s] if anyone you know watches it two hours
+[130m 19s] all the way through great but i just i
+[130m 22s] don't think many people will
+[130m 23s] so if we either do like a time stamps or
+[130m 26s] based on this video then write a blog
+[130m 27s] post
+[130m 28s] that it's easier for people to read
+[130m 30s] because i think it's
+[130m 31s] it's important any artificial
+[130m 34s] intelligence that can create a blog post
+[130m 36s] from
+[130m 37s] spoken text that is your new next
+[130m 40s] project
+[130m 41s] go for it um
+[130m 45s] when we are talking about uh syncs and
+[130m 48s] so on
+[130m 49s] um there is a composer thanks command i
+[130m 52s] think you have to install it uh
+[130m 54s] from symphony
+[131m 1s] which is a pretty yeah
+[131m 4s] disgusting
+[131m 8s] there are people saying it's cool there
+[131m 10s] are people saying it's
+[131m 11s] it's a waste of whatever of time or
+[131m 14s] code um i'm a fan of it because
+[131m 19s] if we are honest um if we search for an
+[131m 22s] open source package that solves a
+[131m 23s] problem
+[131m 24s] for us and we have like three packages
+[131m 27s] one there are some things we check so we
+[131m 30s] have this package open
+[131m 31s] and the first thing we possibly check is
+[131m 34s] when was the last commit okay eight days
+[131m 36s] ago is
+[131m 37s] is okay um if here is two years ago
+[131m 41s] it's already dangerous yeah yeah
+[131m 45s] but if we have two active packages out
+[131m 48s] of these three
+[131m 49s] another thing we check is yeah the stars
+[131m 52s] of the repository because it's
+[131m 54s] it's a kind of uh
+[131m 57s] of validation rating of the package and
+[132m] validation said
+[132m 1s] there are users using it um yeah in
+[132m 4s] combination with the downloads for
+[132m 5s] example here so
+[132m 6s] okay 800 000 downloads and 600 stars
+[132m 10s] seems like a good package
+[132m 15s] and also um
+[132m 18s] yeah like like a check okay no there
+[132m 21s] aren't only
+[132m 22s] eight hundred thousand people
+[132m 23s] downloading at once to see it doesn't
+[132m 25s] work
+[132m 26s] um but there are at least 600 people who
+[132m 29s] thinks this package really
+[132m 31s] works uh in a good way and
+[132m 34s] i've if you compare to like uh
+[132m 37s] facebook likes or twitter likes uh say
+[132m 40s] as one major difference
+[132m 42s] i've noticed during time github has one
+[132m 45s] of the
+[132m 46s] most solid and aggressive spam and bot
+[132m 49s] protections on the universe
+[132m 54s] i've seen it one time when i created a
+[132m 57s] second account i needed to test some
+[132m 59s] stuff
+[133m] and yet just uh also to test uh
+[133m 4s] things like this i have starred like two
+[133m 7s] or three of my packages
+[133m 9s] or repositories um c stars were
+[133m 12s] revoked one or three days later because
+[133m 16s] github has
+[133m 17s] whatever kind of detections that this
+[133m 21s] user is doesn't has his own repositories
+[133m 24s] is only there to start things and check
+[133m 26s] out code
+[133m 28s] so c stars aren't really valid
+[133m 31s] and this means that uh if there are 600
+[133m 35s] stars
+[133m 35s] it means that there are very likely
+[133m 38s] really 600 people
+[133m 40s] uh using and ratings this package so not
+[133m 43s] uh
+[133m 44s] 600 fake accounts or like on instagram
+[133m 48s] where you can
+[133m 48s] buy 500 likes for 50 or whatever yeah
+[133m 54s] these are really valid uh stars and yeah
+[133m 58s] with composer sayings it's really easy
+[134m] because you
+[134m 1s] create your application and just run
+[134m 4s] composer sayings
+[134m 5s] and it will start every dependency in
+[134m 8s] your project
+[134m 9s] so okay you don't have to open all these
+[134m 12s] projects your own
+[134m 13s] and start them and just
+[134m 16s] call composer things and you're done
+[134m 20s] for me for example i've put it into my
+[134m 22s] composer.json as a script
+[134m 24s] in the scripts section
+[134m 27s] so this is possibly the last section i
+[134m 31s] want to talk about
+[134m 32s] yeah possibly i'm in talking mood today
+[134m 38s] so thank you one thing is you have to
+[134m 41s] register this
+[134m 43s] thanks command um in case you are
+[134m 46s] running
+[134m 47s] uh it's on an on an environment where
+[134m 50s] you don't have
+[134m 51s] uh symphony syncs installed already yeah
+[134m 54s] so it don't end up with this command
+[134m 57s] doesn't exist
+[134m 58s] exception whatever and i use it on
+[135m 2s] post dump auto load so this is called
+[135m 5s] on every dump auto load or after every
+[135m 9s] dump autoload
+[135m 10s] so after every install update require or
+[135m 14s] just a composer dump autoload
+[135m 17s] it calls composer syncs so
+[135m 20s] i can't install a dependency without
+[135m 24s] syncing it oh it's very good again i
+[135m 27s] don't know about this one that's that's
+[135m 28s] nice this makes it super easy for me
+[135m 32s] i also have some stuff i like here
+[135m 35s] like they get a lot of issues uh of
+[135m 38s] people forgetting to call
+[135m 39s] confi clear for example in running
+[135m 41s] config cache on local environment which
+[135m 43s] is
+[135m 43s] a bad idea in its own or but
+[135m 47s] you definitely should call coffee clear
+[135m 48s] in this case then
+[135m 51s] and that's why i put it in my also
+[135m 55s] post auto load down so i run a composer
+[135m 58s] update
+[135m 58s] and i definitely have a cleared
+[136m] environment no configuration view case
+[136m 3s] no route cache
+[136m 5s] um which ensures that every package i
+[136m 7s] installed will definitely work
+[136m 9s] yeah again this is a good thing to do
+[136m 12s] right i'm going to honestly i'm going to
+[136m 14s] have to wrap it up because
+[136m 17s] what time is it it's quarter past seven
+[136m 19s] my time 40 past eight your time friday
+[136m 22s] evening like we should really be doing
+[136m 23s] something
+[136m 24s] prime time started in germany so uh
+[136m 27s] possibly a few people
+[136m 28s] left us alone to watch a cool movie oh
+[136m 32s] there you go
+[136m 33s] bro thank you so honestly this has been
+[136m 35s] really i'll have to put something
+[136m 37s] together because there are so many
+[136m 38s] things i didn't know at least
+[136m 41s] at least i need to do the timestamps on
+[136m 42s] the video
+[136m 44s] yeah and if any i'm probably gonna
+[136m 47s] tweet a few of those things i've learned
+[136m 49s] today or you go for it one of us
+[136m 51s] should because he's going to do it
+[136m 54s] yeah i'll do myself regarding the blog
+[136m 58s] post
+[136m 58s] uh i'm i've i've posted it
+[137m 3s] last week or so or earlier this week
+[137m 5s] that i've
+[137m 6s] offered officially stopped blogging
+[137m 9s] because it's not not the format i
+[137m 12s] i enjoy for my own um because it's it's
+[137m 15s] pretty one way so your publishing blog
+[137m 17s] post and possibly someone comments on
+[137m 19s] twitter
+[137m 20s] or whatever but you don't get to read
+[137m 22s] feedback like if we
+[137m 24s] to on the stream discussing something
+[137m 26s] i'm talking about that you're asking a
+[137m 28s] question i can answer it and
+[137m 31s] also stuff and for me it
+[137m 35s] was too much time and energy is that
+[137m 37s] were required to write a blog post
+[137m 39s] because i'm not the writer
+[137m 42s] and or primary is not in english
+[137m 45s] so yeah i have to put my knowledge
+[137m 48s] into sections and sentences and
+[137m 52s] reduce my code examples to to the
+[137m 55s] minimum
+[137m 56s] but also the amount really needed
+[138m] to understand it and it's really a lot
+[138m 2s] of time
+[138m 3s] that goes into blocking so
+[138m 7s] props to all who do who do it um
+[138m 10s] yeah but it's not what what i will do
+[138m 14s] during during my life um
+[138m 18s] i will definitely share some knowledge
+[138m 21s] on twitter
+[138m 21s] and i'm thinking about about race to
+[138m 26s] uh to get this and i think i'm streaming
+[138m 30s] also with you possibly during the next
+[138m 32s] week some
+[138m 33s] more and possibly with others so if
+[138m 36s] there's
+[138m 36s] one someone watching who also want to
+[138m 39s] stream or discuss whatever with me or
+[138m 41s] get a review
+[138m 42s] on his code uh and is fine to do it on
+[138m 46s] stream
+[138m 46s] i'm definitely willing and available
+[138m 49s] and i think this is a format
+[138m 53s] i i enjoy more because it's more
+[138m 54s] interactive uh
+[138m 56s] it gets more feedback and yeah
+[139m] i'm just making notes of all the things
+[139m 1s] i should do
+[139m 4s] right honestly let's let's wrap it up
+[139m 6s] thank you so much
+[139m 8s] thank you for whoever joined
+[139m 11s] and let's see if there's anything in the
+[139m 12s] comments now hamad
+[139m 14s] thank you it was a great session oh yeah
+[139m 17s] i
+[139m 17s] really enjoyed it and it was like i just
+[139m 19s] didn't know what
+[139m 20s] really con considering how much i use
+[139m 22s] github i didn't know i don't know much
+[139m 24s] about it obviously
+[139m 25s] but yeah thank you so much and we will
+[139m 28s] see
+[139m 29s] when we're gonna do this next we've
+[139m 31s] finished this laravels package and yeah
+[139m 34s] we'll be in touch it's not really
+[139m 36s] finished but it's definitely a state
+[139m 38s] where everyone can contribute so also
+[139m 42s] all watchers who are willing to get the
+[139m 45s] first
+[139m 46s] open source contribution feel free to
+[139m 48s] improve the package
+[139m 50s] yeah and don't hesitate to create your
+[139m 53s] own package
+[139m 54s] yeah yes and you do use skeleton
+[139m 57s] don't don't do it from scratch
+[140m] okay well have have a nice friday
+[140m 2s] evening have a nice weekend everyone
+[140m 4s] and i'll see you next time bye

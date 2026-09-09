@@ -17,7 +17,7 @@
                 name="ski-clock"
                 class="mr-1"
             />
-            {{ $stream->duration->forHumans(['minimumUnit' => 'minute']) }}
+            {{ $stream->read_time->forHumans(['minimumUnit' => 'minute']) }} watch
         </li>
     </ul>
 </aside>

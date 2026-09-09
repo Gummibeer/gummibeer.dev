@@ -33,14 +33,16 @@ return [
 
         'blog' => [
             'driver' => 'local',
-            'searchables' => ['collection:posts'],
-            'fields' => ['title', 'description', 'category', 'content'],
+            'searchables' => ['collection:posts', 'collection:streams'],
+            'fields' => ['title', 'description', 'category', 'content', 'channel_name', 'transcript_text'],
             'min_characters' => 3,
             'property_weights' => [
                 'title' => 4,
                 'description' => 2,
                 'category' => 2,
                 'content' => 1,
+                'channel_name' => 1,
+                'transcript_text' => 1,
             ],
             'use_stemming' => true,
             'use_alternates' => true,

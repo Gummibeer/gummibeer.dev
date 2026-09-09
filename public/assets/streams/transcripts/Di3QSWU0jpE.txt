@@ -1,0 +1,1029 @@
+[0s] i will check it
+[4s] i zoom it okay here it is
+[14s] so
+[31s] i will tweet it
+[43s] so you tweeted the link but without any
+[44s] context was that on purpose
+[47s] uh not really
+[51s] okay uh i'm gonna go check the link to
+[55s] make sure but it looks
+[56s] looks good to me so
+[59s] if if i click the link it's just okay
+[1m 1s] streaming
+[1m 2s] okay perfect all right for me it was on
+[1m 6s] this
+[1m 6s] blank placeholder screen yeah no it's
+[1m 9s] actually not streaming
+[1m 10s] so yeah i would actually put out a a
+[1m 12s] tweet um that actually says hey we're
+[1m 14s] live right now
+[1m 15s] stay tuned yeah and and if you come
+[1m 17s] across this later
+[1m 18s] then this link will work for um
+[1m 22s] you know to see the replay or something
+[1m 24s] and then when you tweet that i'll
+[1m 25s] retweet it
+[1m 33s] hey frank hey
+[1m 37s] let's see how do we chat in there can we
+[1m 39s] chat in there
+[1m 40s] uh you should or at least i can you can
+[1m 43s] yeah i can't but i could just go over to
+[1m 45s] youtube and chat there if i wanted
+[1m 46s] but i just get to say it he's here
+[1m 49s] because of the tweet
+[1m 50s] what's up joseph
+[2m 2s] okay
+[2m 6s] have treated with at least one sentence
+[2m 9s] [Laughter]
+[2m 20s] it didn't go out yet i'm only just
+[2m 22s] seeing the one with just the the link
+[2m 28s] i will delete the one with the link i'm
+[2m 31s] not seeing the one with the full the
+[2m 33s] full sentence oh here you go 32 seconds
+[2m 35s] just took a second perfect
+[2m 36s] retweet great
+[2m 43s] so i don't know okay
+[2m 47s] i can't see how many people
+[2m 50s] are are watching this stream right now
+[2m 52s] here in
+[2m 53s] recent years
+[2m 57s] we have five people now
+[3m] so yeah you want to give it maybe just
+[3m 4s] two minutes since everybody didn't have
+[3m 5s] the link to join if they're planning to
+[3m 7s] yeah i do know quite a few people at
+[3m 8s] titan are because they're
+[3m 10s] um at work right now they're gonna watch
+[3m 12s] the replay so
+[3m 13s] and that's something i've experienced a
+[3m 15s] lot with live streams is that a lot of
+[3m 16s] people
+[3m 17s] you know they're like hey in my
+[3m 18s] particular time zone you know i'm gonna
+[3m 20s] have to watch the replay
+[3m 21s] hey hey jorge jorge
+[3m 24s] harge or hey oh hey look at that that's
+[3m 27s] cool
+[3m 29s] do you get to do do you pick a chat item
+[3m 31s] and choose to feature it like that
+[3m 33s] yeah uh i can just hover on on a comment
+[3m 36s] in
+[3m 36s] the right sidebar and click on it and
+[3m 39s] very cool it will show up so like
+[3m 44s] for those of you who don't know um this
+[3m 46s] is a really cool a lot there's
+[3m 48s] um hey kristoff the there are a lot of
+[3m 50s] people have been creating these projects
+[3m 51s] these team things like this where you do
+[3m 52s] like a whole bunch of people together
+[3m 54s] but you restream is the one i use for
+[3m 56s] all of my um
+[3m 58s] my streaming so my obs streams to
+[3m 59s] restream and it sends to twitch and
+[4m 1s] youtube
+[4m 1s] and so tom discovered that restream has
+[4m 3s] one of these two which is super cool
+[4m 5s] um i'm definitely gonna use this because
+[4m 6s] in the past what i've been doing is like
+[4m 8s] call somebody on skype and then share
+[4m 10s] their skype window into my obs
+[4m 12s] which is just so much more work than
+[4m 14s] this which is just so freaking
+[4m 15s] convenient so
+[4m 17s] good if you feel like you want
+[4m 20s] a bit more uh tooling around
+[4m 24s] you can also use obs to stream uh
+[4m 28s] to restring one of the sources basically
+[4m 31s] yeah
+[4m 32s] and i think they also have a zoom
+[4m 35s] integration
+[4m 36s] i don't know how this works but hey
+[4m 38s] marcel
+[4m 39s] hey all who have joined last minute
+[4m 43s] so
+[4m 54s] i hope you all have something to drink
+[4m 56s] or
+[4m 57s] eat or whatever and have a perfect
+[5m 1s] and have a nice place to watch it yeah
+[5m 4s] if any of you this is probably us only
+[5m 6s] but this right here is freaking amazing
+[5m 8s] it's
+[5m 9s] pea protein milk so they just took pea
+[5m 11s] protein and water and then said it's
+[5m 13s] milk
+[5m 13s] and then this one they added some
+[5m 14s] chocolate and some more protein so
+[5m 20s] adam said is watching the other feed is
+[5m 22s] there a second feed
+[5m 23s] yeah okay i think this was
+[5m 27s] the same like i think you had last time
+[5m 29s] yeah the same thing
+[5m 30s] yep you announce a stream via
+[5m 33s] youtube and planet but you are unable to
+[5m 36s] connect to this stream via restream
+[5m 39s] studio
+[5m 40s] so i think you can plan events in
+[5m 43s] restream but
+[5m 45s] yeah whatever i think people are not as
+[5m 47s] ego right
+[5m 48s] yeah yep
+[5m 53s] yeah so kristoff and um frank have both
+[5m 55s] said they have the same experience
+[5m 56s] whereas you don't get a lot of people in
+[5m 58s] the live stream
+[5m 59s] but then you know you do get enough to
+[6m 1s] get fun chats with some people
+[6m 2s] but then it's the replays that are
+[6m 4s] really kind of where the videos people
+[6m 5s] really watch them because just a lot of
+[6m 7s] people can't can't watch it live
+[6m 8s] so yeah exactly uh we have
+[6m 11s] a worldwide community with right
+[6m 15s] of time zones yeah so even if we try to
+[6m 19s] match
+[6m 20s] at least a big part of the world and i
+[6m 22s] think
+[6m 23s] we are able to do this right now so with
+[6m 26s] uh
+[6m 27s] yeah end of evening in europe and
+[6m 30s] midday in in the us and some
+[6m 34s] hours also for our asian friends but i
+[6m 37s] think for ex
+[6m 38s] uh australia for example will be
+[6m 39s] definitely what time is it in sydney
+[6m 41s] right now right
+[6m 42s] time is it i think they are the
+[6m 45s] exact opposite of my time zone so it
+[6m 48s] should be
+[6m 49s] five a.m uh sydney it's one o'clock in
+[6m 52s] the morning
+[6m 54s] oh okay
+[6m 57s] so they are sydney is the exact opposite
+[7m] of
+[7m 3s] two time zones east of me which i don't
+[7m 4s] know if there's anybody there
+[7m 6s] the the east coast of brazil when it's
+[7m 8s] not daylight savings time is
+[7m 10s] is two times used to me so we have 15
+[7m 13s] now we got i think 15 is okay
+[7m 16s] okay it's the magic number
+[7m 19s] so hey all uh i've made
+[7m 24s] a big trouble during the last week on
+[7m 26s] twitter
+[7m 28s] and i am quite happy to
+[7m 31s] announce it today uh in combination with
+[7m 34s] matt who helped me to
+[7m 39s] to get it done even if he hasn't written
+[7m 41s] a single line of code but
+[7m 44s] he were a perfect consultant for me
+[7m 49s] so yeah let's go
+[7m 52s] and start with a presentation
+[7m 56s] so
+[7m 59s] so this is the image you all know and
+[8m 2s] let's remove the ellipses and
+[8m 7s] here you go exactly so the tool we is it
+[8m 12s] intentional is that you are muted
+[8m 14s] matt yeah i just wanted to make sure
+[8m 16s] that you want we're all
+[8m 17s] swallowing when i'm drinking okay
+[8m 21s] so the tool i'm announcing is appender
+[8m 26s] very few of you uh already know it so
+[8m 30s] freak for example
+[8m 32s] um because i had to to invite some
+[8m 35s] in the early beta process to to test and
+[8m 39s] play around with it all of you
+[8m 42s] who already want to check it out now
+[8m 45s] this is the domain
+[8m 46s] so you can access it says no
+[8m 50s] anything you have to do just click on it
+[8m 52s] you can visit it and
+[8m 54s] says it's always a sign in but it's also
+[8m 57s] sign up button in the upper right
+[9m] and now
+[9m 4s] before we are talking about what
+[9m 6s] appender is
+[9m 8s] uh first introduction of myself so i am
+[9m 11s] tom witkowski
+[9m 12s] founder of astrotomic and open source uh
+[9m 16s] collective and
+[9m 20s] it's a yeah i the
+[9m 23s] so organization behind opener
+[9m 26s] we are already two people right now with
+[9m 28s] uh sarah
+[9m 30s] and yeah now i'm also the founder of
+[9m 33s] appendemi
+[9m 34s] uh you can see some links uh you can if
+[9m 37s] you want to follow me
+[9m 38s] and check out what i'm doing
+[9m 42s] and now med's turn
+[9m 46s] i i don't even deserve this slide
+[9m 47s] literally all i've done
+[9m 49s] as all these things is i've hung out
+[9m 51s] with tom
+[9m 52s] and validated his brilliant ideas uh so
+[9m 54s] i'm matt
+[9m 56s] if you don't know who i am i'm your
+[9m 57s] friend you know that's my usual pitch
+[10m 1s] perfect so i will do it quick uh he is
+[10m 4s] partner and technical director of titan
+[10m 5s] and i think most of you know him as
+[10m 9s] a big part of the larger community
+[10m 12s] uh a very kind person definitely
+[10m 15s] so thank you my friend even if he says
+[10m 18s] he doesn't divert deserves it
+[10m 20s] a big thank you
+[10m 23s] and yeah a short overview
+[10m 26s] um first a short introduction so some
+[10m 30s] things and after this is my motivation
+[10m 33s] so why i have created this tool because
+[10m 37s] i think this is something
+[10m 38s] missing sometimes if you just see the
+[10m 40s] tool um
+[10m 43s] then the goals future roadmap so
+[10m 46s] how the tool can or will evolve during
+[10m 49s] the next
+[10m 50s] weeks months and so on
+[10m 53s] uh yeah daniel i'm sorry this was the
+[10m 57s] first
+[10m 58s] planned link but uh i wasn't able to
+[11m 1s] connect to it
+[11m 2s] uh today so i had to create a new one
+[11m 6s] and yeah some
+[11m 10s] closing words so like uh sponsors how do
+[11m 13s] you
+[11m 13s] if you want to contact me how you can do
+[11m 15s] and some parting words
+[11m 17s] so first a special thanks to yeah matt
+[11m 21s] as my
+[11m 21s] consultant and uh idea validator
+[11m 26s] secondly is sarah who is uh now the
+[11m 29s] co-maintainer of
+[11m 30s] astrotomic she has joined me
+[11m 33s] i don't know two months ago or something
+[11m 35s] like this
+[11m 36s] and yeah already helped me a lot even
+[11m 40s] if not directly so as much with appender
+[11m 43s] but
+[11m 43s] with keeping my back clear of all the
+[11m 46s] tasks coming in with the
+[11m 48s] other 27 packages we've already released
+[11m 50s] at s atomic
+[11m 52s] and daniel has helped me with
+[11m 55s] writing and yeah he has created
+[11m 58s] fhqs for example and checked some
+[12m 2s] some of the wordings i had and yeah met
+[12m 5s] that also the same as a native english
+[12m 6s] speaker he was a
+[12m 7s] epic help
+[12m 11s] so my motivation and some background
+[12m 16s] my whole career started back in 2015 and
+[12m 20s] or at least my open source carrier and
+[12m 24s] this is also the biggest motivation
+[12m 25s] behind it because my whole carrier is
+[12m 27s] based on open source
+[12m 29s] so at this point a really big
+[12m 32s] thank you to frake who has asked me back
+[12m 35s] in 2016 i think
+[12m 37s] to join as a spart here as a maintainer
+[12m 41s] of some packages first one was activity
+[12m 44s] lock i think
+[12m 45s] and i'm now maintaining several of
+[12m 49s] sparky packages and helping where i can
+[12m 52s] and yeah in 2015 i've also founded
+[12m 56s] astrotomic
+[12m 57s] to keep some packages in it i've
+[13m] created during this time and
+[13m 4s] all the stuff and everything that
+[13m 6s] happens afterwards
+[13m 7s] change definitely my carrier so i
+[13m 8s] wouldn't be
+[13m 10s] at this point in my career where i am
+[13m 12s] now
+[13m 14s] without open source it was
+[13m 17s] a lot of work definitely but for me it
+[13m 19s] was also worth it
+[13m 20s] because open source is something you can
+[13m 23s] carry
+[13m 24s] between different employers so
+[13m 28s] not like uh company projects you have
+[13m 31s] left
+[13m 32s] you have to left behind if you join a
+[13m 34s] new company or something
+[13m 35s] open source is a persistent between
+[13m 39s] whatever day job you are doing and
+[13m 43s] after i have done some
+[13m 46s] work at spa here and as atomic it was a
+[13m 50s] big door opener because
+[13m 51s] uh as soon as i was able to to talk to
+[13m 55s] the i.t department
+[13m 56s] so cto head of development or whoever
+[13m 59s] was
+[13m 59s] responsible to talk with me during
+[14m 4s] application process
+[14m 8s] this was really a big deal of not always
+[14m 10s] because
+[14m 12s] say already knew my name and
+[14m 16s] sometimes also say it like oh you're at
+[14m 19s] home yeah we are using your code already
+[14m 21s] in
+[14m 22s] most of our projects for example so
+[14m 25s] this helps a lot to get in and
+[14m 28s] it also helped a lot and sense that i i
+[14m 31s] nearly never had to do
+[14m 33s] any coding challenges because my github
+[14m 36s] profile was
+[14m 37s] like the coding challenge beforehand so
+[14m 41s] head of development were able to to
+[14m 43s] check it out to read through my code
+[14m 45s] what's important for me for example to
+[14m 47s] code so because all of this code is
+[14m 49s] written by me
+[14m 50s] so you can see how i'm coding which
+[14m 53s] tools to
+[14m 54s] check code quality for example i use and
+[14m 56s] so on and
+[15m] i've already stated in in a side
+[15m 3s] sentence
+[15m 4s] uh some motivation behind it this only
+[15m 8s] worked
+[15m 8s] as soon as i were able to talk to the
+[15m 10s] i.t department
+[15m 12s] the whole process before with recruiters
+[15m 14s] and
+[15m 16s] the human resource department and so on
+[15m 18s] they don't know
+[15m 19s] github they are unable to understand it
+[15m 21s] which is totally fine because it's not
+[15m 23s] their job to
+[15m 24s] to click through all the repositories
+[15m 26s] and understand what it means that i've
+[15m 28s] committed or whatever and
+[15m 32s] this part that appender me should solve
+[15m 36s] it should provide or it already does
+[15m 39s] a public profile for you as a
+[15m 42s] open source developer contributor
+[15m 44s] maintainer whatever
+[15m 46s] and
+[15m 50s] read uses or yeah reduces
+[15m 53s] all the data we retrieve from github
+[15m 56s] into
+[15m 57s] a profile every or nearly everyone is un
+[16m 1s] enabled able to understand so
+[16m 4s] for some persons of you who have already
+[16m 8s] checked it out if you go to the profile
+[16m 11s] or if you click on the home page on any
+[16m 12s] of the link profiles
+[16m 14s] says for example this top paragraph that
+[16m 19s] says to how many repositories you have
+[16m 22s] contributed in which languages and so on
+[16m 24s] and
+[16m 25s] this for example the first paragraph
+[16m 27s] introductions
+[16m 28s] recruiter can can see and understand
+[16m 34s] and
+[16m 36s] oh sorry kaneko yeah my bad somehow
+[16m 42s] but not much yet it's i've i'm talking
+[16m 45s] about my motivation
+[16m 46s] and you've missed possibly is a link but
+[16m 49s] i think
+[16m 50s] i've invited you already so
+[16m 54s] yeah and yeah
+[16m 57s] this is my motivation behind it and now
+[17m] matt can talk about the other side
+[17m 3s] because
+[17m 4s] he is a manager in his company so he can
+[17m 9s] talk about and think about the sahayan
+[17m 11s] process
+[17m 12s] and he's he has already validated my
+[17m 16s] idea that it
+[17m 17s] is helpful so yeah and that was that was
+[17m 20s] the main thing is that tom said
+[17m 22s] what if i built something like this and
+[17m 23s] i said that would be very helpful for me
+[17m 25s] in the hiring process so
+[17m 26s] essentially the value for me is when
+[17m 28s] somebody applies to titan
+[17m 30s] um there's historically been you know a
+[17m 33s] value made say hey if you have these
+[17m 34s] open source projects and contributions
+[17m 36s] it's helpful but that's not the only
+[17m 38s] thing we consider because some people
+[17m 39s] don't have time for that okay cool so
+[17m 41s] that's already noted but if we want to
+[17m 42s] look at somebody's open source
+[17m 43s] contribution
+[17m 44s] it's often difficult to know exactly
+[17m 47s] what the value is that they provided
+[17m 49s] there quite yet
+[17m 50s] and so one of the things that i've had
+[17m 51s] to do is learn to figure out how do you
+[17m 53s] look at the metrics that actually matter
+[17m 55s] so for example some people will say oh
+[17m 56s] i'm the number one contributor and the
+[17m 58s] number three contributor on
+[17m 59s] x and y large project well it turns out
+[18m 1s] all other contributions are
+[18m 2s] you know grammar changes uh they haven't
+[18m 5s] written a single line of code
+[18m 6s] which you know can be helpful at times
+[18m 8s] but that's not necessarily the same as
+[18m 9s] writing core code
+[18m 11s] and so i now of course i'm good at
+[18m 13s] looking at github and figuring out
+[18m 15s] what some has somebody contributed to
+[18m 17s] and all that kind of stuff but still
+[18m 18s] it's not always totally transparent but
+[18m 19s] i know that there's a lot of hiring
+[18m 21s] managers who don't have the same
+[18m 22s] familiarity with the type of tech that
+[18m 24s] we're in viewing from people from
+[18m 25s] or they may interview across multiple
+[18m 27s] tech stacks and the people might do open
+[18m 29s] source in different places or
+[18m 30s] just because i know how to evaluate
+[18m 32s] somebody's contributions to
+[18m 34s] javascript and php and you know
+[18m 36s] vimscript doesn't mean necessarily i
+[18m 37s] would know how to evaluate their
+[18m 38s] contributions to
+[18m 39s] rubygems or anything like that um so
+[18m 43s] in general i like the idea that folks
+[18m 45s] who have been giving back to open source
+[18m 47s] can use that as reference points
+[18m 49s] for basically showing the value they
+[18m 51s] have to offer somebody
+[18m 53s] because a lot of folks who do open
+[18m 54s] source work have trouble kind of really
+[18m 56s] communicating that well in their
+[18m 57s] application process
+[18m 59s] yeah so this is also
+[19m 3s] something i've tried to to get around
+[19m 7s] showing some numbers like uh
+[19m 10s] 35 commits to this repository or changed
+[19m 14s] 3000 lines of code or whatever because
+[19m 16s] like let's say
+[19m 18s] these numbers aren't really trustworthy
+[19m 21s] and can mean whatever so you can change
+[19m 24s] the indentation of
+[19m 25s] 50 000 lines of code and yeah it shows
+[19m 29s] that you have
+[19m 29s] changed 50 000 likes of code but if you
+[19m 31s] check out the commit it's
+[19m 33s] yeah you see okay he has changed
+[19m 35s] indentation which can be helpful
+[19m 37s] in means of accessibility but uh
+[19m 41s] isn't like let's say it's the same like
+[19m 43s] if you have
+[19m 44s] wrote the whole documentation or
+[19m 47s] provided real
+[19m 48s] code features or whatever
+[19m 52s] yeah so to the next slide
+[19m 55s] oh panda me uh some
+[19m 58s] have guessed it yeah so it's an old
+[20m] missing so this is intentional
+[20m 3s] so point one open door
+[20m 6s] me goes like 100 times the domain
+[20m 11s] and secondly uh i like this
+[20m 14s] little misspelling in the name because
+[20m 16s] it's
+[20m 18s] it's now like a brandable name and
+[20m 22s] it also seems like something so
+[20m 25s] if we look back towards like operator so
+[20m 28s] the person who opens to us so panda
+[20m 32s] i don't know if it's only me but it
+[20m 34s] sounds like this
+[20m 35s] and yeah this is a background behind the
+[20m 39s] surname uh it should be a door opener
+[20m 42s] this is also what the website says in
+[20m 45s] the hero section
+[20m 46s] and no uh
+[20m 50s] daniels i it could be a netherlands or
+[20m 53s] something like this but
+[20m 54s] dua in yeah it is one
+[20m 57s] o but with a t so it's
+[21m] and and but whatever
+[21m 5s] [Applause]
+[21m 7s] yeah and there was a question by
+[21m 12s] by what in the comments
+[21m 16s] exactly so there's one limitation we
+[21m 18s] have right now
+[21m 20s] uh we are only unable to index
+[21m 22s] repositories
+[21m 23s] and organizational repositories by
+[21m 27s] persons who have
+[21m 28s] already signed up so for laravel
+[21m 31s] community for example this should
+[21m 32s] already be a lot uh because i was able
+[21m 36s] to get some
+[21m 37s] major maintainers of liable open source
+[21m 41s] projects
+[21m 42s] to onboard beforehand in the beta
+[21m 44s] process
+[21m 45s] like titan sparsia
+[21m 49s] ryan chandler and some other previous
+[21m 52s] so c should be indexed well enough
+[21m 56s] but if you join in from another text
+[21m 59s] deck for example
+[22m] or uh any other language even
+[22m 4s] this could be not
+[22m 7s] all of your contributions so i've added
+[22m 10s] this small uh notice on your profile
+[22m 13s] section
+[22m 13s] in the upper part and it can also take
+[22m 17s] up to
+[22m 17s] 24 hours that we index all relations
+[22m 20s] even to
+[22m 20s] repositories we have already on our
+[22m 23s] index because of some github
+[22m 25s] api limitations but this is a bit
+[22m 28s] too deep code diving right now we will
+[22m 30s] do it later on our discord
+[22m 33s] so if you want to check out the code and
+[22m 35s] my learnings and also stuff i will talk
+[22m 37s] about
+[22m 37s] later on on the astrotomic discord
+[22m 39s] channel
+[22m 42s] so the girls it should be
+[22m 45s] accessible to everyone so
+[22m 48s] not only tech people using github daily
+[22m 51s] and
+[22m 52s] being familiar with everything that
+[22m 54s] happens
+[22m 55s] but also to people like recruiters and
+[22m 58s] uh human resource department and also
+[23m 1s] stuff and even your mother for example
+[23m 2s] so if she knows at least
+[23m 4s] what is said php is a programming
+[23m 6s] language uh
+[23m 8s] your mother should at least
+[23m 10s] understand the top
+[23m 11s] section until we get to the repository
+[23m 15s] list
+[23m 16s] uh it's also non-profit so there's only
+[23m 19s] one feature idea on the roadmap we have
+[23m 22s] right now that could be
+[23m 24s] a pay feature but only for recruiters
+[23m 27s] um i'm really thinking about it if i
+[23m 30s] want to do it or not
+[23m 32s] but for the moment it's non-profit it's
+[23m 35s] totally funded by
+[23m 36s] my own pocket and my github sponsors
+[23m 40s] so at this place already a big thank you
+[23m 44s] to
+[23m 44s] all my github sponsors who are paying
+[23m 47s] me to do open source and have
+[23m 51s] made portals possible that i can come up
+[23m 53s] with or
+[23m 54s] yeah even multiple servers for this
+[23m 56s] project
+[23m 58s] and responsibility as
+[24m 1s] i know set being part of the hiring
+[24m 4s] process is
+[24m 5s] really a sensible thing
+[24m 9s] i want to only promote people in this
+[24m 14s] process and don't provide the tools that
+[24m 16s] is used to
+[24m 17s] to bring people down so i really try to
+[24m 20s] provide the tools that doesn't
+[24m 24s] yes it doesn't provide any comparison
+[24m 26s] like oh you only did like
+[24m 29s] three commits to this one i really want
+[24m 31s] to do
+[24m 32s] like oh you did three commits it is even
+[24m 35s] more
+[24m 36s] than for example i did or whatever so
+[24m 39s] all the valuings that you have done open
+[24m 41s] source because every single commit to
+[24m 43s] every single repository is
+[24m 45s] a work you most time do in your free
+[24m 47s] time and without getting
+[24m 50s] getting any pay for it or whatever
+[24m 54s] so roadmap launching mvp is already done
+[24m 58s] so some future things are
+[25m 2s] getting in some interactivity like user
+[25m 4s] profile customization adding your
+[25m 7s] gender or pronoun you want to get in
+[25m 10s] your
+[25m 11s] first paragraph spoken languages because
+[25m 14s] this can be
+[25m 15s] important for recruiting like some
+[25m 17s] companies only want to hire german
+[25m 19s] english speaking people and
+[25m 22s] yeah adding pinned repositories for at
+[25m 25s] least maintainers i'm thinking about
+[25m 26s] doing the same for contributors so at
+[25m 29s] least maintainers can say
+[25m 31s] like on github these are my top
+[25m 34s] repositories
+[25m 36s] and recruiters as a user profile said
+[25m 40s] they can sign in and join
+[25m 42s] uh security with a profile with features
+[25m 45s] like
+[25m 46s] [Applause]
+[25m 47s] pinning or bookmarking single single
+[25m 50s] developers for
+[25m 51s] later use for example or organizations
+[25m 54s] to check out so
+[25m 56s] if i know that sparsi for example is a
+[25m 59s] has really high quality code i can pin
+[26m 3s] so organization to see all the
+[26m 6s] the contributors to i possibly want to
+[26m 9s] hire
+[26m 11s] yeah and also pdf export
+[26m 14s] so i know that a lot of high
+[26m 17s] offs of the part in the hiring process
+[26m 20s] is on paper
+[26m 21s] so i've seen it a lot of times that
+[26m 25s] my uh the other person on the table had
+[26m 29s] printed out my
+[26m 30s] my website for example and
+[26m 34s] yeah after this i think these two uh are
+[26m 37s] inverse so
+[26m 38s] uh batches and letters name it however
+[26m 41s] you want to batches or
+[26m 42s] metals achievements um but like two ways
+[26m 46s] for maintainers to
+[26m 48s] to add or to
+[26m 51s] yet to say that this contributor did a
+[26m 53s] really outstanding
+[26m 55s] uh job for the repository so
+[26m 59s] this can be a single batch if it's it
+[27m 2s] was good
+[27m 3s] and outstanding but uh nothing worth
+[27m 6s] changing in in sense of
+[27m 8s] for example totally rewriting a whole
+[27m 11s] repository
+[27m 12s] and yeah even letters as a
+[27m 15s] recommendation letter so
+[27m 16s] the maintainer can write a real
+[27m 18s] recommendation that we will
+[27m 20s] attach to the profile i'm thinking about
+[27m 22s] like a
+[27m 25s] a click clickable recommendation set
+[27m 27s] letter so
+[27m 28s] you don't have to write a whole one but
+[27m 31s] these are
+[27m 31s] future things too to think about and if
+[27m 34s] you have
+[27m 35s] your own ideas uh the whole repository
+[27m 38s] is open source
+[27m 39s] and we use github discuss discussions
+[27m 41s] for ideas
+[27m 42s] so just send in your idea i prefer
+[27m 45s] the scrum story part like as
+[27m 49s] whatever i want to be able to whatever
+[27m 53s] but yeah set in whatever it is you have
+[27m 56s] and
+[27m 56s] i'm using sir if you don't know it says
+[27m 59s] an arrow on on the left of these
+[28m 2s] discussions to to vote them up
+[28m 5s] and i use this upvoting to to decide
+[28m 8s] which
+[28m 9s] ideas i i will work next on
+[28m 14s] yeah so also my my sponsors
+[28m 17s] like say to made it possible to work on
+[28m 20s] this so
+[28m 21s] thank you to every single sponsor of
+[28m 23s] them
+[28m 24s] and sorry so there's one missing so
+[28m 28s] ping ping and clausable analytics are
+[28m 31s] sponsoring me by providing the tool for
+[28m 33s] free
+[28m 35s] and also others are my
+[28m 38s] github sponsors
+[28m 42s] yeah so if you want to contact me or
+[28m 46s] get in touch with the repository or
+[28m 48s] whatever there's a github repository
+[28m 51s] website you can email me
+[28m 53s] i will check them out please don't spam
+[28m 55s] me and
+[28m 58s] yeah i will send the discord link
+[29m 2s] on twitter and also here in chat
+[29m 5s] um so
+[29m 9s] for the after announcement stream code
+[29m 12s] diving session
+[29m 15s] and some parting words i
+[29m 19s] i thought are really matching
+[29m 22s] the project and
+[29m 26s] yeah i think i'm unable to
+[29m 30s] to really read some out because my
+[29m 31s] english isn't this good
+[29m 33s] but if matt wants and
+[29m 36s] uh if he doesn't just i think it's just
+[29m 40s] good for everybody to read them thank
+[29m 41s] you
+[29m 50s] so primaries the second one is was
+[29m 53s] really
+[29m 54s] how my carrier for example worked so i
+[29m 58s] always tried to to help others
+[30m] so my first open source contributions
+[30m 2s] were it's party for example
+[30m 4s] and i've also tried to help others and
+[30m 7s] other open source
+[30m 8s] ones and i'm now also yeah let's name it
+[30m 11s] a mentor
+[30m 12s] and helping single presence to to get
+[30m 15s] into
+[30m 16s] laravel php and so on and
+[30m 19s] yeah i've tried to always open doors for
+[30m 22s] others
+[30m 22s] and yeah this like said also open
+[30m 26s] my own doors so
+[30m 29s] i think there are more wordings like
+[30m 32s] this in different languages
+[30m 34s] said if you help others you get you get
+[30m 37s] get back
+[30m 38s] like karma
+[30m 42s] is there anyone who has any question
+[30m 44s] right now so
+[30m 45s] we can answer or we'll answer on stream
+[30m 49s] in independent if equation for me or
+[30m 52s] met or whatever
+[30m 58s] okay this is a really good one and i
+[31m 1s] think
+[31m 2s] says also a good point that
+[31m 6s] matt is on stream for this because uh
+[31m 8s] titan has a
+[31m 9s] a good project for this already and
+[31m 14s] yeah titan has a project named aussie
+[31m 17s] have i named it correctly
+[31m 19s] and yeah
+[31m 24s] we've already talked about it before uh
+[31m 27s] even
+[31m 28s] the idea of a panda to to different
+[31m 31s] ideas how to to work with aussie and
+[31m 34s] there was one idea to make it like a
+[31m 36s] panda as central point
+[31m 38s] so everyone can sign up to to aussie.com
+[31m 41s] for example
+[31m 42s] and we keep track on on all the
+[31m 47s] things but i think matt can explain
+[31m 49s] aussie a bit better
+[31m 50s] yeah so aussie was something i threw
+[31m 53s] together on a stream
+[31m 54s] once with the idea of making it easy to
+[31m 56s] see all of the
+[31m 57s] issues and pull requests and basically
+[31m 59s] work that needed to be done on all of
+[32m] titan's open source repositories
+[32m 2s] together in one place
+[32m 3s] so if you go to ozi.titan.co
+[32m 6s] you can see what an install of it looks
+[32m 8s] like and a few other companies
+[32m 10s] discovered it
+[32m 10s] pretty recently and said oh you know we
+[32m 13s] want this too
+[32m 13s] and so you know including spots he gave
+[32m 15s] us some really helpful pull requests and
+[32m 17s] issues and stuff like that
+[32m 18s] um we've talked about the possibility of
+[32m 19s] it being a centralized software as a
+[32m 21s] service in case there's any reason for
+[32m 22s] people to consume it
+[32m 23s] but i think the biggest the simplest
+[32m 25s] thing to do right now is is for
+[32m 27s] spotty and titan both of us make it
+[32m 28s] public whether through aussie or
+[32m 30s] something else
+[32m 30s] to say here's some great places for you
+[32m 32s] to go check out some of our easiest
+[32m 34s] um you know things to work on so for
+[32m 36s] titan it would be aussie.taken.co i
+[32m 38s] don't know if um spotsies is public i
+[32m 40s] think it's not
+[32m 41s] but i know that freak often tweets
+[32m 43s] things out just saying hey here's an
+[32m 45s] easy open source um you know issue for
+[32m 47s] you to check out so that'd be a place to
+[32m 48s] look as well
+[32m 50s] yeah so if
+[32m 53s] matt or titan doesn't want to work on
+[32m 56s] aussie as a central sync i
+[32m 58s] think uh matt is fine with me
+[33m 1s] copying some of the logic like the
+[33m 3s] technical depth
+[33m 4s] it's a it's a magic number in aussie
+[33m 7s] to decide which repository needs the
+[33m 10s] most record
+[33m 11s] and as we already have most of the data
+[33m 14s] so
+[33m 14s] we we have already indexed organizations
+[33m 17s] users repositories
+[33m 20s] and have also a lot of these needed
+[33m 23s] github api
+[33m 24s] access tokens it's not
+[33m 27s] too much work for me for example to
+[33m 31s] to index also this technical depth score
+[33m 35s] for
+[33m 35s] repositories um
+[33m 38s] in turn yeah if if matt would
+[33m 42s] publish aussie you would have to sign up
+[33m 44s] to two tools and
+[33m 46s] we would again add lum some linking via
+[33m 48s] apis between these tools so
+[33m 50s] it could definitely be an idea
+[33m 54s] to to add or to bring in aussie logic
+[33m 56s] into a panda
+[33m 59s] and yeah we did
+[34m 2s] we built a headless version of ozzy into
+[34m 5s] ozzy did we merge that yet
+[34m 7s] yeah not this full headless but
+[34m 10s] uh yeah an api endpoint to to retrieve
+[34m 14s] most of the information for a single
+[34m 15s] repository but
+[34m 17s] this only works for titan right now
+[34m 19s] because titan has this aussie instance
+[34m 22s] so yeah and so there's possibility for
+[34m 24s] us to build other tooling in the future
+[34m 26s] that makes it easier for folks who are
+[34m 27s] allowing people who are interested to
+[34m 31s] expose the projects that they want other
+[34m 33s] people's help on so that's something
+[34m 35s] you know something definitely keep
+[34m 36s] thinking about down the road and bring
+[34m 38s] in an aussie will also be
+[34m 40s] like a reason for maintainers to sign up
+[34m 43s] so right now the maintainers mostly sign
+[34m 45s] up only to
+[34m 46s] yeah to get their own profile and to
+[34m 49s] make it possible for
+[34m 50s] for appender to index the repositories
+[34m 53s] they maintain
+[34m 54s] and if we bring an aussie into
+[34m 57s] a panda it will be another reason for
+[35m] maintainers because they
+[35m 2s] get yeah
+[35m 5s] so publicity
+[35m 9s] of getting yeah getting this
+[35m 13s] technical gap store and
+[35m 17s] having contributors willing to
+[35m 21s] uh to help them out
+[35m 24s] at one single place to find repositories
+[35m 27s] needing a need of help
+[35m 35s] this one not yet and
+[35m 39s] this was something i had in the very
+[35m 42s] first place
+[35m 43s] so as an administrator i'm able to
+[35m 47s] submit organizations or repositories but
+[35m 49s] not
+[35m 50s] a single user and this has something to
+[35m 52s] do with
+[35m 53s] github api limits or rate limits
+[35m 56s] so we only use fully public
+[35m 59s] api endpoints so we don't retrieve any
+[36m 2s] data set
+[36m 3s] uh isn't retrievable even without an
+[36m 6s] access token so the access token only
+[36m 8s] increases our rate limit but
+[36m 12s] if if everyone would be able to submit
+[36m 15s] organizations
+[36m 16s] or repositories we would end up with
+[36m 19s] quickly indexing whole github
+[36m 23s] without having enough access tokens so
+[36m 26s] every access token
+[36m 27s] gives us 5 5000
+[36m 31s] requests per hour but only not only us
+[36m 34s] it's per user so if you use other github
+[36m 37s] integration tools
+[36m 39s] uh you as a user have five thousand
+[36m 41s] requests so if
+[36m 42s] one tool uses one thousand and we use
+[36m 44s] one thousand you only have three
+[36m 46s] thousand left
+[36m 47s] um so it wouldn't be this helpful
+[36m 51s] if opener would use your whole 5000
+[36m 54s] request power
+[36m 56s] and it's quite a lot of requests we use
+[37m] to index whole organizations for example
+[37m 2s] so sparse here this over 200
+[37m 5s] repositories
+[37m 6s] consumes i think like for
+[37m 10s] 300 requests and
+[37m 15s] this would be the same if someone for
+[37m 17s] example wants to submit a
+[37m 19s] tool by microsoft or whatever these
+[37m 22s] organizations have a ton
+[37m 23s] of open source repositories and we will
+[37m 26s] scan all of them
+[37m 29s] so the best thing you can do
+[37m 33s] is talk to the maintainer and ask them
+[37m 36s] to
+[37m 36s] or ask them kindly to sign up on panda
+[37m 40s] um yeah if there's a really big one
+[37m 44s] you want to have indexed you can open an
+[37m 47s] issue or
+[37m 48s] better a discussion on github and i will
+[37m 51s] see
+[37m 51s] if i can get it in
+[37m 54s] without having the maintainer to to sign
+[37m 57s] up but for the moment
+[37m 58s] this is the only thing you can do as a
+[38m 2s] as a user
+[38m 7s] yeah so
+[38m 11s] that's all already
+[38m 16s] um i would quickly
+[38m 19s] check out
+[38m 27s] how many people oh okay
+[38m 30s] thanks a lot to to also people who have
+[38m 33s] already signed up
+[38m 34s] so
+[38m 37s] we now have
+[38m 40s] 40 more users like before the stream so
+[38m 44s] this is a lot i think and
+[38m 48s] yeah for all of you uh wanting to
+[38m 51s] discuss further with me
+[38m 53s] and get a quick blink on the code
+[38m 57s] and all the stuff um
+[39m 1s] i will tweet the discord link and i have
+[39m 4s] already did so on twitter so if you
+[39m 6s] search my profile you will find it but i
+[39m 8s] will also tweet it again
+[39m 10s] and you can join our discord server
+[39m 14s] and i think yeah around
+[39m 18s] 45 minutes or even full hour
+[39m 22s] i will join in the discord and talk
+[39m 25s] about our
+[39m 27s] my own learning stories last month and
+[39m 30s] some code things i've done to to
+[39m 33s] optimize it
+[39m 34s] it's like say it a multi-server
+[39m 36s] infrastructure so
+[39m 38s] i can also talk about laravel behind
+[39m 40s] load balancer
+[39m 41s] and having a dedicated q worker a
+[39m 44s] database server
+[39m 46s] and yeah for all people interested in
+[39m 49s] numbers yeah i've
+[39m 50s] worked now so real code work a whole
+[39m 53s] month on it
+[39m 55s] my first commit was on 14
+[39m 59s] march and
+[40m 3s] following my my php storm time tracker
+[40m 6s] it's now over 100 hours only coding
+[40m 12s] and also a lot more hours of getting
+[40m 16s] ideas and sleepless nights and
+[40m 18s] chatting with matt so
+[40m 24s] yeah oh a good idea yeah i
+[40m 28s] i can try out to to also code in public
+[40m 33s] and yeah
+[40m 38s] and i'm at not yet uh
+[40m 41s] i was totally focused on getting
+[40m 44s] the real app done so there's no readme
+[40m 47s] right now says
+[40m 49s] only a license and
+[40m 52s] uh nothing more but i will work on this
+[40m 54s] um
+[40m 55s] in the future right now it's also pretty
+[40m 58s] limited because you need a nova license
+[41m] to do a composer install
+[41m 2s] meta meta and i have worked on an
+[41m 4s] optional nova package
+[41m 6s] some i think two weeks ago
+[41m 9s] and this has also some
+[41m 13s] quirks and you it's more like hacking uh
+[41m 17s] it's it's a way to for open source
+[41m 20s] packages like uh
+[41m 21s] i think matt has used it for what was it
+[41m 29s] uh i don't remember was it
+[41m 34s] something was it was your your love of
+[41m 37s] the learning platform this
+[41m 38s] wasn't oh i don't i don't care yeah
+[41m 42s] on rip yeah so and for me it's opener
+[41m 47s] uh this isn't really public now so
+[41m 51s] you can't do a composer install or
+[41m 53s] whatever without an over license
+[41m 55s] and for i can't right now i'm using the
+[41m 59s] font awesome pro one which is also a
+[42m 1s] paid license you need
+[42m 4s] to do a yarn install so you can't test
+[42m 7s] code
+[42m 7s] locally right now without having these
+[42m 10s] two licenses
+[42m 11s] i am working at least on
+[42m 14s] and making nova optional or even replace
+[42m 17s] it with
+[42m 18s] something else um but nova was a faster
+[42m 22s] way for me right now to get a back
+[42m 24s] office
+[42m 26s] and yeah
+[42m 34s] so i think this was the stream
+[42m 39s] i hope you all enjoy the project
+[42m 42s] and feel free to to share it out
+[42m 46s] so share your own profile on twitter or
+[42m 49s] share the tool or talk your
+[42m 52s] with your favorite maintainer to join or
+[42m 55s] panda so
+[42m 56s] his repositories are indexed and
+[43m] yeah you you can copy the link
+[43m 4s] of your profile to your cv or whatever
+[43m 6s] to
+[43m 7s] already make it part of your of your own
+[43m 10s] application process
+[43m 13s] so yeah thanks frank
+[43m 18s] and yeah
+[43m 22s] have a nice evening and
+[43m 26s] see you next time and for all willing on
+[43m 29s] discord
+[43m 31s] see y'all later oh freaks this is
+[43m 34s] the kindest thing you you could say
+[43m 37s] to me see you

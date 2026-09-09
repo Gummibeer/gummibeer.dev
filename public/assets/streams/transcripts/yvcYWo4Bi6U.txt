@@ -1,0 +1,2475 @@
+[6s] [Music]
+[17s] [Music]
+[36s] [Music]
+[42s] so
+[44s] [Music]
+[56s] so
+[59s] [Music]
+[1m 9s] all right everybody
+[1m 12s] have you with us thanks for joining us
+[1m 14s] this evening
+[1m 16s] i'm just going to bring tommy
+[1m 19s] hey hey luke
+[1m 23s] good to have you back
+[1m 26s] hope you had a nice stream last week
+[1m 28s] with nunu
+[1m 30s] yeah i mean it was nice not to have the
+[1m 32s] code that was uh
+[1m 34s] that was nice yeah have you been
+[1m 40s] fine uh was a great week and
+[1m 44s] yeah i looking forward to adding some
+[1m 47s] new tests
+[1m 48s] and also happy
+[1m 52s] to see what you've added to pests the
+[1m 54s] last two weeks
+[1m 56s] it always sounds like you would maintain
+[1m 58s] pests but
+[2m] yeah nunu is the official maintainer but
+[2m 2s] you are the
+[2m 4s] feature machine i'm the one that adds
+[2m 7s] all the breaking things
+[2m 8s] and then yeah who knows the one that
+[2m 10s] goes and fixes them
+[2m 12s] yeah sorry nina yeah um
+[2m 16s] okay one second i'm gonna bring my
+[2m 21s] my screening all right
+[2m 25s] yeah so uh a couple of weeks since we
+[2m 27s] last looked at
+[2m 28s] uh the open door repository
+[2m 31s] and we have actually gone through a
+[2m 34s] couple of minor
+[2m 36s] patches on um pest
+[2m 40s] so i'm pretty sure last time we were on
+[2m 42s] the
+[2m 43s] 1.12 so since
+[2m 47s] the last stream on open. we've had 1.13
+[2m 50s] and 1.40
+[2m 52s] so to go over the main features in 1.13
+[2m 56s] uh freyk added the two being expectation
+[3m] which is kind of the opposite of to
+[3m 1s] contain so kind of just to
+[3m 4s] throw in what that would look like you'd
+[3m 6s] have something like
+[3m 7s] expect one to be in one
+[3m 10s] two three they're quite nice if you're
+[3m 14s] dealing with an array of
+[3m 15s] various values and you just want to
+[3m 17s] check that what you're expecting on
+[3m 20s] is somewhere in there you're not too
+[3m 23s] not too worried about where it is inside
+[3m 26s] of
+[3m 26s] that array that's a very nice addition
+[3m 29s] we also had the
+[3m 30s] clean shot interruption i have checked
+[3m 33s] my calendar and
+[3m 35s] if the dates are right for the release
+[3m 36s] we were on one
+[3m 38s] eleven so one twelve three added
+[3m 41s] yeah okay so uh 112 is
+[3m 44s] uh nice there are a few fixes going on
+[3m 47s] um and the force option as well
+[3m 49s] so if you're creating tests using the
+[3m 52s] php arts and past test command
+[3m 54s] you can now do dash dash force and it
+[3m 56s] will overwrite even if it already exists
+[3m 58s] which is just a nice little feature to
+[3m 59s] have if you want to start fresh on a
+[4m 1s] file that's
+[4m 1s] badly wrong um and also support for php
+[4m 5s] unit 9.3.7 which is good
+[4m 9s] um something that oliver and i have
+[4m 12s] been working out in the background for
+[4m 14s] quite a while is the output in php storm
+[4m 17s] which is a little bit of a devil so
+[4m 20s] obviously when you run past tests
+[4m 24s] in uh in the console they always look
+[4m 27s] really nice
+[4m 28s] and you get this beautiful output but
+[4m 30s] previously when you were using the
+[4m 32s] built-in
+[4m 33s] test runner in phpstorm things were a
+[4m 34s] little bit ugly
+[4m 36s] well that's kind of been cleaned up um a
+[4m 38s] lot in
+[4m 40s] um 1.13 so you can see now we do get
+[4m 44s] much nicer output
+[4m 45s] but you still get all of the the links
+[4m 47s] and error messages and everything you'd
+[4m 48s] expect
+[4m 49s] so hard to make this break
+[4m 53s] here we go you get all of the nice error
+[4m 55s] messages that phpstorm offers
+[4m 58s] you've got your diffing and everything
+[5m] like that you just get
+[5m 2s] output that's a lot more similar to the
+[5m 4s] pest console output so hopefully you'll
+[5m 6s] feel a little more
+[5m 7s] a little more at home now if you're
+[5m 9s] using pest in php storm
+[5m 13s] um and then recently uh as of
+[5m 16s] two days ago maybe are we on the fifth
+[5m 19s] the fourth as of yesterday
+[5m 20s] time flies as of yesterday uh
+[5m 24s] we added the bound closure to data sets
+[5m 27s] and there is actually a test that we can
+[5m 30s] demo this on
+[5m 31s] this finds users by email test
+[5m 35s] so obviously this has got a data set
+[5m 36s] we're running four tests
+[5m 39s] um there seems to be a little bit of a
+[5m 41s] problem with the output here
+[5m 43s] one second let's do it this way so we'll
+[5m 46s] remove any distraction
+[5m 50s] there we go four tests uh this example
+[5m 53s] test is coming from
+[5m 54s] php unit because pest doesn't know
+[5m 58s] how to handle uh the php unit in an only
+[6m] situation
+[6m 2s] but that's not a problem is this we're
+[6m 3s] interested in um yeah so previously
+[6m 6s] what we've had to do is basically
+[6m 10s] just pass the email into with which is
+[6m 13s] fine
+[6m 14s] um but there is actually a way we can we
+[6m 17s] can use the new bound data sets to clean
+[6m 19s] that up
+[6m 20s] so just to try and demo that and then
+[6m 22s] perhaps discuss how we feel
+[6m 26s] we can come down here and i'm just going
+[6m 27s] to open up my
+[6m 29s] open door testing database
+[6m 32s] conditions which should allow this test
+[6m 34s] now to actually
+[6m 36s] run
+[6m 40s] just imagine if
+[6m 45s] somebody had forgot to launch progress
+[6m 50s] all right let's launch that
+[6m 53s] stop that
+[7m] cool okay so run that again
+[7m 3s] okay so we get the the four passes
+[7m 6s] which is nice uh but yeah again we're
+[7m 8s] just passing an email in here
+[7m 10s] which means we have to build the user up
+[7m 12s] using tap each time
+[7m 14s] now it's very much up to you as to
+[7m 15s] whether you do this but basically
+[7m 17s] um now in pest you could pass a short
+[7m 20s] closure here
+[7m 22s] and after passion passing the short
+[7m 24s] closure you have complete access to the
+[7m 26s] cascade itself
+[7m 28s] so again
+[7m 31s] perhaps not the best example of where to
+[7m 33s] use it but in this instance we could say
+[7m 35s] this user
+[7m 37s] i spell your name right gummy bear and
+[7m 40s] then
+[7m 41s] you can you could call update and you
+[7m 43s] could pass the different emails in
+[7m 46s] but we don't pass we don't pass the
+[7m 48s] different emails to
+[7m 50s] the user we pass the different events to
+[7m 53s] the
+[7m 53s] to the scope even better then so we can
+[7m 56s] say user
+[7m 58s] by email and just pass
+[8m 1s] that email there in and so now in the
+[8m 4s] expect method you're not going to
+[8m 5s] receive an email you're going to receive
+[8m 7s] an instance of the user
+[8m 11s] and is the data set resolved after the
+[8m 14s] tab
+[8m 17s] yeah the data set is resolved
+[8m 21s] yeah it's a good point actually yeah
+[8m 23s] because the tap will happen
+[8m 25s] first let me just run it see what
+[8m 27s] happens
+[8m 29s] now you will get an exception because
+[8m 32s] argument 1 isn't a type of user
+[8m 45s] yeah okay and have your composer updated
+[8m 55s] you're on 1.14 might be a little quirk
+[8m 59s] with higher order tests
+[9m 2s] let's look into that basically okay
+[9m 5s] let's do this in a slightly different
+[9m 6s] way but i definitely see
+[9m 10s] the usage of these bond
+[9m 14s] data sets for example sometimes i had
+[9m 18s] some situations that i
+[9m 20s] had to call the route function in my
+[9m 23s] data provider
+[9m 24s] yes definitely um in fact we're in a
+[9m 26s] layer of the lap here right
+[9m 28s] so yeah let's have we got any
+[9m 31s] routes in this application i definitely
+[9m 34s] have somewhere
+[9m 36s] so let's do route string
+[9m 40s] out and then jump and die about
+[9m 43s] run that test
+[9m 53s] i've still got only in here
+[9m 58s] there we go so yeah you can see we
+[10m] actually receive open door.test which is
+[10m 2s] the resolve route
+[10m 5s] um but in a data provider and this works
+[10m 7s] with
+[10m 8s] shared data sets as well which is really
+[10m 10s] nice so you can
+[10m 12s] you can hide this away inside a shared
+[10m 14s] data set somewhere but
+[10m 16s] in that shared data set still have full
+[10m 18s] access to the
+[10m 20s] uh to the test case
+[10m 23s] and something i was playing around with
+[10m 25s] yesterday as well which
+[10m 26s] was quite nice is i don't know if you've
+[10m 28s] done it like in php uni have you ever
+[10m 30s] put like a bunch of bass tests in a
+[10m 32s] trait that you want to run
+[10m 34s] on every form of
+[10m 37s] a certain test for example
+[10m 42s] um obviously in a functional world we
+[10m 45s] have to think of a different way to do
+[10m 46s] that
+[10m 47s] because you can drop a trait in there
+[10m 49s] but you can have to write the tests in
+[10m 51s] php
+[10m 52s] unit syntax then um which is not a
+[10m 55s] problem with per se but
+[10m 56s] if you and this php unit you don't have
+[10m 59s] access to
+[11m] bound data sets exactly yeah and
+[11m 4s] uh just i came across
+[11m 8s] sorry this problem has bit me
+[11m 12s] so often in my in my ass
+[11m 15s] so that you you really can't use
+[11m 18s] anything related to lateral in a data
+[11m 21s] set
+[11m 22s] so no config no route no
+[11m 25s] eloquent you always have to to pass uh
+[11m 29s] so simple values and do celebrate stuff
+[11m 33s] in your test case
+[11m 34s] and yeah it works and it
+[11m 37s] is what pest does under the hood isu but
+[11m 41s] yeah it's exactly to do it your own yeah
+[11m 44s] it's exactly the same so
+[11m 46s] i mean what happens in in php unit is
+[11m 48s] it's just because the data set is is
+[11m 50s] being resolved before the test case
+[11m 52s] is booted and obviously it's in the
+[11m 55s] segment set up
+[11m 56s] method of the test case that laravel
+[11m 58s] gets all of its features in tests
+[12m] so the data set fails because of that
+[12m 3s] but with
+[12m 4s] uh when you pass a closure to the within
+[12m 6s] pest test will wait
+[12m 8s] to expand that closure until the test
+[12m 11s] case has finished its setup method
+[12m 13s] so that's how this works um which is
+[12m 16s] nice
+[12m 18s] and yeah it allows you to access laravel
+[12m 20s] features it allows you to do more
+[12m 21s] complex setup
+[12m 22s] the situation yesterday where i had like
+[12m 24s] um
+[12m 26s] i had something like this swap and i
+[12m 29s] wanted to
+[12m 30s] i had like three or four different uh
+[12m 33s] instances in the container that i wanted
+[12m 35s] to do the exact same tests against each
+[12m 36s] time
+[12m 38s] so let's say this was like example class
+[12m 41s] and i wanted an instance of my class
+[12m 45s] and then i wanted to do that like let's
+[12m 47s] say three different times
+[12m 49s] but this one was another class
+[12m 54s] and this one was a third class
+[12m 58s] well now this is going to be run three
+[13m 1s] different times you get three different
+[13m 3s] tests
+[13m 4s] but each time you're going to have a
+[13m 6s] different instance resolved into the
+[13m 8s] container
+[13m 11s] could you show how the output
+[13m 16s] of a failed bound data set
+[13m 19s] uh test looks like yeah so this is
+[13m 22s] something that needs
+[13m 23s] a little more um polishing output wise i
+[13m 27s] think
+[13m 27s] let me let me show you so if we just
+[13m 30s] resolve like one two and three
+[13m 36s] data and we'll say expect
+[13m 39s] data to be false
+[13m 45s] but you can see you get you do get the
+[13m 47s] real output
+[13m 48s] but when you're looking at what is in
+[13m 50s] the width you're going to get the
+[13m 52s] closure
+[13m 53s] you're going to get the closure object
+[13m 55s] um whereas if this
+[13m 56s] is obviously a plain data set and you
+[14m 2s] you get the output of the actual data in
+[14m 4s] there okay
+[14m 5s] so it's something that needs a little a
+[14m 8s] little more looking
+[14m 9s] in the future i think and and can a bond
+[14m 12s] data set return
+[14m 13s] multiple values so can you return an
+[14m 15s] array which is
+[14m 17s] automatically spread over
+[14m 20s] the argument conversation i was having
+[14m 22s] with frake yesterday
+[14m 25s] is let's get rid of the extra ones at
+[14m 27s] the moment this is going to be passed in
+[14m 29s] as an array right so if i come in by the
+[14m 32s] array
+[14m 36s] paper would be a better call there
+[14m 37s] wouldn't it if i dump it down that array
+[14m 40s] you can see
+[14m 42s] that it is is in an array format
+[14m 45s] what i was talking about yesterday with
+[14m 47s] frake is
+[14m 48s] is looking up the the tight pins and the
+[14m 51s] number of parameters that you've
+[14m 52s] requested
+[14m 54s] and then deciding whether it should be
+[14m 56s] passed as an array or whether it should
+[14m 57s] be spread across
+[14m 59s] um so that's something that will
+[15m 2s] probably be out in one of the very
+[15m 3s] next versions of pest but for now yeah
+[15m 7s] if you return an array from one of these
+[15m 8s] functions it's going to return the data
+[15m 10s] as an array
+[15m 11s] okay you can read more about bound data
+[15m 14s] sets in the pest docs
+[15m 16s] get started data sets and then bound
+[15m 19s] data sets and you can see some examples
+[15m 21s] that we do there
+[15m 24s] very cool all right so i think you're up
+[15m 27s] to date on fast
+[15m 28s] yeah one more cool test i order
+[15m 32s] not pretty cool but super simple i'm
+[15m 34s] doing with
+[15m 35s] data sets and several apps that don't
+[15m 38s] have any test yet
+[15m 40s] is just passing every single
+[15m 43s] get route as and data set entry and do a
+[15m 47s] simple
+[15m 48s] sys get of this pest and route
+[15m 51s] and expect 200 for example yeah
+[15m 55s] that's a really good use case isn't it
+[15m 57s] yes this is a
+[15m 58s] super simple test and i i bet that a lot
+[16m 1s] of test driven developers would say
+[16m 3s] this isn't a test but one thing you can
+[16m 6s] ensure this is
+[16m 7s] if you don't have any other tests there
+[16m 9s] is that you at least can call
+[16m 11s] every get url on your page
+[16m 14s] yeah and you get a valid result so you
+[16m 17s] don't get any 500
+[16m 18s] 400 for or whatever and
+[16m 22s] yeah this is already a pretty good
+[16m 24s] coverage
+[16m 26s] if you don't have anything because it
+[16m 28s] doesn't give you a lot of detail
+[16m 30s] what is failing but at least it tells
+[16m 33s] you if something fails
+[16m 35s] yeah exactly and yeah i think if you
+[16m 37s] were if you were coming into a test
+[16m 38s] suite
+[16m 39s] that was a full-blown application and
+[16m 41s] you were thinking where do i even start
+[16m 42s] with this
+[16m 44s] to be able to whip up a data set like
+[16m 46s] that with all your roots in it
+[16m 48s] which you could probably actually do by
+[16m 50s] copying and pasting the web.php file and
+[16m 52s] then using a little bit of
+[16m 54s] ide magic to transform everything into
+[16m 56s] an array
+[16m 58s] uh very quickly you could have built up
+[17m] a test suite that you can expand
+[17m 2s] and as you say will at least tell you if
+[17m 4s] everything is working
+[17m 6s] yeah yeah very nice one idea for
+[17m 9s] bond data sets is it possible to have
+[17m 13s] the closure on
+[17m 14s] top level so this function
+[17m 17s] and return the whole data set and not
+[17m 20s] every single entry
+[17m 23s] and now return an array of one two three
+[17m 26s] for example
+[17m 27s] and it will run a test case for one
+[17m 30s] and one test case for two and another
+[17m 32s] one for three i think
+[17m 34s] that's part of shared data sets
+[17m 40s] yeah but but these aren't
+[17m 43s] bound to to my application
+[17m 46s] so one idea of one idea for example
+[17m 49s] would be to be able
+[17m 51s] oh wait go back wasn't it data set
+[17m 54s] you have a function you can yield yeah
+[17m 57s] yeah
+[17m 58s] so this looks like what i want
+[18m 1s] and the nice thing about that as well if
+[18m 3s] you're not familiar obviously and
+[18m 5s] now you'll be familiar with yield
+[18m 6s] tumbler if you're listening and you're
+[18m 7s] not familiar with yield is
+[18m 9s] that's like lazily handled so if you had
+[18m 11s] a data set with
+[18m 13s] a thousand ten thousand however crazy
+[18m 16s] you want to go you could be loading in
+[18m 17s] from a file somewhere or from a
+[18m 19s] from an api somewhere it won't consume
+[18m 23s] memory for all of those entries it'll
+[18m 25s] handle the entries one at a time
+[18m 27s] which is nice
+[18m 30s] so yeah um there you go question answer
+[18m 34s] happy days perfect hello to uh can and
+[18m 36s] nuno and marion
+[18m 39s] nice to have you with us
+[18m 43s] all right so i was looking at
+[18m 46s] where we got to the other day or the
+[18m 48s] other week
+[18m 49s] and work on this job right updates user
+[18m 52s] details from here
+[18m 54s] and so going into the job itself which
+[18m 58s] is this one here
+[19m] i think what we've tested is basically
+[19m 2s] that
+[19m 5s] correct correct me if i'm wrong but i'm
+[19m 6s] pretty sure what we've actually tested
+[19m 8s] so far
+[19m 8s] is down to the line here because
+[19m 11s] nowhere in our test do we then say well
+[19m 14s] what if they have extra emails
+[19m 16s] at the user emails endpoint
+[19m 20s] so i think we need another test
+[19m 24s] that is able to mock this end point here
+[19m 29s] i think one of the reasons is that this
+[19m 31s] endpoint is the same for
+[19m 33s] every user um
+[19m 38s] because it's uh it only works for the
+[19m 40s] authenticated user
+[19m 42s] so it doesn't work this is nicely for
+[19m 46s] my current http fake uh setup
+[19m 49s] yeah because
+[19m 57s] so we could make it a bit more complex
+[20m] this
+[20m 1s] fake setup for example uh
+[20m 4s] if you if you check the the if condition
+[20m 7s] above
+[20m 7s] um in the inside update user details job
+[20m 15s] exactly so updating the emails only
+[20m 19s] works if the user has a github token
+[20m 22s] and if it has a github token this github
+[20m 25s] token is set as
+[20m 26s] br access token on the request
+[20m 30s] so one
+[20m 33s] relatively simple idea would be to
+[20m 38s] to just set the username as access token
+[20m 41s] for example
+[20m 42s] and use this access token
+[20m 47s] as well to generate a path
+[20m 51s] but for some moment i think
+[20m 55s] we would do better adding completely new
+[20m 59s] tests
+[21m 1s] covering other jobs and other parts of
+[21m 4s] the application
+[21m 6s] yeah okay because
+[21m 10s] this definitely is something interesting
+[21m 12s] but i don't know
+[21m 14s] yeah it will take some time and i don't
+[21m 17s] know how
+[21m 18s] how patient our audience is
+[21m 21s] yeah because i think you'd have to the
+[21m 23s] the other way you'd do it is obviously
+[21m 26s] you'd have to like whitelist a series of
+[21m 30s] end points or file structures that had
+[21m 33s] one particular way of doing things and
+[21m 35s] then
+[21m 35s] anything that not wasn't in the white
+[21m 37s] list would have to go
+[21m 39s] uh via a different fixture set okay
+[21m 42s] would also be an idea
+[21m 45s] which one of these jobs deals with
+[21m 47s] something a little
+[21m 49s] less um authenticated than what we've
+[21m 51s] got here
+[21m 56s] um so
+[22m 1s] yeah so this one would definitely work
+[22m 4s] yeah
+[22m 4s] i like that one okay let's go
+[22m 8s] for php artisan test test and we run it
+[22m 12s] in the jobs directory
+[22m 14s] and it's called load user
+[22m 18s] repositories pressed
+[22m 25s] yeah it doesn't have that page
+[22m 29s] so just look at how we've done this one
+[22m 31s] here obviously we're pulling in the
+[22m 33s] uh in the job at the top and then we
+[22m 36s] have this
+[22m 37s] dispatch sync which is actually going to
+[22m 39s] really run the job so we're not faking
+[22m 41s] the job or anything like that we
+[22m 42s] actually do all of the work
+[22m 44s] exactly and we also don't depend on
+[22m 49s] on the queue driver defined in the php
+[22m 52s] unit
+[22m 53s] we just want to run it yeah
+[22m 58s] um so that being that being the case
+[23m 1s] then let's say
+[23m 2s] it and i guess we probably want to say
+[23m 4s] that it loads
+[23m 6s] we have already got a repos
+[23m 10s] repos.json for barry vdh right
+[23m 13s] yep so
+[23m 17s] it saves the
+[23m 20s] users
+[23m 24s] other dress
+[23m 27s] i'll do for now right yeah
+[23m 30s] and you look at this job at the same
+[23m 33s] time we
+[23m 34s] kind of glean a few things so we
+[23m 36s] probably want to do this this at first
+[23m 38s] anyway but we don't want gummy bear this
+[23m 41s] time we want barry vdh right
+[23m 44s] he has repos unless you have a
+[23m 47s] repost.json file that you can pull for
+[23m 50s] yourself you can you can copy it just
+[23m 53s] open your browser and go to
+[23m 55s] api.github.com
+[24m 1s] slash users slash gummybeer
+[24m 6s] repose
+[24m 11s] exactly nice
+[24m 14s] so all endpoints i'm using are
+[24m 19s] public you don't need any authentication
+[24m 23s] out of interest because i saw something
+[24m 26s] on twitter that you
+[24m 27s] you'd kind of um
+[24m 31s] mentioned but i i didn't read it
+[24m 35s] like well enough to decide whether it
+[24m 36s] was about this or not are there like
+[24m 38s] rate limits on the public api for github
+[24m 40s] yeah so
+[24m 44s] without authentication you have six
+[24m 46s] requests per hour
+[24m 48s] um which is enough for some playing
+[24m 50s] around and testing and so on
+[24m 52s] um like this one just getting the
+[24m 56s] json off of a specific endpoint
+[25m] if you have a token uh independent if
+[25m 3s] it's an o
+[25m 4s] alt access token or a personal access
+[25m 6s] token or whatever
+[25m 8s] you get 5000 requests per hour
+[25m 12s] and this sounds a lot um
+[25m 15s] and for all and don't get me wrong but
+[25m 19s] all smallish repositories from php
+[25m 22s] and laravel world and compared to some
+[25m 25s] other cs or small
+[25m 28s] right yeah this is really no problem but
+[25m 31s] as soon as you get to
+[25m 33s] index microsoft spotify shopify
+[25m 36s] ctngs codaforge is one for example that
+[25m 40s] also
+[25m 41s] hits rate limits several times
+[25m 44s] these are repositories getting in real
+[25m 46s] problems we are
+[25m 48s] most time organizations as a whole
+[25m 50s] because the organizations own several
+[25m 52s] hundreds of repositories
+[25m 54s] so between 300 to 800 or something like
+[25m 58s] that
+[25m 59s] so already only indexing also
+[26m 2s] repositories takes
+[26m 3s] up to eight to nine requests and now you
+[26m 6s] have to
+[26m 7s] get the repositories for every single of
+[26m 10s] these repositories
+[26m 11s] so these are already 800 requests
+[26m 14s] and now most of the repositories don't
+[26m 18s] have only
+[26m 18s] 500 contributors but like 2 000 3000
+[26m 22s] and up to and yeah this quickly sums up
+[26m 27s] yeah and there are also repositories
+[26m 30s] with around 25 000 contributors for
+[26m 33s] example
+[26m 34s] and my idea was to replace
+[26m 38s] getting the contributors because this
+[26m 40s] consumes the most requests uh
+[26m 43s] from of all by native git
+[26m 46s] because i can't get the same information
+[26m 48s] by running git log
+[26m 50s] i can get all the names i can get all
+[26m 53s] the email addresses
+[26m 54s] and match them to my database and
+[26m 59s] it worked for playing around like also
+[27m 1s] the first
+[27m 3s] mvp of opener itself but also sen
+[27m 7s] you know which repositories and so on
+[27m 10s] are kind of the trouble guys
+[27m 15s] and he runs a script for ctn js for
+[27m 18s] example and
+[27m 19s] five minutes later you get the warning
+[27m 21s] of your mac os machines that your
+[27m 23s] disk runs out of space
+[27m 26s] okay and you check your file system and
+[27m 29s] see that the city ngs repository takes
+[27m 32s] up to gigabytes
+[27m 37s] and the repository itself is only 90.
+[27m 40s] whatever gigabyte so
+[27m 41s] let's say 20. um so all these 110
+[27m 46s] gigabytes are
+[27m 46s] history git history and
+[27m 50s] if you check the city ngs repository you
+[27m 52s] see that they have around 100
+[27m 54s] 000 commits and they get around
+[27m 57s] one to five commits per hour and
+[28m 1s] yeah if you have some
+[28m 4s] only one binary file uh probably changed
+[28m 7s] like images for example
+[28m 10s] so it's quickly sums up yeah yeah man
+[28m 14s] i suppose that's one of those things
+[28m 15s] that like when you first build the
+[28m 17s] application as well you're not exactly
+[28m 19s] thinking about
+[28m 19s] because you're like well who's going to
+[28m 22s] use the application you know
+[28m 24s] yeah it's the first time i've seen wow
+[28m 27s] we have microsoft uh
+[28m 29s] on board i said crazy
+[28m 32s] and said i checked my queue and was like
+[28m 34s] yeah every zoom runs through
+[28m 36s] and i checked the queue one hour later
+[28m 39s] and have seen
+[28m 40s] four failed shops and i said
+[28m 47s] and yeah six failed jobs per day
+[28m 52s] are now my new zero because these are
+[28m 55s] the jobs
+[28m 56s] i i don't get around without really
+[29m] changing code
+[29m 1s] these aren't failing because of some
+[29m 3s] real exceptions i
+[29m 4s] definitely know what happens because
+[29m 6s] it's rate limit
+[29m 7s] but it's something i don't have full
+[29m 9s] control over
+[29m 10s] and i've done a lot to work around this
+[29m 13s] but
+[29m 15s] yeah somewhere there's a limit and
+[29m 18s] now i have fine i have to find new ways
+[29m 21s] to get around it
+[29m 23s] yeah and one idea is now to have this uh
+[29m 26s] git lock service so a service that runs
+[29m 29s] this git lock
+[29m 30s] behind the scenes but yeah it seems like
+[29m 34s] i have to
+[29m 36s] do it two ways so at first check the
+[29m 39s] size of the repository for example
+[29m 41s] and also the count of contributors i
+[29m 44s] don't know if i can't get it
+[29m 46s] and decide on these informations which
+[29m 50s] way i want to go so if i want to go the
+[29m 52s] git lock
+[29m 53s] or say api away
+[29m 57s] sounds very entertaining i'm glad i'm
+[29m 59s] only writing the test suite
+[30m 1s] [Laughter]
+[30m 3s] uh oh hey to uh steve and hey to
+[30m 7s] frank and marion asks is that the
+[30m 10s] default document thing
+[30m 11s] what theme is this you make a good point
+[30m 17s] uh color scheme railcast's copy
+[30m 20s] this is so yeah i actually
+[30m 24s] i've been using this quite a while now i
+[30m 26s] actually do like it it's nice
+[30m 28s] i haven't changed a theme in other than
+[30m 32s] trying light theme for like
+[30m 34s] two hours i haven't actually changed
+[30m 36s] theme for about
+[30m 37s] a year and a half now which i think is
+[30m 39s] saying something if you haven't changed
+[30m 40s] steam for a year and a half
+[30m 42s] you must really like the theme yeah i've
+[30m 44s] run the north theme
+[30m 46s] uh before for around three years
+[30m 49s] and now i switched to photon by
+[30m 52s] brent and originally by mozilla
+[30m 56s] and yeah i tried to convince you
+[31m 1s] maybe yeah maybe yeah i was too busy
+[31m 3s] writing teachers
+[31m 5s] to uh to give a thorough triumph
+[31m 10s] um i don't know how you feel about this
+[31m 12s] and some people will say you don't need
+[31m 13s] to do it
+[31m 14s] i personally like to do it and this is a
+[31m 15s] really easy like we're going to come
+[31m 16s] back to this don't we
+[31m 18s] but um it has the expected
+[31m 22s] timeout i think this is like an easy
+[31m 24s] test that you can write
+[31m 26s] and and just check so
+[31m 29s] all i would do is is load up a new
+[31m 32s] load user repositories job obviously
+[31m 35s] that needs a user so let's pass that in
+[31m 41s] and all i'm going to do is check that
+[31m 42s] this public timeout property
+[31m 44s] is set to this
+[31m 48s] value here right and
+[31m 51s] the reason i i do this
+[31m 54s] and again you can you can complain at me
+[31m 57s] uh
+[31m 58s] tom if you disagree
+[32m 1s] the reason i do this is if some other
+[32m 4s] developer comes along in the future
+[32m 9s] can we try to equal that if some other
+[32m 11s] developer comes along in the future
+[32m 14s] and they change this timeout i at least
+[32m 17s] want them to think
+[32m 19s] at least one thing about it i won't
+[32m 22s] accept the pr if they change the timeout
+[32m 25s] well yeah exactly yeah
+[32m 29s] i suppose this depends on like how how
+[32m 32s] the business works and in open source
+[32m 34s] things work a little bit differently
+[32m 35s] obviously
+[32m 36s] but let's say could you replace
+[32m 40s] a sys user by simply new user
+[32m 44s] i imagine we could actually and in that
+[32m 47s] case i would move this test to
+[32m 49s] unit test because this test doesn't need
+[32m 52s] anything
+[32m 53s] it doesn't need a database no http
+[32m 55s] nothing
+[32m 56s] it just creates an instance and checks
+[32m 58s] the property so
+[33m] all right that by the way in
+[33m 4s] article in case you're wondering if
+[33m 5s] you're using the test command you can
+[33m 7s] just do
+[33m 8s] unit same as you can do for creating
+[33m 10s] normal tests with
+[33m 11s] php item that will create a unit test
+[33m 14s] version
+[33m 15s] um so yeah tommy is absolutely right we
+[33m 18s] can copy that
+[33m 19s] paste it here and now this hasn't got to
+[33m 22s] go through the
+[33m 24s] container at all uh
+[33m 27s] we're gonna get an error on
+[33m 33s] huh there's something happening inside
+[33m 36s] the
+[33m 42s] get back check check the
+[33m 45s] parent of the job
+[33m 48s] of course
+[33m 51s] yeah no also only copied and then at the
+[33m 54s] job itself
+[33m 59s] no i don't know what all these traits do
+[34m 4s] if they possible but
+[34m 7s] but surely they'd have to be like talked
+[34m 10s] about in the constructor wouldn't they
+[34m 12s] but it complains about the eloquent
+[34m 14s] model oh it's a searchable trait on the
+[34m 17s] model
+[34m 17s] oh damn
+[34m 20s] yes because it's doing it inside yeah
+[34m 22s] okay in which case
+[34m 26s] um no no um
+[34m 32s] i think the searchable should be a
+[34m 34s] possible to disable
+[34m 36s] so here here's a go up to the boot
+[34m 40s] boot searchable yeah uh
+[34m 43s] is there any register searchable macros
+[34m 58s] okay so model observer you open some
+[35m 2s] model observer
+[35m 4s] linked in the arrow output yeah
+[35m 9s] what's this one here
+[35m 14s] okay yeah
+[35m 17s] oh that's that's a little uh
+[35m 21s] frustrating i mean it is what it is
+[35m 27s] that's why i hate people doing stuff in
+[35m 30s] the construct
+[35m 32s] yeah definitely um i i think it's
+[35m 36s] it's it's tough because it's one of
+[35m 37s] those things that
+[35m 39s] um it's easier to do it there
+[35m 43s] most of the time but
+[35m 47s] it does affect things further down the
+[35m 48s] line and certainly like using
+[35m 50s] lara i i certainly tried to avoid using
+[35m 52s] laravel features in the constructor
+[35m 55s] um advice i jumped to be fair i jumped
+[35m 58s] between
+[36m] um full feature tests and then
+[36m 3s] trying to make everything unit test to
+[36m 4s] avoid having to boot laravel
+[36m 6s] so so even i changed from from
+[36m 9s] project to project so let's move the
+[36m 12s] test back to feature
+[36m 13s] and lift with it
+[36m 17s] for now
+[36m 21s] okay so yeah our first test passes
+[36m 24s] and again i say some people would say
+[36m 26s] you don't need to do that
+[36m 28s] or like don't bother with that
+[36m 30s] personally i like to do it because
+[36m 32s] it gives me an extra layer of security
+[36m 34s] if something changes
+[36m 35s] accidentally or someone else reviews the
+[36m 38s] pr and they miss it
+[36m 40s] so it's a little bit of documentation in
+[36m 42s] my opinion obviously we can make this
+[36m 44s] higher order
+[36m 44s] with unexpected
+[36m 54s] and that would just need to be
+[36m 57s] that now
+[37m 3s] okay all right
+[37m 6s] uh let's just check the chat
+[37m 10s] steve's a light light themed fan
+[37m 15s] is there a nice way to use the vilt
+[37m 16s] stack what's built
+[37m 19s] i think it's vgs inertia laurel
+[37m 22s] taillight
+[37m 26s] i don't see why not i mean it
+[37m 29s] it wouldn't obviously test the view side
+[37m 31s] of things
+[37m 33s] i guess you'd just be testing the api
+[37m 34s] endpoints with past
+[37m 36s] yeah but i think that's what yeah
+[37m 40s] this industry you don't have real apis
+[37m 43s] this is a
+[37m 44s] i think kind of problem steve is facing
+[37m 48s] yeah you just hit in like
+[37m 51s] does inertia ship with test helpers
+[37m 56s] i don't know i haven't used it let us
+[37m 59s] know steve if
+[38m] if a nursery ships with just helpers it
+[38m 2s] might be worth looking into
+[38m 4s] uh adding support for it
+[38m 7s] either in the past core or in the
+[38m 8s] inertia core so
+[38m 12s] let's have a look another one
+[38m 16s] another way to test it would be was task
+[38m 19s] yeah which actually got
+[38m 23s] pr into laravel itself
+[38m 28s] wouldn't it be nicer to put the timeout
+[38m 31s] before to equal yeah you can do that
+[38m 33s] certainly yeah
+[38m 35s] you can do that
+[38m 39s] and in that case could we just do name
+[38m 42s] it like
+[38m 44s] job is probably configured for example
+[38m 46s] and also checks that the queue is
+[38m 48s] set to github yeah absolutely so we just
+[38m 52s] get uh or do you want to
+[38m 53s] we might as well use carry on using this
+[38m 55s] is that what you're saying yeah just
+[38m 56s] chain it and
+[38m 57s] change the name
+[39m 5s] should be github
+[39m 9s] does it give her a blower case or if you
+[39m 10s] don't get over there
+[39m 15s] days and was there anything else you
+[39m 18s] wanted to check
+[39m 21s] i don't know yeah opens the job and
+[39m 24s] almost like i have to do my own work
+[39m 28s] uh load user repositories yeah you've
+[39m 31s] set the time out to we extend github job
+[39m 33s] which is obviously
+[39m 34s] the reason why we can check that
+[39m 38s] we've set the timeout don't think we're
+[39m 40s] doing anything else as far as config
+[39m 42s] goes
+[39m 44s] and i guess if you're checking that the
+[39m 45s] queue is github we can
+[39m 47s] infer that we're extending the github
+[39m 49s] job
+[39m 51s] okay let's check if the github job does
+[39m 53s] something
+[39m 54s] really important but
+[39m 57s] no that's the the
+[40m 1s] the override is this isn't it that's
+[40m 3s] what we're actually like
+[40m 5s] explicitly stating on our job itself
+[40m 13s] uh you can just do everything that
+[40m 14s] livewire offers you yeah so like
+[40m 16s] the reason i am don't personally use
+[40m 19s] inertia all that much i've used on
+[40m 20s] like one project when it first came out
+[40m 22s] but i'm quite a live wire
+[40m 24s] fan just because it's in php and that's
+[40m 26s] where i'm most comfortable
+[40m 29s] um yeah livewire works really nicely
+[40m 31s] testing wise with
+[40m 34s] and uh dusk as well which break you know
+[40m 37s] i was saying
+[40m 37s] frank put pr in the other week to
+[40m 40s] laravel
+[40m 42s] and i think you can just do dash dash
+[40m 43s] pest
+[40m 45s] now when you run the dust command and it
+[40m 48s] will run it with pest rather than
+[40m 49s] running it
+[40m 50s] with
+[40m 56s] um okay so now we need to do the actual
+[40m 58s] job here right
+[41m] let's come back to the user repository
+[41m 4s] this paginated method which is
+[41m 6s] interesting obviously doing a little bit
+[41m 7s] of magic under the hood
+[41m 10s] um so what is is this literally just
+[41m 12s] gonna going to
+[41m 14s] uh go over the pages one after the other
+[41m 17s] and exactly
+[41m 18s] yeah i think for the most part we can
+[41m 22s] ignore that because we're basically
+[41m 23s] going to get the full response anyway
+[41m 24s] right
+[41m 29s] kind of so now we always only check
+[41m 33s] page one and
+[41m 40s] this is fine for testing the logic
+[41m 43s] chained for the response
+[41m 44s] but for sure it doesn't test the
+[41m 48s] paginated
+[41m 48s] logic yes definitely so
+[41m 54s] testing uh testing is a paginated logic
+[41m 59s] could be
+[42m 1s] bit problematic because
+[42m 4s] right now it depends on the count of
+[42m 7s] results and the response
+[42m 9s] which isn't great so yeah
+[42m 13s] we would have to define a json with
+[42m 16s] exactly 100 entries
+[42m 18s] and also at the second page so for the
+[42m 22s] moment i think it's totally fine to test
+[42m 25s] only the first page yeah because it's
+[42m 28s] more likely that the error is and
+[42m 32s] it's a chained logic and not in the
+[42m 34s] pagination itself
+[42m 35s] yeah and to be fair paginated is on the
+[42m 38s] github job itself we might be able to
+[42m 40s] come up with a job that is
+[42m 42s] like a double inside the test itself
+[42m 44s] that just generates a piece of json
+[42m 46s] with exactly x amount of entries
+[42m 49s] exactly yeah and we'll we'll just test
+[42m 51s] paginated once when we come to it
+[42m 53s] in this case we are going to load user
+[42m 56s] repositories dispatch sync
+[42m 58s] that is going to load uh gummy beers
+[43m 1s] repos
+[43m 3s] which is this here
+[43m 7s] and i don't think there's like a is
+[43m 9s] there a quick way in php storm to see
+[43m 10s] how many entries we've got here
+[43m 12s] i don't know that there is um but let's
+[43m 16s] actually have a look right so we should
+[43m 17s] be able to say
+[43m 19s] this user positions
+[43m 24s] dump
+[43m 35s] one sets
+[43m 40s] not so much no i was gonna say i'm
+[43m 43s] pretty sure you've got more than one
+[43m 44s] reaper
+[43m 45s] okay yeah let's go through
+[43m 49s] and take a look at what we've got could
+[43m 51s] you do this user refresh at first
+[43m 55s] i i didn't know after uh after
+[43m 57s] suggestion
+[44m] yeah so if we do this user refresh
+[44m 2s] repositories
+[44m 5s] still one okay interesting
+[44m 9s] okay let's just do um
+[44m 12s] jump and die the response here
+[44m 15s] look at what we've got so there are 30
+[44m 17s] items in that array for sure
+[44m 21s] and then for each item in that array
+[44m 23s] we're doing this
+[44m 24s] from github yeah yeah
+[44m 27s] we would have to fake also some
+[44m 30s] responses
+[44m 32s] or no from github handles
+[44m 35s] hurry yeah so we get the array
+[44m 41s] but it could be said said a lot of
+[44m 45s] these repositories don't have a license
+[44m 47s] and
+[44m 48s] uh so we have some restrictions
+[44m 52s] so they aren't allowed to be private
+[44m 54s] they don't uh
+[44m 55s] should be archived or disabled they have
+[44m 58s] to have a license
+[45m] yeah and
+[45m 7s] still we get okay more than one
+[45m 10s] passing that far so then it's gonna
+[45m 13s] check
+[45m 14s] the organization you are a user not an
+[45m 16s] organization
+[45m 18s] so it's going to grab the owner the
+[45m 20s] owner should be you right
+[45m 31s] yeah yeah there is
+[45m 38s] so what's there what's so if this is a
+[45m 39s] fork of another repository which again
+[45m 42s] i'm pretty sure most of them aren't so
+[45m 44s] if we were to
+[45m 45s] dump and die here we should get a bunch
+[45m 46s] of results again
+[45m 48s] okay okay
+[45m 52s] so it seems at this point if i coming
+[45m 54s] out a second
+[45m 56s] yeah so what's happening here i imagine
+[45m 59s] is that
+[46m] most of those repos are forks
+[46m 4s] yeah let's check it the first one is the
+[46m 6s] github
+[46m 7s] which is excluded by name
+[46m 12s] next one is a fork fork
+[46m 16s] fork for no
+[46m 20s] not fork but without the license
+[46m 23s] yeah yeah reset
+[46m 27s] fork
+[46m 31s] through 25 entries
+[46m 36s] and obviously fork faults yeah so far is
+[46m 39s] only five and about four of those five
+[46m 40s] have no license
+[46m 42s] i should possibly clean up my
+[46m 44s] repositories
+[46m 47s] okay out of interest then if we switch
+[46m 49s] this to barry vdh
+[46m 53s] i mean this is interesting though we've
+[46m 54s] just seen the code work in action
+[46m 57s] yeah uh
+[47m] okay switching switching to bayer vdh
+[47m 2s] return one as well
+[47m 8s] okay look these are these are mocked
+[47m 11s] right these these are fake so what i'm
+[47m 13s] going to do
+[47m 14s] is i'm going to find some fork is
+[47m 18s] fault or fork is true and change some
+[47m 20s] defaults
+[47m 22s] change some cooler repos i want to own
+[47m 24s] yeah data transfer is okay
+[47m 27s] let's just let's just write the four
+[47m 30s] defaults on all 25 of these and then i
+[47m 33s] can go back and selectively turn them
+[47m 35s] off when i want to
+[47m 36s] no i i wouldn't change it for all no you
+[47m 39s] want me to say i
+[47m 39s] can throw that back okay have you got
+[47m 41s] any repairs in here that you're like i
+[47m 43s] wish i owned that
+[47m 46s] just click some together i don't care
+[47m 50s] but because why i wouldn't change all
+[47m 54s] to fork false is because in that case we
+[47m 57s] wouldn't test the logics here
+[48m 3s] so let's see how many that gives us
+[48m 6s] still one
+[48m 8s] yeah do you say have a license so once
+[48m 11s] you have changed so let's change the
+[48m 13s] data providers
+[48m 23s] i don't want to get rid of fork faults
+[48m 27s] see that one's there they're looking at
+[48m 28s] it for fog faults
+[48m 31s] and it has a hazardous
+[48m 34s] are the other conditions on that
+[48m 38s] um
+[48m 44s] sorry from github isn't it
+[48m 47s] disabled
+[48m 56s] or data is uh holding
+[49m 4s] i know okay
+[49m 9s] see that would indicate that this one
+[49m 11s] here so this is fork fault
+[49m 16s] and it's also you know what else i'm
+[49m 18s] gonna do by the way just
+[49m 21s] just to avoid
+[49m 24s] i don't know whether this will actually
+[49m 26s] even work with
+[49m 28s] normal okay
+[49m 32s] um
+[49m 35s] that license is mit and that for
+[49m 37s] defaults which would indicate that that
+[49m 39s] is the one
+[49m 40s] is working adrian had a good question
+[49m 43s] have you changed the username in the
+[49m 46s] test case back to gamibia
+[49m 49s] i thought or is it stillberry
+[49m 52s] um uh
+[49m 55s] i think you're right you know yeah yeah
+[50m] good one adrian good catch and you're
+[50m 3s] now here
+[50m 4s] now okay happy days right
+[50m 8s] close that down so at the very least we
+[50m 10s] could say
+[50m 13s] expect that the repositories count
+[50m 18s] and i would do it uh repositories at the
+[50m 20s] method and in that case
+[50m 22s] you could remove the refresh yeah
+[50m 26s] so do the count database side
+[50m 31s] yeah right
+[50m 34s] so the question now is
+[50m 38s] technically we know that works there is
+[50m 41s] a bit of a reliance
+[50m 42s] on our fixture because we're basically
+[50m 45s] saying that if the fix
+[50m 46s] if you were to go and manually change
+[50m 48s] that picture again this would break
+[50m 51s] so if i was to go and change another one
+[50m 53s] to to
+[50m 54s] um to fork faults
+[50m 58s] that would obviously update to five and
+[51m] then we'd have to update our test
+[51m 2s] which isn't like amazing but at the same
+[51m 5s] time
+[51m 7s] i think it's something that we can we
+[51m 9s] can focus on a little bit later
+[51m 12s] i guess what i would want to do is i
+[51m 14s] would want to check the details
+[51m 16s] of at least one of those repositories
+[51m 18s] would
+[51m 19s] was what i would expect it to be yeah
+[51m 23s] yeah so if we grab
+[51m 26s] the first repository and i'll do that
+[51m 29s] with database
+[51m 33s] we'll grab the first instance of an item
+[51m 35s] from the repository
+[51m 37s] and i guess that should be coming in
+[51m 39s] here
+[51m 40s] looking for four faults
+[51m 44s] and then going to our very first
+[51m 46s] instance and checking that this has a
+[51m 48s] license
+[51m 53s] let's find the next one that does
+[51m 56s] neither does that one
+[52m 1s] the cool thing about this is we're
+[52m 3s] actually testing the other logic
+[52m 7s] even without explicitly testing that
+[52m 9s] logic
+[52m 10s] like if you think about it while we're
+[52m 13s] writing this test we've
+[52m 14s] all by doing what we've just done we've
+[52m 16s] already checked that those instances
+[52m 18s] further up
+[52m 19s] the first two instances that didn't have
+[52m 21s] a license and never loaded in as
+[52m 23s] repositories
+[52m 24s] i've not explicitly written a test for
+[52m 25s] that yet
+[52m 27s] but you get that logic in this test and
+[52m 29s] if we were to change how things worked
+[52m 32s] it would break the test which is really
+[52m 33s] nice exactly
+[52m 36s] completely free right we didn't have to
+[52m 38s] code that you just get that for free
+[52m 41s] so sometimes like just thinking about
+[52m 43s] what does this test actually cover
+[52m 45s] helps you to understand when you need to
+[52m 48s] write another test
+[52m 49s] and when you've already written enough
+[52m 51s] tests
+[52m 53s] okay what actually is inside a
+[52m 55s] repository
+[52m 56s] now luckily for me you are very good at
+[52m 59s] writing these
+[53m 1s] so if i get this repo here
+[53m 6s] and we have a look at the name
+[53m 12s] okay so i would expect the name
+[53m 15s] to be and i'll just check that that is
+[53m 18s] indeed
+[53m 20s] that property is name so the name should
+[53m 23s] be
+[53m 23s] here like that right yeah
+[53m 27s] okay well
+[53m 30s] i know it's it's a full name and
+[53m 34s] okay yeah that's still interesting
+[53m 36s] though isn't it
+[53m 39s] so where is this in comparison to this
+[53m 41s] one
+[53m 43s] and is there some sort of sort ah okay
+[53m 45s] isn't there a sorting algorithm on the
+[53m 47s] repository
+[53m 48s] yeah it could be yeah
+[53m 51s] okay well we can we can have a look at
+[53m 53s] that can we um
+[53m 57s] it's like a global scope maybe
+[54m 1s] yeah if so it should be on
+[54m 4s] top
+[54m 8s] like a trade
+[54m 11s] no it's a remarkable
+[54m 16s] but let's see where the repository
+[54m 20s] armor icon class php is
+[54m 24s] just going to do a little bit of window
+[54m 26s] section here so i don't lose my face
+[54m 30s] so if we if you would have line numbers
+[54m 36s] enabled
+[54m 38s] uh i think it's appearance yet
+[54m 43s] five eight two and one nine four
+[54m 46s] right okay okay that is interesting
+[54m 50s] that is interesting so at some at some
+[54m 53s] stage either we've got this wrong
+[54m 55s] and this air is actually
+[54m 58s] not being imported and so how we could
+[55m 1s] we could work that out actually
+[55m 3s] is we could come back into our test it
+[55m 6s] could be that it is imported but
+[55m 8s] uh not as the first one
+[55m 11s] yeah exactly but i guess why there must
+[55m 14s] be some
+[55m 15s] there must be some form of sorting going
+[55m 17s] on if that is the case
+[55m 18s] let's grab the repositories and that's
+[55m 21s] just map
+[55m 22s] and graphs you can call plug on the
+[55m 24s] repositories
+[55m 26s] yeah so it's also possible but
+[55m 30s] i always like to do a database site
+[55m 41s] yeah yeah definitely in there so that
+[55m 44s] the only
+[55m 45s] explanation at this point just looking
+[55m 47s] through the
+[55m 52s] see the other thing is i was just
+[55m 53s] thinking is that alphabetical order but
+[55m 55s] then r
+[55m 55s] is after l and it's definitely not an
+[55m 59s] alphabetical order
+[56m] it's like opposite alphabetical order
+[56m 2s] for the a's
+[56m 5s] and then randomly for the b's okay so
+[56m 8s] unless something really weird is going
+[56m 10s] on with jason and code which i i doubt
+[56m 11s] is the case
+[56m 13s] but that's definitely some of the proofs
+[56m 15s] that you shouldn't depend on the order
+[56m 17s] of json items
+[56m 18s] no exactly yeah definitely and i mean we
+[56m 21s] could obviously go and
+[56m 23s] um when we do this first instead of
+[56m 25s] doing first we could do first where name
+[56m 28s] and grab the the one that we actually
+[56m 30s] know is called
+[56m 31s] gummy bear just kind of also do some
+[56m 34s] expect uh to be true for example or
+[56m 38s] something like this and do some
+[56m 40s] user repositories where name
+[56m 44s] every single of these four names yeah
+[56m 46s] you mean like as
+[56m 48s] uh just loading them in one after the
+[56m 50s] other yeah
+[56m 51s] or do an expect on the line we already
+[56m 53s] have so this is a user repositories plug
+[56m 56s] name
+[56m 57s] yeah it could be a user expect
+[57m 3s] him out there and then you can sink this
+[57m 6s] is a bracket too much here
+[57m 9s] contain and then you could literally
+[57m 13s] which had not deleted that now one
+[57m 14s] second
+[57m 18s] we can literally take the output here
+[57m 21s] but i think it shouldn't be to contain
+[57m 24s] but the two equal
+[57m 27s] yeah because to contain only does a
+[57m 30s] subset check
+[57m 33s] that's true i i i was kind of are we are
+[57m 35s] we still saying that the order here is
+[57m 37s] important then
+[57m 41s] i think the order of items is only
+[57m 42s] important for
+[57m 44s] to be and not for to equal
+[57m 48s] could it be i think that it's just going
+[57m 51s] to use the assert equals in php unit
+[57m 54s] yeah well let's try it if we run that
+[58m 4s] obviously that's going to fail because
+[58m 5s] of this expectation that's coming out a
+[58m 7s] second
+[58m 8s] if we run that and then let's drop that
+[58m 10s] in there
+[58m 11s] yeah so that's okay
+[58m 14s] that's basically going to check the
+[58m 17s] actual array contents it doesn't have to
+[58m 19s] be the same
+[58m 20s] object if it was 2b
+[58m 23s] it'd have to be exactly the same
+[58m 24s] reference it doesn't have to be the same
+[58m 26s] reference but it does have to
+[58m 28s] basically have the same contents in the
+[58m 29s] same order
+[58m 31s] um to contain is
+[58m 39s] well maybe to match array
+[58m 43s] okay nice oh yeah
+[58m 46s] then i'm pretty sure you could
+[58m 50s] uh
+[58m 53s] oh this is this is
+[58m 58s] why wouldn't you contain work
+[59m 2s] thank you for messing around with two
+[59m 3s] contain recently am i doing something
+[59m 5s] weird here
+[59m 7s] because of the array keys i'm pretty
+[59m 9s] sure
+[59m 13s] i i thought you could put multiple
+[59m 23s] we could also do it another way
+[59m 27s] and use higher order expectations
+[59m 30s] and removes the two array call
+[59m 35s] yeah and
+[59m 38s] now you can use the contains method of
+[59m 41s] the collection
+[59m 44s] so plug returns a collection
+[59m 48s] yeah so we could do that and then just
+[59m 51s] call to be true
+[59m 53s] i'm not sure if this works but at least
+[59m 56s] it definitely works if you do it for
+[59m 57s] every single name
+[60m 2s] so i think this doesn't work so yeah
+[60m 7s] so you're saying to go over each
+[60m 10s] yeah you could do it with a sequence or
+[60m 13s] just copies it contains
+[60m 15s] to be true four times
+[60m 20s] i use each yeah but each doesn't work i
+[60m 23s] think
+[60m 24s] no because it needs to be the way it's
+[60m 26s] almost
+[60m 30s] hold in yeah we do want to be in
+[60m 34s] but you want to do each each
+[60m 38s] to be in
+[60m 41s] but this also doesn't verify at the end
+[60m 45s] in theory that all four names appear
+[60m 49s] yes true yeah you would also want to say
+[60m 52s] that each one is unique
+[60m 55s] um so personally i would just copy
+[60m 59s] the contains chained call
+[61m 2s] with every single name and
+[61m 5s] asserts that every single name is to be
+[61m 8s] true
+[61m 20s] buttons here we wouldn't the sequence be
+[61m 24s] a possible solution here well the
+[61m 27s] kind of but sequence is ordering is also
+[61m 30s] order specific
+[61m 32s] yeah but if we do a contains
+[61m 36s] check on the collection so order isn't
+[61m 38s] it isn't important
+[61m 44s] sorry tom i'm not following them
+[61m 48s] so i'm
+[61m 52s] checking the sequence documentation and
+[61m 57s] yeah so you're saying drop a sequence in
+[62m 1s] here
+[62m 2s] exactly and
+[62m 10s] each item sequentially there
+[62m 14s] yeah so it walks over every
+[62m 18s] item
+[62m 21s] yeah so if i did that it would be in the
+[62m 24s] order that i
+[62m 25s] passed that in which is fine we are
+[62m 28s] going to assert the order but if we're
+[62m 29s] not interested in the order and we're
+[62m 31s] only
+[62m 31s] interested in checking that the data is
+[62m 33s] actually there
+[62m 36s] then that doesn't all of a sudden that
+[62m 38s] kind of
+[62m 40s] we're enforcing order again i mean
+[62m 42s] before
+[62m 43s] if we are going to enforce order we can
+[62m 44s] obviously just use to match array
+[62m 49s] or even to equal and just drop the
+[62m 51s] actual array in there
+[62m 52s] wait wait wait wait adrian already said
+[62m 56s] something
+[62m 56s] is there and to equal cannot say well
+[62m 59s] something like to equal
+[63m] cannot canonicalize
+[63m 4s] yeah right all right all right very nice
+[63m 8s] adrian says that he uses asset equals
+[63m 10s] come out in kalysing
+[63m 12s] in php unit let's just back this up then
+[63m 15s] to that array
+[63m 16s] faster just to rebuild the array
+[63m 18s] wouldn't it do
+[63m 20s] equal connectorizing yeah
+[63m 23s] no idea what it does but adrian said
+[63m 26s] that should solve our problem
+[63m 28s] and
+[63m 34s] and now change the order like dot files
+[63m 36s] to the top or whatever
+[63m 40s] ah perfect what a map what a man
+[63m 44s] i think you should uh call adrian on the
+[63m 47s] next stream
+[63m 49s] i could that was that was next level
+[63m 51s] nice nice uh
+[63m 53s] and very guessable naming past as well
+[63m 56s] yeah um
+[64m 1s] see the other thing is i would expect
+[64m 3s] canonicalizing to be like
+[64m 6s] in canon which would obviously in my in
+[64m 9s] my mind
+[64m 9s] say that it should be ordered
+[64m 13s] thanks adrian awesome okay so
+[64m 16s] uh we can get rid of that we now check
+[64m 19s] that those
+[64m 21s] actually do exist and seeing as we
+[64m 24s] actually grab this now we can also
+[64m 27s] say to have count of four here which
+[64m 30s] means you can get rid of that
+[64m 31s] we don't need that anymore no passes
+[64m 37s] very good okay get rid of that now it's
+[64m 40s] getting a little bit
+[64m 41s] busy okay
+[64m 45s] so
+[64m 49s] when we actually build this out we set
+[64m 51s] the name to the full name
+[64m 53s] the description to the description um
+[64m 57s] i wonder if there is a
+[65m 2s] useful way or rather let's put it this
+[65m 6s] way
+[65m 7s] is there data here that you are
+[65m 10s] interested in checking specifically
+[65m 22s] i think with names we already tested the
+[65m 25s] primary job of this q job
+[65m 32s] because now we really get into
+[65m 35s] what should be tested on the repository
+[65m 39s] itself
+[65m 41s] so in a from github
+[65m 44s] test doing all these different
+[65m 47s] combinations as a data set for example
+[65m 50s] but i think this would be far too much
+[65m 53s] for
+[65m 54s] a test on the q job definitely
+[65m 57s] yeah because the main job of the queue
+[65m 59s] job is loads this
+[66m 1s] json response put it into chunks and
+[66m 4s] throw every single chunk against the
+[66m 6s] repository from github
+[66m 9s] and again though
+[66m 13s] even without going into the depth of
+[66m 15s] writing
+[66m 16s] the lower level test for this repository
+[66m 19s] job from github
+[66m 22s] if you only wrote this test
+[66m 26s] you already do actually validate
+[66m 29s] without being specific but you do
+[66m 31s] actually already validate
+[66m 33s] all of this logic here you possibly only
+[66m 36s] have four repositories out of the other
+[66m 37s] side
+[66m 39s] exactly
+[66m 43s] like if you only get around to writing a
+[66m 45s] single test in your application
+[66m 47s] per job per like class
+[66m 51s] you're still testing the majority of
+[66m 52s] that class if you throw enough scenarios
+[66m 55s] at it which is why
+[66m 56s] like this real world data i know we've
+[66m 58s] had to edit it slightly but this real
+[67m] world data is really useful
+[67m 2s] because it gives the test something
+[67m 5s] more realistic to work with rather than
+[67m 8s] some perfect world made up thing that we
+[67m 10s] create
+[67m 12s] says also what i'm recommending to
+[67m 15s] people starting with testing start with
+[67m 20s] with the highest level of tests so
+[67m 23s] like this uh get your home page and
+[67m 25s] expect a
+[67m 26s] status code of 200 and do some html
+[67m 30s] checks for example like uh contains your
+[67m 32s] brand name or whatever you want uh
+[67m 35s] that's it that's your first test and you
+[67m 38s] already test
+[67m 39s] half of your application because you a
+[67m 41s] router you test that
+[67m 42s] your controller works on the home page
+[67m 45s] most times you have
+[67m 46s] like five calls to different models
+[67m 49s] because you want to get some counts and
+[67m 52s] fhqs and whatever and
+[67m 56s] with such kind of tests you cover so
+[67m 58s] much
+[67m 59s] and yeah all these
+[68m 3s] lower tests like uh unit tests for
+[68m 6s] example
+[68m 7s] are more to to get more precise feedback
+[68m 11s] of your test suite so
+[68m 13s] instead of it fails to rent a home page
+[68m 15s] it tells you
+[68m 17s] this specific method fails yeah
+[68m 20s] definitely definitely um
+[68m 25s] okay so talking about the second half of
+[68m 27s] that then the last
+[68m 28s] the the last thing we'll do on the
+[68m 31s] stream today
+[68m 32s] is look at this from github method in
+[68m 34s] the repository
+[68m 36s] which is like diving a bit deeper and
+[68m 39s] rather than saying well we're assuming
+[68m 41s] that this works
+[68m 43s] we can actually assert this that this
+[68m 46s] works
+[68m 46s] i think also we should just have a
+[68m 48s] little celebration that we've got
+[68m 50s] nearly an hour and 10 minutes in and my
+[68m 52s] microphone has been okay
+[68m 54s] perfect i think that's enough that you
+[68m 56s] should like probably start drinking
+[68m 58s] again or something it should be that
+[68m 59s] exciting
+[69m 3s] very nice
+[69m 7s] i agree adrian we should definitely have
+[69m 9s] an alias in past
+[69m 10s] more obvious but yeah thank you very
+[69m 12s] much for pointing out the uh
+[69m 14s] the name saved up awesome okay
+[69m 17s] let's fire a test a test name out then
+[69m 20s] we're just tackling this very first part
+[69m 23s] we know that if we call from github
+[69m 26s] and the data looks like well
+[69m 30s] the data has any of these which is
+[69m 31s] perfect case for a data provider
+[69m 34s] then we should return null yeah so
+[69m 38s] we can say um the
+[69m 42s] and it might actually be best to put
+[69m 44s] this into a separate test case itself
+[69m 46s] but
+[69m 46s] we were abstract too early let's say the
+[69m 49s] front github method
+[69m 54s] burns early if the data
+[69m 58s] is invited
+[70m 4s] um so i'm going to receive
+[70m 8s] let's think about the best way to do
+[70m 9s] this right let's say we receive
+[70m 11s] an array of overrides overrides
+[70m 16s] and let's create a bunch of valid data
+[70m 19s] up here
+[70m 20s] so let's say validator
+[70m 23s] is an array we know that if private
+[70m 26s] is false if
+[70m 30s] archived is false
+[70m 34s] if disabled is false
+[70m 39s] if the license
+[70m 45s] and it has to be an area i think
+[70m 48s] that is an array and in fact let's go
+[70m 51s] one step further
+[70m 53s] let's jump back into our repos
+[70m 57s] so important one is uh spd
+[71m 1s] x underscore id
+[71m 6s] what's this one here the short name of
+[71m 10s] the uh the thing right
+[71m 13s] yeah uh which one of these would
+[71m 16s] replace quotes yeah that wouldn't be it
+[71m 19s] for all of them
+[71m 21s] at the same time
+[71m 25s] you can keep them uh hpcs fix it will
+[71m 27s] fix it
+[71m 30s] okay so the license is like that
+[71m 35s] and run and the name
+[71m 39s] is not github
+[71m 42s] dot github and not the username
+[71m 45s] let's put we'll actually put like gummy
+[71m 48s] beer in there right
+[71m 50s] no suspect problematic
+[71m 54s] name it something like php minus library
+[71m 57s] or whatever
+[72m 4s] it's it's the last larger or condition
+[72m 8s] if the owner of the repository is of
+[72m 11s] type user
+[72m 12s] and the name of the repository
+[72m 16s] equals the name of the user
+[72m 19s] the repository is also ignored yeah
+[72m 22s] so we're going to create an array like
+[72m 24s] this with the owner
+[72m 26s] and we'll say type we will make it a
+[72m 30s] user because it belongs to you
+[72m 33s] but the owner login
+[72m 38s] yeah the owner log in would be gummy
+[72m 39s] bear right
+[72m 41s] yep two ends one m
+[72m 46s] no double um yeah but that
+[72m 50s] but because the name isn't equal to
+[72m 53s] that login name everything's fine okay
+[72m 57s] yeah okay now so why
+[73m] exclude c's is not set you
+[73m 4s] new but relatively uh sees
+[73m 8s] repositories for users allowing the
+[73m 11s] users to have some cool profile
+[73m 13s] information on their profile
+[73m 16s] possibly you have seen it already if you
+[73m 18s] check some user profiles they have this
+[73m 21s] this read me block at the top of their
+[73m 24s] profile as you can put whatever you want
+[73m 26s] so it's just a markdown file
+[73m 28s] and this has to be put into a repository
+[73m 32s] named the same as your username
+[73m 35s] and because this is definitely not
+[73m 37s] something open source i just excluded
+[73m 42s] yeah okay now it's just um
+[73m 47s] of working with the github repositories
+[73m 53s] okay so basically like
+[73m 56s] the most basic check is if we array
+[73m 58s] merge our valid data with our override
+[74m] data which we're going to provide in a
+[74m 1s] second
+[74m 3s] we expect the value to be normal
+[74m 7s] i think as well so that this reads nicer
+[74m 9s] i might override as a
+[74m 10s] radical argument and that'll become
+[74m 13s] clear of the data provider
+[74m 16s] um all right let's just let's just try
+[74m 19s] this out
+[74m 20s] so we want to say with and we'll data
+[74m 23s] provider
+[74m 24s] and then we want to start providing some
+[74m 26s] data um
+[74m 30s] now we're relying on php 8 here i'm
+[74m 32s] pretty sure that this will still work
+[74m 34s] with
+[74m 34s] array keys but let's find out if not we
+[74m 38s] might have to provide it as an array
+[74m 39s] inside an array
+[74m 42s] but if we were to say
+[74m 46s] private is equal to true
+[74m 49s] and just to see if this actually works
+[74m 52s] right
+[74m 55s] okay so it's reset that's fine in which
+[74m 57s] case we can't do it in a veracratic way
+[75m] we have to do an array of arrays
+[75m 4s] there we go okay let's
+[75m 7s] move that down a little bit now and i'll
+[75m 10s] type
+[75m 11s] that again
+[75m 15s] test and we pass
+[75m 19s] so the nice thing about this is we can
+[75m 22s] we've obviously got the data that works
+[75m 24s] we can change one thing
+[75m 26s] at a time and we can have as many data
+[75m 28s] providers as we want or as many
+[75m 30s] sets of data as we want and we're just
+[75m 32s] going to test for each
+[75m 34s] different scenario and make sure that
+[75m 36s] each scenario is actually going to work
+[75m 38s] so if archived is equal to true for
+[75m 40s] example
+[75m 43s] uh if disabled is equal to true
+[75m 49s] uh if the license is null so
+[75m 52s] license will set to null
+[75m 56s] um if the name
+[76m] is equal to github
+[76m 6s] and then this this more complex one
+[76m 8s] which is still
+[76m 9s] fairly straightforward we're going to
+[76m 10s] set the name
+[76m 12s] to gummy bear
+[76m 16s] and then we're going to set the
+[76m 19s] owner of an array
+[76m 23s] where the type is user and
+[76m 26s] the login is also gamibia
+[76m 30s] correct yep
+[76m 33s] okay very nice
+[76m 36s] very nice so
+[76m 40s] obviously with just the one test and the
+[76m 42s] set of valid data
+[76m 44s] we're able to check all of these
+[76m 45s] conditions
+[76m 47s] and if an an extra condition came up in
+[76m 50s] the future
+[76m 51s] adding to this test would just be
+[76m 52s] dropping in another line in the data set
+[76m 54s] and changing changing what's there so
+[76m 57s] you can use this for
+[76m 58s] loads of different scenarios i use this
+[77m] for validating
+[77m 2s] requests for example this is like how i
+[77m 5s] like to approach
+[77m 6s] checking all of the validation methods
+[77m 9s] in a request
+[77m 10s] i just pass it real data merge it with
+[77m 12s] some data that's bad
+[77m 13s] and then check that we actually get a
+[77m 15s] single validation type or error
+[77m 19s] the different ways to tackle that but
+[77m 20s] that's how i like to do it
+[77m 26s] i guess the other thing is obviously it
+[77m 28s] returns null which is which is
+[77m 30s] great but we also want to check that it
+[77m 32s] never actually
+[77m 33s] [Music]
+[77m 36s] let's actually build the repository
+[77m 41s] so repository is created i don't know if
+[77m 44s] it's
+[77m 44s] really at the end but yeah it's not
+[77m 47s] create
+[77m 49s] so i guess the the only other test i'm
+[77m 52s] thinking we want to do is we just expect
+[77m 54s] at the users repositories
+[77m 58s] or the repository all
+[78m 1s] the empty or you could do repository
+[78m 2s] count
+[78m 5s] zero in other words yes i know that it
+[78m 8s] returned null but
+[78m 10s] just make sure it didn't return no
+[78m 11s] further down or something weird happen
+[78m 14s] i think really readable would be
+[78m 16s] repository exists
+[78m 17s] to be false very nice yeah
+[78m 21s] absolutely
+[78m 25s] awesome so that test is obviously now
+[78m 29s] pretty foolproof um again something you
+[78m 32s] can do
+[78m 32s] choose to do or choose not to do is you
+[78m 35s] can actually drop this in
+[78m 37s] like up here nothing stopping you doing
+[78m 40s] that you'll need to
+[78m 41s] use the valid data
+[78m 44s] uh also if you're going to do that you
+[78m 45s] should name space the
+[78m 47s] class that's something i found out
+[78m 48s] yesterday from oliver but the other
+[78m 50s] thing you can do
+[78m 51s] is we can introduce a function here
+[78m 55s] where before each we set this as this
+[78m 57s] valid data
+[79m] and when we do that now we can access
+[79m 3s] this from this
+[79m 4s] added data which is fine and the reason
+[79m 8s] i'm doing that is because it would allow
+[79m 9s] us just to convert this to a higher
+[79m 10s] order test if we wanted
+[79m 12s] so we would just use this expect here
+[79m 21s] and we'd obviously need to give this um
+[79m 24s] uh
+[79m 24s] would we yes you need to overwrite
+[79m 28s] we need the data right overrides
+[79m 33s] and we would expect repository exists
+[79m 36s] which is obviously we don't need the
+[79m 39s] overrides but we do want
+[79m 41s] to be in laravel when we run it
+[79m 45s] and we can run to defaults
+[79m 48s] and you still want all of the data so
+[79m 51s] we'll grab that
+[79m 57s] okay um at this point
+[80m] i would say that every test
+[80m 5s] more or less every test in this um
+[80m 8s] directory in this test case
+[80m 9s] should probably be to do with this data
+[80m 12s] in some way
+[80m 13s] um again it's an argument that you could
+[80m 16s] say yes or no to
+[80m 18s] but i would probably if there were other
+[80m 21s] things in the repository i wanted to
+[80m 22s] test down the line
+[80m 24s] i would probably end up creating a
+[80m 25s] subdirectory and models called
+[80m 27s] repository
+[80m 28s] and then i would have for instance uh
+[80m 31s] the test might
+[80m 32s] j uh the test name might be changed to
+[80m 33s] from github test
+[80m 35s] yeah um i would probably go down that
+[80m 38s] line just so that the tests are
+[80m 40s] a little bit more segregated and
+[80m 42s] everything that's happening in like
+[80m 43s] before each for example
+[80m 44s] is only interested in one particular
+[80m 46s] thing
+[80m 48s] one other thing you can definitely
+[80m 50s] already add to validator is an id
+[80m 53s] key okay yeah
+[80m 57s] that's up here and what would that be
+[81m 1s] set to
+[81m 2s] as a valid one one two three four five
+[81m 5s] seven
+[81m 6s] so it's a long numeric id okay
+[81m 11s] nothing special fine
+[81m 14s] okay so obviously this this is this
+[81m 17s] block completely handled
+[81m 20s] the next thing is you're saying look if
+[81m 22s] it's an organization
+[81m 24s] then we need to grab the organization
+[81m 28s] from github which we did in another test
+[81m 31s] case right
+[81m 33s] uh we haven't did it yet i think
+[81m 40s] organization
+[81m 43s] yeah yeah okay
+[81m 46s] it tests it indirectly this is
+[81m 49s] a cis organization method yeah
+[81m 53s] oh if yeah if we're changing the type to
+[81m 54s] organization
+[81m 57s] um then it's going to grab the owner as
+[82m 1s] as an organization let's just skip that
+[82m 4s] one for now
+[82m 5s] because this is the default from our
+[82m 6s] valid data right
+[82m 8s] yeah so by default we're going to get a
+[82m 11s] user anyway based on the valid data
+[82m 13s] i guess the other thing we could do
+[82m 15s] right now is let's write a test that
+[82m 17s] says it
+[82m 18s] throws an invalid
+[82m 21s] argument exception if the
+[82m 25s] owner type is not
+[82m 30s] user or organization
+[82m 37s] um so in this case we would literally be
+[82m 40s] probably tapping this and we just want
+[82m 44s] to
+[82m 45s] say repository from github
+[82m 50s] and pass in array merge
+[82m 53s] this
+[82m 56s] valid data and then
+[83m 1s] owner
+[83m 5s] type and we'll make the type
+[83m 8s] equal to ubar they're an actual valid
+[83m 11s] type in github that's not a user or
+[83m 13s] organization nope
+[83m 17s] so we would expect that that throws
+[83m 22s] invalid argument exception
+[83m 27s] awesome yeah and you have a deeper
+[83m 31s] its user or organization and not off
+[83m 35s] oh yeah thank you we could actually even
+[83m 38s] check that the
+[83m 39s] message is correct as a second argument
+[83m 44s] so that would be basically that right
+[83m 48s] yeah and in square brackets
+[83m 52s] it's a whopper
+[83m 57s] still didn't like me did it i missed
+[84m] something
+[84m 3s] i'll try getting rid of that
+[84m 10s] hates me for writing repository on a
+[84m 14s] type
+[84m 15s] rid of that and now it's now it's
+[84m 19s] failing all the time
+[84m 21s] i must have killed it with something
+[84m 22s] else what have i done
+[84m 29s] could it be that uh
+[84m 33s] okay look at that that's weird that was
+[84m 35s] off
+[84m 36s] change it to war oh because you
+[84m 40s] retry also php storm for the win
+[84m 45s] okay let me let me revert that awesome
+[84m 48s] so um yeah if you're doing the uh the
+[84m 52s] retry on
+[84m 54s] phpstorm and you have changed the test
+[84m 57s] name it won't be able to find the test
+[84m 58s] and it will fail
+[85m] obviously brilliant so now we're
+[85m 2s] actually checking the message as well
+[85m 4s] which is nice
+[85m 6s] uh okay so let's skip past
+[85m 10s] that for now we'll come back and add
+[85m 12s] something for organization in a moment
+[85m 14s] if the owner is an instance of user and
+[85m 16s] the data
+[85m 18s] is a fork is that what we're saying
+[85m 20s] there yeah
+[85m 21s] so we can actually just add that to
+[85m 26s] this right we can just say
+[85m 32s] or true yeah
+[85m 35s] and you should add the fork false to
+[85m 38s] to the valid data yeah
+[85m 50s] let me find the reiki id
+[85m 58s] oh you have to define an id
+[86m 2s] in the valid data for
+[86m 19s] and adrian asked if it wasn't possible
+[86m 22s] to assert for an exception at the end so
+[86m 25s] if you could switch throws and tap
+[86m 29s] you can indeed yeah you can indeed
+[86m 33s] okay yeah which which is actually
+[86m 36s] uh usually i've skipped over it thinking
+[86m 39s] about other things but
+[86m 40s] usually my preference because i prefer
+[86m 43s] to have everything to do with
+[86m 45s] expectations or checks at the end of the
+[86m 47s] test
+[86m 49s] preference it is to have it at the top
+[86m 53s] because it reads
+[86m 54s] better uh it throws
+[86m 57s] invalid argument exception actually that
+[87m] yeah that's
+[87m] that's certainly a a very valid argument
+[87m 3s] i i get that
+[87m 4s] i i was always a little bit like
+[87m 7s] obviously if you're writing a proper php
+[87m 8s] unit test
+[87m 9s] let's say that this is the php unit test
+[87m 11s] you have to do this
+[87m 12s] expect exception yeah and then the
+[87m 16s] acceptance type
+[87m 17s] and and every other test will have like
+[87m 19s] this
+[87m 20s] sir equals the bottom of the test
+[87m 24s] yeah so i i was never a fan of the fact
+[87m 27s] that you had to your eyes had to check
+[87m 29s] that
+[87m 30s] where usually your eyes are used to
+[87m 32s] checking all of the assertions at the
+[87m 34s] bottom
+[87m 36s] yeah just
+[87m 39s] your three components of a test like a
+[87m 41s] wrench act and a third
+[87m 43s] switch order so it is a third arrange
+[87m 46s] and
+[87m 47s] act exactly that makes complete sense
+[87m 50s] logically obviously it's going to throw
+[87m 51s] an exception so you have to catch that
+[87m 53s] earlier rather than later
+[87m 55s] and but when you're first new to testing
+[87m 57s] you're like well why is everything else
+[87m 58s] have to be
+[87m 59s] at the end and then everything to do
+[88m 1s] with exceptions has to be at the
+[88m 2s] beginning
+[88m 3s] it's quite nice that that with pest you
+[88m 6s] do get to say well actually i want to
+[88m 8s] put that at the bottom with all of the
+[88m 10s] expectations
+[88m 13s] setup actor certainly need adrian
+[88m 16s] um okay so if the
+[88m 19s] data is a fork
+[88m 23s] then we're gonna set the block reason to
+[88m 26s] fork but if it's not a fork
+[88m 31s] so this is basically only if the user is
+[88m 33s] an organization right
+[88m 34s] yep um and everything else would be
+[88m 38s] block reason
+[88m 39s] review if it's a user no if it starts
+[88m 43s] with a dot
+[88m 45s] if the name starts with the dot yeah
+[88m 48s] yeah and then the yeah because
+[88m 51s] you're doing and uh safe null check
+[88m 54s] there
+[88m 56s] very good okay then you can actually try
+[88m 59s] to
+[89m] create the unique id
+[89m 3s] is the id of the data so there's a test
+[89m 6s] we could do quite
+[89m 7s] easily um which is making sure that you
+[89m 10s] can't
+[89m 11s] create the same repository twice
+[89m 14s] yeah um it's going to insert all that
+[89m 18s] data there
+[89m 20s] and then if something fails
+[89m 24s] which i guess the fail reason as far as
+[89m 27s] i can see
+[89m 28s] would basically only be because
+[89m 31s] some of this data was corrupted
+[89m 34s] yeah um if you check what i'm doing
+[89m 38s] in this case uh it says only single line
+[89m 40s] and it's a
+[89m 41s] it's a language attribute so language
+[89m 44s] and license are mapped to the
+[89m 45s] to an enum instance and
+[89m 50s] i don't have a full
+[89m 53s] list of all available languages already
+[89m 57s] so i already have a lot if you check
+[90m 1s] this language enum
+[90m 3s] um yeah so 400 lines of languages
+[90m 10s] nice but it still could be
+[90m 13s] said one is missing and in that case the
+[90m 16s] enum will throw a bad method called
+[90m 18s] exception
+[90m 20s] okay in that case the creation of the
+[90m 24s] repository will fail and i will catch it
+[90m 27s] and write the tiers's log file missing
+[90m 30s] enum values
+[90m 32s] and i
+[90m 34s] go through this file from time to time
+[90m 37s] and
+[90m 39s] check which enum values i have to add
+[90m 43s] which makes sense so that would that bad
+[90m 46s] method call exception will be fired
+[90m 48s] if there is a language that doesn't
+[90m 49s] exist in your enums
+[90m 52s] yeah okay
+[90m 58s] but at the end it's more and it returns
+[91m] null
+[91m 1s] if language doesn't exist
+[91m 5s] because the exception is fired but
+[91m 7s] catched and the return is now
+[91m 13s] so in syria you could even add it to
+[91m 17s] to this first test case we already have
+[91m 20s] very true so let's
+[91m 24s] go to i lost it then but it's right in
+[91m 26s] front of me
+[91m 28s] set the language do we have valid data
+[91m 31s] language set here we don't yet do we
+[91m 33s] php for example
+[91m 36s] is it or is it usually like uppercased
+[91m 39s] yep
+[91m 40s] right so let's set the language to
+[91m 43s] something crazy
+[91m 45s] string random 64.
+[91m 50s] certain that there is a language out
+[91m 51s] there that is a random 64 character
+[91m 56s] string
+[91m 58s] that's going to come up one day man and
+[92m] you're going to be like there's some
+[92m 1s] there's some
+[92m 2s] uh some guy with like who always wears
+[92m 5s] sunglasses
+[92m 6s] creating his own dsl somewhere and
+[92m 9s] yeah he names it a 64 character code and
+[92m 11s] you're gonna have to
+[92m 13s] you're gonna have to add that to the
+[92m 14s] venom
+[92m 16s] uh awesome
+[92m 20s] so that tests for this
+[92m 23s] which is nice
+[92m 27s] now we can edit a happy path yeah
+[92m 31s] who does that i like to just test all
+[92m 32s] the nasty things
+[92m 35s] uh hit saves
+[92m 39s] the repository to
+[92m 43s] the owner the owners
+[92m 48s] say it links the repository
+[93m] okay so in this case we will be saying
+[93m 3s] basically repository from github
+[93m 7s] this valid data
+[93m 12s] and once we've done that we would just
+[93m 15s] say
+[93m 17s] expect
+[93m 21s] repository
+[93m 24s] find one
+[93m 28s] i don't like this no
+[93m 32s] no i don't like ids in in any code
+[93m 35s] because if you have for example the
+[93m 37s] mysql or postgres driver
+[93m 39s] societies won't reset between test runs
+[93m 42s] or not between single test cases but
+[93m 46s] only
+[93m 46s] after every test run um
+[93m 50s] so yeah repository first or do a real
+[93m 53s] repository the
+[93m 54s] name or whatever but
+[93m 59s] yeah i mean we could possibly even look
+[94m 1s] upon that id right
+[94m 4s] yeah yeah the society would work exactly
+[94m 7s] we've hard coded that
+[94m 8s] id right so what what do we actually
+[94m 10s] call that in the repository is it like
+[94m 11s] remote id
+[94m 13s] no it's just id i see so you actually
+[94m 17s] you
+[94m 17s] actually set the database id to the
+[94m 20s] github id
+[94m 22s] auto incremention is disabled and it
+[94m 24s] just has
+[94m 26s] the github ids yeah
+[94m 29s] apparently we're getting no which means
+[94m 31s] that obviously at some point
+[94m 33s] the logic for that has failed which is
+[94m 37s] fine
+[94m 39s] yeah it could be that some some valid
+[94m 41s] data attributes are missing
+[94m 42s] so it's a description key for example
+[94m 47s] yeah and let's talk it
+[94m 50s] so stark as us count do we even have
+[94m 53s] yeah we have a name i'm gonna put the
+[94m 55s] name at the top
+[94m 57s] much more sense
+[95m 1s] a description
+[95m 7s] yeah so and a full name
+[95m 13s] obviously got ten thousand stars
+[95m 18s] [Music]
+[95m 20s] the full name is just owner name
+[95m 24s] slash uh the repository
+[95m 30s] yeah and home page
+[95m 34s] can be null but you can also add
+[95m 38s] whatever you want
+[95m 42s] yeah so matter man
+[95m 46s] and now you get a repository instance
+[95m 49s] so back to our happy path we would
+[95m 52s] expect that
+[95m 55s] to be an instance of them uh i'm going
+[95m 57s] to do that because it's going to find it
+[95m 58s] let's do a find or fail
+[96m 1s] because that's going to actually throw
+[96m 2s] an exception in our class
+[96m 7s] in our test which means we know that
+[96m 9s] there is actually a model there it's
+[96m 10s] never going to be null
+[96m 13s] um and we can just we could just do a
+[96m 16s] few tests so we could say
+[96m 17s] expect name to be
+[96m 20s] um called it php library
+[96m 24s] oh it knows the name is comibia slash
+[96m 28s] yeah because we assigned the full name
+[96m 33s] and description
+[96m 39s] it's going to be hello world
+[96m 45s] um there's the language
+[96m 49s] to be instance of language
+[96m 52s] that's a good one yeah and
+[97m 2s] yeah and then another one is licensed
+[97m 5s] because that's like
+[97m 7s] you're going inside two arrays there
+[97m 9s] okay
+[97m 11s] is that mit lowercase or mit
+[97m 13s] applications now license is also
+[97m 15s] an enum so license to be instance of
+[97m 19s] license
+[97m 20s] or otherwise you could also do it to be
+[97m 23s] or
+[97m 24s] to equal uh license
+[97m 28s] color colon uh mit
+[97m 31s] yeah let's do that yeah that kind of
+[97m 33s] gives us a little bit
+[97m 35s] of um i don't know almost
+[97m 40s] it's it's an action now you have now you
+[97m 43s] have license
+[97m 44s] language um it's an extra check
+[97m 47s] that we actually that these enums are
+[97m 49s] being calculated correctly as well
+[97m 51s] without actually writing a test that all
+[97m 53s] those enums work
+[97m 54s] so could you run it free validation
+[97m 59s] perfect so you can use to be also also
+[98m 3s] licensed
+[98m 5s] yeah you are we have a great
+[98m 8s] singleton pattern for the enums
+[98m 10s] implemented to be php
+[98m 12s] 8.1 future proof yeah because they're
+[98m 16s] they're all singletons out the box
+[98m 17s] aren't they
+[98m 18s] in 8.1 yeah and so we had to to do
+[98m 21s] something around it
+[98m 23s] and now if you call license mit you will
+[98m 26s] always get the exact same object
+[98m 28s] reference so you can also
+[98m 30s] do something like license mit equals
+[98m 32s] equal
+[98m 33s] so type save equal so three equals
+[98m 36s] uh license mit for example and you will
+[98m 38s] get true
+[98m 41s] yeah that's that's super useful isn't it
+[98m 44s] i think what's nice
+[98m 46s] is how close this like i was looking at
+[98m 48s] enums literally just yesterday
+[98m 50s] for 8.1 and how close the syntax is in
+[98m 53s] the
+[98m 54s] enum package how close it is in 8.1
+[98m 57s] itself
+[98m 58s] we did a lot uh of well not a lot but
+[99m 2s] several of php 8.1 compatibility
+[99m 7s] so polyfills for the other direction
+[99m 10s] yeah um so
+[99m 13s] you also have access to the try from and
+[99m 16s] from methods
+[99m 18s] um and
+[99m 21s] yeah so you only have to change the enum
+[99m 24s] itself
+[99m 26s] so we factor from dot block to the case
+[99m 29s] notation
+[99m 30s] and in your real code
+[99m 33s] you only have to change from some
+[99m 36s] methods to
+[99m 37s] here to the constant like syntax of the
+[99m 39s] future enums
+[99m 40s] and that's everything you have to change
+[99m 42s] because we will keep up the package and
+[99m 45s] we also will keep up the level
+[99m 47s] enum wrapper for model attribute casting
+[99m 51s] and request validation and so on and
+[99m 56s] yeah says allows you to already
+[99m 59s] use enums now and with very little
+[100m 5s] changes you can switch to php 8.1 native
+[100m 8s] enums
+[100m 10s] that's really nice that's really nice
+[100m 12s] yeah that's going to be so helpful
+[100m 14s] um yeah so it could be if i if i have
+[100m 18s] some time until php 8.1 is released
+[100m 21s] it could be that i write a recta plugin
+[100m 24s] for example
+[100m 25s] uh php rector that will change
+[100m 28s] all these method notations of your enums
+[100m 32s] to
+[100m 32s] the constant lagrange so you can call
+[100m 35s] the recta
+[100m 36s] and on your whole code base and
+[100m 38s] independent if you
+[100m 39s] have one enum in one place or a million
+[100m 42s] enoms in 10 million places
+[100m 45s] it will be done in like a minute
+[100m 48s] yeah that's yeah i mean
+[100m 52s] yeah i i've not used rector but
+[100m 54s] certainly it seems possible but it's
+[100m 56s] close enough that it wouldn't actually
+[100m 57s] be a massive job i don't imagine to
+[100m 59s] to write the script for that yeah
+[101m 8s] we've got a little bit of uh
+[101m 12s] resource path of course
+[101m 16s] yeah so i have
+[101m 20s] sadly taken that a little bit too far
+[101m 24s] uh i can't actually think of
+[101m 27s] weight until 8.1
+[101m 30s] i can't think of a way to do that
+[101m 34s] in higher order because it's failing
+[101m 37s] basically because of the
+[101m 41s] resource path is here right yep
+[101m 49s] i was okay let's just go back a second
+[101m 51s] let's let's at least
+[101m 53s] verify that i am correct in saying
+[101m 57s] it's not possible
+[102m] i'm going to comment those two lines out
+[102m 4s] yeah okay so something in the enums
+[102m 9s] is is obviously performing a
+[102m 15s] some form of like look up into the
+[102m 17s] container into my rolls container oh yes
+[102m 20s] the language one
+[102m 22s] so yeah if that was coming if you if you
+[102m 24s] open the language one yeah
+[102m 27s] you have this values and
+[102m 31s] here you have to collect json decode
+[102m 33s] file get resource path
+[102m 36s] yeah which is fair news um i think
+[102m 40s] in that case we just move this back into
+[102m 42s] a
+[102m 43s] standard expectation then
+[102m 47s] uh awesome
+[102m 50s] okay so there's a happy path we have a
+[102m 53s] happy path that actually checks that
+[102m 54s] repository is created
+[102m 56s] i guess the other thing we could do is
+[102m 59s] uh
+[102m 59s] let's we could make this we could
+[103m 4s] continue the chain but because i'm going
+[103m 5s] to be testing two different things i'm
+[103m 7s] going to bring this out
+[103m 9s] into its own variable
+[103m 13s] and i will run a bunch of checks on the
+[103m 15s] repository but then i will say
+[103m 17s] repository owner and i'll run
+[103m 25s] i'll make video and i have its own
+[103m 27s] expectations
+[103m 29s] because this owner doesn't exist at the
+[103m 31s] start of this test
+[103m 32s] so it's actually creating the gummy bear
+[103m 35s] user at the same time isn't it
+[103m 37s] yeah it's kind of like a nice bit of
+[103m 40s] validation at the same time
+[103m 41s] that all works really nice
+[103m 45s] awesome i'll inline that since we're
+[103m 47s] doing a single statement so
+[103m 50s] you can't have two levels of higher
+[103m 52s] order before you do
+[103m 53s] expectations
+[103m 56s] uh sorry so you can't
+[103m 59s] you so you have the repository in the
+[104m 2s] first expectation
+[104m 4s] and i sincerely you could chain just
+[104m 7s] owner
+[104m 8s] name to be gamibia but i don't know if
+[104m 10s] these
+[104m 11s] two levels uh are possible yeah they are
+[104m 14s] so that i
+[104m 15s] specifically like went in and refactored
+[104m 18s] the higher order expectation api to
+[104m 20s] support
+[104m 21s] nested so that does work i'll show you
+[104m 24s] okay
+[104m 25s] and you can also do before uh
+[104m 29s] before the owner name check you can do
+[104m 31s] an owner to be
+[104m 33s] a user i think we have named it
+[104m 36s] so one we have uh no not instance off
+[104m 41s] the cusp and customer expectation we
+[104m 43s] have added yeah yeah
+[104m 44s] look at that by the way i've seen this
+[104m 45s] in the in the php
+[104m 48s] in the pest plug-in the latest version
+[104m 51s] you get
+[104m 51s] type you get completion for your expect
+[104m 53s] extensions
+[104m 55s] perfect which is real nice like i don't
+[104m 58s] know how oliver did that
+[104m 59s] some magic going on there but yeah you
+[105m 1s] you get a type completion for all of
+[105m 3s] your
+[105m 3s] expect extensions
+[105m 8s] awesome yeah that still passes so i i
+[105m 11s] guess what i was saying is like
+[105m 13s] if i was going to do a lot of expecting
+[105m 15s] on the user model
+[105m 18s] i would i would not do this in a single
+[105m 21s] expectation query and i would break it
+[105m 24s] into two because i think it
+[105m 26s] it kind of starts to become a little bit
+[105m 30s] unreadable you don't know where one one
+[105m 32s] ends and the other begins
+[105m 35s] um but if we're only checking that it's
+[105m 36s] a user and the name is gummy beard then
+[105m 40s] yep okay it has been has gone so fast
+[105m 45s] but it has been
+[105m 46s] one and three quarter hours on the
+[105m 48s] stream there
+[105m 49s] um that's been awesome though that's
+[105m 52s] been fun to kind of
+[105m 54s] really go into something with a lot of
+[105m 56s] logic going on well
+[105m 58s] a fair bit of logic going on and be able
+[106m] to use some stuff like
+[106m 2s] uh data sets to loop over and change
+[106m 4s] data slightly
+[106m 5s] and tweak it for every possible scenario
+[106m 9s] and yeah man that's been fun
+[106m 12s] thanks everyone for joining thanks
+[106m 13s] everyone who's uh
+[106m 16s] been kind enough to to stay and listen
+[106m 19s] for that long as well i
+[106m 20s] didn't mean for the stream no one as
+[106m 21s] long as it has so i really appreciate
+[106m 23s] that
+[106m 24s] if you've got any questions pest related
+[106m 26s] questions
+[106m 27s] then be sure to send them to tom on
+[106m 30s] twitter
+[106m 31s] he would love to
+[106m 35s] send something you know only call me if
+[106m 37s] you have if you have append or leg
+[106m 39s] collisions
+[106m 43s] um it's pretty cool we're relaxed in the
+[106m 47s] speed at which we're moving here but to
+[106m 50s] be able to sit back and think of
+[106m 52s] different ways to write tests for
+[106m 55s] something that is already in production
+[106m 56s] is always interesting
+[106m 59s] making sure that you kind of catch every
+[107m 1s] scenario but still write in a way that
+[107m 4s] is open for extension further down the
+[107m 6s] line and isn't going to completely break
+[107m 8s] down when you go and make a change
+[107m 10s] um so yeah that's always fun um
+[107m 14s] yeah all right so uh i assume
+[107m 17s] i've not actually asked you yet tom but
+[107m 18s] i assume we're good for next week
+[107m 21s] and we can carry this this thing on
+[107m 24s] probably
+[107m 25s] either look a little bit more into this
+[107m 27s] repository class and add some more tests
+[107m 30s] that are based on repository or will
+[107m 31s] come back up the chain
+[107m 32s] into that job and possibly move along
+[107m 36s] the other jobs
+[107m 37s] but i i will decide that before next
+[107m 39s] week i'll have a look through and see
+[107m 40s] which one
+[107m 41s] looks more interesting for the stream
+[107m 44s] um as always i will push this up right
+[107m 48s] now
+[107m 49s] and this is going to be available
+[107m 52s] on in the pr on the open door dot me
+[107m 56s] github
+[107m 58s] so if you want to go see the code if you
+[108m] want to edit the code
+[108m 2s] and suggest a better way of doing things
+[108m 4s] then go check it out
+[108m 5s] it is there and available for you to do
+[108m 7s] as you please
+[108m 9s] but with all that said and done i'm
+[108m 11s] going to
+[108m 12s] stop sharing that and i'm going to say
+[108m 15s] goodbye
+[108m 16s] and thank you very much tom for joining
+[108m 18s] us again
+[108m 20s] thank you and for your time and
+[108m 23s] contributions
+[108m 25s] and see you again next week
+[108m 28s] i hope so yeah yeah
+[108m 37s] as you can see one last exciting thing
+[108m 40s] which hopefully might be there for next
+[108m 41s] week although
+[108m 42s] no promises is uh
+[108m 46s] you mentioned about the repeat
+[108m 48s] functionality in in pest
+[108m 51s] so this came up on twitter but just to
+[108m 54s] kind of show people what what we're
+[108m 57s] talking about
+[108m 58s] imagine being able to say like imagine
+[109m 1s] you're working with a data
+[109m 2s] like a piece of functionality that does
+[109m 4s] something quite complex and
+[109m 6s] every so often your ci fails right your
+[109m 9s] continuous integration fails
+[109m 11s] and breaks down and there's a test that
+[109m 13s] fails on you and you have no idea why
+[109m 16s] it's failed
+[109m 16s] and then you run the ci again and it
+[109m 18s] passes
+[109m 20s] i don't know whether you've ever had
+[109m 21s] that scenario but i have had that before
+[109m 24s] so one thing that we're i'm working on
+[109m 26s] currently for pest which would be
+[109m 28s] awesome if we can get it in
+[109m 29s] it's just a repeat function and you can
+[109m 31s] pass any number into repeat
+[109m 34s] and the test will be repeated as its own
+[109m 36s] test so it's not
+[109m 38s] like each test will still get its own
+[109m 40s] instance it will get its own
+[109m 42s] database set up so everything will be
+[109m 44s] fresh each time
+[109m 45s] and it will just run that test x amount
+[109m 47s] of times and you're going to get
+[109m 49s] like console output matches as well um
+[109m 52s] so that's what's being worked on and
+[109m 54s] that will come in super useful because i
+[109m 56s] i have had that situation before where
+[109m 59s] you've
+[109m 59s] forgot to update a fixture somewhere or
+[110m 1s] there's something that you've not
+[110m 3s] factored in
+[110m 4s] and yeah once every blue blue moon the
+[110m 6s] test breaks
+[110m 8s] um yeah or your factory for example
+[110m 11s] doesn't
+[110m 12s] hundred percent match
+[110m 15s] all of your business logic like for
+[110m 17s] example
+[110m 18s] you generate a product price between
+[110m 20s] zero and one hundred
+[110m 22s] and in one percent of the cases it
+[110m 24s] exactly hits the zero
+[110m 27s] and you have some special conditions
+[110m 29s] like products have to cause something or
+[110m 32s] if they don't cost anything they aren't
+[110m 34s] audible or whatever things
+[110m 36s] and now your test breaks and
+[110m 39s] yeah this will happen once
+[110m 43s] per year for example but you would drive
+[110m 45s] crazy
+[110m 46s] yeah yeah yeah absolutely and
+[110m 50s] it guaranteed it always happens when
+[110m 51s] you've like got a deadline
+[110m 53s] next time yeah all right and it's
+[110m 56s] capable of only hit the ci button run
+[110m 58s] again okay green
+[111m] let's merge it yeah
+[111m 3s] but it's like one of those things now
+[111m 5s] where instead of having to
+[111m 7s] like run the test and then wait and run
+[111m 10s] it again
+[111m 10s] and then run it again and keep doing
+[111m 11s] that you're just going to be able to
+[111m 13s] drop a repeat in there drop however many
+[111m 16s] times you want that test to run
+[111m 18s] and you can either remove it after
+[111m 19s] you're finished or leave it in there for
+[111m 21s] some assurance
+[111m 22s] so yeah that that should be coming soon
+[111m 24s] i've just been
+[111m 26s] um i think yeah it was oliver who
+[111m 29s] suggested that the
+[111m 30s] the actual output moved from the
+[111m 33s] description name which is where
+[111m 34s] i originally put it into the console
+[111m 37s] output itself
+[111m 38s] so it's basically handled by the test
+[111m 41s] printer rather than
+[111m 42s] the test suite so that that requires
+[111m 46s] going
+[111m 46s] and creating a pr for um
+[111m 50s] for collision which is like the package
+[111m 52s] that pest uses
+[111m 54s] to output it's pretty
+[111m 57s] text so yeah once that's done then the
+[111m 59s] repeat functionality will go in i think
+[112m] that's really nice
+[112m 2s] um so yeah
+[112m 5s] i've held myself to that now there we go
+[112m 10s] awesome well thanks everyone for joining
+[112m 11s] us and we'll see you next week
+[112m 14s] yeah see you bye
