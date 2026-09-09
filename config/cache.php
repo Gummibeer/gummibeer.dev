@@ -1,5 +1,6 @@
 <?php
 
+use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 
 return [
@@ -23,8 +24,8 @@ return [
     |--------------------------------------------------------------------------
     |
     | Here you may define all of the cache "stores" for your application as
-    | well as their drivers. You may even define multiple stores for the
-    | same cache driver to group types of items stored in your caches.
+    | well as their drivers. You may even define multiple stores to group
+    | types of items stored in your caches.
     |
     | Supported drivers: "array", "database", "file", "memcached",
     |                    "redis", "dynamodb", "storage", "octane",
@@ -136,6 +137,8 @@ return [
     |
     */
 
-    'serializable_classes' => false,
+    'serializable_classes' => [
+        CarbonImmutable::class,
+    ],
 
 ];
