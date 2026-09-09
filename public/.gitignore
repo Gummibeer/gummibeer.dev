@@ -1,3 +1,9 @@
 *
 !index.php
 !.gitignore
+!assets/
+assets/*
+!assets/streams/
+assets/streams/*
+!assets/streams/transcripts/
+!assets/streams/transcripts/*
