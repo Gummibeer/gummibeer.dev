@@ -1,0 +1,1240 @@
+[8s] i was in the army
+[10s] um and i got injured while i was
+[15s] on tour basically
+[18s] so i also so it's
+[21s] it's something prominent
+[24s] oh yeah it's definitely permanent um
+[29s] not a lot i can do about it
+[30s] unfortunately i was going to drop
+[32s] all of this ally stuff
+[35s] from my tailwind magic that i just
+[37s] pulled in to try and give it a
+[40s] navigation i don't want any of that
+[44s] get rid of all of that nav
+[47s] and we can remove all of that and i'll
+[48s] format all of that stuff later
+[50s] so let's close all of this
+[54s] and
+[57s] here we go we have a basic application
+[1m] ready to rock and roll
+[1m 1s] in effect uh none of the links are
+[1m 3s] working yet but
+[1m 4s] that's another story for another day
+[1m 8s] um hey how's how you doing mate
+[1m 11s] so we are going to do livewire stuff
+[1m 13s] today
+[1m 14s] and i thought a good place to start
+[1m 17s] would be
+[1m 18s] this is the mellow project which i've
+[1m 21s] been
+[1m 21s] building in the background um
+[1m 25s] which is it stands for minimal trello so
+[1m 28s] it's just a very
+[1m 28s] simple project management application
+[1m 33s] um i always do two double slashes
+[1m 37s] i'm just gonna register quickly
+[1m 42s] super secret password no i don't want to
+[1m 45s] use a safari one
+[1m 47s] because i want it to be easy to remember
+[1m 51s] right number for this website cool i am
+[1m 54s] logged in and this is a jet stream
+[1m 56s] application
+[1m 58s] um what i'm going to do is
+[2m 1s] i am going to shrink my window a little
+[2m 4s] bit
+[2m 5s] to make sure that the frame rate doesn't
+[2m 7s] go crazy because we've had some
+[2m 9s] mental weather here in in wales
+[2m 14s] so i kind of that's what he says that
+[2m 18s] again now now it's fine again but always
+[2m 22s] if you have the browser and we have some
+[2m 25s] parts of the stream frozen
+[2m 29s] yeah i i keep getting that at the moment
+[2m 31s] so i'm just going to um
+[2m 33s] just drop some of these down to
+[2m 37s] a reasonable size so i don't get the
+[2m 40s] issues that i'm expecting
+[2m 42s] so i can easily swap between windows i'm
+[2m 45s] not going to need that much
+[2m 47s] and this should now work nicely if i
+[2m 50s] swap to dark mode
+[2m 52s] it does nothing light mode dark mode
+[2m 55s] perfect so that i will fix
+[2m 58s] in a second so first thing i'm going to
+[3m 1s] want to do is
+[3m 3s] um in our navigation we've got
+[3m 5s] background
+[3m 6s] white um but then
+[3m 9s] when we are in dark mode we want the
+[3m 13s] background to be gray 900
+[3m 19s] so let's go make sure some of that is
+[3m 22s] working
+[3m 27s] i've even shrunk down my uh
+[3m 30s] the ratio my screen a little bit
+[3m 35s] uh refresh this
+[3m 39s] okay you have to have a look at like
+[3m 41s] mode dark mode later because it's not
+[3m 43s] really important
+[3m 44s] hey everyone who's joined yeah there's
+[3m 47s] lag
+[3m 48s] um it is raining a lot here in wales
+[3m 51s] and we had a power cut at like 1am this
+[3m 54s] morning
+[3m 55s] so i'm expecting a couple of issues but
+[3m 59s] we'll try to get through them
+[4m 3s] i've even come and i think my
+[4m 7s] um i even put my screen resolution down
+[4m 10s] like really
+[4m 11s] ridiculously low it's like 1280 by 720
+[4m 16s] and it's a 4k monitor so i'm hoping it
+[4m 19s] will just work
+[4m 21s] i am hoping so livewire
+[4m 24s] first thing we want to do is
+[4m 28s] because we're going to be making this is
+[4m 29s] a project management application
+[4m 31s] we'll do the project management stuff
+[4m 34s] let me move that bar out of the way
+[4m 36s] um so we'll create a quick route so we
+[4m 38s] can go
+[4m 39s] and start creating it i am logged in
+[4m 42s] that's not me but that's not important
+[4m 45s] so if we come over
+[4m 47s] to hey some people joining wow
+[4m 50s] tommy brought people with you i like it
+[4m 53s] i like it already
+[4m 56s] it seems like i have something like a
+[4m 58s] community
+[5m] it would appear so right so i
+[5m 4s] am first thing i'll do is i'll create a
+[5m 6s] few routes
+[5m 9s] uh so we're going to create a
+[5m 14s] we want some middleware um
+[5m 18s] stick that middleware in there we'll say
+[5m 21s] everything in here is going to be called
+[5m 23s] dashboard no
+[5m 25s] app and we'll just group everything
+[5m 32s] i've done a little bit of work in the
+[5m 34s] background to make sure this is
+[5m 36s] ready to go so i've got the models and
+[5m 38s] everything set up now
+[5m 39s] um so prefix
+[5m 42s] we are going to want projects
+[5m 47s] this is going to be app projects
+[5m 52s] so let's and
+[5m 55s] let's put them in
+[5m 58s] [Music]
+[6m] put them in a nice group
+[6m 1s] [Music]
+[6m 3s] the first one is the
+[6m 6s] uh i'm just gonna go straight for like
+[6m 8s] the the create
+[6m 11s] create page i think unless would you
+[6m 13s] rather have um
+[6m 17s] like a slide out panel controlled by
+[6m 19s] live wire that kind of allows you to
+[6m 21s] create projects and you can see it
+[6m 23s] added into your view or
+[6m 29s] how would you like that tom because
+[6m 31s] you're the one who wants to know some
+[6m 32s] more live wire
+[6m 34s] so what i'm thinking here is you've got
+[6m 36s] like an index view which has got
+[6m 38s] a list of your projects on and when you
+[6m 40s] click creators
+[6m 41s] panel slides out from the side which
+[6m 44s] allows you to enter it
+[6m 45s] you click create project it adds it to
+[6m 48s] the list
+[6m 49s] on the index page and you can then go
+[6m 52s] into it from there or do you want to go
+[6m 54s] to like
+[6m 55s] a full page for creating a project and
+[6m 58s] work
+[6m 58s] on live wire components in there
+[7m 2s] which would you prefer
+[7m 8s] i think project isn't not set complex so
+[7m 13s] a modal window or
+[7m 16s] slide out pop out however you want to
+[7m 18s] name it it should be
+[7m 20s] enough i just don't like these
+[7m 23s] components if the form gets too complex
+[7m 27s] so if you have to scroll endlessly
+[7m 30s] or have a multi-step inside of the
+[7m 31s] mobile it's
+[7m 33s] all crazy i think a project is something
+[7m 37s] like
+[7m 38s] name and possibly that's even it
+[7m 43s] there yeah there's not too much going on
+[7m 45s] with it to be honest so i'm gonna make a
+[7m 46s] quick controller
+[7m 48s] um actually it's already wrapped in
+[7m 50s] middleware so i'm gonna be like
+[7m 54s] even cheekier
+[8m 2s] i'm pretty happy that what you are doing
+[8m 5s] inside of vs code is
+[8m 7s] all perfectly only
+[8m 11s] if you switch windows uh it's a menu bar
+[8m 14s] or something
+[8m 14s] uh so the top bar and so on yeah
+[8m 18s] now now your screen is going crazy uh
+[8m 22s] wow but there's literally no settings in
+[8m 25s] here um
+[8m 26s] if you switch windows and move windows
+[8m 28s] uh
+[8m 29s] everything goes crazy but what happens
+[8m 32s] inside of this code is is fine so
+[8m 36s] okay so i was i tried to stick
+[8m 40s] yeah so
+[8m 43s] i will do it like this
+[8m 47s] so i have minimal interruptions
+[8m 50s] um i make that a bit bigger so it's
+[8m 53s] visible
+[8m 57s] there you go that once the internet
+[9m] decides to play catch up with me
+[9m 2s] resizing my window that should be fine
+[9m 4s] so
+[9m 5s] we're just going to create a new view so
+[9m 7s] resources views
+[9m 9s] i like to create a little app folder in
+[9m 12s] there
+[9m 13s] then we're going to create a project
+[9m 17s] and within there we are just going to
+[9m 18s] create an index
+[9m 21s] blade dot php this is just pure blade
+[9m 26s] uh it's the whole entire view so we're
+[9m 28s] just going to do
+[9m 31s] user app layout component
+[9m 34s] in there this is going to list all of
+[9m 36s] them right
+[9m 39s] we are wanting to show every single one
+[9m 42s] so what i'm going to do in my other
+[9m 44s] screen is find some components
+[9m 46s] on live
+[9m 50s] uh tell windsurfi and we'll probably
+[9m 52s] just have
+[9m 53s] um stacked lists maybe
+[9m 57s] something like that something nice and
+[10m] simple
+[10m 1s] uh let me grab one of these
+[10m 5s] and for now i will just grab that code
+[10m 8s] and i shall
+[10m 9s] stick it in and just leave it at that uh
+[10m 12s] we'll
+[10m 12s] eventually move this off to a component
+[10m 15s] so here's our layout there um
+[10m 21s] drop that code in we'll come back to
+[10m 25s] i've got to go back to ui
+[10m 26s] oh no um
+[10m 32s] projects so we have got projects
+[10m 40s] this internet is really just ridiculous
+[10m 43s] um okay we'll go come back here we'll
+[10m 46s] we'll fix it in a moment
+[10m 47s] so let's just move all of this
+[10m 51s] to one side um
+[10m 54s] so we know that we're gonna have
+[10m 58s] this is a section um
+[11m 1s] and we're gonna want to have this to be
+[11m 5s] um it's gonna stick
+[11m 8s] it mostly in that so
+[11m 12s] let's create that section let's drop all
+[11m 14s] that code in
+[11m 20s] all right that is too much space
+[11m 24s] so 16 will half it
+[11m 30s] there we go and
+[11m 33s] if we just come to the bottom one this
+[11m 35s] will allow me to quickly
+[11m 37s] collapse it there we go um
+[11m 44s] this is also going to be a container mx
+[11m 48s] auto make sure it looks half reasonable
+[11m 51s] there we go
+[11m 52s] so what we need also is we need like
+[11m 56s] a little header section like a
+[12m] section heading which is going to have
+[12m 3s] some quick
+[12m 4s] actions which we can just stick at the
+[12m 8s] top
+[12m 10s] so these will trigger parts
+[12m 14s] of it
+[12m 17s] so i'll set another section here
+[12m 24s] this is another section
+[12m 30s] then what we'll do is this will be um
+[12m 37s] projects
+[12m 39s] and this button will eventually be a
+[12m 41s] live wire button
+[12m 45s] and that is looking horrible so we will
+[12m 49s] grab the styling
+[12m 51s] for this
+[12m 55s] which means we can now drop
+[13m] padding on the top
+[13m 6s] there we go nice and simple there we've
+[13m 8s] got a very simple
+[13m 10s] your projects a list of your projects
+[13m 12s] with a create new which does
+[13m 14s] absolutely nothing so now we need now we
+[13m 16s] know roughly how we want that to layout
+[13m 18s] we're going to want to start to
+[13m 19s] introduce some live wire so this is
+[13m 21s] going to be
+[13m 22s] um the create new project
+[13m 26s] button so create
+[13m 30s] project and that
+[13m 34s] it wants we want that to open and over
+[13m 36s] an overlay don't we
+[13m 39s] so we want a nice slide over so i'm just
+[13m 41s] going to go grab one from
+[13m 46s] again
+[13m 48s] are you joking again oh i it's because i
+[13m 51s] do it on the other screen because i
+[13m 52s] don't know what the rules are with
+[13m 54s] terre windsor-y i can't really show
+[13m 58s] me looking through tailwind ui and
+[14m] grabbing the components themselves
+[14m 2s] unfortunately um otherwise i would i
+[14m 5s] just thought you
+[14m 6s] you are already doing something live for
+[14m 8s] you
+[14m 10s] yeah sorry so
+[14m 14s] we want that and we want this to be
+[14m 19s] here's a little slide over so i'm just
+[14m 20s] going to grab this slide over
+[14m 22s] and we'll put it in place and we should
+[14m 24s] now see it
+[14m 27s] um it's probably going to look
+[14m 28s] absolutely terrible to start with but
+[14m 30s] we'll
+[14m 31s] sort it all out um so we've got that bit
+[14m 35s] we've got that bit so i'll put the
+[14m 37s] slide over at the top here i'll stick it
+[14m 40s] in a section again because i like using
+[14m 42s] sections
+[14m 46s] and for now we will just say right
+[14m 57s] let's just move that one down and we'll
+[14m 59s] come down to the last bit and we will
+[15m 1s] do that as well so let's have a look
+[15m 5s] wait for the screen to catch up we have
+[15m 7s] a full screen
+[15m 9s] what's my doodle this is what we're
+[15m 11s] going to want
+[15m 12s] something like this it's going to want
+[15m 14s] to open this
+[15m 15s] to allow us to quickly create one so if
+[15m 18s] i
+[15m 18s] just
+[15m 22s] fix some of this quickly um to start
+[15m 26s] with
+[15m 28s] right so to start with i
+[15m 31s] the the main problem i found with
+[15m 33s] tailwind ui is um
+[15m 37s] using finding the right bit to use
+[15m 41s] i'm going to use if i edit as html
+[15m 44s] because if you just go and copy the uh
+[15m 47s] the hto the html code from tailwind ui
+[15m 52s] you you get all of the different options
+[15m 55s] and all these comments about how you
+[15m 56s] should translate it and
+[15m 58s] you know all of these leaving from
+[16m 1s] entering
+[16m 2s] slide over panel all that stuff which is
+[16m 4s] obviously you know it's important
+[16m 6s] but it's not why i'm using it
+[16m 10s] what i'm doing is i already copy it from
+[16m 14s] from the real source code because so
+[16m 16s] right click
+[16m 17s] inspect element and so on because this
+[16m 19s] is already
+[16m 22s] yeah this is prepared for alpine already
+[16m 25s] so i have to do nothing i i
+[16m 28s] just can't copy it and it works i don't
+[16m 31s] have to do this and
+[16m 33s] here you have to add a listener and do
+[16m 35s] this and do
+[16m 36s] blur and yeah just copy and works
+[16m 40s] copy it works you're done right so i
+[16m 43s] need
+[16m 43s] to do some x dataly stuff
+[16m 50s] i believe
+[16m 53s] so that's that that is that's the actual
+[16m 56s] um
+[16m 58s] that's the slide over part
+[17m 1s] so now we need like um
+[17m 6s] i'm gonna leave it there for now because
+[17m 7s] this is all this is more about live wire
+[17m 10s] than
+[17m 10s] [Music]
+[17m 11s] me fixing stuff and making alpine look
+[17m 14s] nice so i'm gonna leave it like that for
+[17m 16s] now so we need a livewire component
+[17m 19s] don't we
+[17m 22s] so we will make a
+[17m 25s] new livewire component this is to do
+[17m 29s] with
+[17m 30s] projects and this will be
+[17m 33s] a project list
+[17m 39s] uh yeah sure have some love oh
+[17m 42s] all right now i'm on a stream
+[17m 47s] right i have got some live wire now so
+[17m 49s] i've got i've got something that i can
+[17m 51s] use
+[17m 51s] so this is
+[17m 55s] the content this is the header we kind
+[17m 58s] of need
+[17m 58s] most of this in that component don't we
+[18m 3s] so what i can do is i could just say
+[18m 7s] livewire projects um
+[18m 12s] project is list
+[18m 17s] i don't i don't know uh how live fire
+[18m 19s] works this way but
+[18m 20s] shouldn't we only add the lowest section
+[18m 24s] which really lists all uh
+[18m 28s] so things into the live fire component
+[18m 31s] and
+[18m 32s] some other part is a simple blade view
+[18m 37s] because uh yeah you have this button but
+[18m 40s] we should
+[18m 44s] we will do it that way we will do it
+[18m 47s] like this
+[18m 48s] um okay so i'm gonna grab that and
+[18m 51s] so that i can keep some structure i will
+[18m 55s] do that as well so eventually this will
+[18m 58s] just be a replication
+[18m 59s] of that so
+[19m 3s] excellent there's a little bit more
+[19m 4s] space and what i'm going to do for now
+[19m 6s] to make it easier to kind of actually
+[19m 8s] concentrate let's just comment that out
+[19m 11s] so we can actually see this so now we
+[19m 14s] can go to our component we can actually
+[19m 16s] start creating it
+[19m 17s] so hey everyone
+[19m 20s] thanks for tuning in um the first thing
+[19m 24s] we want to do
+[19m 25s] is make sure we've got our data right we
+[19m 27s] want to make sure our data is prepared
+[19m 30s] so um
+[19m 35s] in our mount method this is how i like
+[19m 37s] to do certain things in live wire so
+[19m 39s] this is going to be a list which we're
+[19m 40s] going to want to keep updated right
+[19m 43s] so we're going to have um
+[19m 49s] we'll have some projects up there so
+[19m 53s] we're gonna want to create some projects
+[19m 54s] but because we know we're gonna catch an
+[19m 56s] event later on we're gonna want to
+[19m 58s] kind of re we're gonna want to poll this
+[20m] really aren't we
+[20m 3s] so we can have a
+[20m 7s] bro is this what we want to do
+[20m 11s] i'll come back to the polling we'll come
+[20m 12s] back to polling so
+[20m 14s] this projects equals
+[20m 18s] fourth user projects
+[20m 23s] note because i want to include extra so
+[20m 25s] we're going to have a project
+[20m 27s] um and we are going to want to
+[20m 30s] load in the theme
+[20m 34s] and that's it for now
+[20m 39s] and we're going to say where the user id
+[20m 43s] is
+[20m 47s] authenticated user and we will just
+[20m 50s] get them you could simplify it by
+[20m 54s] out user projects with seam get
+[20m 58s] so you don't have a write out this where
+[21m 1s] condition
+[21m 4s] okay the first thing you already had
+[21m 8s] so user project yeah but projects as a
+[21m 12s] method
+[21m 13s] and that's just this
+[21m 16s] ah i'm meant to be teaching you
+[21m 22s] only live fire lana roll i can't teach
+[21m 24s] you
+[21m 26s] no yeah i've not i've not actually done
+[21m 28s] that before
+[21m 29s] no i've not done it that way before i've
+[21m 31s] always been like oh how am i going to do
+[21m 32s] it
+[21m 33s] um is that a different yes you set
+[21m 35s] project value in render
+[21m 37s] yes now go to all of your lateral apps
+[21m 40s] and refactor it
+[21m 43s] not on the screen because that will be
+[21m 44s] embarrassing no no
+[21m 46s] but uh what's this as uh it returns the
+[21m 50s] instance of your
+[21m 51s] uh i think it's a has menu relationship
+[21m 53s] and yes
+[21m 54s] there's also an instance of the eloquent
+[21m 56s] crime so you can do
+[21m 58s] everything you want on this instant as
+[22m] well
+[22m 1s] uh same as you could possibly even do
+[22m 4s] inside of this projects method uh
+[22m 7s] a scope like cis
+[22m 10s] returns this has many projects
+[22m 13s] and at a rare condition like is active
+[22m 16s] true
+[22m 17s] because you don't want to show inactive
+[22m 20s] projects or whatever so
+[22m 22s] you can do all the same stuff you can do
+[22m 24s] on the real uh
+[22m 25s] eloquent critical yeah
+[22m 30s] that makes a lot of sense and you can
+[22m 33s] even use the
+[22m 34s] scopes you have defined ons project
+[22m 36s] because you are
+[22m 37s] on an instance of the project
+[22m 39s] variability
+[22m 41s] ah i'll definitely do that next time so
+[22m 44s] we've got a question is there any
+[22m 46s] difference if you set
+[22m 47s] project's value in render function yes
+[22m 50s] so if you're like if you're gonna
+[22m 51s] paginate then you do it
+[22m 53s] you're best doing it down here
+[22m 56s] but because i know the way we're going
+[22m 58s] to use this is slightly different
+[23m] to how you might typically do it
+[23m 4s] i'm sticking it in the mouth method
+[23m 6s] otherwise you would you know you'd
+[23m 8s] you'd stick it within here and you'd
+[23m 11s] you'd you'd query it there while it's
+[23m 13s] rendering
+[23m 14s] but i'm doing it in the mount method
+[23m 16s] because i'm i know i'm going to want to
+[23m 17s] manipulate it a little bit later on
+[23m 21s] the only only reason is it
+[23m 24s] related also to the live fire
+[23m 27s] life cycle so when
+[23m 31s] mount and render are called or is this
+[23m 37s] no so um mount is called before render
+[23m 41s] because you mount the component you get
+[23m 43s] you you
+[23m 44s] accept any parameters you set them
+[23m 47s] as as attributes and then you render so
+[23m 50s] that they're accessible
+[23m 52s] um but because of how i'm going to be
+[23m 54s] doing things
+[23m 55s] i'm sticking it all that way
+[24m] so one question i had so
+[24m 3s] the life cycle is it's a documentation
+[24m 6s] it says that the mount method runs
+[24m 9s] once immediately after the component is
+[24m 11s] instantiated but before render is
+[24m 13s] called but yeah what does once
+[24m 17s] mean in a context of a php application
+[24m 21s] so
+[24m 22s] you do a request to okay
+[24m 26s] and the height rate and updating
+[24m 30s] are called multiple times per request
+[24m 32s] possibly or
+[24m 34s] why is this very special
+[24m 40s] yeah i i'm definitely not one to answer
+[24m 43s] that one i
+[24m 44s] my livewire experience is kind of
+[24m 48s] i'd maybe describe it as hobbyist
+[24m 51s] i i can use live wire pretty well um
+[24m 55s] because i've been using it since it got
+[24m 57s] announced
+[24m 58s] but i'm very much kind of just
+[25m 2s] i'm a hobbyist sort of guy i just kind
+[25m 6s] of
+[25m 7s] build what i need let me just delete all
+[25m 11s] of this
+[25m 11s] extra stuff so that this
+[25m 15s] part here this should just be one
+[25m 21s] right so in here i will do a
+[25m 39s] just stick that in there for now
+[25m 43s] i lost this for else blade directive
+[25m 47s] i i love it i use it so much
+[25m 52s] yeah a lot i i didn't actually know
+[25m 55s] about it until a while ago which is
+[25m 56s] quite embarrassing
+[25m 58s] um but it's really good
+[26m 1s] and what i typically do actually is i
+[26m 3s] create a blade component
+[26m 5s] called uh
+[26m 10s] state and in here
+[26m 14s] i will typically just do it like a
+[26m 17s] [Music]
+[26m 18s] uh flex items center
+[26m 21s] justify center
+[26m 27s] and then
+[26m 32s] do that and what i do is i do padding
+[26m 35s] that and i would do
+[26m 38s] some padding that side as well
+[26m 42s] so clarified in the comments
+[26m 46s] so regarding the life cycle and it is
+[26m 49s] really sets amount
+[26m 51s] is special in that case so yeah it's
+[26m 54s] related to
+[26m 55s] things like it's like the cons man
+[26m 59s] yeah so if you do a full refresh of the
+[27m 2s] page
+[27m 3s] mount and render and so on are called
+[27m 6s] but
+[27m 6s] as long as you stick on the same page
+[27m 8s] and only do interactive live wire stuff
+[27m 11s] mount and render aren't call or render i
+[27m 14s] think is called again
+[27m 15s] but the mount isn't called again
+[27m 18s] okay that's how i
+[27m 22s] understood marion correct yeah if n1
+[27m 26s] yeah no that sounds updated so after
+[27m 28s] every ajax call which allows you to do
+[27m 30s] like um
+[27m 32s] for example you could do in you could do
+[27m 35s] an updated projects
+[27m 36s] so if i did a
+[27m 41s] if i updated you
+[27m 44s] yeah so i do that all the time um
+[27m 48s] that will update oh this will be ran
+[27m 52s] when
+[27m 52s] this is updated or you've worked with
+[27m 56s] that attribute there so
+[27m 59s] if you want to catch everything which is
+[28m 1s] how you do real-time validation because
+[28m 3s] then you can just like validate that
+[28m 4s] specific field
+[28m 6s] um or updated will be literally
+[28m 10s] every xhr request we'll be like right
+[28m 13s] cool got a message what can i do
+[28m 17s] which i have used on another project
+[28m 19s] which was quite fun
+[28m 20s] um right so there's the empty state
+[28m 23s] and what we've got here is
+[28m 27s] x empty state you have no projects yet
+[28m 30s] that is showing
+[28m 31s] just how we wanted it to so now we can
+[28m 34s] come back to here and we can delete that
+[28m 38s] so we have no projects yet that is
+[28m 42s] perfect
+[28m 45s] so what we want is
+[28m 48s] um let's just
+[28m 52s] format this a very very small amount
+[28m 56s] doesn't vs code have a format file
+[29m] functionality it does but it's never
+[29m 3s] worked for me
+[29m 6s] it just bloody worked possibly
+[29m 12s] hey christoph thanks for joining if you
+[29m 14s] want to come and teach me how to use
+[29m 16s] larval properly like tom just has then
+[29m 18s] feel free
+[29m 19s] [Laughter]
+[29m 21s] hey kristoff said some nice way of
+[29m 24s] promoting your own project kristoff
+[29m 27s] yeah definitely we heard about this
+[29m 31s] through uh
+[29m 31s] lara streamers so we'll uh
+[29m 38s] and here we go oh no
+[29m 41s] i've already i don't need my own one in
+[29m 43s] my calendar but we've got a nice one
+[29m 45s] tomorrow so i can download the ics
+[29m 48s] uh excellent nope there's another one
+[29m 54s] so there we go
+[30m] i know i know it's a van killer
+[30m 4s] right um that php store
+[30m 7s] i've got phpstorm i just don't use it
+[30m 9s] where is it here we go i've got a
+[30m 11s] license for it
+[30m 12s] i got i can't give away enough licenses
+[30m 15s] for it
+[30m 16s] right so this is our project list which
+[30m 19s] will be updated as
+[30m 20s] as time kind of like things happen
+[30m 24s] so what else we need we need like
+[30m 26s] another
+[30m 28s] aspect here we need this to be
+[30m 31s] a live wire component as well so we're
+[30m 33s] going to have
+[30m 34s] um does the whole thing have to be a
+[30m 37s] lifeline component
+[30m 39s] no just a button yeah
+[30m 43s] so we can do php artisan uh
+[30m 46s] make a live wire
+[30m 50s] and it's going to be relatively similar
+[30m 52s] and we're going to say
+[30m 53s] projects create button
+[30m 56s] let's call it something nice and simple
+[31m] so what we can do we can probably grab
+[31m 3s] that why i'm asking so much is that
+[31m 7s] i think it was aeq
+[31m 10s] however you are named uh he was saying
+[31m 13s] that he had
+[31m 14s] problems with uh
+[31m 17s] with two complex and uh
+[31m 20s] child and parent lifewire components so
+[31m 23s] said why i think right yeah prevent it
+[31m 27s] [Music]
+[31m 28s] it can get tricky um but it it all
+[31m 32s] it really does depend what you're doing
+[31m 34s] as well because
+[31m 39s] if you have two men if you have one
+[31m 40s] parent component with lots of child
+[31m 42s] components and you're emitting events
+[31m 46s] it it's hard to choreograph who's
+[31m 48s] listening to what
+[31m 51s] right so we have that create button
+[31m 54s] there
+[31m 54s] so now that should disappear so now if
+[31m 58s] we
+[31m 59s] come down to livewire i stick them in
+[32m 2s] view files still by the way
+[32m 7s] because i like the organization of them
+[32m 10s] if i'm completely honest
+[32m 13s] so here's our little create project
+[32m 15s] there
+[32m 16s] and um
+[32m 19s] what we'll do we'll do a wire click
+[32m 24s] that doesn't need to be a button really
+[32m 26s] does it we'll keep it as a button
+[32m 28s] because
+[32m 28s] accessibility or something um
+[32m 33s] we just have a create method so then in
+[32m 36s] our create button here we can just have
+[32m 39s] a
+[32m 40s] public function create
+[32m 45s] and then we will die and dump on that
+[32m 47s] saying dust
+[32m 49s] so that gives us
+[32m 52s] the behavior we're expecting
+[32m 56s] we have a button when we click it we are
+[33m] triggering a method so we'll say okay so
+[33m 5s] hit this method which will be there
+[33m 8s] which means that now i can say
+[33m 11s] this emit um
+[33m 17s] open slide over
+[33m 20s] or something like that yeah open slide
+[33m 23s] over
+[33m 24s] will be good enough all right we'll say
+[33m 27s] we've got a button
+[33m 28s] in this case it emits an event
+[33m 31s] to other live wire components basically
+[33m 35s] uh which you will see in just a second
+[33m 37s] so we'll make another component
+[33m 39s] and this will be the create slide
+[33m 43s] oh no that's going to be two wording
+[33m 45s] projects
+[33m 47s] create form there we go here's a create
+[33m 50s] form
+[33m 51s] so um
+[33m 58s] which i have for this kind of
+[34m] interactivity is there a
+[34m 2s] a real benefit of doing it with live
+[34m 4s] wire instead of
+[34m 6s] plain alpine java javascript whatever
+[34m 10s] so is there a real benefit of doing it
+[34m 13s] via hdp going to the server emitting an
+[34m 15s] event which
+[34m 17s] whatever magic and
+[34m 20s] not not maybe not for this bit but
+[34m 22s] because i know that um
+[34m 23s] i want this part to be in there and we
+[34m 27s] want buttons here and stuff
+[34m 28s] there um i know you can't admit events
+[34m 33s] as well through alpine or i don't know
+[34m 35s] how to
+[34m 36s] um and because this slide over is going
+[34m 40s] to have some
+[34m 41s] aspects within it already it's going to
+[34m 43s] be slightly different
+[34m 44s] um because i'm
+[34m 48s] losing okay create form
+[34m 52s] so there's a create form which is going
+[34m 54s] to be basically
+[34m 55s] that
+[34m 59s] so this view for now we don't need we've
+[35m 2s] now finished that view
+[35m 5s] so that's not changed that's still
+[35m 8s] exactly the same
+[35m 9s] that event has been emitted but we're
+[35m 11s] not catching it anywhere
+[35m 13s] projects list we can come back to
+[35m 16s] so now on that create form we can
+[35m 20s] do a
+[35m 20s] [Music]
+[35m 25s] protected listeners i will just get rid
+[35m 27s] of the html that i've got in my
+[35m 30s] text output there we go
+[35m 35s] so what we're doing here is
+[35m 40s] the button is emitting this event so we
+[35m 43s] want to listen for that event
+[35m 45s] and when we hear that event
+[35m 48s] open panel
+[35m 52s] so we can say public function
+[35m 55s] open panel and then we can just say
+[35m 59s] this open is true
+[36m 4s] so we can go into listeners variable
+[36m 9s] i do i've had again
+[36m 12s] yeah i've had one of those days where
+[36m 15s] i've just been doing
+[36m 16s] crazy stuff i i know this if you're on
+[36m 19s] stream
+[36m 20s] it's uh your yeah
+[36m 23s] topographic brain part just
+[36m 26s] shuts up so
+[36m 29s] right so this is our basic part of it so
+[36m 32s] what we will do is um
+[36m 38s] do
+[36m 42s] we will just wrap it in another div
+[36m 44s] because when in doubt stick in a div
+[36m 49s] or seven that's my approach
+[36m 54s] and what we could do now is
+[36m 58s] um i usually just do a quick if
+[37m 2s] open
+[37m 7s] that's now in there
+[37m 11s] we can drop that x show because we're
+[37m 13s] doing something slightly different
+[37m 16s] and one question also in the render
+[37m 20s] method itself
+[37m 23s] so instead if if open is false
+[37m 28s] just return an empty string for example
+[37m 30s] instead of a full view
+[37m 32s] just a question i don't know if it works
+[37m 35s] i don't actually
+[37m 36s] know to be honest i don't touch the
+[37m 39s] render method because i don't want to
+[37m 41s] mess things up
+[37m 42s] i don't know how often it gets called or
+[37m 44s] if you can re-render
+[37m 48s] um
+[37m 52s] and i'm not sure i i tend to avoid that
+[37m 55s] and
+[37m 58s] do things differently i i try to
+[38m 1s] control it in different methods instead
+[38m 3s] of
+[38m 4s] toggling what view is being rendered in
+[38m 7s] case there's any performance
+[38m 8s] issues
+[38m 11s] so there we go that is now open
+[38m 15s] and the only downside to doing this in
+[38m 17s] live wire as you can see
+[38m 18s] you know there's no click away yeah
+[38m 23s] um so if i come back to the create
+[38m 26s] form we should have a
+[38m 33s] here's all of that there's a form i
+[38m 35s] don't know where that
+[38m 36s] x is um
+[38m 41s] probably near the bottom somewhere i
+[38m 43s] think that wasn't
+[38m 44s] an x there was a cancel button on the
+[38m 47s] bottom
+[38m 49s] this this is what i'm looking for we are
+[38m 51s] looking for
+[38m 52s] the so this is close you don't see
+[38m 57s] yeah so let's go to
+[39m 2s] this fit this is yeah
+[39m 7s] so we are going to say wire
+[39m 10s] click dot prevent
+[39m 14s] and we are going to toggle
+[39m 19s] is it minus prevent i think it's click
+[39m 22s] dot preventer yeah
+[39m 24s] it is so i've i've been like doing
+[39m 28s] loads of stuff in 12 different million
+[39m 30s] languages today so i apologize if
+[39m 33s] i forget what i'm doing um
+[39m 37s] and i have to tell you that you should
+[39m 38s] format your html
+[39m 42s] i i know shut up you
+[39m 47s] right so hopefully this now works how i
+[39m 50s] want it to so i can create the project
+[39m 54s] don't do this to me like we're stopping
+[39m 57s] we're stopping the stream i've had
+[39m 58s] enough already
+[40m 1s] create close create close perfect
+[40m 5s] right now i can format things now i can
+[40m 8s] format it the way i want it to so i
+[40m 10s] don't want any of these
+[40m 11s] down here right now we
+[40m 15s] don't want to add team members right now
+[40m 18s] drop some of this
+[40m 21s] format the document there we go
+[40m 24s] right now we've done that we've got our
+[40m 28s] toggleable little
+[40m 30s] side panel um
+[40m 33s] wow most of this is relatively
+[40m 37s] close to what i needed
+[40m 40s] it's almost like i grabbed the right
+[40m 41s] component from tailwind ui without
+[40m 43s] realizing
+[40m 44s] um so let's
+[40m 48s] first thing we need to do is we are
+[40m 51s] going to
+[40m 52s] have a title
+[40m 59s] uh run the description
+[41m 3s] um we'll stick to those two for now
+[41m 9s] close a panel
+[41m 12s] here's another closed panel for some
+[41m 13s] reason we'll just get rid of that one
+[41m 16s] because we're not actually using this is
+[41m 20s] why i don't format
+[41m 21s] using their formatted much because it
+[41m 23s] doesn't make sense to me when they the
+[41m 25s] way this format it
+[41m 27s] i like things a specific way because i'm
+[41m 30s] bloody picky
+[41m 31s] right project what i do
+[41m 34s] better than you are everything on one
+[41m 38s] indentation that that's true i will give
+[41m 42s] you that
+[41m 42s] and usually what i do is i will do this
+[41m 45s] now because it's going to be easier
+[41m 47s] i'll create a folder within components
+[41m 50s] say forms
+[41m 54s] inputs
+[42m] and
+[42m 2s] and i will have a
+[42m 4s] [Music]
+[42m 7s] text input in here and what i typically
+[42m 9s] do
+[42m 10s] is i just grab this stick this in here
+[42m 15s] so i can
+[42m 18s] those will be different
+[42m 22s] this won't be so i can just
+[42m 26s] do things the way that i want them to
+[42m 28s] work
+[42m 31s] [Music]
+[42m 36s] right so now i can just get rid of that
+[42m 39s] and i can say x forms
+[42m 44s] inputs text
+[42m 48s] we want the id of this
+[42m 51s] to be title we want
+[42m 55s] wire model to be
+[42m 59s] title and it is required
+[43m 4s] and that is all we need
+[43m 7s] so now we open that that's fine so if i
+[43m 10s] come back to here
+[43m 12s] and set the first title to be
+[43m 16s] test it's already in there
+[43m 19s] we have now got our component wired up
+[43m 22s] the way we want it to
+[43m 25s] moving the sidebar to the right side
+[43m 28s] helps a lot
+[43m 31s] i like it there it's always been there
+[43m 33s] in every editor
+[43m 34s] every editor is over there i like it
+[43m 39s] with um yeah i have no idea what's wrong
+[43m 42s] with super said he uses the zeitgeist
+[43m 44s] right side
+[43m 47s] right so
+[43m 49s] [Music]
+[43m 50s] our title is
+[43m 55s] we always want a title
+[43m 59s] always going to be required um
+[44m 2s] always needs to be a string there's no
+[44m 4s] validation on uniqueness
+[44m 6s] for this specific part of it but i want
+[44m 9s] to
+[44m 10s] set a max of you know i don't want
+[44m 12s] anything to be
+[44m 13s] ridiculous so do a max of 140 for now
+[44m 18s] because if you're putting it in the
+[44m 20s] title it probably shouldn't be there
+[44m 22s] and then the description for the
+[44m 25s] validation
+[44m 27s] this is nullable because it's not
+[44m 29s] required but when we do have it
+[44m 31s] we want it to be a string
+[44m 34s] and that is that so
+[44m 38s] we've got that here's a description
+[44m 41s] we will create another input in here
+[44m 58s] right so i want to make sure that
+[45m] style-wise we are
+[45m 1s] okay and we'll set those
+[45m 8s] by default before for now
+[45m 16s] um
+[45m 18s] the attributes in there so things can be
+[45m 20s] nice and clean
+[45m 22s] grab that text area tell it to piss off
+[45m 25s] and now we can do an x
+[45m 29s] forms inputs text
+[45m 32s] area
+[45m 34s] [Music]
+[45m 35s] we can set the id to be description
+[45m 41s] and the wire model to be
+[45m 44s] description
+[45m 49s] and we'll say okay so we're gonna have
+[45m 51s] four rows to start with
+[45m 53s] that should now be exactly the same
+[45m 58s] yeah so
+[46m 1s] at this point i usually look at okay do
+[46m 4s] i want to
+[46m 5s] [Music]
+[46m 7s] every time i do an input do i want it to
+[46m 9s] be sent
+[46m 10s] off to uh the component of the back end
+[46m 14s] to do any validation and most of the
+[46m 15s] time i don't i don't need real-time
+[46m 17s] validation on
+[46m 18s] certain things here so i can just
+[46m 22s] defer sending these by adding the doctor
+[46m 25s] firm
+[46m 27s] here so what that is going to do
+[46m 31s] is instead of i type and it sends that
+[46m 34s] request
+[46m 35s] so let me come and have a look at that
+[46m 38s] network tab
+[46m 39s] and xhr so we've got this
+[46m 42s] that's all that so i can say
+[46m 47s] that isn't sending because we're
+[46m 48s] deferring but if we
+[46m 53s] come back and
+[47m] okay two seconds
+[47m 11s] and create project and now
+[47m 14s] every time i type we are sending
+[47m 17s] another request and it's completely
+[47m 19s] pointless you know i'm going to validate
+[47m 21s] at the end
+[47m 22s] i'm not too fussed about that right now
+[47m 25s] so i will
+[47m 26s] get rid of that get rid of i don't even
+[47m 29s] know that
+[47m 31s] i would find this for every single wire
+[47m 34s] model or is that a global way to
+[47m 38s] use this for the whole component i
+[47m 41s] believe you've got to do it for every
+[47m 42s] model
+[47m 43s] i've not looked into that if i'm
+[47m 45s] completely honest
+[47m 48s] um i just find it on the ones that are
+[47m 51s] important
+[47m 52s] like if i am going to add another one on
+[47m 55s] here like team members
+[47m 57s] let's say i was going to do um
+[48m] type ahead for team members i don't want
+[48m 1s] to defer that i want that to be real
+[48m 3s] time so i can
+[48m 6s] pull them back in nice and quickly
+[48m 10s] all right and then field set we're not
+[48m 12s] worrying about privacy because we are
+[48m 14s] google
+[48m 18s] um
+[48m 20s] me now close that so we can see it we
+[48m 22s] don't need to copy link or learn more
+[48m 24s] stuff
+[48m 25s] so we can probably just get rid of that
+[48m 30s] so we have another button here
+[48m 34s] damn buttons everywhere um
+[48m 39s] you can just do a wire
+[48m 41s] [Music]
+[48m 44s] because it's a button enough inside the
+[48m 46s] form i'm going to add the
+[48m 48s] event on that one and we'll just toggle
+[48m 52s] because that should now close it so you
+[48m 55s] can define
+[48m 56s] a column you have wire dot
+[49m] click oh
+[49m 4s] it's because i was using alpine
+[49m 6s] yesterday
+[49m 7s] inertia today live why the day before
+[49m 12s] it gets hard to remember these things
+[49m 14s] like there we go we can
+[49m 16s] close it nice and easily yeah i think
+[49m 19s] the beautiful thing the difference
+[49m 20s] between
+[49m 21s] alpine and liver notation is that
+[49m 24s] you prefix the same what you're writing
+[49m 26s] an alpine with a wire
+[49m 29s] yeah like this
+[49m 33s] that i don't need
+[49m 36s] so i can now come to the top of the form
+[49m 39s] and say um let's just
+[49m 44s] format it the steve way all right wire
+[49m 49s] submit dot prevent we want to send this
+[49m 53s] to
+[49m 53s] the submit method
+[49m 57s] so now if i
+[50m 2s] excellent submit is not found this is my
+[50m 4s] version of um
+[50m 6s] tdd and livewire at the moment is does
+[50m 9s] it work
+[50m 9s] nope better add that method there's my
+[50m 12s] red green refactor right there
+[50m 14s] i don't have time to do tdd when i'm on
+[50m 16s] a screen
+[50m 18s] otherwise you will not see me do much
+[50m 20s] other than writing a test
+[50m 23s] right so we are submitting um
+[50m 27s] i'm going to be really annoying now and
+[50m 30s] just do my return types
+[50m 32s] because it annoys me when i don't have
+[50m 36s] um there's an interface for view
+[50m 40s] illuminate contract support view
+[50m 44s] exactly uh not support sorry
+[50m 49s] it yeah it returns either i believe
+[50m 52s] but i always do that one uh because it's
+[50m 54s] the first one in the list
+[50m 58s] and we're not going to return from
+[50m 59s] submit right now so what we can do is we
+[51m 1s] can say
+[51m 2s] this validate
+[51m 5s] what happens with the return value so if
+[51m 8s] you would return for example a boolean
+[51m 10s] of sub
+[51m 11s] from submit whatever is anything happen
+[51m 14s] with
+[51m 14s] it or is it just yeah return a boolean
+[51m 18s] and i use the same as before
+[51m 22s] i mean i'm not actually sure
+[51m 27s] so would you be able for example to to
+[51m 30s] use the boolean
+[51m 31s] in somewhere i don't think it matters
+[51m 36s] okay i don't think it matters too much
+[51m 38s] uh this is more just you know
+[51m 41s] because that's how i want to do things i
+[51m 44s] guess
+[51m 44s] um i'm gonna set for now i'm gonna set a
+[51m 46s] min to two
+[51m 48s] minimum project name titled two
+[51m 52s] that is now failing validation but we
+[51m 54s] aren't showing validation yet
+[51m 57s] so what i typically do at this point is
+[51m 59s] come down to the auth
+[52m 1s] come down to register i don't like how
+[52m 4s] it does that
+[52m 5s] i hate them all at the top so i'm going
+[52m 7s] to come down to
+[52m 9s] the profile
+[52m 12s] update profile information scroll down a
+[52m 16s] little bit
+[52m 18s] and just grab that part
+[52m 21s] there so come back
+[52m 24s] over to here
+[52m 28s] and if we have an error this will be for
+[52m 32s] title and if we have an error there
+[52m 35s] i'm going to do that one full
+[52m 37s] description
+[52m 40s] so now
+[52m 45s] straight away validation that isn't
+[52m 48s] validating because it's not required
+[52m 54s] but obviously we aren't doing any sort
+[52m 56s] of do you want to see
+[52m 58s] real-time validation or not
+[53m 2s] are you bothered about real-time
+[53m 3s] validation it works the same you only
+[53m 6s] have to remove the deferral
+[53m 9s] yeah i'd have to remove the defer
+[53m 13s] but also i will need to do a
+[53m 17s] public function updated
+[53m 24s] just that
+[53m 31s] and it's gone couldn't it shouldn't it
+[53m 34s] be on updating
+[53m 36s] no updated when that um when that
+[53m 40s] attribute that why a model has been
+[53m 42s] updated
+[53m 45s] validate oh yeah because otherwise it
+[53m 48s] would validate the old value
+[53m 51s] okay yes
+[53m 57s] so i'm not bothered about real-time
+[54m] validation um because i'm lazy
+[54m 14s] shut my door please
+[54m 17s] kids
+[54m 21s] right um where were we
+[54m 24s] we can do this we can then get through
+[54m 29s] that'll validate and then we are hitting
+[54m 33s] this part here which will be creating
+[54m 36s] uh we are now going to be creating the
+[54m 39s] project here
+[54m 41s] and then at that point we're probably
+[54m 43s] going to want to like emit an event
+[54m 45s] and then toggle again basically after
+[54m 52s] resetting the component that is kind of
+[54m 54s] what we do
+[54m 56s] in order here so
+[54m 59s] to do we will just say project
+[55m 5s] create we want the title
+[55m 9s] to be um
+[55m 12s] and now let's do this title
+[55m 16s] if we want to do anything extra like
+[55m 19s] stripping tags or anything this is where
+[55m 20s] we do it normalizing it or anything like
+[55m 22s] that
+[55m 25s] shouldn't you create a project on the
+[55m 27s] user
+[55m 32s] uh and you can do i mean you can just um
+[55m 36s] i'll use your projects create
+[55m 40s] as project as a method
+[55m 44s] i you can do it that way um
+[55m 48s] in that role you can you i don't know if
+[55m 51s] you yeah
+[55m 52s] i mean it depends what you want to do
+[55m 55s] um i typically don't personally i
+[55m 58s] usually pull in the model
+[56m] because i hate that red line
+[56m 6s] what might this red light say because
+[56m 9s] this is
+[56m 9s] it it's an interesting because that is
+[56m 12s] undefined
+[56m 13s] yeah so it it bugs me so i just use the
+[56m 17s] model
+[56m 18s] um so this is where i'd say okay so this
+[56m 20s] emit
+[56m 22s] um project created
+[56m 28s] we then want to
+[56m 30s] [Music]
+[56m 33s] reset and when i reset in theory that
+[56m 38s] should set
+[56m 38s] that back to open back to false
+[56m 42s] so let's test let's test this
+[56m 46s] i want to create a test project with a
+[56m 49s] test description
+[56m 51s] or field key doesn't have a default
+[56m 53s] value of course it doesn't you
+[56m 56s] idiot okay so that is part of my setup
+[57m] so um what we've got on our models our
+[57m 5s] project
+[57m 7s] we have we should have an
+[57m 11s] observer which we have
+[57m 14s] not registered because i ran out of time
+[57m 18s] so let me just go register this observer
+[57m 20s] and that problem should go away
+[57m 23s] um i like to use model observers
+[57m 29s] i always use the event service provider
+[57m 32s] but yeah i
+[57m 33s] i definitely agree that you should use
+[57m 36s] uh
+[57m 42s] service providers as possible yeah
+[57m 46s] so that is now being observed
+[57m 49s] so this should now not be a problem so i
+[57m 52s] can say test
+[57m 53s] test save we haven't selected our theme
+[57m 57s] right that was the next part what i
+[58m] hadn't
+[58m 1s] actually gotten around to um
+[58m 4s] so what i want is i want like a
+[58m 10s] how do i want this to work we want like
+[58m 12s] a kind of
+[58m 16s] something a something what's what do we
+[58m 19s] want
+[58m 19s] team is something like in trello is that
+[58m 22s] you can select
+[58m 23s] background color for example and so on
+[58m 26s] yeah it's very similar um
+[58m 30s] i don't know whether maybe a radio group
+[58m 32s] would be best
+[58m 38s] there's not actually that many so what
+[58m 40s] i'm going to do is i'm just going to
+[58m 41s] stick it in a select
+[58m 44s] um
+[58m 49s] click string theme
+[58m 59s] yeah theme there
+[59m 3s] and then when we
+[59m 8s] when we mount
+[59m 19s] i'm gonna actually have to go through my
+[59m 21s] uh
+[59m 22s] two-year-old son is not having a good
+[59m 24s] day and he's autistic so
+[59m 26s] i might have to cut it short and go look
+[59m 29s] after him
+[59m 30s] um okay i just got a message from my
+[59m 32s] wife saying he's going absolutely mental
+[59m 35s] so i'm going to have to cut it short
+[59m 36s] but we'll pick this up again next time
+[59m 41s] yeah cool family first yeah sorry for
+[59m 44s] that everyone i will catch you later
+[59m 47s] okay so later today or really
+[59m 52s] i will see how well he goes he's i can
+[59m 55s] just about hear him screaming
+[59m 57s] so i better see how he's doing cool
+[60m] i will drop your message on twitter and
+[60m 2s] i'll tweet out if i get a chance to come
+[60m 3s] back on
+[60m 5s] sure see you later see you

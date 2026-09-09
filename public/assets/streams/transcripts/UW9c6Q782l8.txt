@@ -1,0 +1,2158 @@
+[2m 6s] so
+[2m 34s] so
+[3m 2s] so
+[3m 16s] so
+[3m 29s] [Music]
+[3m 44s] so
+[3m 49s] [Music]
+[4m 4s] [Music]
+[4m 17s] [Music]
+[4m 25s] [Music]
+[4m 30s] [Music]
+[4m 50s] [Music]
+[4m 57s] [Music]
+[5m 8s] so
+[5m 10s] [Music]
+[5m 22s] so
+[5m 30s] [Music]
+[5m 40s] [Music]
+[6m 4s] so
+[6m 11s] [Music]
+[7m 44s] all right all right so uh
+[7m 48s] first things first can you just give me
+[7m 51s] a heads up if you can't hear me
+[7m 54s] let's know if the sound and video is
+[7m 56s] coming through okay
+[8m 8s] i'm gonna assume so while we wait until
+[8m 10s] the messages come through
+[8m 14s] so uh we will start
+[8m 17s] by just saying thank you for everyone
+[8m 19s] coming
+[8m 20s] and i'll give a little introduction as
+[8m 22s] to who i am and
+[8m 24s] so my name is luke i
+[8m 27s] thank you mainly
+[8m 31s] certainly work a lot with recently
+[8m 35s] passed as well
+[8m 53s] so much uh particularly the expectation
+[8m 56s] i think is one of the best ways to test
+[9m] i'd like to
+[9m 1s] share that with you and what better way
+[9m 3s] to do that
+[9m 4s] add tests to real life
+[9m 34s] mistakes
+[9m 48s] this is
+[10m 1s] a few seconds
+[10m 44s] a
+[10m 56s] shall kick off
+[11m 6s] [Music]
+[11m 13s] uh in a existing php application which
+[11m 16s] is
+[11m 18s] the liable framework and today we're
+[11m 20s] going to be
+[11m 21s] looking at the web
+[11m 24s] and absolutely awesome we have tom who
+[11m 28s] is a great
+[11m 29s] player with us on the stream so i'm
+[11m 31s] going to bring it
+[11m 32s] in and we can get trained and
+[11m 35s] talk a little bit about me and take us
+[11m 38s] through it
+[11m 43s] hey all uh like
+[11m 46s] all of you i have no idea what luke said
+[11m 49s] to last minute so
+[11m 50s] i will just do what i think he wanted me
+[11m 53s] to do
+[11m 54s] and uh talk a bit about me
+[11m 58s] and appenda so who doesn't know me i'm
+[12m 1s] tom witkowski from hamburg germany
+[12m 4s] and doing a lot of lara royal and open
+[12m 7s] source
+[12m 8s] for uh astrotomic my own github
+[12m 11s] organization
+[12m 12s] and also maintaining several sparsia
+[12m 16s] repositories packages and i started
+[12m 20s] upenda
+[12m 20s] and of may if i'm right
+[12m 24s] and yeah it's it's
+[12m 28s] what the headlines say so it's a
+[12m 30s] platform to
+[12m 32s] make your open source work visible to
+[12m 35s] all other people so also other
+[12m 37s] developers but also recruiters
+[12m 40s] and headhunters and also stuff
+[12m 44s] and yeah you can sign up by github
+[12m 48s] and uh after signing up you will see
+[12m 52s] your github avatar on the top right
+[12m 55s] if you click it you will have the option
+[12m 57s] to
+[12m 58s] go to your profile and on your profile
+[13m] you will see
+[13m 2s] all of your contributions we have
+[13m 4s] indexed
+[13m 6s] says this small exclamation mark so
+[13m 9s] because we got
+[13m 10s] a lot of questions about it
+[13m 13s] yes we don't have all of github index so
+[13m 18s] we can only show and index all
+[13m 20s] repositories
+[13m 21s] maintained by a person who already
+[13m 24s] signed up on open me
+[13m 26s] so this is a small limitation so in case
+[13m 30s] you miss uh one of your contributions or
+[13m 32s] whatever you can
+[13m 33s] ping the maintainer for example
+[13m 37s] or if you ask maintainer and the
+[13m 39s] repository is owned by a
+[13m 40s] organization on github site checks that
+[13m 44s] you
+[13m 44s] are a public member of that organization
+[13m 47s] because if you aren't public and this is
+[13m 50s] the default by default you are a private
+[13m 53s] member
+[13m 54s] we also can't see this organization and
+[13m 56s] because of this
+[13m 57s] not as a repositories
+[14m 1s] so yeah
+[14m 4s] now i'm ready to talk about open on me
+[14m 7s] and what we will do today is
+[14m 10s] adding past to it
+[14m 14s] and i have here luke
+[14m 17s] double check my audio now tom i don't
+[14m 19s] know what they're saying yeah no
+[14m 21s] no it's a lot better hey
+[14m 25s] so now i can understand you
+[14m 28s] well done for picking up on the uh
+[14m 31s] talker threat that was great
+[14m 34s] oh that's good i uh so before you were
+[14m 37s] like a terminator
+[14m 38s] with a headshot so all this is
+[14m 42s] really nothing to understand
+[14m 45s] that's just me forgot to come by the
+[14m 48s] stream start
+[14m 51s] all right awesome thanks for watching us
+[14m 55s] through that
+[14m 56s] um so yeah
+[14m 59s] i'm writing saying as well tom that if
+[15m 2s] somebody's not already signed up to open
+[15m 4s] door dot me
+[15m 5s] um they can go and do that today and
+[15m 8s] they would
+[15m 8s] have all of their stuff indexed
+[15m 18s] there we go one of the very first or
+[15m 23s] biggest questions or
+[15m 24s] fears or whatever
+[15m 27s] all people doing tests know php unit and
+[15m 30s] it's the first tool uh
+[15m 32s] coming to mind and also google spits out
+[15m 35s] if you
+[15m 35s] do search for php testing framework
+[15m 39s] and i think a lot of people and also
+[15m 42s] patel wrote it in the comments as
+[15m 46s] say are scared of moving from pgp unit
+[15m 48s] to past
+[15m 49s] so possibly we could talk about some of
+[15m 52s] the benefits
+[15m 54s] or reasons why you would like to move
+[15m 56s] from
+[15m 57s] php unit to past so i think one of the
+[16m] very first is pest isn't a totally
+[16m 3s] new testing framework but it's using php
+[16m 6s] unit under the hood
+[16m 8s] yeah absolutely so it's it's it's
+[16m 12s] it is basically php unit with with a
+[16m 15s] lovely pro on top
+[16m 16s] um and the source code can be a little
+[16m 18s] bit
+[16m 19s] i guess intimidating to look through
+[16m 21s] because it is doing some
+[16m 23s] some complex stuff with php unit
+[16m 26s] um but under the hood it finishes with a
+[16m 30s] test case similar to what you'd
+[16m 31s] experience in php unit and hopefully
+[16m 34s] when we move some of open door.muse
+[16m 36s] tests into php unit today you'll see
+[16m 39s] that it is almost identical and you can
+[16m 42s] pick up
+[16m 43s] very quickly uh with
+[16m 47s] pest going from php unit so don't worry
+[16m 49s] about that
+[16m 50s] we'll we'll jump into that in just a
+[16m 52s] second and you'll see how simple it is
+[16m 55s] um so to get us started then i have the
+[16m 59s] open door dot me github repository the
+[17m 1s] site is open source
+[17m 6s] and uh we've already gone and pulled it
+[17m 8s] down but today
+[17m 9s] tom has very kindly added a little
+[17m 11s] installation guide
+[17m 13s] so if you want to get the project up and
+[17m 16s] running locally yourself then
+[17m 17s] you can follow the installation guide
+[17m 19s] and it's not
+[17m 21s] fully complete but i think it removed
+[17m 25s] some of the biggest burdens for a lot of
+[17m 28s] contemporaries so you don't need
+[17m 30s] postgres anymore you don't need lettuce
+[17m 32s] or the correct php version on your
+[17m 33s] machine
+[17m 34s] this is all now in lara dock so
+[17m 38s] as a docker wrapper before sale
+[17m 42s] and i've also tweeted some minutes ago
+[17m 45s] that i still
+[17m 46s] search for a docker experience developer
+[17m 48s] who could do
+[17m 49s] a custom setup because lara dock is is a
+[17m 52s] massive
+[17m 53s] docker setup with also things like my
+[17m 56s] research and
+[17m 57s] all database drivers possible and so on
+[17m 59s] so
+[18m] if anyone here is stock experienced and
+[18m 2s] can do a docker setup with docker
+[18m 4s] compose for php 8 postgres redis and
+[18m 7s] nginx or apache whatever you like more
+[18m 10s] this was really great if you could
+[18m 12s] contribute it so we can get rid of a
+[18m 15s] circuit sub module of largo dock
+[18m 20s] there you go first contribution
+[18m 24s] awesome um so let's jump in
+[18m 28s] and thank you for the suggestions the
+[18m 32s] other day on twitter by the way
+[18m 34s] about uh shared pair coding we are going
+[18m 37s] to use
+[18m 37s] code with me in php system
+[18m 40s] and tom has uh control hopefully i think
+[18m 44s] can you just test that time can you
+[18m 45s] click around
+[18m 49s] yeah there we go
+[18m 53s] all right so um before i ever start
+[18m 56s] writing tests in an application i like
+[18m 58s] to
+[18m 58s] know the structure of the application
+[19m] and the basics of
+[19m 2s] how things are put together where things
+[19m 3s] come from so
+[19m 6s] would you be able to kind of take us
+[19m 8s] through on a whistle stop tour of the
+[19m 10s] site tom
+[19m 11s] show us where we should be
+[19m 15s] yeah so um
+[19m 18s] like you can see here calling github api
+[19m 21s] is one of the
+[19m 23s] the largest parts of the application so
+[19m 25s] we have
+[19m 26s] several queue jobs here all interacting
+[19m 30s] with a github api
+[19m 32s] so for example here
+[19m 35s] loading all organizations as a user as a
+[19m 38s] public member of and storing some in the
+[19m 40s] database
+[19m 43s] after this for example if the
+[19m 45s] organization would be created new
+[19m 48s] we will load additional data like if
+[19m 50s] it's verified
+[19m 51s] description twitter handler and so on
+[19m 56s] one of the largest ones is a load
+[19m 58s] repository contributors
+[20m 2s] this is also running as a batch and
+[20m 7s] now pretty optimized so we call
+[20m 11s] the contributor's endpoint in the loop
+[20m 14s] to get all the contributors and for
+[20m 17s] every single contributor we add
+[20m 19s] another ad repository contributor job to
+[20m 22s] the badge
+[20m 23s] so for some repositories this
+[20m 26s] whole setup will create like 20 000
+[20m 29s] jobs in the queue and
+[20m 33s] yeah so this is about jobs we have also
+[20m 36s] two of the
+[20m 37s] base classes abstract doing some basic
+[20m 40s] stuff
+[20m 41s] and here's some
+[20m 44s] basic github stuff slow like handling
+[20m 46s] rate limit response
+[20m 48s] and yes every github job has to be
+[20m 51s] unique
+[20m 52s] we have this back off strategy so
+[20m 56s] if you want to get more in detail i've
+[20m 59s] talked about
+[21m] this whole cute setup for example in the
+[21m 3s] lateral worldwide meet up in
+[21m 7s] in june i think and
+[21m 10s] yeah so beside of this we also have
+[21m 14s] some models so most importantly is
+[21m 18s] organization repository and user
+[21m 20s] and this repository user pivot model
+[21m 24s] these are all local model versions of
+[21m 30s] of the github models or endpoints
+[21m 35s] and so you have some static
+[21m 39s] code for example also here like
+[21m 44s] sorry uh like here from github
+[21m 47s] so getting the data and checking if
+[21m 49s] there is already
+[21m 51s] a user with the same id otherwise create
+[21m 53s] one
+[21m 54s] and yeah some other stuffs are i have
+[22m] some blade components
+[22m 4s] so like the repository card here for
+[22m 6s] example
+[22m 8s] and also
+[22m 12s] um here's a home section
+[22m 16s] getting random contributors
+[22m 20s] and yeah these components are self
+[22m 22s] enclosed so
+[22m 24s] they get their own data you don't have
+[22m 27s] to inject it from the outside
+[22m 30s] okay very good yeah
+[22m 33s] i think that's nearly it so yeah we have
+[22m 37s] some
+[22m 37s] social light things here
+[22m 42s] but that's all code
+[22m 46s] yeah for sure you could or should test
+[22m 49s] it that your user can sign in and so on
+[22m 51s] but
+[22m 52s] most of the logic here is done by
+[22m 54s] socialite and
+[22m 57s] most of the routes
+[23m] are doing here route view so
+[23m 4s] i that immediately just run a view
+[23m 8s] instead of going to any controller
+[23m 10s] yeah very good
+[23m 15s] i i mean it looks neat already it looks
+[23m 17s] neat already so
+[23m 19s] um you know only it's going to be
+[23m 22s] fairly simple to see what's happening
+[23m 24s] and be able to add tests
+[23m 26s] which is always good all right i've made
+[23m 30s] the font a little bit bigger i hope
+[23m 31s] that's a little
+[23m 32s] a little better for everyone
+[23m 36s] all right so uh let's do it shall we
+[23m 40s] i'm going to stop syncing with you tom
+[23m 41s] if that's okay thanks for the
+[23m 48s] tour
+[23m 54s] okay you can keep it so i can see on my
+[23m 57s] screen what you are doing
+[24m 1s] oh yeah you followed me okay now i have
+[24m 3s] to follow you
+[24m 8s] all right so
+[24m 11s] i think the first thing is is to go and
+[24m 13s] get a pest installed right
+[24m 17s] uh i think it will help you
+[24m 20s] super straightforward uh we're on
+[24m 22s] laravel so this is the one i'm actually
+[24m 25s] kind of interested in um so we'll run
+[24m 28s] the installation steps
+[24m 40s] and one of the things that um one of the
+[24m 43s] things i say is even if you're not ready
+[24m 44s] to go from php
+[24m 46s] unit to pest you should definitely be
+[24m 48s] using the expectation api
+[24m 51s] in even in php unit which it works
+[24m 53s] flawlessly in php unit
+[24m 55s] but honestly the the expectation api is
+[24m 59s] absolute fire and completely
+[25m 2s] um the readability of your
+[25m 6s] php unit tests no end so if you want to
+[25m 8s] do things in little steps that's also
+[25m 10s] possible with pest which is really nice
+[25m 12s] it's not like you have to go from
+[25m 14s] nothing to everything being passed you
+[25m 16s] can do things slowly
+[25m 19s] you've you only say this because you
+[25m 22s] contributed a lot to
+[25m 23s] to the expectation api
+[25m 27s] well that's exactly what i did so
+[25m 31s] how yeah when we when we started using
+[25m 34s] pest we weren't using pest
+[25m 36s] in in whole we were just using the
+[25m 38s] expectation api
+[25m 41s] um because it just kind of fits in with
+[25m 44s] if you're using javascript tests or
+[25m 46s] anything like that you feel like
+[25m 48s] you're doing the same thing so that's
+[25m 50s] how we started and then slowly moved on
+[25m 52s] to
+[25m 52s] to everything best i'm gonna say no here
+[25m 55s] but you should definitely go do that
+[25m 59s] [Laughter]
+[26m 1s] all right um
+[26m 4s] cool let me show you what that's done
+[26m 7s] so you can see now in the test directory
+[26m 9s] let me close everything
+[26m 10s] everything out so we've just got a clean
+[26m 15s] structure so you can see in the test
+[26m 18s] directory
+[26m 19s] not much has changed we have a few new
+[26m 23s] kind of uh files going on
+[26m 26s] but everything else looks very similar
+[26m 29s] to what we have before
+[26m 30s] if we open this pest.php file you'll see
+[26m 33s] that and
+[26m 34s] nuno has gone and very nicely added
+[26m 36s] comments for everything
+[26m 37s] so you don't have to be worried uh first
+[26m 39s] thing i'll probably do is remove that
+[26m 40s] because we don't really need the uh
+[26m 43s] extension at the minute
+[26m 46s] and uh let me just explain kind of what
+[26m 48s] what these various things are doing i'm
+[26m 49s] gonna get rid of that as well
+[26m 52s] so what you have to remember about pest
+[26m 55s] is that everything is
+[26m 57s] is functional so you're not working in
+[26m 59s] classes
+[27m] and although you can use traits and you
+[27m 2s] can use a base test case
+[27m 5s] um you really want to be working in a
+[27m 8s] functional style
+[27m 10s] so you might think well if we if we're
+[27m 12s] doing that how do we
+[27m 13s] tell pest about php unit because
+[27m 15s] remember
+[27m 16s] pest isn't a completely separate testing
+[27m 18s] framework it's a
+[27m 19s] wrapper on top of php unit and
+[27m 22s] the way we do that is with this user's
+[27m 25s] call
+[27m 26s] so in our pest.php file we can basically
+[27m 30s] tell pest which php unit test case
+[27m 34s] to use so if i was to click and go into
+[27m 36s] this test case
+[27m 37s] you'll see that we're actually already
+[27m 40s] looking
+[27m 41s] at the test case here right so
+[27m 44s] pasta's already kind of smart enough to
+[27m 46s] understand that in laravel
+[27m 48s] that's probably what we want to do now
+[27m 51s] it isn't actually quite right because in
+[27m 53s] this particular
+[27m 55s] repository uh tom set up a separate test
+[27m 59s] case for features
+[28m 1s] so we actually need to update this to
+[28m 3s] make that take place
+[28m 5s] and we can actually just go grab that i
+[28m 8s] think
+[28m 14s] using name spacing
+[28m 17s] and all it take retest that we write in
+[28m 19s] the feature directory
+[28m 21s] is going to use this as the base test
+[28m 23s] case
+[28m 24s] so it's really simple to kind of get
+[28m 27s] started and to point
+[28m 29s] if that cs fixer pop-up points pops up
+[28m 32s] again make sure i
+[28m 34s] make sure i get rid of the error report
+[28m 36s] uh
+[28m 37s] it's really simple to get up and running
+[28m 41s] and now every feature is pointed to
+[28m 44s] every test case in feature points to
+[28m 48s] this test cases can you increase the
+[28m 51s] font size a little bit more
+[28m 53s] someone asked this comment
+[28m 58s] i know that you have to increase the
+[29m] font size
+[29m 1s] really a lot on on 4k
+[29m 4s] displays or apple machines
+[29m 11s] most times i'm using something like 28
+[29m 13s] pixels
+[29m 17s] okay let's try 28.
+[29m 28s] giant
+[29m 31s] i think that should be enough if not
+[29m 34s] johnny uh
+[29m 34s] write again in the comments
+[29m 39s] awesome all right so at this point um
+[29m 43s] let's actually just see if we can run
+[29m 46s] the test suite right so to run it we run
+[29m 49s] vendor
+[29m 50s] bin pest
+[29m 56s] and it's going to be a bit slow because
+[29m 59s] things are
+[30m] happening and i'm streaming but you can
+[30m 3s] see we've not actually written any
+[30m 5s] pest like we've not done any pest tests
+[30m 9s] but the test cases still run and that's
+[30m 12s] because as we've said before
+[30m 14s] pest is just a wrapper for php unit it's
+[30m 17s] not
+[30m 17s] replacing the world um
+[30m 21s] so yeah you can still run your php unit
+[30m 23s] test that's really nice
+[30m 25s] however i think that's that's the best
+[30m 28s] feature
+[30m 29s] new new implemented or did for
+[30m 33s] past uh making switching really easy so
+[30m 36s] if you already have a project
+[30m 39s] uh you can just add past
+[30m 43s] keep all of your test cases and you
+[30m 46s] don't have to change anything
+[30m 48s] and only write new tests uh using
+[30m 50s] suppressed logic
+[30m 52s] so you don't have to go through all the
+[30m 54s] tests and rewrite them
+[30m 58s] yeah exactly you can do it as as quickly
+[31m 1s] or as slowly as you want it's not you've
+[31m 3s] got to
+[31m 4s] let's move everything over day one you
+[31m 7s] can you can do this over the course of
+[31m 9s] months if you want
+[31m 11s] um so let's jump into our even
+[31m 16s] even yeah even never um
+[31m 20s] i think the first thing i probably want
+[31m 21s] to do is
+[31m 23s] start migrating these over to the
+[31m 26s] expectation api
+[31m 28s] oh yeah andy this is a really nice
+[31m 32s] demonstration of higher order higher
+[31m 34s] order tests
+[31m 36s] or higher order expectations so
+[31m 39s] let me see i might have to just set up
+[31m 42s] yeah i need to just set this up so give
+[31m 43s] me one second
+[31m 57s] i don't hear anything
+[32m 3s] seems like you are muted
+[32m 31s] remember the wordpress uh
+[32m 35s] empty file slogan now
+[32m 38s] words are silver silence is gold
+[32m 58s] nothing
+[33m 4s] your microphone doesn't want you to
+[33m 6s] stream today
+[33m 15s] now say what's the mouse click
+[33m 19s] is that working that back yeah yeah i
+[33m 21s] hear you
+[33m 22s] hi
+[33m 26s] this is like more of a streaming tech
+[33m 29s] meeting than it is actually like code
+[33m 32s] but thanks for bearing with us
+[33m 36s] yeah okay first thing we'll do let's
+[33m 38s] refactor this code to
+[33m 40s] expectations and you'll notice we're not
+[33m 42s] actually going to leave
+[33m 44s] a php unit at the moment we're literally
+[33m 46s] going to just start refactoring
+[33m 48s] so first thing to know about
+[33m 50s] expectations are that you
+[33m 53s] you put the what you want to test
+[33m 57s] in first and what we actually want to
+[34m] test here is the user
+[34m 3s] full name and what we're going to ask to
+[34m 7s] check
+[34m 7s] is that the user full name is
+[34m 11s] tom what's your how do you pronounce
+[34m 13s] your surname tom
+[34m 15s] a little bit like it's written tom
+[34m 18s] witkowski all right
+[34m 21s] so if if you do auto complete on the
+[34m 23s] expectation api you can see that there's
+[34m 25s] like
+[34m 26s] loads of different assertions and
+[34m 29s] they all are documented in expert detail
+[34m 33s] in the past php documentation so if you
+[34m 35s] want to know
+[34m 37s] what these assertions do then you've
+[34m 40s] only got to
+[34m 41s] go over to the documentation and and
+[34m 42s] take a look at them
+[34m 44s] but it's very natural so 2b is the
+[34m 47s] equivalent of a search same in php unit
+[34m 51s] and if i now comment this out and rerun
+[34m 55s] this test case
+[34m 59s] you can see it still passes right so
+[35m 4s] that that's the expectation api versus
+[35m 6s] the assertion api that php unit ships
+[35m 8s] with
+[35m 9s] and yeah personally i'm a huge fan of
+[35m 12s] this
+[35m 13s] um it reads much better in my opinion
+[35m 17s] um so yeah
+[35m 20s] say save that what you will but let's go
+[35m 24s] and tell you what let's use a little bit
+[35m 26s] of ide magic
+[35m 27s] to do this
+[35m 48s] um i'm sorry if i
+[35m 52s] if i say something you wanted to handle
+[35m 54s] later but wasn't there a way to
+[35m 58s] have a model attribute higher order
+[36m 2s] expectations so you expect user
+[36m 6s] and change the property full name to be
+[36m 10s] a versus rejected i don't i've just seen
+[36m 12s] said there was a
+[36m 14s] a pull request somewhere but i haven't
+[36m 16s] followed it
+[36m 19s] there is indeed so give me two seconds
+[36m 22s] and i will
+[36m 22s] certainly refactor into that
+[36m 26s] okay also audience you haven't heard
+[36m 38s] anything
+[36m 52s] i think you are already muted again
+[37m 8s] you hear me now is that yeah
+[37m 11s] i think that's bad in case this keeps
+[37m 13s] happening you could
+[37m 16s] you could also join uh
+[37m 19s] with your smartphone and keep it as
+[37m 22s] audio only so
+[37m 25s] as you don't need your pc audio
+[37m 33s] yeah and you know i i'm always giving
+[37m 35s] spoilers
+[37m 36s] i'm sorry can you hear me now tom is
+[37m 40s] that
+[37m 40s] can you yeah yeah i can hear you i think
+[37m 43s] it's something to do with running it
+[37m 44s] seems to happen whenever i run the test
+[37m 47s] yeah that's a
+[37m 51s] a stream prevention implemented by nuno
+[37m 54s] as soon as you run past your microphone
+[37m 57s] is muted
+[38m] [Laughter]
+[38m 2s] that's the uh i'll have to see if i can
+[38m 5s] uh
+[38m 6s] go and put a pr in to revert that change
+[38m 10s] all right so yeah this is nice um but
+[38m 13s] when we're working with
+[38m 14s] which tom alluded to when we're working
+[38m 16s] with attributes and methods
+[38m 18s] on the same object we can use higher
+[38m 21s] order expectations which
+[38m 23s] which are really nice so we start the
+[38m 27s] same way by
+[38m 28s] calling expect but rather than passing
+[38m 31s] the entire expectation in
+[38m 32s] rather than passing the entire property
+[38m 34s] in we we just passed the route which is
+[38m 36s] user
+[38m 37s] so we're just dealing with the user
+[38m 38s] object and what i can do
+[38m 41s] is i can go and remove
+[38m 46s] all of the expectations below and at the
+[38m 49s] same time
+[38m 51s] i'm going to remove the function call
+[38m 56s] and then i'm going to remove the
+[38m 59s] semicolons
+[39m 1s] so you can see now we've we've
+[39m 2s] refactored this to kind of
+[39m 4s] a high level expectation on the user
+[39m 12s] object
+[39m 16s] you're already muted again
+[39m 30s] yeah johnny said something could it be
+[39m 34s] that muting your microphone has a
+[39m 37s] shortcut
+[39m 38s] and is mapped to the same key bindings
+[39m 41s] or shortcuts as you use for
+[39m 44s] for whatever you are doing running tests
+[39m 47s] or
+[39m 49s] multi-cursor or whatever
+[40m 8s] yeah yeah
+[40m 12s] i can hear you i don't know i
+[40m 15s] it's i don't know what's going on there
+[40m 17s] to be honest um
+[40m 19s] and it's not muting the actual mic which
+[40m 21s] is strange
+[40m 25s] but then he just cuts out every so often
+[40m 30s] um
+[40m 33s] this is currently no it also sounds like
+[40m 36s] your
+[40m 37s] your embedded microphone of your macbook
+[40m 39s] is used
+[40m 48s] silence again
+[41m] oh yeah some
+[41m 4s] usb electronic
+[41m 16s] but for all of our audience this is the
+[41m 19s] reason why streams with two people
+[41m 23s] are a lot better because if someone has
+[41m 27s] technical problems
+[41m 29s] there's at least the second one being
+[41m 31s] able to entertain the audience
+[41m 33s] and it seems like luke is big
+[41m 36s] all right man i i'll have to have a look
+[41m 40s] at this
+[41m 41s] after the stream hopefully it doesn't
+[41m 43s] happen too many more times
+[41m 47s] in order to avoid the keyboard shortcut
+[41m 49s] issue i may
+[41m 50s] see if i can run the test using that
+[41m 54s] yeah anyway so yeah expectation api
+[41m 57s] higher order expectations
+[41m 59s] and we can kind of write a test like
+[42m 1s] this and
+[42m 2s] i'm a little bit scared to run this
+[42m 4s] actually i tell you what i might
+[42m 6s] no i've not converted to test yet so i
+[42m 8s] can't do that either
+[42m 9s] let's try it one more time
+[42m 13s] can you still hear me am i still audible
+[42m 15s] yeah i can hear you
+[42m 16s] i ran the test and you still heard me in
+[42m 18s] the screen
+[42m 20s] all right so you can see we still pass
+[42m 22s] um but again expectation api i feel has
+[42m 25s] kind of taken us to the next level here
+[42m 29s] uh looks really nice looks really nice
+[42m 33s] so let's why don't we kind of do the
+[42m 36s] next thing
+[42m 37s] and convert this entire thing to a pest
+[42m 40s] test
+[42m 43s] um first thing you can do get rid of
+[42m 46s] that and get rid of the name space we
+[42m 48s] don't need a namespace
+[42m 51s] and there's two ways to write a test
+[42m 55s] in pest and that's either by using the
+[42m 57s] it method or the test method
+[42m 59s] i actually kind of like it yeah
+[43m 3s] i'm an it fan myself
+[43m 6s] and the other cool thing about writing
+[43m 9s] tests in pest
+[43m 16s] just open this up so we get rid of the
+[43m 18s] syntax problems
+[43m 24s] yeah where does that happen
+[43m 26s] just get rid of that
+[43m 30s] that's up i want also
+[43m 33s] good spot yeah the other good thing
+[43m 36s] about writing
+[43m 37s] um tests in pest is that our test
+[43m 40s] description is just a completely
+[43m 43s] user decided string so we don't need to
+[43m 46s] do these
+[43m 46s] underscores anymore but does it have to
+[43m 50s] be unique
+[43m 52s] or still have to be unique
+[43m 57s] that's a good question i would need to
+[43m 58s] it would it certainly needs to be unique
+[44m 1s] in the file if that makes sense
+[44m 4s] yeah like i wouldn't be able to have
+[44m 7s] another test called this
+[44m 8s] in this test case i'm pretty sure that
+[44m 10s] if i was in a different file different
+[44m 12s] name at the same name sorry but yeah
+[44m 15s] within the same test
+[44m 16s] it has to have the same name i'm pretty
+[44m 18s] i'm pretty certain
+[44m 20s] um so yeah that actually
+[44m 24s] isn't far off converted which you can
+[44m 27s] see didn't take much time at all
+[44m 29s] i'm actually gonna head into the
+[44m 32s] terminal and run
+[44m 33s] past here and let's see if it appears
+[44m 37s] in our
+[44m 40s] this is the old one let's see if it
+[44m 43s] appears
+[44m 47s] it has to be unique profile yeah
+[44m 50s] yeah perfect so there we go
+[44m 53s] that's i mean why did that take like 20
+[44m 56s] seconds
+[44m 56s] on stream to
+[45m] move that entire test case into pest
+[45m 6s] um like if you if you didn't want to use
+[45m 8s] the expectation api
+[45m 10s] you would just migrating from vhp unit
+[45m 12s] to pest it's a matter of getting rid of
+[45m 14s] the namespace
+[45m 15s] deleting any class
+[45m 20s] syntax and then wrapping it in either
+[45m 23s] or test and providing a function like
+[45m 26s] that simple um so yeah really nice
+[45m 30s] now you might be wondering how inside a
+[45m 34s] function we're able to call this fixture
+[45m 40s] and basically what's going on is every
+[45m 43s] pest test
+[45m 44s] is bound to the a test case right
+[45m 48s] we we bound it here in the pest.php file
+[45m 54s] and then what pest is doing under the
+[45m 55s] hood is when it when it receives
+[45m 58s] it needs to call it's actually going to
+[46m] bind it to
+[46m 2s] this test based file so it uses
+[46m 5s] reflection to do that
+[46m 8s] and that means that we can access this
+[46m 10s] test case
+[46m 11s] as if we were inside it which is why
+[46m 13s] we're able to access this fixture
+[46m 17s] so yeah that's really cool that we can
+[46m 19s] do that
+[46m 22s] and we don't have to worry about how
+[46m 24s] that works you know we don't have to
+[46m 25s] worry about
+[46m 26s] well what if we need some helper methods
+[46m 28s] that that we've
+[46m 30s] we've got in the test case it will all
+[46m 31s] just work
+[46m 33s] um so yeah really nice
+[46m 37s] um this user assertions assert user i do
+[46m 41s] believe is
+[46m 43s] something you guys have written tom yeah
+[46m 46s] it's headsend made
+[46m 50s] i just like to explain it a bit uh i
+[46m 52s] like
+[46m 53s] composite assertions so
+[46m 57s] i think a lot of you know it if you
+[46m 59s] write a lot of tests you
+[47m 2s] have a lot of times as the same kinds of
+[47m 5s] researches
+[47m 6s] sometimes big ones like here's a user
+[47m 9s] model so that all the attributes are
+[47m 11s] present and have the correct values and
+[47m 12s] so on
+[47m 13s] uh sometimes smaller ones like uh
+[47m 16s] checking certain array
+[47m 17s] is an array of coordinates for example
+[47m 20s] so having attributes loud and long
+[47m 22s] and with the values between minus 90 and
+[47m 25s] plus 90 and so on um yeah
+[47m 28s] and that's what i like to use uh
+[47m 31s] composite searches for
+[47m 33s] to having reusable yeah parts of their
+[47m 36s] searches
+[47m 39s] yeah that's really nice i like that and
+[47m 42s] is that
+[47m 43s] uh required because that's a trait isn't
+[47m 46s] it
+[47m 47s] so is that required in the base test
+[47m 48s] case no
+[47m 51s] that's why it's uh it's a trade so user
+[47m 54s] assertions
+[47m 55s] and said something nice about
+[47m 59s] trades in php uh static methods
+[48m 3s] can be called on the trade without
+[48m 7s] importing it like if it would be a class
+[48m 9s] itself
+[48m 11s] so you don't have to use a trade you
+[48m 13s] don't have to
+[48m 16s] load it into your class or whatever you
+[48m 18s] can just call the static method on
+[48m 21s] the trade like if your citrate would be
+[48m 24s] a
+[48m 25s] reclass
+[48m 28s] that's really nice yeah yeah a really
+[48m 31s] nice way of grouping everything together
+[48m 34s] and that's what i'm using
+[48m 38s] i'm using always trade so that it's
+[48m 41s] clear that you don't have to
+[48m 43s] use or cause this class from whatever
+[48m 46s] you can import them if you want but
+[48m 50s] if you don't you still can use the
+[48m 52s] methods the same way
+[48m 53s] and not importing it makes it a bit
+[48m 56s] easier to prevent
+[48m 57s] conflicts between methods so
+[49m 1s] if you would have somewhere else as a
+[49m 3s] asset user
+[49m 4s] like on a api response trade for example
+[49m 9s] um you would get into conflicts and
+[49m 11s] without importing the trades you can
+[49m 13s] just
+[49m 14s] call them uncertainty itself
+[49m 19s] okay yeah that's really nice so yeah
+[49m 24s] very nice very nice but i i think we can
+[49m 28s] actually
+[49m 29s] take these assertions and turn them into
+[49m 31s] expectations right
+[49m 35s] could be possible yeah let's do that
+[49m 39s] um expect actual and again
+[49m 44s] i mean you know that thing like in
+[49m 46s] laravel where you
+[49m 47s] you you tend to try something and it
+[49m 49s] just works most of the time because
+[49m 51s] things have been thought about i find
+[49m 54s] the same thing with pest
+[49m 55s] like most of the time you you type
+[49m 58s] something
+[49m 58s] and it comes up as a suggestion and
+[50m] you're like oh yeah that makes a lot of
+[50m 1s] sense actually
+[50m 4s] um so is there a way to to macro
+[50m 7s] uh expectations into your
+[50m 10s] in the expectation things are like
+[50m 13s] expect actual
+[50m 15s] to be user for example so you don't have
+[50m 18s] to care about
+[50m 19s] uh okay
+[50m 24s] so it's actually as simple as that which
+[50m 26s] is nice
+[50m 27s] and and then obviously inside of there
+[50m 30s] we'd be doing our
+[50m 31s] expectation yeah so i think that this
+[50m 34s] would be
+[50m 36s] yeah this would be the best way to doing
+[50m 39s] it as it's a full
+[50m 40s] pest way to do it so like uh to be
+[50m 44s] user model and are you saying
+[50m 48s] we could instead of this yeah
+[50m 51s] yeah i like that yeah that's nice
+[50m 54s] so just to
+[50m 58s] yeah in that case you could uh chain it
+[51m 1s] into
+[51m 1s] higher level expectations so it would be
+[51m 3s] expect user
+[51m 5s] to be user model full name to be string
+[51m 8s] and so on
+[51m 11s] yeah if you're wondering where the
+[51m 14s] documentation is
+[51m 15s] on custom expectations expectations
+[51m 19s] right at the bottom
+[51m 21s] yeah and again the function is bound to
+[51m 24s] the
+[51m 24s] instance so you've got access to this
+[51m 28s] which is nice or you can just build up a
+[51m 31s] new expectation
+[51m 34s] so that being the case let me close this
+[51m 37s] down
+[51m 39s] that being the case we would probably
+[51m 42s] want to do that in our
+[51m 43s] pest file
+[51m 47s] so there's a nice space here for custom
+[51m 50s] expectations
+[52m 2s] and unless i'm mistaken we could
+[52m 4s] actually keep the same
+[52m 5s] we could keep it clean by leaving it
+[52m 7s] inside this trait
+[52m 12s] so we could receive the user or to stick
+[52m 15s] with what you've
+[52m 18s] you've put before i've seen
+[52m 21s] no if i have checked the documentation
+[52m 24s] correctly you would
+[52m 25s] just call sis to be instance of
+[52m 29s] user for example
+[52m 32s] you don't need dollar actual
+[52m 37s] uh
+[52m 41s] oh i see yeah because you're past yeah
+[52m 44s] my bad my bad
+[52m 45s] we're passing in uh so that'd be like
+[52m 48s] yeah
+[52m 48s] if we were going to do something like
+[52m 50s] expect um
+[52m 52s] one to be greater than let's say we were
+[52m 56s] creating this
+[52m 56s] to be greater than zero then zero would
+[53m] be here
+[53m 1s] exactly so that would be a comparison
+[53m 5s] whereas uh yeah
+[53m 9s] so here we can say i want to access it
+[53m 12s] through user assertions
+[53m 26s] cool and then
+[53m 30s] if we were to head back to our details
+[53m 32s] test
+[53m 34s] we should now be able to say
+[53m 38s] expect user
+[53m 41s] to be user
+[53m 45s] and just to check that that's worked
+[53m 47s] before we go any further
+[53m 50s] we will run the test suite again
+[54m 5s] all right perfect happy days
+[54m 11s] you can't even remove the second expect
+[54m 14s] user
+[54m 17s] or satellite here so there we go
+[54m 21s] once again i already expect a high order
+[54m 25s] expectations coming in
+[54m 26s] the bomb but you i i think you have to
+[54m 29s] be careful
+[54m 30s] like it can
+[54m 33s] it can get messy um and
+[54m 38s] sam and i i mean sam was kind of the
+[54m 41s] the guy the guy who created the
+[54m 44s] certainly the initial uh version of
+[54m 48s] higher order expectations it was his
+[54m 49s] his brainchild so i can't take credit
+[54m 52s] for that
+[54m 53s] um but even he was like well you don't
+[54m 56s] want to use it everywhere you need to be
+[54m 57s] careful how much you use it so that that
+[54m 59s] is true
+[55m] um i find it nice to like if you
+[55m 3s] couldn't split each thing into its own
+[55m 6s] line so each expectation into its own
+[55m 8s] line i'd be tempted to use multiple
+[55m 9s] expectations
+[55m 11s] yeah um but when you're dealing with
+[55m 13s] short and snappy expectations
+[55m 15s] it is nice it reads nicely
+[55m 23s] like uh expect year to be
+[55m 26s] integer to be greater than and so on
+[55m 29s] in that case you would use interesting
+[55m 31s] expectation for the year yeah
+[55m 34s] yeah exactly if i was going to do say i
+[55m 36s] think probably more than three
+[55m 38s] chained assertions i'd be tempted to
+[55m 41s] move into
+[55m 44s] separate expectations yeah
+[55m 47s] because the idea is that you want this
+[55m 49s] to be readable
+[55m 50s] um user refresh returns the model as
+[55m 52s] well so now because we're not
+[55m 55s] we're not looking to use the
+[55m 58s] individual expectations you can actually
+[56m 1s] just
+[56m 2s] shove user refresh in there i'm not sure
+[56m 5s] if refresh returns a user
+[56m 8s] because refresh replaces or
+[56m 11s] refills okay so there's the difference
+[56m 15s] between refresh
+[56m 16s] and fresh refresh refreshes the same
+[56m 20s] instance of the model so
+[56m 22s] the same object reference and fresh
+[56m 25s] returns a new
+[56m 27s] model instance with a new retrieved data
+[56m 30s] from the database
+[56m 33s] yeah yeah
+[56m 38s] okay but it always returns the model
+[56m 39s] okay
+[56m 42s] and so you yeah i i've sometimes found
+[56m 46s] that
+[56m 47s] um as i've been converting to pests let
+[56m 50s] me just close this window
+[56m 51s] as i've been coming to pass the tests
+[56m 53s] get um
+[56m 55s] simpler and simpler to the point where
+[56m 57s] the entire thing sometimes is just an
+[56m 59s] expectation
+[57m] there's like barely any setup taking
+[57m 1s] place
+[57m 3s] um so yeah it's really nice
+[57m 7s] really nice um i really like by the way
+[57m 10s] or you mentioned it before the stream
+[57m 12s] started but i really like it this
+[57m 14s] fixture thing going on
+[57m 17s] um so if you guys are wondering what's
+[57m 19s] happening here
+[57m 20s] we're not actually doing a real api call
+[57m 24s] in the test case that this extends
+[57m 28s] which is it uh in the setup
+[57m 32s] there's always a fake http request
+[57m 36s] which i thought was really nice so
+[57m 39s] anything to api.github.com
+[57m 42s] is actually going to take a look at what
+[57m 45s] you requested
+[57m 47s] and then attempt to return a fixture for
+[57m 52s] that
+[57m 54s] and the fixture is just based on
+[57m 57s] the path that you pass it so
+[58m] i i thought i really was really nice
+[58m 2s] you've not got to worry about faking
+[58m 4s] http requests or anything like that it's
+[58m 7s] all like
+[58m 8s] unified
+[58m 13s] nice paradigm
+[58m 17s] uh one thing here you you'll note that
+[58m 19s] i've got a red squiggly line
+[58m 20s] some people complain that um pest
+[58m 24s] doesn't have very good ide auto complete
+[58m 27s] but often it's just because they've not
+[58m 29s] tried pest
+[58m 31s] it actually has really good id or to
+[58m 33s] completion um
+[58m 35s] so in this case it's not complaining
+[58m 37s] because we've called this it's actually
+[58m 38s] just complaining because fixture is
+[58m 40s] protected
+[58m 41s] and uh yeah you can fix that by
+[58m 44s] literally going in and
+[58m 46s] updating fixtures just to be a public
+[58m 51s] and yeah so you can see there's no
+[58m 54s] id errors we've got for auto complete so
+[58m 57s] if i do this
+[58m 59s] you see i have everything you would
+[59m 1s] expect to be auto completed
+[59m 4s] i'm not missing anything so that's one
+[59m 7s] thing that i
+[59m 8s] i kind of see a lot on twitter and
+[59m 10s] people are worried that
+[59m 11s] it's like how can it auto complete when
+[59m 14s] you're inside a callable
+[59m 15s] it doesn't make sense but it it
+[59m 18s] it does auto complete perfectly so do
+[59m 21s] you need something
+[59m 23s] or does it work with php.blocks or
+[59m 26s] whatever blackmagic
+[59m 29s] i i am um
+[59m 33s] i have the plugin so there's a pass
+[59m 34s] plugin for vs code
+[59m 36s] there's a pass plugin for phpstorm
+[59m 39s] um but i'm pretty sure because the
+[59m 41s] closure i mean
+[59m 43s] nuno is a stickler for tight painting
+[59m 46s] and
+[59m 47s] making sure that static analysis passes
+[59m 50s] which is really good
+[59m 52s] because even though phpstorm doesn't
+[59m 55s] have like perfect static analysis
+[59m 57s] support
+[59m 59s] it knows that when for example this
+[60m 1s] function is reflected and bound into the
+[60m 3s] test case
+[60m 4s] that everything from that point out will
+[60m 7s] have access to the test case it's bound
+[60m 9s] to
+[60m 10s] so um it's just been done really well
+[60m 14s] like the source code is really nice even
+[60m 16s] though it's quite deep and complex
+[60m 19s] it's just done in a way that is
+[60m 21s] understandable and easy to
+[60m 23s] kind of work out what's going on um so
+[60m 26s] yeah if you're not actually like
+[60m 28s] looked at the pest source code then
+[60m 32s] like do um it is really good
+[60m 35s] and it takes away the magic as well
+[60m 37s] because it's sometimes the same with
+[60m 38s] like laravel
+[60m 39s] when you use certain things like facades
+[60m 42s] your immediate thing is
+[60m 43s] oh you can't use that it's it's a static
+[60m 46s] method and
+[60m 47s] static methods are bad and by actually
+[60m 51s] taking a look in the source code you
+[60m 52s] realize what's actually going on
+[60m 53s] makes things a lot clearer
+[60m 56s] um awesome i'm going to close this
+[60m 58s] little test runner
+[61m] so this entire test case is now
+[61m 5s] is converted we're in pest and that is
+[61m 8s] that's wonderful
+[61m 9s] let's move on to the user test here in
+[61m 12s] models
+[61m 15s] and there's a few more tests here so
+[61m 17s] let's see how quickly we can convert
+[61m 18s] this entire thing
+[61m 19s] to pest first thing i want to do
+[61m 22s] as before is get rid of any to do with
+[61m 25s] classes
+[61m 27s] let's just remove them and instead of
+[61m 30s] saying public function we'll say
+[61m 32s] test or it prefer it
+[61m 38s] and we'll replace that with a function
+[61m 40s] call
+[61m 48s] okay i imagine that's
+[61m 52s] complaining because of something else
+[61m 54s] yeah
+[61m 55s] so let's carry on with one and in fact i
+[61m 58s] wonder if we can
+[62m 6s] do this using the ide to speed things up
+[62m 8s] even further
+[62m 11s] probably would be bad to just search for
+[62m 13s] public function
+[62m 18s] okay so it
+[62m 21s] and then we'll jump to the end there
+[62m 25s] i'm assuming that they're all formatted
+[62m 27s] in the same way
+[62m 29s] so yeah we'll add a function
+[62m 33s] happy days
+[62m 36s] and do this
+[62m 48s] okay
+[62m 56s] so yeah
+[62m 59s] i think actually at that point i'm going
+[63m 2s] to
+[63m 3s] run the past
+[63m 6s] suite
+[63m 11s] oh okay
+[63m 15s] let's wait until it's running and see
+[63m 16s] what happened
+[63m 21s] attempt to reproperty full name on no
+[63m 24s] and that was
+[63m 25s] it updates user details from github
+[63m 31s] isn't that our ah
+[63m 35s] okay okay so this is something to be
+[63m 37s] aware of
+[63m 38s] user assertions we um or even past.php
+[63m 42s] we we did this but we never actually
+[63m 45s] returned what was gonna what was gonna
+[63m 47s] take place
+[63m 48s] so we can just return this return a new
+[63m 50s] expect but
+[63m 52s] um yeah you can just return this and
+[63m 53s] hopefully now if i run this again
+[63m 58s] that will pass
+[64m 1s] aha
+[64m 9s] all right so although some of these skip
+[64m 13s] because they require uh uh post sequel
+[64m 16s] postgres to run
+[64m 19s] it worked you can see we're completely
+[64m 21s] impressed now
+[64m 23s] and i don't know that that really didn't
+[64m 25s] seem to take too long
+[64m 30s] i would just go and
+[64m 34s] change this i mean even things like
+[64m 36s] being able to include
+[64m 37s] capital letters for github make a
+[64m 38s] difference
+[64m 41s] and when it comes to numbers i think
+[64m 43s] numbers are the the best thing
+[64m 45s] if you're working with like numbers in
+[64m 47s] your test names
+[64m 53s] again the terminator
+[65m 4s] not better yet
+[65m 10s] still noise
+[65m 39s] noise
+[65m 46s] at least nunu is still watching us so it
+[65m 49s] can't be too bad what we are doing
+[66m 12s] right so uh yeah i'm gonna fix this
+[66m 16s] before the
+[66m 17s] for the next one i don't know what's
+[66m 19s] causing it
+[66m 20s] it worked on my machine okay
+[66m 25s] [Laughter]
+[66m 28s] best developer excuse
+[66m 37s] if only the microphone had a test suite
+[66m 39s] it would work
+[66m 44s] so yeah i'm just going to go through
+[66m 45s] basically
+[66m 48s] and update these test names
+[66m 53s] [Applause]
+[66m 56s] which is fairly straightforward
+[67m 2s] but i mean it in your first like pass at
+[67m 6s] moving from php unit to past you
+[67m 8s] you really don't need to do that it will
+[67m 11s] work with the exact same test case names
+[67m 13s] that
+[67m 14s] that you've written in php unit
+[67m 30s] uh
+[67m 35s] let's fix some of these i noticed a few
+[67m 38s] syntax errors so requires postgresql
+[67m 42s] let's take a look at what that's
+[67m 42s] actually doing under the hood
+[67m 45s] uh mark test skipped right
+[67m 48s] now this is interesting because
+[67m 49s] obviously we want to use something in
+[67m 51s] the base
+[67m 52s] test case i'd be interested
+[67m 56s] if uh if nuno
+[68m] or someone on the stream can think of a
+[68m 3s] nice way to do this but basically let me
+[68m 4s] show you the documentation
+[68m 6s] it's actually a really nice way of
+[68m 7s] skipping tests inside
+[68m 10s] um inside pest
+[68m 14s] and that's just by chaining the the skip
+[68m 16s] method on the end
+[68m 19s] and we can pass a
+[68m 22s] we can pass a boolean as to whether it
+[68m 24s] should be skipped or not
+[68m 26s] but i don't know that the boolean is
+[68m 28s] bound
+[68m 31s] i don't know that the boolean is bound
+[68m 33s] to the
+[68m 36s] test case even if we pass it
+[68m 40s] uh it seems like your internet
+[68m 42s] connection got
+[68m 43s] slower now your screen is a bit uh
+[68m 47s] choppier blurry pixelated however you
+[68m 50s] want to name it
+[68m 54s] let me have a look
+[68m 59s] i can highly recommend to use a wired
+[69m 1s] connection for streaming
+[69m 8s] okay what i'll do i will disable my
+[69m 10s] camera
+[69m 11s] as well just for a minute
+[69m 18s] all right see if we can fix the the
+[69m 21s] issues for next time
+[69m 24s] um but yeah so we can skip tests using
+[69m 26s] this really nice
+[69m 28s] like skipped syntax can i reshare the
+[69m 31s] screen
+[69m 32s] yes of course
+[69m 44s] if that's any better yeah now it's uh
+[69m 47s] sharp again okay
+[69m 51s] yeah so we can skip test using this
+[69m 53s] boolean syntax
+[69m 55s] but i don't think there is a way to bind
+[69m 58s] this to the test case um
+[70m 1s] maybe we can use in a closure
+[70m 4s] but if not then that's maybe something
+[70m 7s] for a pr
+[70m 10s] um interesting because in that if we
+[70m 13s] could do that we'd be able to say like
+[70m 15s] skip if this requires postgres sql
+[70m 19s] um as it is stands at the moment i don't
+[70m 21s] really want to
+[70m 24s] put advanced logic especially because db
+[70m 26s] get driver name obviously isn't resolved
+[70m 28s] until the laravel container is resolved
+[70m 36s] so i'm going to leave that for now but
+[70m 39s] that might be something we come back to
+[70m 40s] next
+[70m 41s] next time and see if we can at least
+[70m 44s] make it public so peter storm doesn't
+[70m 48s] complain
+[70m 50s] and you'll see like as soon as we do
+[70m 51s] that all of the
+[70m 53s] any syntax errors go away
+[70m 56s] again and we have a auto completion as
+[70m 58s] well like
+[70m 59s] that all just works so again really nice
+[71m 3s] let's take some of these and turn them
+[71m 6s] into correct things so we've already
+[71m 10s] we've already said that we can expect a
+[71m 13s] user
+[71m 14s] to be user so we've already
+[71m 18s] created that we can remove this already
+[71m 22s] and looks like we're again calling
+[71m 26s] on properties and methods from the user
+[71m 29s] so we can jump into higher order
+[71m 31s] expectations again
+[71m 43s] email
+[71m 46s] to be
+[71m 52s] and you can even do
+[71m 56s] methods which is really nice
+[71m 59s] so we can call a method on the user
+[72m 6s] object
+[72m 13s] i mean yeah i think that's really clean
+[72m 16s] you
+[72m 16s] i mean if you wanted to go there some
+[72m 18s] people won't like this
+[72m 20s] but you could even go down to that
+[72m 25s] i think one way we could even do is uh
+[72m 29s] putting this user from github into a
+[72m 33s] into a before call because
+[72m 37s] so far i know we are doing this
+[72m 41s] for absolutely every test in this file
+[72m 46s] yeah yeah so something i mean
+[72m 51s] it could even just be a
+[72m 54s] you see yeah you said you're saying a
+[72m 56s] property on the
+[72m 58s] like a public
+[73m 4s] no uh not in the test case no
+[73m 9s] this user from github call
+[73m 14s] is part of every single test in this
+[73m 16s] file
+[73m 17s] so we could put it into a before loop
+[73m 20s] call and
+[73m 22s] write the output to this user
+[73m 25s] and i think in that case we could even
+[73m 27s] use a
+[73m 29s] sahaya order expectation
+[73m 33s] on it wasn't it like that so that you
+[73m 36s] don't have
+[73m 38s] to pass in a callback but you just can
+[73m 40s] use it
+[73m 41s] expect this user to be
+[73m 44s] a user and so on yes so that's
+[73m 48s] higher higher order tests which
+[73m 51s] so um let me show you what higher order
+[73m 54s] tests are because they're worth knowing
+[73m 55s] about
+[73m 56s] higher order tests are awesome they'll
+[73m 58s] let you do um
+[74m 1s] they let you basically miss out the
+[74m 3s] closure at the end
+[74m 5s] and just change your assertions and the
+[74m 7s] rest of your test
+[74m 8s] as function calls which is awesome like
+[74m 13s] you would you would think well okay well
+[74m 15s] can we just do this
+[74m 21s] right and get rid of that
+[74m 24s] so that is what a higher order test
+[74m 26s] looks like the issue here is that
+[74m 28s] actually
+[74m 29s] we're retrieving something that requires
+[74m 32s] the laravel container
+[74m 36s] so what what that's going to do is
+[74m 39s] if you think about it this when php
+[74m 41s] executes this code
+[74m 42s] it's got to execute all of these methods
+[74m 44s] and it's got to resolve all of the
+[74m 46s] properties in those methods
+[74m 48s] but at the time that happens none of
+[74m 50s] like this doesn't exist yet
+[74m 53s] so when it tries to resolve that it's
+[74m 54s] going to fail so currently there's
+[74m 56s] actually a pr
+[74m 57s] out in past that should go in soon
+[75m 1s] hopefully
+[75m 2s] that would allow you to do something
+[75m 3s] like this
+[75m 6s] and that basically will wait until
+[75m 9s] the test case is fully up and running in
+[75m 12s] other words till
+[75m 13s] laravel is available and at that point
+[75m 16s] we'd be able to do this
+[75m 18s] so okay we can certainly come back and
+[75m 20s] when that's in
+[75m 24s] you are against the terminator
+[75m 27s] only some some noise
+[75m 49s] nice nice nice nice noise
+[76m 4s] you're back hello
+[76m 7s] hello hello hello i'm going to try a
+[76m 9s] different usb usb port
+[76m 11s] i'm glitching at straws now
+[76m 14s] yeah um i don't know how much of that
+[76m 16s] you heard then but basically
+[76m 18s] um yeah
+[76m 23s] if if we were able to resolve which
+[76m 24s] hopefully very soon we'll be able to
+[76m 26s] then this would work but as it is it
+[76m 29s] won't work
+[76m 30s] so we have to keep it wrapped sadly at
+[76m 32s] the moment
+[76m 33s] so we can't only work for our
+[76m 39s] values available without any framework
+[76m 43s] needs or whatever
+[76m 45s] yeah so it actually says it at the
+[76m 49s] here you can't access runtime helpers in
+[76m 50s] laravel like root
+[76m 52s] it's basically the same the same reason
+[76m 54s] but hopefully soon you'll be able to
+[76m 56s] pass a closure into expect
+[76m 58s] uh when you're using higher order tests
+[77m] and that will work and
+[77m 2s] i will bring as soon as that is
+[77m 3s] available i will make sure to bring it
+[77m 5s] out
+[77m 6s] um but yeah what we can do is say this
+[77m 9s] user equals
+[77m 11s] and it's the exact same every time as
+[77m 13s] you said so
+[77m 14s] it
+[77m 18s] sometimes followed by some more calls
+[77m 21s] but
+[77m 22s] this is the first line in every test
+[77m 30s] we should then just be able to say this
+[77m 32s] user i mean look at that it even had
+[77m 34s] you know you saw that
+[77m 38s] it actually all like auto completes the
+[77m 40s] user
+[77m 41s] so anyone who's like no it won't have
+[77m 44s] ide completion just
+[77m 46s] try it because it will surprise you
+[77m 50s] um all right so let's just see if
+[77m 55s] our tests will still pass
+[78m 2s] yeah hey happy days this is really nice
+[78m 6s] i think that looks that looks short of
+[78m 8s] turning it into a higher order test
+[78m 9s] as we've just been talking about that
+[78m 11s] really does look nice
+[78m 13s] um it's clean it's clean i mean the
+[78m 17s] other i don't know whether this is one
+[78m 18s] step too far
+[78m 19s] but seen as we always are expecting on
+[78m 22s] the user
+[78m 23s] you know sometimes we are calling some
+[78m 26s] some user methods on
+[78m 28s] on the user okay
+[78m 31s] okay i'm getting ahead of myself
+[78m 35s] all right so
+[78m 38s] that will oh i oh
+[78m 42s] hmm i wonder if we could make that a
+[78m 44s] callable
+[78m 48s] which would allow us to grab a new user
+[78m 54s] yeah because then we'll be able to say
+[78m 56s] this user
+[78m 58s] i mean let's see how far we get down the
+[79m] line before we
+[79m 2s] refactor this anyway but
+[79m 5s] we could then call it and each time get
+[79m 7s] a new instance
+[79m 11s] so again this would start very simply
+[79m 15s] with
+[79m 17s] expect user one
+[79m 22s] to be user
+[79m 25s] and we'd have the same but for user two
+[79m 37s] couldn't you even you
+[79m 40s] put them as an array so expect an array
+[79m 43s] of user one and user two
+[79m 46s] and use each higher order
+[79m 49s] expectation thing
+[79m 53s] yep yep absolutely so we can um
+[79m 56s] we can certainly do that so one of the
+[80m] other things available which is
+[80m 4s] let's see if i just want to throw in a
+[80m 7s] lot of the cool stuff
+[80m 8s] pest can do uh
+[80m 11s] so people can see all these things sure
+[80m 16s] um thing we're saying is that each one
+[80m 18s] should be
+[80m 21s] can you can you hear me still am i if i
+[80m 23s] turn into a race i can't hear you
+[80m 27s] everything's fine
+[80m 30s] um so yeah we can say each um
+[80m 34s] to be user and what that's going to do
+[80m 37s] basically
+[80m 38s] the each method if if you've got an
+[80m 41s] iterable
+[80m 42s] which obviously is just anything that
+[80m 43s] can be looped through so a collection
+[80m 46s] an array then you can call each on it
+[80m 50s] and that's going to go through every
+[80m 52s] item in the iterable and it's going to
+[80m 53s] call
+[80m 54s] the expectations that come after it
+[80m 58s] each user should be a user
+[81m 1s] basically um
+[81m 5s] now we do have we also want to say that
+[81m 7s] each one
+[81m 8s] should have the name of gummy bear
+[81m 12s] which is probably going to be we need to
+[81m 15s] kind of reach inside
+[81m 18s] so i might be tempted
+[81m 22s] let me think the best way to do that
+[81m 26s] might be able to do with the sequence
+[81m 28s] call actually
+[81m 35s] what does sequence do
+[81m 38s] so sequence is a little bit like each
+[81m 44s] but so in the same oh
+[81m 47s] oh
+[81m 54s] hello there we go hello hello
+[81m 57s] yeah um sequence is is a little bit like
+[81m 59s] each
+[82m] but what you what you're doing instead
+[82m 2s] is you're saying that i want to go
+[82m 4s] through the iterable
+[82m 5s] and for each expression that i provide
+[82m 9s] i want you to pass those expectations
+[82m 13s] you're as a terminator again
+[82m 14s] [Music]
+[82m 18s] and yeah nunu i i at least follow you
+[82m 22s] and some other contributors because you
+[82m 24s] are also
+[82m 25s] actively retweeting all the cool stuff
+[82m 29s] of people
+[82m 29s] doing with pests so
+[82m 33s] since i why i'm also asking most of the
+[82m 37s] times because
+[82m 38s] i don't really know the things and how
+[82m 42s] they work and so on but
+[82m 44s] uh most of the times i have seen
+[82m 48s] that there is something that
+[82m 51s] stayed in my mind and luke is back and i
+[82m 55s] have to open the door for my girlfriend
+[82m 57s] so i'm back in a minute
+[83m 14s] one two there we go i think i'm back i'm
+[83m 16s] pretty sure
+[83m 18s] it may be to do with safari to be honest
+[83m 20s] and the uh
+[83m 21s] i'm running restream on safari so i
+[83m 23s] might try it from
+[83m 25s] obs or something next week or a
+[83m 28s] different browser yeah
+[83m 30s] anyway so yeah so sequence
+[83m 34s] um so basically each is going to go
+[83m 36s] through
+[83m 37s] can you hear me you enter am i okay i
+[83m 39s] can hear you i've just laughed uh
+[83m 41s] about what sick verse has written if you
+[83m 44s] drank every time luke was terminated you
+[83m 46s] would be drunk by now
+[83m 48s] so possibly you should keep this setup
+[83m 50s] and we just
+[83m 51s] makes the next level drinking game
+[83m 54s] and
+[83m 58s] it could be that you have a lot more
+[83m 59s] viewers next time if you
+[84m 1s] if we do it because all people want to
+[84m 4s] get drunk on a friday afternoon
+[84m 6s] [Laughter]
+[84m 10s] well that's one for down the line maybe
+[84m 12s] that's the after pie
+[84m 14s] yeah i'll have to switch back to tim
+[84m 16s] terminator for the after pie
+[84m 21s] um yeah so so imagine each right
+[84m 25s] each is going to go through each one and
+[84m 27s] assert whatever you
+[84m 29s] whatever you chain on so in this case
+[84m 31s] it's going to go through each item in
+[84m 32s] the bowl and make sure that it's a user
+[84m 36s] but with sequence it's going to take
+[84m 39s] each closure that you passed to it or
+[84m 40s] each value that you passed to it
+[84m 42s] and it's going to check that um
+[84m 47s] that each one matches in sequence so the
+[84m 50s] first closure is this
+[84m 51s] and it's going to check that the first
+[84m 53s] item in the array matches those
+[84m 55s] expectations
+[84m 59s] one sequence callback per value or does
+[85m 2s] it behave like
+[85m 4s] i don't know on which level i think it's
+[85m 7s] on the factories
+[85m 8s] where you also have the sequence and
+[85m 10s] it's
+[85m 12s] if you for example have three sequence
+[85m 14s] callbacks
+[85m 15s] and 12 values you will get
+[85m 20s] four models with the same value
+[85m 24s] thus this sequence works the same i
+[85m 26s] added this and i can't remember i i
+[85m 28s] actually think it might do let's try it
+[85m 30s] let's find out
+[85m 32s] so it's always the best adding features
+[85m 35s] you can't remember your save
+[85m 37s] exactly yeah um
+[85m 41s] i'm going to just comment that one out
+[85m 42s] for a moment we'll come back to it
+[85m 50s] let's see synchro's already got a name
+[85m 52s] for it pest by night
+[85m 56s] [Laughter]
+[85m 59s] that's gonna i feel like the problem is
+[86m 2s] terminator voice is gonna stick with me
+[86m 4s] now
+[86m 4s] and i'm gonna be known as like the
+[86m 6s] terminator guy you know the guy you just
+[86m 8s] passed
+[86m 8s] he's got a terminator voice well let's
+[86m 11s] switch it not a
+[86m 12s] pest and practice but drunk and pest
+[86m 16s] i think someone already wrote uh wrote
+[86m 19s] that there is a
+[86m 20s] city in i forgot in which country
+[86m 23s] uh named pest so
+[86m 27s] [Laughter]
+[86m 29s] that's where we're going
+[86m 34s] right user test user this user
+[86m 38s] and that's interesting
+[86m 46s] uh of course it's trying to because
+[86m 50s] he's now looking for a can we invoke
+[86m 53s] that
+[86m 55s] instead would that work i mean at this
+[86m 56s] point we might as well switch back to
+[86m 58s] the other way of doing it but i'd be
+[86m 59s] interested to see whether it works or
+[87m 2s] not
+[87m 11s] but shouldn't the other way work as well
+[87m 21s] hmm
+[87m 26s] what was the exception you got uh
+[87m 29s] basically it was trying to call if we do
+[87m 31s] that
+[87m 33s] it thinks that user is a method on the
+[87m 37s] on the class and obviously it's not it's
+[87m 38s] a property
+[87m 42s] okay so i think maybe what we do
+[87m 46s] is return that to
+[87m 49s] what it was
+[87m 53s] you could also use a value
+[87m 56s] helper function by laurel
+[88m] that is true yeah although does that
+[88m 4s] would that pick up that it's uh
+[88m 6s] oh yeah because it's yeah you're right
+[88m 8s] yeah you're 100 so
+[88m 9s] switch back to a function yeah
+[88m 13s] and now we are doing really crazy stuff
+[88m 22s] yes here's a bug report
+[88m 25s] if i have a function on a property i
+[88m 27s] can't call it
+[88m 28s] fix it
+[88m 32s] [Laughter]
+[88m 37s] he's gonna have to rewrite php
+[88m 42s] see if i don't think so that he has
+[88m 47s] let's pull out tinkerbell tinkerbell web
+[88m 50s] and
+[88m 52s] [Music]
+[88m 54s] play around with the class
+[88m 57s] because i have a glass
+[89m 1s] named foo and have a public
+[89m 6s] [Music]
+[89m 8s] property
+[89m 10s] and
+[89m 17s] construct
+[89m 21s] here sign
+[89m 49s] so here we just we're in a very similar
+[89m 51s] way to how we did 2b user we're going to
+[89m 53s] have 2b model
+[89m 55s] in this case you pass the comparison in
+[89m 58s] and we perform
+[89m 59s] the model assertion assert same static
+[90m 2s] function
+[90m 2s] we pass the value in we pass the
+[90m 4s] comparison in and then we return this
+[90m 7s] which going back to our test to
+[90m 14s] 2b model although actually that yeah we
+[90m 17s] need to
+[90m 17s] kind of grab this out at this point can
+[90m 19s] we do um
+[90m 22s] user one equals
+[90m 29s] and expect i mean there is actually an
+[90m 32s] and method
+[90m 34s] which you can use
+[90m 43s] looks a bit like that
+[90m 46s] but i don't know whether the and method
+[90m 48s] works after an each call
+[90m 50s] that's fine
+[90m 58s] i think one of the great things about
+[90m 59s] past is it's like
+[91m 1s] with php unit you're usually writing
+[91m 3s] tests
+[91m 4s] to write tests if that makes sense like
+[91m 6s] you've got to write the tests
+[91m 7s] so you do it but you don't necessarily
+[91m 10s] enjoy it
+[91m 10s] but when you're writing pests with
+[91m 14s] tests with pest you actually enjoy
+[91m 17s] writing the tests
+[91m 19s] so you take more time to think well how
+[91m 20s] do i refactor
+[91m 22s] this particular test code to look nicer
+[91m 25s] and to work better
+[91m 27s] um i think that's quite rare in the
+[91m 28s] testing world
+[91m 34s] that is awesome so there we go
+[91m 38s] i hope that makes sense i mean obviously
+[91m 40s] we could break this down into
+[91m 45s] yeah hello hello if you want to to share
+[91m 47s] my screen for a second
+[91m 50s] yeah yeah please do uh where are we
+[91m 54s] yeah yeah so you are right it's
+[91m 57s] it's a php problem but you can solve it
+[92m] by
+[92m 2s] having these uh normal brackets around
+[92m 6s] as a property call
+[92m 9s] and after these brackets for the
+[92m 11s] function call
+[92m 14s] and in that case you get what you have
+[92m 16s] expected so you don't need value you
+[92m 18s] don't
+[92m 18s] you only need these brackets around
+[92m 22s] awesome nice find this is why you always
+[92m 26s] need a co-pilot
+[92m 31s] let's uh let's make that happen then
+[92m 37s] so we can do what you're saying is
+[92m 40s] actually let's find everywhere where
+[92m 41s] we've done that
+[92m 43s] you're saying we can basically just get
+[92m 45s] rid of the value call
+[92m 48s] and then call that after exactly yeah
+[92m 53s] that way we could even pass in arguments
+[92m 56s] or whatever we would need it
+[93m] yeah now that's nice
+[93m 4s] i think uh making this a little bit more
+[93m 6s] readable i'm tempted to say user1
+[93m 10s] equals this this
+[93m 16s] user i mean we can go crazy but
+[93m 19s] sometimes it's best just to
+[93m 21s] play safe a little bit which would allow
+[93m 23s] us just to say expect
+[93m 26s] user 1 oh and now
+[93m 32s] you have to remove these brackets
+[93m 35s] directly
+[93m 36s] after user
+[93m 39s] of course
+[93m 43s] yeah expect user 1 to be the user 2
+[93m 45s] model
+[93m 46s] and then we could say and
+[93m 49s] user1 user 2
+[93m 53s] followed by
+[93m 57s] those chain method calls
+[94m 6s] yeah i had the same idea
+[94m 9s] like nunu already said uh
+[94m 13s] i think the really best thing we can do
+[94m 15s] is your r terminator so it's good that
+[94m 17s] i'm talking
+[94m 21s] we could create a function on the past
+[94m 23s] php or
+[94m 24s] create a method on the test case so that
+[94m 28s] you can call this user as a real method
+[94m 31s] or as a global function whatever we
+[94m 33s] prefer
+[94m 34s] and with an optional argument of the
+[94m 36s] username so
+[94m 38s] by default it falls back to gamibia but
+[94m 41s] if we would need a user
+[94m 44s] with a given name like nuno maduro for
+[94m 46s] example
+[94m 47s] you could pass it in and or write the
+[94m 49s] name
+[94m 51s] yeah yeah i think as well i think
+[94m 54s] this kind of comes back to what we were
+[94m 55s] talking about earlier
+[94m 57s] although although that this kind of
+[95m 1s] is nice at the point where
+[95m 5s] i mean how many times does this get used
+[95m 6s] in the test in the test suite so over
+[95m 8s] the time of us writing tests for this
+[95m 9s] it's probably gonna
+[95m 11s] get into the hundreds you know
+[95m 14s] of calls it might be best to
+[95m 17s] impress php add it as a function here
+[95m 22s] so there's a space here for adding
+[95m 23s] adding functions
+[95m 25s] you can just jump to the test case and
+[95m 28s] the feature
+[95m 29s] directory yep
+[95m 32s] and scroll a bit down below okay so
+[95m 35s] perfect
+[95m 37s] it shows what i'm typing
+[95m 42s] uh this is how we do it
+[95m 47s] and now this code with me makes total
+[95m 51s] sense
+[95m 54s] and
+[95m 56s] damn this one so and
+[96m 1s] that said
+[96m 5s] and we return a user
+[96m 14s] okay nice
+[96m 17s] which would allow us to first of all in
+[96m 20s] the youth test to get rid of this before
+[96m 22s] each
+[96m 24s] and wherever we've done this user
+[96m 28s] we can actually get rid of the enclosing
+[96m 29s] brackets now because user is on the
+[96m 32s] test case itself yeah and then we just
+[96m 35s] pass the name
+[96m 40s] you can i would do it for the ones with
+[96m 44s] two calls but for the first one i would
+[96m 46s] just uh
+[96m 49s] oh yeah because we assert the name so
+[96m 51s] yeah
+[96m 52s] even if it falls back to gummy bear
+[96m 54s] let's pass it in for readability
+[97m 1s] all right let's see if that works
+[97m 6s] oh looks like i started something never
+[97m 8s] finished it
+[97m 11s] you didn't see anything
+[97m 26s] yes synchros you are in general right
+[97m 30s] but because openda only
+[97m 33s] cares about github and has only set way
+[97m 36s] to create and
+[97m 38s] retrieve users from github or out
+[97m 41s] there's absolutely no other way to
+[97m 43s] create a user so even i
+[97m 45s] as a super administrator don't have any
+[97m 48s] formal in the back office or whatever to
+[97m 51s] create a user
+[97m 54s] it's totally fine for me to have it as
+[97m 56s] user
+[97m 58s] because i like short methods in a lot of
+[98m 2s] times
+[98m 3s] as long as like you say it
+[98m 6s] isn't a conflict potential but
+[98m 9s] for this application this is totally
+[98m 11s] fine for me in
+[98m 12s] cases when you have multiple
+[98m 15s] registration
+[98m 16s] processes for example so like uh
+[98m 18s] register by email or
+[98m 20s] vr or o out you are
+[98m 23s] you would be totally right to have a
+[98m 25s] user from github and user from email and
+[98m 28s] so on
+[98m 29s] but for panda says only the github flow
+[98m 50s] and so all of these can turn into
+[98m 52s] expectations
+[98m 53s] [Applause]
+[98m 55s] sometimes it's best to kind of just
+[98m 57s] write things out in the most obvious way
+[98m 59s] and then come back if there's a nicer
+[99m 1s] way to write it
+[99m 3s] so especially when you're converting
+[99m 5s] from
+[99m 7s] past from php unit to pest
+[99m 15s] it takes away some of the mental strain
+[99m 22s] it's nice one question if you have an
+[99m 27s] array in expect is there any way to
+[99m 30s] expect that every value of the array is
+[99m 33s] the same
+[99m 37s] uh yeah you would do if i'm if i'm
+[99m 40s] understanding you correctly
+[99m 41s] you would do let's say it's that
+[99m 48s] you would do that okay but but if i have
+[99m 51s] a dynamics or for example
+[99m 53s] expect a empty random
+[99m 58s] and for
+[100m 1s] spares here once package for example i
+[100m 3s] want to
+[100m 4s] check that the method generating a
+[100m 8s] random integer is only called once per
+[100m 10s] runtime
+[100m 11s] uh i would for example use expect
+[100m 15s] put in five calls to the same method
+[100m 19s] and want to check that all five values
+[100m 22s] are the same without
+[100m 23s] knowing which value you say ah do you
+[100m 26s] know what i mean
+[100m 27s] oh that yeah i know you mean that so
+[100m 29s] this that's actually something that
+[100m 31s] possibly could be pr because
+[100m 34s] like there's a little bit of low-level
+[100m 36s] knowledge each dives into a new class
+[100m 38s] which is the like um
+[100m 43s] it's well it's a class called each which
+[100m 45s] you can see here
+[100m 46s] and that's how that works so you could
+[100m 50s] actually
+[100m 52s] have a specialized assertion method if
+[100m 55s] it if you
+[100m 56s] if it was pr'd that like that
+[100m 59s] to all be same or something and it would
+[101m 2s] literally just go through each and
+[101m 4s] check that each one matched that would
+[101m 6s] actually be a really nice
+[101m 7s] little addition um but it should be
+[101m 11s] on on the top level expectation not on
+[101m 14s] each or
+[101m 18s] yeah i mean yeah well yeah that's
+[101m 20s] another thing you could do
+[101m 21s] um and then have it
+[101m 25s] have it basically uh to be also same
+[101m 30s] yeah
+[101m 35s] yeah okay so here's an idea for
+[101m 39s] for anyone wanting to start with open
+[101m 41s] source
+[101m 43s] yeah it's actually a really simple one
+[101m 45s] as well i think because um
+[101m 49s] it wouldn't be all that complex it's not
+[101m 51s] even like you're writing any
+[101m 53s] low-level php unit static assertions or
+[101m 56s] anything
+[101m 57s] you could probably just use the existing
+[101m 59s] expectations and
+[102m] and it's basically a wrapper around
+[102m 3s] existing functionality i think
+[102m 5s] so that's nice uh
+[102m 9s] let's do that split those
+[102m 12s] uh we can there's a reason i did that i
+[102m 14s] was going to move into higher order
+[102m 16s] [Applause]
+[102m 19s] so we can grab these
+[102m 23s] and do the same here
+[102m 32s] all right
+[102m 35s] and i think that means we can go to
+[102m 39s] those
+[102m 40s] and then oh enough assertions we've
+[102m 43s] we've found something new
+[102m 46s] so a certain xenom i imagine that's
+[102m 50s] calling another thing in here yeah
+[102m 54s] okay and
+[102m 57s] then we do it basically a true assertion
+[103m] and expect that yeah it equals the
+[103m 4s] actual that you've passed
+[103m 8s] so i think you could even do
+[103m 12s] an assembly expect to be
+[103m 18s] this should uh do the same
+[103m 21s] as in rather than writing a custom
+[103m 23s] expectation you just
+[103m 25s] you just say 2b yeah yeah
+[103m 29s] because we've changed some things
+[103m 32s] in preparation for native enums
+[103m 35s] in php 8.1 and one of the things is that
+[103m 40s] we
+[103m 41s] return one single instance independent
+[103m 44s] how often you call
+[103m 45s] block reason spam in this case for
+[103m 47s] example it's always the same enum
+[103m 48s] instance
+[103m 50s] and yeah some more preparations so uh
+[103m 54s] there's already also a pull request for
+[103m 57s] native php 8.1 enums
+[104m 1s] um moving so logic we have added to
+[104m 7s] the current enums to the native ones
+[104m 9s] like uh
+[104m 10s] labels and
+[104m 14s] retrieving all values and one time and
+[104m 16s] so on
+[104m 17s] um for all interested
+[104m 21s] unless this is a space here enum package
+[104m 25s] brand has created some years ago
+[104m 28s] and i've contributed a lot and also
+[104m 31s] created the narrow
+[104m 32s] wrapper around with model casts and
+[104m 37s] some request rules and so on so check it
+[104m 40s] out if you want enums in your projects
+[104m 47s] edward has moved over okay
+[104m 55s] i think that i think that guess what's
+[104m 56s] there
+[104m 58s] great user just looking as anything else
+[105m] we can
+[105m 1s] kind of refactor to make it a little bit
+[105m 4s] more
+[105m 5s] even pestier i guess we're not actually
+[105m 9s] ever using user 2
+[105m 11s] out of that so we could just do
+[105m 17s] do we ever do it too much finds blocked
+[105m 19s] user from github
+[105m 21s] yeah um
+[105m 25s] the second call is still important
+[105m 26s] because
+[105m 28s] it tests said you still retrieve
+[105m 32s] the user even if it's blocked
+[105m 38s] because there is some global scopes in
+[105m 40s] it and so on
+[105m 42s] yeah that makes sense
+[105m 46s] so i mean you could go crazy if you
+[105m 48s] really wanted and you could
+[105m 50s] use laravel's tap inside expectation to
+[105m 52s] return a user followed by updating them
+[105m 54s] would get the same user back but i think
+[105m 57s] yeah forsake
+[105m 58s] readability it uh it actually reads
+[106m 2s] quite nicely there
+[106m 4s] and the only thing i might do is make
+[106m 6s] that hand call
+[106m 9s] even if i'm destroying now as points i
+[106m 12s] built on
+[106m 14s] new news for expectation but i don't
+[106m 15s] like tap
+[106m 20s] you get you'll get kicked off the stream
+[106m 24s] man
+[106m 29s] i'm sorry but uh yeah
+[106m 32s] i'm not a i'm not a big tap fan i use it
+[106m 35s] from time to time
+[106m 37s] but not as as much as nunu
+[106m 40s] and taylor i think also in the core for
+[106m 42s] example
+[106m 45s] sometimes it's really useful um primary
+[106m 48s] for these cases
+[106m 50s] which it was built for so if you have
+[106m 53s] this a
+[106m 54s] dollar user is like user equals user
+[106m 56s] find
+[106m 57s] uh by id 1 and user
+[107m 1s] update and so on and user return user
+[107m 5s] so in these cases tabs tab is really
+[107m 7s] cool
+[107m 8s] because you save this temporary variable
+[107m 11s] but yeah like nuno does from time to
+[107m 14s] time tapping a tab
+[107m 16s] and tap inside and whatever he taps
+[107m 19s] no sorry nested tapping
+[107m 23s] yeah yeah i i tend to only be able to
+[107m 25s] run level of tap deep to be fair
+[107m 28s] um so adrian left a uh
+[107m 31s] really nice suggestion which is at this
+[107m 33s] point we can actually
+[107m 34s] wrap this here and then
+[107m 38s] we should be able to each on that
+[107m 43s] now whether each will then allow us to
+[107m 45s] dive into the higher order
+[107m 47s] i don't know so let's find out
+[107m 52s] andre what did you miss um everything
+[107m 57s] we are we are live since one and
+[108m] uh 48 minutes one hour 48 minutes
+[108m 4s] so you definitely missed a lot primary
+[108m 7s] look
+[108m 8s] going terminator and
+[108m 12s] possibly you are lucky and can't drink a
+[108m 14s] shot on your own if duke goes terminator
+[108m 17s] again
+[108m 18s] but if you want to get on the same trunk
+[108m 21s] level like synchros you will have to
+[108m 23s] re-watch the streams
+[108m 30s] so
+[108m 32s] might be able to solve this with a
+[108m 36s] uh
+[108m 43s] over there okay now we are doing some
+[108m 48s] creating some other each things here
+[108m 51s] so this is actually if this works let's
+[108m 53s] find out first
+[108m 54s] hey it works so you can use each
+[108m 58s] the way we were using each which is
+[109m] obviously like
+[109m 2s] in pseudocode literally to call each and
+[109m 4s] then start stringing assertions on
+[109m 6s] which is fine but just before uh
+[109m 9s] just before the each syntax went into
+[109m 11s] pest you know updated it
+[109m 13s] to allow you to pass
+[109m 17s] a closure to each so
+[109m 20s] if you've got like more complex logic
+[109m 22s] such as
+[109m 23s] higher order assertions which basically
+[109m 27s] because of how higher order assertions
+[109m 29s] work
+[109m 31s] when it's in already in a higher order
+[109m 34s] assertion itself
+[109m 35s] it each gets a bit mixed up as to what's
+[109m 37s] going on
+[109m 38s] so it kind of by putting it in a closure
+[109m 41s] we've kind of taken it out of the flow a
+[109m 42s] little bit
+[109m 43s] and it allows us to carry on with the
+[109m 44s] higher order assertions
+[109m 47s] so yeah thanks to uh adrian for the
+[109m 49s] suggestion on
+[109m 50s] expecting and using in each to do that
+[109m 54s] that's nice that's nice
+[109m 59s] um and can you please move these
+[110m 2s] uh array opening and closing brackets to
+[110m 5s] the update
+[110m 6s] opening and closing lines sees nearly
+[110m 9s] empty lines drive me crazy
+[110m 14s] no no that was too much no
+[110m 17s] no oh i see i see you you won this
+[110m 21s] you want this don't you yeah
+[110m 25s] and also closing yeah perfect
+[110m 28s] happy days all right
+[110m 32s] so that's how i want my arrows
+[110m 37s] yeah well you know what's really
+[110m 38s] annoying is when you do uh
+[110m 40s] when phpstorm refactors for me it
+[110m 42s] automatically chucks everything on a new
+[110m 43s] line
+[110m 44s] so i need to like dive in at some point
+[110m 46s] and look at the auto
+[110m 48s] auto refactor i know um
+[110m 52s] awesome so yeah i i'm actually gonna i
+[110m 55s] think we're gonna probably leave it
+[110m 56s] there today i don't want to take
+[110m 58s] everyone's evening too far um but
+[111m 1s] hopefully you can kind of
+[111m 4s] get a sense of where we're going with
+[111m 5s] this um
+[111m 8s] i'm planning on streaming weekly
+[111m 10s] hopefully hopefully with less
+[111m 11s] mic issues uh
+[111m 15s] so we'll see how that goes but next week
+[111m 17s] i won't be streaming because
+[111m 19s] again hopefully unless nuno kicks me for
+[111m 22s] uh my bad mic i should be
+[111m 25s] um giving a talk at the past meet-up
+[111m 29s] so if you want to kind of now you aren't
+[111m 32s] going to give a talk
+[111m 37s] you know already canceled you and asked
+[111m 42s] yeah he's gone elsewhere he's probably
+[111m 45s] asked someone he's not even a developer
+[111m 46s] he's like that disappointed in me um
+[111m 49s] but now if you wanted to if you want to
+[111m 51s] see somebody uh
+[111m 53s] or like a more polished version of
+[111m 55s] what's happened today and we'll dive
+[111m 56s] into some extra stuff with expectations
+[111m 58s] as well
+[111m 59s] then come to the past meet up next week
+[112m 1s] um
+[112m 2s] i'm looking forward to that and yeah i
+[112m 4s] just want to say thank you thanks for
+[112m 6s] bearing with us through the issues
+[112m 9s] uh sorry about my microphone i will
+[112m 11s] certainly try to sort that the next time
+[112m 13s] so yeah we'll be back with the pest in
+[112m 16s] practice probably a week on
+[112m 18s] um a week on wednesday i mean in the
+[112m 21s] meantime
+[112m 22s] there are a few things that we've
+[112m 24s] discussed that you could go pick up and
+[112m 26s] have a go at
+[112m 26s] implementing yourself um or even
+[112m 29s] contributing to pest
+[112m 30s] obviously there are a few things
+[112m 32s] mentioned in the stream that sound like
+[112m 34s] really
+[112m 34s] quite simple but great addition to the
+[112m 36s] past framework
+[112m 38s] um so yeah if you want to get started
+[112m 40s] with open source
+[112m 41s] give that a go um and
+[112m 45s] i think one thing that's nice is nuno is
+[112m 46s] a really friendly maintainer as well
+[112m 48s] you never like makes you feel like
+[112m 50s] you're wasting your time
+[112m 52s] um which is what i think some people are
+[112m 54s] scared about
+[112m 57s] when they're contributing to open source
+[112m 58s] for the first time they're just going to
+[112m 59s] get rejected
+[113m] but i've never i've never seen nuno just
+[113m 3s] say i'm not doing it
+[113m 4s] i'm not going to talk to you about it
+[113m 5s] goodbye um so yeah
+[113m 8s] don't feel don't be afraid to go and try
+[113m 9s] and contribute to best or pull pest into
+[113m 11s] your own projects and get using it
+[113m 13s] and because it is it's beautiful to use
+[113m 16s] so thanks tom for joining us um and
+[113m 19s] putting up with
+[113m 20s] you for amazing vacation
+[113m 25s] i terrible it and thanks everyone for
+[113m 27s] for coming in
+[113m 28s] spending your evening or afternoon or in
+[113m 31s] the case of uh
+[113m 32s] andrea whatever time it is in australia
+[113m 35s] at the moment
+[113m 40s] um and yeah we'll see all
+[113m 43s] next week yeah did you have something
+[113m 48s] have a nice week and weekend in between
+[113m 52s] yeah absolutely i hope everything goes
+[113m 54s] well at work
+[113m 57s] enjoy your evening thanks guys

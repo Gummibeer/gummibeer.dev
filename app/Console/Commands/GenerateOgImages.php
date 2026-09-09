@@ -37,6 +37,23 @@ class GenerateOgImages extends Command
                 );
             });
 
+        Entry::query()
+            ->where('collection', 'streams')
+            ->whereStatus('published')
+            ->get()
+            ->each(function (EntryContract $post): void {
+                $date = $post->date();
+
+                $this->saveImage(
+                    "images/og/streams/{$date->format('Y-m-d')}.{$post->slug()}.png",
+                    [
+                        'title' => (string) $post->value('title'),
+                        'date' => $date,
+                        'readTime' => $post->read_time,
+                    ],
+                );
+            });
+
         Entry::whereCollection('pages')
             ->each(function (mixed $page): void {
                 if (! $page instanceof StatamicEntry || ! $page->published()) {

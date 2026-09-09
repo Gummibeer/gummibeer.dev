@@ -53,7 +53,7 @@
                         name="ski-clock"
                         class="size-[4rem]"
                     />
-                    <span>{{ $readTime->forHumans(['minimumUnit' => 'minute']) }} read</span>
+                    <span>{{ $readTime->forHumans(['minimumUnit' => 'minute']) }}</span>
                 </li>
             </ul>
         @endif

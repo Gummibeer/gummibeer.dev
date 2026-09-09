@@ -1,0 +1,2389 @@
+[0s] [Music]
+[16s] hey everyone
+[21s] can you let us know when
+[23s] it when you can hear us
+[26s] and if the stream has been started
+[30s] yeah
+[31s] i've checked that uh a moment ago and we
+[34s] have a delay of around 20 to 30 seconds
+[38s] okay
+[39s] so
+[40s] people will let you know in like half a
+[42s] minute
+[45s] but so far i've seen several
+[48s] nine people waiting for the stream
+[51s] so
+[56s] so can we start right away
+[1m] or wait for some more people to join in
+[1m 7s] it's up to you so i have some time we
+[1m 10s] can wait some more minutes till
+[1m 12s] yeah movement can hear us
+[1m 16s] shall he be so hype i've told sit here
+[1m 19s] here
+[1m 21s] thank you
+[1m 25s] really close friends of mine
+[1m 28s] so
+[1m 29s] i've shared it again on twitter
+[1m 32s] that we are live now
+[1m 35s] thanks man
+[1m 40s] so if we i think it's fine if you
+[1m 44s] if we
+[1m 45s] yeah if we hit 10 then we will just
+[1m 46s] start
+[1m 49s] yeah
+[1m 50s] i think it's fine if you start with your
+[1m 52s] introduction and so on and people can
+[1m 54s] join and
+[1m 56s] okay let's start this thing
+[1m 59s] so hey guys i'm the bear full stack
+[2m 2s] laravel developer
+[2m 4s] and i have been working with shopify for
+[2m 7s] like four years and i have developed
+[2m 10s] some shopify apps
+[2m 12s] for
+[2m 13s] different kind of clients from around
+[2m 15s] over the globe
+[2m 17s] and
+[2m 18s] it's been such a good experience working
+[2m 20s] with shopify and i think it's just time
+[2m 24s] to you know talk about it and
+[2m 27s] help people
+[2m 28s] more laravel developers to
+[2m 31s] get on board with shopify app
+[2m 32s] development
+[2m 34s] and
+[2m 35s] i have
+[2m 36s] with me
+[2m 37s] my mentor tom witkowski he is the
+[2m 41s] maintainer and founder of astrotomic
+[2m 44s] and open door and the rest he can
+[2m 47s] tell you guys
+[2m 48s] himself tom
+[2m 51s] yeah hey guys
+[2m 53s] so
+[2m 54s] i am tom and possibly better known as
+[2m 58s] gummybeer
+[2m 59s] on twitter and github and awesome
+[3m 2s] and i'm i'm doing lateral development
+[3m 5s] since
+[3m 7s] 2015
+[3m 8s] and
+[3m 10s] yeah have collected some experience and
+[3m 14s] have also
+[3m 15s] contributed to a ton of
+[3m 18s] open source packages primarily at spas
+[3m 20s] here but also titan
+[3m 22s] library core for example and this
+[3m 24s] astrotomics started my own
+[3m 26s] open source organization
+[3m 29s] and have released or panda this year
+[3m 31s] open me
+[3m 32s] and
+[3m 34s] it's a platform where you can showcase
+[3m 36s] your
+[3m 38s] your open source work to others like
+[3m 40s] your
+[3m 41s] recruiter or
+[3m 44s] any lead developer or your friends or
+[3m 47s] only to see it yourself for example um
+[3m 50s] always amazing to see how much you have
+[3m 52s] already contributed
+[3m 54s] so check it out and
+[3m 56s] i will post the
+[3m 58s] link yeah i was just wanting to post the
+[4m 2s] link yeah
+[4m 3s] and
+[4m 4s] yeah i have no idea about shopify and
+[4m 7s] shopify development so i will be using
+[4m 9s] stupid guy asking all the questions you
+[4m 12s] possibly also have in mind
+[4m 14s] so
+[4m 15s] let's see
+[4m 16s] how much we can how much knowledge we
+[4m 18s] can pull out of super's mind
+[4m 22s] thank you for joining us really really
+[4m 24s] appreciate that tom
+[4m 26s] so
+[4m 27s] can we start with shopify questions
+[4m 32s] yeah sure
+[4m 34s] okay
+[4m 35s] one of the first things is uh like what
+[4m 38s] is a shopify app
+[4m 40s] how does it work what can it do
+[4m 43s] so i have no idea for example
+[4m 45s] what i can do with the shopify app and
+[4m 47s] where do i have to deploy code is it
+[4m 49s] someone running on the shopify cloud or
+[4m 52s] can i host it myself or
+[4m 55s] yeah okay
+[4m 56s] so i will try to answer this question by
+[5m] providing some history to shopify uh
+[5m 2s] when it started it was only based in
+[5m 5s] canada and
+[5m 7s] so people started to using it and it
+[5m 10s] gained more traction
+[5m 12s] then
+[5m 13s] people reached out to shopify and said
+[5m 16s] we want that thing for example someone
+[5m 19s] some a merchant living in germany he
+[5m 21s] wanted that he wants to ship his
+[5m 24s] products her products
+[5m 26s] uh using a local shipper
+[5m 29s] right
+[5m 30s] so
+[5m 31s] can you tell me about a local shipper
+[5m 33s] name that i can use it as a reference in
+[5m 35s] germany it's a
+[5m 37s] dhl for example um
+[5m 39s] also one of the global players
+[5m 42s] but yeah it's a global one
+[5m 44s] is there a
+[5m 45s] local one
+[5m 47s] it is local so they have expanded to all
+[5m 49s] over the world but uh the name is
+[5m 54s] it's something with germany at least
+[5m 56s] i don't know
+[5m 57s] okay let's let's take an example of a
+[6m 1s] pakistani shipment
+[6m 3s] company for example lcs leopards career
+[6m 6s] service right so a merchant in pakistan
+[6m 8s] wants to say that wants to ship the
+[6m 11s] products using lcs and they contacted
+[6m 14s] shopify that we want to do this but
+[6m 16s] shopify said that we can't do we can't
+[6m 19s] provide everything on our own right so
+[6m 22s] they said here is our apis
+[6m 25s] and you can use it
+[6m 27s] to build your own solutions on top of
+[6m 30s] shopify
+[6m 31s] so
+[6m 32s] shopify apps are basically just a code
+[6m 35s] base a code
+[6m 37s] written and interacting with shopify
+[6m 39s] through the apis
+[6m 41s] okay and if we
+[6m 43s] take an analogy with the wordpress there
+[6m 46s] are plugins to extend
+[6m 48s] the
+[6m 49s] functionality of wordpress right we
+[6m 51s] install them and we get new
+[6m 53s] functionality
+[6m 54s] which wordpress doesn't offer natively
+[6m 57s] so
+[6m 59s] similar similarly shopify apps are these
+[7m 3s] plugins which can which can be installed
+[7m 5s] on any shopify store and you can extend
+[7m 8s] the shopify
+[7m 10s] functionality and its behavior
+[7m 13s] but
+[7m 14s] if we take the example of wordpress
+[7m 16s] plugins these plugins directly
+[7m 19s] talk to wordpress using hooks or
+[7m 21s] whatever approach they are using
+[7m 24s] but with shopify it's different we only
+[7m 27s] get their apis and we need to make http
+[7m 30s] requests and then we can
+[7m 33s] extend the functionality of shopify
+[7m 35s] however we like
+[7m 37s] so
+[7m 38s] the question that you mentioned about
+[7m 40s] code hosting
+[7m 41s] with
+[7m 42s] shopify you can write
+[7m 45s] your apps basically in any language
+[7m 48s] in any
+[7m 50s] platform
+[7m 51s] for example you can write shopify apps
+[7m 54s] using php using javascript
+[7m 57s] ruby with ruby on rails and
+[8m] laravel basically anything that you are
+[8m 2s] comfortable with you can write your
+[8m 4s] shopify application using that
+[8m 6s] technology stack
+[8m 8s] but
+[8m 9s] with wordpress it's code deployed inside
+[8m 12s] the wordpress
+[8m 14s] plugin code but with shopify
+[8m 17s] since it's your code and you're not
+[8m 19s] deploying it inside shopify you can host
+[8m 21s] it anywhere you want
+[8m 23s] and your app will be interacting with
+[8m 25s] shopify using http requests
+[8m 30s] does that answer your question
+[8m 32s] yeah
+[8m 33s] but primary for shops
+[8m 35s] [Music]
+[8m 36s] you sometimes
+[8m 38s] need to interact with the
+[8m 40s] with the user facing frontline so if he
+[8m 43s] takes a shipping for example
+[8m 46s] uh the user goes through this checkout
+[8m 48s] and does his address and
+[8m 50s] as he has selected germany we have to
+[8m 53s] provide for example the name of the
+[8m 55s] shopping cart shipping company
+[8m 57s] um adjust possibly surprising
+[9m] because shipping inside of pakistan is
+[9m 3s] cheapest and shipping to india for
+[9m 5s] example or usa and all the stuff how
+[9m 10s] does this work at the end is it always
+[9m 12s] an api request
+[9m 14s] from shopify to my shopify app or
+[9m 19s] can i have some code running inside or
+[9m 22s] is it part of the shopify theme in that
+[9m 24s] case or
+[9m 27s] okay
+[9m 27s] so
+[9m 28s] if we take the example of shipping
+[9m 31s] we can say that on the checkout
+[9m 34s] shopify sends us our app a request that
+[9m 38s] these are the items in the in the cart
+[9m 41s] and this is the shipping address that
+[9m 44s] the customer has provided us
+[9m 46s] so
+[9m 47s] these this is the information
+[9m 49s] now our app is responsible for
+[9m 53s] talking to shopify and also the shipping
+[9m 55s] provider that we are making the app for
+[9m 59s] so
+[10m] we take that information from shopify
+[10m 2s] checkout and send that to shipper and
+[10m 4s] get the rates back
+[10m 6s] okay when order is final we then take
+[10m 9s] the shipping information and create a
+[10m 11s] label or something and print it and send
+[10m 14s] out shipment so yeah this is how it
+[10m 17s] works sometimes shopify sends us
+[10m 18s] requests
+[10m 20s] and then sometimes we are requesting or
+[10m 22s] posting data to shopify
+[10m 24s] that for example that we want to create
+[10m 26s] and
+[10m 27s] create a product using their api on any
+[10m 30s] store then we will be sending
+[10m 32s] information like product title pricing
+[10m 34s] and also the images maybe and then it
+[10m 37s] will be created on that shopify store
+[10m 40s] okay
+[10m 42s] yeah so i definitely need some some
+[10m 45s] solid hosting because
+[10m 47s] every user will possibly or likely hit
+[10m 50s] my my shopify app
+[10m 52s] yeah yeah sure we okay i'm
+[10m 56s] i mean there are apps
+[10m 59s] running on shopify and for example there
+[11m 2s] is a huge car commerce that's running on
+[11m 7s] shopify apps called bold commerce and
+[11m 9s] they provide like different kinds of
+[11m 11s] solutions
+[11m 12s] related to checkout and and shipping and
+[11m 16s] also other post upsell and pre-upsell
+[11m 19s] things
+[11m 20s] so yeah these are pretty huge apps and
+[11m 23s] they also need some kind of big
+[11m 25s] infrastructure to deal with that and
+[11m 26s] shopify don't want to deal with these
+[11m 29s] things they just provided the api rate
+[11m 31s] limited it and
+[11m 33s] said you're free to do whatever you want
+[11m 38s] okay
+[11m 39s] yeah
+[11m 40s] so
+[11m 42s] can we start with like showing off what
+[11m 46s] is shopify shopify partner
+[11m 49s] and how we can
+[11m 50s] create shopify apps maybe also pull in
+[11m 53s] laravel
+[11m 54s] and jump on with code
+[11m 58s] yeah i've read a question or two
+[12m] questions in the comments so like if
+[12m 2s] shopify is like daras
+[12m 5s] i have no idea where is this
+[12m 9s] no shopify is not like the roz it's
+[12m 12s] pronounced at raj in pakistan
+[12m 14s] and
+[12m 15s] shopify is more like allowing you to
+[12m 18s] create your own online store easily and
+[12m 22s] just create an account pay them some
+[12m 25s] amount and your website will be ready
+[12m 27s] with little to no effort they have free
+[12m 29s] themes they have everything so
+[12m 33s] it's
+[12m 34s] on the ros
+[12m 36s] that's like a marketplace in pakistan
+[12m 38s] where we can
+[12m 40s] there are multiple vendors like
+[12m 41s] aliexpress
+[12m 43s] they
+[12m 44s] like amazon yeah
+[12m 46s] yeah like amazon they join us and
+[12m 49s] put on their products and we can
+[12m 51s] directly order
+[12m 52s] order the products as a customer and get
+[12m 55s] the products delivered
+[12m 58s] one one question that i'd like to
+[12m 59s] mention here
+[13m 1s] is that why should we care about shopify
+[13m 3s] app development
+[13m 6s] i mean why should even someone consider
+[13m 9s] developing shopify apps so
+[13m 12s] one thing i can say is that shopify is
+[13m 14s] really growing
+[13m 15s] big and there are now 1.7 million
+[13m 21s] there are now 1.7 million
+[13m 23s] merchants on shopify doing their
+[13m 26s] businesses and there are billions of
+[13m 28s] transactions and orders happening okay
+[13m 31s] and on the shopify website it says that
+[13m 34s] 87
+[13m 36s] of merchant relies on shopify apps
+[13m 40s] so there is a big market and the market
+[13m 43s] is also defined that these are shopify
+[13m 46s] versus and you can build shopify apps
+[13m 49s] for them
+[13m 50s] so
+[13m 51s] i mean it's like
+[13m 53s] a pretty niche market and there's still
+[13m 56s] a room to make pretty cool things with
+[13m 58s] shopify and
+[14m] you can also develop your business i
+[14m 2s] know some people who are running shopify
+[14m 4s] apps
+[14m 5s] and their businesses totally rely on
+[14m 8s] those apps and they are making some
+[14m 10s] good
+[14m 11s] income out of it
+[14m 16s] and also there are lots of freelance
+[14m 19s] tasks and projects
+[14m 20s] for shopify app development
+[14m 23s] i think in this regard it's similar to
+[14m 25s] wordpress so
+[14m 27s] yeah it's not the best developer
+[14m 29s] experience possibly but it's definitely
+[14m 31s] better than wordpress because you can
+[14m 32s] choose your stack you can do whatever
+[14m 35s] however you want
+[14m 37s] and
+[14m 39s] yeah you just provide additional
+[14m 41s] functionality to people unable to code
+[14m 44s] for example
+[14m 46s] so i know a lot of people pick shopify
+[14m 48s] because they just want to say
+[14m 51s] that's my shop i have these 10 products
+[14m 53s] and want to sell them and
+[14m 55s] everything else is just too much for me
+[14m 58s] and
+[15m] definitely for these people it's it's
+[15m 1s] cool to provide apps
+[15m 4s] for
+[15m 5s] a few bucks and they can say okay
+[15m 7s] i want to ship with
+[15m 9s] these providers and just pull them in
+[15m 11s] and pay
+[15m 13s] five dollars per month or whatever
+[15m 15s] yeah
+[15m 16s] it works like that
+[15m 20s] okay let me just hide this comment
+[15m 23s] let me
+[15m 24s] just share my screen and maybe we can
+[15m 27s] dive into some
+[15m 30s] code
+[15m 34s] sounds good
+[15m 37s] it's the infinite restream loop
+[15m 41s] in the beginning do you see it now
+[15m 44s] yeah i see it's a shopify app store
+[15m 48s] so this is a shopify app store there are
+[15m 51s] different categories and there are lots
+[15m 54s] of them
+[15m 56s] and
+[15m 57s] we can maybe see for marketing
+[16m 1s] seo
+[16m 1s] [Music]
+[16m 4s] and there are lots and lots of apps for
+[16m 8s] seo
+[16m 9s] you can even see the pagination on it
+[16m 12s] so there is a so basically i'm trying to
+[16m 16s] convince some people or maybe some
+[16m 19s] developers that this is worth time
+[16m 22s] spending and time
+[16m 24s] learning for
+[16m 28s] okay
+[16m 29s] on to our next question what's uh the
+[16m 31s] difference between
+[16m 33s] a shopify account and a shopify partner
+[16m 36s] account
+[16m 37s] so
+[16m 38s] when you go to shopify.com and click on
+[16m 42s] maybe sign up
+[16m 44s] then you get an account and you can
+[16m 47s] start your website
+[16m 49s] and get on
+[16m 51s] with your storefront and add your
+[16m 54s] products and orders and everything
+[16m 57s] that is a shopify merchant account that
+[16m 59s] you can get
+[17m] when you sign up for shopify
+[17m 4s] but when do you when you want to develop
+[17m 7s] shopify apps or themes and other stuff
+[17m 10s] then you need a shopify partner account
+[17m 13s] most of the time this is confusing in
+[17m 14s] the beginning so i thought this should
+[17m 17s] be clear in the beginning
+[17m 20s] so
+[17m 22s] let's head over to
+[17m 24s] shopify partners
+[17m 28s] and this is what a shopify partners
+[17m 30s] account look like and a shopify merchant
+[17m 33s] account is a different account and that
+[17m 36s] will be
+[17m 37s] later in the stream
+[17m 41s] okay
+[17m 43s] uh
+[17m 44s] time to start code
+[17m 49s] we are going to use larval for
+[17m 52s] developing our app
+[17m 53s] and we will be using a package
+[17m 57s] called laravel shopify to interact with
+[18m] shopify we can create our own solution
+[18m 3s] to
+[18m 4s] talk to shopify and deal with
+[18m 7s] authentication and making api calls but
+[18m 11s] this package has
+[18m 12s] really
+[18m 14s] dominated the market
+[18m 17s] and even some bigger apps
+[18m 20s] in the shopify app store are using this
+[18m 22s] package as an example
+[18m 29s] so
+[18m 31s] you can
+[18m 32s] start with creating a new laravel
+[18m 34s] project
+[18m 35s] i'm just going to going to call this
+[18m 38s] an app that i will be working later in
+[18m 41s] the future for shopify app challenge
+[18m 44s] and maybe also
+[18m 46s] keep doing the streams and building in
+[18m 48s] public
+[18m 52s] do you like the name tom
+[18m 56s] fury yeah
+[18m 59s] so basically the idea is
+[19m 2s] yeah
+[19m 3s] sounds like one provided by
+[19m 6s] github if you don't want to imagine your
+[19m 8s] own repository name
+[19m 12s] and susanna asked if you can increase
+[19m 15s] the font size
+[19m 16s] a bit
+[19m 18s] okay i don't know if she meets the
+[19m 20s] terminal or
+[19m 21s] vs code
+[19m 24s] i haven't opened vs code yet so
+[19m 28s] or
+[19m 29s] font size at all
+[19m 32s] let's see
+[19m 35s] i hope that's better now
+[19m 37s] yeah
+[19m 39s] i can see it but i don't know on which
+[19m 41s] device susanna is watching
+[19m 43s] so or others
+[19m 45s] but right now we have only created a
+[19m 47s] lateral app so if you don't know how to
+[19m 50s] do it go to level documentation and
+[19m 55s] there are different ways to do
+[19m 58s] i'm going to open this in
+[20m 1s] code
+[20m 2s] and
+[20m 6s] so
+[20m 8s] also things you can also do was what we
+[20m 11s] have talked about uh
+[20m 13s] switch to
+[20m 15s] to the other layout when our faces are
+[20m 17s] above
+[20m 18s] vs code
+[20m 20s] oh yes sorry about that
+[20m 23s] picture in picture yeah
+[20m 26s] okay i think this this could help
+[20m 31s] i still can't see our pictures
+[20m 34s] or your picture
+[20m 39s] so
+[20m 40s] i'm going to
+[20m 42s] create this database
+[20m 49s] problem story
+[20m 52s] default
+[20m 54s] and
+[20m 56s] now the next step would be to pull in
+[20m 58s] that package that i mentioned
+[21m] and
+[21m 2s] we will then look at the
+[21m 5s] configuration that we need to do
+[21m 7s] to be able to install our app on the
+[21m 10s] shopify app store
+[21m 12s] on the shopify store sorry
+[21m 20s] so are there any specific end points for
+[21m 22s] example we have to implement that
+[21m 24s] shopify
+[21m 27s] except for
+[21m 28s] our app as an app or
+[21m 33s] so with this package all we need to do
+[21m 36s] is just provide our api credentials and
+[21m 41s] hit an end point that lets you install
+[21m 43s] your app to any store that we select
+[21m 47s] okay
+[21m 48s] when
+[21m 49s] we try to install it this package takes
+[21m 51s] care
+[21m 52s] behind the scenes oauths too
+[21m 55s] and
+[21m 56s] every other thing that we need to do to
+[21m 58s] perform the authentication with the
+[21m 59s] store
+[22m 1s] does that make sense
+[22m 3s] yeah
+[22m 4s] but so this package provides or adds
+[22m 7s] some uh http endpoints to our developer
+[22m 10s] application
+[22m 12s] which
+[22m 13s] shopify dictates have to exist and
+[22m 16s] yeah they sure hit these endpoints okay
+[22m 20s] we need to provide a url
+[22m 22s] a url where shopify can
+[22m 26s] try to reach to our app and then we also
+[22m 29s] need to provide a redirect url for oauth
+[22m 33s] 2
+[22m 33s] which is kind of necessary and also
+[22m 36s] generic
+[22m 38s] requirement for any platform like github
+[22m 41s] and twitter that we need to provide a
+[22m 42s] redirect url
+[22m 46s] while performing the authentication
+[22m 48s] so
+[22m 49s] next i will be
+[22m 54s] doing the
+[22m 55s] publishing the config and we will take a
+[22m 58s] look at the configuration file
+[23m 1s] how it is
+[23m 2s] structured and what kinds of things that
+[23m 4s] we require
+[23m 6s] to make the authentication happen
+[23m 9s] so
+[23m 10s] this uh functionality is still not
+[23m 13s] complete i have been seeing this for
+[23m 15s] like
+[23m 16s] uh variant four or five
+[23m 19s] so yeah it's still
+[23m 20s] a work in progress
+[23m 22s] manual migrations so there are some
+[23m 26s] database structural changes that
+[23m 28s] this package performs on our native
+[23m 31s] database that we set up in
+[23m 34s] laravel
+[23m 35s] these migrations include
+[23m 37s] uh billing
+[23m 39s] billing tables that maybe we can
+[23m 42s] look into that in some other stream
+[23m 44s] that's
+[23m 45s] not related to today's stream
+[23m 48s] but i'm going to
+[23m 50s] make it true so that we can
+[23m 53s] publish
+[23m 55s] our migrations
+[24m 3s] and if you take a look
+[24m 5s] these migrations are now in place
+[24m 14s] and we have this
+[24m 16s] billing related table called charges
+[24m 19s] shopify offers some apis to even handle
+[24m 21s] the billing
+[24m 22s] uh recurring billing one-time charge and
+[24m 25s] also per usage so yeah this package
+[24m 28s] already takes care of that
+[24m 32s] so these are the routes that you are
+[24m 34s] talking about tom that does this package
+[24m 37s] provide some
+[24m 38s] api endpoints or endpoints urls that
+[24m 42s] shopify needs to access so these are the
+[24m 45s] routes
+[24m 47s] that shopify will need to access to
+[24m 50s] enable
+[24m 52s] in order to install this app in any
+[24m 55s] shopify store
+[25m 2s] it also offers some
+[25m 4s] jobs
+[25m 5s] background jobs
+[25m 7s] so for example when
+[25m 10s] a user
+[25m 11s] uninstalls our app then shopify sends a
+[25m 15s] web hook
+[25m 16s] and we need to do cleanup in our
+[25m 18s] database
+[25m 20s] so that
+[25m 21s] task is better done inside a background
+[25m 23s] task
+[25m 24s] so this package also offers that feature
+[25m 32s] this is shopify have bridge it's a thing
+[25m 34s] that we will need to take a look at when
+[25m 37s] we are working with shopify polaris
+[25m 40s] on the front end we'll take a look at
+[25m 43s] that later
+[25m 46s] so these are the things that
+[25m 49s] we need to fill in
+[25m 51s] first of all shopify app name we can
+[25m 53s] just keep it as i have for now
+[25m 57s] after you use your your orders theory
+[26m 1s] okay let's correct that
+[26m 5s] just to make it realistic so
+[26m 7s] okay
+[26m 8s] orders eric thomas furious now
+[26m 13s] i'm on fire
+[26m 15s] okay
+[26m 16s] so
+[26m 17s] next thing that we need is a shopify api
+[26m 19s] key shopify api secret and we need to
+[26m 23s] provide shopify api scopes
+[26m 26s] scopes are part of oauth2 and these are
+[26m 30s] like permissions that
+[26m 32s] when we are installing the app we want
+[26m 35s] consent or permission from the merchant
+[26m 38s] of the store owner of the store that
+[26m 42s] what our app will be doing on their
+[26m 44s] store for example will it be
+[26m 46s] reading and writing products will it be
+[26m 50s] able to read orders from their store and
+[26m 54s] maybe even change it or
+[26m 57s] anything like customer
+[26m 58s] and shipping locations anything so
+[27m 2s] everything is behind these api scopes if
+[27m 5s] we can
+[27m 6s] take a look at
+[27m 17s] as you can see
+[27m 21s] these are the authenticated scopes and
+[27m 23s] we can do all sorts of stuff we can read
+[27m 26s] inventory shipping
+[27m 27s] and users reports and everything and we
+[27m 31s] do need to
+[27m 32s] provide this information
+[27m 34s] when we are installing the app
+[27m 38s] okay don't ask me about this one i
+[27m 41s] totally don't know about it
+[27m 43s] what is
+[27m 44s] the
+[27m 46s] api grant mode offline or per users
+[27m 49s] i haven't explored it yet
+[27m 52s] so with facebook or out for example you
+[27m 55s] have also a differentiation between
+[27m 58s] offline and something else
+[28m] and yeah it means if your api
+[28m 3s] runs in offline mode or is offline
+[28m 6s] enabled it means that
+[28m 8s] you don't need any user interaction to
+[28m 11s] do api requests
+[28m 13s] so
+[28m 14s] in offline mode i can just schedule a
+[28m 17s] job for example running
+[28m 19s] uh
+[28m 20s] 10 pm each day and
+[28m 23s] reading all the products of your shop
+[28m 24s] for example and this non-offline mode
+[28m 28s] if this is right and it's the same for
+[28m 30s] shopify it would mean that i only can
+[28m 32s] read
+[28m 33s] as a product if any kind of
+[28m 36s] uh user interaction has happened
+[28m 41s] okay
+[28m 42s] so there is per user available as well
+[28m 46s] but
+[28m 47s] okay
+[28m 48s] let's move on with the thing that we
+[28m 50s] need right now
+[28m 52s] so
+[28m 53s] we need a shopify api key a secret and
+[28m 56s] we need to
+[28m 57s] decide on the scopes that the things
+[28m 59s] that we will be doing with our app
+[29m 2s] and
+[29m 3s] i think we are good to go with
+[29m 6s] read orders
+[29m 7s] since we will be also reading the orders
+[29m 10s] in our fury app
+[29m 15s] okay these are some implementation
+[29m 18s] details we can
+[29m 19s] look into them later
+[29m 21s] i just want to show you how this
+[29m 24s] package also helps us with web hooks
+[29m 27s] and
+[29m 28s] we will also need a web hook for app
+[29m 31s] uninstall event
+[29m 33s] that shopify sends us and how these are
+[29m 36s] handled so here we can provide
+[29m 39s] the shopify webhooks that we want to
+[29m 42s] receive
+[29m 43s] and
+[29m 44s] what
+[29m 45s] also need to provide the url
+[29m 48s] on which we want to receive the webhook
+[29m 51s] since
+[29m 53s] webhook installation is part of app
+[29m 56s] installation
+[29m 57s] so this should be done right away when
+[29m 59s] the app is being installed
+[30m 6s] now let's move on to getting our
+[30m 9s] [Music]
+[30m 11s] credentials
+[30m 12s] the shopify api secret
+[30m 15s] and shopify api keys
+[30m 18s] i have a single screen so i'm not sure
+[30m 22s] how i will be able to
+[30m 24s] hide the secret
+[30m 26s] just
+[30m 27s] just stop sharing your screen for a
+[30m 29s] moment
+[30m 31s] maybe i can
+[30m 31s] [Music]
+[30m 33s] no you shouldn't you shouldn't show your
+[30m 35s] credentials on stream even if they are
+[30m 38s] only sandbox ones or whatever
+[30m 40s] okay keep them secret as it's names it
+[30m 43s] okay
+[30m 45s] so
+[30m 46s] uh in the shopify partner account you go
+[30m 49s] to apps and
+[30m 51s] then create an app
+[30m 53s] after that it asks you what type of app
+[30m 57s] you're building then you have two
+[30m 59s] options
+[31m] one to build a custom app that will be
+[31m 3s] only dedicated for
+[31m 5s] one merchant
+[31m 7s] no other store will be able to install
+[31m 9s] it
+[31m 10s] okay there are some use cases for that
+[31m 13s] for example when a merchant reached out
+[31m 16s] us to us reach out to us that
+[31m 19s] i want a special kind of wishlist
+[31m 21s] implemented via an app that no app on
+[31m 24s] the app store is already providing
+[31m 26s] and they don't plan it to publish it to
+[31m 29s] shopify app store because it's only
+[31m 32s] fulfilling the requirement of their own
+[31m 35s] so in that case we choose a custom app
+[31m 37s] and we
+[31m 38s] don't need to go through all the other
+[31m 40s] stuff that we need for public app
+[31m 44s] and there's also a public app
+[31m 48s] any number of stores can install this
+[31m 50s] app
+[31m 51s] and this app needs to be reviewed by
+[31m 54s] shopify
+[31m 55s] and it should be approved by shopify
+[31m 57s] before it can be installed on any
+[32m 1s] store
+[32m 2s] and
+[32m 3s] for the listing on shopify app store
+[32m 6s] this is optional step if you want to
+[32m 8s] list it but every public app
+[32m 11s] still need to be reviewed with shopify
+[32m 15s] so we are going to select the public app
+[32m 17s] and
+[32m 18s] we will be
+[32m 20s] publishing orders fury if that happens
+[32m 24s] and
+[32m 25s] then we need to provide the app name
+[32m 31s] after that comes the app url this url is
+[32m 36s] the url which shopify hits every time we
+[32m 40s] will open the app inside shopify that
+[32m 43s] comes later but
+[32m 44s] just keep in mind that this is the url
+[32m 47s] that shopify will be hitting every time
+[32m 49s] when a merchant opens our app
+[32m 52s] it might not be clear what open our app
+[32m 55s] means right now but it will be at a
+[32m 58s] later point
+[32m 59s] so
+[33m 1s] this url
+[33m 5s] i can
+[33m 7s] run https on our url
+[33m 14s] ropify does need
+[33m 16s] secure urls for its all applications
+[33m 20s] so https is a must
+[33m 26s] okay
+[33m 27s] after installing the package
+[33m 29s] this url
+[33m 31s] is our app url we can also change it to
+[33m 34s] anything else
+[33m 36s] this package allow us to override this
+[33m 38s] url
+[33m 39s] and
+[33m 40s] the redirect url that we need to provide
+[33m 43s] is
+[33m 44s] https
+[33m 47s] and
+[33m 48s] at the end we need to provide
+[33m 51s] authenticate
+[33m 53s] and don't worry these this url is also
+[33m 57s] provided by the package as we have seen
+[33m 59s] in the shopify config file
+[34m 1s] so yeah the authentication is dealt with
+[34m 6s] i'm going to
+[34m 7s] create the app
+[34m 9s] and
+[34m 15s] remove my screen sharing for a bit
+[34m 18s] okay
+[34m 22s] well i can
+[34m 23s] copy the api credentials
+[34m 27s] to
+[34m 27s] [Music]
+[34m 31s] environment file
+[34m 48s] could you run an
+[34m 50s] artisan route list
+[34m 52s] after you entered your credentials
+[34m 54s] yeah that's a good idea
+[34m 57s] so we can see which routes the package
+[34m 59s] has
+[35m] registered
+[35m 2s] sure
+[35m 2s] [Music]
+[35m 14s] that's the second
+[35m 16s] selection
+[35m 25s] okay
+[35m 27s] well done
+[35m 29s] and we're back
+[35m 36s] we are doing rough list command
+[35m 39s] okay
+[35m 42s] compact option
+[35m 50s] so these are the
+[35m 53s] routes that this
+[35m 56s] package provides out of the box to deal
+[35m 58s] with the authentication
+[36m] and
+[36m 1s] billing user charge
+[36m 3s] and also dealing with web hooks
+[36m 7s] dynamically using
+[36m 10s] the type parameter and then constructing
+[36m 12s] a job for the data for the mentioned
+[36m 15s] webwork
+[36m 16s] yeah
+[36m 17s] billing in this case
+[36m 19s] means charging the shopify shop owner or
+[36m 24s] is it related to the customers of the
+[36m 26s] shopify shop
+[36m 29s] yeah so as a developer we do want to
+[36m 32s] charge our apps
+[36m 34s] charge for our apps right we want to be
+[36m 36s] able to get something in return so one
+[36m 39s] option was to introduce a
+[36m 42s] custom checkout using stripe or paddle
+[36m 44s] or whatever for every developer
+[36m 47s] and then
+[36m 48s] shopify had to deal with some stuff that
+[36m 50s] they offered
+[36m 52s] billing apis
+[36m 53s] of their own
+[36m 55s] so we can use
+[36m 56s] those apis and charge the user and that
+[36m 59s] amount that charge will be included in
+[37m 2s] the invoice of the merchant the shopify
+[37m 5s] invoice they are not going to pay us
+[37m 8s] using separate cards or anything they
+[37m 10s] are going to pay shopify and then
+[37m 12s] shopify
+[37m 13s] pays us using paypal uh and now they
+[37m 16s] recently introduced bank wire transfer
+[37m 20s] okay make sense
+[37m 23s] yeah totally
+[37m 25s] but sometimes it's only
+[37m 28s] you have to know the perspective who you
+[37m 31s] are pulling
+[37m 34s] if you do things for shops and
+[37m 37s] there are so many buildings involved
+[37m 40s] that i think it's important to know
+[37m 43s] who will pay for what
+[37m 45s] that was primary question so you have
+[37m 47s] answered it
+[37m 51s] so
+[37m 53s] i have set up my
+[37m 55s] application and i have set up the
+[37m 58s] credentials provided the oauth scopes
+[38m] that i need
+[38m 2s] and
+[38m 3s] let's see how we can
+[38m 4s] [Music]
+[38m 6s] get our app installed in any store for
+[38m 10s] example
+[38m 11s] i have these stores
+[38m 18s] and let's go to apps again
+[38m 27s] there is an option to test your app and
+[38m 30s] after that it says select store
+[38m 34s] and then we can install it on test store
+[38m 38s] on development stores
+[38m 40s] and test our app now a little bit about
+[38m 43s] developer stores and what are these and
+[38m 45s] how they differentiate from
+[38m 48s] the regular stores
+[38m 50s] so shopify
+[38m 53s] provided apis and asked to do
+[38m 57s] you know build apps to extend the
+[38m 59s] functionality but we can't
+[39m 1s] directly test on
+[39m 3s] stores that are already in production
+[39m 5s] and are being used by merchants so they
+[39m 8s] also give us development stores on which
+[39m 11s] we can these are like sandbox
+[39m 13s] environments on which we can provide
+[39m 16s] testing for our
+[39m 17s] app
+[39m 18s] and
+[39m 19s] we can there are some limitations like
+[39m 21s] we can only create 50 orders on
+[39m 24s] development store
+[39m 25s] so
+[39m 26s] and also limitation on how many products
+[39m 29s] can we add so that it cannot be used for
+[39m 32s] like real stores
+[39m 37s] okay
+[39m 38s] i'm going to install the app on a
+[39m 40s] textify local store
+[39m 43s] let's see what happens
+[39m 51s] this is shopify based authentication and
+[39m 53s] not the app authentication
+[39m 57s] okay
+[39m 59s] as you can see there are some
+[40m 2s] information inside the url
+[40m 5s] there is a shop
+[40m 8s] and also the timestamp
+[40m 10s] and basically it's saying that we have
+[40m 13s] authenticated using shopify
+[40m 16s] but it's still opening our home page
+[40m 20s] let's see
+[40m 22s] let's open the
+[40m 25s] store that i mentioned
+[40m 28s] okay if i can just find it again
+[40m 50s] okay
+[40m 52s] and has something happened now in our
+[40m 56s] database of borders jury or
+[41m] yes
+[41m 2s] let me just
+[41m 8s] i forgot to run the migrations
+[41m 12s] i did publish them but forgot to migrate
+[41m 15s] them
+[41m 17s] so yeah that's why the weird behavior
+[41m 20s] on the
+[41m 22s] login
+[41m 32s] come on
+[41m 35s] so this is what the store looks like and
+[41m 38s] our app is not yet installed the reason
+[41m 42s] is that we didn't
+[41m 44s] uh
+[41m 45s] publish the migrations but now these are
+[41m 47s] published so let's head back to our app
+[41m 55s] orders fury
+[41m 58s] and select the store again
+[42m 1s] and try to install our app
+[42m 5s] okay it's the same thing let's see our
+[42m 8s] database
+[42m 9s] maybe
+[42m 10s] we have something inside users oh we
+[42m 13s] have not
+[42m 16s] okay maybe it's time to panic now
+[42m 22s] but it's crazy that
+[42m 25s] it opens a default level
+[42m 29s] you instead of showing some
+[42m 31s] ignition error page for example
+[42m 34s] yeah
+[42m 36s] let's take a look at
+[42m 38s] example
+[42m 40s] sorry documentation
+[42m 44s] i think there is something that we need
+[42m 45s] to change yeah there it is we need to
+[42m 49s] change the home page
+[42m 51s] to
+[42m 52s] apply a middleware so that it redirects
+[42m 55s] it to shopify authentication
+[42m 58s] okay
+[43m] so
+[43m 1s] the whole package hasn't run at all
+[43m 4s] yeah it hasn't run it's just redirecting
+[43m 7s] us to
+[43m 8s] the home page that comes by default with
+[43m 10s] laravel okay
+[43m 13s] [Music]
+[43m 16s] i did sure they
+[43m 20s] oh my god
+[43m 24s] okay so
+[43m 27s] there was one another change that is
+[43m 29s] saying next modify the welcome
+[43m 33s] that's
+[43m 43s] what happened
+[43m 51s] right
+[43m 52s] there i'm here yeah
+[43m 55s] okay i'm following you
+[43m 58s] okay so basically we just copied two
+[44m] things from documentation of the package
+[44m 4s] first one is to change the home route
+[44m 6s] and then second one is saying that you
+[44m 10s] can use the views
+[44m 12s] that provided with the package
+[44m 16s] and now let's try to
+[44m 20s] but does it have
+[44m 22s] to be the home
+[44m 23s] slash
+[44m 25s] root url or can i customize
+[44m 31s] i'm sorry i didn't get your person
+[44m 35s] does it have to be the home or
+[44m 38s] uh root url so only to slash uh can i
+[44m 42s] can i just use any different url like uh
+[44m 46s] authenticate shopify or whatever
+[44m 48s] yeah yeah we can customize it for
+[44m 50s] example i provide slash home here right
+[44m 53s] and then
+[44m 54s] we need to go inside the app settings
+[44m 57s] and then where i provided the app url i
+[45m] need to append the slash home there
+[45m 2s] okay yeah so i could for example still
+[45m 6s] use the
+[45m 7s] uh it's a domain without anything for my
+[45m 9s] landing page to promote my shopify app
+[45m 12s] and
+[45m 14s] use any
+[45m 15s] shopify whatever routes to
+[45m 18s] to interact with shopify okay
+[45m 20s] yeah we can do that we can totally do
+[45m 22s] that
+[45m 23s] okay
+[45m 26s] we are getting
+[45m 28s] call to undefined with trashed
+[45m 32s] okay
+[45m 33s] one thing about this package is that
+[45m 35s] it's always under
+[45m 38s] work in progress
+[45m 40s] uh it used to be very stable but then
+[45m 42s] things got changed with cookies and
+[45m 45s] everything
+[45m 46s] so
+[45m 48s] we may need to
+[45m 50s] struggle a little bit here
+[45m 52s] to
+[45m 52s] to be able to install the app
+[45m 55s] so bear with me for a moment
+[45m 58s] yeah
+[45m 59s] with stretched sounds like it expected
+[46m 2s] the softly trade on on any model and
+[46m 5s] as we only have the user model not
+[46m 7s] coming with a package it could be the
+[46m 9s] user model it it's it expects a soft
+[46m 11s] delete straight
+[46m 13s] okay maybe let's
+[46m 15s] let's follow all the instructions on the
+[46m 19s] yeah
+[46m 22s] okay you will need to modify your user
+[46m 24s] model
+[46m 25s] normally located and then add
+[46m 30s] these
+[46m 30s] [Music]
+[46m 38s] and
+[46m 46s] and then use the shop model here
+[46m 51s] could you check out what the shop model
+[46m 53s] does
+[46m 54s] not sure
+[47m] yeah
+[47m 2s] okay here we go
+[47m 10s] that
+[47m 11s] [Music]
+[47m 14s] okay i think now we are ready to be able
+[47m 16s] to
+[47m 18s] because these things are like really
+[47m 20s] optional
+[47m 21s] and recommend it
+[47m 26s] okay csrf you must disable
+[47m 34s] and you make sense of it why we are
+[47m 36s] disabling
+[47m 38s] the csrf for every route
+[47m 42s] um
+[47m 44s] i think it doesn't have to be for every
+[47m 47s] everything but for everything called
+[47m 49s] from shopify end
+[47m 51s] so like the
+[47m 52s] uh root url for example
+[47m 55s] or some others where it does a post
+[47m 58s] request too
+[47m 59s] and could it be that it is in the
+[48m 2s] could you scroll a bit up and it's only
+[48m 4s] a sub headline of the web hooks
+[48m 7s] no so it's a says the divider line
+[48m 10s] um
+[48m 12s] let's just read the description
+[48m 15s] maybe
+[48m 17s] you must disable csrf as there is
+[48m 19s] currently no solution for verifying
+[48m 21s] session tokens
+[48m 23s] with csrf there is a conflict due to new
+[48m 26s] login creation each request
+[48m 28s] so let me just help you out here is that
+[48m 32s] before this before this change we were
+[48m 36s] using cookies the default thing the
+[48m 39s] default session management that comes
+[48m 41s] with laravel right it has two cookies
+[48m 44s] for them
+[48m 45s] but then chrome introduced something
+[48m 47s] which was same site header and it
+[48m 50s] got really messy and shopify thought
+[48m 53s] that we should just eliminate
+[48m 56s] the need of cookies so they introduced
+[48m 59s] session tokens
+[49m 1s] it's something that they provide to our
+[49m 4s] apps
+[49m 5s] when the app is running inside shopify
+[49m 8s] okay
+[49m 9s] so we need to make we need to get those
+[49m 11s] tokens and then make sure that these
+[49m 14s] tokens are valid and also that
+[49m 17s] information
+[49m 19s] the token
+[49m 20s] contains the information about the
+[49m 22s] currently logged in shop
+[49m 25s] so now that we are
+[49m 27s] using
+[49m 28s] tokens instead of cookies we need to
+[49m 33s] accept them or
+[49m 35s] exclude them from the csrf validation
+[49m 39s] the verification thing so that our
+[49m 42s] app can run smoothly without the cookies
+[49m 50s] okay
+[49m 51s] so all we did was make two changes
+[49m 55s] and provided the
+[49m 59s] what we do
+[50m 3s] we provided the shop model trade and
+[50m 6s] also the ishock model contract
+[50m 8s] implemented that
+[50m 10s] and
+[50m 11s] let's try it again to install our app
+[50m 29s] okay
+[50m 40s] it went through
+[50m 43s] so perfect
+[50m 46s] so this is
+[50m 48s] what the installation screen looks like
+[50m 50s] for a shopify app
+[50m 52s] as you can see these are the details
+[50m 55s] that are being fetched from
+[50m 57s] the shopify authentication scopes that
+[51m] we provided edit products and just view
+[51m 4s] orders because we only said that we are
+[51m 6s] going to read orders and not write them
+[51m 11s] cool
+[51m 12s] and
+[51m 13s] yeah this is the information that any
+[51m 15s] merchant can see when they are trying to
+[51m 17s] install the ad
+[51m 19s] and nes less install the app
+[51m 31s] voila we have
+[51m 33s] installed the app successfully and we
+[51m 36s] are also getting a message that
+[51m 40s] this shop
+[51m 41s] is the name of the shop
+[51m 44s] so
+[51m 45s] if we go back to apps
+[51m 47s] we can see that our app is installed
+[51m 50s] here
+[51m 52s] and it's also accessible
+[51m 54s] whenever a merchant wants to use the app
+[51m 57s] so this is what i meant by opening the
+[52m] app
+[52m 1s] inside the
+[52m 2s] shopify when it clicks it opens right
+[52m 6s] inside the shopify inside the iframe
+[52m 9s] and
+[52m 11s] we here merchant can use it for whatever
+[52m 14s] they want to do here the functionality
+[52m 16s] that we provided with the app which is
+[52m 19s] basically just saying that
+[52m 21s] you are the store
+[52m 24s] so in fact all views rendered by our
+[52m 27s] level application are
+[52m 30s] displayed in an
+[52m 32s] iframe uh in the
+[52m 35s] in the shopify layout
+[52m 37s] yes
+[52m 38s] no one will ever open our
+[52m 41s] ordersfury.test
+[52m 44s] and to shopify things on this domain but
+[52m 47s] they always be on
+[52m 49s] uh like using
+[52m 51s] my shopify yeah
+[52m 53s] okay yeah it will be but any store can
+[52m 56s] install it so
+[52m 57s] this app will be able to detect that
+[52m 59s] store
+[53m] and then display the store name here for
+[53m 2s] example i stored it on
+[53m 5s] tom.myshopify.com it will be
+[53m 8s] tom.myshopify.com here
+[53m 10s] yeah
+[53m 12s] so this is what you mean with the visual
+[53m 14s] session ids
+[53m 16s] i think instead of the cookies yeah
+[53m 19s] yeah
+[53m 20s] these uh no i think we make something
+[53m 24s] here
+[53m 24s] um
+[53m 28s] some simple right click
+[53m 30s] okay and inspect the iframe
+[53m 34s] okay
+[53m 35s] but i mean we all are developers and
+[53m 37s] it's sometimes
+[53m 44s] and okay so
+[53m 49s] can you see it now
+[53m 51s] yes this is our level application
+[53m 54s] yeah it's laravel application
+[53m 57s] and
+[53m 59s] yeah and the url on top you see what i
+[54m 1s] wanted to see so you have these host
+[54m 4s] where some cryptic stuff is inside and a
+[54m 6s] token and so on
+[54m 9s] yeah it is this is just base64 decoded
+[54m 12s] uh encoded information but there is
+[54m 15s] something happening down here
+[54m 18s] which is a session token refresh
+[54m 20s] interval and then also retrieve token
+[54m 23s] and keep retrieving token this is uh
+[54m 26s] related to
+[54m 28s] app bridge
+[54m 30s] it's something like advanced stuff maybe
+[54m 32s] you can gradually
+[54m 34s] take our audience to that point
+[54m 37s] and
+[54m 39s] maybe come back to it later at some
+[54m 41s] point
+[54m 43s] i just wanted to know if there are some
+[54m 45s] stuff uh
+[54m 47s] sent to url so like you have says you
+[54m 49s] get parameters you have host and token
+[54m 52s] and
+[54m 53s] possibly some other get parameters in
+[54m 55s] the url
+[54m 56s] to let our orders for your
+[54m 58s] level application identify
+[55m 2s] which shop it has to render views for
+[55m 4s] now
+[55m 6s] yeah
+[55m 7s] so basically shopify introduced recently
+[55m 10s] introduced this session token approach
+[55m 13s] before that we used cookies but with
+[55m 15s] these session tokens that they are
+[55m 17s] providing us
+[55m 19s] we are able to identify which
+[55m 21s] shopify store is using our app
+[55m 25s] so yeah i think that's about it
+[55m 27s] yeah
+[55m 30s] okay
+[55m 32s] cool and
+[55m 34s] where were we yeah
+[55m 36s] here inside the orders fury
+[55m 39s] and let's take a look at what's going on
+[55m 43s] inside our
+[55m 45s] welcome view
+[55m 48s] yeah
+[55m 51s] so
+[55m 51s] this is the title bar welcome thing that
+[55m 55s] you
+[55m 56s] see inside here
+[55m 58s] and
+[56m 2s] what else we can look at
+[56m 5s] okay so it's extending the layout start
+[56m 8s] default from the package
+[56m 11s] we can take a look uh since we published
+[56m 14s] also publish the views from the package
+[56m 16s] so
+[56m 17s] this is here layout start default
+[56m 20s] and this is
+[56m 22s] this is what you are seeing
+[56m 24s] on that
+[56m 27s] inspect element that we were just
+[56m 28s] showing page source
+[56m 30s] these things
+[56m 34s] even if i wonder why it said some meta
+[56m 37s] name csif token if we have disabled csrf
+[56m 40s] for all requests
+[56m 42s] but it's still there
+[56m 45s] that's that's a different story
+[56m 50s] okay
+[56m 50s] so i think ned's uh next step would be
+[56m 53s] to
+[56m 54s] look into
+[56m 55s] these things
+[56m 56s] app bridge and
+[56m 59s] also
+[57m 1s] the yeah this thing force redirect when
+[57m 4s] we are initializing the app inside the
+[57m 7s] shopify iframe so this is the thing that
+[57m 11s] shopify provides us is a javascript
+[57m 13s] library called shopify average and
+[57m 16s] shopify app bridge utils why shopify app
+[57m 20s] bridge exists and why it is needed
+[57m 24s] for shopify app to be loaded inside the
+[57m 27s] iframe
+[57m 28s] so
+[57m 30s] before this there was an sdk called
+[57m 33s] embedded app sdk but it has its problems
+[57m 36s] and now they introduce shopify average
+[57m 39s] what it basically does is it allows you
+[57m 42s] to
+[57m 43s] our app to
+[57m 45s] interact with shopify to
+[57m 48s] shopify
+[57m 49s] sorry i just
+[57m 51s] got mixed it up it allows our app to
+[57m 54s] interact with shopify
+[57m 57s] what i mean by shopify here
+[58m] is these things
+[58m 1s] for example this title bar there is also
+[58m 4s] some things that we can do inside the
+[58m 6s] title bar and shopify app bridge allows
+[58m 9s] us to do that
+[58m 11s] and
+[58m 12s] also
+[58m 13s] there are some nice talk stories
+[58m 18s] that shopify
+[58m 19s] offered
+[58m 21s] for example we can see them inside the
+[58m 24s] flash messages
+[58m 27s] so
+[58m 29s] these are the flash notices that we are
+[58m 32s] able to
+[58m 34s] provide to merchants when they are using
+[58m 37s] our app
+[58m 38s] using
+[58m 39s] the shopify average and average utils
+[58m 43s] library
+[58m 51s] so these flash messages are for example
+[58m 53s] to notify the user said something has
+[58m 56s] saved for example and
+[58m 58s] yeah yeah it is and
+[59m 1s] the good thing is that they look exactly
+[59m 3s] like
+[59m 4s] shopify for example we can
+[59m 10s] notice
+[59m 12s] yeah let's do this thing
+[59m 15s] and
+[59m 17s] maybe we can
+[59m 19s] flash
+[59m 25s] session flash right
+[59m 29s] now
+[59m 30s] [Music]
+[59m 34s] i haven't interacted with the session
+[59m 36s] since year so
+[59m 40s] yeah me too
+[59m 43s] wait a moment
+[59m 48s] oh now we have some different stuff
+[59m 50s] there
+[59m 51s] yeah
+[59m 52s] i'm also wondering where did that come
+[59m 54s] from
+[59m 55s] [Music]
+[59m 59s] it's it's like
+[60m] uh
+[60m 1s] from the previous variance of this
+[60m 3s] package
+[60m 7s] it's still happening
+[60m 13s] so i guess this is not how you
+[60m 16s] flash something to the session
+[60m 22s] how have you used it
+[60m 24s] session flash
+[60m 25s] switch session
+[60m 26s] yeah and it is session flash and yeah
+[60m 31s] name or the key as first argument and
+[60m 33s] the value as the second one
+[60m 38s] and
+[60m 41s] if is set flash notice
+[60m 45s] okay
+[60m 46s] i have always used inertia.js when i'm
+[60m 49s] using this package
+[60m 51s] so
+[60m 52s] i'm not sure
+[60m 53s] how these things are working
+[60m 57s] can you figure it out with me
+[61m 4s] yeah flash notice is just a variable so
+[61m 7s] you would
+[61m 8s] look sorry you would have to render
+[61m 13s] the view with
+[61m 14s] an
+[61m 16s] data key flash notice
+[61m 20s] and i don't know how and where this
+[61m 22s] flash flash messages blade is is used is
+[61m 26s] it used by default in this uh default
+[61m 28s] blade
+[61m 30s] it's
+[61m 31s] default.php here
+[61m 33s] okay
+[61m 35s] so
+[61m 36s] let's go back to the web php so our
+[61m 38s] routes file
+[61m 42s] and instead of using session flash uh
+[61m 46s] maybe just use it
+[61m 48s] no
+[61m 49s] just remove this
+[61m 51s] whole line
+[61m 53s] and
+[61m 54s] append after the view before the
+[61m 57s] semicolon
+[61m 59s] a call to the method this exactly
+[62m 2s] and pass in
+[62m 5s] and and now it should be flash
+[62m 8s] notice
+[62m 10s] exactly like the variable is named in
+[62m 12s] the view
+[62m 13s] oh
+[62m 15s] flash notice like that yeah
+[62m 18s] exactly and if everything is right
+[62m 23s] it should work
+[62m 25s] and it didn't
+[62m 27s] there should be a black pop-up right
+[62m 29s] here
+[62m 30s] could you just do a full refresh off the
+[62m 33s] page so also shopify
+[62m 35s] sure
+[62m 42s] okay
+[62m 45s] could have been something isn't a any
+[62m 48s] kind of cache or whatever can
+[62m 51s] happen
+[62m 53s] um let's okay
+[62m 59s] i did a hard refresh but it didn't work
+[63m 5s] it was flash notice or
+[63m 7s] flash notice yeah it's just notice
+[63m 12s] now this is a request get and we haven't
+[63m 14s] set it on the request we have
+[63m 16s] passed a
+[63m 18s] a variable to to the blade view
+[63m 22s] that's a variable was named flash notice
+[63m 25s] so
+[63m 26s] this is set should uh should pass and
+[63m 30s] yeah after this it does request get
+[63m 32s] notice
+[63m 34s] there is no value on the notice key in
+[63m 37s] the request so it falls back to the
+[63m 39s] second argument in the get method the
+[63m 41s] default one
+[63m 42s] which is flash notice
+[63m 45s] and
+[63m 47s] yeah so what do you think we can could
+[63m 50s] do is use a
+[63m 51s] request
+[63m 53s] yeah or add dd or dump and the flash
+[63m 57s] notice variable
+[64m] but you should do it outside of the
+[64m 1s] script block because otherwise it will
+[64m 3s] be
+[64m 5s] only visible if you inspect the elements
+[64m 9s] this is a dump directory right
+[64m 13s] yeah i think so
+[64m 17s] maybe we should
+[64m 18s] maybe we should basically think
+[64m 21s] yeah sometimes there are some things
+[64m 23s] coming with okay so is the flesh notice
+[64m 26s] variable
+[64m 27s] um
+[64m 29s] could you go back to
+[64m 31s] to your ide
+[64m 35s] and
+[64m 37s] cut out this dump
+[64m 39s] okay and
+[64m 41s] paste it in the welcome view
+[64m 49s] [Music]
+[64m 52s] it is directly yeah
+[64m 55s] um it's a content some for example
+[65m] okay you haven't copied that
+[65m 2s] ahead i thought i did
+[65m 16s] is there someone saying something in
+[65m 18s] comments about this
+[65m 21s] uh steve has only sent some eyes and
+[65m 26s] all others are quite so
+[65m 28s] um
+[65m 29s] okay but there isn't even a dump wrong
+[65m 32s] what's a
+[65m 33s] why maybe
+[65m 37s] we are extending the default
+[65m 40s] and
+[65m 42s] this is the default
+[65m 43s] this is the flash messages
+[65m 46s] yeah i'm not sure about includes because
+[65m 48s] i have switched to
+[65m 51s] to play components also for layouts and
+[65m 53s] sometimes
+[65m 56s] it could be that you have to pass
+[65m 59s] the rare variable you want to pass to
+[66m 2s] the
+[66m 3s] to the included blade explicitly so it
+[66m 6s] doesn't populate the whole
+[66m 9s] context
+[66m 10s] to the include but you have to say i
+[66m 12s] want to pass this variable to the
+[66m 14s] included one that's why i wanted to dump
+[66m 16s] it on the welcome view but because even
+[66m 19s] this one wasn't wasn't this displayed
+[66m 23s] so there wasn't any something on the
+[66m 26s] shopify screen
+[66m 28s] but the shopify screen has also changed
+[66m 30s] so
+[66m 31s] i don't see any of these
+[66m 33s] links for example
+[66m 36s] we have seen in this iframe
+[66m 39s] so there's always this yield content
+[66m 43s] and the content we have defined in the
+[66m 45s] welcome
+[66m 46s] was only here
+[66m 48s] you are
+[66m 51s] shop domain yeah there is yeah there is
+[66m 53s] something definitely going on with that
+[66m 56s] uh
+[67m 1s] we are still returning the welcome page
+[67m 8s] but why did it change
+[67m 11s] from this layout
+[67m 13s] to something else
+[67m 19s] okay
+[67m 20s] [Music]
+[67m 22s] could you go back to
+[67m 25s] to your ide to these code
+[67m 30s] and
+[67m 33s] in the welcome blade
+[67m 35s] file
+[67m 37s] okay
+[67m 38s] it says extend shopify app layout
+[67m 41s] default
+[67m 44s] but
+[67m 45s] oh it's on okay that is vendor shopify
+[67m 48s] app
+[67m 50s] layout okay
+[67m 52s] this is namespace
+[67m 54s] yeah i thought we are in the views
+[67m 55s] directory but
+[68m 1s] [Laughter]
+[68m 4s] what's going on
+[68m 7s] uh
+[68m 8s] you have go go back to the web have you
+[68m 11s] changed it to to slash home
+[68m 14s] uh no i did not i
+[68m 17s] kept it
+[68m 20s] the same but you have to but you have
+[68m 22s] changed the route i think in the
+[68m 26s] and the web php or do you
+[68m 30s] there's something wrong with shopify i
+[68m 32s] guess
+[68m 40s] and we have set up here
+[68m 45s] so here you have only have to slash and
+[68m 47s] on your
+[68m 48s] in your routes file
+[68m 59s] i think some package magic uh gets into
+[69m 2s] place
+[69m 3s] yeah
+[69m 4s] okay
+[69m 5s] but there wasn't any like home road when
+[69m 8s] we
+[69m 10s] did the
+[69m 11s] yeah
+[69m 12s] is there
+[69m 16s] oh there is no
+[69m 18s] you have changed it after
+[69m 20s] uh
+[69m 21s] you have changed it to home after we
+[69m 23s] have done the route list
+[69m 26s] okay
+[69m 27s] you only did it to show me is that we
+[69m 29s] can use some
+[69m 31s] sub path
+[69m 32s] routing
+[69m 33s] so we could use our yeah and say as a
+[69m 36s] dump
+[69m 37s] and there's also yeah
+[69m 40s] now everything is working
+[69m 43s] okay so i think there is some
+[69m 46s] like
+[69m 48s] a route inside the package or a view
+[69m 51s] that's left
+[69m 52s] uh during the development and it was
+[69m 54s] rendering that because i do remember it
+[69m 57s] that this view was
+[70m] a part of
+[70m 1s] previous versions of the package
+[70m 4s] yeah
+[70m 5s] cool some fall back or whatever
+[70m 8s] yeah
+[70m 10s] maybe fall back
+[70m 12s] so what can we do next
+[70m 16s] what can we do
+[70m 22s] yeah
+[70m 23s] is there any kind of best practice
+[70m 26s] what to put on
+[70m 28s] uh let's say this dashboard welcome
+[70m 31s] initial view so should i if i create a a
+[70m 35s] shopify app should i start with
+[70m 37s] here's the whole settings screen and go
+[70m 40s] with it or
+[70m 42s] should i create some dashboard style
+[70m 45s] things with some whatever numbers or hey
+[70m 47s] i am
+[70m 48s] tom and here's a link to my blog and
+[70m 51s] here's the latest as s news versus app
+[70m 53s] or
+[70m 57s] uh i think it's it will be best to show
+[70m 59s] you
+[71m] uh an existing app that i have installed
+[71m 3s] on my store it's called sms bump
+[71m 7s] and it
+[71m 8s] helps us with text marketing so we can
+[71m 11s] take a look at how they are dealing with
+[71m 14s] when they when the app is being opened
+[71m 16s] but if i recall correctly
+[71m 19s] there is another thing that we can show
+[71m 20s] you
+[71m 21s] and that's uh
+[71m 24s] external apps
+[71m 31s] so this is the sms pump app but notice
+[71m 34s] that it does not open inside the shopify
+[71m 39s] so this is another thing that and any
+[71m 41s] app can choose to
+[71m 44s] render their app inside the shopify
+[71m 47s] inside the iframe but they can also
+[71m 50s] choose to
+[71m 52s] render their app
+[71m 54s] outside of the shopify so what will
+[71m 57s] happen
+[71m 58s] when you click here
+[71m 59s] shopify will send you some
+[72m 1s] authentication along with the request
+[72m 3s] authentication is still happening on the
+[72m 5s] shopify side
+[72m 7s] but the app is not loading inside the
+[72m 10s] iframe
+[72m 12s] make sense
+[72m 15s] so yeah there is a setting for that
+[72m 18s] if we can
+[72m 19s] go to app setup
+[72m 24s] come on
+[72m 27s] embedded app
+[72m 28s] show your app within shopify so you can
+[72m 31s] manage it from here
+[72m 33s] and you can configure it and disable it
+[72m 36s] from here
+[72m 37s] and your app will then be
+[72m 40s] rendered outside of the shopify but it
+[72m 42s] will still be
+[72m 45s] authenticated using shopify
+[72m 48s] okay so this app uh used to be rendered
+[72m 52s] inside the shopify iframe and this is
+[72m 55s] what their dashboard and navigation
+[72m 58s] looks like
+[73m 2s] so you can also
+[73m 5s] when your app is open inside shopify you
+[73m 8s] can also present users with some
+[73m 10s] dashboard some statistics and after that
+[73m 13s] you can
+[73m 14s] provide a navigation
+[73m 16s] and user can navigate inside your app
+[73m 19s] just like a regular app
+[73m 21s] okay
+[73m 25s] any other question about this
+[73m 29s] i think we should
+[73m 31s] or could go now with its orders theory
+[73m 34s] so something like a
+[73m 37s] number of orders
+[73m 38s] uh orders last 24 hours last week month
+[73m 41s] whatever
+[73m 44s] so we interact with the shopify api read
+[73m 46s] some
+[73m 47s] whatever end points and
+[73m 49s] do your count on it
+[73m 52s] cool
+[73m 53s] so what we can do is
+[73m 56s] i'm not going to show my access token
+[73m 59s] just know that uh inside the users table
+[74m 3s] uh yeah open structure
+[74m 5s] um
+[74m 6s] we have uh this shopify domain name
+[74m 10s] inside the name attribute
+[74m 12s] and then the access token for that
+[74m 15s] particular store that we install the app
+[74m 18s] on
+[74m 18s] is inside the password field
+[74m 21s] so we can make our api calls
+[74m 24s] and do our regular stuff
+[74m 27s] using these credentials
+[74m 30s] okay
+[74m 32s] yeah
+[74m 33s] let's keep it
+[74m 35s] simple
+[74m 37s] by
+[74m 38s] creating everything inside
+[74m 43s] screw
+[74m 44s] down the view
+[74m 52s] one thing i'm interested
+[74m 55s] how much of this package for example is
+[74m 57s] needed or what
+[74m 58s] at all is needed so could you just
+[75m] return
+[75m 2s] a string hello world and let's see what
+[75m 4s] happens in on
+[75m 6s] on our shopify app
+[75m 8s] so if all the javascript for example and
+[75m 11s] so on is really needed or
+[75m 13s] if it still shows this hello world
+[75m 15s] string
+[75m 16s] okay yeah
+[75m 17s] [Music]
+[75m 20s] but it will be
+[75m 22s] it will not be able to deal with session
+[75m 24s] tokens
+[75m 26s] don't spoil us
+[75m 29s] we want to see what happens
+[75m 33s] i want to see shopify on fire
+[75m 40s] and where were we yeah
+[75m 43s] i'm just going to reload the frame
+[75m 47s] hello okay
+[75m 52s] but i want to break it now
+[75m 55s] yeah
+[75m 57s] but as like you said uh
+[76m 1s] but if you try to
+[76m 3s] navigate from here to another url
+[76m 6s] then it will possibly
+[76m 8s] break because it is not able to get the
+[76m 11s] session token from shopify
+[76m 14s] but oh wait
+[76m 16s] it does
+[76m 18s] put
+[76m 18s] uh
+[76m 19s] partially work but uh it has definitely
+[76m 22s] a limited set of features available
+[76m 25s] yeah yeah it is okay
+[76m 27s] so like like the ignition for example
+[76m 29s] that's a in first place we have seen in
+[76m 31s] the iframe
+[76m 33s] ignition definitely also has all these
+[76m 36s] session
+[76m 37s] token javascript things
+[76m 39s] but it was visible so shopify doesn't
+[76m 42s] display any
+[76m 44s] whatever
+[76m 53s] [Music]
+[76m 55s] no i i just wanted to see if shopify
+[76m 58s] really requires some of this javascript
+[77m] for example and if it isn't present
+[77m 4s] it doesn't render as a whole frame
+[77m 6s] so like if there isn't one instance of
+[77m 9s] this app bridge inside of the frame i
+[77m 11s] just kill it or whatever
+[77m 15s] boy or if they render it and you only
+[77m 18s] have a limited set of features like you
+[77m 20s] said
+[77m 21s] and like i can i can't navigate to sub
+[77m 23s] pages or
+[77m 25s] uh do some interactive stuff
+[77m 28s] yeah yeah so
+[77m 31s] when i was uh working with inertia there
+[77m 34s] was a problem with axios and
+[77m 37s] the requests happening between two urls
+[77m 40s] like when i'm going from about home page
+[77m 43s] to about page it wasn't able to get the
+[77m 45s] session token
+[77m 46s] so it was failing because of that
+[77m 49s] but
+[77m 52s] in this case
+[77m 54s] if we try to add some navigation maybe
+[77m 56s] it will fail too maybe we will see down
+[77m 59s] the line what happens
+[78m 7s] cool let's make an api call to shopify
+[78m 13s] that's the moment uh steve has waited
+[78m 15s] for
+[78m 18s] [Music]
+[78m 19s] if you say api on stream steve is steve
+[78m 22s] is said
+[78m 26s] okay
+[78m 27s] can you uh take care of
+[78m 29s] can you
+[78m 30s] hide and show comments on the screen
+[78m 34s] are you able to do so
+[78m 37s] i can i can only see comments so i can
+[78m 40s] i can tell you if someone has any
+[78m 42s] questions or uh
+[78m 44s] whatever
+[78m 46s] so like 20 minutes it goes so high navas
+[78m 50s] don't don't blame me if it's wrong i
+[78m 52s] have no idea pakistani names
+[78m 55s] saying that
+[78m 56s] said our attitude to love uh
+[79m] arrows and all these unwanted things
+[79m 3s] away is definitely what we
+[79m 5s] what they need as newcomers to to see
+[79m 8s] that even
+[79m 10s] let's say experienced developers do do
+[79m 13s] mistakes
+[79m 14s] and i can definitely absolutely second
+[79m 16s] it so
+[79m 18s] i don't know how it's about you but i'm
+[79m 21s] doing mistakes all the time during my
+[79m 24s] day job
+[79m 25s] so
+[79m 26s] it's more about knowing how to solve
+[79m 28s] some quickly
+[79m 30s] and don't get stuck
+[79m 31s] so don't doing mistakes at all in a
+[79m 34s] senior stage yeah
+[79m 37s] the
+[79m 38s] the guy who commented this yeah he is
+[79m 40s] like super genius man
+[79m 42s] he was
+[79m 45s] he was stopped
+[79m 52s] sorry
+[79m 56s] it's really good
+[79m 57s] yeah
+[79m 59s] okay it's time to
+[80m 1s] make the first ap call
+[80m 3s] and here's how we can do it it's
+[80m 5s] mentioned in the documentation first of
+[80m 8s] all we are going to
+[80m 9s] get the currently authenticated shop
+[80m 12s] and there is a helper method for that we
+[80m 15s] can use the auth user
+[80m 17s] and
+[80m 18s] then it's some package stuff
+[80m 21s] to native it's converting it to
+[80m 24s] a
+[80m 25s] string for example
+[80m 26s] textifylocal.myshopify.com
+[80m 30s] and it's
+[80m 31s] converting it to the string and then
+[80m 34s] it's making shopify api call and getting
+[80m 37s] the response back which is
+[80m 39s] a associative array
+[80m 43s] so we can
+[80m 45s] get some information about the shop this
+[80m 48s] is the
+[80m 49s] basic endpoint for accessing the shop
+[80m 51s] information we what we can do here is
+[80m 55s] make
+[81m] of all we get user
+[81m 4s] and then we get the domain we
+[81m 14s] we really need to domain
+[81m 17s] where are we using it
+[81m 19s] okay it's just to
+[81m 21s] log the information we don't really need
+[81m 24s] it we just need
+[81m 25s] the shop instance the user and then
+[81m 30s] just make the api call
+[81m 58s] okay
+[82m] [Music]
+[82m 3s] and
+[82m 3s] [Music]
+[82m 5s] see
+[82m 21s] and
+[82m 21s] let's
+[82m 22s] just dump
+[82m 36s] it we are really
+[82m 39s] [Music]
+[82m 47s] it should be
+[82m 50s] intelligence with us
+[82m 53s] illuminate support first aids
+[82m 56s] okay
+[83m] like the route one you have imported on
+[83m 2s] line three
+[83m 4s] oh
+[83m 5s] good one
+[83m 10s] let's see if we are able to
+[83m 12s] fetch
+[83m 14s] the orders
+[83m 19s] reload frame
+[83m 23s] okay
+[83m 24s] others
+[83m 26s] undefined index
+[83m 30s] so it
+[83m 31s] at least it has received something
+[83m 35s] yeah it is able to make the shopify ap
+[83m 38s] calls yeah
+[83m 40s] so this is how we can make the shopify
+[83m 42s] api calls and
+[83m 44s] receive
+[83m 46s] a response
+[83m 53s] it's body
+[83m 54s] and
+[83m 56s] there is
+[83m 57s] no orders
+[83m 59s] that's why
+[84m 2s] yeah but the orders key should be
+[84m 4s] present or
+[84m 6s] yeah
+[84m 7s] let's just create a dummy order
+[84m 11s] yeah but and there was a container
+[84m 13s] wrapping key around it
+[84m 19s] okay there are also no products
+[84m 25s] so
+[84m 26s] i guess
+[84m 27s] you've picked the best test job
+[84m 30s] [Music]
+[84m 36s] okay
+[84m 38s] so if you've got maybe abuses body
+[84m 41s] body
+[84m 42s] and then
+[84m 46s] others
+[84m 54s] i think it should work
+[85m 8s] yeah
+[85m 9s] but it's still container
+[85m 12s] and response access
+[85m 13s] there must be something
+[85m 15s] [Music]
+[85m 18s] body shop and name
+[85m 24s] okay
+[85m 26s] let's try with the
+[85m 30s] sharp endpoint
+[85m 35s] see if we can get anything
+[85m 37s] useful out of shopify
+[86m 3s] hmm
+[86m 8s] trying to access array offset and value
+[86m 11s] of type null
+[86m 14s] this is also not working
+[86m 19s] going on with this
+[86m 25s] body or shop
+[86m 27s] [Music]
+[86m 29s] it's a body or shop every key so
+[86m 32s] again you could dump the hole
+[86m 37s] come on
+[86m 42s] so documentation is definitely up to
+[86m 44s] date
+[86m 45s] yes yes
+[86m 47s] there was a problem loading this website
+[86m 51s] i think shopify is also having some
+[86m 53s] problems today
+[86m 57s] as you can see there is a server error
+[87m] guys stop playing with shopify we want
+[87m 2s] to show you how to do it
+[87m 4s] [Music]
+[87m 8s] oh my god
+[87m 14s] silence
+[87m 23s] okay
+[87m 25s] so this is uh documented on the package
+[87m 29s] that this is how you can access
+[87m 31s] the shop
+[87m 32s] but i think we are having some
+[87m 35s] difficulty
+[87m 37s] with
+[87m 38s] shopify itself
+[87m 40s] yeah i don't know
+[87m 43s] what's going on with this
+[87m 46s] api arrest
+[87m 48s] i say already something on shopify
+[87m 50s] status
+[87m 52s] no
+[87m 53s] status sakes everything is working
+[87m 57s] maybe it's
+[87m 58s] something related to development stores
+[88m 4s] let's test it on another store
+[88m 19s] what does sushi want
+[88m 23s] i don't know
+[88m 25s] [Music]
+[88m 31s] so he wants to
+[88m 33s] do you also want to be famous on camera
+[88m 37s] get up
+[88m 46s] [Music]
+[88m 53s] i think there's definitely something
+[88m 55s] wrong on shopify side
+[88m 58s] because this is not our error page
+[89m 6s] well
+[89m 8s] if i just choose the right time
+[89m 11s] to
+[89m 13s] blow things up
+[89m 17s] see
+[89m 19s] shopify doesn't want new
+[89m 22s] app developers
+[89m 24s] yeah i've already checked it and yeah
+[89m 27s] everything is working
+[89m 32s] okay
+[89m 34s] what's going on
+[89m 39s] i haven't seen this error screen before
+[89m 42s] to be honest
+[89m 42s] [Music]
+[89m 44s] maybe
+[89m 45s] check our logs
+[89m 56s] um
+[89m 58s] [Music]
+[90m 6s] [Music]
+[90m 9s] yeah
+[90m 10s] you should delete the lateral log file
+[90m 12s] and do another request to
+[90m 15s] to get a fresh one
+[90m 17s] yeah
+[90m 20s] oh there it is
+[90m 24s] it was a log file okay
+[90m 29s] that was so many euros
+[90m 33s] okay so this is this endpoint is working
+[90m 36s] and also the orders endpoint was working
+[90m 39s] but then
+[90m 41s] we had we didn't have any orders on the
+[90m 44s] store
+[90m 45s] so yeah it was empty but
+[90m 48s] this is uh this is the usage of the
+[90m 51s] package
+[90m 52s] and how easy it is to
+[90m 55s] make api calls
+[90m 56s] using
+[90m 58s] this package
+[90m 59s] and there's also something that i'd like
+[91m 1s] to mention that shopify offers us two
+[91m 4s] types of apis restful api and graphql
+[91m 7s] api
+[91m 9s] restful api they are i think the uh
+[91m 12s] anytime soon they are going to stop
+[91m 14s] working on that
+[91m 16s] but
+[91m 17s] they are
+[91m 18s] adding new things adding new features to
+[91m 21s] graphql api and they really encourage
+[91m 24s] developers to
+[91m 26s] use the graphql api
+[91m 28s] instead of restful api
+[91m 30s] yeah and at some point i am going to
+[91m 33s] learn graphql properly and maybe also
+[91m 38s] something also github has done i think
+[91m 41s] last year already
+[91m 42s] or even two years ago
+[91m 44s] and
+[91m 46s] they are also only adding new features
+[91m 49s] to the graphql api and i think even some
+[91m 52s] other vendors
+[91m 54s] are promoting graphql
+[91m 57s] it makes
+[91m 59s] ser api side a lot easier a lot easier
+[92m 2s] for sam
+[92m 3s] and
+[92m 5s] much more flexible and powerful for the
+[92m 7s] users
+[92m 9s] because you can build or
+[92m 13s] in its in the simplest form graphql apis
+[92m 17s] are more like a
+[92m 19s] sql query for example
+[92m 21s] so you can do things like joining and
+[92m 25s] so on and
+[92m 27s] as a shopify api provider you only
+[92m 30s] define all these relations so for
+[92m 32s] example
+[92m 34s] a shop can have several orders order has
+[92m 37s] all the lines one of the other lines has
+[92m 39s] a product relation
+[92m 41s] and
+[92m 42s] after you have defined all these things
+[92m 44s] and how which attributes and so on you
+[92m 46s] have on each of the
+[92m 48s] of the objects
+[92m 51s] what you as a user and api consumer can
+[92m 53s] do is
+[92m 54s] say give me
+[92m 56s] the order with ide
+[92m 59s] one two three for example and all other
+[93m 2s] lines but i don't need any order line
+[93m 4s] attribute i only want
+[93m 6s] from the product relation
+[93m 9s] surprise for example
+[93m 11s] yeah and
+[93m 14s] yeah this is what graphql provides
+[93m 18s] i did some
+[93m 20s] work on it when i was working at edition
+[93m 22s] and
+[93m 23s] yeah it is really cool but there is one
+[93m 26s] problem that
+[93m 28s] it's not a problem but just
+[93m 31s] lack of knowledge about that topic
+[93m 33s] is that
+[93m 35s] the cost of the query and how
+[93m 38s] it deals with red limiting stuff
+[93m 41s] instead like how many requests you can
+[93m 44s] make
+[93m 45s] for with a
+[93m 46s] restful api in graphql you have to
+[93m 50s] calculate the cost
+[93m 52s] is it same like github
+[93m 54s] yeah exactly
+[93m 56s] so there isn't even an official rule at
+[93m 59s] least on github i don't know about
+[94m 1s] shopify
+[94m 2s] um they only say if your query gets too
+[94m 5s] complex and loads too much data you
+[94m 8s] don't
+[94m 9s] only consume like one credit of your
+[94m 13s] of your
+[94m 14s] rate
+[94m 15s] possibly requests
+[94m 17s] but for example two or even three or
+[94m 19s] whatever but in my experience at this
+[94m 21s] for github
+[94m 23s] you have to build like a
+[94m 26s] similar like a select asterisk from
+[94m 28s] database so
+[94m 30s] really something like all orders with
+[94m 33s] all other lines all product information
+[94m 35s] is related
+[94m 36s] in that case you will definitely consume
+[94m 38s] some more credits but
+[94m 40s] if you only do some deep nesting and
+[94m 42s] only select one attribute per object
+[94m 46s] in my experience you still consume only
+[94m 48s] one of these uh
+[94m 50s] one thousand five thousand whatever
+[94m 53s] requests
+[94m 54s] so
+[94m 56s] in my experience it isn't said like you
+[94m 59s] really have to worry about it
+[95m 2s] um only if you do really heavy requests
+[95m 7s] okay
+[95m 8s] but i think shopify's thread limit is
+[95m 11s] like really strict with graphql
+[95m 14s] requests
+[95m 15s] so we quickly
+[95m 17s] reached the limit when we were trying to
+[95m 19s] make the api
+[95m 21s] uh requests so we had to like split up
+[95m 24s] them and make multiple requests
+[95m 27s] yeah how many requests do you does
+[95m 30s] shopify allow per hour or minute or
+[95m 33s] whatever
+[95m 34s] it uses an algorithm called biki
+[95m 38s] leaky bucket algorithm
+[95m 40s] and it allows two requests
+[95m 43s] for
+[95m 47s] i'm not sure about that
+[95m 49s] let's
+[95m 50s] just quickly google it because
+[95m 52s] the reason is that this package that we
+[95m 54s] are using automatically handles the rate
+[95m 56s] limit for us so we don't have to worry
+[95m 59s] about that
+[96m 11s] so with graphql
+[96m 13s] we have points
+[96m 16s] like how many uh how much our query is
+[96m 20s] costing us
+[96m 21s] per second
+[96m 22s] and with
+[96m 25s] admin api rest endpoints we have two
+[96m 28s] requests per second
+[96m 33s] yeah
+[96m 34s] calculated query costs
+[96m 36s] apps can make requests that cost a
+[96m 38s] maximum number of points per minute for
+[96m 40s] example 1000 points within 60 seconds
+[96m 44s] yeah more complex requests cost more
+[96m 46s] points and therefore take up a
+[96m 48s] propositional
+[96m 50s] larger share of them this method is used
+[96m 53s] by graphql
+[96m 57s] code calculation
+[96m 59s] coast value
+[97m 3s] and object is a cost of yeah
+[97m 7s] i have the same page open right now
+[97m 9s] an object has a cost of one interface
+[97m 11s] also one union of one
+[97m 14s] okay shopify also reserves the right to
+[97m 16s] segment coast on fields
+[97m 20s] mutations have default okay
+[97m 23s] i can
+[97m 24s] show you something
+[97m 26s] that will give you an idea about the
+[97m 28s] costs for example we
+[97m 30s] make this query to shopify and it also
+[97m 34s] returns these extensions
+[97m 37s] and the cost
+[97m 40s] actual query cost one
+[97m 43s] and things like that
+[97m 47s] but if we are going to
+[97m 49s] make something
+[97m 51s] bigger of course the query will the
+[97m 53s] query cost will increase
+[97m 59s] yeah so far i've seen it it is one point
+[98m 2s] per object so if you select like
+[98m 5s] 100 orders for example it will be 100
+[98m 8s] points
+[98m 12s] that's my understanding but it could
+[98m 14s] also be wrong
+[98m 28s] we got distracted with this
+[98m 31s] and we left the topic
+[98m 39s] yeah
+[98m 42s] so we have 100 orders and also the edges
+[98m 45s] and node objects between so you have a
+[98m 47s] cost of uh
+[98m 50s] 102
+[98m 52s] [Music]
+[98m 55s] that's what you invested
+[99m 1s] exactly and i assume that you only have
+[99m 4s] 18 orders that's why
+[99m 7s] or 16
+[99m 8s] that's why your actual query cost is 18.
+[99m 12s] but why add two
+[99m 15s] because of this edges and node object
+[99m 17s] you have
+[99m 18s] in between
+[99m 20s] yeah yeah that makes sense
+[99m 24s] and this is the currently available
+[99m 26s] points that we have
+[99m 28s] and that we can use to make graphql
+[99m 30s] requests
+[99m 32s] yeah
+[99m 33s] this is the maximum one and there is
+[99m 35s] also cursor based paste pagination
+[99m 38s] but
+[99m 39s] yeah that's another story
+[99m 43s] okay so
+[99m 44s] so far we were able to install the app
+[99m 48s] go with the authentication
+[99m 50s] and
+[99m 51s] being able to
+[99m 53s] make an api call
+[99m 55s] using shopify
+[99m 57s] and laravel package
+[99m 59s] what's the time
+[100m 3s] you spend
+[100m 5s] one hour and 40 minutes
+[100m 9s] so if we
+[100m 11s] start with other stuff like
+[100m 14s] polaris and react i think it will
+[100m 17s] definitely
+[100m 18s] take more time
+[100m 20s] so
+[100m 22s] how about we
+[100m 25s] do that in another stream
+[100m 28s] yeah
+[100m 29s] let's see you
+[100m 32s] i think
+[100m 34s] adding this whole new topic of uh
+[100m 36s] polaris
+[100m 37s] i assume it's like the ui library for
+[100m 40s] shopify yeah yeah um
+[100m 44s] do you have to use it with react vgs or
+[100m 46s] something or can you also use it uh
+[100m 50s] as plain html
+[100m 53s] yes we can use it as plain html but you
+[100m 56s] will be really afraid to see
+[100m 59s] the html
+[101m 3s] okay
+[101m 4s] you can but you don't want to
+[101m 6s] but but you don't want to yeah
+[101m 9s] yeah
+[101m 10s] so
+[101m 11s] yeah so we have we have to use
+[101m 14s] the react components
+[101m 16s] which are i think
+[101m 18s] less scarier than the html version and
+[101m 21s] then when you use the html you also have
+[101m 23s] to
+[101m 24s] work with javascript and introduce
+[101m 27s] some libraries
+[101m 29s] for yourself like view or maybe alpine
+[101m 32s] pure
+[101m 33s] film like that
+[101m 35s] i think the first
+[101m 37s] shopify app related thing i would do is
+[101m 39s] creating a laravel blade component
+[101m 41s] library
+[101m 43s] for polaris
+[101m 44s] so i can use plain html with blade
+[101m 49s] and drop this
+[101m 50s] yes
+[101m 52s] there are lots of these components so i
+[101m 55s] think it will
+[101m 56s] take a lot of time
+[101m 59s] so yeah why not learn some react and use
+[102m 2s] that
+[102m 4s] because i couldn't earn money with
+[102m 6s] learning react
+[102m 10s] but i can send this component library to
+[102m 12s] you
+[102m 15s] and
+[102m 16s] get down get some share of your earnings
+[102m 19s] by creating shopify apps
+[102m 23s] so
+[102m 24s] what's your impression so far about
+[102m 27s] shopify app development
+[102m 32s] what do you think about
+[102m 35s] i think the process is definitely pretty
+[102m 37s] straightforward and flexible
+[102m 40s] yeah because of this uh you have full
+[102m 42s] control
+[102m 44s] how you develop things uh which
+[102m 46s] framework language and all this stuff
+[102m 49s] um
+[102m 50s] you even aren't limited what
+[102m 53s] would be some of my expectations but uh
+[102m 56s] didn't prove truth
+[102m 58s] uh said you are at least limited if you
+[103m] want to use this uh embedded apps how it
+[103m 3s] was named
+[103m 4s] um
+[103m 5s] yeah you are totally
+[103m 8s] yeah abridged and embedded apps so you
+[103m 11s] work in the iframe but even there you
+[103m 13s] are have full control over everything so
+[103m 16s] this is pretty amazing
+[103m 18s] and
+[103m 21s] yeah i i think the biggest biggest
+[103m 22s] problem for me right now is like imagine
+[103m 26s] something i would or could create with
+[103m 28s] an app
+[103m 30s] because i also have no idea about the
+[103m 32s] shopify ecosystem what shopify itself
+[103m 35s] provides and
+[103m 36s] which apps are already available and so
+[103m 39s] on
+[103m 40s] um
+[103m 42s] so
+[103m 44s] if you are looking for some discussions
+[103m 46s] and
+[103m 48s] some ideas there is shopify community
+[103m 51s] and you can
+[103m 53s] merchants
+[103m 54s] real merchants also tend to hang around
+[103m 57s] here and do some question and answer
+[104m] about the apps and their stores
+[104m 2s] so you can
+[104m 4s] watch their discussions listen to them
+[104m 6s] and
+[104m 8s] maybe you will get some ideas
+[104m 10s] yeah
+[104m 13s] they also have from a discord community
+[104m 17s] but from technical perspective as a
+[104m 19s] developer it's definitely
+[104m 21s] some
+[104m 22s] some cool stuff to work with i think
+[104m 25s] um yeah because you create your own app
+[104m 28s] and only consume some api endpoints
+[104m 34s] so you don't have any restrictions and
+[104m 38s] can do
+[104m 39s] how you like it
+[104m 41s] yeah
+[104m 41s] unlike wordpress where you have to
+[104m 43s] provide the code and someone else can
+[104m 46s] modify it and do some stuff with that
+[104m 50s] in this case you have to host your app
+[104m 53s] and you have full control over it
+[104m 55s] you can take control of your
+[104m 56s] infrastructure too
+[104m 58s] and optimize your apps according to that
+[105m 4s] cool so
+[105m 6s] yeah
+[105m 8s] i think we are
+[105m 10s] done for today
+[105m 15s] there are skills for viewers
+[105m 20s] thank you guys for sticking with us
+[105m 23s] i hope
+[105m 24s] it helped you
+[105m 26s] in some way and
+[105m 29s] maybe
+[105m 30s] we will see you again
+[105m 36s] have a nice evening day night morning
+[105m 38s] whatever time zone you are
+[105m 41s] yeah thank you so much for joining us
+[105m 43s] and thank you so much tom
+[105m 45s] for joining me
+[105m 47s] thank you for showing me
+[105m 50s] yeah thank you for showing me shopify
+[105m 53s] yeah
+[105m 55s] i know next time
+[105m 57s] if i recommend
+[105m 58s] someone doing his shop on shopify
+[106m 2s] i always know what i recommend
+[106m 6s] there's also an affiliate program and
+[106m 8s] you can earn money while recommending
+[106m 10s] shopify so
+[106m 12s] yeah
+[106m 14s] cool okay
+[106m 17s] see you then
+[106m 19s] bye

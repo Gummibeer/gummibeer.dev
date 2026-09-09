@@ -1,0 +1,1073 @@
+[14s] foreign
+[43s] you
+[1m 38s] uh
+[1m 59s] so hello all
+[2m 3s] uh i will
+[2m 7s] refactor one of the
+[2m 12s] cube jobs of the panda project
+[2m 16s] and yeah
+[2m 19s] that's about this one and depending on
+[2m 23s] repository size
+[2m 26s] this q job can take up to several
+[2m 29s] hours right now and
+[2m 33s] the main issues that
+[2m 37s] a push pack that
+[2m 41s] makes this job running so long is
+[2m 46s] this code block and in particular
+[2m 50s] this line here
+[2m 53s] so problem here is that github
+[2m 57s] only returns the first 500
+[3m 3s] first 500 contributors as a full user
+[3m 7s] object
+[3m 8s] and all remaining contributors are
+[3m 11s] returned
+[3m 15s] as anonymous users
+[3m 18s] i will check if i can find
+[3m 22s] an example
+[3m 31s] and this
+[3m 34s] anonymous user
+[3m 38s] has only
+[3m 48s] that's only the email address
+[3m 53s] and as every github user can have
+[4m] multiple email addresses
+[4m 12s] okay
+[4m 20s] uh i have to check it against every
+[4m 24s] email address of the users
+[4m 26s] sorry i'm
+[4m 29s] i'm searching for an example at point to
+[4m 32s] showcase
+[4m 33s] the github response okay here
+[4m 37s] and
+[4m 40s] so i have to match every of these email
+[4m 43s] addresses
+[4m 47s] yeah wait a moment
+[4m 53s] okay so here is the example of the live
+[4m 56s] repository and we are on page seven with
+[5m] every page hundred users so
+[5m 3s] here are the anonymous user entries
+[5m 8s] and yeah i can show these images as
+[5m 11s] the data is public anyway and
+[5m 15s] yeah i don't have the
+[5m 18s] user ids
+[5m 23s] so
+[5m 34s] okay um
+[5m 44s] so i have to check if this email address
+[5m 47s] for example belongs to
+[5m 49s] any of the users already in the
+[5m 52s] panda database and
+[5m 55s] i will also increase
+[5m 59s] the font size in php store
+[6m 7s] so
+[6m 11s] okay i hope this is
+[6m 15s] better now
+[6m 19s] and yeah this is exactly what this line
+[6m 22s] does
+[6m 26s] on the user model i have the emails as
+[6m 28s] an
+[6m 30s] overloaded attribute
+[6m 34s] so if there's a github access token on
+[6m 37s] the user
+[6m 40s] i
+[6m 44s] will cache the response of github for
+[6m 46s] one week
+[6m 48s] and yeah so this endpoint which returns
+[6m 51s] all email addresses for
+[6m 53s] the uh for the authorized user
+[6m 59s] so yeah after this i get an
+[7m 3s] array of of all emails belonging to this
+[7m 6s] user
+[7m 8s] and i can
+[7m 12s] use this in every function here but
+[7m 15s] because
+[7m 16s] we already have around 20 000 users
+[7m 19s] in the opener database
+[7m 22s] i have to fork over 20 000 users
+[7m 26s] per contributor in the response
+[7m 29s] so if i have a repository
+[7m 33s] and likes one
+[7m 41s] set i've mentioned in the in the tweet
+[7m 44s] with over i think they already have
+[7m 48s] around 25 000 contributors or 26 000
+[7m 51s] even
+[7m 53s] this gets to a very big
+[7m 56s] amount of of iterations and checking the
+[7m 59s] email addresses
+[8m 2s] and because all this happens synchronous
+[8m 4s] and
+[8m 5s] it's the same job
+[8m 8s] so this job takes so long and the idea
+[8m 12s] is to do only
+[8m 16s] this call here and this load repository
+[8m 19s] control destroy
+[8m 21s] and this patch another job
+[8m 24s] doing this logic here
+[8m 27s] uh into the same batch so i will use q
+[8m 31s] batches
+[8m 33s] but this job will be finished and
+[8m 38s] yeah whatever one minute five minutes
+[8m 41s] uh we will see and
+[8m 46s] i will dispatch for example in the named
+[8m 49s] repository 26 000
+[8m 52s] jobs to the queue and every of them
+[8m 56s] runs this logic
+[8m 59s] trying to find a user and
+[9m 8s] okay so this is just uh it's a problem
+[9m 11s] right now
+[9m 13s] and yeah i've
+[9m 16s] already done some migration for the
+[9m 19s] job batches table if you check out a
+[9m 23s] larger documentation this is
+[9m 28s] the first command you have to do here
+[9m 30s] php artisan queue pictures table
+[9m 34s] i have slightly uh adjusted it to my
+[9m 37s] needs
+[9m 38s] so the default one for example has only
+[9m 41s] string here
+[9m 41s] and it's a uuid so i can
+[9m 44s] also use the official uid
+[9m 48s] type here and all these integers are
+[9m 52s] also
+[9m 52s] unsigned which isn't by default i think
+[9m 57s] and yeah i've slightly changed the order
+[10m] here because
+[10m 1s] first things that happens is created
+[10m 4s] and
+[10m 8s] normally every of these will finish and
+[10m 10s] only cancel this
+[10m 12s] is the exceptions so it's fine to have
+[10m 14s] this as a as the last column
+[10m 19s] and yeah drop it if it exists i
+[10m 22s] also use this void return type hint here
+[10m 25s] and migrations because they don't return
+[10m 27s] anything
+[10m 28s] and for the callback i always add this
+[10m 30s] static
+[10m 32s] because they don't use any of
+[10m 35s] this methods or functionality
+[10m 47s] johnny had a question you iterate
+[10m 50s] through
+[10m 50s] every single email why not chunk um i'm
+[11m] not
+[11m] really iterating through every single
+[11m 2s] email so
+[11m 6s] i always get some chunked
+[11m 9s] because the response returns uh
+[11m 13s] yeah per page which is 100 by default
+[11m 16s] so github returns
+[11m 21s] 100 user entries and i will check
+[11m 25s] every of these 100 entries
+[11m 28s] if there is a user in my database i can
+[11m 30s] assign to it
+[11m 33s] and every of the entries has an email
+[11m 36s] address
+[11m 37s] and here i walk over
+[11m 41s] all users i can i have created some here
+[11m 44s] so they are part of the job memory
+[11m 48s] and try to find the first one
+[11m 56s] also not sure if it's really
+[11m 59s] the right way to have the emails for
+[12m 1s] example in
+[12m 3s] as an overloaded attribute so
+[12m 8s] if i would put some as a json column for
+[12m 10s] example in the database
+[12m 12s] and i'm using postgres i could
+[12m 16s] very likely speed it up by using
+[12m 19s] database
+[12m 21s] queries so this could also be
+[12m 24s] a new optimization
+[12m 28s] but even with authors
+[12m 32s] there's still an enormous
+[12m 35s] block so even if every single iteration
+[12m 39s] here
+[12m 39s] only takes name it
+[12m 42s] uh so half a second for example
+[12m 46s] uh we have 26 000
+[12m 50s] entries by half a second so
+[12m 53s] we have uh
+[12m 58s] we have 30 000 seconds 13 sorry
+[13m 3s] and this is 216
+[13m 7s] minutes and this is still
+[13m 11s] nearly four hours so a bit more than
+[13m 14s] three and a half which is
+[13m 18s] still too much for a single job and
+[13m 22s] yeah i think batches are exactly
+[13m 26s] for cases like this so
+[13m 30s] i will rework this one now
+[13m 36s] okay so i have this migration here
+[13m 39s] so i can
+[13m 43s] migrate database now
+[13m 46s] don't worry this one is another
+[13m 48s] migration i have created
+[13m 51s] not related to the patches and
+[13m 57s] here we have the the job
+[14m 1s] so this one is batchable now
+[14m 6s] and
+[14m 15s] what i want to do is
+[14m 20s] something like response each
+[14m 30s] so i get an array for every of 6
+[14m 35s] and i don't know
+[14m 39s] possibly return a boolean here
+[14m 42s] and do
+[14m 47s] this patch i think it's it's that yeah
+[14m 53s] that does add return anything okay it
+[14m 56s] returns so
+[14m 58s] so yeah
+[15m 2s] it returns a
+[15m 8s] it's a job
+[15m 15s] oh yeah
+[15m 20s] okay so it returns a patch
+[15m 25s] so we can have
+[15m 28s] white here
+[15m 38s] and
+[15m 43s] now we need a new job
+[15m 55s] and not impossible contributors so
+[16m 7s] let's go this way for the moment we can
+[16m 9s] rename it later
+[16m 11s] and
+[16m 18s] i've created this uh
+[16m 22s] guitar-based job here
+[16m 29s] so
+[16m 33s] i can save some stuff here and
+[16m 46s] yeah we get the repository we want to
+[16m 48s] add the contributor to
+[16m 50s] and
+[16m 57s] don't know let's reduce it to five
+[16m 59s] minutes for the moment
+[17m 2s] and i get also an
+[17m 7s] array of the contributor data
+[17m 12s] so this one and
+[17m 24s] next thing we are doing is
+[17m 31s] not this one
+[17m 36s] so
+[17m 43s] there's contributor data here
+[17m 47s] and
+[17m 52s] we'll try to find a user
+[18m 17s] so i will first try it with a cursor so
+[18m 21s] that i'm not loading all
+[18m 24s] users into memory but only one
+[18m 29s] per what could we
+[18m 33s] say as a new one i think
+[18m 36s] it's a lazy one
+[18m 40s] and this could be a bit faster
+[18m 43s] for the moment
+[18m 47s] as it doesn't do a query to the database
+[18m 51s] for every single user
+[18m 52s] so instead of 26 000 credits to the
+[18m 56s] database for example we have
+[18m 57s] 1 000 uh uh 260 queries with 1000
+[19m 2s] results each
+[19m 3s] so i think this could be this will be
+[19m 6s] faster
+[19m 8s] and
+[19m 12s] yeah so now we have the user here
+[19m 15s] and
+[19m 23s] and so good without detaching
+[19m 26s] i'm not sure okay i i have to
+[19m 31s] to then to use an array
+[19m 40s] and
+[19m 44s] let's fix code style
+[19m 48s] to get rid of all c's beautiful yellow
+[19m 51s] lines
+[19m 54s] okay
+[19m 59s] so now i haven't really changed
+[20m 3s] anything here
+[20m 8s] oh yeah okay so
+[20m 14s] oh no i have to
+[20m 19s] if we use a
+[20m 32s] i don't like the empty methods this much
+[20m 34s] but for
+[20m 35s] this case it's perfect as it covers an
+[20m 38s] undefined and
+[20m 40s] another value
+[20m 44s] so exactly what we have here and
+[20m 49s] yeah so
+[20m 52s] it hasn't changed much for the moment
+[20m 54s] except of
+[20m 56s] moving this whole
+[21m] block to a new class
+[21m 4s] so in total
+[21m 7s] this one we need
+[21m 11s] six hours because i have 10 workers on
+[21m 14s] the product observer so
+[21m 18s] if you dispatch 26 000 jobs it will
+[21m 22s] it will theoretically go 10 times faster
+[21m 27s] in reality i think
+[21m 31s] three times or something like this
+[21m 32s] because we have for example hit
+[21m 35s] the database all the time and
+[21m 38s] get also users
+[21m 43s] but still faster and yeah
+[21m 48s] now we can dispatch the
+[21m 54s] repository contributor job with
+[21m 58s] [Music]
+[22m 2s] says repository and contributor
+[22m 15s] not too high
+[22m 23s] oh okay so i have to
+[22m 30s] to edit as an array even if it's only
+[22m 33s] one here so
+[22m 40s] could it be faster if i am doing
+[22m 42s] [Music]
+[22m 43s] or possibly easier to read
+[22m 46s] if i'm doing
+[22m 50s] a map here
+[22m 55s] map and say add
+[23m] positive contributor and
+[23m 8s] returns this one
+[23m 14s] and put it here
+[23m 18s] so at least we've saved two code lines
+[23m 22s] and now these two lines are
+[23m 27s] back in
+[23m 30s] but i think that this is still a
+[23m 33s] bit better
+[23m 37s] oh yeah because that's a large font size
+[23m 41s] i think
+[23m 42s] this line is longer so this is still
+[23m 44s] fine
+[23m 48s] okay so
+[23m 59s] we can reduce the timeout and
+[24m 4s] also don't have to back off
+[24m 7s] one hour by default so
+[24m 10s] the github job has a backup strategy
+[24m 13s] here
+[24m 15s] first time it has to back off one minute
+[24m 18s] 15 minutes
+[24m 19s] 13 minutes and everything
+[24m 23s] beyond it will take off one hour
+[24m 33s] okay so
+[24m 39s] you always have this
+[24m 46s] this block here so
+[24m 51s] this one is also patchable and
+[24m 57s] i think i want to upload it to the
+[24m 59s] github job
+[25m 2s] so i don't have to copy it
+[25m 5s] to every single job and
+[25m 26s] so
+[25m 37s] okay so first check if the batch is
+[25m 40s] cancelled and
+[25m 44s] now after this ziploc check
+[25m 51s] so i don't have to use a batch of which
+[25m 53s] right here because it's in the base job
+[26m 5s] okay so
+[26m 14s] so service running
+[26m 22s] and
+[26m 28s] i can go to the to the back office
+[26m 48s] check horizon and
+[27m 4s] let's check out which repository it was
+[27m 7s] that
+[27m 10s] here we have it
+[27m 18s] so
+[27m 20s] i will add some repository to my local
+[27m 23s] and
+[27m 25s] environment now
+[27m 33s] okay
+[28m] um
+[28m 2s] i would at least take your references so
+[28m 7s] um
+[28m 9s] [Music]
+[28m 11s] models
+[28m 15s] repository from name
+[28m 26s] and that's it or should be
+[28m 32s] okay so there are a lot of
+[28m 36s] other jobs but
+[29m 19s] oh okay wait um
+[29m 26s] you don't have any batch i think because
+[29m 32s] this job wasn't dispatched as a
+[29m 36s] badge that was only dispatched
+[29m 41s] and
+[29m 49s] i would have to dispatch it as
+[29m 53s] or into a batch
+[29m 56s] so
+[30m] where is it is that
+[30m 4s] it's observer
+[30m 8s] yeah yeah
+[30m 13s] okay so
+[30m 22s] let's suppose we said
+[30m 28s] we are using new now
+[30m 37s] and
+[30m 44s] for the moment we will only dispatch it
+[30m 51s] okay
+[30m 57s] and because we already had
+[31m 1s] finger open here
+[31m 30s] oh
+[31m 44s] okay so
+[31m 52s] seems like my adjustment here wasn't
+[31m 56s] right and we have to use
+[32m] that time so
+[32m 6s] by default this was a integer or big
+[32m 10s] integer
+[32m 12s] but
+[32m 15s] if possible i don't want to use a
+[32m 19s] simple integer
+[32m 40s] okay so
+[32m 49s] seems like there was a real reason
+[32m 55s] um
+[32m 58s] traducer
+[33m 8s] so only this
+[33m 11s] user id here and
+[33m 19s] this is unsigned and i want to
+[33m 25s] if it's just water
+[33m 28s] that's this one wasn't json so
+[33m 50s] so
+[34m 5s] okay has catched it
+[34m 9s] not important
+[34m 21s] it's
+[34m 21s] [Music]
+[34m 25s] a benefit of local environment
+[34m 41s] okay and
+[34m 48s] here's a patch
+[34m 52s] okay yeah it is
+[35m] so
+[35m 9s] [Music]
+[35m 14s] um
+[35m 17s] it's an easy way we can
+[35m 23s] clean up the redis key here
+[35m 56s] hey
+[36m] okay so so batches and database
+[36m 6s] we will see
+[36m 11s] if there was anything required in in the
+[36m 14s] radius to run this patch
+[36m 53s] so it has one total it has one pending
+[37m 4s] but it doesn't test me anything
+[37m 8s] if it's running or
+[37m 13s] what happened and i believe it's
+[37m 17s] it's not running because we have
+[37m 20s] well i have flushed the whole
+[37m 24s] radius
+[37m 29s] so
+[37m 33s] now i've also
+[37m 38s] flushed the database so
+[37m 41s] [Music]
+[37m 47s] okay now perhaps this one here
+[38m 5s] and can only made
+[38m 10s] if anything happens
+[38m 30s] um
+[38m 44s] so
+[38m 49s] oh okay so
+[38m 58s] suspect
+[39m 3s] it wasn't dispatched to the right queue
+[39m 9s] so
+[39m 12s] it will never run
+[39m 26s] so
+[39m 33s] seems like i have to
+[39m 37s] to define the queue also where i
+[39m 40s] dispatch the badge
+[39m 42s] and not only for every job so
+[39m 47s] next try
+[39m 53s] we have a new dispatch job
+[39m 57s] and batches we now have two
+[40m 1s] so this is the right one
+[40m 11s] but oh okay
+[40m 27s] why is this job on
+[40m 30s] it it says q github
+[40m 36s] but here it says q default
+[40m 48s] and if i go to here this is a github job
+[40m 53s] so here is defined
+[41m 14s] nothing in here
+[41m 23s] no name
+[41m 32s] oh
+[41m 46s] sure
+[41m 48s] if i dispatch from okay and
+[41m 51s] here you've seen uh it has to
+[41m 55s] test started loading positive
+[41m 57s] contributors
+[41m 59s] now it has a mass
+[42m 3s] of these at repository contributor and
+[42m 8s] batches okay here we already have
+[42m 13s] 2 900
+[42m 31s] so yeah you see it it dispatches
+[42m 35s] the jobs way faster than it is able to
+[42m 39s] to finish them
+[42m 44s] which is fine because
+[42m 47s] [Music]
+[42m 49s] we want well i wanted to speed this job
+[42m 52s] up so
+[42m 53s] set it finished within minutes seconds
+[42m 58s] um i don't care
+[43m 3s] it's just much about
+[43m 4s] [Music]
+[43m 8s] this specific time here but
+[43m 27s] but every single job should finish
+[43m 31s] or should take hours at least so
+[43m 37s] in total i think i would have to wait
+[43m 39s] hours
+[43m 40s] or still have to wait hours
+[43m 54s] this also uh it's way easier to
+[43m 57s] debug and
+[44m 1s] yeah so in case for example
+[44m 4s] if i would have a bug or
+[44m 8s] why ever an exception in in this code
+[44m 11s] block here
+[44m 12s] so for example uh grammar here which
+[44m 15s] takes radius and
+[44m 18s] database and if the key isn't existing
+[44m 20s] in regis it will do an
+[44m 22s] api call so if anything goes wrong in
+[44m 25s] this line
+[44m 27s] it will only fail
+[44m 31s] this specific contributor and will also
+[44m 35s] retry
+[44m 36s] only this specific contributor
+[44m 41s] but all other contributors and
+[44m 45s] loading the contributor data from the
+[44m 49s] repository will just work fine
+[44m 52s] and i don't have to retry and run again
+[44m 57s] the whole process of 26000 contributors
+[45m 2s] but only specific ones it has failed for
+[45m 5s] example
+[45m 16s] so
+[45m 30s] okay
+[45m 36s] so here we see
+[45m 40s] every single contributor takes
+[45m 44s] we have between 10 and 20 seconds
+[45m 50s] which is still a lot of time
+[46m 10s] i try to find the
+[46m 16s] slow job so
+[46m 21s] let's stop horizon for the moment
+[46m 26s] okay so
+[46m 30s] here we have some
+[46m 34s] finish in less than a second
+[46m 43s] and you've seen here 10 seconds 20
+[46m 47s] seconds and so on
+[46m 48s] so i think if i go to
+[46m 51s] batches yeah
+[46m 56s] so we have finished 700 drops
+[47m] and this means that the first 500
+[47m 3s] full user entries
+[47m 9s] have been processed and now we have to
+[47m 11s] process all
+[47m 12s] cs anonymous users
+[47m 24s] and yeah processing the anonymous users
+[47m 28s] is
+[47m 28s] way slower so
+[47m 32s] if this one succeeds so if the
+[47m 34s] contributor is already
+[47m 37s] and next with this primary email address
+[47m 40s] or
+[47m 40s] at least the one that is used for the
+[47m 42s] commit everything is fine
+[47m 44s] or if he uses this uh github no reply
+[47m 48s] email address
+[47m 50s] so if you go to user says uh this one
+[47m 53s] here
+[47m 54s] ide plus your nickname at users no reply
+[47m 57s] github.com
+[47m 59s] and everyone can use this email address
+[48m 3s] and if you follow
+[48m 5s] if the contributor has used it for the
+[48m 7s] commit
+[48m 14s] you can see here sure
+[48m 18s] i check the email but i also have some
+[48m 21s] more complex logic to split out the id
+[48m 25s] and nickname and try to find
+[48m 29s] the user by id and nickname so
+[48m 34s] if this works or cisco works
+[48m 38s] but if the user has used uh an email
+[48m 41s] address like this for this commit
+[48m 43s] this is just fine and runs pretty fast
+[48m 46s] but if we have to run into this one
+[48m 53s] i'll comment it out and
+[48m 57s] run it again
+[49m 5s] and now we see here
+[49m 8s] all in in like no time
+[49m 14s] so
+[49m 19s] like said before this is definitely the
+[49m 22s] slowest part of the whole application
+[49m 25s] and
+[49m 29s] yeah i think we can
+[49m 32s] speed it up by moving the emails
+[49m 35s] into the user tab so
+[49m 43s] let's make a new migration
+[49m 47s] add emails to
+[49m 51s] users table
+[50m 2s] you can see i have the migration stop
+[50m 6s] customized so this void and static and
+[50m 8s] so on is
+[50m 9s] always here and
+[50m 24s] i have also a static table method on my
+[50m 27s] models
+[50m 37s] which isn't before because i think that
+[50m 40s] the table name will
+[50m 41s] change ever but
+[50m 47s] i i think that i might create
+[50m 50s] the model and not the table so
+[50m 54s] um i think it models in primary way
+[50m 58s] not on tables so the table is only
+[51m 1s] the same that is required by eloquent to
+[51m 5s] to persist the data but
+[51m 8s] what i am thinking or what i am doing as
+[51m 10s] a developer is i want to add this
+[51m 12s] attribute to the user model so
+[51m 17s] we have a new json and i think we should
+[51m 20s] do with jsonp
+[51m 21s] here
+[51m 28s] which has some indexing stuff on uh
+[51m 32s] and it and also a bit faster
+[51m 37s] for operations like uh
+[51m 40s] database site and area and so on
+[51m 43s] and
+[51m 47s] drop column emails
+[52m 2s] okay
+[52m 4s] and
+[52m 11s] now i only have one problem set
+[52m 17s] i have to
+[52m 20s] press it
+[52m 25s] so it's logic to somewhere
+[52m 29s] that runs in a in a given interval
+[52m 33s] and fills the emails
+[52m 38s] column with this one
+[52m 42s] so
+[52m 45s] i think the first we can do this
+[52m 54s] go to the migration and say
+[52m 59s] use our transfer
+[53m 3s] each
+[53m 9s] bit more so i could go for some regular
+[53m 12s] function
+[53m 26s] and we don't return anything
+[53m 31s] or we could do an every because we do an
+[53m 35s] update
+[53m 36s] so i have a boolean i can return
+[53m 41s] and
+[53m 44s] this is user side username
+[54m 2s] oh no these aren't so real official
+[54m 5s] format
+[54m 6s] and i already covered these special
+[54m 9s] cases
+[54m 10s] and in the query scope so
+[54m 13s] okay and user
+[54m 22s] emails
+[54m 33s] and yeah
+[54m 36s] for sure
+[54m 42s] i have to
+[54m 47s] make this a memory property now
+[54m 50s] not a read-only one and
+[55m 10s] i think that we can
+[55m 18s] can put this in
+[55m 23s] subject user date details
+[55m 26s] job so
+[55m 48s] if this user
+[55m 57s] everywhere here and
+[56m 5s] it's right okay so if the user doesn't
+[56m 9s] have some github access token we can
+[56m 10s] stop here
+[56m 11s] and don't have to do anything so
+[56m 20s] don't care about this one
+[56m 23s] you also don't have to
+[56m 30s] i also don't have to migrate
+[56m 33s] no
+[56m 38s] it's totally fine if there's an
+[56m 41s] empty error here as
+[56m 45s] i have this by email scope which i'm
+[56m 48s] using
+[56m 49s] this already covers these two cases
+[56m 54s] okay so
+[57m 5s] hmm that's since user
+[57m 12s] get some
+[57m 20s] yeah let's do the unix still for just
+[57m 23s] just in case github has whatever
+[57m 27s] i don't know and
+[57m 44s] so we have the emails
+[57m 48s] and we can use
+[57m 54s] this one here
+[57m 57s] emails
+[58m 2s] so that's easy and
+[58m 6s] it's a single one so
+[58m 9s] you can do it in one line and
+[58m 14s] this means that you can delete this
+[58m 17s] whole method
+[58m 18s] and so only thing we have to do is
+[58m 22s] yeah emails
+[58m 27s] there's an array
+[58m 31s] okay so
+[58m 42s] we can migrate everything fine
+[58m 46s] but checks the users table there
+[59m 2s] okay
+[59m 7s] and images
+[59m 11s] okay so
+[59m 23s] let's dispatch
+[59m 30s] lawn chop sorry
+[59m 56s] so user is
+[60m] use uh we have user from name
+[60m 5s] no so
+[60m 9s] real name
+[60m 26s] okay
+[60m 30s] models
+[60m 33s] okay so we have the right one
+[60m 40s] and
+[60m 45s] we don't have casual
+[60m 48s] attributes anymore
+[60m 54s] um okay
+[60m 58s] and let's add
+[61m 2s] jobs update
+[61m 5s] user details
+[61m 13s] this patch let's
+[61m 16s] use it
+[61m 35s] what's this one and also clear lots of
+[61m 39s] patches
+[61m 43s] and
+[61m 48s] let's pitch this one again so
+[61m 57s] notice on horizon
+[62m 30s] what takes so long
+[62m 35s] because it really takes so long because
+[62m 37s] it has to do
+[62m 39s] two api calls
+[62m 51s] it could be that my internet is slow
+[62m 53s] because of the stream and
+[62m 56s] this means that the api calls are
+[63m 1s] are a bit slower than normally
+[63m 5s] okay
+[63m 9s] try it again it's not a good sign
+[63m 32s] let's stop it and
+[63m 54s] all right i think i have to do indeed
+[64m 10s] so
+[64m 14s] let's start it again and
+[64m 19s] hopefully this time it
+[64m 24s] works
+[64m 27s] or at least dumps sir
+[64m 33s] let's see my address
+[64m 42s] okay timeouts after five minutes so
+[64m 50s] oh because of the back off i think we
+[64m 52s] would have to wait too long
+[64m 54s] so flush it again
+[64m 59s] reduce this one
+[65m 3s] dispatch it to the clear
+[65m 7s] checks of painting jobs
+[65m 34s] i don't know what i will dispatch it
+[65m 36s] sync so
+[65m 41s] this patch
+[65m 44s] now okay
+[65m 47s] what was it
+[65m 51s] dispatch will
+[65m 57s] sing okay justin
+[66m 2s] good
+[66m 11s] okay so we have the problem
+[66m 23s] this is
+[66m 27s] it's not now
+[66m 31s] and that's cancelled
+[66m 34s] let's return this null
+[66m 38s] and otherwise we will go on
+[66m 41s] okay so
+[66m 46s] here we have also email addresses and
+[66m 50s] can go back
+[66m 57s] dispatch it
+[67m 1s] checks the database
+[67m 5s] okay we have also carries
+[67m 8s] also emails and say array so
+[67m 11s] this works and
+[67m 17s] i wanted to be part of the by email
+[67m 20s] scope
+[67m 20s] yeah because if i want to get in
+[67m 23s] user buy an email address i don't care
+[67m 26s] if it's part of the email column
+[67m 28s] or i already have this uh
+[67m 31s] special logic here to also grab my id
+[67m 34s] and name
+[67m 35s] if if i can extract it so
+[67m 39s] we can also add
+[67m 42s] secretary to check if it's
+[67m 46s] in
+[67m 53s] okay so right now
+[67m 59s] where in
+[68m 3s] emails
+[68m 8s] anyway
+[68m 11s] and
+[68m 14s] i only have to get
+[68m 21s] let's take this one
+[68m 24s] okay so
+[68m 32s] if i do this and say
+[68m 37s] app models
+[68m 40s] user by email
+[68m 45s] says one first
+[68m 55s] oh okay yeah right so
+[68m 58s] we're in is the exact opposite of what i
+[69m 1s] want
+[69m 2s] so where in checks that the column
+[69m 5s] emails would be part of the area i pass
+[69m 7s] in
+[69m 8s] but i want to check that the string i
+[69m 11s] pass in as
+[69m 12s] part of the array is columns
+[69m 18s] so
+[69m 20s] another prosperous where
+[69m 24s] string and json be
+[69m 32s] very
+[69m 43s] oh it's just lost so
+[69m 48s] i think that it was this operator
+[69m 54s] let's see
+[70m 6s] okay
+[70m 10s] that's not cool
+[70m 42s] if anyone has an idea
+[70m 46s] just say so i'm only searching
+[70m 53s] some stick overflow
+[71m 8s] so someone said that
+[71m 23s] so sweet
+[71m 32s] so this could work
+[71m 42s] oh man
+[71m 52s] okay
+[72m 2s] or possibly
+[72m 5s] that way
+[72m 30s] this
+[72m 35s] um let's press
+[72m 39s] escape
+[72m 42s] that sign
+[72m 46s] that's true
+[72m 59s] wasn't there and would be too easy
+[73m 58s] so
+[74m 12s] yeah why
+[74m 18s] i am not trying
+[74m 24s] this one
+[74m 40s] so
+[74m 54s] let's say is this any
+[75m] so
+[75m 5s] where
+[75m 8s] how does it work
+[75m 12s] email
+[75m 22s] with single quotes around it
+[75m 26s] it's in any emails
+[75m 47s] and
+[75m 51s] all right foreign
+[76m 2s] wrong object type
+[76m 32s] so
+[76m 46s] and
+[76m 55s] try catch
+[77m] don't care about it and db
+[77m 4s] get very long
+[77m 17s] okay that's frustrating
+[77m 27s] users where
+[77m 42s] any
+[78m 10s] so
+[78m 24s] so
+[78m 45s] okay another try
+[78m 49s] so that's the left json value contains
+[78m 53s] and
+[78m 57s] okay so
+[79m 1s] emails json b
+[79m 14s] emails
+[79m 20s] email
+[79m 30s] chasing feet
+[79m 39s] at least no exception okay
+[79m 48s] but
+[80m 15s] we have also sys operator
+[80m 31s] how to assess
+[80m 50s] [Applause]
+[80m 54s] is it releases hard to check if a string
+[80m 57s] exists and then an entry
+[81m 13s] our query string
+[81m 16s] and json color
+[81m 54s] uh
+[82m 36s] okay
+[82m 45s] let's start from scratch from users
+[82m 52s] where
+[82m 58s] he restricted
+[83m 2s] here is
+[83m 32s] okay
+[83m 50s] okay so this string reacts and
+[83m 56s] let's just curve
+[84m 2s] this one also works
+[84m 10s] but i assumed it oh
+[84m 16s] also works okay so
+[84m 21s] yes that's where
+[84m 28s] emails
+[84m 42s] stress
+[84m 44s] and try it now once again
+[85m] oh i have an idea and
+[85m 19s] seems my my idea was wrong i never
+[85m 24s] carry luck
+[85m 27s] and tv
+[85m 39s] what's wrong it's this way
+[85m 43s] select from users where emails
+[85m 52s] okay
+[86m 15s] it wasn't just the exact same query
+[86m 20s] i have here select all
+[86m 23s] from users where emails
+[86m 29s] oh okay
+[86m 34s] so
+[86m 43s] i think this is the right one now
+[87m 3s] now we also have to
+[87m 6s] let these quotes back
+[87m 18s] okay and
+[87m 22s] yeah use it array
+[87m 31s] okay but i still will leave
+[87m 35s] if i do this
+[87m 46s] exactly so
+[87m 51s] that's because we have what we're here
+[87m 53s] uh rare here
+[87m 56s] and yeah so it's already an aura
+[88m 12s] so
+[88m 19s] there's this railroad
+[88m 23s] oh rare
+[88m 27s] let's make it like like all other
+[88m 30s] um email
+[88m 36s] and now we have an already downside so
+[88m 44s] okay
+[88m 48s] and
+[88m 54s] if my name is crowelock and
+[89m 8s] get it back and i have no idea what
+[89m 11s] happened
+[89m 11s] here
+[89m 22s] so
+[89m 29s] select everything from users where
+[89m 37s] emails contains this one or
+[89m 40s] email requests this one
+[89m 43s] and okay
+[89m 52s] one thing i can do is
+[89m 55s] i can just try to do
+[89m 58s] is add this one
+[90m 46s] uh
+[90m 58s] seems like this doesn't work but i don't
+[91m 1s] care right now
+[91m 25s] this should be optimized enough so
+[91m 31s] if anyone wants to contribute uh entire
+[91m 36s] hours of his lifetime to do work answers
+[91m 41s] do it
+[91m 47s] okay so we can
+[91m 51s] put away all of this here
+[92m 10s] and
+[92m 13s] you can try
+[92m 17s] right now so flash all again
+[92m 21s] there's not a single patch and
+[92m 38s] so
+[92m 43s] okay so
+[92m 46s] just patch the patch
+[92m 49s] it's here panning drop also
+[92m 54s] so if we let horizon work
+[93m 6s] a lot of these entries and
+[93m 11s] can watch the patch grow
+[93m 25s] okay like you can see we have already
+[93m 27s] processed
+[93m 30s] around about a thousand jobs
+[93m 34s] now one and a half so
+[93m 38s] a lot faster
+[93m 42s] if i go here none of these jobs takes
+[93m 46s] longer
+[93m 47s] not even a second so
+[94m 1s] siri now
+[94m 4s] splitting it into a batch
+[94m 8s] would also be kind of useless
+[94m 11s] or at least not a performance impact but
+[94m 16s] i think that it has a a debugging
+[94m 19s] impact and like i said if if a single
+[94m 23s] contributor
+[94m 24s] fails because of whatever uh we all know
+[94m 28s] curl isn't just reliable and so on it
+[94m 31s] doesn't fails the whole
+[94m 33s] repository contribution indexing but
+[94m 36s] only this single
+[94m 37s] contributor has to be retried and
+[94m 41s] yeah here we have already
+[94m 46s] four thousand
+[94m 57s] i don't know why it stop right stops at
+[95m] 9930
+[95m 3s] because
+[95m 9s] so repository indexing here
+[95m 14s] yes
+[95m 19s] at least so far i know
+[95m 23s] it's more than 20 000 yeah
+[95m 27s] 25 700.
+[95m 40s] so
+[95m 46s] country view
+[95m 54s] okay possibly not the right one and
+[95m 57s] okay contribute to us sorry
+[96m 6s] here we have and
+[96m 10s] security arcs are per page v100
+[96m 16s] let's jump straight to page
+[96m 22s] uh let's go 99 first
+[96m 26s] and we want on on true
+[96m 37s] okay so we have 99 page 100
+[96m 46s] so seesaw is the first 10 000.
+[96m 52s] and page 200 okay
+[96m 55s] so seems like github has
+[97m 2s] a limitation here that we can't request
+[97m 6s] more than the first hundred pages
+[97m 14s] github api reappears contributors
+[97m 32s] so
+[97m 39s] we'll see contributors here and
+[97m 44s] yeah it says that we can't request more
+[97m 46s] results than 100 per page
+[97m 50s] but that's also what we have defined
+[98m 15s] pagination limit
+[98m 35s] yeah let's check if there's any any
+[98m 38s] response headers
+[98m 51s] okay so we have 28 records here
+[98m 54s] so this seems to match these 9930
+[99m 10s] records
+[99m 20s] request id type options
+[99m 25s] we shall probably see link
+[99m 32s] okay so
+[99m 39s] it doesn't has a an extra a next link
+[99m 42s] here
+[99m 43s] it's a link if we go to page 99
+[99m 53s] okay on page 99 we have next link
+[99m 58s] yeah so
+[100m 2s] it seems like and it's even here just
+[100m 5s] last
+[100m 7s] so seems like github
+[100m 13s] limits the package into the first half
+[100m 20s] pages
+[100m 26s] but such something
+[100m 32s] i have to rule or whatever
+[100m 35s] just one penny job
+[101m 4s] possibly because of the rate limits are
+[101m 10s] do we do any
+[101m 20s] okay
+[101m 29s] but sure this is
+[101m 32s] all i wanted to do
+[101m 37s] so just did this job
+[101m 40s] into two jobs
+[101m 44s] we use the batch now to keep track of
+[101m 48s] the jobs and
+[101m 51s] have some all in one view here on
+[101m 55s] horizon
+[101m 58s] i don't know why this job is stuck right
+[102m] now
+[102m 2s] uh we'll see you later
+[102m 6s] i've optimized this
+[102m 10s] emails attribute which was live
+[102m 17s] request to the database or a cached
+[102m 20s] api call all the time and also required
+[102m 24s] all users
+[102m 25s] and php so pgp collection filtering
+[102m 32s] which is always bad only always
+[102m 35s] popular has some nice videos
+[102m 38s] on systemic and
+[102m 43s] now all of these jobs
+[102m 48s] are undefeated i finished about 10
+[102m 51s] seconds 10 to 15.
+[102m 56s] definitely an acceptable acceptable
+[102m 59s] number
+[103m 1s] so we have the patch link
+[103m 6s] all fine here
+[103m 13s] the only thing we should have to check
+[103m 16s] is repository
+[103m 22s] and
+[103m 30s] and go to repository user
+[103m 35s] repository id
+[103m 40s] 149 records
+[103m 48s] yeah so it has created
+[103m 54s] users for the first 500 records but
+[103m 57s] because there isn't
+[104m] much not any
+[104m 4s] user in in the database
+[104m 8s] uh instant anonymous so
+[104m 15s] um a bit more
+[104m 18s] and possibly polish also checks why
+[104m 22s] where's this job yes depending
+[104m 26s] so i have no idea
+[104m 36s] we could go ahead and
+[104m 39s] start it again possibly this helps uh
+[104m 45s] yeah but that's all i wanted to do
+[104m 48s] and we are already on nearly two hours
+[104m 52s] on record
+[104m 55s] upset it helped you to
+[104m 59s] you have to understand a bit of the
+[105m 2s] also panda source code and
+[105m 6s] also one way you can
+[105m 9s] optimize your queue to
+[105m 13s] to reduce so require time for a single
+[105m 17s] joint
+[105m 18s] utilize all workers of you so
+[105m 22s] 10 records in parallel are there
+[105m 26s] one worker block several hours
+[105m 30s] and yeah that's it i wish you all
+[105m 33s] a nice evening and remaining weekend
+[105m 37s] and have a nice next next week yeah
+[105m 42s] see you

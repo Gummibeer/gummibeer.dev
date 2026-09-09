@@ -69,7 +69,7 @@ final class SyncStream extends Command
                 ->slug($video->id);
 
             $entry
-                ->date($video->publishedAt)
+                ->date($video->publishedAt->toDateString())
                 ->data($data)
                 ->save();
 
