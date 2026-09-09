@@ -3,7 +3,7 @@
 @if ($post->images->isNotEmpty())
     <div
         class="mb-8 aspect-video overflow-hidden"
-        x-data="slider(3)"
+        x-data="slider"
         x-cloak
     >
         @foreach ($post->images as $image)
