@@ -8,10 +8,7 @@
 
         <p>The URL you've opened is:</p>
 
-        <pre
-            x-data
-            x-cloak
-        ><code x-text="window.location"></code></pre>
+        <pre><code>{{ request()->fullUrl() }}</code></pre>
 
         <p>If you think that the page should exist don't hesitate to contact me.</p>
 
