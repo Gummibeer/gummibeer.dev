@@ -149,15 +149,12 @@ final class YouTubeTranscript implements StreamTranscriptProvider
 
     private function offset(float $seconds): string
     {
-        $seconds = max(0, (int) floor($seconds));
-        $minutes = intdiv($seconds, 60);
-        $seconds %= 60;
-
-        return CarbonInterval::minutes($minutes)
-            ->addSeconds($seconds)
+        return CarbonInterval::seconds(max(0, (int) floor($seconds)))
+            ->cascade()
             ->forHumans([
                 'short' => true,
                 'minimumUnit' => 'second',
+                'parts' => 2,
             ]);
     }
 }
