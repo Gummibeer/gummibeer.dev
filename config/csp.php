@@ -13,7 +13,7 @@ return [
 
     'directives' => [
         [Directive::DEFAULT, Keyword::NONE],
-        [Directive::SCRIPT, [Keyword::SELF, Keyword::UNSAFE_EVAL, 'https://u.gummibeer.dev']],
+        [Directive::SCRIPT, [Keyword::SELF, 'https://u.gummibeer.dev']],
         [Directive::SCRIPT_ATTR, Keyword::NONE],
         [Directive::STYLE, Keyword::SELF],
         [Directive::STYLE_ATTR, Keyword::NONE],
