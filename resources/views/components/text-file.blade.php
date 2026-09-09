@@ -1,4 +1,4 @@
-@props([
+@props ([
     'id',
     'title',
     'content',
