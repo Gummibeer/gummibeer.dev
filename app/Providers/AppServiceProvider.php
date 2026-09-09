@@ -5,8 +5,8 @@ namespace App\Providers;
 use App\Contracts\StreamTranscriptProvider;
 use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use App\Markdown\MarkdownExtension;
-use App\Services\NullStreamTranscriptProvider;
 use App\Services\ReadingTime;
+use App\Services\YouTubeTranscript;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
 use Carbon\CarbonImmutable;
 use Carbon\CarbonInterval;
@@ -30,7 +30,7 @@ class AppServiceProvider extends ServiceProvider
     public function register(): void
     {
         $this->app->singleton(ReadingTime::class);
-        $this->app->bind(StreamTranscriptProvider::class, NullStreamTranscriptProvider::class);
+        $this->app->bind(StreamTranscriptProvider::class, YouTubeTranscript::class);
         $this->registerPixpipeGlide();
     }
 
