@@ -2,6 +2,7 @@
 
 use App\Http\Middleware\AddContentSecurityPolicyHeaders;
 use App\Http\Middleware\AddLinkHeaders;
+use App\Http\Middleware\AddSecurityHeaders;
 use App\Http\Middleware\NegotiateMarkdown;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
@@ -29,6 +30,7 @@ return Application::configure(basePath: dirname(__DIR__))
         ]);
         $middleware->prependToGroup('web', AddLinkHeaders::class);
         $middleware->appendToGroup('web', AddContentSecurityPolicyHeaders::class);
+        $middleware->appendToGroup('web', AddSecurityHeaders::class);
         $middleware->appendToGroup('web', NegotiateMarkdown::class);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
