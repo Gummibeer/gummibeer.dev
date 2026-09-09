@@ -77,39 +77,39 @@ final class YouTubeTranscript implements StreamTranscriptProvider
      */
     private function text(array $video): ?string
     {
-        $text = $video['text'] ?? $video['transcript'] ?? null;
-
-        if (is_string($text) && filled($text)) {
-            return trim($text);
-        }
-
-        if (is_array($text)) {
-            $text = $this->segments($text);
-
-            if (filled($text)) {
-                return $text;
-            }
-        }
-
         $tracks = $video['tracks'] ?? null;
 
-        if (! is_array($tracks)) {
-            return null;
+        if (is_array($tracks)) {
+            foreach ($tracks as $track) {
+                if (! is_array($track) || ! is_array($track['transcript'] ?? null)) {
+                    continue;
+                }
+
+                $text = $this->segments($track['transcript']);
+
+                if (filled($text)) {
+                    return $text;
+                }
+            }
         }
 
-        foreach ($tracks as $track) {
-            if (! is_array($track) || ! is_array($track['transcript'] ?? null)) {
-                continue;
-            }
+        $transcript = $video['transcript'] ?? null;
 
-            $text = $this->segments($track['transcript']);
+        if (is_array($transcript)) {
+            $text = $this->segments($transcript);
 
             if (filled($text)) {
                 return $text;
             }
         }
 
-        return null;
+        if (is_string($transcript) && filled($transcript)) {
+            return trim($transcript);
+        }
+
+        $text = $video['text'] ?? null;
+
+        return is_string($text) && filled($text) ? trim($text) : null;
     }
 
     /**
@@ -120,13 +120,41 @@ final class YouTubeTranscript implements StreamTranscriptProvider
         $lines = [];
 
         foreach ($segments as $segment) {
-            $text = is_array($segment) ? ($segment['text'] ?? null) : null;
-
-            if (is_string($text) && filled($text)) {
-                $lines[] = trim($text);
+            if (! is_array($segment)) {
+                continue;
             }
+
+            $text = $segment['text'] ?? null;
+
+            if (! is_string($text)) {
+                continue;
+            }
+
+            $text = trim($text);
+
+            if ($text === '') {
+                continue;
+            }
+
+            $start = $segment['start'] ?? null;
+
+            $lines[] = is_numeric($start)
+                ? sprintf('[%s] %s', $this->timestamp((float) $start), $text)
+                : $text;
         }
 
         return $lines === [] ? null : implode(PHP_EOL, $lines);
+    }
+
+    private function timestamp(float $seconds): string
+    {
+        $seconds = max(0, (int) floor($seconds));
+        $hours = intdiv($seconds, 3600);
+        $minutes = intdiv($seconds % 3600, 60);
+        $seconds %= 60;
+
+        return $hours > 0
+            ? sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds)
+            : sprintf('%02d:%02d', $minutes, $seconds);
     }
 }
