@@ -4,6 +4,7 @@ namespace App\Services;
 
 use App\Contracts\StreamTranscriptProvider;
 use Carbon\CarbonInterval;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Http;
 use RuntimeException;
 
@@ -155,6 +156,7 @@ final class YouTubeTranscript implements StreamTranscriptProvider
                 'short' => true,
                 'minimumUnit' => 'second',
                 'parts' => 2,
+                'skip' => ['h','d']
             ]);
     }
 }
