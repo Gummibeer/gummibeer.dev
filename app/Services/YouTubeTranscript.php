@@ -3,6 +3,7 @@
 namespace App\Services;
 
 use App\Contracts\StreamTranscriptProvider;
+use Carbon\CarbonInterval;
 use Illuminate\Support\Facades\Http;
 use RuntimeException;
 
@@ -139,22 +140,24 @@ final class YouTubeTranscript implements StreamTranscriptProvider
             $start = $segment['start'] ?? null;
 
             $lines[] = is_numeric($start)
-                ? sprintf('[%s] %s', $this->timestamp((float) $start), $text)
+                ? sprintf('[%s] %s', $this->offset((float) $start), $text)
                 : $text;
         }
 
         return $lines === [] ? null : implode(PHP_EOL, $lines);
     }
 
-    private function timestamp(float $seconds): string
+    private function offset(float $seconds): string
     {
         $seconds = max(0, (int) floor($seconds));
-        $hours = intdiv($seconds, 3600);
-        $minutes = intdiv($seconds % 3600, 60);
+        $minutes = intdiv($seconds, 60);
         $seconds %= 60;
 
-        return $hours > 0
-            ? sprintf('%02d:%02d:%02d', $hours, $minutes, $seconds)
-            : sprintf('%02d:%02d', $minutes, $seconds);
+        return CarbonInterval::minutes($minutes)
+            ->addSeconds($seconds)
+            ->forHumans([
+                'short' => true,
+                'minimumUnit' => 'second',
+            ]);
     }
 }
