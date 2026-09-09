@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "85775bdd325b7d098f58fce987a82398",
+    "content-hash": "1883fbfe977db504dd695160d7d8d280",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -5627,6 +5627,92 @@
                 }
             ],
             "time": "2026-02-27T15:32:49+00:00"
+        },
+        {
+            "name": "spatie/laravel-csp",
+            "version": "3.28.3",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/spatie/laravel-csp.git",
+                "reference": "4b5b9f37a7c11aa8194515aec71092a0f708a1d8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/spatie/laravel-csp/zipball/4b5b9f37a7c11aa8194515aec71092a0f708a1d8",
+                "reference": "4b5b9f37a7c11aa8194515aec71092a0f708a1d8",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/http": "^11.36.1|^12.0|^13.0",
+                "illuminate/support": "^11.36.1|^12.0|^13.0",
+                "php": "^8.3",
+                "spatie/laravel-package-tools": "^1.17"
+            },
+            "require-dev": {
+                "laravel/pint": "^1.30",
+                "mockery/mockery": "^1.6",
+                "orchestra/testbench": "^9.9|^10.0|^11.0",
+                "pestphp/pest": "^4.0|^5.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Spatie\\Csp\\CspServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Spatie\\Csp\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Thomas Verhelst",
+                    "email": "tvke91@gmail.com",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Freek Van der Herten",
+                    "email": "freek@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                },
+                {
+                    "name": "Sebastian De Deyne",
+                    "email": "sebastian@spatie.be",
+                    "homepage": "https://spatie.be",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Add CSP headers to the responses of a Laravel app",
+            "homepage": "https://github.com/spatie/laravel-csp",
+            "keywords": [
+                "content-security-policy",
+                "csp",
+                "headers",
+                "laravel",
+                "laravel-csp",
+                "security",
+                "spatie"
+            ],
+            "support": {
+                "issues": "https://github.com/spatie/laravel-csp/issues",
+                "source": "https://github.com/spatie/laravel-csp/tree/3.28.3"
+            },
+            "funding": [
+                {
+                    "url": "https://spatie.be/open-source/support-us",
+                    "type": "custom"
+                }
+            ],
+            "time": "2026-09-03T13:39:06+00:00"
         },
         {
             "name": "spatie/laravel-feed",
