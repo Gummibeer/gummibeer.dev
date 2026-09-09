@@ -10,6 +10,7 @@ return [
     | This file is for storing the credentials for third party services such
     | as Mailgun, Postmark, AWS and more. This file provides the de facto
     | location for this type of information, allowing packages to have
+    | a conventional file to locate this information, allowing packages to have
     | a conventional file to locate the various service credentials.
     |
     */
@@ -37,6 +38,10 @@ return [
 
     'youtube' => [
         'key' => env('YOUTUBE_API_KEY'),
+    ],
+
+    'youtube_transcript' => [
+        'token' => env('YOUTUBE_TRANSCRIPT_API_TOKEN'),
     ],
 
 ];
