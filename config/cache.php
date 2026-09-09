@@ -1,6 +1,5 @@
 <?php
 
-use Carbon\CarbonImmutable;
 use Illuminate\Support\Str;
 
 return [
@@ -137,8 +136,6 @@ return [
     |
     */
 
-    'serializable_classes' => [
-        CarbonImmutable::class,
-    ],
+    'serializable_classes' => [],
 
 ];
