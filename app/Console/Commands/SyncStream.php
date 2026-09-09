@@ -48,7 +48,13 @@ final class SyncStream extends Command
                 $data['category'] = $this->category(is_string($category) ? $category : null);
             }
 
-            $transcript = $transcripts->fetch($video->id);
+            $transcript = null;
+
+            try {
+                $transcript = $transcripts->fetch($video->id);
+            } catch (Throwable $exception) {
+                $this->components->warn('Transcript sync failed: '.$exception->getMessage());
+            }
 
             if (filled($transcript)) {
                 $data['transcript'] = $this->writeTranscript($video, (string) $transcript);
@@ -70,8 +76,8 @@ final class SyncStream extends Command
                 $entry->url() ?? $video->url,
             ));
 
-            if (! filled($transcript)) {
-                $this->components->warn('No transcript provider is configured yet. Metadata was synced without a transcript.');
+            if (! filled($transcript) && blank($data['transcript'] ?? null)) {
+                $this->components->warn('No transcript is available for this video.');
             }
 
             return self::SUCCESS;
