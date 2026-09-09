@@ -20,6 +20,7 @@ use Illuminate\Support\Str;
 use League\Glide\Api\Api;
 use League\Glide\Manipulators\ManipulatorInterface;
 use League\Glide\Manipulators\Size;
+use League\Glide\Server;
 use LogicException;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Facades\Collection as StatamicCollection;
