@@ -29,7 +29,7 @@ class GenerateOgImages extends Command
                 $date = $post->date();
 
                 $this->saveImage(
-                    "images/og/posts/{$date->format('Y-m-d')}.{$post->slug()}.png",
+                    (string) $post->og_image,
                     [
                         'title' => (string) $post->value('title'),
                         'date' => $date,
@@ -46,24 +46,12 @@ class GenerateOgImages extends Command
                 $date = $post->date();
 
                 $this->saveImage(
-                    "images/og/streams/{$date->format('Y-m-d')}.{$post->slug()}.png",
+                    (string) $post->og_image,
                     [
                         'title' => (string) $post->value('title'),
                         'date' => $date,
                         'readTime' => $post->read_time,
                     ],
-                );
-            });
-
-        Entry::whereCollection('pages')
-            ->each(function (mixed $page): void {
-                if (! $page instanceof StatamicEntry || ! $page->published()) {
-                    return;
-                }
-
-                $this->saveImage(
-                    "images/og/static/{$page->slug()}.png",
-                    ['title' => (string) $page->value('title')],
                 );
             });
 
@@ -73,10 +61,23 @@ class GenerateOgImages extends Command
             throw new RuntimeException('The Statamic identity global is missing.');
         }
 
-        $this->saveImage(
-            'images/og/static/home.png',
-            ['title' => (string) $identity->inDefaultSite()->get('tagline')],
-        );
+        $identity = $identity->inDefaultSite();
+
+        Entry::whereCollection('pages')
+            ->each(function (mixed $page) use ($identity): void {
+                if (! $page instanceof StatamicEntry || ! $page->published()) {
+                    return;
+                }
+
+                $title = $page->uri() === '/'
+                    ? (string) $identity->get('tagline')
+                    : (string) $page->value('title');
+
+                $this->saveImage(
+                    (string) $page->og_image,
+                    ['title' => $title],
+                );
+            });
     }
 
     /**
