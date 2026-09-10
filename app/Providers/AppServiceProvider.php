@@ -125,6 +125,7 @@ class AppServiceProvider extends ServiceProvider
     private static function streamTranscript(EntryContract $entry): ?string
     {
         $path = (string) $entry->value('transcript');
+
         if (blank($path)) {
             return null;
         }
