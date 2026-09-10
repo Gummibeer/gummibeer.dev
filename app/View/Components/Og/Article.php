@@ -24,7 +24,7 @@ class Article extends Component
     {
         $title = $this->post->value('title').' | '.$this->name;
         $description = (string) $this->post->value('description');
-        $image = OpenGraphImage::url($this->post);
+        $image = OpenGraphImage::url((string) $this->post->og_image);
 
         return implode(PHP_EOL, [
             OpenGraph::article($title)
