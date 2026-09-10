@@ -5,6 +5,7 @@ namespace App\Providers;
 use App\Contracts\StreamTranscriptProvider;
 use App\Http\Middleware\AutoLoginStatamicControlPanel;
 use App\Markdown\MarkdownExtension;
+use App\Services\OpenGraphImage;
 use App\Services\ReadingTime;
 use App\Services\YouTubeTranscript;
 use Astrotomic\Pixpipe\Manipulators\Size as PixpipeSize;
@@ -49,7 +50,14 @@ class AppServiceProvider extends ServiceProvider
 
     public function registerComputedContentValues(): void
     {
+        $ogImage = static fn (EntryContract $entry, mixed $value): string => (string) ($value ?? OpenGraphImage::path($entry));
+
+        StatamicCollection::computed('pages', [
+            'og_image' => $ogImage,
+        ]);
+
         StatamicCollection::computed('posts', [
+            'og_image' => $ogImage,
             'image' => static function (EntryContract $entry, mixed $value): ?string {
                 $images = $entry->value('images');
 
@@ -66,6 +74,7 @@ class AppServiceProvider extends ServiceProvider
         ]);
 
         StatamicCollection::computed('streams', [
+            'og_image' => $ogImage,
             'duration' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $value),
             'read_time' => static fn (EntryContract $entry, mixed $value): CarbonInterval => self::streamDuration((string) $entry->value('duration')),
             'transcript_text' => static fn (EntryContract $entry, mixed $value): ?string => self::streamTranscript($entry),
@@ -116,7 +125,6 @@ class AppServiceProvider extends ServiceProvider
     private static function streamTranscript(EntryContract $entry): ?string
     {
         $path = (string) $entry->value('transcript');
-
         if (blank($path)) {
             return null;
         }
