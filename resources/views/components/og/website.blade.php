@@ -3,6 +3,11 @@
     'page' => null,
 ])
 
+@php
+    $image = \App\Services\OpenGraphImage::url($page);
+    $imageAlt = $page?->title ?? $identity->name;
+@endphp
+
 <meta
     property="og:type"
     content="website"
@@ -19,6 +24,26 @@
     property="og:locale"
     content="{{ str_replace('-', '_', app()->getLocale()) }}"
 />
+<meta
+    property="og:image"
+    content="{{ $image }}"
+/>
+<meta
+    property="og:image:type"
+    content="image/png"
+/>
+<meta
+    property="og:image:width"
+    content="{{ \App\Services\OpenGraphImage::WIDTH }}"
+/>
+<meta
+    property="og:image:height"
+    content="{{ \App\Services\OpenGraphImage::HEIGHT }}"
+/>
+<meta
+    property="og:image:alt"
+    content="{{ $imageAlt }}"
+/>
 @if ($page?->description)
     <meta
         property="og:description"
@@ -32,6 +57,14 @@
 <meta
     name="twitter:title"
     content="{{ $page?->title ? $page->title.' | '.$identity->name : $identity->name }}"
+/>
+<meta
+    name="twitter:image"
+    content="{{ $image }}"
+/>
+<meta
+    name="twitter:image:alt"
+    content="{{ $imageAlt }}"
 />
 @if ($page?->description)
     <meta
