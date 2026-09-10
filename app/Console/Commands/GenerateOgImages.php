@@ -2,6 +2,7 @@
 
 namespace App\Console\Commands;
 
+use App\Services\OpenGraphImage;
 use Carbon\CarbonInterval;
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\File;
@@ -100,7 +101,7 @@ class GenerateOgImages extends Command
 
         Browsershot::html($html)
             ->setNodeModulePath(base_path('node_modules'))
-            ->windowSize(2048, 1170)
+            ->windowSize(OpenGraphImage::WIDTH, OpenGraphImage::HEIGHT)
             ->waitForFunction('document.fonts.status === "loaded"')
             ->save($path);
     }
