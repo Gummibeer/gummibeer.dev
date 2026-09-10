@@ -81,6 +81,7 @@
         <script
             async
             defer
+            data-do-not-track="true"
             data-website-id="5790432b-8e52-4f5d-b458-937bb1ddedc6"
             src="https://u.gummibeer.dev/script.js"
         ></script>
