@@ -2,6 +2,7 @@
 
 namespace App\Services;
 
+use Illuminate\Support\Str;
 use Statamic\Contracts\Entries\Entry as EntryContract;
 use Statamic\Contracts\Imaging\UrlBuilder;
 
@@ -11,36 +12,31 @@ class OpenGraphImage
 
     public const int HEIGHT = 1170;
 
-    public static function url(mixed $page = null): string
+    public static function path(EntryContract $entry): string
     {
-        return url(app(UrlBuilder::class)->build('images::'.self::path($page), []));
-    }
-
-    private static function path(mixed $page): string
-    {
-        if (! $page instanceof EntryContract) {
-            return 'og/static/home.png';
-        }
-
-        $collection = $page->collection()->handle();
-
-        if (in_array($collection, ['posts', 'streams'], true)) {
-            return sprintf(
-                'og/%s/%s.%s.png',
-                $collection,
-                $page->date()->format('Y-m-d'),
-                $page->slug(),
-            );
-        }
+        $collection = $entry->collection()->handle();
 
         if ($collection === 'pages') {
-            $slug = request()->path() === '/'
+            $slug = $entry->uri() === '/'
                 ? 'home'
-                : $page->slug();
+                : $entry->slug();
 
-            return "og/static/{$slug}.png";
+            return "images/og/static/{$slug}.png";
         }
 
-        return 'og/static/home.png';
+        return sprintf(
+            'images/og/%s/%s.%s.png',
+            $collection,
+            $entry->date()->format('Y-m-d'),
+            $entry->slug(),
+        );
+    }
+
+    public static function url(string $path): string
+    {
+        return url(app(UrlBuilder::class)->build(
+            'images::'.Str::after($path, 'images/'),
+            [],
+        ));
     }
 }
