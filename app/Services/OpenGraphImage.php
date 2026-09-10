@@ -7,9 +7,9 @@ use Statamic\Contracts\Imaging\UrlBuilder;
 
 class OpenGraphImage
 {
-    public const WIDTH = 2048;
+    public const int WIDTH = 2048;
 
-    public const HEIGHT = 1170;
+    public const int HEIGHT = 1170;
 
     public static function url(mixed $page = null): string
     {
