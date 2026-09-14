@@ -1,13 +1,9 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Illuminate\Support\HtmlString $caption */ ?>
-
 <figure
-    @if (!empty((string) $caption)) role="group" @endif
+    @unless (empty((string) $caption)) role="group" @endunless
     {{ $attributes->merge(['class' => 'overflow-hidden']) }}
 >
     {{ $slot }}
-    @if (!empty((string) $caption))
+    @unless (empty((string) $caption))
         <figcaption class="mt-1 text-center text-sm text-snow-20">{!! \Statamic\Facades\Markdown::parse((string) $caption) !!}</figcaption>
-    @endif
+    @endunless
 </figure>

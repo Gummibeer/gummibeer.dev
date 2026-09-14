@@ -1,5 +1,3 @@
-<?php /** @var Statamic\Taxonomies\LocalizedTerm $page */ ?>
-
 @extends ('web')
 
 @push ('head')

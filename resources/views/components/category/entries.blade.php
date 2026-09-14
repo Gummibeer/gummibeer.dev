@@ -1,4 +1,3 @@
-<?php /** @var Statamic\Contracts\Taxonomies\Term $category */ ?>
 @props (['category'])
 
 @php

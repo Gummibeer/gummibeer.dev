@@ -1,8 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var string $name */ ?>
-<?php /** @var string $lang */ ?>
-
 <div class="mt-4 mb-6">
     <header class="flex space-x-2 rounded-t-2 bg-snow-10 px-4">
         <div class="py-2 text-right text-xs leading-none font-bold uppercase">{{ $lang }}</div>

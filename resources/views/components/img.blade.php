@@ -1,8 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Closure $src */ ?>
-<?php /** @var Closure $srcSet */ ?>
-
 <picture>
     <source
         type="image/webp"

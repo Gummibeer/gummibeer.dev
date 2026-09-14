@@ -1,7 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
-
 <x-article {{ $attributes->except('post')->merge(['class' => 'md:flex md:space-x-8 md:items-center']) }}>
     @if ($post->image)
         <div class="mb-8 w-full md:mb-0 md:w-1/2 lg:w-1/3">

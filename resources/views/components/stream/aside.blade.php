@@ -1,6 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Statamic\Contracts\Entries\Entry $stream */ ?>
 @props (['stream'])
 
 <aside {{ $attributes->merge(['class' => 'text-snow-20']) }}>

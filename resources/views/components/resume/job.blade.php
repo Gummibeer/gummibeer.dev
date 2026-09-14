@@ -1,4 +1,7 @@
-<div class="py-4 @if($job->has_end) text-snow-20 @endif">
+<div @class ([
+    'py-4',
+    'text-snow-20' => $job->has_end
+])>
     <div class="flex flex-row sm:items-center sm:space-x-4">
         @if ($job->logo)
             <div class="hidden h-24 w-24 sm:block">
@@ -12,7 +15,10 @@
         <div class="grow">
             <div class="flex flex-col items-center justify-between sm:flex-row">
                 <div class="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
-                    <h3 class="text-2xl @if(!$job->has_end) font-medium text-brand @endif">
+                    <h3 @class ([
+                        'text-2xl',
+                        'font-medium text-brand' => !$job->has_end
+                    ])>
                         <x-icon :name="$job->icon_class" />
                         {{ $job->title }}
                     </h3>
@@ -33,8 +39,16 @@
                     <span class="text-snow-20">{{ Illuminate\Support\Str::money($job->salary ?? 0) }}</span>
                 </aside>
             </div>
-            <strong class="block @if(!$job->has_end) font-bold @else text-sm font-normal @endif">{{ $job->role }}</strong>
-            <ul class="flex list-none space-x-4 @if(!$job->has_end) text-sm @else text-xs @endif mt-1">
+            <strong @class ([
+                'block',
+                'font-bold' => $job->has_end,
+                'text-sm font-normal' => !$job->has_end
+            ])>{{ $job->role }}</strong>
+            <ul @class([
+                'flex list-none space-x-4 mt-1',
+                'text-xs' => $job->has_end,
+                'text-sm' => !$job->has_end,
+            ])>
                 @foreach ($job->stack as $tool)
                     <li>{{ $tool }}</li>
                 @endforeach

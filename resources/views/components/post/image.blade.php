@@ -1,5 +1,3 @@
-<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
-
 @if ($post->images->isNotEmpty())
     <div
         class="mb-8 aspect-video overflow-hidden"

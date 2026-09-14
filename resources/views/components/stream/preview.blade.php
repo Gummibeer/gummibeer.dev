@@ -1,6 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Statamic\Contracts\Entries\Entry $stream */ ?>
 @props (['stream'])
 
 <article class="overflow-hidden rounded-4 bg-white shadow">

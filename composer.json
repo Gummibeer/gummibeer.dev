@@ -30,11 +30,12 @@
         "spatie/laravel-csp": "^3.29.0",
         "spatie/laravel-feed": "^4.5",
         "spatie/laravel-sitemap": "^8.2",
-        "statamic/cms": "^6.31"
+        "statamic/cms": "^6.32"
     },
     "require-dev": {
-        "larastan/larastan": "^3.11",
-        "laravel/pint": "^1.31.1",
+        "fortephp/sheath": "^1.0.2",
+        "larastan/larastan": "^3.12.1",
+        "laravel/pint": "^1.32.1",
         "nunomaduro/collision": "^8.9.5",
         "phpstan/extension-installer": "^1.4.3",
         "spaze/phpstan-disallowed-calls": "^4.14.0"
@@ -83,7 +84,6 @@
             "@php artisan package:discover --ansi --no-interaction",
             "@php artisan statamic:install --ansi --no-interaction"
         ],
-        "alex": "npm run lint:prose",
         "fix": "@php vendor/bin/pint",
         "fix-dirty": "@php vendor/bin/pint --dirty",
         "og": "npm run build && @php artisan generate:og:images",

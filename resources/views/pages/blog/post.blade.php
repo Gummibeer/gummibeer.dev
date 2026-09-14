@@ -1,5 +1,3 @@
-<?php /** @var Statamic\Contracts\Entries\Entry $page */ ?>
-
 @extends ('web')
 
 @push ('head')

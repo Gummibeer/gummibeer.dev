@@ -1,7 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
-
 <aside {{ $attributes->except('post')->merge(['class' => 'text-snow-20']) }}>
     <ul class="flex list-none flex-col sm:flex-row sm:space-x-3">
         <li>

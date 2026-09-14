@@ -1,7 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var Statamic\Contracts\Entries\Entry $post */ ?>
-
 <article {{ $attributes->except('post')->merge(['class' => 'rounded-4 shadow bg-white overflow-hidden']) }}>
     @if ($post->image)
         <a href="{{ $post->permalink }}">

@@ -1,8 +1,3 @@
-<?php /** @var Illuminate\View\ComponentAttributeBag $attributes */ ?>
-<?php /** @var Illuminate\Support\HtmlString $slot */ ?>
-<?php /** @var array $parameters */ ?>
-<?php /** @var string|Illuminate\Routing\Route $route */ ?>
-
 @php ($route = app('router')->getRoutes()->getByName($route))
 
 <link
