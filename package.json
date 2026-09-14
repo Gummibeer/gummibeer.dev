@@ -22,7 +22,7 @@
         "prettier": "^3.9.6",
         "prettier-plugin-blade": "^3.3.3",
         "prettier-plugin-tailwindcss": "^0.8.1",
-        "vite": "^8.2.2"
+        "vite": "^8.3.0"
     },
     "dependencies": {
         "@alpinejs/csp": "^3.17.2",
