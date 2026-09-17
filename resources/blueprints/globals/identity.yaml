@@ -66,6 +66,22 @@ tabs:
               validate:
                 - required
           -
+            handle: mastodon_url
+            field:
+              type: link
+              display: Mastodon
+              required: true
+              validate:
+                - required
+          -
+            handle: mastodon_handle
+            field:
+              type: text
+              display: 'Mastodon Handle'
+              required: true
+              validate:
+                - required
+          -
             handle: steam_url
             field:
               type: link
