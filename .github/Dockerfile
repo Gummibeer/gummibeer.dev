@@ -40,10 +40,11 @@ RUN composer global config allow-plugins.ergebnis/composer-normalize true \
 
 COPY composer.json composer.lock package.json package-lock.json ./
 
-RUN composer install --prefer-dist --no-progress --no-scripts \
+RUN composer install --prefer-dist --no-progress --no-scripts --no-autoloader \
     && npm ci --no-audit --no-fund
 
 COPY . .
 
-RUN cp .env.example .env \
+RUN composer dump-autoload --optimize --no-scripts \
+    && cp .env.example .env \
     && php artisan package:discover --ansi --no-interaction
