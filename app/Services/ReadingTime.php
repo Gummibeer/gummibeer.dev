@@ -3,7 +3,9 @@
 namespace App\Services;
 
 use App\Markdown\Nodes\Prompt;
+use App\Markdown\Nodes\TextFile;
 use App\Markdown\Parsers\PromptParser;
+use App\Markdown\Parsers\TextFileParser;
 use Carbon\CarbonInterval;
 use Illuminate\Support\Str;
 use League\CommonMark\Environment\Environment;
@@ -35,6 +37,7 @@ final class ReadingTime
         $environment = new Environment;
         $environment->addExtension(new CommonMarkCoreExtension);
         $environment->addInlineParser(new PromptParser, 100);
+        $environment->addInlineParser(new TextFileParser, 100);
 
         $this->parser = new MarkdownParser($environment);
     }
@@ -87,6 +90,7 @@ final class ReadingTime
                 || $ancestor instanceof IndentedCode
                 || $ancestor instanceof Image
                 || $ancestor instanceof Prompt
+                || $ancestor instanceof TextFile
             ) {
                 return true;
             }
