@@ -1,0 +1,215 @@
+name: ci
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+  packages: read
+
+env:
+  CI_IMAGE: ghcr.io/gummibeer/gummibeer.dev-ci
+
+jobs:
+  prepare:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      packages: write
+    outputs:
+      image: ${{ steps.image.outputs.ref }}
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.actor }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+
+      - uses: docker/setup-buildx-action@v3
+
+      - id: build
+        uses: docker/build-push-action@v6
+        with:
+          context: .
+          file: .github/Dockerfile
+          push: true
+          tags: ${{ env.CI_IMAGE }}:${{ github.sha }}
+          labels: |
+            org.opencontainers.image.source=https://github.com/${{ github.repository }}
+            org.opencontainers.image.revision=${{ github.sha }}
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
+
+      - id: image
+        run: echo "ref=${CI_IMAGE}@${{ steps.build.outputs.digest }}" >> "$GITHUB_OUTPUT"
+
+  actionlint:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: actionlint
+
+  composer-validate:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: composer validate --strict
+
+  composer-normalize:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: composer normalize --dry-run
+
+  frontend:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: npm run build
+
+  phpstan:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+    env:
+      APP_ENV: testing
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+
+    steps:
+      - run: composer phpstan
+
+  pint:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: vendor/bin/pint --test
+
+  prettier:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: npm run format:check
+
+  sheath:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+
+    steps:
+      - run: php artisan sheath:lint --format=github --max-warnings=0
+
+  smoke:
+    needs: prepare
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    container:
+      image: ${{ needs.prepare.outputs.image }}
+      credentials:
+        username: ${{ github.actor }}
+        password: ${{ secrets.GITHUB_TOKEN }}
+    defaults:
+      run:
+        working-directory: /app
+    env:
+      APP_ENV: production
+      APP_DEBUG: false
+      APP_KEY: base64:AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=
+      APP_URL: http://localhost
+      CP_ENABLED: false
+
+    steps:
+      - run: php artisan about --only=environment
+      - run: php artisan route:list --except-vendor
+      - run: php artisan optimize:clear --no-interaction
+      - run: php artisan statamic:stache:clear --no-interaction
+      - run: php artisan statamic:stache:warm --no-interaction
+      - run: php artisan statamic:search:update --all --no-interaction
+      - run: php artisan config:cache --no-interaction
+      - run: php artisan route:cache --no-interaction
+      - run: php artisan view:cache --no-interaction
+      - run: php artisan icons:cache --no-interaction
+      - run: npm run build
