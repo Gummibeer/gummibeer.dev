@@ -8,6 +8,7 @@ use Honeystone\Seo\OpenGraph\ArticleProperties;
 use Honeystone\Seo\OpenGraph\ImageProperties;
 use Honeystone\Seo\OpenGraph\ProfileProperties;
 use Statamic\Contracts\Entries\Entry as EntryContract;
+use Statamic\Taxonomies\LocalizedTerm;
 use Statamic\View\Cascade;
 
 class SeoMetadata
@@ -16,17 +17,18 @@ class SeoMetadata
     {
         $page = $cascade->content();
         $entry = $page instanceof EntryContract ? $page : null;
+        $term = $page instanceof LocalizedTerm ? $page : null;
         $name = trim((string) data_get($cascade->get('identity'), 'name', config('app.name')));
 
         if ($name === '') {
             $name = (string) config('app.name');
         }
 
-        $title = trim((string) $entry?->value('title'));
+        $title = trim((string) ($entry?->value('title') ?? $term?->title()));
         $title = $title !== '' ? $title : $name;
         $socialTitle = $title === $name ? $name : $title.' | '.$name;
-        $description = trim((string) $entry?->value('description'));
-        $url = $entry?->absoluteUrl() ?? request()->url();
+        $description = trim((string) ($entry?->value('description') ?? $term?->value('description')));
+        $url = $entry?->absoluteUrl() ?? $term?->absoluteUrl() ?? request()->url();
         $imagePath = trim((string) $entry?->value('og_image'));
         $image = $imagePath !== '' ? OpenGraphImage::url($imagePath) : null;
 
