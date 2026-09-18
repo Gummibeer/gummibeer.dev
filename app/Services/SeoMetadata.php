@@ -24,6 +24,7 @@ class SeoMetadata
 
         $title = trim((string) $entry?->value('title'));
         $title = $title !== '' ? $title : $name;
+        $socialTitle = $title === $name ? $name : $title.' | '.$name;
         $description = trim((string) $entry?->value('description'));
         $url = $entry?->absoluteUrl() ?? request()->url();
         $imagePath = trim((string) $entry?->value('og_image'));
@@ -39,12 +40,15 @@ class SeoMetadata
             ->locale(str_replace('-', '_', app()->getLocale()))
             ->openGraphSite($name)
             ->openGraphType('website')
+            ->openGraphTitle($socialTitle)
             ->twitterCard($image ? 'summary_large_image' : 'summary')
+            ->twitterTitle($socialTitle)
             ->jsonLdType('WebPage');
 
         if ($image) {
             seo()
                 ->images($image)
+                ->twitterImage($image, $title)
                 ->openGraphImage(new ImageProperties(
                     url: $image,
                     alt: $title,
