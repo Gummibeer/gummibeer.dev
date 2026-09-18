@@ -65,7 +65,7 @@ jobs:
         working-directory: /app
 
     steps:
-      - run: actionlint
+      - run: actionlint .github/workflows/*.yml
 
   composer-validate:
     needs: prepare
