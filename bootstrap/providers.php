@@ -6,4 +6,5 @@ use App\Providers\MacroServiceProvider;
 return [
     AppServiceProvider::class,
     MacroServiceProvider::class,
+    SeoServiceProvider::class,
 ];
