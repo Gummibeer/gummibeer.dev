@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "3f1b519cffdc7c75313138bc702404d3",
+    "content-hash": "a5d215eedea1fa81535d14464a286ecf",
     "packages": [
         {
             "name": "ajthinking/archetype",
@@ -140,140 +140,6 @@
                 }
             ],
             "time": "2026-04-15T10:13:39+00:00"
-        },
-        {
-            "name": "astrotomic/php-conditional-proxy",
-            "version": "0.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Astrotomic/php-conditional-proxy.git",
-                "reference": "311f56d03ead00eed89b4a3afcf1901521ffd343"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Astrotomic/php-conditional-proxy/zipball/311f56d03ead00eed89b4a3afcf1901521ffd343",
-                "reference": "311f56d03ead00eed89b4a3afcf1901521ffd343",
-                "shasum": ""
-            },
-            "require": {
-                "php": "^7.1 || ^8.0"
-            },
-            "require-dev": {
-                "pestphp/pest": "^0.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Astrotomic\\ConditionalProxy\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Witkowski",
-                    "email": "gummibeer@astrotomic.info",
-                    "homepage": "https://astrotomic.info",
-                    "role": "Developer"
-                }
-            ],
-            "description": "This package provides a trait and class to allow calling methods based on a condition without breaking the method chain.",
-            "homepage": "https://github.com/Astrotomic/php-conditional-proxy",
-            "keywords": [
-                "conditional-proxy",
-                "proxy"
-            ],
-            "support": {
-                "issues": "https://github.com/Astrotomic/php-conditional-proxy/issues",
-                "source": "https://github.com/Astrotomic/php-conditional-proxy/tree/0.2.1"
-            },
-            "funding": [
-                {
-                    "url": "https://offset.earth/treeware",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/Gummibeer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://issuehunt.io/r/astrotomic",
-                    "type": "issuehunt"
-                }
-            ],
-            "time": "2021-01-04T15:25:20+00:00"
-        },
-        {
-            "name": "astrotomic/php-open-graph",
-            "version": "1.0.0",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Astrotomic/php-open-graph.git",
-                "reference": "4603213a45615229033ce431b5bd2b7724bf5de6"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Astrotomic/php-open-graph/zipball/4603213a45615229033ce431b5bd2b7724bf5de6",
-                "reference": "4603213a45615229033ce431b5bd2b7724bf5de6",
-                "shasum": ""
-            },
-            "require": {
-                "astrotomic/php-conditional-proxy": "^0.2.1",
-                "php": "^8.1"
-            },
-            "require-dev": {
-                "laravel/pint": "^1.13",
-                "pestphp/pest": "^2.21",
-                "spatie/pest-plugin-snapshots": "^2.1"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Astrotomic\\OpenGraph\\": "src"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Tom Witkowski",
-                    "email": "gummibeer@astrotomic.info",
-                    "homepage": "https://astrotomic.info",
-                    "role": "Developer"
-                }
-            ],
-            "description": "Easily generate Open Graph tags",
-            "homepage": "https://github.com/Astrotomic/php-open-graph",
-            "keywords": [
-                "open-graph"
-            ],
-            "support": {
-                "issues": "https://github.com/Astrotomic/php-open-graph/issues",
-                "source": "https://github.com/Astrotomic/php-open-graph/tree/1.0.0"
-            },
-            "funding": [
-                {
-                    "url": "https://forest.astrotomic.info",
-                    "type": "custom"
-                },
-                {
-                    "url": "https://github.com/Gummibeer",
-                    "type": "github"
-                },
-                {
-                    "url": "https://github.com/SarahSibert",
-                    "type": "github"
-                },
-                {
-                    "url": "https://issuehunt.io/r/astrotomic",
-                    "type": "issuehunt"
-                }
-            ],
-            "time": "2023-10-09T13:37:25+00:00"
         },
         {
             "name": "astrotomic/php-twemoji",
@@ -1874,6 +1740,87 @@
                 }
             ],
             "time": "2026-08-24T17:13:02+00:00"
+        },
+        {
+            "name": "honeystone/laravel-seo",
+            "version": "2.1.1",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/Honeystone/laravel-seo.git",
+                "reference": "3a0638fc128c26a9335b6ddf355c0db94e63b653"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/Honeystone/laravel-seo/zipball/3a0638fc128c26a9335b6ddf355c0db94e63b653",
+                "reference": "3a0638fc128c26a9335b6ddf355c0db94e63b653",
+                "shasum": ""
+            },
+            "require": {
+                "ext-zip": "*",
+                "illuminate/contracts": "^10.0|^11.0|^12.0|^13.0",
+                "php": "^8.2",
+                "spatie/laravel-package-tools": "^1.16.4"
+            },
+            "require-dev": {
+                "laradumps/laradumps-core": "^4.0.5",
+                "larastan/larastan": "^3.9.3",
+                "laravel/pint": "^1.21",
+                "nunomaduro/collision": "^8.0",
+                "orchestra/testbench": "^11.0",
+                "pestphp/pest": "^4.0",
+                "pestphp/pest-plugin-laravel": "^4.0",
+                "phpstan/extension-installer": "^1.4",
+                "phpstan/phpstan-deprecation-rules": "^2.0",
+                "phpstan/phpstan-phpunit": "^2.0",
+                "phpunit/phpunit": "^12.0",
+                "spatie/schema-org": "^4.0"
+            },
+            "suggest": {
+                "spatie/schema-org": "For generating JSON-LD schema using a fluent interface."
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Honeystone\\Seo\\Providers\\SeoServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Honeystone\\Seo\\": "src"
+                },
+                "files": [
+                    "src/helpers.php"
+                ]
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "George Palmer",
+                    "email": "george@honeystone.com",
+                    "role": "Developer"
+                }
+            ],
+            "description": "SEO metadata and JSON-LD package for Laravel.",
+            "homepage": "https://honeystone.com",
+            "keywords": [
+                "honeystone",
+                "seo",
+                "metadata",
+                "twitter",
+                "opengraph",
+                "json-ld",
+                "laravel"
+            ],
+            "support": {
+                "issues": "https://github.com/Honeystone/laravel-seo/issues",
+                "source": "https://github.com/Honeystone/laravel-seo/tree/2.1.1"
+            },
+            "time": "2026-03-18T09:10:11+00:00"
         },
         {
             "name": "inertiajs/inertia-laravel",
@@ -11361,7 +11308,8 @@
         "ext-gd": "*",
         "ext-intl": "*",
         "ext-json": "*",
-        "ext-simplexml": "*"
+        "ext-simplexml": "*",
+        "ext-zip": "*"
     },
     "platform-dev": {},
     "plugin-api-version": "2.6.0"
