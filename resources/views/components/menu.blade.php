@@ -50,7 +50,7 @@
                 <li class="flex items-center">
                     <a
                         href="{{ $url }}"
-                        @class([
+                        @class ([
                             'block w-full px-4 py-6 text-center text-2xl leading-none font-bold md:px-3 md:text-lg lg:px-4',
                             'text-brand' => $is_current || ($url !== '/' && $is_parent),
                             'text-black hover:text-brand' => !($is_current || ($url !== '/' && $is_parent)),
