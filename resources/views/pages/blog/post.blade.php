@@ -5,10 +5,6 @@
         rel="index"
         href="{{ $page->collection()->url() }}"
     />
-    <x-og.article
-        :post="$page"
-        :name="$identity->name"
-    />
 @endpush
 
 @section ('content')
