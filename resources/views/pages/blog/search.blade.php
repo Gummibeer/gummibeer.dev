@@ -1,9 +1,5 @@
 @extends ('web')
 
-@push ('head')
-    <x-og.website />
-@endpush
-
 @section ('content')
     <x-section>
         <h1 class="mb-8 text-6xl leading-none font-black text-night-0">Search</h1>
