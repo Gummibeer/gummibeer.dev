@@ -31,6 +31,13 @@
         content="#ffb300"
     />
 
+    @if ($identity?->mastodon_handle)
+        <meta
+            name="fediverse:creator"
+            content="{{ $identity->mastodon_handle }}"
+        />
+    @endif
+
     <x-favicons />
 
     @vite (['resources/css/app.css', 'resources/js/app.js'])

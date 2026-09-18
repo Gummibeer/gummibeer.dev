@@ -16,6 +16,16 @@
             </li>
             <li>
                 <a
+                    href="{{ $identity?->mastodon_url }}"
+                    target="_blank"
+                    rel="me noreferrer noopener"
+                    class="block p-1 hover:text-brand"
+                    title="Mastodon"
+                    ><x-icon name="fab-mastodon" /><span class="sr-only">Mastodon</span></a
+                >
+            </li>
+            <li>
+                <a
                     href="{{ $identity?->steam_url }}"
                     target="_blank"
                     rel="noreferrer noopener"

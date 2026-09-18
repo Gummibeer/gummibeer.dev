@@ -44,7 +44,7 @@
                 'font-bold' => $job->has_end,
                 'text-sm font-normal' => !$job->has_end
             ])>{{ $job->role }}</strong>
-            <ul @class([
+            <ul @class ([
                 'flex list-none space-x-4 mt-1',
                 'text-xs' => $job->has_end,
                 'text-sm' => !$job->has_end,
