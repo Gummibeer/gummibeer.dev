@@ -35,7 +35,7 @@ COPY --from=composer:2 /usr/bin/composer /usr/local/bin/composer
 
 RUN composer global config allow-plugins.ergebnis/composer-normalize true \
     && composer global require ergebnis/composer-normalize:^2.52 --no-progress \
-    && curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_x86_64.tar.gz" \
+    && curl -fsSL "https://github.com/rhysd/actionlint/releases/download/v${ACTIONLINT_VERSION}/actionlint_${ACTIONLINT_VERSION}_linux_amd64.tar.gz" \
         | tar -xz -C /usr/local/bin actionlint
 
 COPY composer.json composer.lock package.json package-lock.json ./
