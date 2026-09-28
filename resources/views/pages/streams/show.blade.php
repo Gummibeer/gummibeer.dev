@@ -5,7 +5,6 @@
         rel="index"
         href="{{ $page->collection()->url() }}"
     />
-    <x-og.website />
 @endpush
 
 @section ('content')

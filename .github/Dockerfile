@@ -20,9 +20,10 @@ RUN apt-get update \
         libjpeg62-turbo-dev \
         libpng-dev \
         libxml2-dev \
+        libzip-dev \
         unzip \
     && docker-php-ext-configure gd --with-freetype --with-jpeg \
-    && docker-php-ext-install -j"$(nproc)" gd intl simplexml \
+    && docker-php-ext-install -j"$(nproc)" gd intl simplexml zip \
     && rm -rf /var/lib/apt/lists/*
 
 COPY --from=node /usr/local/bin/node /usr/local/bin/node
