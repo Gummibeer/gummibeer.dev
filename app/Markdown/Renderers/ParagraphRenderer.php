@@ -3,6 +3,7 @@
 namespace App\Markdown\Renderers;
 
 use App\Markdown\Nodes\Prompt;
+use App\Markdown\Nodes\TextFile;
 use InvalidArgumentException;
 use League\CommonMark\Extension\CommonMark\Node\Inline\Image;
 use League\CommonMark\Node\Block\Paragraph;
@@ -22,7 +23,7 @@ class ParagraphRenderer implements NodeRendererInterface
 
         $firstChild = $node->firstChild();
 
-        if (($firstChild instanceof Image || $firstChild instanceof Prompt) && $firstChild->next() === null) {
+        if (($firstChild instanceof Image || $firstChild instanceof Prompt || $firstChild instanceof TextFile) && $firstChild->next() === null) {
             return $childRenderer->renderNodes($node->children());
         }
 
