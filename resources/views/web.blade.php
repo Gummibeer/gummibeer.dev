@@ -7,20 +7,14 @@
     lang="{{ str_replace('_', '-', app()->getLocale()) }}"
     class="antialiased"
 >
-<head>
+<head prefix="@openGraphPrefix">
     <meta charset="utf-8" />
     <meta
         name="viewport"
         content="width=device-width, initial-scale=1"
     />
 
-    <title>{{ $page?->title ? $page->title.' | '.($identity?->name ?? config('app.name')) : ($identity?->name ?? config('app.name')) }}</title>
-    @if ($page?->description)
-        <meta
-            name="description"
-            content="{{ $page->description }}"
-        />
-    @endif
+    @metadata
 
     <meta
         name="theme-color"
@@ -60,10 +54,6 @@
         type="text/plain"
         href="{{ url('/llms.txt') }}"
         title="LLMs"
-    />
-    <link
-        rel="canonical"
-        href="{{ $page?->permalink ?? request()->url() }}"
     />
     @if ($page?->permalink)
         <link
